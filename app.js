@@ -26,7 +26,7 @@ const projects = [
       },
       {
         title: "How we worked: scraping, cleaning and clustering",
-        body: `<p>The workflow started with <strong>AI-assisted scraping and research</strong>. Public comments were collected from social/community sources using tools such as Apify, Claude-assisted workflows and Codex-generated instructions for what to collect, what to exclude and how to keep the data useful.</p><div class="process-flow"><article><span>Collect</span><p>Prioritize direct customer experiences about price, bills, customer support, app, activation, cancellation, transparency and switching supplier.</p></article><article><span>Clean</span><p>Remove spam, referral codes, vague mentions, duplicated comments, unsupported claims and content that could not be connected to a real user experience.</p></article><article><span>Normalize</span><p>Preserve text, platform, visible author or handle, source URL, date/context and quality notes so the dataset stays auditable.</p></article><article><span>Cluster</span><p>Group comments by user concern, such as tariffs and savings, support, app/billing, activation, provider change and reputation.</p></article></div><p>This made the data usable for SEO content because the page could reflect <strong>real search intent</strong> instead of forcing all comments into one generic paragraph.</p>`
+        body: `<p>The workflow started with <strong>AI-assisted scraping and research</strong>. Public comments were collected from social/community sources using tools such as Apify, Claude Code-assisted workflows and Codex-generated instructions for what to collect, what to exclude and how to keep the data useful.</p><div class="process-flow"><article><span>Collect</span><p>Prioritize direct customer experiences about price, bills, customer support, app, activation, cancellation, transparency and switching supplier.</p></article><article><span>Clean</span><p>Remove spam, referral codes, vague mentions, duplicated comments, unsupported claims and content that could not be connected to a real user experience.</p></article><article><span>Normalize</span><p>Preserve text, platform, visible author or handle, source URL, date/context and quality notes so the dataset stays auditable.</p></article><article><span>Cluster</span><p>Group comments by user concern, such as tariffs and savings, support, app/billing, activation, provider change and reputation.</p></article></div><p>This made the data usable for SEO content because the page could reflect <strong>real search intent</strong> instead of forcing all comments into one generic paragraph.</p>`
       },
       {
         title: "How the scoring and analysis worked",
@@ -416,10 +416,129 @@ const projectOrder = [
   "creator"
 ];
 
+const projectFilterOptions = [
+  { id: "all", label: "Overview" },
+  { id: "content", label: "Content SEO" },
+  { id: "ai", label: "AI automation" },
+  { id: "data", label: "Data analysis" },
+  { id: "ux", label: "UX modules" },
+  { id: "local", label: "Local SEO" },
+  { id: "offpage", label: "Off-page SEO" },
+  { id: "social", label: "Social / creator" }
+];
+
+const projectPortfolioMeta = {
+  reviews: {
+    areas: ["content", "ai", "data", "ux"],
+    story: {
+      main: "I redesigned supplier review pages as <strong>evidence-led SEO assets</strong>, using public customer comments instead of a generic editorial opinion format.",
+      problem: "The SERP showed that users often trusted forums, Reddit threads or Facebook discussions more than standard review pages, both for us and for competitors.",
+      analysis: "I read that as a search-intent signal: users wanted <strong>human proof</strong>. The solution was to scrape, clean and cluster comments, then connect each cluster to scores and WordPress-ready sections.",
+      insight: "The page had to serve two paths: quick comparison for horizontal users, and deeper cluster exploration for users focused on one supplier.",
+      output: "Final output: intro/body HTML demos, weighted scoring logic, sentiment clusters and a percentage-only GSC trend view for the 17-page review cluster."
+    }
+  },
+  offers: {
+    areas: ["content", "data", "ux"],
+    story: {
+      main: "I built supplier offer pages for high-intent energy searches where users need prices, conditions and activation context quickly.",
+      problem: "Offer pages can easily become thin or repetitive because many suppliers use similar pricing language, FAQ patterns and commercial claims.",
+      analysis: "The approach was to combine keyword checks, source data, differentiation reports and reusable HTML modules so each page had a clear reason to exist.",
+      insight: "The strongest pages were not only descriptions of an offer; they helped users understand what changed, what to compare and what to check before activating.",
+      output: "Final output: intro/body HTML pages, offer tables, price-history modules and a scalable structure for future Search Console performance slots."
+    }
+  },
+  sportelli: {
+    areas: ["local", "data", "ux"],
+    story: {
+      main: "I designed an interactive branch-map prototype to make a large local-SEO URL inventory easier to navigate.",
+      problem: "Flat branch lists are hard to use, and branch-intent traffic can be local, navigational or support-oriented rather than immediately commercial.",
+      analysis: "I connected sitemap/crawl status, branch data and geographic normalization to decide which URLs could become useful, crawlable destinations.",
+      insight: "The map only has SEO value if the interface exposes real links and helps users filter local intent before pushing a generic conversion path.",
+      output: "Final output: a non-implemented but fully reasoned map prototype with region/city/provider logic and a publishable HTML/CSS/JS direction."
+    }
+  },
+  summary: {
+    areas: ["content", "ux"],
+    story: {
+      main: "I created compact review-summary blocks for supplier mother pages, connecting existing pages to the new review ecosystem.",
+      problem: "Mother pages could be important SEO assets but lacked visible review proof, making internal links toward review pages less compelling.",
+      analysis: "The block needed to act as a soft revamp: add score, rank, selected real comments and a CTA without rewriting the whole page.",
+      insight: "Internal linking works better when the link is attached to a user reason, not just inserted for crawlability.",
+      output: "Final output: reusable review-summary HTML blocks with comment cards, score/rank signals and links toward full reviews or rankings."
+    }
+  },
+  ranking: {
+    areas: ["content", "data", "ux"],
+    story: {
+      main: "I updated a provider-ranking page so the comparison was grounded in the same real-comment system used by individual reviews.",
+      problem: "A best-supplier page risks feeling generic if rankings are not supported by visible evidence or a clear scoring method.",
+      analysis: "The page needed a podium, a full ranking, score explanation and sentiment signals that made the ranking easier to trust.",
+      insight: "The strongest comparison page connects market-level intent with single-provider investigation through internal links and explainable scores.",
+      output: "Final output: updated ranking intro/body HTML with top-three logic, full provider ranking and sentiment/comment evidence."
+    }
+  },
+  "nrj2-analysis": {
+    areas: ["data", "local"],
+    story: {
+      main: "I worked on an SEO and business diagnosis for energia-luce.it, connecting organic visibility with URL families and business signals.",
+      problem: "Some pages can generate traffic or calls without producing useful commercial outcomes, especially when intent is local or support-oriented.",
+      analysis: "The work grouped URLs by family, joined SEO exports with crawl and KPI files, and compared SEO winners with business winners.",
+      insight: "Not all organic traffic has the same value. A page can look strong in Search Console while still needing a different UX or business expectation.",
+      output: "Final output: analysis logic for page-family prioritization, branch-map reasoning and future percentage-only reporting."
+    }
+  },
+  scraping: {
+    areas: ["ai", "data"],
+    story: {
+      main: "I built the data-collection layer behind the review system, focused on gathering usable public customer comments.",
+      problem: "Raw social data is noisy: spam, duplicates, vague mentions, off-topic posts and comments without decision value can weaken the final page.",
+      analysis: "The workflow used Codex, Claude Code and Apify-style instructions to define what to collect, exclude and preserve before analysis.",
+      insight: "Scraping was not the goal by itself. The real value was creating a clean, auditable evidence base for content, clustering and scoring.",
+      output: "Final output: source rules, normalized exports, pre-cleaning logic and a pipeline that feeds sentiment/cluster analysis."
+    }
+  },
+  offpage: {
+    areas: ["offpage", "content"],
+    story: {
+      main: "I wrote news-based off-page articles designed for outreach and backlink acquisition toward priority pages.",
+      problem: "Backlink content can become weak or promotional if it is not connected to real news, reliable facts and natural anchors.",
+      analysis: "The workflow started from news research, extracted usable facts, then shaped short articles with controlled links from an approved whitelist.",
+      insight: "Good off-page work sits between editorial judgment and link strategy: the article has to be useful before it can support SEO.",
+      output: "Final output: outreach-ready article structures, source checks, anchor logic and internal-link selection rules."
+    }
+  },
+  "social-media": {
+    areas: ["social"],
+    story: {
+      main: "I supported social media and event communication for Ladywoods / BGSA, mainly through live content and documentation.",
+      problem: "Event content has to be produced quickly while still being useful for promotion, archive and partner communication.",
+      analysis: "The work required adapting formats across photos, videos, reels and post-event material while also supporting event logistics.",
+      insight: "This experience adds a practical content-distribution layer to the SEO profile: audience, format and context matter.",
+      output: "Final output: a secondary portfolio area ready for future channel screenshots, content examples and performance indicators."
+    }
+  },
+  creator: {
+    areas: ["social", "content"],
+    story: {
+      main: "I include independent creator work because it shows long-term audience thinking across gaming and football communities.",
+      problem: "Content has to answer recurring questions, hold attention and adapt to platform behavior, not only exist as a finished post.",
+      analysis: "The work involved tutorials, analysis, news and interviews, with feedback loops from comments, retention and platform metrics.",
+      insight: "Community intent and search intent often overlap: both require understanding what people are really trying to solve.",
+      output: "Final output: a broader digital profile showing publishing consistency, audience analytics and content iteration."
+    }
+  }
+};
+
+projects.forEach((project) => {
+  Object.assign(project, projectPortfolioMeta[project.id] || {});
+});
+
 projects.sort((a, b) => projectOrder.indexOf(a.id) - projectOrder.indexOf(b.id));
 
 let activeProjectId = projects[0].id;
 let activeDemoIndex = 0;
+let activeProjectFilter = "all";
 
 const cvToggle = document.querySelector("#cvToggle");
 const cvPanel = document.querySelector("#cvPanel");
@@ -427,6 +546,8 @@ const homeView = document.querySelector("#homeView");
 const projectView = document.querySelector("#projectView");
 const backButton = document.querySelector("#backButton");
 const projectGrid = document.querySelector("#projectGrid");
+const projectFilters = document.querySelector("#projectFilters");
+const scrollProgress = document.querySelector("#scrollProgress");
 const detailCategory = document.querySelector("#detailCategory");
 const detailTitle = document.querySelector("#detailTitle");
 const detailSummary = document.querySelector("#detailSummary");
@@ -460,6 +581,80 @@ const exampleLink = document.querySelector("#exampleLink");
 const examplePath = document.querySelector("#examplePath");
 const demoFrame = document.querySelector("#demoFrame");
 let activeChartMode = "both";
+let revealObserver;
+
+const revealSelectors = [
+  ".profile-hero",
+  ".mini-cv div",
+  ".cv-panel",
+  ".resume-item",
+  ".projects-section",
+  ".project-filter-bar",
+  ".project-box",
+  ".project-page-head",
+  ".project-jump-nav",
+  ".story-panel",
+  ".detail-section",
+  ".deep-dive",
+  ".seo-metric",
+  ".callout-card",
+  ".support-card",
+  ".example-area",
+  ".performance-comparison article",
+  ".top-pages-list article",
+  ".process-flow article",
+  ".formula-grid article",
+  ".user-path-card"
+];
+
+function updateScrollProgress() {
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+  scrollProgress?.style.setProperty("--progress", `${clamp(progress, 0, 1) * 100}%`);
+}
+
+function ensureRevealObserver() {
+  if (revealObserver || !("IntersectionObserver" in window)) {
+    return;
+  }
+
+  revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      entry.target.classList.add("is-revealed");
+      revealObserver.unobserve(entry.target);
+    });
+  }, {
+    rootMargin: "0px 0px -8% 0px",
+    threshold: 0.08
+  });
+}
+
+function refreshScrollReveal(scope = document) {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  ensureRevealObserver();
+
+  scope.querySelectorAll(revealSelectors.join(",")).forEach((element, index) => {
+    if (element.closest("[hidden]")) {
+      return;
+    }
+
+    element.classList.add("reveal-on-scroll");
+    if (!element.style.getPropertyValue("--reveal-index")) {
+      element.style.setProperty("--reveal-index", index % 8);
+    }
+
+    if (reduceMotion || !revealObserver) {
+      element.classList.add("is-revealed");
+      return;
+    }
+
+    revealObserver.observe(element);
+  });
+}
 
 function getActiveProject() {
   return projects.find((project) => project.id === activeProjectId) || projects[0];
@@ -479,6 +674,10 @@ function setViewFromHash() {
     projectView.hidden = false;
     renderProjectDetail(getActiveProject());
     window.scrollTo({ top: 0, behavior: "auto" });
+    requestAnimationFrame(() => {
+      refreshScrollReveal(projectView);
+      updateScrollProgress();
+    });
     return;
   }
 
@@ -486,16 +685,66 @@ function setViewFromHash() {
   projectView.hidden = true;
   demoFrame.src = "about:blank";
   renderProjectGrid();
+  requestAnimationFrame(() => {
+    refreshScrollReveal(homeView);
+    updateScrollProgress();
+  });
+}
+
+function getAreaLabel(areaId) {
+  return projectFilterOptions.find((option) => option.id === areaId)?.label || areaId;
+}
+
+function getFilteredProjects() {
+  if (activeProjectFilter === "all") {
+    return projects;
+  }
+
+  return projects.filter((project) => project.areas?.includes(activeProjectFilter));
+}
+
+function renderProjectFilters() {
+  projectFilters.innerHTML = projectFilterOptions.map((option) => {
+    const count = option.id === "all"
+      ? projects.length
+      : projects.filter((project) => project.areas?.includes(option.id)).length;
+
+    return `
+      <button
+        class="${activeProjectFilter === option.id ? "is-active" : ""}"
+        type="button"
+        data-project-filter="${option.id}"
+        aria-pressed="${activeProjectFilter === option.id}"
+      >
+        <span>${option.label}</span>
+        <strong>${count}</strong>
+      </button>
+    `;
+  }).join("");
+
+  projectFilters.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", () => {
+      activeProjectFilter = button.dataset.projectFilter;
+      renderProjectFilters();
+      renderProjectGrid();
+      requestAnimationFrame(() => refreshScrollReveal(projectGrid));
+    });
+  });
 }
 
 function renderProjectGrid() {
-  projectGrid.innerHTML = projects.map((project) => `
-    <a class="project-box" href="#project/${project.id}" aria-label="Open ${project.title}">
+  const visibleProjects = getFilteredProjects();
+
+  projectGrid.innerHTML = visibleProjects.map((project, index) => `
+    <a class="project-box" href="#project/${project.id}" aria-label="Open ${project.title}" style="--reveal-index:${index}">
+      <span class="project-box__index">${String(index + 1).padStart(2, "0")}</span>
       <span class="project-box__category">${project.category}</span>
       <strong>${project.shortTitle}</strong>
       <span class="project-box__summary">${project.summary.replace(/<[^>]*>/g, "")}</span>
       <span class="project-box__footer">
-        <span>${project.status}</span>
+        <span class="project-area-tags">
+          ${(project.areas || []).map((area) => `<i>${getAreaLabel(area)}</i>`).join("")}
+        </span>
         <span>Open</span>
       </span>
     </a>
@@ -1071,6 +1320,31 @@ function hideChartTooltip() {
   performanceChart.querySelector(".chart-focus")?.classList.add("is-hidden");
 }
 
+function renderProjectStory(project) {
+  if (!project.story) {
+    return project.explanation;
+  }
+
+  const storyItems = [
+    ["Main story", project.story.main],
+    ["Problem", project.story.problem],
+    ["My analysis", project.story.analysis],
+    ["Core insight", project.story.insight],
+    ["Final output", project.story.output]
+  ];
+
+  return `
+    <div class="project-summary-story">
+      ${storyItems.map(([label, body]) => `
+        <article>
+          <span>${label}</span>
+          <p>${body}</p>
+        </article>
+      `).join("")}
+    </div>
+  `;
+}
+
 function renderProjectDetail(project) {
   const performanceDataset = getPerformanceDataset(project);
 
@@ -1082,7 +1356,7 @@ function renderProjectDetail(project) {
   dataEvidenceSection.hidden = Boolean(project.hideKeyNumbers);
   snapshotSection.hidden = Boolean(project.hideSnapshot);
   detailExplanation.innerHTML = `
-    ${project.explanation}
+    ${renderProjectStory(project)}
     ${project.summaryPoints?.length ? `
       <ul class="summary-points">
         ${project.summaryPoints.map((point) => `<li>${point}</li>`).join("")}
@@ -1114,6 +1388,7 @@ function renderProjectDetail(project) {
   renderPerformance(project, performanceDataset);
   renderFutureData(project, performanceDataset);
   renderDemos(project);
+  requestAnimationFrame(() => refreshScrollReveal(projectView));
 }
 
 function renderDemos(project) {
@@ -1153,6 +1428,9 @@ cvToggle.addEventListener("click", () => {
   cvPanel.toggleAttribute("hidden", !willOpen);
   cvToggle.setAttribute("aria-expanded", String(willOpen));
   cvToggle.textContent = willOpen ? "Close full CV" : "Open full CV";
+  if (willOpen) {
+    requestAnimationFrame(() => refreshScrollReveal(cvPanel));
+  }
 });
 
 backButton.addEventListener("click", () => {
@@ -1162,6 +1440,11 @@ backButton.addEventListener("click", () => {
 });
 
 window.addEventListener("hashchange", setViewFromHash);
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+window.addEventListener("resize", updateScrollProgress);
 
+renderProjectFilters();
 renderProjectGrid();
 setViewFromHash();
+refreshScrollReveal();
+updateScrollProgress();
