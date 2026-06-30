@@ -93,39 +93,40 @@ const projects = [
     shortTitle: "Offer Sheets",
     category: "High-intent SEO pages",
     status: "Intro + body HTML",
-    summary: "SEO landing pages for <strong>specific energy offers</strong>, built around price, conditions, supplier data and reusable HTML modules.",
-    explanation: `<p>These pages target commercial searches where users are comparing or looking for a specific energy offer. Each page explains <strong>price, conditions, activation details, supplier context and practical pros/cons</strong> in a structure that can be inserted into WordPress.</p><p>The work is both editorial and technical: the page has to rank, answer high-intent questions and stay maintainable when offers or prices change.</p>`,
-    summaryPoints: ["Built high-intent offer pages", "Structured price and condition modules", "Supported refreshes through offer-change tracking"],
+    summary: "SEO landing pages for <strong>specific energy offers</strong>, built around <strong>transactional search intent</strong>, price context, supplier data and reusable HTML modules.",
+    explanation: `<p>This project covered <strong>91 supplier offer sheets</strong>. The pages target <strong>commercial searches</strong> where users are close to comparing, switching or subscribing to a specific energy offer, so each page needed to explain <strong>price, conditions, activation details, supplier context and practical pros/cons</strong> in a WordPress-ready structure.</p><p>Before mid-April, offer sheets were a more <strong>occasional / secondary-priority</strong> task. From mid-April to the end of June, the operating target became roughly <strong>two new or revamped offer pages per day</strong>; from early May, the work focused more clearly on <strong>optimization</strong>: price-trend modules, cleaner H2 structures, AI-assisted deduplication, reduced spammy headings and richer comparison content.</p>`,
+    summaryPoints: [],
     metrics: [
-      ["50", "supplier offer pages in the CV"],
+      ["91", "supplier offer sheets in the project"],
       ["% only", "public performance shown as relative trends"],
       ["3,515", "changed offers tracked"]
     ],
     callouts: [
-      ["Pages", "<strong>50 offer pages</strong> created around supplier and tariff intent."],
+      ["Pages", "<strong>91 offer pages</strong> created or revamped around supplier and tariff intent."],
       ["Tracking", "Offer changes were monitored to support future refreshes."],
       ["SEO role", "Pages support <strong>commercial-intent queries</strong> and internal linking."]
     ],
     deepDive: [
       {
         title: "Why the pages were created",
-        body: `<p>Competitors such as Segugio already had dedicated offer pages, and the format matched a clear user need. Someone searching an offer name usually wants <strong>price, conditions, activation details, tariff rules and comparison context</strong>, not a generic supplier description.</p><p>The SEO risk was that many offer pages can become very similar: same supplier vocabulary, same price language, same FAQ and same internal links. The project therefore needed a scalable system that could target <strong>commercial-intent queries</strong> while avoiding thin, duplicated pages.</p><p>The page format also helped connect the wider supplier ecosystem: <strong>offer sheets</strong>, supplier pages, review pages and comparison pages could all reinforce the same provider entity.</p>`
+        body: `<p>The starting point was a <strong>competitor gap</strong>. Competitors already had dedicated pages for specific energy offers, while we did not cover many of those <strong>transactional queries</strong> with a focused page.</p><p>That mattered because a user searching for an offer name is usually close to action: they are <strong>comparing tariffs</strong>, checking conditions or deciding whether to subscribe. A generic supplier page could not answer that intent as precisely as a dedicated offer sheet.</p><p>The objective was not just to copy the competitor format. The page had to be <strong>more useful and visually clearer</strong>: stronger H2 structure, cleaner offer tables, practical decision sections and unique content such as a <strong>price-trend/history module</strong> that explains how the offer cost moved over time.</p>`
       },
       {
         title: "How we worked: structure and data",
-        body: `<p>The workflow combined <strong>keyword pre-analysis</strong>, data collection and a repeatable HTML architecture. Before generating a page, the process checked whether target queries were already covered by another Papernest URL, then produced a <strong>Differentiation Report</strong> to avoid copying the same H2, FAQ, anchors and content angle across the offer cluster.</p><div class="process-flow"><article><span>Intent</span><p>Validate branded and commercial keywords, check GSC cannibalization risk and decide how the page should differ from existing supplier or offer URLs.</p></article><article><span>Data</span><p>Collect offer facts from sources such as ARERA exports, supplier pages, PUN/PSV context and internal registries, without inventing missing prices or conditions.</p></article><article><span>Build</span><p>Create separate <strong>intro</strong> and <strong>body</strong> HTML with offer tables, practical explanations, FAQs, CTAs, internal links and WordPress-compatible modules.</p></article><article><span>Validate</span><p>Run structural checks, dedup checks, link checks and Italian proofreading so the page is specific, readable and safe to publish.</p></article></div><p>A key module was the <strong>price-history section</strong>: it uses historical offer data to explain whether the estimated monthly cost is moving up, down or staying stable. This turns the page from a static offer sheet into a more useful decision aid.</p>`
+        body: `<p>The workflow combined <strong>keyword pre-analysis</strong>, data collection and a repeatable HTML architecture. Before generating a page, the process checked whether target queries were already covered by another Papernest URL, then produced a <strong>Differentiation Report</strong> to avoid copying the same H2, FAQ, anchors and content angle across the offer cluster.</p><div class="process-flow"><article><span>Intent</span><p>Validate <strong>branded and commercial keywords</strong>, check GSC cannibalization risk and decide how the page should differ from existing supplier or offer URLs.</p></article><article><span>Data</span><p>Collect offer facts from sources such as <strong>ARERA exports</strong>, supplier pages, PUN/PSV context and internal registries, without inventing missing prices or conditions.</p></article><article><span>Build</span><p>Create separate <strong>intro</strong> and <strong>body</strong> HTML with offer tables, practical explanations, FAQs, CTAs, internal links and WordPress-compatible modules.</p></article><article><span>Validate</span><p>Run structural checks, <strong>dedup checks</strong>, link checks and Italian proofreading so the page is specific, readable and safe to publish.</p></article></div><p>From early May, the optimization work became more deliberate: adding the <strong>price-history section</strong>, using AI-assisted checks to avoid duplicated content, removing weak or spammy H2 patterns and making the page more complete than a standard offer description.</p>`
       },
       {
         title: "How it helps users",
         body: `<p>The page helps users compare an offer without jumping between supplier websites, generic articles and price tables. It centralizes the main decision points: <strong>how much it costs, what conditions apply, who it fits, what changed over time and what to check before activating</strong>.</p><p>The price-history module is especially useful because it gives context: for fixed offers, it explains that the public offer version can change for new activations without changing already signed contracts; for indexed offers, it can separate the index movement from the all-in monthly estimate.</p><p>From an SEO perspective, these sheets become a structured layer of a wider supplier database: <strong>offer pages, review pages, mother pages and comparison pages</strong> can all connect around the same provider and intent.</p>`
       }
     ],
+    hideKeyNumbers: true,
     performanceKey: "offers",
     performancePlaceholder: "Once you provide the GSC cluster export, this panel can show <strong>percentage-only visibility, click-efficiency and position movements</strong> for all offer pages created or refreshed.",
     urlPlaceholder: "Future URL inventory: offer pages grouped by supplier, offer type and creation/modification date.",
     demos: [
-      { label: "Offer intro", path: "demos/offer-next-energy-intro.html" },
-      { label: "Offer body", path: "demos/offer-next-energy-body.html" },
+      { label: "Pulsee Gas Relax intro", path: "demos/offer-pulsee-gas-relax-intro.html" },
+      { label: "Pulsee Gas Relax body", path: "demos/offer-pulsee-gas-relax-body.html" },
       { label: "Price history summary", path: "demos/price-history-summary.html" }
     ]
   },
@@ -419,15 +420,17 @@ const projectOrder = [
 
 const projectFilterOptions = [
   { id: "all", label: "Overview" },
-  { id: "content", label: "Content" },
-  { id: "technical", label: "Technical / AI" }
+  { id: "seo", label: "SEO" },
+  { id: "technical", label: "Technical" },
+  { id: "social", label: "Social Media" }
 ];
 
 const projectPortfolioMeta = {
   reviews: {
     visualTheme: "content-seo",
     icon: "★",
-    areas: ["content", "technical"],
+    areas: ["seo"],
+    topicTags: ["Sentiment", "AI workflow", "GSC"],
     cardSummary: "Review pages powered by real comments and scoring.",
     story: {
       main: "I redesigned supplier review pages as <strong>evidence-led SEO assets</strong>, using public customer comments instead of a generic editorial opinion format.",
@@ -440,20 +443,22 @@ const projectPortfolioMeta = {
   offers: {
     visualTheme: "content-seo",
     icon: "€",
-    areas: ["content"],
+    areas: ["seo"],
+    topicTags: ["UX", "AI workflow", "Price data"],
     cardSummary: "Offer pages with prices, context and HTML modules.",
     story: {
-      main: "I built supplier offer pages for high-intent energy searches where users need prices, conditions and activation context quickly.",
-      problem: "Offer pages can easily become thin or repetitive because many suppliers use similar pricing language, FAQ patterns and commercial claims.",
-      analysis: "The approach was to combine keyword checks, source data, differentiation reports and reusable HTML modules so each page had a clear reason to exist.",
-      insight: "The strongest pages were not only descriptions of an offer; they helped users understand what changed, what to compare and what to check before activating.",
-      output: "Final output: intro/body HTML pages, offer tables, price-history modules and a scalable structure for future Search Console performance slots."
+      main: "I built and revamped supplier offer pages for high-intent energy searches where users need prices, conditions and activation context quickly.",
+      problem: "There was a transactional SEO gap: competitors had dedicated offer pages, while many of our URLs did not yet target users searching specific tariffs before comparing or subscribing.",
+      analysis: "The solution was to create offer sheets that were not only present in the SERP, but stronger than standard competitor pages: clearer H2s, richer pricing context, cleaner HTML modules and unique price-trend content.",
+      insight: "The strongest offer pages work like decision tools, not simple descriptions: they help users understand the offer, compare it and decide what to check before activation.",
+      output: "Final output: 91 offer sheets, intro/body HTML pages, offer tables, price-history modules and a percentage-only Search Console recovery view."
     }
   },
   sportelli: {
     visualTheme: "technical-ai",
     icon: "⌖",
-    areas: ["technical"],
+    areas: ["seo"],
+    topicTags: ["Local SEO", "Map UX", "Crawl"],
     cardSummary: "Local map prototype from branch URL data.",
     story: {
       main: "I designed an interactive branch-map prototype to make a large local-SEO URL inventory easier to navigate.",
@@ -466,7 +471,8 @@ const projectPortfolioMeta = {
   summary: {
     visualTheme: "content-seo",
     icon: "↗",
-    areas: ["content"],
+    areas: ["seo"],
+    topicTags: ["Interlinking", "UX block", "HTML"],
     cardSummary: "Review blocks for mother pages and internal links.",
     story: {
       main: "I created compact review-summary blocks for supplier mother pages, connecting existing pages to the new review ecosystem.",
@@ -479,7 +485,8 @@ const projectPortfolioMeta = {
   ranking: {
     visualTheme: "content-seo",
     icon: "№",
-    areas: ["content", "technical"],
+    areas: ["seo"],
+    topicTags: ["Comparison", "Sentiment", "UX"],
     cardSummary: "Supplier ranking built from scores and sentiment.",
     story: {
       main: "I updated a provider-ranking page so the comparison was grounded in the same real-comment system used by individual reviews.",
@@ -493,6 +500,7 @@ const projectPortfolioMeta = {
     visualTheme: "technical-ai",
     icon: "◈",
     areas: ["technical"],
+    topicTags: ["Data analysis", "Crawl", "Business"],
     cardSummary: "SEO diagnosis across URL families and intent.",
     story: {
       main: "I worked on an SEO and business diagnosis for energia-luce.it, connecting organic visibility with URL families and business signals.",
@@ -506,6 +514,7 @@ const projectPortfolioMeta = {
     visualTheme: "technical-ai",
     icon: "⌁",
     areas: ["technical"],
+    topicTags: ["Scraping", "AI rules", "QA"],
     cardSummary: "Clean comment pipeline for review evidence.",
     story: {
       main: "I built the data-collection layer behind the review system, focused on gathering usable public customer comments.",
@@ -518,7 +527,8 @@ const projectPortfolioMeta = {
   offpage: {
     visualTheme: "content-seo",
     icon: "⇄",
-    areas: ["content"],
+    areas: ["seo"],
+    topicTags: ["Off-page", "Backlinks", "AI draft"],
     cardSummary: "News-based articles for outreach and backlinks.",
     story: {
       main: "I wrote news-based off-page articles designed for outreach and backlink acquisition toward priority pages.",
@@ -531,7 +541,8 @@ const projectPortfolioMeta = {
   "social-media": {
     visualTheme: "social-content",
     icon: "●",
-    areas: ["content"],
+    areas: ["social"],
+    topicTags: ["Social", "Events", "Video"],
     cardSummary: "Event and social content for Ladywoods / BGSA.",
     story: {
       main: "I supported social media and event communication for Ladywoods / BGSA, mainly through live content and documentation.",
@@ -544,7 +555,8 @@ const projectPortfolioMeta = {
   creator: {
     visualTheme: "social-content",
     icon: "▶",
-    areas: ["content"],
+    areas: ["social"],
+    topicTags: ["Content", "Community", "Analytics"],
     cardSummary: "Creator work across communities and formats.",
     story: {
       main: "I include independent creator work because it shows long-term audience thinking across gaming and football communities.",
@@ -590,6 +602,7 @@ const performancePeriod = document.querySelector("#performancePeriod");
 const performanceNarrative = document.querySelector("#performanceNarrative");
 const performanceBaselineLabel = document.querySelector("#performanceBaselineLabel");
 const performanceLegendSplit = document.querySelector("#performanceLegendSplit");
+const performanceLegendCoreItem = document.querySelector("#performanceLegendCoreItem");
 const performanceChartMode = document.querySelector("#performanceChartMode");
 const performanceChart = document.querySelector("#performanceChart");
 const chartTooltip = document.querySelector("#chartTooltip");
@@ -778,8 +791,8 @@ function renderProjectGrid() {
       <strong>${project.shortTitle}</strong>
       <span class="project-box__summary">${project.cardSummary || project.summary.replace(/<[^>]*>/g, "")}</span>
       <span class="project-box__footer">
-        <span class="project-area-tags">
-          ${(project.areas || []).map((area) => `<i>${getAreaLabel(area)}</i>`).join("")}
+        <span class="project-topic-tags">
+          ${(project.topicTags || project.areas || []).slice(0, 3).map((tag) => `<i>${escapeHtml(tag)}</i>`).join("")}
         </span>
         <span>Open</span>
       </span>
@@ -887,9 +900,9 @@ function renderProjectJumpNav(project, dataset) {
     ["Deep dive", "sectionDeepDive"],
     ...(!project.hideKeyNumbers ? [["Key numbers", "sectionEvidence"]] : []),
     ...(dataset ? [["GSC trend", "sectionPerformance"]] : []),
-    ["URLs", "sectionInventory"],
     ...(!project.hideSnapshot ? [["Snapshot", "sectionSnapshot"]] : []),
-    ...(project.demos.length ? [["HTML demo", "sectionExamples"]] : [])
+    ...(project.demos.length ? [["HTML demo", "sectionExamples"]] : []),
+    ["URLs", "sectionInventory"]
   ];
 
   projectJumpNav.innerHTML = `
@@ -926,6 +939,7 @@ function renderPerformance(project, dataset) {
   performancePeriod.textContent = dataset.source.dateRange;
   performanceBaselineLabel.textContent = dataset.chartBaseline?.label || "Percentage baseline";
   performanceLegendSplit.textContent = dataset.update?.legendLabel || dataset.update?.chartLabel || dataset.update?.label || "Performance split";
+  performanceLegendCoreItem.hidden = !dataset.events?.some((event) => event.kind === "google-core");
   chartFootnote.textContent = dataset.chartFootnote || "Hover or tap the chart to inspect each date. The public view uses percentage movement only, not raw Search Console values.";
   performanceNarrative.innerHTML = `
     <p>${dataset.narrative.summary}</p>
@@ -992,8 +1006,8 @@ function renderTopPages(dataset, period) {
     : [];
   const activeLabel = {
     total: "Total period",
-    before: "Before update",
-    after: "After update"
+    before: "Before",
+    after: "After"
   }[period];
 
   topPagesPanel.innerHTML = `
@@ -1002,11 +1016,11 @@ function renderTopPages(dataset, period) {
         <p class="eyebrow">${escapeHtml(panel.eyebrow || "Top contributing pages")}</p>
         <h3>${escapeHtml(panel.title || "Who carried the review cluster")}</h3>
       </div>
-      <div class="top-pages-controls" aria-label="Top pages period filter">
+      ${hasSplit ? `<div class="top-pages-controls" aria-label="Top pages period filter">
         <button class="${period === "total" ? "is-active" : ""}" type="button" data-top-period="total" aria-pressed="${period === "total"}">Total period</button>
         <button class="${period === "before" ? "is-active" : ""}" type="button" data-top-period="before" aria-pressed="${period === "before"}">Before</button>
         <button class="${period === "after" ? "is-active" : ""}" type="button" data-top-period="after" aria-pressed="${period === "after"}">After</button>
-      </div>
+      </div>` : ""}
     </div>
     <p class="top-pages-note">${getTopPagesNote(dataset, period)}</p>
     ${topPages.length ? `<div class="top-pages-list" aria-label="${activeLabel}">
@@ -1079,8 +1093,8 @@ function renderFutureData(project, dataset) {
 function renderPerformanceChart(dataset) {
   const data = dataset.chart;
   const width = 940;
-  const height = 360;
-  const margin = { top: 30, right: 76, bottom: 46, left: 58 };
+  const height = 390;
+  const margin = { top: 62, right: 76, bottom: 48, left: 62 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
   const baseline = margin.top + innerHeight;
@@ -1093,11 +1107,18 @@ function renderPerformanceChart(dataset) {
   const minValue = Math.min(0, ...allValues);
   const maxValue = Math.max(...allValues);
   const padding = Math.max((maxValue - minValue) * .14, .2);
-  const yMin = Math.max(-1, minValue - padding);
+  const yMin = minValue - padding;
   const yMax = Math.max(.5, maxValue + padding);
 
   const xScale = (index) => margin.left + (index / (data.length - 1)) * innerWidth;
   const yScale = (value) => baseline - ((value - yMin) / (yMax - yMin)) * innerHeight;
+  const dateStart = new Date(`${data[0].date}T00:00:00`).getTime();
+  const dateEnd = new Date(`${data[data.length - 1].date}T00:00:00`).getTime();
+  const dateToX = (dateValue) => {
+    const time = new Date(`${dateValue}T00:00:00`).getTime();
+    const ratio = dateEnd === dateStart ? 0 : (time - dateStart) / (dateEnd - dateStart);
+    return margin.left + clamp(ratio, 0, 1) * innerWidth;
+  };
 
   const clickPoints = data.map((row, index) => ({
     x: xScale(index),
@@ -1113,8 +1134,6 @@ function renderPerformanceChart(dataset) {
   }));
   const splitIndex = data.findIndex((row) => row.phase === "after");
   const splitX = xScale(splitIndex);
-  const beforePhaseLabel = dataset.periods?.before?.shortLabel || dataset.periods?.before?.label || "Before";
-  const afterPhaseLabel = dataset.periods?.after?.shortLabel || dataset.periods?.after?.label || "After";
 
   performanceChart.innerHTML = "";
   performanceChart.append(createSvgElement("title", {}));
@@ -1135,23 +1154,9 @@ function renderPerformanceChart(dataset) {
       width: width - margin.right - splitX,
       height: innerHeight
     }));
-
-    const beforeLabel = createSvgElement("text", {
-      class: "chart-phase-label",
-      x: margin.left + 12,
-      y: margin.top + 18
-    });
-    beforeLabel.textContent = beforePhaseLabel;
-    performanceChart.append(beforeLabel);
-
-    const afterLabel = createSvgElement("text", {
-      class: "chart-phase-label chart-phase-label--after",
-      x: splitX + 12,
-      y: margin.top + 18
-    });
-    afterLabel.textContent = afterPhaseLabel;
-    performanceChart.append(afterLabel);
   }
+
+  renderChartEvents(dataset, dateToX, margin, baseline, innerHeight, width);
 
   [0, .25, .5, .75, 1].forEach((ratio) => {
     const y = baseline - ratio * innerHeight;
@@ -1207,23 +1212,6 @@ function renderPerformanceChart(dataset) {
       class: "chart-line chart-line--clicks",
       d: pointsToPath(clickPoints)
     }));
-  }
-
-  if (splitIndex > 0) {
-    performanceChart.append(createSvgElement("line", {
-      class: "chart-update-line",
-      x1: splitX,
-      x2: splitX,
-      y1: margin.top,
-      y2: baseline
-    }));
-    const updateLabel = createSvgElement("text", {
-      class: "chart-update-label",
-      x: splitX + 8,
-      y: margin.top + 14
-    });
-    updateLabel.textContent = dataset.update?.chartLabel || "update";
-    performanceChart.append(updateLabel);
   }
 
   if (showClicks) {
@@ -1307,6 +1295,60 @@ function renderPerformanceChart(dataset) {
   });
 }
 
+function renderChartEvents(dataset, dateToX, margin, baseline, innerHeight, width) {
+  const events = dataset.events || [];
+
+  events.forEach((event, index) => {
+    const lane = event.lane ?? (event.kind === "google-core" ? 0 : 1);
+    const labelY = 18 + lane * 18;
+
+    if (event.type === "range") {
+      const x1 = dateToX(event.start);
+      const x2 = dateToX(event.end);
+      const x = Math.min(x1, x2);
+      const rangeWidth = Math.max(Math.abs(x2 - x1), 2);
+
+      performanceChart.append(createSvgElement("rect", {
+        class: `chart-event-range chart-event-range--${event.kind || "context"}`,
+        x,
+        y: margin.top,
+        width: rangeWidth,
+        height: innerHeight
+      }));
+
+      const label = createSvgElement("text", {
+        class: `chart-event-label chart-event-label--${event.kind || "context"}`,
+        x: clamp(x + rangeWidth / 2, margin.left + 24, width - margin.right - 24),
+        y: labelY,
+        "text-anchor": "middle"
+      });
+      label.textContent = event.label;
+      performanceChart.append(label);
+      return;
+    }
+
+    const x = dateToX(event.date);
+    performanceChart.append(createSvgElement("line", {
+      class: `chart-event-marker chart-event-marker--${event.kind || "context"}`,
+      x1: x,
+      x2: x,
+      y1: margin.top,
+      y2: baseline
+    }));
+
+    const labelAnchor = x > width - margin.right - 96 ? "end" : "start";
+    const labelOffset = labelAnchor === "end" ? -8 : 8;
+    const label = createSvgElement("text", {
+      class: `chart-event-label chart-event-label--${event.kind || "context"}`,
+      x: x + labelOffset,
+      y: labelY,
+      "text-anchor": labelAnchor
+    });
+    label.textContent = event.label;
+    performanceChart.append(label);
+  });
+}
+
 function showChartTooltip(point, dataset) {
   const chartShell = performanceChart.closest(".chart-shell");
   const chartRect = chartShell.getBoundingClientRect();
@@ -1364,7 +1406,7 @@ function renderProjectStory(project) {
   }
 
   const storyItems = [
-    ["Main story", project.story.main],
+    ["Summary", project.story.main],
     ["Problem", project.story.problem],
     ["My analysis", project.story.analysis],
     ["Core insight", project.story.insight],

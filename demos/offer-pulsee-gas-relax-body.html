@@ -1,0 +1,1335 @@
+<style>
+  .pn-testo *,
+  .pn-testo *::before,
+  .pn-testo *::after {
+    box-sizing: border-box
+  }
+
+  .pn-testo {
+    font-family: inherit;
+    color: #2B2B2B;
+    line-height: 1.55
+  }
+
+  .pn-testo .landing-section,
+  .pn-testo .editorial-section {
+    padding: 0;
+    margin: 0 0 38px
+  }
+
+  .pn-testo h2 {
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 22px;
+    color: #2B2B2B;
+    margin: 0 0 14px;
+    line-height: 1.25
+  }
+
+  .pn-testo h3 {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 17px;
+    color: #2B2B2B;
+    margin: 20px 0 8px
+  }
+
+  .pn-testo p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+    margin: 0 0 10px
+  }
+
+  .pn-testo strong {
+    color: #2B2B2B;
+    font-weight: 700
+  }
+
+  .pn-testo a {
+    color: #6C75F4;
+    text-decoration: underline
+  }
+
+  .pn-testo a.pn-btn-cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #00C5AF;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 6px;
+    text-decoration: none !important;
+    text-align: center
+  }
+
+  .pn-testo table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+    font-size: 14px
+  }
+
+  .pn-testo th {
+    padding: 13px 16px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 13px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    background: #6C75F4
+  }
+
+  .pn-testo td {
+    padding: 11px 16px;
+    color: #444;
+    line-height: 1.5;
+    vertical-align: top
+  }
+
+  .pn-testo td:first-child {
+    font-weight: 700;
+    color: #2B2B2B
+  }
+
+  .pn-testo .pn-table-fit-mobile table td:first-child {
+    width: 38%
+  }
+
+  .pn-testo .disclaimer {
+    font-size: 12px;
+    color: #5a5a5a;
+    padding: 12px 14px;
+    background: #EDE9FF;
+    border: 1px solid #D5CCFF;
+    border-radius: 8px;
+    font-style: italic;
+    line-height: 1.55;
+    margin-top: 14px
+  }
+
+  .pn-testo .pn-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 16px 0
+  }
+
+  .pn-testo .pn-table-fit-mobile {
+    margin: 16px 0
+  }
+
+  .pn-testo .pn-confronto-table {
+    min-width: 780px;
+    border-spacing: 0;
+    border: 1px solid #DDE2F7;
+    border-radius: 8px;
+    overflow: hidden
+  }
+
+  .pn-testo .pn-confronto-table td,
+  .pn-testo .pn-confronto-table th {
+    text-align: center;
+    border-bottom: 1px solid #EEF0FF
+  }
+
+  .pn-testo .pn-confronto-table td:first-child,
+  .pn-testo .pn-confronto-table th:first-child {
+    text-align: left
+  }
+
+  .pn-testo .pn-highlight-row td {
+    background: #F0F3FF;
+    font-weight: 700;
+    color: #2B2B2B
+  }
+
+  .pn-testo .pn-step-list {
+    list-style: none;
+    margin: 16px 0;
+    padding: 0
+  }
+
+  .pn-testo .pn-step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+    padding: 14px 16px;
+    background: #F8F9FF;
+    border: 1px solid #DDE2F7;
+    border-radius: 8px
+  }
+
+  .pn-testo .pn-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: #6C75F4;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px
+  }
+
+  .pn-testo .pn-step-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444
+  }
+
+  .pn-testo .pn-altre-desktop {
+    display: flex
+  }
+
+  .pn-testo .pn-altre-mobile {
+    display: none
+  }
+
+  .pn-testo .pn-profile-cards {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 16px 0
+  }
+
+  .pn-testo .pn-profile-card {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    min-width: 220px;
+    padding: 18px 16px;
+    background: linear-gradient(135deg, #F0F3FF 0%, #fff 72%);
+    border: 1px solid #DDE2F7;
+    border-left: 4px solid #6C75F4;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .04)
+  }
+
+  .pn-testo .pn-profile-card:nth-child(2) {
+    background: linear-gradient(135deg, #ECFDF5 0%, #fff 72%);
+    border-left-color: #00AFA0
+  }
+
+  .pn-testo .pn-profile-card:nth-child(3) {
+    background: linear-gradient(135deg, #FFF7ED 0%, #fff 72%);
+    border-left-color: #F59E0B
+  }
+
+  .pn-testo .pn-profile-card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 15px;
+    color: #2B2B2B;
+    margin-bottom: 8px
+  }
+
+  .pn-testo .pn-profile-card-title::before {
+    content: attr(data-icon);
+    width: 28px;
+    height: 28px;
+    background: #fff;
+    border: 1px solid #DDE2F7;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .06)
+  }
+
+  .pn-testo .pn-profile-card p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #444;
+    margin: 0
+  }
+
+  .pn-testo .pn-price-history {
+    background: #F8F9FF;
+    border: 1px solid #DDE2F7;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 34px
+  }
+
+  .pn-testo .pn-history-lead {
+    margin-bottom: 12px
+  }
+
+  .pn-testo .pn-history-kpis {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 12px 0
+  }
+
+  .pn-testo .pn-history-kpi {
+    flex: 1;
+    min-width: 170px;
+    background: #fff;
+    border: 1px solid #DDE2F7;
+    border-radius: 8px;
+    padding: 12px
+  }
+
+  .pn-testo .pn-history-kpi span {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: #63697F;
+    font-weight: 700
+  }
+
+  .pn-testo .pn-history-kpi strong {
+    display: block;
+    font-size: 22px;
+    color: #00AFA0;
+    margin: 4px 0
+  }
+
+  .pn-testo .pn-history-chart {
+    background: #fff;
+    border: 1px solid #DDE2F7;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 12px 0
+  }
+
+  .pn-testo .pn-history-canvas-wrap {
+    position: relative;
+    height: 280px;
+    min-height: 280px
+  }
+
+  .pn-testo .pn-history-fixed-box {
+    background: #fff;
+    border: 1px solid #DDE2F7;
+    border-left: 4px solid #6C75F4;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 12px 0
+  }
+
+  .pn-testo .pn-history-details {
+    background: #fff;
+    border: 1px solid #DDE2F7;
+    border-radius: 8px;
+    margin-top: 12px
+  }
+
+  .pn-testo .pn-history-details summary {
+    cursor: pointer;
+    padding: 12px 14px;
+    font-weight: 800;
+    color: #2B2B2B
+  }
+
+  .pn-testo .pn-history-details-inner {
+    padding: 0 12px 12px
+  }
+
+  .pn-testo .pn-history-mini-table {
+    border-spacing: 0;
+    width: 100%;
+    font-size: 13px
+  }
+
+  .pn-testo .pn-history-mini-table td {
+    border-bottom: 1px solid #EEF0FF;
+    vertical-align: middle;
+    padding: 9px 8px
+  }
+
+  .pn-testo .pn-delta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-weight: 800;
+    font-size: 12px;
+    min-width: 78px
+  }
+
+  .pn-testo .pn-delta-down {
+    background: #ECFDF5;
+    color: #007A70
+  }
+
+  .pn-testo .pn-delta-up {
+    background: #FFF1F2;
+    color: #BE123C
+  }
+
+  .pn-testo .pn-delta-flat {
+    background: #F5F5F4;
+    color: #63697F
+  }
+
+  @media(max-width:768px) {
+    .pn-testo .pn-altre-desktop {
+      display: none !important
+    }
+
+    .pn-testo .pn-altre-mobile {
+      display: flex !important
+    }
+
+    .pn-testo .pn-profile-cards {
+      flex-direction: column
+    }
+
+    .pn-testo .pn-profile-card {
+      flex: 0 0 auto;
+      min-height: 0
+    }
+
+    .pn-testo .pn-table-fit-mobile table {
+      font-size: 12px;
+      table-layout: fixed
+    }
+
+    .pn-testo .pn-table-fit-mobile td,
+    .pn-testo .pn-table-fit-mobile th {
+      padding: 8px 6px;
+      word-break: break-word
+    }
+
+    .pn-testo .pn-history-canvas-wrap {
+      height: 240px;
+      min-height: 240px
+    }
+
+    .pn-testo .pn-history-mini-table td {
+      vertical-align: middle;
+      text-align: center
+    }
+  }
+</style>
+<div class="pn-testo">
+
+  <section class="landing-section pn-price-history">
+    <h2>Quanto paghi mensilmente rispetto alle settimane precedenti</h2>
+    <p class="pn-history-lead">Il grafico mostra come cambia la stima mensile della componente gas di Gas Relax per un
+      profilo da 130 Smc al mese. Essendo un'offerta a prezzo fisso, lo storico riguarda le versioni disponibili per
+      nuove attivazioni: chi ha già firmato mantiene le condizioni sottoscritte fino alla scadenza. <strong>Nell'ultima
+        CTE Pulsee la stima scende rispetto alle versioni di marzo e giugno perché il prezzo gas fisso è passato a 0,501
+        €/Smc, mentre la quota vendita resta stabile.</strong></p>
+    <div class="pn-history-kpis">
+      <div class="pn-history-kpi"><span>Rispetto al picco del 31/03</span><strong>-18 €/mese</strong>
+        <p>su 130 Smc/mese, dalla versione più cara allo stato attuale.</p>
+      </div>
+      <div class="pn-history-kpi"><span>Rispetto al 01/06</span><strong>-7 €/mese</strong>
+        <p>la CTE del 23/06 alleggerisce la stima mensile.</p>
+      </div>
+      <div class="pn-history-kpi"><span>Impatto annuo potenziale</span><strong>-216 €/anno</strong>
+        <p>rispetto alla versione più alta osservata nello storico.</p>
+      </div>
+    </div>
+    <div class="pn-history-chart">
+      <div class="pn-history-canvas-wrap"><canvas id="chart-pulsee-gas-relax"></canvas></div>
+    </div>
+    <div class="pn-history-fixed-box"><strong>Quota vendita gas stabile:</strong> nel periodo analizzato resta pari a
+      144 €/anno, cioè 12 €/mese. Il cambio principale riguarda il prezzo fisso al Smc, non la quota commerciale.</div>
+    <details class="pn-history-details">
+      <summary>Dettaglio rilevazioni usate per il grafico</summary>
+      <div class="pn-history-details-inner">
+        <table class="pn-history-mini-table">
+          <tbody>
+            <tr>
+              <td>23/03/2026</td>
+              <td>0,593 €/Smc · stima 89 €/mese · scad. 26/03/2026</td>
+              <td><span class="pn-delta pn-delta-flat">base</span></td>
+            </tr>
+            <tr>
+              <td>31/03/2026</td>
+              <td>0,636 €/Smc · stima 95 €/mese · scad. 01/04/2026</td>
+              <td><span class="pn-delta pn-delta-up">↑ +6 €/mese</span></td>
+            </tr>
+            <tr>
+              <td>07/04/2026</td>
+              <td>0,612 €/Smc · stima 92 €/mese · scad. 12/04/2026</td>
+              <td><span class="pn-delta pn-delta-down">↓ -3 €/mese</span></td>
+            </tr>
+            <tr>
+              <td>13/04/2026</td>
+              <td>0,587 €/Smc · stima 88 €/mese · scad. 20/04/2026</td>
+              <td><span class="pn-delta pn-delta-down">↓ -3 €/mese</span></td>
+            </tr>
+            <tr>
+              <td>22/04/2026</td>
+              <td>0,540 €/Smc · stima 82 €/mese · scad. 27/04/2026</td>
+              <td><span class="pn-delta pn-delta-down">↓ -6 €/mese</span></td>
+            </tr>
+            <tr>
+              <td>04/05/2026</td>
+              <td>0,532 €/Smc · stima 81 €/mese · scad. 04/05/2026</td>
+              <td><span class="pn-delta pn-delta-down">↓ -1 €/mese</span></td>
+            </tr>
+            <tr>
+              <td>18/05/2026</td>
+              <td>0,547 €/Smc · stima 83 €/mese · scad. 25/05/2026</td>
+              <td><span class="pn-delta pn-delta-up">↑ +2 €/mese</span></td>
+            </tr>
+            <tr>
+              <td>01/06/2026</td>
+              <td>0,557 €/Smc · stima 84 €/mese · scad. 04/06/2026</td>
+              <td><span class="pn-delta pn-delta-up">↑ +1 €/mese</span></td>
+            </tr>
+            <tr>
+              <td>23/06/2026</td>
+              <td>0,501 €/Smc · stima 77 €/mese · scad. 30/06/2026</td>
+              <td><span class="pn-delta pn-delta-down">↓ -7 €/mese</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+    <p class="disclaimer">Stima indicativa su 1.560 Smc/anno, considerando prezzo gas e quota vendita commerciale. Il
+      costo finale in bolletta include anche trasporto, oneri, imposte, IVA ed eventuali servizi extra. Fonti: Portale
+      Offerte ARERA e documentazione Pulsee, consultati il 23/06/2026. Eventuali cambi futuri dipendono da rinnovo o
+      nuove condizioni alla scadenza, non da modifiche retroattive per clienti già attivi.</p>
+  </section>
+
+  <section class="editorial-section">
+    <h2>Costi e dettagli principali</h2>
+    <div class="pn-table-fit-mobile">
+      <table>
+        <thead>
+          <tr>
+            <th style="border-radius:6px 0 0 6px;text-align:center;">Voce</th>
+            <th style="border-radius:0 6px 6px 0;text-align:center;">Dettaglio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="background:#f8f9ff;border-radius:6px 0 0 6px;">Tipo offerta</td>
+            <td style="background:#f8f9ff;border-radius:0 6px 6px 0;">Gas naturale a prezzo fisso nel mercato libero
+            </td>
+          </tr>
+          <tr>
+            <td style="background:#eef0ff;border-radius:6px 0 0 6px;">Prezzo gas</td>
+            <td style="background:#eef0ff;border-radius:0 6px 6px 0;"><strong>0,501 €/Smc</strong> per i primi 24 mesi
+            </td>
+          </tr>
+          <tr>
+            <td style="background:#f8f9ff;border-radius:6px 0 0 6px;">Quota vendita gas</td>
+            <td style="background:#f8f9ff;border-radius:0 6px 6px 0;"><strong>144 €/anno</strong>, applicata in 12 rate
+              mensili</td>
+          </tr>
+          <tr>
+            <td style="background:#eef0ff;border-radius:6px 0 0 6px;">Dal 25° mese</td>
+            <td style="background:#eef0ff;border-radius:0 6px 6px 0;">PSBIL mensile + spread 0,072 €/Smc, quota vendita
+              gas invariata salvo nuove comunicazioni</td>
+          </tr>
+          <tr>
+            <td style="background:#f8f9ff;border-radius:6px 0 0 6px;">Validità offerta</td>
+            <td style="background:#f8f9ff;border-radius:0 6px 6px 0;">dal 23/06/2026 al 30/06/2026 nella CTE Pulsee
+              consultata</td>
+          </tr>
+          <tr>
+            <td style="background:#eef0ff;border-radius:6px 0 0 6px;">Codice ARERA</td>
+            <td style="background:#eef0ff;border-radius:0 6px 6px 0;">040505GSFML06XXPULSEEFIX77482606</td>
+          </tr>
+          <tr>
+            <td style="background:#f8f9ff;border-radius:6px 0 0 6px;">Servizio extra</td>
+            <td style="background:#f8f9ff;border-radius:0 6px 6px 0;">Gas Compensation opzionale a 5 €/mese: servizio
+              ambientale per compensare le emissioni associate al gas, se selezionato</td>
+          </tr>
+          <tr>
+            <td style="background:#eef0ff;border-radius:6px 0 0 6px;">Fornitore</td>
+            <td style="background:#eef0ff;border-radius:0 6px 6px 0;">Pulsee S.r.l., gruppo Axpo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  $IT_NRJ0_simulatore_bolletta_fullwidth$
+
+  <section class="landing-section">
+    <h2>Durata, ripensamento e servizi aggiuntivi</h2>
+    <p><strong>Gas Relax blocca il prezzo gas per 24 mesi</strong>, ma il contratto resta a durata indeterminata secondo
+      le CTE Pulsee. Per valutare anche il servizio del fornitore puoi leggere le <a
+        href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/recensioni/">recensioni Pulsee</a>,
+      tenendo separati i giudizi sull'assistenza dai dati economici dell'offerta.</p>
+    <h3>Prezzo fisso per 24 mesi e passaggio successivo</h3>
+    <p>Nei primi due anni la voce materia gas resta a <strong>0,501 €/Smc</strong>. Dal venticinquesimo mese la formula
+      indicata in CTE diventa PSBIL mensile + 0,072 €/Smc: per questo conviene segnare la scadenza e confrontare nuove
+      condizioni prima del rinnovo.</p>
+    <h3>Ripensamento entro 14 giorni e cambio fornitore</h3>
+    <p>Se sottoscrivi a distanza, puoi esercitare il <strong>diritto di ripensamento entro 14 giorni</strong> dalla
+      conclusione del contratto. Il cambio venditore non richiede interventi tecnici sul contatore e segue le regole
+      generali del <a href="https://www.papernest.it/luce-gas/operazioni/cambio-fornitore-luce-gas/">cambio fornitore
+        luce e gas</a>.</p>
+    <h3>Servizi opzionali e bollette stagionali</h3>
+    <p><strong>Gas Compensation è un servizio extra opzionale</strong> pensato per <strong>compensare le emissioni
+        associate ai consumi gas</strong>. Se lo selezioni, aggiunge <strong>5 €/mese</strong> e va letto fuori dal
+      prezzo gas base: non riduce il consumo in Smc e non modifica prezzo unitario o quota vendita. Lo stesso vale per
+      eventuali servizi accessori attivati in fase di sottoscrizione. La <strong>fatturazione gas Pulsee è
+        stagionale</strong>: può essere più frequente nei mesi freddi, quando i consumi crescono, e bimestrale negli
+      altri periodi secondo le FAQ ufficiali del fornitore.</p>
+  </section>
+
+  <section class="landing-section">
+    <h2>Opinioni degli utenti</h2>
+    <p><strong>Le recensioni utili per questa offerta vanno lette guardando due aspetti diversi:</strong> la
+      prevedibilità del prezzo fisso e la qualità della gestione digitale. Per un quadro più ampio puoi leggere anche le
+      <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/recensioni/">recensioni Pulsee</a>;
+      per problemi pratici o chiarimenti restano utili i <a
+        href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/numero-verde-contatti-assistenza/">contatti
+        Pulsee</a>.</p>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:14px;">
+      <div
+        style="background:#fff;border:1px solid #DDE2F7;border-radius:8px;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,.05);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;">
+          <p style="margin:0;font-size:14px;"><strong>Giulia P.</strong> &mdash; 15/04/2026</p><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/66/2024/02/5stars.webp"
+            alt="5 stelle su 5" width="80" height="16" loading="lazy" style="display:block;flex-shrink:0;">
+        </div>
+        <p style="font-size:14px;line-height:1.6;margin:0;color:#444;">Ho scelto Gas Relax per il riscaldamento
+          autonomo. Il prezzo a 0,501 €/Smc e la quota da 144 €/anno rendono semplice stimare la parte gas della
+          bolletta.</p>
+      </div>
+      <div
+        style="background:#fff;border:1px solid #DDE2F7;border-radius:8px;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,.05);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;">
+          <p style="margin:0;font-size:14px;"><strong>Marco T.</strong> &mdash; 02/05/2026</p><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/66/2024/02/4stars.webp"
+            alt="4 stelle su 5" width="80" height="16" loading="lazy" style="display:block;flex-shrink:0;">
+        </div>
+        <p style="font-size:14px;line-height:1.6;margin:0;color:#444;">Attivazione online lineare e documenti abbastanza
+          chiari. Avrei preferito più evidenza sul passaggio a PSBIL dopo 24 mesi, ma il blocco iniziale mi interessa.
+        </p>
+      </div>
+      <div
+        style="background:#fff;border:1px solid #DDE2F7;border-radius:8px;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,.05);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;">
+          <p style="margin:0;font-size:14px;"><strong>Francesca L.</strong> &mdash; 18/05/2026</p><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/66/2024/02/4stars.webp"
+            alt="4 stelle su 5" width="80" height="16" loading="lazy" style="display:block;flex-shrink:0;">
+        </div>
+        <p style="font-size:14px;line-height:1.6;margin:0;color:#444;">Con consumi intorno a 1.100 Smc/anno la quota
+          fissa pesa, ma almeno so cosa guardare: prezzo al Smc, quota vendita e durata delle condizioni.</p>
+      </div>
+      <div
+        style="background:#fff;border:1px solid #DDE2F7;border-radius:8px;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,.05);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;">
+          <p style="margin:0;font-size:14px;"><strong>Antonio C.</strong> &mdash; 04/06/2026</p><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/66/2024/02/3stars.webp"
+            alt="3 stelle su 5" width="80" height="16" loading="lazy" style="display:block;flex-shrink:0;">
+        </div>
+        <p style="font-size:14px;line-height:1.6;margin:0;color:#444;">Prezzo corretto, assistenza migliorabile. Ho
+          avuto un dubbio sulla prima bolletta e la risposta è arrivata dopo qualche giorno.</p>
+      </div>
+      <div
+        style="background:#fff;border:1px solid #DDE2F7;border-radius:8px;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,.05);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;">
+          <p style="margin:0;font-size:14px;"><strong>Elena R.</strong> &mdash; 17/06/2026</p><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/66/2024/02/4stars.webp"
+            alt="4 stelle su 5" width="80" height="16" loading="lazy" style="display:block;flex-shrink:0;">
+        </div>
+        <p style="font-size:14px;line-height:1.6;margin:0;color:#444;">Arrivavo da una tariffa variabile e volevo
+          stabilità. La stima su 130 Smc al mese mi aiuta a capire l'impatto prima dei mesi più freddi.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-section">
+    <h2>Offerte Pulsee da confrontare</h2>
+    <p><strong>Gas Relax ha senso soprattutto se vuoi bloccare la componente gas.</strong> Per una scelta più ampia puoi
+      guardare le <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/">altre offerte Pulsee
+        disponibili</a> e confrontare luce, gas e dual fuel dello stesso fornitore.</p>
+
+
+    <style>
+      .pn-body,
+      .pn-body *,
+      .pn-body *::before,
+      .pn-body *::after {
+        box-sizing: border-box;
+      }
+
+      .pn-body {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 8px 0 14px;
+      }
+
+      .pn-body .desktop-card {
+        display: flex !important;
+      }
+
+      .pn-body .mobile-card {
+        display: none !important;
+      }
+
+      @media (max-width: 640px) {
+
+        .pn-body .desktop-card,
+        .pn-body .pn-altre-desktop {
+          display: none !important;
+        }
+
+        .pn-body .mobile-card,
+        .pn-body .pn-altre-mobile {
+          display: flex !important;
+          width: 100% !important;
+          max-width: 360px !important;
+          margin: 20px auto !important;
+        }
+
+        .pn-body .mobile-card img,
+        .pn-body .pn-altre-mobile img {
+          max-width: 100% !important;
+          height: auto !important;
+        }
+
+        .pn-body .mobile-card a,
+        .pn-body .pn-altre-mobile a {
+          width: 100% !important;
+        }
+
+        .pn-body .mobile-card a>div,
+        .pn-body .pn-altre-mobile a>div {
+          width: 100% !important;
+          white-space: nowrap !important;
+        }
+      }
+    </style>
+
+    <div class="pn-body">
+
+      <!-- PULSEE GAS RELAX - DESKTOP -->
+      <div class="desktop-card"
+        style="display: flex; align-items: flex-start; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 15px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 900px; margin: 20px auto; font-family: Arial, sans-serif; gap: 15px; line-height: 1.2;">
+        <div
+          style="width: 25%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 10px;">
+          <div style="height: 50px; display: flex; align-items: center;"><img
+              src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/pulsee-luce-e-gas-logo.png"
+              alt="Logo Pulsee" style="max-height: 100%; max-width: 100%; object-fit: contain;" /></div>
+          <div
+            style="display:inline-flex;align-items:center;gap:6px;padding:5px 9px;background:#fff8db;border:1px solid #f0d275;border-radius:9999px;color:#3f3600;font-size:13px;line-height:1;white-space:nowrap;">
+            ⭐ <b>4,2 / 5</b><span>94 voti</span></div>
+          <div style="font-size: 13px; color: #555;">Pulsee</div>
+          <div style="font-size: 20px; font-weight: bold;">Pulsee Gas Relax</div>
+        </div>
+        <div style="width: 45%; font-size: 14px; line-height: 1.35; margin-top: 5px; margin-bottom: 5px;">
+          <p style="margin: 0 0 5px;"><b>Prezzo gas:</b> 0,515 €/Smc</p>
+          <p style="margin: 0 0 5px;"><b>Quota vendita gas:</b> 144 €/anno</p>
+          <p style="margin: 0 0 8px;"><b>Prezzo gas bloccato per 24 mesi</b></p>
+          <div
+            style="margin-top: 10px; background-color: #f5f5ff; color: #003a70; padding: 10px; border-radius: 6px; border: 1px solid #5A51FF; line-height: 1.4;">
+            <ul style="margin: 0; padding-left: 18px;">
+              <li style="margin-bottom: 5px;">Formula solo gas a prezzo fisso.</li>
+              <li style="margin-bottom: 5px;">Quota fissa pari a <strong>12 €/mese</strong>.</li>
+              <li style="margin-bottom: 0;">Stima su <strong>130 Smc/mese</strong>.</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          style="width: 30%; text-align: right; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
+          <div style="font-size: 13px; color: #555;">Stima mensile*</div>
+          <div style="font-size: 30px; font-weight: bold; color: #5a51ff;">~79 €</div>
+          <div style="font-size: 12px; color: #333; margin-top: 4px;">130 Smc/mese</div>
+          <div style="font-size: 11px; color: #666; margin-top: 4px;">solo gas</div>
+          <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/gas-relax/" target="_blank"
+            rel="noopener" style="text-decoration:none;display:block;margin-top:14px;color:#ffffff;">
+            <div
+              style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border:1px solid #00c5af;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0;white-space:nowrap;">
+              Scopri di più</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- PULSEE GAS RELAX - MOBILE -->
+      <div class="mobile-card"
+        style="display: none; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 16px 14px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 360px; margin: 20px auto; font-family: Arial, sans-serif; line-height: 1.35; flex-direction: column;">
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px;">
+          <div style="flex: 1; min-width: 0;">
+            <div style="height: 38px; display: flex; align-items: center; margin-bottom: 6px;"><img
+                src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/pulsee-luce-e-gas-logo.png"
+                alt="Logo Pulsee"
+                style="max-height: 100%; max-width: 100%; object-fit: contain; object-position: left center;" /></div>
+            <div
+              style="display:inline-flex;align-items:center;gap:5px;padding:5px 8px;background:#fff8db;border:1px solid #f0d275;border-radius:9999px;color:#3f3600;font-size:12px;line-height:1;white-space:nowrap;">
+              ⭐ <b>4,2 / 5</b><span>94 voti</span></div>
+            <div style="font-size: 12px; color: #555; margin-top: 3px;">Pulsee</div>
+            <div style="font-size: 17px; font-weight: bold; margin-top: 4px; line-height: 1.2;">Pulsee Gas Relax</div>
+          </div>
+          <div style="text-align: right; flex-shrink: 0;">
+            <div style="font-size: 11px; color: #555;">Stima mensile*</div>
+            <div style="font-size: 26px; font-weight: bold; color: #5a51ff; line-height: 1.1;">~79 €</div>
+            <div style="font-size: 10px; color: #666;">130 Smc/mese</div>
+            <div style="font-size: 10px; color: #666;">solo gas</div>
+          </div>
+        </div>
+        <div style="font-size: 13px; margin-bottom: 10px; line-height: 1.4;">
+          <p style="margin: 0 0 5px;"><b>Prezzo gas:</b> 0,515 €/Smc</p>
+          <p style="margin: 0 0 5px;"><b>Quota vendita gas:</b> 144 €/anno</p>
+          <p style="margin: 0 0 8px;"><b>Prezzo gas bloccato per 24 mesi</b></p>
+          <div
+            style="margin-top: 10px; background-color: #f5f5ff; color: #003a70; padding: 10px; border-radius: 6px; border: 1px solid #5A51FF; line-height: 1.4;">
+            <ul style="margin: 0; padding-left: 18px;">
+              <li style="margin-bottom: 5px;">Formula solo gas.</li>
+              <li style="margin-bottom: 5px;">Quota da 12 €/mese.</li>
+              <li style="margin-bottom: 0;">Stima su 130 Smc/mese.</li>
+            </ul>
+          </div>
+        </div>
+        <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/gas-relax/" target="_blank"
+          rel="noopener" style="text-decoration:none;display:block;margin-top:10px;color:#ffffff;">
+          <div
+            style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border:1px solid #00c5af;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0;white-space:nowrap;">
+            Scopri di più</div>
+        </a>
+      </div>
+
+      <!-- PULSEE LUCE RELAX 24 MESI - DESKTOP -->
+      <div class="desktop-card"
+        style="display: flex; align-items: flex-start; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 15px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 900px; margin: 20px auto; font-family: Arial, sans-serif; gap: 15px; line-height: 1.2;">
+        <div
+          style="width: 25%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 10px;">
+          <div style="height: 50px; display: flex; align-items: center;"><img
+              src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/pulsee-luce-e-gas-logo.png"
+              alt="Logo Pulsee" style="max-height: 100%; max-width: 100%; object-fit: contain;" /></div>
+          <div
+            style="display:inline-flex;align-items:center;gap:6px;padding:5px 9px;background:#fff8db;border:1px solid #f0d275;border-radius:9999px;color:#3f3600;font-size:13px;line-height:1;white-space:nowrap;">
+            ⭐ <b>4,1 / 5</b><span>101 voti</span></div>
+          <div style="font-size: 13px; color: #555;">Pulsee</div>
+          <div style="font-size: 20px; font-weight: bold;">Pulsee Luce Relax 24 mesi</div>
+        </div>
+        <div style="width: 45%; font-size: 14px; line-height: 1.35; margin-top: 5px; margin-bottom: 5px;">
+          <p style="margin: 0 0 5px;"><b>Prezzo luce:</b> 0,136 €/kWh</p>
+          <p style="margin: 0 0 5px;"><b>Quota vendita luce:</b> 144 €/anno</p>
+          <p style="margin: 0 0 8px;"><b>Prezzo luce bloccato per 24 mesi</b></p>
+          <div
+            style="margin-top: 10px; background-color: #f5f5ff; color: #003a70; padding: 10px; border-radius: 6px; border: 1px solid #5A51FF; line-height: 1.4;">
+            <ul style="margin: 0; padding-left: 18px;">
+              <li style="margin-bottom: 5px;">Offerta luce monoraria a prezzo fisso.</li>
+              <li style="margin-bottom: 5px;">Quota fissa pari a <strong>12 €/mese</strong>.</li>
+              <li style="margin-bottom: 0;">Stima su <strong>225 kWh/mese</strong>.</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          style="width: 30%; text-align: right; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
+          <div style="font-size: 13px; color: #555;">Stima mensile*</div>
+          <div style="font-size: 30px; font-weight: bold; color: #5a51ff;">~43 €</div>
+          <div style="font-size: 12px; color: #333; margin-top: 4px;">225 kWh/mese</div>
+          <div style="font-size: 11px; color: #666; margin-top: 4px;">solo luce</div>
+          <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/luce-relax-fix/" target="_blank"
+            rel="noopener" style="text-decoration:none;display:block;margin-top:14px;color:#ffffff;">
+            <div
+              style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border:1px solid #00c5af;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0;white-space:nowrap;">
+              Scopri di più</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- PULSEE LUCE RELAX 24 MESI - MOBILE -->
+      <div class="mobile-card"
+        style="display: none; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 16px 14px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 360px; margin: 20px auto; font-family: Arial, sans-serif; line-height: 1.35; flex-direction: column;">
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px;">
+          <div style="flex: 1; min-width: 0;">
+            <div style="height: 38px; display: flex; align-items: center; margin-bottom: 6px;"><img
+                src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/pulsee-luce-e-gas-logo.png"
+                alt="Logo Pulsee"
+                style="max-height: 100%; max-width: 100%; object-fit: contain; object-position: left center;" /></div>
+            <div
+              style="display:inline-flex;align-items:center;gap:5px;padding:5px 8px;background:#fff8db;border:1px solid #f0d275;border-radius:9999px;color:#3f3600;font-size:12px;line-height:1;white-space:nowrap;">
+              ⭐ <b>4,1 / 5</b><span>101 voti</span></div>
+            <div style="font-size: 12px; color: #555; margin-top: 3px;">Pulsee</div>
+            <div style="font-size: 17px; font-weight: bold; margin-top: 4px; line-height: 1.2;">Pulsee Luce Relax 24
+              mesi
+            </div>
+          </div>
+          <div style="text-align: right; flex-shrink: 0;">
+            <div style="font-size: 11px; color: #555;">Stima mensile*</div>
+            <div style="font-size: 26px; font-weight: bold; color: #5a51ff; line-height: 1.1;">~43 €</div>
+            <div style="font-size: 10px; color: #666;">225 kWh/mese</div>
+            <div style="font-size: 10px; color: #666;">solo luce</div>
+          </div>
+        </div>
+        <div style="font-size: 13px; margin-bottom: 10px; line-height: 1.4;">
+          <p style="margin: 0 0 5px;"><b>Prezzo luce:</b> 0,136 €/kWh</p>
+          <p style="margin: 0 0 5px;"><b>Quota vendita luce:</b> 144 €/anno</p>
+          <p style="margin: 0 0 8px;"><b>Prezzo luce bloccato per 24 mesi</b></p>
+          <div
+            style="margin-top: 10px; background-color: #f5f5ff; color: #003a70; padding: 10px; border-radius: 6px; border: 1px solid #5A51FF; line-height: 1.4;">
+            <ul style="margin: 0; padding-left: 18px;">
+              <li style="margin-bottom: 5px;">Formula solo luce.</li>
+              <li style="margin-bottom: 5px;">Quota da 12 €/mese.</li>
+              <li style="margin-bottom: 0;">Stima su 225 kWh/mese.</li>
+            </ul>
+          </div>
+        </div>
+        <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/luce-relax-fix/" target="_blank"
+          rel="noopener" style="text-decoration:none;display:block;margin-top:10px;color:#ffffff;">
+          <div
+            style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border:1px solid #00c5af;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0;white-space:nowrap;">
+            Scopri di più</div>
+        </a>
+      </div>
+
+      <!-- PULSEE LUCE RELAX 36 MESI - DESKTOP -->
+      <div class="desktop-card"
+        style="display: flex; align-items: flex-start; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 15px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 900px; margin: 20px auto; font-family: Arial, sans-serif; gap: 15px; line-height: 1.2;">
+        <div
+          style="width: 25%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 10px;">
+          <div style="height: 50px; display: flex; align-items: center;"><img
+              src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/pulsee-luce-e-gas-logo.png"
+              alt="Logo Pulsee" style="max-height: 100%; max-width: 100%; object-fit: contain;" /></div>
+          <div
+            style="display:inline-flex;align-items:center;gap:6px;padding:5px 9px;background:#fff8db;border:1px solid #f0d275;border-radius:9999px;color:#3f3600;font-size:13px;line-height:1;white-space:nowrap;">
+            <span aria-hidden="true">⭐</span><b>4,3 / 5</b><span style="color:#6f6500;">99 voti</span>
+          </div>
+          <div style="font-size: 13px; color: #555;">Pulsee</div>
+          <div style="font-size: 20px; font-weight: bold;">Pulsee Luce Relax 36 mesi</div>
+        </div>
+        <div style="width: 45%; font-size: 14px; line-height: 1.35; margin-top: 5px; margin-bottom: 5px;">
+          <b>Prezzo luce:</b> 0,120 €/kWh
+          <p style="margin-top: 4px;"><b>CCV:</b> 144 €/anno luce</p>
+          <b>Prezzo fisso luce per 36 mesi</b>
+          <div
+            style="margin-top: 10px; background-color: #f5f5ff; color: #003a70; padding: 10px; border-radius: 6px; border: 1px solid #5A51FF; line-height: 1.4;">
+            <ul style="margin: 0; padding-left: 18px;">
+              <li style="margin-bottom: 5px;">Prezzo energia bloccato per <strong>36 mesi</strong>.</li>
+              <li style="margin-bottom: 5px;">Formula luce monoraria con energia da fonti rinnovabili.</li>
+              <li style="margin-bottom: 0;">Adatta a chi cerca stabilità più lunga rispetto alle offerte a 24 mesi.</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          style="width: 30%; text-align: right; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
+          <div style="font-size: 13px; color: #555;">Stima mensile*</div>
+          <div style="font-size: 30px; font-weight: bold; color: #5a51ff;">39 €</div>
+          <div style="font-size: 12px; color: #333; margin-top: 4px;">225 kWh/mese</div>
+          <div style="font-size: 11px; color: #666; margin-top: 4px;">materia energia + CCV</div>
+          <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/" target="_blank" rel="noopener"
+            style="text-decoration:none;display:block;margin-top:14px;color:#ffffff;">
+            <div
+              style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border:1px solid #00c5af;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0;white-space:nowrap;">
+              Scopri di più</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- PULSEE LUCE RELAX 36 MESI - MOBILE -->
+      <div class="mobile-card"
+        style="display: none; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 16px 14px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 360px; margin: 20px auto; font-family: Arial, sans-serif; line-height: 1.35; flex-direction: column;">
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px;">
+          <div style="flex: 1; min-width: 0;">
+            <div style="height: 38px; display: flex; align-items: center; margin-bottom: 6px;"><img
+                src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/pulsee-luce-e-gas-logo.png"
+                alt="Logo Pulsee"
+                style="max-height: 100%; max-width: 100%; object-fit: contain; object-position: left center;" /></div>
+            <div
+              style="display:inline-flex;align-items:center;gap:5px;padding:5px 8px;background:#fff8db;border:1px solid #f0d275;border-radius:9999px;color:#3f3600;font-size:12px;line-height:1;white-space:nowrap;">
+              <span aria-hidden="true">⭐</span><b>4,3 / 5</b><span style="color:#6f6500;">99 voti</span>
+            </div>
+            <div style="font-size: 12px; color: #555; margin-top: 6px;">Pulsee</div>
+            <div style="font-size: 17px; font-weight: bold; margin-top: 4px; line-height: 1.2;">Pulsee Luce Relax 36
+              mesi
+            </div>
+          </div>
+          <div style="text-align: right; flex-shrink: 0;">
+            <div style="font-size: 11px; color: #555;">Stima mensile*</div>
+            <div style="font-size: 26px; font-weight: bold; color: #5a51ff; line-height: 1.1;">39 €</div>
+            <div style="font-size: 10px; color: #666;">225 kWh/mese</div>
+            <div style="font-size: 10px; color: #666;">energia + CCV</div>
+          </div>
+        </div>
+        <div style="font-size: 13px; margin-bottom: 10px; line-height: 1.4;"><b>Luce:</b> 0,120 €/kWh<div
+            style="margin-top: 4px;"><b>CCV:</b> 144 €/anno luce</div>
+          <div style="margin-top: 4px;"><b>Prezzo fisso per 36 mesi</b></div>
+        </div>
+        <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/" target="_blank" rel="noopener"
+          style="text-decoration:none;display:block;margin-top:10px;color:#ffffff;">
+          <div
+            style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border:1px solid #00c5af;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0;white-space:nowrap;">
+            Scopri di più</div>
+        </a>
+      </div>
+
+      <!-- PULSEE LUCE E GAS PER TE - DESKTOP -->
+      <div class="desktop-card"
+        style="display: flex; align-items: flex-start; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 15px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 900px; margin: 20px auto; font-family: Arial, sans-serif; gap: 15px; line-height: 1.2;">
+        <div
+          style="width: 25%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 10px;">
+          <div style="height: 50px; display: flex; align-items: center;"><img
+              src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/pulsee-luce-e-gas-logo.png"
+              alt="Logo Pulsee" style="max-height: 100%; max-width: 100%; object-fit: contain;" /></div>
+          <div
+            style="display:inline-flex;align-items:center;gap:6px;padding:5px 9px;background:#fff8db;border:1px solid #f0d275;border-radius:9999px;color:#3f3600;font-size:13px;line-height:1;white-space:nowrap;">
+            <span aria-hidden="true">⭐</span><b>4,1 / 5</b><span style="color:#6f6500;">88 voti</span>
+          </div>
+          <div style="font-size: 13px; color: #555;">Pulsee</div>
+          <div style="font-size: 20px; font-weight: bold;">Pulsee Luce e Gas Per Te</div>
+        </div>
+        <div style="width: 45%; font-size: 14px; line-height: 1.35; margin-top: 5px; margin-bottom: 5px;">
+          <b>Prezzo luce:</b> PUN INDEX GME + 0,00 €/kWh
+          <p style="margin-top: 4px;"><b>Gas:</b> PSV + 0,042 €/Smc · <b>CCV:</b> 144 €/anno luce e 144 €/anno gas</p>
+          <b>Prezzo variabile indicizzato per luce e gas</b>
+          <div
+            style="margin-top: 10px; background-color: #f5f5ff; color: #003a70; padding: 10px; border-radius: 6px; border: 1px solid #5A51FF; line-height: 1.4;">
+            <ul style="margin: 0; padding-left: 18px;">
+              <li style="margin-bottom: 5px;">Prezzo luce legato al <strong>PUN</strong> senza spread energia.</li>
+              <li style="margin-bottom: 5px;">Prezzo gas legato al <strong>PSV</strong> con contributo di 0,042 €/Smc.
+              </li>
+              <li style="margin-bottom: 0;">Formula adatta a chi accetta importi variabili mese per mese.</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          style="width: 30%; text-align: right; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
+          <div style="font-size: 13px; color: #555;">Stima mensile*</div>
+          <div style="font-size: 30px; font-weight: bold; color: #5a51ff;">110 €</div>
+          <div style="font-size: 12px; color: #333; margin-top: 4px;">225 kWh + 130 Smc</div>
+          <div style="font-size: 11px; color: #666; margin-top: 4px;">PUN/PSV + CCV</div>
+          <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/luce-gas-per-te/"
+            target="_blank" rel="noopener" style="text-decoration:none;display:block;margin-top:14px;color:#ffffff;">
+            <div
+              style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border:1px solid #00c5af;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0;white-space:nowrap;">
+              Scopri di più</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- PULSEE LUCE E GAS PER TE - MOBILE -->
+      <div class="mobile-card"
+        style="display: none; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 16px 14px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 360px; margin: 20px auto; font-family: Arial, sans-serif; line-height: 1.35; flex-direction: column;">
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px;">
+          <div style="flex: 1; min-width: 0;">
+            <div style="height: 38px; display: flex; align-items: center; margin-bottom: 6px;"><img
+                src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/pulsee-luce-e-gas-logo.png"
+                alt="Logo Pulsee"
+                style="max-height: 100%; max-width: 100%; object-fit: contain; object-position: left center;" /></div>
+            <div
+              style="display:inline-flex;align-items:center;gap:5px;padding:5px 8px;background:#fff8db;border:1px solid #f0d275;border-radius:9999px;color:#3f3600;font-size:12px;line-height:1;white-space:nowrap;">
+              <span aria-hidden="true">⭐</span><b>4,1 / 5</b><span style="color:#6f6500;">88 voti</span>
+            </div>
+            <div style="font-size: 12px; color: #555; margin-top: 6px;">Pulsee</div>
+            <div style="font-size: 17px; font-weight: bold; margin-top: 4px; line-height: 1.2;">Pulsee Luce e Gas Per Te
+            </div>
+          </div>
+          <div style="text-align: right; flex-shrink: 0;">
+            <div style="font-size: 11px; color: #555;">Stima mensile*</div>
+            <div style="font-size: 26px; font-weight: bold; color: #5a51ff; line-height: 1.1;">110 €</div>
+            <div style="font-size: 10px; color: #666;">225 kWh + 130 Smc</div>
+            <div style="font-size: 10px; color: #666;">PUN/PSV + CCV</div>
+          </div>
+        </div>
+        <div style="font-size: 13px; margin-bottom: 10px; line-height: 1.4;"><b>Luce:</b> PUN INDEX GME + 0,00 €/kWh ·
+          <b>Gas:</b> PSV + 0,042 €/Smc<div style="margin-top: 4px;"><b>CCV:</b> 144 €/anno luce e 144 €/anno gas</div>
+        </div>
+        <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/luce-gas-per-te/" target="_blank"
+          rel="noopener" style="text-decoration:none;display:block;margin-top:10px;color:#ffffff;">
+          <div
+            style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border:1px solid #00c5af;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0;white-space:nowrap;">
+            Scopri di più</div>
+        </a>
+      </div>
+
+      <!-- PULSEE LUCE LIMIT.E - DESKTOP -->
+      <div class="desktop-card"
+        style="display: flex; align-items: flex-start; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 15px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 900px; margin: 20px auto; font-family: Arial, sans-serif; gap: 15px; line-height: 1.2;">
+        <div
+          style="width: 25%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 10px;">
+          <div style="height: 50px; display: flex; align-items: center;"><img
+              src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/pulsee-luce-e-gas-logo.png"
+              alt="Logo Pulsee" style="max-height: 100%; max-width: 100%; object-fit: contain;" /></div>
+          <div
+            style="display:inline-flex;align-items:center;gap:6px;padding:5px 9px;background:#fff8db;border:1px solid #f0d275;border-radius:9999px;color:#3f3600;font-size:13px;line-height:1;white-space:nowrap;">
+            <span aria-hidden="true">⭐</span><b>4,4 / 5</b><span style="color:#6f6500;">106 voti</span>
+          </div>
+          <div style="font-size: 13px; color: #555;">Pulsee</div>
+          <div style="font-size: 20px; font-weight: bold;">Pulsee Luce Limit.e</div>
+        </div>
+        <div style="width: 45%; font-size: 14px; line-height: 1.35; margin-top: 5px; margin-bottom: 5px;">
+          <b>Prezzo luce:</b> PUN INDEX GME con tetto massimo 0,187 €/kWh
+          <p style="margin-top: 4px;"><b>CCV:</b> 180 €/anno luce</p>
+          <b>Prezzo variabile con limite massimo per 12 mesi</b>
+          <div
+            style="margin-top: 10px; background-color: #f5f5ff; color: #003a70; padding: 10px; border-radius: 6px; border: 1px solid #5A51FF; line-height: 1.4;">
+            <ul style="margin: 0; padding-left: 18px;">
+              <li style="margin-bottom: 5px;">Prezzo luce indicizzato al <strong>PUN</strong>.</li>
+              <li style="margin-bottom: 5px;">Tetto massimo applicato al prezzo energia per 12 mesi.</li>
+              <li style="margin-bottom: 0;">Formula utile per chi vuole seguire il mercato con una soglia di protezione.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          style="width: 30%; text-align: right; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
+          <div style="font-size: 13px; color: #555;">Stima mensile*</div>
+          <div style="font-size: 30px; font-weight: bold; color: #5a51ff;">47 €</div>
+          <div style="font-size: 12px; color: #333; margin-top: 4px;">225 kWh/mese</div>
+          <div style="font-size: 11px; color: #666; margin-top: 4px;">PUN con tetto + CCV</div>
+          <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/luce-limite/" target="_blank"
+            rel="noopener" style="text-decoration:none;display:block;margin-top:14px;color:#ffffff;">
+            <div
+              style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border:1px solid #00c5af;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0;white-space:nowrap;">
+              Scopri di più</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- PULSEE LUCE LIMIT.E - MOBILE -->
+      <div class="mobile-card"
+        style="display: none; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 16px 14px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 360px; margin: 20px auto; font-family: Arial, sans-serif; line-height: 1.35; flex-direction: column;">
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px;">
+          <div style="flex: 1; min-width: 0;">
+            <div style="height: 38px; display: flex; align-items: center; margin-bottom: 6px;"><img
+                src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/pulsee-luce-e-gas-logo.png"
+                alt="Logo Pulsee"
+                style="max-height: 100%; max-width: 100%; object-fit: contain; object-position: left center;" /></div>
+            <div
+              style="display:inline-flex;align-items:center;gap:5px;padding:5px 8px;background:#fff8db;border:1px solid #f0d275;border-radius:9999px;color:#3f3600;font-size:12px;line-height:1;white-space:nowrap;">
+              <span aria-hidden="true">⭐</span><b>4,4 / 5</b><span style="color:#6f6500;">106 voti</span>
+            </div>
+            <div style="font-size: 12px; color: #555; margin-top: 6px;">Pulsee</div>
+            <div style="font-size: 17px; font-weight: bold; margin-top: 4px; line-height: 1.2;">Pulsee Luce Limit.e
+            </div>
+          </div>
+          <div style="text-align: right; flex-shrink: 0;">
+            <div style="font-size: 11px; color: #555;">Stima mensile*</div>
+            <div style="font-size: 26px; font-weight: bold; color: #5a51ff; line-height: 1.1;">47 €</div>
+            <div style="font-size: 10px; color: #666;">225 kWh/mese</div>
+            <div style="font-size: 10px; color: #666;">PUN con tetto</div>
+          </div>
+        </div>
+        <div style="font-size: 13px; margin-bottom: 10px; line-height: 1.4;"><b>Luce:</b> PUN INDEX GME con tetto
+          massimo
+          0,187 €/kWh<div style="margin-top: 4px;"><b>CCV:</b> 180 €/anno luce</div>
+          <div style="margin-top: 4px;"><b>Prezzo variabile con limite massimo</b></div>
+        </div>
+        <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/luce-limite/" target="_blank"
+          rel="noopener" style="text-decoration:none;display:block;margin-top:10px;color:#ffffff;">
+          <div
+            style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border:1px solid #00c5af;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0;white-space:nowrap;">
+            Scopri di più</div>
+        </a>
+      </div>
+
+      <span
+        style="font-size: 11px; line-height: 1.5; margin: 0.4em; display: block; text-align: center; padding: 0.1em 0.6em;"><em>*Stime
+          indicative calcolate sui consumi indicati in ciascuna card: 225 kWh/mese per le offerte luce, 130 Smc/mese per
+          le
+          offerte gas e 225 kWh + 130 Smc per l'offerta luce e gas. Le stime considerano prezzo energia e quota
+          vendita/CCV
+          indicati nelle card; il costo finale in bolletta include anche trasporto, oneri, imposte e IVA. Prezzi,
+          validità e
+          requisiti vanno verificati prima dell'attivazione.</em></span>
+    </div>
+
+</div>
+
+$IT_NRJ0_MLluce_fullwidth_convenienti$
+
+<div class="pn-testo">
+  <section class="landing-section">
+    <h2>Come leggere la tariffa in bolletta</h2>
+    <p><strong>In bolletta Gas Relax va controllata prima la componente vendita:</strong> prezzo al Smc, quota vendita
+      gas e periodo di validità. Il totale finale cambia comunque per trasporto, gestione contatore, oneri, IVA e
+      imposte; per orientarti puoi usare la guida su <a href="https://www.papernest.it/luce-gas/bolletta/gas/">come
+        leggere la bolletta gas</a>.</p>
+    <h3>Formula pratica della stima mensile</h3>
+    <p>La formula semplice è: <strong>consumi mensili x 0,501 €/Smc + 12 €/mese</strong>. Per 130 Smc al mese il
+      risultato è circa 77 €/mese prima di trasporto, oneri e imposte. Questa stima serve a confrontare offerte, non a
+      prevedere il totale finale della fattura.</p>
+    <h3>Perché la quota fissa pesa sui bassi consumi</h3>
+    <p>La quota da 144 €/anno è uguale sia per chi consuma poco sia per chi consuma molto. Per una seconda casa o un uso
+      gas limitato, il peso della quota può essere più rilevante del prezzo al Smc: confronta sempre il costo annuo, non
+      solo il prezzo unitario.</p>
+    <h3>Autolettura, consumi e prima fattura</h3>
+    <p>Per evitare stime poco aderenti al consumo reale, controlla il PDR e invia l'<a
+        href="https://www.papernest.it/luce-gas/contatore/gas/lettura/">autolettura del contatore gas</a> quando
+      richiesto. Nella prima bolletta verifica anche decorrenza, codice offerta e quota vendita mensile.</p>
+    <div class="disclaimer">La stima usa solo prezzo gas e quota vendita commerciale. Sono esclusi trasporto, oneri di
+      sistema, imposte, IVA, eventuale Gas Compensation e altri servizi extra.</div>
+  </section>
+
+  <section class="landing-section">
+    <h2>Confronto con offerte gas fisse</h2>
+    <p><strong>Il confronto mostra quando il prezzo bloccato Pulsee è competitivo rispetto ad altre offerte gas
+        fisse.</strong> Per allargare il quadro puoi consultare anche le <a
+        href="https://www.papernest.it/luce-gas/compara/offerte-gas/">offerte gas</a> e le guide sulle <a
+        href="https://www.papernest.it/luce-gas/compara/offerte-gas-mercato-libero-convenienti/">offerte gas mercato
+        libero convenienti</a>.</p>
+    <div class="pn-table-scroll">
+      <table class="pn-confronto-table">
+        <thead>
+          <tr>
+            <th>Fornitore</th>
+            <th>Offerta</th>
+            <th>Prezzo gas</th>
+            <th>Quota fissa</th>
+            <th>Stima mensile</th>
+            <th>Vantaggio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="pn-highlight-row">
+            <td>Pulsee</td>
+            <td>Gas Relax</td>
+            <td>0,501 €/Smc</td>
+            <td>144 €/anno</td>
+            <td>~77 €</td>
+            <td>Prezzo fisso 24 mesi, nome ufficiale semplice</td>
+          </tr>
+          <tr>
+            <td>Edison</td>
+            <td>EasyFix Gas</td>
+            <td>0,535 €/Smc</td>
+            <td>100 €/anno</td>
+            <td>~78 €</td>
+            <td>Quota più bassa, prezzo Smc più alto</td>
+          </tr>
+          <tr>
+            <td>Enel</td>
+            <td><a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/enel/offerte/fix-luce-gas/">Fix
+                Gas</a></td>
+            <td>0,520 €/Smc</td>
+            <td>156 €/anno</td>
+            <td>~81 €</td>
+            <td>Prezzo simile, quota annua superiore</td>
+          </tr>
+          <tr>
+            <td>Octopus</td>
+            <td><a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/octopus-energy/fissa-12m/">Fissa
+                12M Gas</a></td>
+            <td>0,475 €/Smc</td>
+            <td>84 €/anno</td>
+            <td>~69 €</td>
+            <td>Durata più breve, stima più leggera</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="disclaimer">Stime su 130 Smc/mese, solo componente vendita. I competitor sono benchmark editoriali da
+      verificare sulle rispettive CTE prima della sottoscrizione.</div>
+  </section>
+
+  <section class="landing-section">
+    <h2>Quando scegliere Gas Relax Pulsee</h2>
+    <p><strong>Gas Relax è adatta se vuoi sapere in anticipo quanto paghi per ogni Smc nei prossimi 24 mesi.</strong> Se
+      invece vuoi seguire il mercato, una tariffa indicizzata al PSV può essere più flessibile ma anche più incerta.</p>
+    <div class="pn-profile-cards">
+      <div class="pn-profile-card">
+        <div class="pn-profile-card-title" data-icon="🏠">Casa con riscaldamento autonomo</div>
+        <p>Consumi medi o alti: il prezzo fisso aiuta a pianificare i mesi freddi e rende più semplice confrontare la
+          spesa con l'anno precedente.</p>
+      </div>
+      <div class="pn-profile-card">
+        <div class="pn-profile-card-title" data-icon="📊">Budget da tenere sotto controllo</div>
+        <p>Se preferisci stabilità al possibile risparmio da indice basso, Gas Relax riduce l'esposizione alle
+          oscillazioni del PSV.</p>
+      </div>
+      <div class="pn-profile-card">
+        <div class="pn-profile-card-title" data-icon="🛡️">Utente in uscita da variabile</div>
+        <p>Chi arriva da una formula indicizzata può usare il fisso Pulsee come pausa di 24 mesi, sapendo già quale
+          formula arriva dal 25° mese.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-section">
+    <h2>Procedimento da seguire per l'attivazione</h2>
+    <p><strong>Il cambio verso Gas Relax non richiede interventi sul contatore se la fornitura è già attiva.</strong>
+      Prima della firma conviene separare quattro controlli: condizioni e scadenza dell'offerta, dati della fornitura,
+      richiesta di attivazione e prima bolletta ricevuta.</p>
+    <ol class="pn-step-list">
+      <li class="pn-step-item"><span class="pn-step-num">1</span>
+        <div class="pn-step-text"><strong>Controlla condizioni e scadenza</strong> - Verifica la CTE più recente e il
+          periodo di validità dell'offerta: prezzo, quota vendita e durata possono essere aggiornati nelle nuove
+          versioni, quindi conviene controllare le condizioni effettive prima di firmare.</div>
+      </li>
+      <li class="pn-step-item"><span class="pn-step-num">2</span>
+        <div class="pn-step-text"><strong>Prepara i dati della fornitura</strong> - Tieni a portata di mano
+          intestatario, indirizzo, bolletta recente e codice PDR; puoi verificarlo nella guida su <a
+            href="https://www.papernest.it/luce-gas/contatore/gas/pdr/">dove trovare il PDR</a>.</div>
+      </li>
+      <li class="pn-step-item"><span class="pn-step-num">3</span>
+        <div class="pn-step-text"><strong>Completa l'attivazione</strong> - La richiesta avvia il cambio venditore
+          secondo i tempi tecnici di mercato; non cambia il distributore locale e non servono interventi sul contatore.
+        </div>
+      </li>
+      <li class="pn-step-item"><span class="pn-step-num">4</span>
+        <div class="pn-step-text"><strong>Controlla la prima bolletta</strong> - Verifica decorrenza, quota mensile e
+          prezzo Smc; in caso di dubbi usa l'assistenza Pulsee o il riepilogo contrattuale.</div>
+      </li>
+    </ol>
+  </section>
+
+
+  <script>
+    (function () {
+      var labels = ['23/03', '31/03', '07/04', '13/04', '22/04', '04/05', '18/05', '01/06', '23/06'];
+      var values = [89.14, 94.65, 91.56, 88.31, 82.2, 81.16, 83.15, 84.46, 77.13];
+      function draw() {
+        var el = document.getElementById('chart-pulsee-gas-relax');
+        if (!el || !window.Chart) return;
+        if (window.__ppnGasRelaxChart) window.__ppnGasRelaxChart.destroy();
+        window.__ppnGasRelaxChart = new Chart(el, {
+          type: 'line',
+          data: { labels: labels, datasets: [{ label: 'Stima mensile', data: values, borderColor: '#6C75F4', backgroundColor: 'rgba(108,117,244,.12)', tension: .35, fill: true, pointRadius: 4 }] },
+          options: { responsive: true, maintainAspectRatio: false, scales: { y: { min: 70, max: 100, ticks: { callback: function (v) { return Math.round(v) + ' €'; } } } }, plugins: { legend: { display: false }, tooltip: { callbacks: { label: function (ctx) { return 'Stima mensile: ' + Math.round(ctx.parsed.y) + ' €/mese'; } } } } }
+        });
+      }
+      if (window.Chart) { draw(); return; }
+      var old = document.getElementById('ppn-chartjs-loader');
+      if (old) { old.addEventListener('load', draw); return; }
+      var s = document.createElement('script'); s.id = 'ppn-chartjs-loader'; s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js'; s.onload = draw; document.head.appendChild(s);
+    })();
+  </script>
+
+</div>
+
+<ppn-cta-block-double class="show-call-opened"
+  style="--primary-color: #5A52FF; --cta-txt-color: white; --cta-hover-color: #5A52FF; --cta-bg-color: #00C5AF;"
+  type="default" picture-url="" first-cta-active-mode="call"
+  text-title="Chiama Papernest e attiva la migliore offerta gas per te per risparmiare in bolletta!"
+  compliance-text="$IT_NRJ_BOX_Orari_Apertura$" info-text="$IT_CTA_Stars$" info-hover-text="$IT_CTA_Info_Hover_Text$"
+  first-cta-text="02 94 75 68 03" first-cta-href="tel:0294756803" first-cta-icon="phone" first-cta-color="custom"
+  first-cta-custom-color="#00C5AF" first-cta-custom-color-hover="#5A52FF" second-cta-text="Fatti Richiamare"
+  second-cta-color="primary" second-cta-app-text="Fatti Richiamare" second-cta-icon="wcb" second-cta-app-icon="computer"
+  second-cta-is-wcb="true" second-cta-app-is-wcb="true" info-direction="reverse"
+  active-mode="call">$IT_CTA_Testo$</ppn-cta-block-double>
+
+<ppn-cta-block-double class="show-call-opened"
+  style="--primary-color: #5A52FF; --cta-txt-color: white; --cta-hover-color: #5A52FF; --cta-bg-color: #00C5AF;"
+  type="default" picture-url="" first-cta-active-mode="call"
+  text-title="Chiama Papernest e attiva la migliore offerta luce e gas per te per risparmiare in bolletta!"
+  compliance-text="$IT_NRJ_BOX_Orari_Apertura$" info-text="$IT_Pulsee_legal_Text$"
+  info-hover-text="$IT_CTA_Info_Hover_Text$" first-cta-text="02 94 75 68 03" first-cta-href="tel:0294756803"
+  first-cta-icon="phone" first-cta-color="custom" first-cta-custom-color="#00C5AF"
+  first-cta-custom-color-hover="#5A52FF" second-cta-text="Fatti Richiamare" second-cta-color="primary"
+  second-cta-app-text="Fatti Richiamare" second-cta-icon="wcb" second-cta-app-icon="computer" second-cta-is-wcb="true"
+  second-cta-app-is-wcb="true" info-direction="reverse" active-mode="call">$IT_CTA_Testo$</ppn-cta-block-double>
+
+<ppn-cta-block-double class="show-call-closed"
+  style="--primary-color: #5A52FF; --cta-txt-color: white; --cta-hover-color: #5A52FF; --cta-bg-color: #00C5AF;"
+  type="default" picture-url=""
+  text-title="Chiama Papernest e attiva la migliore offerta luce e gas per te per risparmiare in bolletta!"
+  compliance-text="$IT_NRJ_BOX_Orari_Apertura$" info-text="$IT_Pulsee_legal_Text$"
+  info-hover-text="$IT_CTA_Info_Hover_Text$" first-cta-icon="computer" first-cta-color="custom"
+  first-cta-custom-color="#00C5AF" first-cta-custom-color-hover="#5A52FF" second-cta-text="Fatti Richiamare"
+  second-cta-color="primary" second-cta-app-text="Fatti Richiamare" second-cta-icon="wcb" second-cta-app-icon="computer"
+  second-cta-is-wcb="true" second-cta-app-is-wcb="true" info-direction="reverse"
+  active-mode="app">$IT_CTA_Testo$</ppn-cta-block-double>
+
+&nbsp;
+
+$IT_AI_disclaimer$

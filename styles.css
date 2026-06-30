@@ -140,10 +140,10 @@ strong {
   padding: 28px;
   border-color: rgba(255, 255, 255, .62);
   background:
-    radial-gradient(circle at 82% 10%, rgba(13, 129, 120, .13), transparent 34%),
-    radial-gradient(circle at 4% 96%, rgba(38, 121, 183, .09), transparent 36%),
-    linear-gradient(135deg, rgba(255, 255, 255, .76), rgba(255, 255, 255, .42)),
-    rgba(251, 250, 247, .64);
+    radial-gradient(circle at 86% 12%, rgba(198, 187, 163, .16), transparent 34%),
+    radial-gradient(circle at 4% 96%, rgba(164, 181, 191, .12), transparent 36%),
+    linear-gradient(135deg, rgba(255, 255, 255, .78), rgba(248, 247, 243, .52)),
+    rgba(251, 250, 247, .68);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, .94),
     0 18px 42px rgba(31, 28, 22, .10),
@@ -251,12 +251,12 @@ h3 {
 .mini-cv div {
   min-height: auto;
   padding: 15px;
-  border: 1px solid rgba(255, 255, 255, .62);
+  border: 1px solid rgba(255, 255, 255, .66);
   border-radius: 8px;
   background:
-    radial-gradient(circle at 86% 8%, color-mix(in srgb, var(--mini-accent, var(--teal)) 14%, transparent), transparent 38%),
-    linear-gradient(135deg, rgba(255, 255, 255, .70), rgba(255, 255, 255, .36)),
-    rgba(255, 255, 255, .46);
+    radial-gradient(circle at 90% 6%, color-mix(in srgb, var(--mini-accent, var(--teal)) 24%, transparent), transparent 42%),
+    linear-gradient(135deg, rgba(255, 255, 255, .78), color-mix(in srgb, var(--mini-accent, var(--teal)) 10%, rgba(255, 255, 255, .36))),
+    rgba(255, 255, 255, .58);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, .88),
     0 10px 24px rgba(31, 28, 22, .06);
@@ -680,14 +680,14 @@ h3 {
   color: var(--muted);
 }
 
-.project-area-tags {
+.project-topic-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
   min-width: 0;
 }
 
-.project-area-tags i {
+.project-topic-tags i {
   display: inline-flex;
   min-height: 22px;
   align-items: center;
@@ -1537,6 +1537,15 @@ h3 {
   border-top: 2px dashed var(--amber);
 }
 
+.legend-core {
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  border: 1px solid rgba(194, 82, 72, .32);
+  border-radius: 3px;
+  background: rgba(194, 82, 72, .12);
+}
+
 .chart-shell {
   position: relative;
   overflow: visible;
@@ -1628,6 +1637,42 @@ h3 {
   font-size: 12px;
   font-weight: 820;
   text-transform: uppercase;
+}
+
+.chart-event-range {
+  pointer-events: none;
+}
+
+.chart-event-range--google-core {
+  fill: rgba(194, 82, 72, .10);
+}
+
+.chart-event-marker {
+  pointer-events: none;
+  stroke-dasharray: 6 6;
+  stroke-width: 2;
+}
+
+.chart-event-marker--revamp {
+  stroke: var(--amber);
+}
+
+.chart-event-label {
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, .78);
+  stroke-width: 4px;
+  font-size: 11px;
+  font-weight: 860;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.chart-event-label--google-core {
+  fill: #9b3f38;
+}
+
+.chart-event-label--revamp {
+  fill: #7d5611;
 }
 
 .chart-point {
@@ -2131,12 +2176,14 @@ iframe {
 .profile-summary {
   padding: 16px 18px;
   border: 1px solid rgba(23, 23, 23, .10);
-  border-left: 4px solid var(--teal);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, .88), rgba(220, 239, 235, .38)),
-    rgba(255, 255, 255, .46);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .86);
+    radial-gradient(circle at 96% 8%, rgba(120, 164, 172, .13), transparent 42%),
+    linear-gradient(135deg, rgba(255, 255, 255, .90), rgba(246, 250, 248, .62)),
+    rgba(255, 255, 255, .52);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .88),
+    0 12px 26px rgba(31, 28, 22, .045);
 }
 
 .primary-button,
@@ -2989,7 +3036,7 @@ iframe {
     font-size: 1rem;
   }
 
-  .project-area-tags i {
+  .project-topic-tags i {
     min-height: 20px;
     padding: 3px 6px;
     font-size: .58rem;

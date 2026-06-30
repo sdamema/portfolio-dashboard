@@ -6,7 +6,7 @@
   <title>Digital Marketing & SEO Portfolio | Emanuele Sorgonà</title>
   <meta name="description" content="Interactive portfolio for SEO, digital marketing, data workflows, HTML modules and Italian page demos.">
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="styles.css?v=20260630-17">
+  <link rel="stylesheet" href="styles.css?v=20260630-18">
 </head>
 <body>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -18,7 +18,7 @@
         <div class="profile-main">
           <p class="eyebrow">Digital Marketing & SEO Portfolio</p>
           <h1 id="profileTitle">Emanuele Sorgonà</h1>
-          <p class="profile-summary">Hi, I'm Emanuele. I work across <strong>SEO and digital marketing</strong>, with a strong focus on <strong>WordPress content, keyword research, Search Console analysis, technical checks</strong> and AI automation workflows powered by <strong>Codex and Claude Code</strong>. I use these tools to turn messy inputs into repeatable workflows for research, data cleaning, content QA and publishable web modules. I also bring experience in <strong>social media and content creation</strong>, while SEO remains my strongest specialization.</p>
+          <p class="profile-summary">Hi, I'm Emanuele. I work across <strong>SEO and digital marketing</strong>, with a strong focus on <strong>WordPress content, keyword research, Search Console analysis and technical checks</strong>. I use <strong>Codex and Claude Code</strong> across the workflow for research, QA, design support and, where the output is repeatable, automation for review pages, offer sheets, summary blocks and off-page drafts. I also bring experience in <strong>social media and content creation</strong>, while SEO remains my strongest specialization.</p>
         </div>
 
         <aside class="mini-cv" aria-label="Profile highlights">
@@ -32,7 +32,7 @@
           </div>
           <div>
             <span>SEO output</span>
-            <strong>105 SEO pages, 50 offer pages, 14 review pages</strong>
+            <strong>105 SEO pages, 91 offer sheets, 14 review pages</strong>
           </div>
           <div>
             <span>Languages</span>
@@ -49,7 +49,7 @@
         <div class="resume-head">
           <p class="eyebrow">Full CV</p>
           <h2>Resume overview</h2>
-          <p>SEO is the main professional focus, with hands-on work across <strong>keyword research, WordPress content, technical checks, reporting, off-page articles, Codex/Claude Code-assisted workflows</strong> and HTML modules for the Italian energy market. A recurring part of the work is building <strong>AI automation workflows</strong> for research, scraping instructions, cleaning, QA and scalable content production. The profile also includes <strong>content creation, CRM, event communication</strong> and community management. <strong>Available from August 10, 2026.</strong></p>
+          <p>SEO is the main professional focus, with hands-on work across <strong>keyword research, WordPress content, technical checks, reporting, off-page articles, Codex/Claude Code-assisted workflows</strong> and HTML modules for the Italian energy market. AI tools are used across research, QA, design support and scalable workflows; automation is especially relevant for <strong>repeatable SEO outputs</strong> such as review pages, offer sheets, summary blocks and off-page drafts. The profile also includes <strong>content creation, CRM, event communication</strong> and community management. <strong>Available from August 10, 2026.</strong></p>
         </div>
 
         <div class="resume-accordion">
@@ -61,7 +61,7 @@
                 <p>Barcelona, Spain | Feb 2026 - Aug 2026</p>
                 <ul>
                   <li>Created or optimized <strong>105 SEO-oriented WordPress pages</strong>, including 68 new pages and 38 updates.</li>
-                  <li>Built <strong>50 supplier offer pages</strong> and <strong>14 review pages</strong> using search intent, UX blocks, provider data and sentiment analysis.</li>
+                  <li>Built or revamped <strong>91 supplier offer sheets</strong> and <strong>14 review pages</strong> using search intent, UX blocks, provider data and sentiment analysis.</li>
                   <li>Used <strong>Codex, Claude Code and Apify</strong> to support scalable workflows for scraping instructions, data cleaning, HTML modules and SEO content production.</li>
                   <li>Tracked offer-page performance through <strong>Search Console trend analysis</strong>, sharing only percentage movements when raw values are not public.</li>
                   <li>Used Screaming Frog and GSC for broken pages, technical SEO issues and <strong>700 non-indexed pages</strong>.</li>
@@ -195,7 +195,7 @@
 
       <div class="project-story-grid" id="sectionSummary">
         <article class="story-panel">
-          <h3>Project story</h3>
+          <h3>Project summary</h3>
           <div id="detailExplanation"></div>
         </article>
       </div>
@@ -226,7 +226,7 @@
         <div class="section-title-row performance-title-row">
           <div>
             <p class="eyebrow">Search Console trend</p>
-            <h3 id="performanceTitle">Relative trend after update</h3>
+            <h3 id="performanceTitle">Relative performance trend</h3>
           </div>
           <span class="status-pill" id="performancePeriod"></span>
         </div>
@@ -236,8 +236,8 @@
           <div class="performance-card">
             <div class="performance-card-head">
               <div>
-              <p class="eyebrow">Indexed chart</p>
-              <strong id="performanceBaselineLabel">Percentage baseline</strong>
+                <p class="eyebrow">Indexed chart</p>
+                <strong id="performanceBaselineLabel">Percentage baseline</strong>
               </div>
               <div class="performance-chart-mode" id="performanceChartMode" aria-label="Chart series filter"></div>
             </div>
@@ -245,9 +245,10 @@
               <span><i class="legend-dot legend-clicks"></i>Clicks</span>
               <span><i class="legend-dot legend-impressions"></i>Impressions</span>
               <span><i class="legend-line"></i><span id="performanceLegendSplit">Performance split</span></span>
+              <span id="performanceLegendCoreItem" hidden><i class="legend-core"></i><span>Google core update</span></span>
             </div>
             <div class="chart-shell">
-              <svg id="performanceChart" viewBox="0 0 940 360" role="img" aria-label="Google Search Console relative trend"></svg>
+              <svg id="performanceChart" viewBox="0 0 940 390" role="img" aria-label="Google Search Console relative trend"></svg>
               <div class="chart-tooltip" id="chartTooltip" hidden></div>
             </div>
             <p class="chart-footnote" id="chartFootnote">Hover or tap the chart to inspect each date. The public view uses percentage movement only, not raw Search Console values.</p>
@@ -256,19 +257,6 @@
 
         <div class="performance-comparison" id="performanceComparison"></div>
         <div class="top-pages-panel" id="topPagesPanel"></div>
-      </section>
-
-      <section class="detail-section future-data-section" id="sectionInventory">
-        <div class="future-data-grid">
-          <article class="support-card" id="performanceSlotCard">
-            <h3>Performance Data Slot</h3>
-            <p id="performancePlaceholder"></p>
-          </article>
-          <article class="support-card" id="urlInventoryCard">
-            <h3 id="urlInventoryTitle">URL Inventory Slot</h3>
-            <p id="urlPlaceholder"></p>
-          </article>
-        </div>
       </section>
 
       <section class="detail-section snapshot-section" id="sectionSnapshot">
@@ -304,11 +292,24 @@
           <iframe id="demoFrame" title="Selected Italian HTML example" src="about:blank" loading="lazy"></iframe>
         </div>
       </section>
+
+      <section class="detail-section future-data-section" id="sectionInventory">
+        <div class="future-data-grid">
+          <article class="support-card" id="performanceSlotCard">
+            <h3>Performance Data Slot</h3>
+            <p id="performancePlaceholder"></p>
+          </article>
+          <article class="support-card" id="urlInventoryCard">
+            <h3 id="urlInventoryTitle">URL Inventory Slot</h3>
+            <p id="urlPlaceholder"></p>
+          </article>
+        </div>
+      </section>
     </section>
   </main>
 
-  <script src="analytics-data/processed/reviews-gsc-performance.js?v=20260630-7"></script>
-  <script src="analytics-data/processed/offers-gsc-performance.js?v=20260630-1"></script>
-  <script src="app.js?v=20260630-17"></script>
+  <script src="analytics-data/processed/reviews-gsc-performance.js?v=20260630-8"></script>
+  <script src="analytics-data/processed/offers-gsc-performance.js?v=20260630-3"></script>
+  <script src="app.js?v=20260630-20"></script>
 </body>
 </html>

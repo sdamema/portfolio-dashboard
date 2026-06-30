@@ -12,13 +12,16 @@ window.portfolioPerformanceData.reviews = {
     "note": "Public dataset is sanitized: it contains percentage changes only, not raw clicks, impressions, CTR or average-position values."
   },
   "update": {
-    "label": "End-of-May review page refresh",
+    "label": "End-of-May review-page revamp",
     "date": "2026-05-30",
-    "comparisonMethod": "May 2026 vs June 1-29, 2026. Daily averages are used for fair comparison because the June export ends on June 29."
+    "comparisonMethod": "May 2026 vs June 1-29, 2026. Daily averages are used for fair comparison because the June export ends on June 29.",
+    "chartLabel": "Revamp",
+    "legendLabel": "Review-page revamp"
   },
   "chartBaseline": {
     "label": "May daily average = 0% baseline",
-    "method": "Each chart point is shown as percentage variation from the pre-update daily average."
+    "method": "Each chart point is shown as percentage variation from the pre-update daily average.",
+    "tooltipNote": "Compared with the May pre-revamp daily baseline"
   },
   "chart": [
     {
@@ -384,11 +387,11 @@ window.portfolioPerformanceData.reviews = {
   ],
   "periods": {
     "before": {
-      "label": "Before update",
+      "label": "Before revamp",
       "range": "May 1-31, 2026"
     },
     "after": {
-      "label": "After update",
+      "label": "After revamp",
       "range": "June 1-29, 2026"
     }
   },
@@ -542,7 +545,23 @@ window.portfolioPerformanceData.reviews = {
     }
   ],
   "narrative": {
-    "summary": "The review pages were <strong>updated at the end of May</strong>, and this analysis was run <strong>at the end of June</strong>, so the public view shows only <strong>percentage variations</strong> between the pre-update and post-update periods. Absolute Search Console values are intentionally not exposed.",
+    "summary": "The review pages were revamped at the end of May, and this analysis was run at the end of June, so the chart compares roughly one month before and one month after the changes. The May core update is shown as context: the cluster kept growing after the revamp, which is consistent with a page format built around useful human evidence rather than thin or spam-like content.",
     "insights": []
-  }
+  },
+  "chartFootnote": "Hover or tap the chart to inspect each date. The public view uses percentage movement only, not raw Search Console values. Google core-update windows are shown as context, not as proof of causality.",
+  "events": [
+    {
+      "type": "range",
+      "kind": "google-core",
+      "label": "May core",
+      "start": "2026-05-21",
+      "end": "2026-06-02"
+    },
+    {
+      "type": "marker",
+      "kind": "revamp",
+      "label": "Revamp",
+      "date": "2026-05-30"
+    }
+  ]
 };

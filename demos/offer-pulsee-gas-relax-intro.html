@@ -1,0 +1,826 @@
+<style>
+  .pn-offerta *,
+  .pn-offerta *::before,
+  .pn-offerta *::after {
+    box-sizing: border-box
+  }
+
+  .pn-offerta {
+    --pn-purple: #6C75F4;
+    --pn-navy: #2B2B2B;
+    --pn-teal: #00C5AF;
+    --pn-card-bg: #fff;
+    --pn-lilac: #F8F9FF;
+    --pn-border: #DDE2F7;
+    --pn-text: #2B2B2B;
+    --pn-soft: #444;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--pn-text);
+    line-height: 1.5
+  }
+
+  .pn-offerta img,
+  .pn-offerta svg {
+    display: block;
+    max-width: 100%
+  }
+
+  .pn-toggle {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+    top: -1px;
+    left: -1px
+  }
+
+  .pn-offerta .glass-orbit-card {
+    background: var(--pn-card-bg);
+    border: 1px solid var(--pn-border);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+    padding: 32px;
+    margin: 20px 0 28px
+  }
+
+  .pn-offerta .card-central {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 24px;
+    align-items: center
+  }
+
+  .pn-offerta .card-central-left {
+    flex: 1 1 340px;
+    min-width: 0
+  }
+
+  .pn-offerta .card-central-right {
+    flex: 1 1 300px;
+    min-width: 0
+  }
+
+  .pn-offerta .stima-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--pn-lilac);
+    border: 1px solid var(--pn-border);
+    border-radius: 10px;
+    padding: 24px 16px 20px
+  }
+
+  .pn-offerta .stima-label {
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--pn-soft);
+    margin-bottom: 16px
+  }
+
+  .pn-offerta .orbital-box {
+    position: relative;
+    width: 284px;
+    height: 284px;
+    flex-shrink: 0
+  }
+
+  .pn-offerta .orbital-rings {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    animation: pnSpinSlow 40s linear infinite
+  }
+
+  @keyframes pnSpinSlow {
+    from {
+      transform: rotate(0deg)
+    }
+
+    to {
+      transform: rotate(360deg)
+    }
+  }
+
+  .pn-offerta .orbital-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 178px;
+    height: 178px;
+    background: linear-gradient(135deg, #5A52FF 0%, #6C75F4 60%, #00C5AF 100%);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 28px rgba(90, 81, 255, .35)
+  }
+
+  .pn-offerta .stima-num {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2px
+  }
+
+  .pn-offerta .stima-num-value {
+    font-weight: 800;
+    font-size: 34px;
+    color: #fff;
+    line-height: 1
+  }
+
+  .pn-offerta .stima-num-unit {
+    font-size: 13px;
+    color: rgba(255, 255, 255, .88);
+    font-weight: 700;
+    margin-top: 3px
+  }
+
+  .pn-offerta .stima-desc-wrap {
+    margin-top: 16px;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+
+  .pn-offerta .stima-desc {
+    display: none;
+    font-size: 12px;
+    color: var(--pn-soft);
+    font-weight: 600;
+    line-height: 1.45;
+    text-align: center;
+    max-width: 220px
+  }
+
+  .pn-offerta .selectors-area {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    justify-content: center
+  }
+
+  .pn-offerta .selector-box {
+    background: var(--pn-lilac);
+    border: 1px solid var(--pn-border);
+    border-radius: 8px;
+    padding: 14px 16px
+  }
+
+  .pn-offerta .selector-box-label {
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--pn-soft);
+    margin-bottom: 9px;
+    display: block
+  }
+
+  .pn-offerta .slider-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 10px
+  }
+
+  .pn-offerta .slider-cur-val {
+    display: none;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--pn-purple);
+    line-height: 1;
+    white-space: nowrap
+  }
+
+  .pn-offerta .slider-dots {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    padding: 10px 0;
+    margin: 4px 0 0
+  }
+
+  .pn-offerta .slider-dots-track {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    right: 8px;
+    height: 3px;
+    background: var(--pn-border);
+    border-radius: 2px;
+    transform: translateY(-50%);
+    z-index: 0
+  }
+
+  .pn-offerta .slider-dot {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 8px 0;
+    min-height: 44px
+  }
+
+  .pn-offerta .slider-dot::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--pn-border);
+    transition: .15s
+  }
+
+  .pn-offerta .slider-range {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--pn-soft)
+  }
+
+  .pn-offerta .card-final {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 22px;
+    border-top: 1px solid var(--pn-border)
+  }
+
+  .pn-offerta .prices-area {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+  }
+
+  .pn-offerta .prices-area-title {
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--pn-soft)
+  }
+
+  .pn-offerta .price-view {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+  }
+
+  .pn-offerta .data-item {
+    background: var(--pn-lilac);
+    border: 1px solid var(--pn-border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    flex: 1 1 140px;
+    min-width: 120px
+  }
+
+  .pn-offerta .data-item-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--pn-soft);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    margin-bottom: 4px;
+    display: block
+  }
+
+  .pn-offerta .data-item-value {
+    font-weight: 800;
+    font-size: 17px;
+    color: var(--pn-text);
+    line-height: 1
+  }
+
+  .pn-offerta .data-item-value.accent {
+    color: var(--pn-purple)
+  }
+
+  .pn-offerta .data-item-value.teal {
+    color: var(--pn-teal)
+  }
+
+  .pn-offerta .data-item-unit {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--pn-soft);
+    margin-top: 3px;
+    display: block
+  }
+
+  .pn-offerta .price-disclaimer {
+    font-size: 11px;
+    color: var(--pn-soft);
+    font-style: italic;
+    line-height: 1.5
+  }
+
+  .pn-offerta .pdf-box {
+    flex: 0 1 260px;
+    background: var(--pn-lilac);
+    border: 1px solid var(--pn-border);
+    border-radius: 8px;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+  }
+
+  .pn-offerta .pdf-box-title {
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--pn-text)
+  }
+
+  .pn-offerta .pdf-box-desc {
+    font-size: 12px;
+    color: var(--pn-soft);
+    line-height: 1.55;
+    font-weight: 500;
+    margin: 0
+  }
+
+  .pn-offerta .pdf-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+  }
+
+  .pn-offerta .pdf-link {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    color: var(--pn-text);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 11px;
+    background: #fff;
+    border: 1px solid var(--pn-border);
+    border-radius: 8px
+  }
+
+  .pn-offerta .pdf-link-icon {
+    width: 26px;
+    height: 26px;
+    background: var(--pn-purple);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 800;
+    line-height: 1
+  }
+
+  .pn-offerta .mobile-details-trigger {
+    display: none
+  }
+
+  .pn-offerta .show-less-text {
+    display: none
+  }
+
+  #cons-1:checked~.pn-card-wrap .slider-dot.c1::after,
+  #cons-2:checked~.pn-card-wrap .slider-dot.c2::after,
+  #cons-3:checked~.pn-card-wrap .slider-dot.c3::after,
+  #cons-4:checked~.pn-card-wrap .slider-dot.c4::after,
+  #cons-5:checked~.pn-card-wrap .slider-dot.c5::after,
+  #cons-6:checked~.pn-card-wrap .slider-dot.c6::after,
+  #cons-7:checked~.pn-card-wrap .slider-dot.c7::after,
+  #cons-8:checked~.pn-card-wrap .slider-dot.c8::after,
+  #cons-9:checked~.pn-card-wrap .slider-dot.c9::after,
+  #cons-10:checked~.pn-card-wrap .slider-dot.c10::after,
+  #cons-11:checked~.pn-card-wrap .slider-dot.c11::after,
+  #cons-12:checked~.pn-card-wrap .slider-dot.c12::after,
+  #cons-13:checked~.pn-card-wrap .slider-dot.c13::after,
+  #cons-14:checked~.pn-card-wrap .slider-dot.c14::after,
+  #cons-15:checked~.pn-card-wrap .slider-dot.c15::after {
+    background: var(--pn-purple);
+    border-color: var(--pn-purple);
+    transform: scale(1.35);
+    box-shadow: 0 0 0 3px rgba(108, 117, 244, .18)
+  }
+
+  #cons-1:checked~.pn-card-wrap .slider-cur-val.c1,
+  #cons-2:checked~.pn-card-wrap .slider-cur-val.c2,
+  #cons-3:checked~.pn-card-wrap .slider-cur-val.c3,
+  #cons-4:checked~.pn-card-wrap .slider-cur-val.c4,
+  #cons-5:checked~.pn-card-wrap .slider-cur-val.c5,
+  #cons-6:checked~.pn-card-wrap .slider-cur-val.c6,
+  #cons-7:checked~.pn-card-wrap .slider-cur-val.c7,
+  #cons-8:checked~.pn-card-wrap .slider-cur-val.c8,
+  #cons-9:checked~.pn-card-wrap .slider-cur-val.c9,
+  #cons-10:checked~.pn-card-wrap .slider-cur-val.c10,
+  #cons-11:checked~.pn-card-wrap .slider-cur-val.c11,
+  #cons-12:checked~.pn-card-wrap .slider-cur-val.c12,
+  #cons-13:checked~.pn-card-wrap .slider-cur-val.c13,
+  #cons-14:checked~.pn-card-wrap .slider-cur-val.c14,
+  #cons-15:checked~.pn-card-wrap .slider-cur-val.c15 {
+    display: inline
+  }
+
+  #cons-1:checked~.pn-card-wrap .stima-num.c1,
+  #cons-2:checked~.pn-card-wrap .stima-num.c2,
+  #cons-3:checked~.pn-card-wrap .stima-num.c3,
+  #cons-4:checked~.pn-card-wrap .stima-num.c4,
+  #cons-5:checked~.pn-card-wrap .stima-num.c5,
+  #cons-6:checked~.pn-card-wrap .stima-num.c6,
+  #cons-7:checked~.pn-card-wrap .stima-num.c7,
+  #cons-8:checked~.pn-card-wrap .stima-num.c8,
+  #cons-9:checked~.pn-card-wrap .stima-num.c9,
+  #cons-10:checked~.pn-card-wrap .stima-num.c10,
+  #cons-11:checked~.pn-card-wrap .stima-num.c11,
+  #cons-12:checked~.pn-card-wrap .stima-num.c12,
+  #cons-13:checked~.pn-card-wrap .stima-num.c13,
+  #cons-14:checked~.pn-card-wrap .stima-num.c14,
+  #cons-15:checked~.pn-card-wrap .stima-num.c15 {
+    display: flex
+  }
+
+  #cons-1:checked~.pn-card-wrap .stima-desc.c1,
+  #cons-2:checked~.pn-card-wrap .stima-desc.c2,
+  #cons-3:checked~.pn-card-wrap .stima-desc.c3,
+  #cons-4:checked~.pn-card-wrap .stima-desc.c4,
+  #cons-5:checked~.pn-card-wrap .stima-desc.c5,
+  #cons-6:checked~.pn-card-wrap .stima-desc.c6,
+  #cons-7:checked~.pn-card-wrap .stima-desc.c7,
+  #cons-8:checked~.pn-card-wrap .stima-desc.c8,
+  #cons-9:checked~.pn-card-wrap .stima-desc.c9,
+  #cons-10:checked~.pn-card-wrap .stima-desc.c10,
+  #cons-11:checked~.pn-card-wrap .stima-desc.c11,
+  #cons-12:checked~.pn-card-wrap .stima-desc.c12,
+  #cons-13:checked~.pn-card-wrap .stima-desc.c13,
+  #cons-14:checked~.pn-card-wrap .stima-desc.c14,
+  #cons-15:checked~.pn-card-wrap .stima-desc.c15 {
+    display: block
+  }
+
+  .pn-offerta .pn-cta-mid-mobile {
+    display: none;
+    margin: 12px 0 18px
+  }
+
+  @media (max-width:1023px) {
+    .pn-offerta .card-central {
+      flex-direction: column;
+      gap: 18px
+    }
+
+    .pn-offerta .card-final {
+      flex-direction: column
+    }
+
+    .pn-offerta .prices-area,
+    .pn-offerta .pdf-box {
+      flex: 0 1 auto
+    }
+  }
+
+  @media (max-width:767px) {
+    .pn-offerta .pn-cta-mid-mobile {
+      display: block
+    }
+
+    .pn-offerta .glass-orbit-card {
+      padding: 20px 14px
+    }
+
+    .pn-offerta .orbital-box {
+      width: 258px;
+      height: 258px
+    }
+
+    .pn-offerta .orbital-core {
+      width: 160px;
+      height: 160px
+    }
+
+    .pn-offerta .stima-num-value {
+      font-size: 28px
+    }
+
+    .pn-offerta .price-view {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px
+    }
+
+    .pn-offerta .price-view .data-item {
+      min-width: 0;
+      padding: 10px 8px
+    }
+
+    .pn-offerta .price-view .data-item-renewal {
+      grid-column: 1/-1;
+      justify-self: center;
+      width: calc(50% - 4px);
+      max-width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center
+    }
+
+    .pn-offerta .price-view .data-item-extra {
+      display: none
+    }
+
+    .pn-offerta .pn-extra-toggle:checked~.data-item-extra {
+      display: block
+    }
+
+    .pn-offerta .mobile-details-trigger {
+      display: flex;
+      grid-column: 1/-1;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border: 1px solid var(--pn-border);
+      border-radius: 8px;
+      padding: 10px;
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--pn-purple)
+    }
+
+    .pn-offerta .pn-extra-toggle:checked~.mobile-details-trigger .show-more-text {
+      display: none
+    }
+
+    .pn-offerta .pn-extra-toggle:checked~.mobile-details-trigger .show-less-text {
+      display: inline
+    }
+  }
+
+  @media (max-width:420px) {
+    .pn-offerta .orbital-box {
+      width: 225px;
+      height: 225px
+    }
+
+    .pn-offerta .orbital-core {
+      width: 140px;
+      height: 140px
+    }
+
+    .pn-offerta .stima-num-value {
+      font-size: 24px
+    }
+
+    .pn-offerta .data-item-value {
+      font-size: 15px
+    }
+  }
+</style>
+
+<div class="pn-offerta">
+  <input type="radio" id="cons-1" name="pn-cons" class="pn-toggle" aria-label="30 Smc al mese">
+  <input type="radio" id="cons-2" name="pn-cons" class="pn-toggle" aria-label="50 Smc al mese">
+  <input type="radio" id="cons-3" name="pn-cons" class="pn-toggle" aria-label="70 Smc al mese">
+  <input type="radio" id="cons-4" name="pn-cons" class="pn-toggle" aria-label="90 Smc al mese">
+  <input type="radio" id="cons-5" name="pn-cons" class="pn-toggle" aria-label="105 Smc al mese">
+  <input type="radio" id="cons-6" name="pn-cons" class="pn-toggle" aria-label="117 Smc al mese">
+  <input type="radio" id="cons-7" name="pn-cons" class="pn-toggle" checked aria-label="130 Smc al mese">
+  <input type="radio" id="cons-8" name="pn-cons" class="pn-toggle" aria-label="140 Smc al mese">
+  <input type="radio" id="cons-9" name="pn-cons" class="pn-toggle" aria-label="155 Smc al mese">
+  <input type="radio" id="cons-10" name="pn-cons" class="pn-toggle" aria-label="170 Smc al mese">
+  <input type="radio" id="cons-11" name="pn-cons" class="pn-toggle" aria-label="190 Smc al mese">
+  <input type="radio" id="cons-12" name="pn-cons" class="pn-toggle" aria-label="210 Smc al mese">
+  <input type="radio" id="cons-13" name="pn-cons" class="pn-toggle" aria-label="240 Smc al mese">
+  <input type="radio" id="cons-14" name="pn-cons" class="pn-toggle" aria-label="270 Smc al mese">
+  <input type="radio" id="cons-15" name="pn-cons" class="pn-toggle" aria-label="300 Smc al mese">
+  <div class="pn-card-wrap">
+    <div class="glass-orbit-card">
+      <div class="card-central">
+        <div class="card-central-left">
+          <div class="stima-box">
+            <span class="stima-label">Consumo mensile stimato</span>
+            <div class="orbital-box">
+              <svg class="orbital-rings" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="110" cy="110" r="105" fill="none" stroke="#6C75F4" stroke-width="1.2"
+                  stroke-dasharray="6 10" opacity=".2" />
+                <circle cx="110" cy="110" r="90" fill="none" stroke="#6C75F4" stroke-width="1" stroke-dasharray="5 8"
+                  opacity=".3" />
+                <circle cx="110" cy="110" r="75" fill="none" stroke="#00C5AF" stroke-width="1" stroke-dasharray="4 6"
+                  opacity=".35" />
+              </svg>
+              <div class="orbital-core">
+                <div class="stima-num c1"><span class="stima-num-value">~27&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c2"><span class="stima-num-value">~37&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c3"><span class="stima-num-value">~47&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c4"><span class="stima-num-value">~57&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c5"><span class="stima-num-value">~65&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c6"><span class="stima-num-value">~71&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c7"><span class="stima-num-value">~77&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c8"><span class="stima-num-value">~82&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c9"><span class="stima-num-value">~90&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c10"><span class="stima-num-value">~97&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c11"><span class="stima-num-value">~107&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c12"><span class="stima-num-value">~117&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c13"><span class="stima-num-value">~132&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c14"><span class="stima-num-value">~147&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+                <div class="stima-num c15"><span class="stima-num-value">~162&euro;</span><span
+                    class="stima-num-unit">/mese</span></div>
+              </div>
+            </div>
+            <div class="stima-desc-wrap">
+              <span class="stima-desc c1">Profilo annuo stimato:<br><span style="font-weight:700;">360 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c2">Profilo annuo stimato:<br><span style="font-weight:700;">600 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c3">Profilo annuo stimato:<br><span style="font-weight:700;">840 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c4">Profilo annuo stimato:<br><span style="font-weight:700;">1.080 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c5">Profilo annuo stimato:<br><span style="font-weight:700;">1.260 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c6">Profilo annuo stimato:<br><span style="font-weight:700;">1.400 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c7">Profilo annuo stimato:<br><span style="font-weight:700;">1.560 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c8">Profilo annuo stimato:<br><span style="font-weight:700;">1.680 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c9">Profilo annuo stimato:<br><span style="font-weight:700;">1.860 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c10">Profilo annuo stimato:<br><span style="font-weight:700;">2.040 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c11">Profilo annuo stimato:<br><span style="font-weight:700;">2.280 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c12">Profilo annuo stimato:<br><span style="font-weight:700;">2.520 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c13">Profilo annuo stimato:<br><span style="font-weight:700;">2.880 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c14">Profilo annuo stimato:<br><span style="font-weight:700;">3.240 Smc in un
+                  anno</span></span>
+              <span class="stima-desc c15">Profilo annuo stimato:<br><span style="font-weight:700;">3.600 Smc in un
+                  anno</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="card-central-right">
+          <div class="selectors-area">
+            <div class="selector-box" style="background:#EDE9FF;border-color:#C4B8FF;">
+              <span class="selector-box-label" style="color:#6C75F4;">Gas Relax Pulsee</span>
+              <p style="font-size:13px;color:#444;margin:0;line-height:1.5;">Offerta gas a <strong>prezzo fisso
+                  0,501&nbsp;&euro;/Smc</strong> per i primi 24 mesi, con <strong>quota vendita gas
+                  144&nbsp;&euro;/anno</strong>. Nella CTE Pulsee il nome tecnico resta Gas RELAX Fix.</p>
+            </div>
+            <div class="selector-box">
+              <div class="slider-header">
+                <span class="selector-box-label" id="lbl-consumo" style="margin-bottom:0">Consumo gas mensile</span>
+                <span class="slider-cur-val c1">30 Smc/mese</span>
+                <span class="slider-cur-val c2">50 Smc/mese</span>
+                <span class="slider-cur-val c3">70 Smc/mese</span>
+                <span class="slider-cur-val c4">90 Smc/mese</span>
+                <span class="slider-cur-val c5">105 Smc/mese</span>
+                <span class="slider-cur-val c6">117 Smc/mese</span>
+                <span class="slider-cur-val c7">130 Smc/mese</span>
+                <span class="slider-cur-val c8">140 Smc/mese</span>
+                <span class="slider-cur-val c9">155 Smc/mese</span>
+                <span class="slider-cur-val c10">170 Smc/mese</span>
+                <span class="slider-cur-val c11">190 Smc/mese</span>
+                <span class="slider-cur-val c12">210 Smc/mese</span>
+                <span class="slider-cur-val c13">240 Smc/mese</span>
+                <span class="slider-cur-val c14">270 Smc/mese</span>
+                <span class="slider-cur-val c15">300 Smc/mese</span>
+              </div>
+              <div class="slider-dots" role="radiogroup" aria-labelledby="lbl-consumo">
+                <div class="slider-dots-track"></div>
+                <label for="cons-1" class="slider-dot c1" title="30 Smc/mese" aria-label="30 Smc al mese"></label>
+                <label for="cons-2" class="slider-dot c2" title="50 Smc/mese" aria-label="50 Smc al mese"></label>
+                <label for="cons-3" class="slider-dot c3" title="70 Smc/mese" aria-label="70 Smc al mese"></label>
+                <label for="cons-4" class="slider-dot c4" title="90 Smc/mese" aria-label="90 Smc al mese"></label>
+                <label for="cons-5" class="slider-dot c5" title="105 Smc/mese" aria-label="105 Smc al mese"></label>
+                <label for="cons-6" class="slider-dot c6" title="117 Smc/mese" aria-label="117 Smc al mese"></label>
+                <label for="cons-7" class="slider-dot c7" title="130 Smc/mese" aria-label="130 Smc al mese"></label>
+                <label for="cons-8" class="slider-dot c8" title="140 Smc/mese" aria-label="140 Smc al mese"></label>
+                <label for="cons-9" class="slider-dot c9" title="155 Smc/mese" aria-label="155 Smc al mese"></label>
+                <label for="cons-10" class="slider-dot c10" title="170 Smc/mese" aria-label="170 Smc al mese"></label>
+                <label for="cons-11" class="slider-dot c11" title="190 Smc/mese" aria-label="190 Smc al mese"></label>
+                <label for="cons-12" class="slider-dot c12" title="210 Smc/mese" aria-label="210 Smc al mese"></label>
+                <label for="cons-13" class="slider-dot c13" title="240 Smc/mese" aria-label="240 Smc al mese"></label>
+                <label for="cons-14" class="slider-dot c14" title="270 Smc/mese" aria-label="270 Smc al mese"></label>
+                <label for="cons-15" class="slider-dot c15" title="300 Smc/mese" aria-label="300 Smc al mese"></label>
+              </div>
+              <div class="slider-range"><span>30 Smc</span><span>300 Smc</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pn-cta-mid-mobile">$IT_NRJ_CTA_fullwidth_general_nrj0_Pulsee$</div>
+
+      <div class="card-final">
+        <div class="prices-area">
+          <span class="prices-area-title">Dettagli tariffari</span>
+          <div class="price-view gas">
+            <div class="data-item data-item-main"><span class="data-item-label">Prezzo gas</span>
+              <div class="data-item-value accent">0,501</div><span class="data-item-unit">&euro;/Smc fisso per 24
+                mesi</span>
+            </div>
+            <div class="data-item data-item-main"><span class="data-item-label">Quota vendita gas</span>
+              <div class="data-item-value">144</div><span class="data-item-unit">&euro;/anno, 12 &euro;/mese</span>
+            </div>
+            <div class="data-item data-item-main data-item-renewal"><span class="data-item-label">Dal 25&deg;
+                mese</span>
+              <div class="data-item-value" style="font-size:13px;">PSBIL + 0,072</div><span
+                class="data-item-unit">&euro;/Smc, quota invariata</span>
+            </div>
+            <input type="checkbox" id="toggle-extra-gas-mono" class="pn-toggle pn-extra-toggle"
+              aria-label="Mostra altri dettagli gas">
+            <label for="toggle-extra-gas-mono" class="mobile-details-trigger"><span class="show-more-text">Mostra altri
+                dettagli</span><span class="show-less-text">Nascondi dettagli</span></label>
+            <div class="data-item data-item-extra"><span class="data-item-label">Validità CTE</span>
+              <div class="data-item-value" style="font-size:13px;">23/06-30/06</div><span class="data-item-unit">anno
+                2026</span>
+            </div>
+            <div class="data-item data-item-extra"><span class="data-item-label">Codice offerta</span>
+              <div class="data-item-value" style="font-size:9px;line-height:1.4;">040505GSFML06XX<br>PULSEEFIX77482606
+              </div><span class="data-item-unit">Portale Offerte</span>
+            </div>
+          </div>
+          <p class="price-disclaimer">Stima calcolata su prezzo gas e quota vendita commerciale. Trasporto, oneri,
+            imposte, IVA e servizi extra non sono inclusi.</p>
+        </div>
+        <div class="pdf-box">
+          <div class="pdf-box-title">Documentazione offerta</div>
+          <p class="pdf-box-desc">Consulta Portale Offerte, CTE Pulsee e pagina ufficiale Gas Relax.</p>
+          <div class="pdf-links">
+            <a href="https://www.ilportaleofferte.it/" target="_blank" rel="noopener" class="pdf-link"><span
+                class="pdf-link-icon">A</span><span>Portale Offerte ARERA per Gas Relax</span></a>
+            <a href="https://pulsee.it/cms/pulsee/it/it.documents.json?documentId=AXPODT2026-444702079-4360805"
+              target="_blank" rel="noopener" class="pdf-link"><span class="pdf-link-icon">&euro;</span><span>CTE Pulsee
+                Gas Relax 23-30 giugno 2026</span></a>
+            <a href="https://pulsee.it/offerte-casa-luce-gas/gas/gas-relax" target="_blank" rel="noopener"
+              class="pdf-link"><span class="pdf-link-icon">i</span><span>Pagina ufficiale Gas Relax Pulsee</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ppn-cta-block-double class="show-call-opened"
+  style="--primary-color: #5A52FF; --cta-txt-color: white; --cta-hover-color: #5A52FF; --cta-bg-color: #00C5AF;"
+  type="default" picture-url="" first-cta-active-mode="call"
+  text-title="Chiama Papernest e attiva la migliore offerta luce e gas per te per risparmiare in bolletta!"
+  compliance-text="$IT_NRJ_BOX_Orari_Apertura$" info-text="$IT_Pulsee_legal_Text$"
+  info-hover-text="$IT_CTA_Info_Hover_Text$" first-cta-text="02 94 75 68 03" first-cta-href="tel:0294756803"
+  first-cta-icon="phone" first-cta-color="custom" first-cta-custom-color="#00C5AF"
+  first-cta-custom-color-hover="#5A52FF" second-cta-text="Fatti Richiamare" second-cta-color="primary"
+  second-cta-app-text="Fatti Richiamare" second-cta-icon="wcb" second-cta-app-icon="computer" second-cta-is-wcb="true"
+  second-cta-app-is-wcb="true" info-direction="reverse" active-mode="call">$IT_CTA_Testo$</ppn-cta-block-double>
+
+<ppn-cta-block-double class="show-call-closed"
+  style="--primary-color: #5A52FF; --cta-txt-color: white; --cta-hover-color: #5A52FF; --cta-bg-color: #00C5AF;"
+  type="default" picture-url=""
+  text-title="Chiama Papernest e attiva la migliore offerta luce e gas per te per risparmiare in bolletta!"
+  compliance-text="$IT_NRJ_BOX_Orari_Apertura$" info-text="$IT_Pulsee_legal_Text$"
+  info-hover-text="$IT_CTA_Info_Hover_Text$" first-cta-icon="computer" first-cta-color="custom"
+  first-cta-custom-color="#00C5AF" first-cta-custom-color-hover="#5A52FF" second-cta-text="Fatti Richiamare"
+  second-cta-color="primary" second-cta-app-text="Fatti Richiamare" second-cta-icon="wcb" second-cta-app-icon="computer"
+  second-cta-is-wcb="true" second-cta-app-is-wcb="true" info-direction="reverse"
+  active-mode="app">$IT_CTA_Testo$</ppn-cta-block-double>
+
+&nbsp;
+$IT_NRJ0_no_foto_menu_mobile$

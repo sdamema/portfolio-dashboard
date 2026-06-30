@@ -41,6 +41,9 @@ Each project detail should follow this order:
 - Keep mobile profile cards compact; two columns are acceptable when labels are short and no horizontal overflow appears.
 - Skills & Tools should use three aligned groups on desktop: SEO/content, data/AI/automation and publishing/creative.
 - Do not add a separate Workflow skill card; fold useful workflow concepts into the three main skill groups or the experience text.
+- Portfolio filters should stay simple: `SEO`, `Technical`, and `Social Media`.
+- Do not use `AI` as a project filter. AI is a transversal workflow/tooling layer, not a separate portfolio category.
+- Use the `Technical` filter only for analysis/scraping/data workflow projects, such as NRJ2 analysis and social comment scraping.
 
 ## Performance Data Rules
 
@@ -146,13 +149,15 @@ Date range:
 Comparison:
 
 - These are new pages, so do not describe the chart as a classic before/after update.
-- Use the first active 14 days as the launch baseline.
-- Compare the latest active 14 days with the launch baseline.
-- The chart uses 7-day smoothed percentage movement against the launch baseline.
+- Use April 15-28, 2026 as the post-March-core / production-ramp optimization baseline.
+- Compare the latest active 14 days with that recovery baseline.
+- The chart uses 7-day smoothed percentage movement against the recovery baseline.
+- Show Google core-update windows as context only: March 27-April 8, 2026 and May 21-June 2, 2026.
 
 Public reporting:
 
 - Show only percentage/relative movements, never raw clicks, impressions, CTR or average-position values.
 - It is acceptable to show public URLs from `Pages.csv`, but do not attach performance values to them.
-- Explain the chart as a launch trend: visibility can grow while CTR/ranking signals may still show optimization opportunities.
+- Explain the chart as a recovery/optimization trend after early algorithm context, not as proof that a Google update caused the movement.
+- The full project includes 91 offer sheets; the URL inventory reflects URLs available in the GSC export.
 - If URL-level phase comparison is needed later, request a page-by-date export; total-period `Pages.csv` is not enough for before/after or launch/latest URL movement.

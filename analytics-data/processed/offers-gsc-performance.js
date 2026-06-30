@@ -2,708 +2,732 @@ window.portfolioPerformanceData = window.portfolioPerformanceData || {};
 window.portfolioPerformanceData.offers = {
   "id": "offers-gsc-2026-06-30-percentage-only",
   "projectId": "offers",
-  "mode": "percentage-only-launch-index",
-  "title": "Offer pages relative Search Console launch trend",
+  "mode": "percentage-only-recovery-index",
+  "title": "Offer pages relative Search Console recovery trend",
   "source": {
     "platform": "Google Search Console",
     "searchType": "Web",
     "dateRange": "Mar 18, 2026-Jun 28, 2026",
-    "pageFilter": "New supplier offer-page URLs",
+    "pageFilter": "New and revamped supplier offer-page URLs",
     "note": "Public dataset is sanitized: it contains percentage changes and public URLs only, not raw clicks, impressions, CTR or average-position values."
   },
   "update": {
-    "label": "New-page launch baseline",
-    "chartLabel": "baseline split",
-    "legendLabel": "Launch baseline split",
-    "date": "2026-04-01",
-    "comparisonMethod": "Latest 14 active days compared with the first 14 active days. The chart uses 7-day smoothed percentage movement against the launch baseline."
+    "label": "Offer-page optimization baseline",
+    "chartLabel": "optimization baseline",
+    "legendLabel": "Optimization baseline",
+    "date": "2026-04-15",
+    "comparisonMethod": "Latest active 14 days compared with Apr 15-28, 2026, the post-March-core / production-ramp baseline. The chart uses 7-day smoothed percentage movement against that baseline."
   },
   "periods": {
     "before": {
-      "label": "First active 14 days",
-      "shortLabel": "Launch baseline",
-      "range": "Mar 18, 2026-Mar 31, 2026"
+      "label": "Algorithm context and launch phase",
+      "shortLabel": "Algorithm context",
+      "range": "Mar 18, 2026-Apr 13, 2026"
     },
     "after": {
-      "label": "Following launch period",
-      "shortLabel": "Growth phase",
-      "range": "Apr 1, 2026-Jun 28, 2026"
+      "label": "Post-March optimization phase",
+      "shortLabel": "Optimization phase",
+      "range": "Apr 15, 2026-Jun 28, 2026"
     }
   },
   "chartBaseline": {
-    "label": "First active 14 days = 0% baseline",
-    "method": "Each chart point is a 7-day smoothed percentage variation from the first active 14-day average.",
-    "tooltipNote": "Compared with the first active 14-day baseline"
+    "label": "Apr 15-28 = 0% recovery baseline",
+    "method": "Each chart point is a 7-day smoothed percentage variation from the post-March-core optimization baseline.",
+    "tooltipNote": "Compared with the Apr 15-28 recovery baseline"
   },
+  "chartFootnote": "Hover or tap the chart to inspect each date. The public view uses percentage movement only, not raw Search Console values. Google core-update windows are shown as context, not as proof of causality.",
+  "events": [
+    {
+      "type": "range",
+      "kind": "google-core",
+      "label": "March core",
+      "start": "2026-03-27",
+      "end": "2026-04-08"
+    },
+    {
+      "type": "range",
+      "kind": "google-core",
+      "label": "May core",
+      "start": "2026-05-21",
+      "end": "2026-06-02"
+    },
+    {
+      "type": "marker",
+      "kind": "revamp",
+      "label": "Optimization baseline",
+      "date": "2026-04-15"
+    }
+  ],
   "narrative": {
-    "summary": "These are <strong>new supplier offer pages</strong>, so the chart is not a classic before/after update. It shows a <strong>percentage-only launch trend</strong>: smoothed clicks and impressions are indexed against the first active phase, while raw GSC values stay hidden.",
+    "summary": "These are <strong>new and revamped supplier offer pages</strong>, so the chart is not a classic before/after revamp. It uses a <strong>post-March-core recovery baseline</strong> and shows percentage-only movement after the cluster moved from occasional work to a more structured <strong>May optimization phase</strong>.",
     "insights": [
-      "The latest phase is compared with the launch baseline to show whether the new pages gained visibility after publication.",
-      "URL names are shown only as public inventory/top contributors; performance values are intentionally excluded."
+      "The <strong>March core update</strong> is shown as context because the early launch phase was unstable; the fairer public comparison is the optimization baseline versus the latest phase.",
+      "<strong>Visibility, clicks and CTR</strong> moved upward from that baseline, suggesting the offer sheets were recovering after the early algorithm context and content improvements.",
+      "From early May, optimization focused on <strong>price-trend modules, cleaner H2 structure, AI-assisted deduplication and richer transactional UX</strong>."
     ]
   },
   "deltas": {
     "clickTrend": {
-      "direction": "declined",
-      "percent": -0.1255
+      "direction": "improved",
+      "percent": 1.8243
     },
     "impressionTrend": {
       "direction": "improved",
-      "percent": 0.1997
+      "percent": 0.7279
     },
     "ctrTrend": {
-      "direction": "declined",
-      "percent": -0.3461
+      "direction": "improved",
+      "percent": 0.6965
     },
     "positionTrend": {
-      "direction": "declined",
-      "percent": -0.4801
+      "direction": "improved",
+      "percent": 0.0271
     }
   },
   "metricCards": [
     {
       "label": "Click trend",
-      "value": -0.1255,
-      "direction": "declined",
-      "description": "latest 14-day average vs launch baseline"
+      "value": 1.8243,
+      "direction": "improved",
+      "description": "latest 14 days vs Apr 15-28 baseline"
     },
     {
       "label": "Impression trend",
-      "value": 0.1997,
+      "value": 0.7279,
       "direction": "improved",
-      "description": "latest 14-day visibility vs launch baseline"
+      "description": "visibility movement vs recovery baseline"
     },
     {
       "label": "CTR trend",
-      "value": -0.3461,
-      "direction": "declined",
+      "value": 0.6965,
+      "direction": "improved",
       "description": "relative click-efficiency movement"
     },
     {
       "label": "Position trend",
-      "value": -0.4801,
-      "direction": "declined",
+      "value": 0.0271,
+      "direction": "improved",
       "description": "relative movement, lower position is better"
     }
   ],
   "chart": [
     {
       "date": "2026-03-18",
-      "phase": "before",
-      "clickChange": -0.8828,
-      "impressionChange": -0.9528
+      "phase": "context",
+      "clickChange": -0.6216,
+      "impressionChange": -0.9321
     },
     {
       "date": "2026-03-19",
-      "phase": "before",
-      "clickChange": -0.5314,
-      "impressionChange": -0.6387
+      "phase": "context",
+      "clickChange": 0.5135,
+      "impressionChange": -0.4797
     },
     {
       "date": "2026-03-20",
-      "phase": "before",
-      "clickChange": -0.0823,
-      "impressionChange": -0.4768
+      "phase": "context",
+      "clickChange": 1.964,
+      "impressionChange": -0.2464
     },
     {
       "date": "2026-03-21",
-      "phase": "before",
-      "clickChange": -0.1213,
-      "impressionChange": -0.4378
+      "phase": "context",
+      "clickChange": 1.8378,
+      "impressionChange": -0.1903
     },
     {
       "date": "2026-03-22",
-      "phase": "before",
-      "clickChange": -0.2033,
-      "impressionChange": -0.4194
+      "phase": "context",
+      "clickChange": 1.573,
+      "impressionChange": -0.1638
     },
     {
       "date": "2026-03-23",
-      "phase": "before",
-      "clickChange": -0.1994,
-      "impressionChange": -0.3475
+      "phase": "context",
+      "clickChange": 1.5856,
+      "impressionChange": -0.0602
     },
     {
       "date": "2026-03-24",
-      "phase": "before",
-      "clickChange": -0.1464,
-      "impressionChange": -0.2818
+      "phase": "context",
+      "clickChange": 1.7568,
+      "impressionChange": 0.0344
     },
     {
       "date": "2026-03-25",
-      "phase": "before",
-      "clickChange": 0.0544,
-      "impressionChange": -0.0274
+      "phase": "context",
+      "clickChange": 2.4054,
+      "impressionChange": 0.4007
     },
     {
       "date": "2026-03-26",
-      "phase": "before",
-      "clickChange": 0.1548,
-      "impressionChange": 0.068
+      "phase": "context",
+      "clickChange": 2.7297,
+      "impressionChange": 0.5382
     },
     {
       "date": "2026-03-27",
-      "phase": "before",
-      "clickChange": 0.113,
-      "impressionChange": 0.173
+      "phase": "context",
+      "clickChange": 2.5946,
+      "impressionChange": 0.6894
     },
     {
       "date": "2026-03-28",
-      "phase": "before",
-      "clickChange": 0.0962,
-      "impressionChange": 0.214
+      "phase": "context",
+      "clickChange": 2.5405,
+      "impressionChange": 0.7485
     },
     {
       "date": "2026-03-29",
-      "phase": "before",
-      "clickChange": 0.1464,
-      "impressionChange": 0.217
+      "phase": "context",
+      "clickChange": 2.7027,
+      "impressionChange": 0.7528
     },
     {
       "date": "2026-03-30",
-      "phase": "before",
-      "clickChange": 0.2301,
-      "impressionChange": 0.2561
+      "phase": "context",
+      "clickChange": 2.973,
+      "impressionChange": 0.8091
     },
     {
       "date": "2026-03-31",
-      "phase": "before",
-      "clickChange": 0.1464,
-      "impressionChange": 0.2818
+      "phase": "context",
+      "clickChange": 2.7027,
+      "impressionChange": 0.8461
     },
     {
       "date": "2026-04-01",
-      "phase": "after",
-      "clickChange": 0.046,
-      "impressionChange": 0.1635
+      "phase": "context",
+      "clickChange": 2.3784,
+      "impressionChange": 0.6757
     },
     {
       "date": "2026-04-02",
-      "phase": "after",
-      "clickChange": -0.0628,
-      "impressionChange": 0.1043
+      "phase": "context",
+      "clickChange": 2.027,
+      "impressionChange": 0.5905
     },
     {
       "date": "2026-04-03",
-      "phase": "after",
-      "clickChange": -0.2552,
-      "impressionChange": -0.0127
+      "phase": "context",
+      "clickChange": 1.4054,
+      "impressionChange": 0.4219
     },
     {
       "date": "2026-04-04",
-      "phase": "after",
-      "clickChange": -0.3305,
-      "impressionChange": -0.0932
+      "phase": "context",
+      "clickChange": 1.1622,
+      "impressionChange": 0.306
     },
     {
       "date": "2026-04-05",
-      "phase": "after",
-      "clickChange": -0.4477,
-      "impressionChange": -0.1465
+      "phase": "context",
+      "clickChange": 0.7838,
+      "impressionChange": 0.2293
     },
     {
       "date": "2026-04-06",
-      "phase": "after",
-      "clickChange": -0.5983,
-      "impressionChange": -0.2816
+      "phase": "context",
+      "clickChange": 0.2973,
+      "impressionChange": 0.0347
     },
     {
       "date": "2026-04-07",
-      "phase": "after",
-      "clickChange": -0.6067,
-      "impressionChange": -0.3701
+      "phase": "context",
+      "clickChange": 0.2703,
+      "impressionChange": -0.0928
     },
     {
       "date": "2026-04-08",
-      "phase": "after",
-      "clickChange": -0.6987,
-      "impressionChange": -0.425
+      "phase": "context",
+      "clickChange": -0.027,
+      "impressionChange": -0.1719
     },
     {
       "date": "2026-04-09",
-      "phase": "after",
-      "clickChange": -0.749,
-      "impressionChange": -0.4759
+      "phase": "context",
+      "clickChange": -0.1892,
+      "impressionChange": -0.2452
     },
     {
       "date": "2026-04-10",
-      "phase": "after",
-      "clickChange": -0.749,
-      "impressionChange": -0.5011
+      "phase": "context",
+      "clickChange": -0.1892,
+      "impressionChange": -0.2814
     },
     {
       "date": "2026-04-11",
-      "phase": "after",
-      "clickChange": -0.7406,
-      "impressionChange": -0.5133
+      "phase": "context",
+      "clickChange": -0.1622,
+      "impressionChange": -0.299
     },
     {
       "date": "2026-04-12",
-      "phase": "after",
-      "clickChange": -0.6987,
-      "impressionChange": -0.5114
+      "phase": "context",
+      "clickChange": -0.027,
+      "impressionChange": -0.2962
     },
     {
       "date": "2026-04-13",
-      "phase": "after",
-      "clickChange": -0.6904,
-      "impressionChange": -0.4452
+      "phase": "context",
+      "clickChange": 0,
+      "impressionChange": -0.201
     },
     {
       "date": "2026-04-14",
-      "phase": "after",
-      "clickChange": -0.7071,
-      "impressionChange": -0.4307
+      "phase": "context",
+      "clickChange": -0.0541,
+      "impressionChange": -0.18
     },
     {
       "date": "2026-04-15",
       "phase": "after",
-      "clickChange": -0.6736,
-      "impressionChange": -0.4162
+      "clickChange": 0.0541,
+      "impressionChange": -0.1591
     },
     {
       "date": "2026-04-16",
       "phase": "after",
-      "clickChange": -0.7071,
-      "impressionChange": -0.372
+      "clickChange": -0.0541,
+      "impressionChange": -0.0956
     },
     {
       "date": "2026-04-17",
       "phase": "after",
-      "clickChange": -0.6904,
-      "impressionChange": -0.338
+      "clickChange": 0,
+      "impressionChange": -0.0465
     },
     {
       "date": "2026-04-18",
       "phase": "after",
-      "clickChange": -0.6987,
-      "impressionChange": -0.3143
+      "clickChange": -0.027,
+      "impressionChange": -0.0124
     },
     {
       "date": "2026-04-19",
       "phase": "after",
-      "clickChange": -0.7071,
-      "impressionChange": -0.2966
+      "clickChange": -0.0541,
+      "impressionChange": 0.0131
     },
     {
       "date": "2026-04-20",
       "phase": "after",
-      "clickChange": -0.7238,
-      "impressionChange": -0.3032
+      "clickChange": -0.1081,
+      "impressionChange": 0.0036
     },
     {
       "date": "2026-04-21",
       "phase": "after",
-      "clickChange": -0.682,
-      "impressionChange": -0.3034
+      "clickChange": 0.027,
+      "impressionChange": 0.0033
     },
     {
       "date": "2026-04-22",
       "phase": "after",
-      "clickChange": -0.682,
-      "impressionChange": -0.3111
+      "clickChange": 0.027,
+      "impressionChange": -0.0079
     },
     {
       "date": "2026-04-23",
       "phase": "after",
-      "clickChange": -0.6736,
-      "impressionChange": -0.3376
+      "clickChange": 0.0541,
+      "impressionChange": -0.046
     },
     {
       "date": "2026-04-24",
       "phase": "after",
-      "clickChange": -0.7155,
-      "impressionChange": -0.3452
+      "clickChange": -0.0811,
+      "impressionChange": -0.0569
     },
     {
       "date": "2026-04-25",
       "phase": "after",
-      "clickChange": -0.6987,
-      "impressionChange": -0.3447
+      "clickChange": -0.027,
+      "impressionChange": -0.0561
     },
     {
       "date": "2026-04-26",
       "phase": "after",
-      "clickChange": -0.7155,
-      "impressionChange": -0.3408
+      "clickChange": -0.0811,
+      "impressionChange": -0.0505
     },
     {
       "date": "2026-04-27",
       "phase": "after",
-      "clickChange": -0.6653,
-      "impressionChange": -0.325
+      "clickChange": 0.0811,
+      "impressionChange": -0.0279
     },
     {
       "date": "2026-04-28",
       "phase": "after",
-      "clickChange": -0.6987,
-      "impressionChange": -0.3079
+      "clickChange": -0.027,
+      "impressionChange": -0.0033
     },
     {
       "date": "2026-04-29",
       "phase": "after",
-      "clickChange": -0.682,
-      "impressionChange": -0.2636
+      "clickChange": 0.027,
+      "impressionChange": 0.0606
     },
     {
       "date": "2026-04-30",
       "phase": "after",
-      "clickChange": -0.6653,
-      "impressionChange": -0.2508
+      "clickChange": 0.0811,
+      "impressionChange": 0.0791
     },
     {
       "date": "2026-05-01",
       "phase": "after",
-      "clickChange": -0.6318,
-      "impressionChange": -0.2632
+      "clickChange": 0.1892,
+      "impressionChange": 0.0612
     },
     {
       "date": "2026-05-02",
       "phase": "after",
-      "clickChange": -0.5983,
-      "impressionChange": -0.2683
+      "clickChange": 0.2973,
+      "impressionChange": 0.0539
     },
     {
       "date": "2026-05-03",
       "phase": "after",
-      "clickChange": -0.5649,
-      "impressionChange": -0.2708
+      "clickChange": 0.4054,
+      "impressionChange": 0.0502
     },
     {
       "date": "2026-05-04",
       "phase": "after",
-      "clickChange": -0.6067,
-      "impressionChange": -0.2637
+      "clickChange": 0.2703,
+      "impressionChange": 0.0604
     },
     {
       "date": "2026-05-05",
       "phase": "after",
-      "clickChange": -0.5481,
-      "impressionChange": -0.1856
+      "clickChange": 0.4595,
+      "impressionChange": 0.1729
     },
     {
       "date": "2026-05-06",
       "phase": "after",
-      "clickChange": -0.4644,
-      "impressionChange": -0.1687
+      "clickChange": 0.7297,
+      "impressionChange": 0.1973
     },
     {
       "date": "2026-05-07",
       "phase": "after",
-      "clickChange": -0.3724,
-      "impressionChange": -0.0951
+      "clickChange": 1.027,
+      "impressionChange": 0.3033
     },
     {
       "date": "2026-05-08",
       "phase": "after",
-      "clickChange": -0.3305,
-      "impressionChange": -0.0208
+      "clickChange": 1.1622,
+      "impressionChange": 0.4103
     },
     {
       "date": "2026-05-09",
       "phase": "after",
-      "clickChange": -0.3473,
-      "impressionChange": 0.0017
+      "clickChange": 1.1081,
+      "impressionChange": 0.4427
     },
     {
       "date": "2026-05-10",
       "phase": "after",
-      "clickChange": -0.364,
-      "impressionChange": 0.0275
+      "clickChange": 1.0541,
+      "impressionChange": 0.4799
     },
     {
       "date": "2026-05-11",
       "phase": "after",
-      "clickChange": -0.3305,
-      "impressionChange": 0.0704
+      "clickChange": 1.1622,
+      "impressionChange": 0.5416
     },
     {
       "date": "2026-05-12",
       "phase": "after",
-      "clickChange": -0.3556,
-      "impressionChange": 0.0322
+      "clickChange": 1.0811,
+      "impressionChange": 0.4866
     },
     {
       "date": "2026-05-13",
       "phase": "after",
-      "clickChange": -0.3556,
-      "impressionChange": 0.0354
+      "clickChange": 1.0811,
+      "impressionChange": 0.4912
     },
     {
       "date": "2026-05-14",
       "phase": "after",
-      "clickChange": -0.4142,
-      "impressionChange": 0.0044
+      "clickChange": 0.8919,
+      "impressionChange": 0.4466
     },
     {
       "date": "2026-05-15",
       "phase": "after",
-      "clickChange": -0.3975,
-      "impressionChange": -0.0153
+      "clickChange": 0.9459,
+      "impressionChange": 0.4182
     },
     {
       "date": "2026-05-16",
       "phase": "after",
-      "clickChange": -0.3808,
-      "impressionChange": -0.0111
+      "clickChange": 1,
+      "impressionChange": 0.4242
     },
     {
       "date": "2026-05-17",
       "phase": "after",
-      "clickChange": -0.3975,
-      "impressionChange": -0.0258
+      "clickChange": 0.9459,
+      "impressionChange": 0.4031
     },
     {
       "date": "2026-05-18",
       "phase": "after",
-      "clickChange": -0.4142,
-      "impressionChange": -0.0638
+      "clickChange": 0.8919,
+      "impressionChange": 0.3483
     },
     {
       "date": "2026-05-19",
       "phase": "after",
-      "clickChange": -0.4142,
-      "impressionChange": -0.1223
+      "clickChange": 0.8919,
+      "impressionChange": 0.2641
     },
     {
       "date": "2026-05-20",
       "phase": "after",
-      "clickChange": -0.4979,
-      "impressionChange": -0.1488
+      "clickChange": 0.6216,
+      "impressionChange": 0.2259
     },
     {
       "date": "2026-05-21",
       "phase": "after",
-      "clickChange": -0.4895,
-      "impressionChange": -0.1726
+      "clickChange": 0.6486,
+      "impressionChange": 0.1917
     },
     {
       "date": "2026-05-22",
       "phase": "after",
-      "clickChange": -0.4895,
-      "impressionChange": -0.1918
+      "clickChange": 0.6486,
+      "impressionChange": 0.164
     },
     {
       "date": "2026-05-23",
       "phase": "after",
-      "clickChange": -0.5146,
-      "impressionChange": -0.2053
+      "clickChange": 0.5676,
+      "impressionChange": 0.1446
     },
     {
       "date": "2026-05-24",
       "phase": "after",
-      "clickChange": -0.4979,
-      "impressionChange": -0.2153
+      "clickChange": 0.6216,
+      "impressionChange": 0.1302
     },
     {
       "date": "2026-05-25",
       "phase": "after",
-      "clickChange": -0.4393,
-      "impressionChange": -0.2187
+      "clickChange": 0.8108,
+      "impressionChange": 0.1253
     },
     {
       "date": "2026-05-26",
       "phase": "after",
-      "clickChange": -0.4644,
-      "impressionChange": -0.1883
+      "clickChange": 0.7297,
+      "impressionChange": 0.1691
     },
     {
       "date": "2026-05-27",
       "phase": "after",
-      "clickChange": -0.4477,
-      "impressionChange": -0.1624
+      "clickChange": 0.7838,
+      "impressionChange": 0.2063
     },
     {
       "date": "2026-05-28",
       "phase": "after",
-      "clickChange": -0.4812,
-      "impressionChange": -0.153
+      "clickChange": 0.6757,
+      "impressionChange": 0.2199
     },
     {
       "date": "2026-05-29",
       "phase": "after",
-      "clickChange": -0.4895,
-      "impressionChange": -0.1576
+      "clickChange": 0.6486,
+      "impressionChange": 0.2133
     },
     {
       "date": "2026-05-30",
       "phase": "after",
-      "clickChange": -0.4561,
-      "impressionChange": -0.1462
+      "clickChange": 0.7568,
+      "impressionChange": 0.2297
     },
     {
       "date": "2026-05-31",
       "phase": "after",
-      "clickChange": -0.4059,
-      "impressionChange": -0.1183
+      "clickChange": 0.9189,
+      "impressionChange": 0.2699
     },
     {
       "date": "2026-06-01",
       "phase": "after",
-      "clickChange": -0.5146,
-      "impressionChange": -0.1261
+      "clickChange": 0.5676,
+      "impressionChange": 0.2586
     },
     {
       "date": "2026-06-02",
       "phase": "after",
-      "clickChange": -0.5146,
-      "impressionChange": -0.168
+      "clickChange": 0.5676,
+      "impressionChange": 0.1983
     },
     {
       "date": "2026-06-03",
       "phase": "after",
-      "clickChange": -0.3975,
-      "impressionChange": -0.171
+      "clickChange": 0.9459,
+      "impressionChange": 0.194
     },
     {
       "date": "2026-06-04",
       "phase": "after",
-      "clickChange": -0.3808,
-      "impressionChange": -0.155
+      "clickChange": 1,
+      "impressionChange": 0.2169
     },
     {
       "date": "2026-06-05",
       "phase": "after",
-      "clickChange": -0.3724,
-      "impressionChange": -0.131
+      "clickChange": 1.027,
+      "impressionChange": 0.2515
     },
     {
       "date": "2026-06-06",
       "phase": "after",
-      "clickChange": -0.3473,
-      "impressionChange": -0.1207
+      "clickChange": 1.1081,
+      "impressionChange": 0.2663
     },
     {
       "date": "2026-06-07",
       "phase": "after",
-      "clickChange": -0.3975,
-      "impressionChange": -0.1287
+      "clickChange": 0.9459,
+      "impressionChange": 0.2549
     },
     {
       "date": "2026-06-08",
       "phase": "after",
-      "clickChange": -0.2385,
-      "impressionChange": -0.0307
+      "clickChange": 1.4595,
+      "impressionChange": 0.3961
     },
     {
       "date": "2026-06-09",
       "phase": "after",
-      "clickChange": -0.205,
-      "impressionChange": 0.0633
+      "clickChange": 1.5676,
+      "impressionChange": 0.5314
     },
     {
       "date": "2026-06-10",
       "phase": "after",
-      "clickChange": -0.1799,
-      "impressionChange": 0.1182
+      "clickChange": 1.6486,
+      "impressionChange": 0.6105
     },
     {
       "date": "2026-06-11",
       "phase": "after",
-      "clickChange": -0.1381,
-      "impressionChange": 0.1667
+      "clickChange": 1.7838,
+      "impressionChange": 0.6803
     },
     {
       "date": "2026-06-12",
       "phase": "after",
-      "clickChange": -0.1297,
-      "impressionChange": 0.1896
+      "clickChange": 1.8108,
+      "impressionChange": 0.7133
     },
     {
       "date": "2026-06-13",
       "phase": "after",
-      "clickChange": -0.1548,
-      "impressionChange": 0.197
+      "clickChange": 1.7297,
+      "impressionChange": 0.7239
     },
     {
       "date": "2026-06-14",
       "phase": "after",
-      "clickChange": -0.0795,
-      "impressionChange": 0.2012
+      "clickChange": 1.973,
+      "impressionChange": 0.73
     },
     {
       "date": "2026-06-15",
       "phase": "after",
-      "clickChange": -0.1632,
-      "impressionChange": 0.1684
+      "clickChange": 1.7027,
+      "impressionChange": 0.6828
     },
     {
       "date": "2026-06-16",
       "phase": "after",
-      "clickChange": -0.1046,
-      "impressionChange": 0.2117
+      "clickChange": 1.8919,
+      "impressionChange": 0.7451
     },
     {
       "date": "2026-06-17",
       "phase": "after",
-      "clickChange": -0.2218,
-      "impressionChange": 0.1857
+      "clickChange": 1.5135,
+      "impressionChange": 0.7077
     },
     {
       "date": "2026-06-18",
       "phase": "after",
-      "clickChange": -0.2218,
-      "impressionChange": 0.1754
+      "clickChange": 1.5135,
+      "impressionChange": 0.6928
     },
     {
       "date": "2026-06-19",
       "phase": "after",
-      "clickChange": -0.1464,
-      "impressionChange": 0.1698
+      "clickChange": 1.7568,
+      "impressionChange": 0.6848
     },
     {
       "date": "2026-06-20",
       "phase": "after",
-      "clickChange": -0.1046,
-      "impressionChange": 0.1875
+      "clickChange": 1.8919,
+      "impressionChange": 0.7103
     },
     {
       "date": "2026-06-21",
       "phase": "after",
-      "clickChange": -0.1297,
-      "impressionChange": 0.2038
+      "clickChange": 1.8108,
+      "impressionChange": 0.7338
     },
     {
       "date": "2026-06-22",
       "phase": "after",
-      "clickChange": -0.1381,
-      "impressionChange": 0.2102
+      "clickChange": 1.7838,
+      "impressionChange": 0.743
     },
     {
       "date": "2026-06-23",
       "phase": "after",
-      "clickChange": -0.1883,
-      "impressionChange": 0.1638
+      "clickChange": 1.6216,
+      "impressionChange": 0.6761
     },
     {
       "date": "2026-06-24",
       "phase": "after",
-      "clickChange": -0.1046,
-      "impressionChange": 0.1668
+      "clickChange": 1.8919,
+      "impressionChange": 0.6804
     },
     {
       "date": "2026-06-25",
       "phase": "after",
-      "clickChange": -0.0544,
-      "impressionChange": 0.1705
+      "clickChange": 2.0541,
+      "impressionChange": 0.6859
     },
     {
       "date": "2026-06-26",
       "phase": "after",
-      "clickChange": -0.113,
-      "impressionChange": 0.1915
+      "clickChange": 1.8649,
+      "impressionChange": 0.7161
     },
     {
       "date": "2026-06-27",
       "phase": "after",
-      "clickChange": -0.1046,
-      "impressionChange": 0.1894
+      "clickChange": 1.8919,
+      "impressionChange": 0.7131
     },
     {
       "date": "2026-06-28",
       "phase": "after",
-      "clickChange": -0.1213,
-      "impressionChange": 0.1957
+      "clickChange": 1.8378,
+      "impressionChange": 0.7221
     }
   ],
   "topPages": [
@@ -733,11 +757,11 @@ window.portfolioPerformanceData.offers = {
     }
   ],
   "topPagesPanel": {
-    "eyebrow": "Top contributing offer pages",
-    "title": "Which URLs led the launch",
-    "totalNote": "URL names only, ordered by total exported contribution. Raw clicks, impressions, CTR and position are not included in the public file.",
-    "unavailableNote": "This export is total-period only. A page-by-date export is needed to compare URL-level phases without exposing raw values.",
-    "itemNote": "Values hidden in the public version.",
+    "eyebrow": "Offer URL contribution",
+    "title": "Offer URLs included in this export",
+    "totalNote": "This export contains only total-period URL rows, so it is shown as a clean URL list rather than a growth ranking. To order pages by highest percentage click growth, export GSC with both Page and Date dimensions.",
+    "unavailableNote": "URL-level click variation needs a Page + Date export. With this file, a before/after URL growth ranking would be invented, so it is intentionally not shown.",
+    "itemNote": "Total-period URL only; values hidden.",
     "showBars": false
   },
   "topPagePeriodSplit": {
@@ -745,7 +769,7 @@ window.portfolioPerformanceData.offers = {
     "reason": "Page-by-date export needed for phase-level URL ranking. This public view keeps only total-period URL names."
   },
   "urlInventoryTitle": "Offer URL inventory",
-  "urlInventoryNote": "Public URLs included in the GSC offer-page export. Performance numbers are intentionally excluded; the chart above shows only indexed percentage movement.",
+  "urlInventoryNote": "Public URLs included in the GSC offer-page export. Performance numbers are intentionally excluded; the chart above shows only indexed percentage movement. The full project included 91 offer sheets; this inventory reflects the URLs available in this export.",
   "urlInventory": [
     {
       "provider": "Eni Plenitude - Fixa Time Luce Gas",
