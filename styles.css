@@ -2701,9 +2701,8 @@ iframe {
   }
 
   .chart-line {
-    stroke-dasharray: 1600;
-    stroke-dashoffset: 1600;
-    animation: drawLine .9s ease forwards;
+    opacity: 0;
+    animation: chartLineIn .55s ease forwards;
   }
 
   .chart-line--clicks {
@@ -2735,9 +2734,15 @@ iframe {
   }
 }
 
-@keyframes drawLine {
+@keyframes chartLineIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
   to {
-    stroke-dashoffset: 0;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

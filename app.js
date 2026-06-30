@@ -1378,7 +1378,7 @@ function showChartTooltip(point, dataset) {
   `;
 
   const anchorX = chartRect.left + (point.x / 940) * chartRect.width;
-  const anchorY = chartRect.top + (point.y / 360) * chartRect.height;
+  const anchorY = chartRect.top + (point.y / 390) * chartRect.height;
   const tooltipWidth = chartTooltip.offsetWidth || 190;
   const tooltipHeight = chartTooltip.offsetHeight || 126;
   const gap = 14;
