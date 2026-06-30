@@ -1,0 +1,4200 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Classifica fornitori - preview</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #f5f6fb;
+    }
+
+    .preview-shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
+      background: #fff;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .preview-shell {
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="preview-shell">
+<div class="ppn-custom-section-wrapper"
+  style="font-family: 'Inter', sans-serif; width: 100%; margin: 20px 0 40px 0; overflow: visible;">
+  <style>
+    .ppn-disclaimer-wrapper {
+      position: relative;
+      display: block;
+      font-style: italic;
+      color: #666;
+      line-height: 1.4;
+      margin: 10px 0;
+      border-left: 1px solid #e0e0e0;
+      border-right: 1px solid #e0e0e0;
+      padding: 5px 8px;
+    }
+
+    @media (max-width: 768px) {
+      .ppn-disclaimer-wrapper {
+        text-align: left !important;
+        padding-left: 5px !important;
+        font-size: 10px !important;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .ppn-disclaimer-wrapper {
+        text-align: right !important;
+        padding-right: 10px !important;
+        font-size: 11px !important;
+        max-width: 380px !important;
+        margin-left: auto !important;
+      }
+    }
+
+    .ppn-v2-intro-text {
+      color: #4a4a4a;
+      line-height: 1.7;
+      font-size: 16px;
+      margin-bottom: 35px;
+      text-align: left;
+      width: 100%;
+    }
+
+    .ppn-v2-podium-container {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: flex-end !important;
+      justify-content: center !important;
+      gap: 15px !important;
+      width: 100% !important;
+      max-width: 1000px !important;
+      margin: 0 auto !important;
+      padding: 25px 10px 20px !important;
+      box-sizing: border-box !important;
+    }
+
+    .ppn-v2-col {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      flex: 1 !important;
+      max-width: 250px !important;
+      position: relative !important;
+    }
+
+    .ppn-v2-gold {
+      order: 2 !important;
+    }
+
+    .ppn-v2-silver {
+      order: 1 !important;
+    }
+
+    .ppn-v2-bronze {
+      order: 3 !important;
+    }
+
+    .ppn-v2-gold .ppn-v2-card {
+      padding-bottom: 55px;
+    }
+
+    .ppn-v2-silver .ppn-v2-card {
+      padding-bottom: 38px;
+    }
+
+    .ppn-v2-bronze .ppn-v2-card {
+      padding-bottom: 20px;
+    }
+
+    .ppn-sa-score {
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1;
+      margin: 0;
+      color: #1e1e1e;
+    }
+
+    .ppn-sa-unit {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #aaa;
+    }
+
+    .ppn-sa-positive {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin: 1px 0 3px;
+      justify-content: center;
+    }
+
+    .ppn-sa-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .ppn-sa-bar {
+      display: flex;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 0 6px 2px;
+      gap: 1px;
+    }
+
+    .ppn-sa-bar-pos {
+      background: #A8E6CF;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .ppn-sa-bar-neu {
+      background: #FFE0A3;
+    }
+
+    .ppn-sa-bar-neg {
+      background: #F4A6A0;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .ppn-sa-breakdown {
+      font-size: 10px;
+      color: #999;
+      margin: 0;
+    }
+
+    .ppn-sa-meta {
+      font-size: 10px;
+      color: #bbb;
+      margin: 0 0 3px;
+    }
+
+    .ppn-sa-themes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .ppn-sa-pill {
+      background: #f0f3ff;
+      border: 1px solid #e0e7ff;
+      border-radius: 10px;
+      padding: 2px 7px;
+      font-size: 9px;
+      color: #5a52ff;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .ppn-sa-pill b {
+      font-weight: 700;
+    }
+
+    .ppn-v2-medal-wrap {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      margin-bottom: -28px !important;
+    }
+
+    .ppn-v2-hexagon {
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ppn-v2-hex-inner {
+      width: 88%;
+      height: 88%;
+      background: #fff;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ppn-v2-hex-inner img {
+      width: 65%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .ppn-v2-card {
+      width: 100%;
+      background: #fffbf2;
+      border: 1px solid #F2EBDD;
+      border-radius: 12px;
+      padding: 28px 10px 10px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+      z-index: 5;
+    }
+
+    .ppn-v2-offer-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: #666;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      min-height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ppn-v2-score-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #f0f3ff;
+      border: 1px solid #e0e7ff;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #5a52ff;
+      margin-top: auto;
+    }
+
+    .ppn-v2-score-badge .score-val {
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .ppn-v2-podium-container {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        padding: 16px 10px !important;
+      }
+
+      .ppn-v2-gold {
+        flex: 0 0 60% !important;
+        max-width: 220px !important;
+        order: 1 !important;
+      }
+
+      .ppn-v2-silver {
+        flex: 0 0 45% !important;
+        max-width: 170px !important;
+        order: 2 !important;
+      }
+
+      .ppn-v2-bronze {
+        flex: 0 0 45% !important;
+        max-width: 170px !important;
+        order: 3 !important;
+      }
+
+      .ppn-v2-gold .ppn-v2-card,
+      .ppn-v2-silver .ppn-v2-card,
+      .ppn-v2-bronze .ppn-v2-card {
+        min-height: auto;
+      }
+
+      .ppn-v2-gold .ppn-v2-card {
+        padding-bottom: 40px !important;
+      }
+
+      .ppn-v2-silver .ppn-v2-card {
+        padding-bottom: 28px !important;
+      }
+
+      .ppn-v2-bronze .ppn-v2-card {
+        padding-bottom: 12px !important;
+      }
+
+      .ppn-sa-score {
+        font-size: 1.5rem;
+      }
+
+      .ppn-sa-positive {
+        font-size: 10px;
+        margin: 3px 0 5px;
+      }
+
+      .ppn-sa-breakdown {
+        font-size: 9px;
+      }
+
+      .ppn-sa-meta {
+        font-size: 9px;
+        margin-bottom: 5px;
+      }
+
+      .ppn-sa-pill {
+        font-size: 8px;
+        padding: 2px 6px;
+      }
+
+      .ppn-sa-themes {
+        gap: 3px;
+      }
+
+      .ppn-v2-medal-wrap {
+        width: 85px;
+        height: 75px;
+        margin-bottom: -22px !important;
+      }
+
+      .ppn-v2-card {
+        padding: 32px 10px 12px;
+      }
+
+      .ppn-v2-offer-name {
+        font-size: 10px;
+        min-height: 24px;
+        margin-bottom: 2px;
+      }
+
+      .ppn-v2-intro-text {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+
+  <p class="ppn-v2-intro-text">La classifica del <strong>miglior fornitore luce</strong> nel 2026 nasce dall'analisi di
+    oltre <strong>1.500 commenti social e recensioni reali</strong> sui principali fornitori di energia, raccolti da
+    Reddit, YouTube, Facebook e X. Dall'analisi emergono tre fornitori in cima al ranking:
+    <strong>Octopus Energy</strong>, <strong>Dolomiti Energia</strong> ed <strong>ENGIE</strong>. Il risultato mette a
+    confronto i fornitori del <strong>mercato libero</strong> in base a tono dei commenti, temi ricorrenti e punteggi
+    calcolati su scala 0-10.</p>
+
+  <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:10px 0; width:100%;">
+    <div
+      style="display: inline-flex; align-items: center; padding: 8px 16px; background-color: #f0f3ff; border: 1px solid #e0e7ff; border-radius: 50px;">
+      <span
+        style="height: 8px; width: 8px; background-color: #5a52ff; border-radius: 50%; display: inline-block; margin-right: 8px;"></span>
+      <span style="font-size: 11px; font-weight: 600; color: #5a52ff;">Aggiornato con dati GME e ARERA a:
+        $IT_today_date$</span>
+    </div>
+    <div class="ppn-disclaimer-wrapper" style="margin:0;">Papernest è un intermediario indipendente remunerato dai
+      partner. Il servizio telefonico è riservato alle sole offerte partner.</div>
+  </div>
+
+  <div class="ppn-v2-podium-container">
+
+    <!-- 1&deg; Posto - OCTOPUS ENERGY -->
+    <div class="ppn-v2-col ppn-v2-gold">
+      <div class="ppn-v2-medal-wrap">
+        <div class="ppn-v2-hexagon" style="background: #FFD700;">
+          <div class="ppn-v2-hex-inner">
+            <img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/img-src-8-1.png"
+              alt="Logo Octopus Energy - miglior fornitore luce mercato libero" />
+          </div>
+        </div>
+      </div>
+      <div class="ppn-v2-card" style="border-top: 6px solid #FFD700;">
+        <div class="ppn-v2-offer-name">Octopus Energy</div>
+        <div class="ppn-sa-score">8.19<span class="ppn-sa-unit">/10</span></div>
+        <div class="ppn-sa-positive"><span class="ppn-sa-dot" style="background:#A8E6CF;"></span><span
+            style="color:#3dab8a;">88.6% positivo</span></div>
+        <div class="ppn-sa-bar">
+          <div class="ppn-sa-bar-pos" style="width:88.6%"></div>
+          <div class="ppn-sa-bar-neu" style="width:2.3%"></div>
+          <div class="ppn-sa-bar-neg" style="width:9.1%"></div>
+        </div>
+        <div class="ppn-sa-themes">
+          <span class="ppn-sa-pill">Trasparenza <b>40</b></span>
+          <span class="ppn-sa-pill">Assistenza <b>39</b></span>
+          <span class="ppn-sa-pill">Attivazione <b>34</b></span>
+        </div>
+      </div>
+    </div>
+    <!-- 2&deg; Posto - DOLOMITI ENERGIA -->
+    <div class="ppn-v2-col ppn-v2-silver">
+      <div class="ppn-v2-medal-wrap">
+        <div class="ppn-v2-hexagon" style="background: #C0C0C0;">
+          <div class="ppn-v2-hex-inner">
+            <img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/36/2024/12/img-src-4.png"
+              alt="Logo Dolomiti Energia - fornitore luce mercato libero" />
+          </div>
+        </div>
+      </div>
+      <div class="ppn-v2-card" style="border-top: 6px solid #C0C0C0;">
+        <div class="ppn-v2-offer-name">Dolomiti Energia</div>
+        <div class="ppn-sa-score">7.70<span class="ppn-sa-unit">/10</span></div>
+        <div class="ppn-sa-positive"><span class="ppn-sa-dot" style="background:#A8E6CF;"></span><span
+            style="color:#3dab8a;">71.7% positivo</span></div>
+        <div class="ppn-sa-bar">
+          <div class="ppn-sa-bar-pos" style="width:71.7%"></div>
+          <div class="ppn-sa-bar-neu" style="width:0.0%"></div>
+          <div class="ppn-sa-bar-neg" style="width:28.3%"></div>
+        </div>
+        <div class="ppn-sa-themes">
+          <span class="ppn-sa-pill">Assistenza <b>30</b></span>
+          <span class="ppn-sa-pill">Tariffe <b>22</b></span>
+          <span class="ppn-sa-pill">Digitale <b>22</b></span>
+        </div>
+      </div>
+    </div>
+    <!-- 3&deg; Posto - ENGIE -->
+    <div class="ppn-v2-col ppn-v2-bronze">
+      <div class="ppn-v2-medal-wrap">
+        <div class="ppn-v2-hexagon" style="background: #CD7F32;">
+          <div class="ppn-v2-hex-inner">
+            <img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/engie-200.png"
+              alt="Logo ENGIE Italia - fornitore energia rinnovabile mercato libero" />
+          </div>
+        </div>
+      </div>
+      <div class="ppn-v2-card" style="border-top: 6px solid #CD7F32;">
+        <div class="ppn-v2-offer-name">ENGIE</div>
+        <div class="ppn-sa-score">7.61<span class="ppn-sa-unit">/10</span></div>
+        <div class="ppn-sa-positive"><span class="ppn-sa-dot" style="background:#A8E6CF;"></span><span
+            style="color:#3dab8a;">67.6% positivo</span></div>
+        <div class="ppn-sa-bar">
+          <div class="ppn-sa-bar-pos" style="width:67.6%"></div>
+          <div class="ppn-sa-bar-neu" style="width:10.3%"></div>
+          <div class="ppn-sa-bar-neg" style="width:22.1%"></div>
+        </div>
+        <div class="ppn-sa-themes">
+          <span class="ppn-sa-pill">Tariffe <b>39</b></span>
+          <span class="ppn-sa-pill">Assistenza <b>33</b></span>
+          <span class="ppn-sa-pill">Trasparenza <b>24</b></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ACCORDION SENTIMENT ANALYSIS -->
+  <style>
+    .ppn-sa-accordion {
+      background: #fff;
+      border: 1px solid #E8EAF0;
+      border-radius: 14px;
+      margin: 30px auto 0;
+      max-width: 1000px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .ppn-sa-accordion summary {
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      outline: none;
+      background: linear-gradient(135deg, #FAFBFF 0%, #F5F3FF 100%);
+      border-bottom: 1px solid #E8EAF0;
+    }
+
+    .ppn-sa-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .ppn-sa-accordion summary span.sa-acc-title {
+      font-weight: 700;
+      color: #1e1e1e;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ppn-sa-accordion summary span.sa-acc-icon {
+      background: #f0f3ff;
+      color: #5a52ff;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .ppn-sa-accordion summary span.sa-acc-toggle {
+      color: #5a52ff;
+      font-size: 20px;
+      font-weight: 300;
+      transition: transform 0.3s;
+    }
+
+    .ppn-sa-accordion[open] summary span.sa-acc-toggle {
+      transform: rotate(45deg);
+    }
+
+    .ppn-sa-accordion .sa-acc-body {
+      padding: 24px;
+    }
+
+    .ppn-score-method-accordion {
+      margin: 4px 0 26px;
+      border: 1px solid #E8EAF0;
+      border-radius: 12px;
+      background: #FBFCFF;
+      overflow: hidden;
+    }
+
+    .ppn-sa-accordion .ppn-score-method-accordion summary {
+      padding: 14px 16px;
+      background: #fff;
+      border-bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .ppn-score-method-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #1e1e1e;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .ppn-score-method-icon {
+      width: 26px;
+      height: 26px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: #F0F3FF;
+      color: #5A52FF;
+      font-weight: 900;
+    }
+
+    .ppn-score-method-toggle {
+      color: #5A52FF;
+      font-size: 20px;
+      line-height: 1;
+      transition: transform .25s ease;
+    }
+
+    .ppn-score-method-accordion[open] .ppn-score-method-toggle {
+      transform: rotate(45deg);
+    }
+
+    .ppn-score-method-body {
+      padding: 16px;
+      border-top: 1px solid #E8EAF0;
+      background: #FBFCFF;
+    }
+
+    .ppn-score-method-body p {
+      margin: 0 0 12px;
+      color: #555;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .ppn-score-method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .ppn-score-method-chip {
+      min-width: 0;
+      padding: 10px;
+      border: 1px solid #E8EAF0;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .ppn-score-method-chip b {
+      display: block;
+      margin-bottom: 4px;
+      color: #5A52FF;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .ppn-score-method-chip span {
+      display: block;
+      color: #63697f;
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .ppn-score-method-explain {
+      margin: 12px 0;
+      padding: 12px;
+      border: 1px solid #DDE2F7;
+      border-radius: 8px;
+      background: #fff;
+      color: #555;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .ppn-score-method-explain strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #212431;
+      font-size: 13px;
+    }
+
+    .ppn-score-method-explain span {
+      display: block;
+    }
+
+    .ppn-score-method-formula {
+      box-sizing: border-box;
+      margin: 12px 0;
+      padding: 12px;
+      border: 1px solid #C9D7FF;
+      border-radius: 8px;
+      background: #F4F7FF;
+      color: #24304D;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.65;
+      overflow-x: auto;
+    }
+
+    .ppn-score-method-formula strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #24304D;
+      font-size: 13px;
+    }
+
+    .ppn-score-method-formula div {
+      display: grid;
+      grid-template-columns: 140px minmax(260px, 1fr);
+      gap: 4px 10px;
+      align-items: start;
+      padding: 9px 0;
+      border-top: 1px solid #DDE6FF;
+    }
+
+    .ppn-score-method-formula span {
+      color: #4D61C8;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .ppn-score-method-formula code {
+      box-sizing: border-box;
+      color: #1E2A44;
+      display: inline-block;
+      padding: 4px 7px;
+      border: 1px solid #D8E1FF;
+      border-radius: 6px;
+      background: #ffffff;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .ppn-score-method-formula small {
+      grid-column: 2;
+      color: #5B647A;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .ppn-score-method-formula small b {
+      color: #24304D;
+      font-weight: 800;
+    }
+
+    .ppn-score-method-note {
+      margin-bottom: 0 !important;
+      padding: 10px 12px;
+      border-left: 3px solid #5A52FF;
+      border-radius: 0 8px 8px 0;
+      background: #F5F7FF;
+    }
+
+    .ppn-emotion-note {
+      margin-top: 14px;
+      border: 1px solid #DDE2F7;
+      border-radius: 8px;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .ppn-emotion-note summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #24304D;
+      background: #F8F9FF;
+    }
+
+    .ppn-emotion-note-toggle {
+      flex: 0 0 auto;
+      color: #5A52FF;
+      font-size: 20px;
+      line-height: 1;
+      transition: transform .25s ease;
+    }
+
+    .ppn-emotion-note[open] .ppn-emotion-note-toggle {
+      transform: rotate(45deg);
+    }
+
+    .ppn-emotion-note summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .ppn-emotion-note-body {
+      padding: 12px 14px;
+      color: #555;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .ppn-emotion-note-body p {
+      margin: 0 0 8px;
+    }
+
+    .ppn-emotion-note-body ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .ppn-sa-section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f0f3ff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ppn-sa-section-title:not(:first-child) {
+      margin-top: 32px;
+    }
+
+    /* Distribuzione bars */
+    .sa-dist-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .sa-dist-name {
+      width: 120px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1e1e1e;
+      flex-shrink: 0;
+    }
+
+    .sa-dist-bar-wrap {
+      flex: 1;
+      display: flex;
+      height: 22px;
+      border-radius: 6px;
+      overflow: hidden;
+      gap: 1px;
+    }
+
+    .sa-dist-pos {
+      background: #A8E6CF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #2d7a5a;
+      border-radius: 6px 0 0 6px;
+    }
+
+    .sa-dist-neu {
+      background: #FFE0A3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #8a6d1b;
+    }
+
+    .sa-dist-neg {
+      background: #F4A6A0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #8b3a34;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .sa-dist-total {
+      width: 40px;
+      text-align: right;
+      font-size: 12px;
+      font-weight: 600;
+      color: #999;
+      flex-shrink: 0;
+    }
+
+    /* Emotion cards */
+    .sa-emo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .sa-emo-card {
+      background: #FAFBFF;
+      border: 1px solid #E8EAF0;
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .sa-emo-card .sa-emo-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 12px;
+    }
+
+    .sa-emo-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .sa-emo-emoji {
+      font-size: 14px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .sa-emo-label {
+      font-size: 11px;
+      color: #666;
+      width: 52px;
+    }
+
+    .sa-emo-bar {
+      flex: 1;
+      height: 6px;
+      background: #f0f0f0;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .sa-emo-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+
+    .sa-emo-joy {
+      background: #A8E6CF;
+    }
+
+    .sa-emo-anger {
+      background: #F4A6A0;
+    }
+
+    .sa-emo-sadness {
+      background: #B8C4E8;
+    }
+
+    .sa-emo-fear {
+      background: #D4B8E8;
+    }
+
+    .sa-emo-count {
+      font-size: 10px;
+      color: #999;
+      width: 28px;
+      text-align: right;
+    }
+
+    /* Theme cards */
+    .sa-theme-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .sa-theme-card {
+      background: #FAFBFF;
+      border: 1px solid #E8EAF0;
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .sa-theme-card .sa-theme-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 12px;
+    }
+
+    .sa-theme-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .sa-theme-label {
+      font-size: 11px;
+      color: #555;
+      width: 100px;
+    }
+
+    .sa-theme-bar {
+      flex: 1;
+      height: 6px;
+      background: #f0f0f0;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .sa-theme-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #B8C4F4, #A8E6CF);
+    }
+
+    .sa-theme-count {
+      font-size: 10px;
+      color: #999;
+      width: 28px;
+      text-align: right;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+
+      .sa-emo-grid,
+      .sa-theme-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sa-dist-name {
+        width: 90px;
+        font-size: 11px;
+      }
+
+      .sa-dist-bar-wrap {
+        height: 18px;
+      }
+
+      .ppn-sa-accordion .ppn-score-method-accordion summary {
+        align-items: flex-start;
+      }
+
+      .ppn-score-method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ppn-score-method-formula {
+        font-size: 11px;
+        overflow-x: visible;
+      }
+
+      .ppn-score-method-formula div {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .ppn-score-method-formula code {
+        display: block;
+        width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        font-size: 10.5px;
+        line-height: 1.45;
+      }
+
+      .ppn-score-method-formula small {
+        grid-column: auto;
+        white-space: normal;
+      }
+    }
+  </style>
+
+  <details class="ppn-sa-accordion">
+    <summary>
+      <span class="sa-acc-title"><span class="sa-acc-icon">&#128202;</span> Sentiment Analysis: come abbiamo analizzato
+        le opinioni</span>
+      <span class="sa-acc-toggle">+</span>
+    </summary>
+    <div class="sa-acc-body">
+
+      <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 20px;">La classifica parte da
+        <strong>oltre 1.500 commenti social e recensioni reali</strong> sui principali fornitori di energia. Di questi,
+        <strong>418 commenti</strong> riguardano i tre fornitori oggi sul podio: Octopus Energy (176), Dolomiti Energia
+        (106) ed ENGIE (136). Da questi testi abbiamo ricavato tono, temi ricorrenti ed emozioni prevalenti. Il
+        voto finale è espresso su <strong>scala 0-10</strong> e combina tono del commento, qualità informativa, recenza
+        disponibile e peso dei temi: tariffe, assistenza, digitale, attivazione e trasparenza. Per le emozioni usiamo
+        FEEL-IT, un modello che riconosce nel testo segnali come gioia, rabbia, delusione e preoccupazione.</p>
+      <!-- ACCORDION FORMULA PUNTEGGIO -->
+      <details class="ppn-score-method-accordion">
+        <summary>
+          <span class="ppn-score-method-title"><span class="ppn-score-method-icon">=</span> Come calcoliamo il
+            punteggio</span>
+          <span class="ppn-score-method-toggle">+</span>
+        </summary>
+        <div class="ppn-score-method-body">
+          <p><strong>Il voto non è una media semplice dei commenti.</strong> Leggiamo le opinioni una per una e le
+            trasformiamo in segnali confrontabili: tema, tono, concretezza dell'esperienza e recenza disponibile.</p>
+          <div class="ppn-score-method-grid">
+            <div class="ppn-score-method-chip"><b>1</b><span>Associamo ogni commento a un tema: tariffe, assistenza,
+                digitale, attivazione o trasparenza.</span></div>
+            <div class="ppn-score-method-chip"><b>2</b><span>Valutiamo il tono verso il fornitore: positivo, neutro o
+                negativo, con intensità diversa.</span></div>
+            <div class="ppn-score-method-chip"><b>3</b><span>Diamo più peso ai commenti recenti, dettagliati e utili per
+                scegliere davvero.</span></div>
+            <div class="ppn-score-method-chip"><b>4</b><span>Calcoliamo un voto per ogni tema e lo combiniamo nel punteggio
+                finale su 10.</span></div>
+          </div>
+          <div class="ppn-score-method-explain">
+            <strong>In pratica:</strong>
+            <span>un commento breve conta, ma pesa meno di una recensione recente e concreta su prezzo, bolletta,
+              assistenza ricevuta o cambio fornitore.</span>
+          </div>
+          <div class="ppn-score-method-formula">
+            <strong>Dettaglio formula</strong>
+            <div><span>Peso del commento</span><code>w_i = 0,35 + 0,45 × q_i + 0,20 × r_i</code><small>Ogni commento
+                parte da una base comune; poi pesa di più se è concreto (<b>q_i</b>) e recente (<b>r_i</b>).</small>
+            </div>
+            <div><span>Tono medio del tema</span><code>μ_k = Σ(w_i × s_i) / Σw_i</code><small>Dentro ogni tema facciamo
+                la media del tono del commento (<b>s_i</b>), dando più importanza ai commenti con peso maggiore.</small></div>
+            <div><span>Correzione prudenziale</span><code>λ_k = n_k / (n_k + 10)</code><small>Se un tema ha pochi
+                commenti (<b>n_k</b>), il voto viene corretto per evitare risultati troppo estremi.</small></div>
+            <div><span>Voto del
+                tema</span><code>Score_k = 5 + [λ_k × (2,5 + 2,5 × μ_k) + (1 - λ_k) × 2,5]</code><small>Il tono medio
+                viene trasformato in un voto su 10, mantenendo una base prudente quando il campione è più
+                piccolo.</small></div>
+            <div><span>Voto finale</span><code>Overall = Σ(α_k × Score_k)</code><small>Il voto complessivo combina i
+                cinque temi con pesi diversi: tariffe 30%, assistenza 30%, digitale 15%, attivazione 15% e trasparenza
+                10%.</small></div>
+          </div>
+        </div>
+      </details>
+      <!-- /ACCORDION FORMULA PUNTEGGIO -->
+
+      <!-- SEZIONE 1: Distribuzione -->
+      <div class="ppn-sa-section-title">&#128202; Distribuzione positivo / neutro / negativo</div>
+      <div class="sa-dist-row">
+        <div class="sa-dist-name">Octopus Energy</div>
+        <div class="sa-dist-bar-wrap">
+          <div class="sa-dist-pos" style="width:88.6%">156</div>
+          <div class="sa-dist-neu" style="width:2.3%">4</div>
+          <div class="sa-dist-neg" style="width:9.1%">16</div>
+        </div>
+        <div class="sa-dist-total">176</div>
+      </div>
+      <div class="sa-dist-row">
+        <div class="sa-dist-name">Dolomiti Energia</div>
+        <div class="sa-dist-bar-wrap">
+          <div class="sa-dist-pos" style="width:71.7%">76</div>
+          <div class="sa-dist-neu" style="width:0.0%"></div>
+          <div class="sa-dist-neg" style="width:28.3%">30</div>
+        </div>
+        <div class="sa-dist-total">106</div>
+      </div>
+      <div class="sa-dist-row">
+        <div class="sa-dist-name">ENGIE</div>
+        <div class="sa-dist-bar-wrap">
+          <div class="sa-dist-pos" style="width:67.6%">92</div>
+          <div class="sa-dist-neu" style="width:10.3%">14</div>
+          <div class="sa-dist-neg" style="width:22.1%">30</div>
+        </div>
+        <div class="sa-dist-total">136</div>
+      </div>
+      <div style="display:flex; gap:16px; margin-top:8px; font-size:10px; color:#aaa;">
+        <span style="display:flex;align-items:center;gap:4px;"><span
+            style="width:10px;height:10px;background:#A8E6CF;border-radius:2px;"></span> Positivo</span>
+        <span style="display:flex;align-items:center;gap:4px;"><span
+            style="width:10px;height:10px;background:#FFE0A3;border-radius:2px;"></span> Neutro</span>
+        <span style="display:flex;align-items:center;gap:4px;"><span
+            style="width:10px;height:10px;background:#F4A6A0;border-radius:2px;"></span> Negativo</span>
+      </div>
+
+      <!-- SEZIONE 2: Emozioni -->
+      <div class="ppn-sa-section-title">&#129504; Emozioni nei commenti</div>
+      <div class="sa-emo-grid">
+        <div class="sa-emo-card">
+          <div class="sa-emo-name">Octopus Energy</div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128522;</div>
+            <div class="sa-emo-label">Gioia</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-joy" style="width:65.9%"></div>
+            </div>
+            <div class="sa-emo-count">116</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128545;</div>
+            <div class="sa-emo-label">Rabbia</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-anger" style="width:15.9%"></div>
+            </div>
+            <div class="sa-emo-count">28</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128546;</div>
+            <div class="sa-emo-label">Delusione</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-sadness" style="width:15.9%"></div>
+            </div>
+            <div class="sa-emo-count">28</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128552;</div>
+            <div class="sa-emo-label">Preoccupazione</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-fear" style="width:2.3%"></div>
+            </div>
+            <div class="sa-emo-count">4</div>
+          </div>
+        </div>
+        <div class="sa-emo-card">
+          <div class="sa-emo-name">Dolomiti Energia</div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128522;</div>
+            <div class="sa-emo-label">Gioia</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-joy" style="width:46.2%"></div>
+            </div>
+            <div class="sa-emo-count">49</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128545;</div>
+            <div class="sa-emo-label">Rabbia</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-anger" style="width:28.3%"></div>
+            </div>
+            <div class="sa-emo-count">30</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128546;</div>
+            <div class="sa-emo-label">Delusione</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-sadness" style="width:17.9%"></div>
+            </div>
+            <div class="sa-emo-count">19</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128552;</div>
+            <div class="sa-emo-label">Preoccupazione</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-fear" style="width:7.5%"></div>
+            </div>
+            <div class="sa-emo-count">8</div>
+          </div>
+        </div>
+        <div class="sa-emo-card">
+          <div class="sa-emo-name">ENGIE</div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128522;</div>
+            <div class="sa-emo-label">Gioia</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-joy" style="width:25.7%"></div>
+            </div>
+            <div class="sa-emo-count">35</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128545;</div>
+            <div class="sa-emo-label">Rabbia</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-anger" style="width:24.3%"></div>
+            </div>
+            <div class="sa-emo-count">33</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128546;</div>
+            <div class="sa-emo-label">Delusione</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-sadness" style="width:32.4%"></div>
+            </div>
+            <div class="sa-emo-count">44</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128552;</div>
+            <div class="sa-emo-label">Preoccupazione</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-fear" style="width:17.6%"></div>
+            </div>
+            <div class="sa-emo-count">24</div>
+          </div>
+        </div>
+      </div>
+
+      <details class="ppn-emotion-note">
+        <summary><span>Come leggere queste emozioni</span><span class="ppn-emotion-note-toggle">+</span></summary>
+        <div class="ppn-emotion-note-body">
+          <p>FEEL-IT è un modello che riconosce le emozioni espresse in un testo. Qui lo usiamo come supporto per
+            capire il tono emotivo dei commenti, senza sostituire la lettura editoriale.</p>
+          <ul>
+            <li><strong>Gioia:</strong> soddisfazione, problema risolto, bolletta chiara o risparmio percepito.</li>
+            <li><strong>Rabbia:</strong> reclami, bollette inattese, assistenza percepita come poco efficace.</li>
+            <li><strong>Delusione:</strong> aspettative non rispettate, pratica lenta o esperienza peggiore del previsto.</li>
+            <li><strong>Preoccupazione:</strong> incertezza su costi, rinnovi, aumenti o passaggi di fornitura.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- SEZIONE 3: Temi -->
+      <div class="ppn-sa-section-title">&#127793; Temi principali (commenti per tema)</div>
+      <div class="sa-theme-grid">
+        <div class="sa-theme-card">
+          <div class="sa-theme-name">Octopus Energy</div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Tariffe</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:77.5%"></div>
+            </div>
+            <div class="sa-theme-count">31</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Assistenza</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:97.5%"></div>
+            </div>
+            <div class="sa-theme-count">39</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Digitale</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:80.0%"></div>
+            </div>
+            <div class="sa-theme-count">32</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Attivazione</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:85.0%"></div>
+            </div>
+            <div class="sa-theme-count">34</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Trasparenza</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:100.0%"></div>
+            </div>
+            <div class="sa-theme-count">40</div>
+          </div>
+        </div>
+        <div class="sa-theme-card">
+          <div class="sa-theme-name">Dolomiti Energia</div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Tariffe</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:73.3%"></div>
+            </div>
+            <div class="sa-theme-count">22</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Assistenza</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:100.0%"></div>
+            </div>
+            <div class="sa-theme-count">30</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Digitale</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:73.3%"></div>
+            </div>
+            <div class="sa-theme-count">22</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Attivazione</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:43.3%"></div>
+            </div>
+            <div class="sa-theme-count">13</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Trasparenza</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:63.3%"></div>
+            </div>
+            <div class="sa-theme-count">19</div>
+          </div>
+        </div>
+        <div class="sa-theme-card">
+          <div class="sa-theme-name">ENGIE</div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Tariffe</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:100.0%"></div>
+            </div>
+            <div class="sa-theme-count">39</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Assistenza</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:84.6%"></div>
+            </div>
+            <div class="sa-theme-count">33</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Digitale</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:48.7%"></div>
+            </div>
+            <div class="sa-theme-count">19</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Attivazione</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:53.8%"></div>
+            </div>
+            <div class="sa-theme-count">21</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Trasparenza</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:61.5%"></div>
+            </div>
+            <div class="sa-theme-count">24</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+  <!-- /ACCORDION SENTIMENT ANALYSIS -->
+
+</div>
+
+<!-- CLASSIFICA REVIEW COMMENTS STYLE -->
+<style>
+  .ppn-body-content .pn-body,
+  .pn-body.pn-modal-portal {
+    --pn-line: #E8EAF0;
+    --pn-pri-2: #5A52FF;
+    --pn-rd: #FF4500;
+    --pn-yt: #FF0000;
+    --pn-x: #0F1419;
+    --pn-fb: #1877F2;
+    --pn-social: #6C75F4;
+    max-width: min(980px, 100%);
+    overflow-x: hidden;
+  }
+
+  .pn-body.pn-modal-portal {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 2147483647 !important;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .ppn-body-content .pn-body:has(.pn-modal-toggle:checked) {
+    overflow: visible;
+  }
+
+  .ppn-body-content .pn-comments-wrap {
+    border: 1px solid var(--pn-line);
+    border-radius: 10px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(33, 36, 49, .05);
+    overflow: hidden;
+    contain: paint;
+  }
+
+  .ppn-body-content .pn-comments {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-right: 6px;
+  }
+
+  .ppn-body-content .pn-comments::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ppn-body-content .pn-comment {
+    flex: 0 0 300px;
+    min-width: 300px;
+    border: 1px solid var(--pn-line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    scroll-snap-align: start;
+  }
+
+  .ppn-body-content .pn-comments-wrap:has(.pn-modal-toggle:checked),
+  .ppn-body-content .pn-comments:has(.pn-modal-toggle:checked),
+  .ppn-body-content .pn-comment:has(.pn-modal-toggle:checked) {
+    overflow: visible;
+  }
+
+  .ppn-body-content .pn-source,
+  .pn-body.pn-modal-portal .pn-source {
+    min-height: 28px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: #fff;
+    font-size: .64rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .ppn-body-content .pn-source span:last-child,
+  .pn-body.pn-modal-portal .pn-source span:last-child {
+    max-width: 62%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+  }
+
+  .ppn-body-content .pn-source.reddit,
+  .pn-body.pn-modal-portal .pn-source.reddit {
+    background: var(--pn-rd);
+  }
+
+  .ppn-body-content .pn-source.youtube,
+  .pn-body.pn-modal-portal .pn-source.youtube {
+    background: var(--pn-yt);
+  }
+
+  .ppn-body-content .pn-source.x,
+  .pn-body.pn-modal-portal .pn-source.x {
+    background: var(--pn-x);
+  }
+
+  .ppn-body-content .pn-source.facebook,
+  .pn-body.pn-modal-portal .pn-source.facebook {
+    background: var(--pn-fb);
+  }
+
+  .ppn-body-content .pn-source.social,
+  .pn-body.pn-modal-portal .pn-source.social {
+    background: var(--pn-social);
+  }
+
+  .ppn-body-content .pn-cbody,
+  .pn-body.pn-modal-portal .pn-cbody {
+    padding: 9px;
+  }
+
+  .ppn-body-content .pn-cbody p,
+  .pn-body.pn-modal-portal .pn-cbody p {
+    font-size: .79rem;
+    line-height: 1.42;
+    margin: 0;
+  }
+
+  .ppn-body-content .pn-cbody b,
+  .pn-body.pn-modal-portal .pn-cbody b {
+    display: block;
+    margin-top: 7px;
+    font-size: .69rem;
+    color: var(--pn-pri-2);
+  }
+
+  .ppn-body-content .pn-link,
+  .pn-body.pn-modal-portal .pn-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: .68rem;
+    font-weight: 900;
+    color: var(--pn-pri-2);
+    text-decoration: none;
+  }
+
+  .ppn-body-content .pn-link:hover,
+  .pn-body.pn-modal-portal .pn-link:hover {
+    text-decoration: underline;
+  }
+
+  .ppn-body-content .pn-more {
+    display: inline;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--pn-pri-2);
+    font: inherit;
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .ppn-body-content .pn-modal-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ppn-body-content .pn-comment-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    isolation: isolate;
+  }
+
+  .ppn-body-content .pn-modal-toggle:checked~.pn-comment-modal,
+  .pn-body.pn-modal-portal .pn-comment-modal.pn-js-open {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 2147483647 !important;
+    display: flex !important;
+    pointer-events: auto;
+  }
+
+  .ppn-body-content .pn-modal-backdrop,
+  .pn-body.pn-modal-portal .pn-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    padding: 0;
+    background: rgba(22, 24, 33, .68);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+  }
+
+  .ppn-body-content .pn-comment-expanded,
+  .pn-body.pn-modal-portal .pn-comment-expanded {
+    position: relative;
+    z-index: 1;
+    flex: 0 1 min(640px, calc(100vw - 36px));
+    min-width: 0;
+    max-width: min(640px, calc(100vw - 36px));
+    max-height: min(78vh, 720px);
+    overflow: auto;
+    border-radius: 12px;
+    background: #fff !important;
+    box-shadow: 0 22px 64px rgba(22, 24, 33, .30);
+  }
+
+  .ppn-body-content .pn-comment-expanded .pn-source,
+  .pn-body.pn-modal-portal .pn-comment-expanded .pn-source {
+    min-height: 42px;
+    padding-right: 58px;
+  }
+
+  .ppn-body-content .pn-comment-expanded .pn-cbody,
+  .pn-body.pn-modal-portal .pn-comment-expanded .pn-cbody {
+    padding: 16px;
+    background: #fff !important;
+    color: #212431;
+  }
+
+  .ppn-body-content .pn-comment-expanded .pn-quote-full,
+  .pn-body.pn-modal-portal .pn-comment-expanded .pn-quote-full {
+    font-size: .95rem;
+    line-height: 1.55;
+    white-space: pre-line;
+  }
+
+  .ppn-body-content .pn-modal-close,
+  .pn-body.pn-modal-portal .pn-modal-close {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, .62);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .18);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  body.pn-review-modal-lock {
+    overflow: hidden;
+  }
+
+  .pn-ranking-jump {
+    margin: 32px auto 20px;
+    padding: 16px;
+    border: 1px solid #dde2f7;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    box-shadow: 0 4px 18px rgba(33, 36, 49, .06);
+  }
+
+  .pn-ranking-jump-copy {
+    min-width: 0;
+  }
+
+  .pn-ranking-jump-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    color: #5a52ff;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .pn-ranking-jump-title {
+    margin: 0;
+    color: #212431;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.25;
+  }
+
+  .pn-ranking-jump-text {
+    margin: 4px 0 0;
+    color: #63697f;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .pn-ranking-jump-link {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 0 18px;
+    border-radius: 999px;
+    background: #5a52ff;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(90, 82, 255, .20);
+  }
+
+  .pn-ranking-jump-link:hover,
+  .pn-ranking-jump-link:focus-visible {
+    background: #4841dd;
+    color: #fff;
+    outline: 0;
+  }
+
+  .pn-final-ranking {
+    margin: 56px auto 30px;
+    padding: 0;
+  }
+
+  .pn-final-ranking-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+
+  .pn-final-ranking-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid #dde2f7;
+    border-radius: 999px;
+    background: #f8f9ff;
+    color: #5a52ff;
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .pn-final-ranking h2 {
+    margin: 10px 0 6px;
+    color: #212431;
+    font-size: 26px;
+    line-height: 1.18;
+  }
+
+  .pn-final-ranking p {
+    margin: 0;
+    color: #63697f;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .pn-final-ranking-total {
+    flex: 0 0 auto;
+    min-width: 118px;
+    padding: 12px 14px;
+    border: 1px solid #e7e5e4;
+    border-radius: 8px;
+    background: #fafaf9;
+    text-align: center;
+  }
+
+  .pn-final-ranking-total strong {
+    display: block;
+    color: #5a52ff;
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .pn-final-ranking-total span {
+    display: block;
+    margin-top: 4px;
+    color: #63697f;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .pn-ranking-list {
+    display: grid;
+    gap: 8px;
+  }
+
+  .pn-ranking-row {
+    display: grid;
+    grid-template-columns: 44px 44px minmax(0, 1fr) 96px 22px;
+    align-items: center;
+    gap: 12px;
+    min-height: 68px;
+    padding: 10px 14px;
+    border: 1px solid #e8eaf0;
+    border-radius: 8px;
+    background: #fff;
+    color: #212431;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(33, 36, 49, .05);
+  }
+
+  .pn-ranking-row:hover,
+  .pn-ranking-row:focus-visible {
+    border-color: #5a52ff;
+    box-shadow: 0 8px 22px rgba(90, 82, 255, .12);
+    outline: 0;
+  }
+
+  .pn-ranking-row.is-top {
+    border-color: #dfe2ff;
+    background: linear-gradient(90deg, #f8f9ff 0%, #fff 46%);
+  }
+
+  .pn-rank-num {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f1f0ff;
+    color: #5a52ff;
+    font-size: 14px;
+    font-weight: 900;
+  }
+
+  .pn-ranking-row:nth-child(1) .pn-rank-num {
+    background: #ffd700;
+    color: #212431;
+  }
+
+  .pn-ranking-row:nth-child(2) .pn-rank-num {
+    background: #e8eaf0;
+    color: #212431;
+  }
+
+  .pn-ranking-row:nth-child(3) .pn-rank-num {
+    background: #f2d2b6;
+    color: #212431;
+  }
+
+  .pn-rank-logo {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #edf0f6;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .pn-rank-logo img {
+    max-width: 34px;
+    max-height: 26px;
+    object-fit: contain;
+  }
+
+  .pn-rank-provider {
+    min-width: 0;
+  }
+
+  .pn-rank-name {
+    display: block;
+    color: #212431;
+    font-size: 15px;
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .pn-rank-meta {
+    display: block;
+    margin-top: 3px;
+    color: #63697f;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .pn-rank-score {
+    min-width: 0;
+  }
+
+  .pn-rank-score-value {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 2px;
+    color: #5a52ff;
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  .pn-rank-score-value span {
+    color: #63697f;
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .pn-rank-bar {
+    height: 5px;
+    margin-top: 6px;
+    border-radius: 999px;
+    background: #edf0f6;
+    overflow: hidden;
+  }
+
+  .pn-rank-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #00c5ae, #5a52ff);
+  }
+
+  .pn-rank-arrow {
+    color: #5a52ff;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: right;
+  }
+
+  @media (max-width: 820px) {
+    .ppn-body-content .pn-comment {
+      flex: 0 0 66vw;
+      min-width: 66vw;
+      max-width: 66vw;
+    }
+
+    .pn-final-ranking {
+      margin: 56px auto 30px;
+      padding: 0;
+    }
+
+    .pn-final-ranking-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .pn-final-ranking-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border: 1px solid #dde2f7;
+      border-radius: 999px;
+      background: #f8f9ff;
+      color: #5a52ff;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .pn-final-ranking h2 {
+      margin: 10px 0 6px;
+      color: #212431;
+      font-size: 26px;
+      line-height: 1.18;
+    }
+
+    .pn-final-ranking p {
+      margin: 0;
+      color: #63697f;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .pn-final-ranking-total {
+      flex: 0 0 auto;
+      min-width: 118px;
+      padding: 12px 14px;
+      border: 1px solid #e7e5e4;
+      border-radius: 8px;
+      background: #fafaf9;
+      text-align: center;
+    }
+
+    .pn-final-ranking-total strong {
+      display: block;
+      color: #5a52ff;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .pn-final-ranking-total span {
+      display: block;
+      margin-top: 4px;
+      color: #63697f;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .pn-ranking-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .pn-ranking-row {
+      display: grid;
+      grid-template-columns: 44px 44px minmax(0, 1fr) 96px 22px;
+      align-items: center;
+      gap: 12px;
+      min-height: 68px;
+      padding: 10px 14px;
+      border: 1px solid #e8eaf0;
+      border-radius: 8px;
+      background: #fff;
+      color: #212431;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(33, 36, 49, .05);
+    }
+
+    .pn-ranking-row:hover,
+    .pn-ranking-row:focus-visible {
+      border-color: #5a52ff;
+      box-shadow: 0 8px 22px rgba(90, 82, 255, .12);
+      outline: 0;
+    }
+
+    .pn-ranking-row.is-top {
+      border-color: #dfe2ff;
+      background: linear-gradient(90deg, #f8f9ff 0%, #fff 46%);
+    }
+
+    .pn-rank-num {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #f1f0ff;
+      color: #5a52ff;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .pn-ranking-row:nth-child(1) .pn-rank-num {
+      background: #ffd700;
+      color: #212431;
+    }
+
+    .pn-ranking-row:nth-child(2) .pn-rank-num {
+      background: #e8eaf0;
+      color: #212431;
+    }
+
+    .pn-ranking-row:nth-child(3) .pn-rank-num {
+      background: #f2d2b6;
+      color: #212431;
+    }
+
+    .pn-rank-logo {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #edf0f6;
+      border-radius: 8px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .pn-rank-logo img {
+      max-width: 34px;
+      max-height: 26px;
+      object-fit: contain;
+    }
+
+    .pn-rank-provider {
+      min-width: 0;
+    }
+
+    .pn-rank-name {
+      display: block;
+      color: #212431;
+      font-size: 15px;
+      font-weight: 800;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .pn-rank-meta {
+      display: block;
+      margin-top: 3px;
+      color: #63697f;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .pn-rank-score {
+      min-width: 0;
+    }
+
+    .pn-rank-score-value {
+      display: flex;
+      justify-content: flex-end;
+      align-items: baseline;
+      gap: 2px;
+      color: #5a52ff;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .pn-rank-score-value span {
+      color: #63697f;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .pn-rank-bar {
+      height: 5px;
+      margin-top: 6px;
+      border-radius: 999px;
+      background: #edf0f6;
+      overflow: hidden;
+    }
+
+    .pn-rank-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #00c5ae, #5a52ff);
+    }
+
+    .pn-rank-arrow {
+      color: #5a52ff;
+      font-size: 20px;
+      font-weight: 900;
+      text-align: right;
+    }
+
+    .ppn-body-content .pn-comment-modal,
+    .pn-body.pn-modal-portal .pn-comment-modal {
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+    }
+
+    .ppn-body-content .pn-comment-expanded,
+    .pn-body.pn-modal-portal .pn-comment-expanded {
+      flex-basis: min(360px, calc(100vw - 28px));
+      min-width: 0;
+      max-width: min(360px, calc(100vw - 28px));
+      max-height: min(82vh, calc(100dvh - 28px));
+    }
+
+    .ppn-body-content .pn-comment-expanded .pn-source,
+    .pn-body.pn-modal-portal .pn-comment-expanded .pn-source {
+      min-height: 40px;
+      padding-right: 52px;
+      font-size: .61rem;
+    }
+
+    .ppn-body-content .pn-modal-close,
+    .pn-body.pn-modal-portal .pn-modal-close {
+      top: 4px;
+      right: 8px;
+      width: 32px;
+      height: 32px;
+      font-size: 1rem;
+    }
+
+    .ppn-body-content .pn-comment-expanded .pn-cbody,
+    .pn-body.pn-modal-portal .pn-comment-expanded .pn-cbody {
+      padding: 14px;
+    }
+
+    .ppn-body-content .pn-comment-expanded .pn-quote-full,
+    .pn-body.pn-modal-portal .pn-comment-expanded .pn-quote-full {
+      font-size: .92rem;
+      line-height: 1.5;
+    }
+
+    .pn-ranking-jump {
+      display: block;
+      text-align: center;
+      margin: 28px auto 22px;
+      padding: 16px 14px;
+    }
+
+    .pn-ranking-jump-link {
+      width: fit-content;
+      margin: 14px auto 0;
+    }
+
+    .pn-final-ranking-head {
+      display: block;
+      text-align: center;
+    }
+
+    .pn-final-ranking h2 {
+      font-size: 22px;
+    }
+
+    .pn-final-ranking-kicker {
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+    }
+
+    .pn-final-ranking-total {
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+      margin: 16px auto 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 15px 16px;
+      text-align: center;
+    }
+
+    .pn-final-ranking-total strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .pn-final-ranking-total span {
+      display: block;
+      margin-top: 0;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .pn-ranking-row {
+      grid-template-columns: 34px 38px minmax(0, 1fr) 70px;
+      gap: 9px;
+      min-height: 64px;
+      padding: 10px;
+    }
+
+    .pn-rank-num {
+      width: 30px;
+      height: 30px;
+      font-size: 12px;
+    }
+
+    .pn-rank-logo {
+      width: 36px;
+      height: 36px;
+    }
+
+    .pn-rank-logo img {
+      max-width: 30px;
+      max-height: 22px;
+    }
+
+    .pn-rank-name {
+      font-size: 13px;
+    }
+
+    .pn-rank-meta {
+      font-size: 11px;
+    }
+
+    .pn-rank-score-value {
+      font-size: 15px;
+    }
+
+    .pn-rank-arrow {
+      display: none;
+    }
+  }
+</style>
+<div class="ppn-body-content"
+  style="max-width: 1000px; margin: 0 auto; font-family: 'Inter', sans-serif; color: #4a4a4a; overflow: visible;">
+
+  <h2 id="migliori-fornitori-luce-analisi" style="color: #1e1e1e; font-size: 26px; font-weight: bold; margin-bottom: 20px; margin-top: 40px;">I migliori fornitori luce del mercato libero: la nostra analisi</h2>
+  <p style="font-size: 16px; line-height: 1.7; color: #4a4a4a; margin-bottom: 40px;">Come enunciato in precedenza, i 3
+    fornitori che spiccano maggiormente da quanto emerso dall'analisi sono <strong>Octopus Energy</strong>,
+    <strong>Dolomiti Energia</strong> ed <strong>ENGIE</strong>, di cui puoi trovare i dettagli qui di seguito.</p>
+  <!-- CTA CLASSIFICA COMPLETA -->
+  <div class="pn-ranking-jump">
+    <div class="pn-ranking-jump-copy">
+      <span class="pn-ranking-jump-eyebrow">14 fornitori analizzati</span>
+      <p class="pn-ranking-jump-title">Vuoi vedere subito tutti i punteggi?</p>
+      <p class="pn-ranking-jump-text">La classifica completa è in fondo alla pagina, con ranking, voto e link alle
+        schede recensioni.</p>
+    </div>
+    <a class="pn-ranking-jump-link" href="#classifica-fornitori-14">Scopri la classifica completa <span
+        aria-hidden="true">&#8595;</span></a>
+  </div>
+  <!-- /CTA CLASSIFICA COMPLETA -->
+
+  <!-- H3 - 1 POSTO: OCTOPUS ENERGY -->
+  <h3
+    style="color: #1e1e1e; font-size: 20px; font-weight: bold; margin-bottom: 15px; margin-top: 40px; display: flex; align-items: center;">
+    1&deg; Posto: Octopus Energy</h3>
+  <p style="margin-bottom: 15px; font-size: 15px; line-height: 1.6;">In cima al podio c'è <strong>Octopus
+      Energy</strong>, fornitore britannico che dal 2021 si è inserito nel mercato italiano con un approccio digitale e
+    molto trasparente. A seguito dell'analisi dei commenti ottiene un <strong>voto complessivo di 8.19/10</strong> su 176 commenti
+    raccolti, con segnali forti su assistenza, cambio tariffa e convenienza percepita.</p>
+  <p style="margin-bottom: 15px; font-size: 15px; line-height: 1.6;">Ciò che distingue Octopus è la <strong>gestione
+      semplice del rapporto con il cliente</strong>: diversi utenti citano risposte rapide, comunicazioni chiare e la
+    possibilità di passare a un'offerta più conveniente quando disponibile. Nel dettaglio, il tema
+    <strong>assistenza</strong> raggiunge 8,5/10,
+    mentre <strong>tariffe</strong> arriva a 8,4/10.
+  </p>
+  <p style="margin-bottom: 30px; font-size: 15px; line-height: 1.6;">Le offerte principali restano
+    <strong>Octopus Fissa 12M</strong>, per chi vuole un prezzo bloccato per un anno, e <strong>Octopus Flex</strong>,
+    indicizzata al PUN. Il punto da valutare è la minore capillarità rispetto ai grandi operatori storici; tra i commenti
+    analizzati, però, prevalgono trasparenza, bollette leggibili e servizio clienti percepito come molto umano.</p>
+
+
+  <!-- Social Proof: Octopus Energy -->
+  <div class="pn-body ppn-review-strip" style="margin: 30px auto; max-width: 1080px;">
+    <div style="text-align: center; margin-bottom: 24px;">
+      <span
+        style="display: inline-block; font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6C75F4; background: #F8F9FF; border: 1px solid #DDE2F7; border-radius: 20px; padding: 6px 16px; margin-bottom: 10px;">Opinioni
+        reali</span>
+      <h3
+        style="font-family: -apple-system, sans-serif; font-weight: 800; font-size: 22px; color: #2B2B2B; line-height: 1.2; margin: 8px 0;">
+        Cosa dicono gli utenti di Octopus Energy</h3>
+      <p style="font-size: 14px; color: #555; margin-top: 6px;">Commenti e recensioni raccolte da Reddit, YouTube,
+        Facebook e X</p>
+    </div>
+    <div class="pn-comments-wrap">
+      <div class="pn-comments">
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>maxblack72</span></div>
+          <div class="pn-cbody">
+
+            <p class="pn-quote">Mi trovo molto bene, con auto elettrica c&#x27;e&#x27; anche l&#x27;offerta Intelligent
+              Octopus che ti fa risparmiare un po&#x27;. Ottimo servizio clienti.</p><b>maxblack72</b><a class="pn-link"
+              href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/comment/oipom0e/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>Durton24</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-octopus-02" aria-hidden="true">
+            <p class="pn-quote">Ho Octopus da più di un anno e mi trovato benissimo. Il servizio clienti è impeccabile e
+              sono molto &#x27;umani&#x27;. Poi mi sembra che hanno prezzi decisamente inferiori rispetto agli altri
+              gestori. Inoltre, ogni... <label class="pn-more" for="pn-css-comment-classifica-octopus-02" role="button"
+                tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-octopus-02"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-octopus-02" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>Durton24</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Ho Octopus da più di un anno e mi trovato benissimo. Il servizio
+                    clienti è impeccabile e sono molto &#x27;umani&#x27;. Poi mi sembra che hanno prezzi decisamente
+                    inferiori rispetto agli altri gestori. Inoltre, ogni volta che mettono una nuova offerta fissa con
+                    prezzo inferiore alla mia offerta attuale, mando un messaggino su whatsapp dicendo che voglio
+                    cambiare ed attivare la nuova offerta ed in genere in una manciata di minuti mi confermano
+                    l&#x27;attivazione.</p><b>Durton24</b><a class="pn-link"
+                    href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/opinioni_su_octopus/"
+                    target="_blank" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>Durton24</b><a class="pn-link"
+              href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/opinioni_su_octopus/"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>cicababba</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-octopus-03" aria-hidden="true">
+            <p class="pn-quote">Ciao, io ho octopus da dicembre 2025, in termini di prezzi, il risparmio non è esagerato
+              rispetto a ciò che avevo prima, ma è comunque ottimo. La loro applicazione è ottima e puoi tracciare in
+              maniera chiara... <label class="pn-more" for="pn-css-comment-classifica-octopus-03" role="button"
+                tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-octopus-03"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-octopus-03" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>cicababba</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Ciao, io ho octopus da dicembre 2025, in termini di prezzi, il
+                    risparmio non è esagerato rispetto a ciò che avevo prima, ma è comunque ottimo. La loro applicazione
+                    è ottima e puoi tracciare in maniera chiara il consumo e le fatture. Inoltre il servizio clienti è
+                    sempre disponibile e cortese, ma la cosa che più apprezzo è che si può fare tutto online, senza
+                    chiamare ed essere chiamati, tutto scritto in maniera chiara e non hai le solite rotture di tizi al
+                    telefono che ti dicono cosa firmare, contratti mandati per e-mail dove devi firmare mentre sei
+                    ancora al telefono altrimenti l&#x27;offerta non è valida e bla bla bla.</p><b>cicababba</b><a
+                    class="pn-link"
+                    href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/comment/oiit6et/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"
+                    target="_blank" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>cicababba</b><a class="pn-link"
+              href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/comment/oiit6et/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>CapitalistFemboy</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-octopus-04" aria-hidden="true">
+            <p class="pn-quote">L&#x27;ho sempre usato quando vivevo in Italia e mi sono sempre trovata bene. Quando ho
+              cambiato il codice fiscale mi hanno fatto loro la voltura in due minuti e mi hanno anche fatto il
+              &quot;favore&quot; di rimborsarmi i... <label class="pn-more" for="pn-css-comment-classifica-octopus-04"
+                role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-octopus-04"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-octopus-04" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>CapitalistFemboy</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">L&#x27;ho sempre usato quando vivevo in Italia e mi sono sempre
+                    trovata bene. Quando ho cambiato il codice fiscale mi hanno fatto loro la voltura in due minuti e mi
+                    hanno anche fatto il &quot;favore&quot; di rimborsarmi i costi per il gas. Sono sicura al 99% che un
+                    gestore classico me l&#x27;avrebbe addebitato dicendo che non poteva essere rimborsato, o
+                    l&#x27;avrebbe tirata per le lunghe.</p><b>CapitalistFemboy</b><a class="pn-link"
+                    href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/comment/oij6n87/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"
+                    target="_blank" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>CapitalistFemboy</b><a class="pn-link"
+              href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/comment/oij6n87/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>Yuppiduuu</span></div>
+          <div class="pn-cbody">
+
+            <p class="pn-quote">Io ho cambiato perché ENI mi offriva un prezzo migliore ma ero con Octopus e non posso
+              che parlarne bene. Ottimo e anche in caso di domande estremamente pronti.</p><b>Yuppiduuu</b><a
+              class="pn-link"
+              href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/comment/oij0vtp/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>Lalli928</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-octopus-06" aria-hidden="true">
+            <p class="pn-quote">Brutta esperienza nella gestione di una fatturazione errata (ovviamente in eccesso)
+              addebitatami all&#x27;inizio del rapporto contrattuale con loro. Ho dovuto portarli in conciliazione per
+              tutelarmi. Risposte... <label class="pn-more" for="pn-css-comment-classifica-octopus-06" role="button"
+                tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-octopus-06"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-octopus-06" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>Lalli928</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Brutta esperienza nella gestione di una fatturazione errata
+                    (ovviamente in eccesso) addebitatami all&#x27;inizio del rapporto contrattuale con loro. Ho dovuto
+                    portarli in conciliazione per tutelarmi. Risposte rapide in assistenza clienti, il problema è il
+                    contenuto di quelle risposte 😅</p><b>Lalli928</b><a class="pn-link"
+                    href="https://www.reddit.com/r/bollette/comments/1swwzne/comment/oijz61c/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"
+                    target="_blank" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>Lalli928</b><a class="pn-link"
+              href="https://www.reddit.com/r/bollette/comments/1swwzne/comment/oijz61c/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>27_Jack_27</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-octopus-07" aria-hidden="true">
+            <p class="pn-quote">Se ne parlate bene vale la pena indagare su questo operatore. Io sinceramente ne ho
+              sempre dubitato perché il loro claim si basa sul fatto che utilizzano energia rinnovabile. Mi spiegate
+              come cavolo faccia a... <label class="pn-more" for="pn-css-comment-classifica-octopus-07" role="button"
+                tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-octopus-07"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-octopus-07" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>27_Jack_27</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Se ne parlate bene vale la pena indagare su questo operatore. Io
+                    sinceramente ne ho sempre dubitato perché il loro claim si basa sul fatto che utilizzano energia
+                    rinnovabile. Mi spiegate come cavolo faccia a farlo davvero se è un operatore come gli altri? Mi
+                    viene difficile da pensare che una volta attivato il contratto con loro, la corrente che mi arriva a
+                    casa venga da un pannello solare piuttosto che dalla centrale elettrica più vicina.</p>
+                  <b>27_Jack_27</b><a class="pn-link"
+                    href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/opinioni_su_octopus/"
+                    target="_blank" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>27_Jack_27</b><a class="pn-link"
+              href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/opinioni_su_octopus/"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>ElGatoCitrico</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-octopus-08" aria-hidden="true">
+            <p class="pn-quote">Sono con loro gas+luce da circa un anno. Mi trovo molto bene: assistenza rapida e
+              chiara, comunicazioni sintetiche ed essenziali, ottima offerta con possibilità di aggiornarla alla tariffa
+              del momento. Mai... <label class="pn-more" for="pn-css-comment-classifica-octopus-08" role="button"
+                tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-octopus-08"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-octopus-08" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>ElGatoCitrico</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Sono con loro gas+luce da circa un anno. Mi trovo molto bene:
+                    assistenza rapida e chiara, comunicazioni sintetiche ed essenziali, ottima offerta con possibilità
+                    di aggiornarla alla tariffa del momento. Mai avuto un problema. Personalmente lo consiglio ad amici
+                    e conoscenti.</p><b>ElGatoCitrico</b><a class="pn-link"
+                    href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/comment/oiislr5/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"
+                    target="_blank" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>ElGatoCitrico</b><a class="pn-link"
+              href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/comment/oiislr5/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>beerIsNotAcrime</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-octopus-09" aria-hidden="true">
+            <p class="pn-quote">Sono con loro da due anni, mai avuto problemi nemmeno con l&#x27;assistenza clienti. E
+              lo scorso settembre quando ho visto che c&#x27;era un offerta 12 mesi più conveniente della mia gli ho
+              scritto chiedendo il... <label class="pn-more" for="pn-css-comment-classifica-octopus-09" role="button"
+                tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-octopus-09"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-octopus-09" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>beerIsNotAcrime</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Sono con loro da due anni, mai avuto problemi nemmeno con
+                    l&#x27;assistenza clienti. E lo scorso settembre quando ho visto che c&#x27;era un offerta 12 mesi
+                    più conveniente della mia gli ho scritto chiedendo il passaggio alla nuova tariffa ed è stato
+                    attivato dal mese successivo. Per ora mi godo 0,099 €/kWh conscio del fatto che (forse) non tornerà
+                    più.</p><b>beerIsNotAcrime</b><a class="pn-link"
+                    href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/opinioni_su_octopus/"
+                    target="_blank" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>beerIsNotAcrime</b><a class="pn-link"
+              href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/opinioni_su_octopus/"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>AcceptableAd789</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-octopus-10" aria-hidden="true">
+            <p class="pn-quote">Io mi trovo molto bene e come in tanti hanno detto puoi cambiare tariffa in un secondo
+              semplicemente mandando loro un messaggio su whatsapp. L&#x27;assistenza tecnica e&#x27; ottima, celere e
+              chiara e sono anche molto... <label class="pn-more" for="pn-css-comment-classifica-octopus-10"
+                role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-octopus-10"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-octopus-10" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>AcceptableAd789</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Io mi trovo molto bene e come in tanti hanno detto puoi cambiare
+                    tariffa in un secondo semplicemente mandando loro un messaggio su whatsapp. L&#x27;assistenza
+                    tecnica e&#x27; ottima, celere e chiara e sono anche molto oneste. A me e&#x27; successo che per un
+                    periodo non ho piu&#x27; ricevuto le bollette della luce e avendo l&#x27;accredito diretto sul conto
+                    me ne sono accorto solo qualche mese dopo. Li ho contattati subito e si sono resi conto che era un
+                    problema loro e mi hanno pure fatto uno sconto sulle bollette arretrate.</p><b>AcceptableAd789</b><a
+                    class="pn-link"
+                    href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/opinioni_su_octopus/"
+                    target="_blank" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>AcceptableAd789</b><a class="pn-link"
+              href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/opinioni_su_octopus/"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+  <!-- /Social Proof: Octopus Energy -->
+
+  <h3 id="octopus-fissa-12m" style="margin-top: 40px; margin-bottom: 15px;">La nostra scelta: Octopus Fissa 12M</h3>
+  <p style="margin-bottom: 20px; font-size: 15px; line-height: 1.6;"><strong>Octopus Fissa 12M</strong> è l'offerta che
+    consigliamo per chi cerca stabilità e un costo semplice da leggere: il prezzo luce è bloccato per 12 mesi e, tra le
+    offerte analizzate, rientra tra le soluzioni più competitive sia per costo al kWh sia per quota fissa annua. La
+    gestione resta digitale e, quando viene resa disponibile una tariffa più conveniente, è possibile cambiare offerta
+    senza penali.</p>
+
+  <style>
+    .pn-body,
+    .pn-body *,
+    .pn-body *::before,
+    .pn-body *::after {
+      box-sizing: border-box;
+    }
+
+    .pn-body {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 8px 0 14px;
+    }
+
+    .pn-body .desktop-card {
+      display: flex !important;
+    }
+
+    .pn-body .mobile-card {
+      display: none !important;
+    }
+
+    @media (max-width: 640px) {
+
+      .pn-body .desktop-card,
+      .pn-body .pn-altre-desktop {
+        display: none !important;
+      }
+
+      .pn-body .mobile-card,
+      .pn-body .pn-altre-mobile {
+        display: flex !important;
+        width: 100% !important;
+        max-width: 360px !important;
+        margin: 20px auto !important;
+      }
+
+      .pn-body .mobile-card img,
+      .pn-body .pn-altre-mobile img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+
+      .pn-body .mobile-card a,
+      .pn-body .pn-altre-mobile a {
+        width: 100% !important;
+      }
+
+      .pn-body .mobile-card a>div,
+      .pn-body .pn-altre-mobile a>div {
+        width: 100% !important;
+        white-space: nowrap !important;
+      }
+    }
+  </style>
+
+  <div class="pn-body">
+    <!-- OCTOPUS FISSA 12M - DESKTOP -->
+    <div class="desktop-card"
+      style="display: flex; align-items: flex-start; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 15px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 900px; margin: 20px auto; font-family: Arial, sans-serif; gap: 15px; line-height: 1.2;">
+      <div
+        style="width: 25%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 10px;">
+        <div style="height: 50px; display: flex; align-items: center;"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/img-src-8-1.png"
+            alt="Octopus Energy" style="max-height: 100%; max-width: 100%; object-fit: contain;" /></div>
+        <div style="font-size: 16px;">⭐ <b>4,3 / 5</b></div>
+        <div style="font-size: 13px; color: #555;">Octopus Energy</div>
+        <div style="font-size: 20px; font-weight: bold;">Octopus Fissa 12M</div>
+      </div>
+      <div style="width: 45%; font-size: 14px; line-height: 1.35; margin-top: 5px; margin-bottom: 5px;"><b>Prezzo
+          luce:</b> 0,1298 €/kWh
+        <p style="margin-top: 4px;"><b>CCV:</b> 6 €/mese (72 €/anno)</p>
+        <b>Prezzo fisso per uso domestico</b>
+        <div
+          style="margin-top: 10px; background-color: #f5f5ff; color: #003a70; padding: 10px; border-radius: 6px; border: 1px solid #5A51FF; line-height: 1.4;">
+          <ul style="margin: 0; padding-left: 18px;">
+            <li style="margin-bottom: 5px;">Prezzo bloccato per 12 mesi.</li>
+            <li style="margin-bottom: 5px;">Cambio offerta senza penali se trovi condizioni più convenienti.</li>
+            <li style="margin-bottom: 0;">Energia elettrica <strong>100% rinnovabile</strong> certificata GO.</li>
+          </ul>
+        </div>
+      </div>
+      <div
+        style="width: 30%; text-align: right; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
+        <div style="font-size: 13px; color: #555;">Stima mensile*</div>
+        <div style="font-size: 30px; font-weight: bold; color: #5a51ff;">35 €</div>
+        <div style="font-size: 12px; color: #333; margin-top: 4px;">225 kWh/mese</div>
+        <div style="font-size: 11px; color: #666; margin-top: 4px;">Prezzo: 0,1298 €/kWh - mono</div>
+        <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/octopus-energy/fissa-12m/"
+          target="_blank" rel="noopener" style="text-decoration:none;display:block;margin-top:14px;color:#ffffff;">
+          <div
+            style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0.3px;white-space:nowrap;">
+            Scopri di più</div>
+        </a>
+      </div>
+    </div>
+    <!-- OCTOPUS FISSA 12M - MOBILE -->
+    <div class="mobile-card"
+      style="display: none; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 16px 14px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 360px; margin: 20px auto; font-family: Arial, sans-serif; line-height: 1.35; flex-direction: column;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px;">
+        <div style="flex: 1; min-width: 0;">
+          <div style="height: 38px; display: flex; align-items: center; margin-bottom: 6px;"><img
+              src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/img-src-8-1.png"
+              alt="Octopus Energy"
+              style="max-height: 100%; max-width: 100%; object-fit: contain; object-position: left center;" /></div>
+          <div style="font-size: 13px; color: #555;">⭐ <b>4,3 / 5</b></div>
+          <div style="font-size: 12px; color: #555; margin-top: 3px;">Octopus Energy</div>
+          <div style="font-size: 17px; font-weight: bold; margin-top: 4px; line-height: 1.2;">Octopus Fissa 12M</div>
+        </div>
+        <div style="text-align: right; flex-shrink: 0;">
+          <div style="font-size: 11px; color: #555;">Stima mensile*</div>
+          <div style="font-size: 26px; font-weight: bold; color: #5a51ff; line-height: 1.1;">35 €</div>
+          <div style="font-size: 10px; color: #666;">225 kWh/mese</div>
+          <div style="font-size: 10px; color: #666;">0,1298 €/kWh</div>
+        </div>
+      </div>
+      <div style="font-size: 13px; margin-bottom: 10px; line-height: 1.4;"><b>Prezzo luce:</b> 0,1298 €/kWh ·
+        <b>CCV:</b> 72 €/anno
+      </div>
+      <details style="margin: 8px 0 12px; background-color: #f5f5ff; color: #003a70; border-radius: 6px; border: 1px solid #5A51FF; line-height: 1.4;">
+        <summary style="cursor:pointer; padding: 10px; font-size: 13px; font-weight: 700;">Dettagli offerta</summary>
+        <div style="padding: 0 10px 10px;">
+          <ul style="margin: 0; padding-left: 18px;">
+            <li style="margin-bottom: 5px;">Prezzo bloccato per 12 mesi.</li>
+            <li style="margin-bottom: 5px;">Energia 100% rinnovabile.</li>
+            <li style="margin-bottom: 0;">Cambio offerta senza penali se trovi condizioni più convenienti.</li>
+          </ul>
+        </div>
+      </details>
+      <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/octopus-energy/fissa-12m/" target="_blank"
+        rel="noopener" style="text-decoration:none;display:block;color:#5A51FF;">
+        <div
+          style="width:100%;padding:13px 18px;background:#ffffff;color:#5A51FF;border:1px solid #5A51FF;border-radius:9999px;font-weight:700;font-size:15px;text-align:center;box-sizing:border-box;white-space:nowrap;">
+          Scopri di più</div>
+      </a>
+      <div aria-hidden="true" style="height:10px;line-height:10px;font-size:0;"></div>
+      <a href="tel:0294756803" style="text-decoration:none;display:block;color:#ffffff;">
+        <div
+          style="width:100%;padding:14px 18px;background:#00c5af;color:#ffffff;border-radius:9999px;font-weight:700;font-size:17px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0.2px;white-space:nowrap;">
+          Chiama Papernest</div>
+      </a>
+      <p style="margin:8px 0 0;font-size:10px;line-height:1.35;color:#666;">Papernest non è partner diretto di Octopus
+        Energy: il supporto telefonico può aiutarti a confrontare le offerte disponibili.</p>
+    </div>
+    <span
+      style="font-size: 11px; line-height: 1.5; margin: 0.4em; display: block; text-align: center; padding: 0.1em 0.6em;"><em>*Stime
+        mensili indicative: luce su 2.700 kWh/anno (225 kWh/mese) e gas su 1.560 Smc/anno (130 Smc/mese). Le stime
+        considerano componente energia/gas e quota fissa, ma il costo finale in bolletta varia in base a consumi,
+        andamento degli indici, oneri, trasporto, imposte e IVA.</em></span>
+  </div>
+
+  $IT_NRJ_CTA_fullwidth_general_nrj0$
+
+  <!-- H3 - 2 POSTO: DOLOMITI ENERGIA -->
+  <h3
+    style="color: #1e1e1e; font-size: 20px; font-weight: bold; margin-bottom: 15px; margin-top: 50px; display: flex; align-items: center;">
+    2&deg; Posto: Dolomiti Energia</h3>
+  <p style="margin-bottom: 15px; font-size: 15px; line-height: 1.6;">Medaglia d'argento per <strong>Dolomiti
+      Energia</strong>, fornitore nato in Trentino e oggi presente nel mercato libero con offerte luce e gas orientate
+    a prezzo indicizzato, gestione online e attenzione alla sostenibilità. A seguito dell'analisi dei commenti ottiene un
+    <strong>voto complessivo di 7.70/10</strong> su 106 commenti raccolti.
+  </p>
+  <p style="margin-bottom: 15px; font-size: 15px; line-height: 1.6;">Il punto più forte è la <strong>convenienza delle
+      tariffe</strong>, con un punteggio di 8,1/10 e commenti che
+    citano prezzi competitivi, bollette coerenti e offerte confrontabili. Anche l'assistenza resta positiva nel
+    complesso
+    (7,7/10), pur con alcune segnalazioni su tempi e
+    pratiche online da seguire con attenzione.</p>
+  <p style="margin-bottom: 30px; font-size: 15px; line-height: 1.6;">Il profilo di Dolomiti è adatto a chi vuole un
+    fornitore solido e trasparente, ma preferisce controllare bene le condizioni economiche prima di attivare. Dai
+    commenti emergono giudizi buoni su tariffe e serietà, mentre attivazione e gestione di pratiche complesse sono i
+    punti da verificare meglio.</p>
+
+
+  <!-- Social Proof: Dolomiti Energia -->
+  <div class="pn-body ppn-review-strip" style="margin: 30px auto; max-width: 1080px;">
+    <div style="text-align: center; margin-bottom: 24px;">
+      <span
+        style="display: inline-block; font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6C75F4; background: #F8F9FF; border: 1px solid #DDE2F7; border-radius: 20px; padding: 6px 16px; margin-bottom: 10px;">Opinioni
+        reali</span>
+      <h3
+        style="font-family: -apple-system, sans-serif; font-weight: 800; font-size: 22px; color: #2B2B2B; line-height: 1.2; margin: 8px 0;">
+        Cosa dicono gli utenti di Dolomiti Energia</h3>
+      <p style="font-size: 14px; color: #555; margin-top: 6px;">Commenti e recensioni raccolte da Reddit, YouTube,
+        Facebook e X</p>
+    </div>
+    <div class="pn-comments-wrap">
+      <div class="pn-comments">
+        <article class="pn-comment">
+          <div class="pn-source facebook"><span>Facebook</span><span>Alessandro Maresca</span></div>
+          <div class="pn-cbody">
+
+            <p class="pn-quote">Finalmente arrivata la prima bolletta di Dolomiti. Prezzo medio senza spese fisse di
+              circa 0,19€, che diventano 0,21€ se volessimo considerare anche quelle. Che dire? Molto molto soddisfatto.
+            </p><b>Alessandro Maresca</b><a class="pn-link"
+              href="https://www.facebook.com/groups/quellicheviaggianoinelettrico/posts/1187657909706392/"
+              target="_blank" rel="noopener">Vedi post originale</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>not_my_real_usernam3</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-dolomiti-02"
+              aria-hidden="true">
+            <p class="pn-quote">Ho dolomiti energia sia per il gas che per l&#x27;energia elettrica da circa 8 anni. Le
+              volte che ho avuto bisogno di parlare con operatori sono sempre stati impeccabili. Forse non i più
+              economici sul mercato ma... <label class="pn-more" for="pn-css-comment-classifica-dolomiti-02"
+                role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-dolomiti-02"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-dolomiti-02" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>not_my_real_usernam3</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Ho dolomiti energia sia per il gas che per l&#x27;energia elettrica
+                    da circa 8 anni.
+
+                    Le volte che ho avuto bisogno di parlare con operatori sono sempre stati impeccabili. Forse non i
+                    più economici sul mercato ma almeno per l&#x27;energia elettrica, ho una tariffa che mi permette di
+                    non pagare un mese all&#x27;anno</p><b>not_my_real_usernam3</b><a class="pn-link"
+                    href="https://www.reddit.com/r/bollette/comments/1kanax6/dolomiti_energia_è_affidabile/mqcjetk/"
+                    target="_blank" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>not_my_real_usernam3</b><a class="pn-link"
+              href="https://www.reddit.com/r/bollette/comments/1kanax6/dolomiti_energia_è_affidabile/mqcjetk/"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>Opinius_Maximus</span></div>
+          <div class="pn-cbody">
+
+            <p class="pn-quote">Sto con loro da un anno. Mai avuto problemi, prezzi come concordati sul contratto, area
+              clienti molto semplice ed efficiente. 10/10</p><b>Opinius_Maximus</b><a class="pn-link"
+              href="https://www.reddit.com/r/bollette/comments/1m9ogrm/comment/n58ides/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>Agitated_Promise3836</span></div>
+          <div class="pn-cbody">
+
+            <p class="pn-quote">Azienda seria. Contratto e bollette come da delibere Arera. Non hanno l&#x27; app ma il
+              sito web funziona bene. Trasparenti. Offerte verificabili sul portale offerte.</p>
+            <b>Agitated_Promise3836</b><a class="pn-link"
+              href="https://www.reddit.com/r/bollette/comments/1m9ogrm/comment/n7z6o25/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source facebook"><span>Facebook</span><span>Giorgio Sancassan</span></div>
+          <div class="pn-cbody">
+
+            <p class="pn-quote">attenzione che Dolomiti ha il limite di 4000 KwH/Anno nelle sue tariffe buone (quelle
+              fisse per 24 o 36 mesi) se si superano non so a che tariffe poi fattureranno... Non sono passato con loro
+              solo per questo</p><b>Giorgio Sancassan</b><a class="pn-link"
+              href="https://www.facebook.com/groups/quellicheviaggianoinelettrico/posts/1187657909706392/"
+              target="_blank" rel="noopener">Vedi post originale</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>Aenaryon</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-dolomiti-06"
+              aria-hidden="true">
+            <p class="pn-quote">Si l assistenza di Dolomiti energia e pari a 0, ho provato più volte a chiedere
+              chiarimenti su una bolletta perché la tariffa che mi applicano è più alta di quella pubblicizzata
+              (semplicemente loro non... <label class="pn-more" for="pn-css-comment-classifica-dolomiti-06"
+                role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-dolomiti-06"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-dolomiti-06" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>Aenaryon</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Si l assistenza di Dolomiti energia e pari a 0, ho provato più volte
+                    a chiedere chiarimenti su una bolletta perché la tariffa che mi applicano è più alta di quella
+                    pubblicizzata (semplicemente loro non includono nel prezzo le perdite di rete come altri operatori
+                    ma le aggiungono alla tariffa pubblicizzata) sono stato con loro tre mesi da dopodomani passo ad
+                    altro</p><b>Aenaryon</b><a class="pn-link"
+                    href="https://www.reddit.com/r/bollette/comments/1pyyj88/assistenza_dolomiti_en/nwmuj98/"
+                    target="_blank" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>Aenaryon</b><a class="pn-link"
+              href="https://www.reddit.com/r/bollette/comments/1pyyj88/assistenza_dolomiti_en/nwmuj98/" target="_blank"
+              rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source facebook"><span>Facebook</span><span>Daniele Proservi</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-dolomiti-07"
+              aria-hidden="true">
+            <p class="pn-quote">Ottima. In realtà senza costi fissi paghi meno. Devi prendere il prezzo unitario e
+              aggiungere l&#x27;iva. Quindi 0.165 circa. A differenza di Octopus, Dolomiti include già le perdite nel
+              prezzo (invece Octupus... <label class="pn-more" for="pn-css-comment-classifica-dolomiti-07" role="button"
+                tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-dolomiti-07"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-dolomiti-07" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source facebook"><span>Facebook</span><span>Daniele Proservi</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Ottima. In realtà senza costi fissi paghi meno. Devi prendere il
+                    prezzo unitario e aggiungere l&#x27;iva. Quindi 0.165 circa. A differenza di Octopus, Dolomiti
+                    include già le perdite nel prezzo (invece Octupus aggiunge il 10% di kWh in più in fattura per
+                    compensare)</p><b>Daniele Proservi</b><a class="pn-link"
+                    href="https://www.facebook.com/groups/quellicheviaggianoinelettrico/posts/1187657909706392/"
+                    target="_blank" rel="noopener">Vedi post originale</a>
+                </div>
+              </article>
+            </div><b>Daniele Proservi</b><a class="pn-link"
+              href="https://www.facebook.com/groups/quellicheviaggianoinelettrico/posts/1187657909706392/"
+              target="_blank" rel="noopener">Vedi post originale</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source facebook"><span>Facebook</span><span>Ivan Mariutti</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-dolomiti-08"
+              aria-hidden="true">
+            <p class="pn-quote">Bene ma non benissimo, avevo anch&#x27;io Dolomiti. Octopus è più conveniente anche
+              perché offre la funzione Intelligent per la ricarica delle auto elettriche, inoltre è flessibile nel
+              cambio contratto se esce... <label class="pn-more" for="pn-css-comment-classifica-dolomiti-08"
+                role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-dolomiti-08"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-dolomiti-08" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source facebook"><span>Facebook</span><span>Ivan Mariutti</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Bene ma non benissimo, avevo anch&#x27;io Dolomiti. Octopus è più
+                    conveniente anche perché offre la funzione Intelligent per la ricarica delle auto elettriche,
+                    inoltre è flessibile nel cambio contratto se esce un&#x27;offerta più conveniente😉 Più eventuali
+                    bonus amico di benvenuto cumulabili.
+                    Con la funzione Intelligent hai uno sconto solo sulla materia prima di circa 20-25% però carichi
+                    quando a loro è più conveniente. Di solito carico la notte a 5,5KWp e la mattina ho sempre trovato
+                    l&#x27;auto carica come desideravo✌🏻</p><b>Ivan Mariutti</b><a class="pn-link"
+                    href="https://www.facebook.com/groups/quellicheviaggianoinelettrico/posts/1187657909706392/"
+                    target="_blank" rel="noopener">Vedi post originale</a>
+                </div>
+              </article>
+            </div><b>Ivan Mariutti</b><a class="pn-link"
+              href="https://www.facebook.com/groups/quellicheviaggianoinelettrico/posts/1187657909706392/"
+              target="_blank" rel="noopener">Vedi post originale</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source facebook"><span>Facebook</span><span>Partecipante anonimo</span></div>
+          <div class="pn-cbody">
+
+            <p class="pn-quote">arrivata la prima fattura di dolomiti con prezzo bloccato a 0.31 per 3 anni non male
+              direi ora rimane solo da sperare che non facciano aumenti bilaterali….</p><b>Partecipante anonimo</b><a
+              class="pn-link" href="https://www.facebook.com/groups/truffeelettriche/posts/26337733429195068/"
+              target="_blank" rel="noopener">Vedi post originale</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source facebook"><span>Facebook</span><span>Paolo Arena</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-dolomiti-10"
+              aria-hidden="true">
+            <p class="pn-quote">Qualche settimana fa sul gas sono passato da una tariffa variabile Hera alla fissa di
+              Dolomiti (il cui prezzo unitario era addirittura più economico della variabile che lasciavo). Però
+              considera che su... <label class="pn-more" for="pn-css-comment-classifica-dolomiti-10" role="button"
+                tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-dolomiti-10"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-dolomiti-10" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source facebook"><span>Facebook</span><span>Paolo Arena</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Qualche settimana fa sul gas sono passato da una tariffa variabile
+                    Hera alla fissa di Dolomiti (il cui prezzo unitario era addirittura più economico della variabile
+                    che lasciavo).
+                    Però considera che su Dolomiti superato il 5 del mese l&#x27;allaccio viene fatto dal primo giorno
+                    del secondo mese successivo. Cioè se la richiesta la effettui il 6/1 la tariffa di Dolomiti scatterà
+                    dal 1/3. Se il 5/1 dal 1/2.</p><b>Paolo Arena</b><a class="pn-link"
+                    href="https://www.facebook.com/groups/octopus.energy.italia.unofficial/posts/1105150300901702/"
+                    target="_blank" rel="noopener">Vedi post originale</a>
+                </div>
+              </article>
+            </div><b>Paolo Arena</b><a class="pn-link"
+              href="https://www.facebook.com/groups/octopus.energy.italia.unofficial/posts/1105150300901702/"
+              target="_blank" rel="noopener">Vedi post originale</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+  <!-- /Social Proof: Dolomiti Energia -->
+
+  <h3 id="dolomiti-flex-24" style="margin-top: 40px; margin-bottom: 15px;">La nostra scelta: Dolomiti Flex 24 Luce</h3>
+  <p style="margin-bottom: 20px; font-size: 15px; line-height: 1.6;"><strong>Dolomiti Flex 24 Luce</strong> è l'offerta
+    indicizzata pensata per chi vuole seguire l'andamento del PUN con condizioni definite per 24 mesi. Prima di attivare
+    conviene confrontare il costo completo, includendo quota fissa, spread, sconti del primo anno e profilo reale di
+    consumo.</p>
+
+
+  <style>
+    .pn-body,
+    .pn-body *,
+    .pn-body *::before,
+    .pn-body *::after {
+      box-sizing: border-box;
+    }
+
+    .pn-body {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 8px 0 14px;
+    }
+
+    .pn-body .desktop-card {
+      display: flex !important;
+    }
+
+    .pn-body .mobile-card {
+      display: none !important;
+    }
+
+    @media (max-width: 640px) {
+
+      .pn-body .desktop-card,
+      .pn-body .pn-altre-desktop {
+        display: none !important;
+      }
+
+      .pn-body .mobile-card,
+      .pn-body .pn-altre-mobile {
+        display: flex !important;
+        width: 100% !important;
+        max-width: 360px !important;
+        margin: 20px auto !important;
+      }
+
+      .pn-body .mobile-card img,
+      .pn-body .pn-altre-mobile img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+
+      .pn-body .mobile-card a,
+      .pn-body .pn-altre-mobile a {
+        width: 100% !important;
+      }
+
+      .pn-body .mobile-card a>div,
+      .pn-body .pn-altre-mobile a>div {
+        width: 100% !important;
+        white-space: nowrap !important;
+      }
+    }
+  </style>
+
+  <div class="pn-body">
+
+    <!-- DOLOMITI FLEX 24 LUCE - DESKTOP -->
+    <div class="desktop-card"
+      style="display: flex; align-items: flex-start; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 15px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 900px; margin: 20px auto; font-family: Arial, sans-serif; gap: 15px; line-height: 1.2;">
+      <div
+        style="width: 25%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 10px;">
+        <div style="height: 50px; display: flex; align-items: center;"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/01/dolomiti-energia.png"
+            alt="Dolomiti Energia" style="max-height: 100%; max-width: 100%; object-fit: contain;" /></div>
+        <div style="font-size: 16px;">⭐ <b>4,1 / 5</b> (124 voti)</div>
+        <div style="font-size: 13px; color: #555;">Dolomiti Energia</div>
+        <div style="font-size: 20px; font-weight: bold;">Dolomiti Flex 24 Luce</div>
+      </div>
+      <div style="width: 45%; font-size: 14px; line-height: 1.35; margin-top: 5px; margin-bottom: 5px;"><b>Prezzo
+          luce:</b> PUN x 1,1 + 0,01 €/kWh
+        <p style="margin-top: 4px;"><b>CCV:</b> 10,42 €/mese (125 €/anno)</p>
+        <b>Prezzo indicizzato per uso domestico</b>
+        <div
+          style="margin-top: 10px; background-color: #f5f5ff; color: #003a70; padding: 10px; border-radius: 6px; border: 1px solid #5A51FF; line-height: 1.4;">
+          <ul style="margin: 0; padding-left: 18px;">
+            <li style="margin-bottom: 5px;">Prezzo indicizzato per uso domestico.</li>
+            <li style="margin-bottom: 5px;">Condizioni economiche definite per 24 mesi.</li>
+            <li style="margin-bottom: 0;">Sconto mensile per i primi 12 mesi.</li>
+          </ul>
+        </div>
+      </div>
+      <div
+        style="width: 30%; text-align: right; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
+        <div style="font-size: 13px; color: #555;">Stima mensile*</div>
+        <div style="font-size: 30px; font-weight: bold; color: #5a51ff;">44 €</div>
+        <div style="font-size: 12px; color: #333; margin-top: 4px;">225 kWh/mese</div>
+        <div style="font-size: 11px; color: #666; margin-top: 4px;">Prezzo: indicizzato PUN</div>
+        <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/dolomiti-energia/flex-24-luce/"
+          target="_blank" rel="noopener" style="text-decoration:none;display:block;margin-top:14px;color:#ffffff;">
+          <div
+            style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0.3px;white-space:nowrap;">
+            Scopri di più</div>
+        </a>
+      </div>
+    </div>
+    <!-- DOLOMITI FLEX 24 LUCE - MOBILE -->
+    <div class="mobile-card"
+      style="display: none; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 16px 14px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 360px; margin: 20px auto; font-family: Arial, sans-serif; line-height: 1.35; flex-direction: column;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px;">
+        <div style="flex: 1; min-width: 0;">
+          <div style="height: 38px; display: flex; align-items: center; margin-bottom: 6px;"><img
+              src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/01/dolomiti-energia.png"
+              alt="Dolomiti Energia"
+              style="max-height: 100%; max-width: 100%; object-fit: contain; object-position: left center;" /></div>
+          <div style="font-size: 13px; color: #555;">⭐ <b>4,1 / 5</b> (124 voti)</div>
+          <div style="font-size: 12px; color: #555; margin-top: 3px;">Dolomiti Energia</div>
+          <div style="font-size: 17px; font-weight: bold; margin-top: 4px; line-height: 1.2;">Dolomiti Flex 24 Luce
+          </div>
+        </div>
+        <div style="text-align: right; flex-shrink: 0;">
+          <div style="font-size: 11px; color: #555;">Stima mensile*</div>
+          <div style="font-size: 26px; font-weight: bold; color: #5a51ff; line-height: 1.1;">44 €</div>
+          <div style="font-size: 10px; color: #666;">225 kWh/mese</div>
+          <div style="font-size: 10px; color: #666;">PUN + spread</div>
+        </div>
+      </div>
+      <div style="font-size: 13px; margin-bottom: 10px; line-height: 1.4;"><b>Prezzo luce:</b> PUN x 1,1 + 0,01 €/kWh ·
+        <b>CCV:</b> 125 €/anno
+      </div>
+      <details style="margin: 8px 0 12px; background-color: #f5f5ff; color: #003a70; border-radius: 6px; border: 1px solid #5A51FF; line-height: 1.4;">
+        <summary style="cursor:pointer; padding: 10px; font-size: 13px; font-weight: 700;">Dettagli offerta</summary>
+        <div style="padding: 0 10px 10px;">
+          <ul style="margin: 0; padding-left: 18px;">
+            <li style="margin-bottom: 5px;">Prezzo indicizzato per uso domestico.</li>
+            <li style="margin-bottom: 5px;">Condizioni economiche definite per 24 mesi.</li>
+            <li style="margin-bottom: 0;">Sconto 4,5 €/mese per i primi 12 mesi.</li>
+          </ul>
+        </div>
+      </details>
+      <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/dolomiti-energia/flex-24-luce/"
+        target="_blank" rel="noopener" style="text-decoration:none;display:block;color:#5A51FF;">
+        <div
+          style="width:100%;padding:13px 18px;background:#ffffff;color:#5A51FF;border:1px solid #5A51FF;border-radius:9999px;font-weight:700;font-size:15px;text-align:center;box-sizing:border-box;white-space:nowrap;">
+          Scopri di più</div>
+      </a>
+      <div aria-hidden="true" style="height:10px;line-height:10px;font-size:0;"></div>
+      <a href="tel:0294756803" style="text-decoration:none;display:block;color:#ffffff;">
+        <div
+          style="width:100%;padding:14px 18px;background:#00c5af;color:#ffffff;border-radius:9999px;font-weight:700;font-size:17px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0.2px;white-space:nowrap;">
+          Chiama Papernest</div>
+      </a>
+      <p style="margin:8px 0 0;font-size:10px;line-height:1.35;color:#666;">Papernest non è partner diretto di Dolomiti
+        Energia: il supporto telefonico può aiutarti a confrontare le offerte disponibili.</p>
+    </div>
+    <span
+      style="font-size: 11px; line-height: 1.5; margin: 0.4em; display: block; text-align: center; padding: 0.1em 0.6em;"><em>*Stime
+        mensili indicative: luce su 2.700 kWh/anno (225 kWh/mese) e gas su 1.560 Smc/anno (130 Smc/mese). Le stime
+        considerano componente energia/gas e quota fissa, ma il costo finale in bolletta varia in base a consumi,
+        andamento degli indici, oneri, trasporto, imposte e IVA.</em></span>
+  </div>
+
+
+
+  <!-- H3 - 3 POSTO: ENGIE -->
+  <h3
+    style="color: #1e1e1e; font-size: 20px; font-weight: bold; margin-bottom: 15px; margin-top: 50px; display: flex; align-items: center;">
+    3&deg; Posto: ENGIE</h3>
+  <p style="margin-bottom: 15px; font-size: 15px; line-height: 1.6;">Medaglia di bronzo per <strong>ENGIE</strong>,
+    multinazionale francese presente in Italia con oltre 70 anni di storia nel settore energetico. A seguito dell'analisi dei commenti
+    ottiene un <strong>voto complessivo di 7.61/10</strong> su 136 commenti raccolti,
+    con segnali particolarmente forti su reputazione e trasparenza.</p>
+  <p style="margin-bottom: 15px; font-size: 15px; line-height: 1.6;">Il catalogo offerte di ENGIE resta tra i più ampi
+    del mercato: <a href="https://www.papernest.it/luce-gas/compara/offerte-luce/prezzo-fisso/">tariffe a prezzo
+      fisso</a>, offerte
+    indicizzate, luce, gas e servizi legati all'efficienza energetica. Nei commenti il tema
+    <strong>tariffe</strong> vale 7,8/10, mentre
+    <strong>trasparenza</strong> arriva a 8,1/10.
+  </p>
+  <p style="margin-bottom: 30px; font-size: 15px; line-height: 1.6;">La cautela principale riguarda rinnovi, letture e
+    pratiche di assistenza più delicate: alcuni utenti raccontano esperienze positive e prezzi competitivi, altri
+    segnalano condizioni meno convenienti dopo la scadenza o problemi da gestire con reclamo. Per questo ENGIE resta una
+    scelta solida, ma da valutare con attenzione sul costo completo e sulle condizioni di rinnovo.</p>
+
+
+  <!-- Social Proof: ENGIE -->
+  <div class="pn-body ppn-review-strip" style="margin: 30px auto; max-width: 1080px;">
+    <div style="text-align: center; margin-bottom: 24px;">
+      <span
+        style="display: inline-block; font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6C75F4; background: #F8F9FF; border: 1px solid #DDE2F7; border-radius: 20px; padding: 6px 16px; margin-bottom: 10px;">Opinioni
+        reali</span>
+      <h3
+        style="font-family: -apple-system, sans-serif; font-weight: 800; font-size: 22px; color: #2B2B2B; line-height: 1.2; margin: 8px 0;">
+        Cosa dicono gli utenti di ENGIE</h3>
+      <p style="font-size: 14px; color: #555; margin-top: 6px;">Commenti e recensioni raccolte da Reddit, YouTube,
+        Facebook e X</p>
+    </div>
+    <div class="pn-comments-wrap">
+      <div class="pn-comments">
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>Busy_Pirate_3633</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-engie-01" aria-hidden="true">
+            <p class="pn-quote">Engie a 0,10 e 0,35 è un&#x27;ottima tariffa sulla carta, ma se vuoi un consiglio
+              tecnico d non guardare solo il prezzo al kWh. Con Engie hai 84€/anno di costi fissi (7€ al mese). È un
+              buon prezzo, ma controlla... <label class="pn-more" for="pn-css-comment-classifica-engie-01" role="button"
+                tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-engie-01"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-engie-01" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>Busy_Pirate_3633</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Engie a 0,10 e 0,35 è un&#x27;ottima tariffa sulla carta, ma se vuoi
+                    un consiglio tecnico d non guardare solo il prezzo al kWh. Con Engie hai 84€/anno di costi fissi (7€
+                    al mese). È un buon prezzo, ma controlla come gestiscono i cali di prezzo del mercato. Molti
+                    fornitori ti bloccano a 0,10 e se il mercato scende a 0,08 tra sei mesi, tu resti a 0,10 o devi
+                    cambiare di nuovo fornitore (altra burocrazia).</p><b>Busy_Pirate_3633</b><a class="pn-link"
+                    href="https://www.reddit.com/r/bollette/comments/1qpcppn/cambio_offerta_gen_2026/o27x67x/"
+                    target="_blank" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>Busy_Pirate_3633</b><a class="pn-link"
+              href="https://www.reddit.com/r/bollette/comments/1qpcppn/cambio_offerta_gen_2026/o27x67x/" target="_blank"
+              rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source facebook"><span>Facebook</span><span>Gino Spina</span></div>
+          <div class="pn-cbody">
+
+            <p class="pn-quote">Io ho 2 contratti gas e 3 contratti luce e mi trovo bene,sono attivi e rispondono
+              subito,tre anni e nessun problema</p><b>Gino Spina</b><a class="pn-link"
+              href="https://www.facebook.com/groups/truffeelettriche/posts/25732926456342438/" target="_blank"
+              rel="noopener">Vedi post originale</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source facebook"><span>Facebook</span><span>Giuseppe Privitera</span></div>
+          <div class="pn-cbody">
+
+            <p class="pn-quote">Io ho fatto da poco engie per ora mi è arrivata solo la prima bolletta di febbraio e non
+              mi dispiace</p><b>Giuseppe Privitera</b><a class="pn-link"
+              href="https://www.facebook.com/groups/302835222528371/posts/910199855125235/" target="_blank"
+              rel="noopener">Vedi post originale</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source facebook"><span>Facebook</span><span>Giovanni Abbate</span></div>
+          <div class="pn-cbody">
+
+            <p class="pn-quote">Io sono con ENGIE dal primo maggio con il gas e dal primo giugno con la luce. Per ora
+              nessun Problema</p><b>Giovanni Abbate</b><a class="pn-link"
+              href="https://www.facebook.com/groups/truffeelettriche/posts/7195963217132043/" target="_blank"
+              rel="noopener">Vedi post originale</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source facebook"><span>Facebook</span><span>Tommaso Tanzilli</span></div>
+          <div class="pn-cbody">
+
+            <p class="pn-quote">Io ho Engie mercato tutelato, da diversi anni, mai un malinteso, una società seria. è
+              una grande società, opera in tutto il mondo ed ha 170.000 dipendenti.</p><b>Tommaso Tanzilli</b><a
+              class="pn-link"
+              href="https://www.facebook.com/groups/truffegaseluce/posts/662572281723806/?comment_id=662992515015116"
+              target="_blank" rel="noopener">Vedi post originale</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>Odd_Bumblebee4456</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-engie-06" aria-hidden="true">
+            <p class="pn-quote">con Engie avevo avuto un&#x27;ottima tariffa con costi irrisori per la
+              commercializzazione per entrare... Peccato che dopo un anno la proposta di rinnovo andava da fisso a
+              variabile e non era così conveniente:... <label class="pn-more" for="pn-css-comment-classifica-engie-06"
+                role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-engie-06"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-engie-06" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>Odd_Bumblebee4456</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">con Engie avevo avuto un&#x27;ottima tariffa con costi irrisori per
+                    la commercializzazione per entrare... Peccato che dopo un anno la proposta di rinnovo andava da
+                    fisso a variabile e non era così conveniente: chiesto a Engie di ritornare da variabile a fisso dopo
+                    2 mesi che avevo le &quot;nuove condizioni&quot; e mi hanno chiesto 12€ per cambio tariffa. Morale
+                    della favola? cambiato engie con octopus dove almeno se cambia il prezzo materia prima o ccv posso
+                    chiedere adeguamento spendendo 0.</p><b>Odd_Bumblebee4456</b><a class="pn-link"
+                    href="https://www.reddit.com/r/bollette/comments/1r3ihd2/octopus_sono_davvero_cosí_fighi/o55xc8s/"
+                    target="_blank" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>Odd_Bumblebee4456</b><a class="pn-link"
+              href="https://www.reddit.com/r/bollette/comments/1r3ihd2/octopus_sono_davvero_cosí_fighi/o55xc8s/"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>DNick0</span></div>
+          <div class="pn-cbody">
+
+            <p class="pn-quote">avuto per un anno a prezzo conveniente, ora che mi è passato l&#x27;anno mi mandano un
+              rinnovo a cifre fuori mercato, letture sbagliate e servizio clienti non proprio impeccabile. Sinceramente
+              non lo consiglio</p><b>DNick0</b><a class="pn-link"
+              href="https://www.reddit.com/r/Italia/comments/1k258tx/esperienze_con_engie_energia_bolletta_luce/mnrihwz/"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>Think-Invest</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-engie-08" aria-hidden="true">
+            <p class="pn-quote">sono attualmente con Engie, da giugno, e ho un consumo annuo di circa 860kWh e 480smc.
+              Quando ho sottoscritto il contratto, era tra i piu convenienti tra i nomi noti (evito fornitori dalla
+              dubbia solidità e... <label class="pn-more" for="pn-css-comment-classifica-engie-08" role="button"
+                tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-engie-08"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-engie-08" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>Think-Invest</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">sono attualmente con Engie, da giugno, e ho un consumo annuo di
+                    circa 860kWh e 480smc. Quando ho sottoscritto il contratto, era tra i piu convenienti tra i nomi
+                    noti (evito fornitori dalla dubbia solidità e dall&#x27;assistenza inesistente), ma oggi ho notato
+                    che i prezzi delle componenti luce e gas sono calati (engie stessa propone offerte piu vantaggiose).
+                    Sapete consigliarmi fornitori che non siano latitanti e che offrano prezzi concorrenziali (fisso,
+                    non variabile)?</p><b>Think-Invest</b><a class="pn-link"
+                    href="https://www.reddit.com/r/bollette/comments/1pw27b4/bolletta_engie/" target="_blank"
+                    rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>Think-Invest</b><a class="pn-link"
+              href="https://www.reddit.com/r/bollette/comments/1pw27b4/bolletta_engie/" target="_blank"
+              rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source facebook"><span>Facebook</span><span>Cristian Pellicano Riva</span></div>
+          <div class="pn-cbody">
+
+            <p class="pn-quote">ho avuto ENGIE e mi son trovato bene, ad ogni modo è dignitosa visto il periodo... io ho
+              cambiato appena esplosa la guerra, prima che aggiornassero le offerte- e sono a 0.105 luce e 0,35 gas.</p>
+            <b>Cristian Pellicano Riva</b><a class="pn-link"
+              href="https://www.facebook.com/groups/302835222528371/permalink/936071239204763/" target="_blank"
+              rel="noopener">Vedi post originale</a>
+          </div>
+        </article>
+
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>LocoGamer91</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-classifica-engie-10" aria-hidden="true">
+            <p class="pn-quote">Vero! Io gli ho tolto 6 utenze: luce casa mia, gas casa mia, luce casa dei miei, gas
+              casa dei miei, luce seconda casa dei miei, gas seconda casa dei miei. Passato tutto a Engie, 0,10
+              centesimi luce e quota... <label class="pn-more" for="pn-css-comment-classifica-engie-10" role="button"
+                tabindex="0">Scopri di pi&ugrave;</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="pn-css-comment-classifica-engie-10"
+                aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="pn-css-comment-classifica-engie-10" role="button" tabindex="0"
+                  aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>LocoGamer91</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Vero! Io gli ho tolto 6 utenze: luce casa mia, gas casa mia, luce
+                    casa dei miei, gas casa dei miei, luce seconda casa dei miei, gas seconda casa dei miei. Passato
+                    tutto a Engie, 0,10 centesimi luce e quota fissa a 72 euro all&#x27;anno e 0,41 centesimi gas con
+                    quota fissa a 72 euro all&#x27;anno</p><b>LocoGamer91</b><a class="pn-link"
+                    href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1nq3lj9/come_sempre_restano_solo_i_gonzi/ngc4j2h/"
+                    target="_blank" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div><b>LocoGamer91</b><a class="pn-link"
+              href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1nq3lj9/come_sempre_restano_solo_i_gonzi/ngc4j2h/"
+              target="_blank" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+  <!-- /Social Proof: ENGIE -->
+
+  <h3 id="engie-offerta" style="margin-top: 40px; margin-bottom: 15px;">La nostra scelta: Engie PuntoFisso</h3>
+  <p style="margin-bottom: 20px; font-size: 15px; line-height: 1.6;"><strong>Engie PuntoFisso</strong> è l'offerta a
+    prezzo bloccato, pensata per chi vuole protezione totale contro le oscillazioni del mercato energetico. Include la
+    gestione digitale completa e l'energia da fonti rinnovabili certificate.</p>
+
+  <style>
+    .pn-body,
+    .pn-body *,
+    .pn-body *::before,
+    .pn-body *::after {
+      box-sizing: border-box;
+    }
+
+    .pn-body {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 8px 0 14px;
+    }
+
+    .pn-body .desktop-card {
+      display: flex !important;
+    }
+
+    .pn-body .mobile-card {
+      display: none !important;
+    }
+
+    @media (max-width: 640px) {
+
+      .pn-body .desktop-card,
+      .pn-body .pn-altre-desktop {
+        display: none !important;
+      }
+
+      .pn-body .mobile-card,
+      .pn-body .pn-altre-mobile {
+        display: flex !important;
+        width: 100% !important;
+        max-width: 360px !important;
+        margin: 20px auto !important;
+      }
+
+      .pn-body .mobile-card img,
+      .pn-body .pn-altre-mobile img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+
+      .pn-body .mobile-card a,
+      .pn-body .pn-altre-mobile a {
+        width: 100% !important;
+      }
+
+      .pn-body .mobile-card a>div,
+      .pn-body .pn-altre-mobile a>div {
+        width: 100% !important;
+        white-space: nowrap !important;
+      }
+    }
+  </style>
+
+  <div class="pn-body">
+
+    <!-- ENGIE PUNTOFISSO - DESKTOP -->
+    <div class="desktop-card"
+      style="display: flex; align-items: flex-start; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 15px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 900px; margin: 20px auto; font-family: Arial, sans-serif; gap: 15px; line-height: 1.2;">
+      <div
+        style="width: 25%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 10px;">
+        <div style="height: 50px; display: flex; align-items: center;"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/engie-seeklogo.svg"
+            alt="Logo ENGIE" style="max-height: 100%; max-width: 100%; object-fit: contain;" /></div>
+        <div
+          style="display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;background:#f5f5ff;color:#5A51FF;border:1px solid #5A51FF;font-size:12px;font-weight:700;">
+          Partner Papernest</div>
+        <div style="font-size: 13px; color: #555;">ENGIE</div>
+        <div style="font-size: 20px; font-weight: bold;">Energia PuntoFisso 12 Mesi</div>
+      </div>
+
+      <div style="width: 45%; font-size: 14px; line-height: 1.35; margin-top: 5px; margin-bottom: 5px;">
+        <b>Prezzo luce:</b> 0,1147 €/kWh
+        <p style="margin-top: 4px;"><b>Gas:</b> 0,4475 €/Smc · <b>CCV:</b> 84 €/anno luce e 96 €/anno gas</p>
+        <b>Offerta luce e gas per uso domestico con gestione digitale</b>
+        <div
+          style="margin-top: 10px; background-color: #f5f5ff; color: #003a70; padding: 10px; border-radius: 6px; border: 1px solid #5A51FF; line-height: 1.4;">
+          <ul style="margin: 0; padding-left: 18px;">
+            <li style="margin-bottom: 5px;">Prezzo bloccato per <strong>12 mesi</strong>.</li>
+            <li style="margin-bottom: 5px;">Quota fissa distinta per fornitura luce e gas.</li>
+            <li style="margin-bottom: 0;">Soluzione adatta a chi cerca maggiore stabilità della spesa.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        style="width: 30%; text-align: right; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
+        <div style="font-size: 13px; color: #555;">Stima mensile*</div>
+        <div style="font-size: 30px; font-weight: bold; color: #5a51ff;">82 €</div>
+        <div style="font-size: 12px; color: #333; margin-top: 4px;">270 kWh + 80 Smc</div>
+        <div style="font-size: 11px; color: #666; margin-top: 4px;">materia energia + CCV</div>
+        <a href="tel:0294756803" style="text-decoration:none;display:block;margin-top:14px;color:#ffffff;">
+          <div
+            style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0.3px;white-space:nowrap;">
+            02 94 75 68 03</div>
+        </a>
+        <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/engie/offerte/puntofisso-12m/"
+          target="_blank" rel="noopener" style="text-decoration:none;display:block;color:#5A51FF;">
+          <div
+            style="width:100%;margin-top:14px;padding:13px 18px;background:#ffffff;color:#5A51FF;border:1px solid #5A51FF;border-radius:9999px;font-weight:700;font-size:15px;text-align:center;box-sizing:border-box;white-space:nowrap;">
+            Scopri di più</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ENGIE PUNTOFISSO - MOBILE -->
+    <div class="mobile-card"
+      style="display: none; background-color: #ffffff; border: 2px solid #5A51FF; border-radius: 8px; padding: 16px 14px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); max-width: 360px; margin: 20px auto; font-family: Arial, sans-serif; line-height: 1.35; flex-direction: column;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px;">
+        <div style="flex: 1; min-width: 0;">
+          <div style="height: 38px; display: flex; align-items: center; margin-bottom: 6px;"><img
+              src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/engie-seeklogo.svg"
+              alt="Logo ENGIE"
+              style="max-height: 100%; max-width: 100%; object-fit: contain; object-position: left center;" /></div>
+          <div
+            style="display:inline-flex;align-items:center;padding:4px 8px;border-radius:999px;background:#f5f5ff;color:#5A51FF;border:1px solid #5A51FF;font-size:11px;font-weight:700;">
+            Partner Papernest</div>
+          <div style="font-size: 12px; color: #555; margin-top: 5px;">ENGIE</div>
+          <div style="font-size: 17px; font-weight: bold; margin-top: 4px; line-height: 1.2;">Energia PuntoFisso 12 Mesi
+          </div>
+        </div>
+        <div style="text-align: right; flex-shrink: 0;">
+          <div style="font-size: 11px; color: #555;">Stima mensile*</div>
+          <div style="font-size: 26px; font-weight: bold; color: #5a51ff; line-height: 1.1;">82 €</div>
+          <div style="font-size: 10px; color: #666;">270 kWh + 80 Smc</div>
+          <div style="font-size: 10px; color: #666;">materia + CCV</div>
+        </div>
+      </div>
+
+      <div style="font-size: 13px; margin-bottom: 10px; line-height: 1.4;"><b>Luce:</b> 0,1147 €/kWh · <b>Gas:</b>
+        0,4475 €/Smc</div>
+      <details style="margin: 8px 0 12px; background-color: #f5f5ff; color: #003a70; border-radius: 6px; border: 1px solid #5A51FF; line-height: 1.4;">
+        <summary style="cursor:pointer; padding: 10px; font-size: 13px; font-weight: 700;">Dettagli offerta</summary>
+        <div style="padding: 0 10px 10px; font-size: 13px;">
+          <div style="margin-bottom: 6px;"><b>CCV:</b> 84 €/anno luce e 96 €/anno gas</div>
+          <ul style="margin: 0; padding-left: 18px;">
+            <li style="margin-bottom: 5px;">Prezzo bloccato per 12 mesi.</li>
+            <li style="margin-bottom: 5px;">Energia verde inclusa per la luce.</li>
+            <li style="margin-bottom: 0;">Soluzione pensata per chi cerca maggiore stabilità della spesa.</li>
+          </ul>
+        </div>
+      </details>
+
+      <div aria-hidden="true" style="height:10px;line-height:10px;font-size:0;"></div>
+      <a href="tel:0294756803" style="text-decoration:none;display:block;color:#ffffff;">
+        <div
+          style="width:100%;padding:16px 20px;background:#00c5af;color:#ffffff;border-radius:9999px;font-weight:700;font-size:18px;text-align:center;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,197,175,0.25);letter-spacing:0.3px;white-space:nowrap;">
+          02 94 75 68 03</div>
+      </a>
+      <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/engie/offerte/puntofisso-12m/"
+        target="_blank" rel="noopener" style="text-decoration:none;display:block;color:#5A51FF;">
+        <div
+          style="width:100%;margin-top:14px;padding:13px 18px;background:#ffffff;color:#5A51FF;border:1px solid #5A51FF;border-radius:9999px;font-weight:700;font-size:15px;text-align:center;box-sizing:border-box;white-space:nowrap;">
+          Scopri di più</div>
+      </a>
+    </div>
+    <span
+      style="font-size: 11px; line-height: 1.5; margin: 0.4em; display: block; text-align: center; padding: 0.1em 0.6em;"><em>*Stime
+        mensili indicative riferite al solo costo dell'energia e a un profilo di 270 kWh/mese e 80 Smc/mese. Il costo
+        finale in bolletta include anche trasporto, oneri, imposte e IVA. Prezzi, quota fissa e validità vanno
+        verificati nella scheda offerta prima dell'attivazione.</em></span>
+  </div>
+
+  <!-- H2 PRO E CONTRO -->
+  <h2 id="vantaggi-svantaggi-fornitori-luce" style="color: #1e1e1e; font-size: 26px; font-weight: bold; margin-bottom: 20px; margin-top: 60px;">Vantaggi e svantaggi a confronto: cosa sapere prima di scegliere</h2>
+  <p style="font-size: 16px; line-height: 1.7; color: #4a4a4a; margin-bottom: 40px;">Ogni fornitore ha punti di forza e
+    aspetti da controllare. Qui trovi una disamina più accurata emersa dai <strong>418 commenti dei tre fornitori sul
+      podio</strong>, così puoi farti un'idea più completa prima di confrontare le offerte.</p>
+
+  <style>
+    .ppn-pros-cons-table {
+      display: table !important;
+      width: 100% !important;
+      table-layout: fixed !important;
+      border-collapse: collapse !important;
+    }
+
+    .ppn-pros-cons-table thead {
+      display: table-header-group !important;
+    }
+
+    .ppn-pros-cons-table tbody {
+      display: table-row-group !important;
+    }
+
+    .ppn-pros-cons-table tr {
+      display: table-row !important;
+    }
+
+    .ppn-pros-cons-table th,
+    .ppn-pros-cons-table td {
+      display: table-cell !important;
+      vertical-align: top !important;
+      text-align: left !important;
+    }
+
+    @media (max-width: 768px) {
+      .ppn-pros-cons-table {
+        display: block !important;
+      }
+
+      .ppn-pros-cons-table thead {
+        display: none !important;
+      }
+
+      .ppn-pros-cons-table tbody {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      .ppn-pros-cons-table tr {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 20px !important;
+        border: 1px solid #e0e0e0 !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+      }
+
+      .ppn-pros-cons-table td {
+        display: block !important;
+        width: 100% !important;
+        padding: 15px !important;
+        box-sizing: border-box !important;
+      }
+
+      .ppn-pros-cons-table td:first-child {
+        background: #5a52ff !important;
+        text-align: center !important;
+      }
+
+      .ppn-pros-cons-table td:first-child strong,
+      .ppn-pros-cons-table td:first-child span {
+        color: white !important;
+      }
+
+      .ppn-pros-cons-table td:first-child div {
+        justify-content: center !important;
+        text-align: center !important;
+        color: white !important;
+      }
+    }
+  </style>
+
+  <div style="overflow-x: auto; margin-bottom: 50px;">
+    <table class="ppn-pros-cons-table"
+      style="width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+      <thead>
+        <tr>
+          <th
+            style="background: #5a52ff; color: #ffffff; padding: 18px 20px; text-align: left; font-weight: bold; font-size: 15px; width: 25%;">
+            Fornitore</th>
+          <th
+            style="background: #5a52ff; color: #ffffff; padding: 18px 20px; text-align: left; font-weight: bold; font-size: 15px; width: 37.5%;">
+            <span style="color: #a5ffd6;">&#10003;</span> Pro
+          </th>
+          <th
+            style="background: #5a52ff; color: #ffffff; padding: 18px 20px; text-align: left; font-weight: bold; font-size: 15px; width: 37.5%;">
+            <span style="color: #ffb3b3;">&#10007;</span> Contro
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- OCTOPUS ENERGY -->
+        <tr style="border-bottom: 1px solid #eef0ff;">
+          <td style="padding: 20px; vertical-align: top; background: #f0efff;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;"><strong
+                style="color: #2f2b82; font-size: 15px;">Octopus Energy</strong></div>
+            <div style="font-size: 11px; color: #6a63c7;">Voto recensioni: 8.19/10</div>
+          </td>
+          <td style="padding: 20px; vertical-align: top; background: #ffffff;">
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #1e1e1e; line-height: 1.8;">
+              <li style="margin-bottom: 6px;"><span style="color: #38a169; margin-right: 6px;">&#10003;</span>
+                <strong>Miglior punteggio complessivo</strong> tra i tre fornitori sul podio
+              </li>
+              <li style="margin-bottom: 6px;"><span style="color: #38a169; margin-right: 6px;">&#10003;</span>
+                <strong>Cambio offerta libero</strong>: passi da fisso a variabile quando vuoi, senza penali
+              </li>
+              <li style="margin-bottom: 6px;"><span style="color: #38a169; margin-right: 6px;">&#10003;</span> Servizio
+                clienti percepito come <strong>rapido, umano e chiaro</strong></li>
+              <li style="margin-bottom: 6px;"><span style="color: #38a169; margin-right: 6px;">&#10003;</span>
+                <strong>Tariffe e bollette</strong> spesso citate come convenienti e leggibili
+              </li>
+              <li><span style="color: #38a169; margin-right: 6px;">&#10003;</span> Energia <strong>100%
+                  rinnovabile</strong> certificata con gestione digitale</li>
+            </ul>
+          </td>
+          <td style="padding: 20px; vertical-align: top; background: #ffffff;">
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #1e1e1e; line-height: 1.8;">
+              <li style="margin-bottom: 6px;"><span style="color: #e53e3e; margin-right: 6px;">&#10007;</span>
+                Assistenza telefonica solo <strong>lun-ven 9-17</strong>, niente weekend</li>
+              <li><span style="color: #e53e3e; margin-right: 6px;">&#10007;</span> Operatore giovane in Italia:
+                <strong>meno capillare</strong> rispetto ai big storici
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <!-- DOLOMITI ENERGIA -->
+        <tr style="border-bottom: 1px solid #eef0ff;">
+          <td style="padding: 20px; vertical-align: top; background: #f0efff;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;"><strong
+                style="color: #2f2b82; font-size: 15px;">Dolomiti Energia</strong></div>
+            <div style="font-size: 11px; color: #6a63c7;">Voto recensioni: 7.70/10</div>
+          </td>
+          <td style="padding: 20px; vertical-align: top; background: #ffffff;">
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #1e1e1e; line-height: 1.8;">
+              <li style="margin-bottom: 6px;"><span style="color: #38a169; margin-right: 6px;">&#10003;</span>
+                <strong>Tariffe competitive</strong> e bollette percepite come coerenti
+              </li>
+              <li style="margin-bottom: 6px;"><span style="color: #38a169; margin-right: 6px;">&#10003;</span>
+                <strong>Fornitore solido</strong> con buona reputazione di serietà e trasparenza
+              </li>
+              <li style="margin-bottom: 6px;"><span style="color: #38a169; margin-right: 6px;">&#10003;</span>
+                Offerte indicizzate con <strong>condizioni definite per 24 mesi</strong></li>
+              <li style="margin-bottom: 6px;"><span style="color: #38a169; margin-right: 6px;">&#10003;</span>
+                Sito e area clienti citati positivamente in diversi commenti</li>
+              <li><span style="color: #38a169; margin-right: 6px;">&#10003;</span> Buon equilibrio tra convenienza,
+                assistenza e trasparenza</li>
+            </ul>
+          </td>
+          <td style="padding: 20px; vertical-align: top; background: #ffffff;">
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #1e1e1e; line-height: 1.8;">
+              <li style="margin-bottom: 6px;"><span style="color: #e53e3e; margin-right: 6px;">&#10007;</span>
+                Alcuni utenti segnalano <strong>tempi di attivazione o disattivazione</strong> lunghi</li>
+              <li style="margin-bottom: 6px;"><span style="color: #e53e3e; margin-right: 6px;">&#10007;</span>
+                Convenienza da verificare sul <strong>costo completo</strong>, inclusi quota fissa e spread</li>
+              <li><span style="color: #e53e3e; margin-right: 6px;">&#10007;</span> Assistenza non sempre lineare nei
+                casi più complessi</li>
+            </ul>
+          </td>
+        </tr>
+        <!-- ENGIE -->
+        <tr>
+          <td style="padding: 20px; vertical-align: top; background: #f0efff;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;"><strong
+                style="color: #2f2b82; font-size: 15px;">ENGIE</strong></div>
+            <div style="font-size: 11px; color: #6a63c7;">Voto recensioni: 7.61/10</div>
+          </td>
+          <td style="padding: 20px; vertical-align: top; background: #ffffff;">
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #1e1e1e; line-height: 1.8;">
+              <li style="margin-bottom: 6px;"><span style="color: #38a169; margin-right: 6px;">&#10003;</span>
+                <strong>Multinazionale solida</strong> con oltre 70 anni di storia e presenza globale
+              </li>
+              <li style="margin-bottom: 6px;"><span style="color: #38a169; margin-right: 6px;">&#10003;</span>
+                Buoni segnali su <strong>reputazione e trasparenza</strong> nei commenti analizzati</li>
+              <li style="margin-bottom: 6px;"><span style="color: #38a169; margin-right: 6px;">&#10003;</span>
+                Catalogo ampio con offerte luce, gas e servizi energia</li>
+              <li style="margin-bottom: 6px;"><span style="color: #38a169; margin-right: 6px;">&#10003;</span>
+                Prezzi competitivi citati in diversi commenti su offerte fisse</li>
+              <li><span style="color: #38a169; margin-right: 6px;">&#10003;</span> Gestione digitale e assistenza
+                multicanale</li>
+            </ul>
+          </td>
+          <td style="padding: 20px; vertical-align: top; background: #ffffff;">
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #1e1e1e; line-height: 1.8;">
+              <li style="margin-bottom: 6px;"><span style="color: #e53e3e; margin-right: 6px;">&#10007;</span>
+                <strong>Condizioni al rinnovo</strong> da controllare con attenzione
+              </li>
+              <li style="margin-bottom: 6px;"><span style="color: #e53e3e; margin-right: 6px;">&#10007;</span>
+                Alcuni commenti segnalano bollette anomale o reclami complessi</li>
+              <li><span style="color: #e53e3e; margin-right: 6px;">&#10007;</span> Attivazione e assistenza non sempre
+                uniformi in tutte le esperienze</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CLASSIFICA FINALE FORNITORI -->
+  <section class="pn-final-ranking" aria-labelledby="classifica-fornitori-14">
+    <div class="pn-final-ranking-head">
+      <div>
+        <span class="pn-final-ranking-kicker">Ranking completo</span>
+        <h2 id="classifica-fornitori-14">Classifica fornitori luce: ranking completo</h2>
+        <p>Oltre ai tre fornitori sul podio, abbiamo confrontato anche gli altri operatori inclusi nella nostra analisi.
+          Da qui puoi consultare il ranking completo e aprire la scheda recensioni di ogni fornitore.</p>
+      </div>
+      <div class="pn-final-ranking-total" aria-label="Totale fornitori analizzati">
+        <strong>14</strong>
+        <span>fornitori</span>
+      </div>
+    </div>
+    <div class="pn-ranking-list">
+      <a class="pn-ranking-row is-top" href="/luce-gas/fornitori-energia-elettrica/octopus-energy/recensioni/"
+        aria-label="Leggi le recensioni di Octopus Energy">
+        <span class="pn-rank-num">1</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/img-src-8-1.png"
+            alt="Logo Octopus Energy" loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">Octopus Energy</span>
+          <span class="pn-rank-meta">#1 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">8.19<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:81.9%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="pn-ranking-row is-top" href="/luce-gas/fornitori-energia-elettrica/dolomiti-energia/recensioni/"
+        aria-label="Leggi le recensioni di Dolomiti Energia">
+        <span class="pn-rank-num">2</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/36/2024/12/img-src-4.png"
+            alt="Logo Dolomiti Energia" loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">Dolomiti Energia</span>
+          <span class="pn-rank-meta">#2 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">7.70<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:77.0%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="pn-ranking-row is-top" href="/luce-gas/fornitori-energia-elettrica/engie/recensioni/"
+        aria-label="Leggi le recensioni di ENGIE">
+        <span class="pn-rank-num">3</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/engie-seeklogo.svg"
+            alt="Logo ENGIE" loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">ENGIE</span>
+          <span class="pn-rank-meta">#3 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">7.61<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:76.1%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="pn-ranking-row" href="/luce-gas/fornitori-energia-elettrica/sorgenia/recensioni/"
+        aria-label="Leggi le recensioni di Sorgenia">
+        <span class="pn-rank-num">4</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/04/sorgenia-imm.png"
+            alt="Logo Sorgenia" loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">Sorgenia</span>
+          <span class="pn-rank-meta">#4 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">7.49<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:74.9%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="pn-ranking-row" href="/luce-gas/fornitori-energia-elettrica/magis-energia/recensioni/"
+        aria-label="Leggi le recensioni di MAGIS / AGSM">
+        <span class="pn-rank-num">5</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/04/images.png"
+            alt="Logo MAGIS / AGSM" loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">MAGIS / AGSM</span>
+          <span class="pn-rank-meta">#5 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">7.41<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:74.1%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="pn-ranking-row" href="/luce-gas/fornitori-energia-elettrica/illumia/recensioni/"
+        aria-label="Leggi le recensioni di Illumia">
+        <span class="pn-rank-num">6</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/img-src-5.png"
+            alt="Logo Illumia" loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">Illumia</span>
+          <span class="pn-rank-meta">#6 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">7.40<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:74.0%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="pn-ranking-row" href="/luce-gas/fornitori-energia-elettrica/iren/recensioni/"
+        aria-label="Leggi le recensioni di Iren">
+        <span class="pn-rank-num">7</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/08/logo_iren_2020.jpg"
+            alt="Logo Iren" loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">Iren</span>
+          <span class="pn-rank-meta">#7 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">7.40<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:74.0%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="pn-ranking-row" href="/luce-gas/fornitori-energia-elettrica/edison/recensioni/"
+        aria-label="Leggi le recensioni di Edison">
+        <span class="pn-rank-num">8</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/06/logo-edison.jpg"
+            alt="Logo Edison" loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">Edison</span>
+          <span class="pn-rank-meta">#8 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">7.39<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:73.9%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="pn-ranking-row" href="/luce-gas/fornitori-energia-elettrica/estra/recensioni/"
+        aria-label="Leggi le recensioni di Estra">
+        <span class="pn-rank-num">9</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/estra_og_image.png"
+            alt="Logo Estra" loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">Estra</span>
+          <span class="pn-rank-meta">#9 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">7.39<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:73.9%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="pn-ranking-row" href="/luce-gas/fornitori-energia-elettrica/acea/recensioni/"
+        aria-label="Leggi le recensioni di Acea">
+        <span class="pn-rank-num">10</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/05/acea_logo.svg.png"
+            alt="Logo Acea" loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">Acea</span>
+          <span class="pn-rank-meta">#10 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">7.35<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:73.5%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="pn-ranking-row" href="/luce-gas/fornitori-energia-elettrica/a2a/recensioni/"
+        aria-label="Leggi le recensioni di A2A">
+        <span class="pn-rank-num">11</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/01/1280px-a2a_unternehmen.svg_.png"
+            alt="Logo A2A" loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">A2A</span>
+          <span class="pn-rank-meta">#11 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">7.32<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:73.2%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="pn-ranking-row" href="/luce-gas/fornitori-energia-elettrica/hera/recensioni/"
+        aria-label="Leggi le recensioni di Hera">
+        <span class="pn-rank-num">12</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/hera-foto.jpg"
+            alt="Logo Hera" loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">Hera</span>
+          <span class="pn-rank-meta">#12 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">7.21<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:72.1%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="pn-ranking-row" href="/luce-gas/fornitori-energia-elettrica/enel/recensioni/"
+        aria-label="Leggi le recensioni di Enel">
+        <span class="pn-rank-num">13</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/01/enel.svg" alt="Logo Enel"
+            loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">Enel</span>
+          <span class="pn-rank-meta">#13 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">7.16<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:71.6%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a class="pn-ranking-row" href="/luce-gas/fornitori-energia-elettrica/eni-plenitude/recensioni/"
+        aria-label="Leggi le recensioni di Eni Plenitude">
+        <span class="pn-rank-num">14</span>
+        <span class="pn-rank-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/eni-plenitude-seeklogo.svg"
+            alt="Logo Eni Plenitude" loading="lazy"></span>
+        <span class="pn-rank-provider">
+          <span class="pn-rank-name">Eni Plenitude</span>
+          <span class="pn-rank-meta">#14 su 14 fornitori analizzati</span>
+        </span>
+        <span class="pn-rank-score">
+          <span class="pn-rank-score-value">6.54<span>/10</span></span>
+          <span class="pn-rank-bar"><span class="pn-rank-fill" style="width:65.4%"></span></span>
+        </span>
+        <span class="pn-rank-arrow" aria-hidden="true">&rsaquo;</span>
+      </a>
+    </div>
+  </section>
+  <!-- /CLASSIFICA FINALE FORNITORI -->
+
+  <!-- CLASSIFICA REVIEW COMMENTS SCRIPT -->
+  <script>
+    (function () {
+      if (window.__pnReviewModalPortalReady) return;
+      window.__pnReviewModalPortalReady = true;
+
+      var activeTrigger = null;
+      var activeToggle = null;
+      var portal = null;
+
+      function closest(el, selector) {
+        while (el && el !== document) {
+          if (el.matches && el.matches(selector)) return el;
+          el = el.parentNode;
+        }
+        return null;
+      }
+
+      function ensurePortal() {
+        if (portal) return portal;
+        portal = document.createElement('div');
+        portal.className = 'pn-body pn-modal-portal';
+        portal.setAttribute('data-pn-modal-portal', '');
+        portal.style.position = 'fixed';
+        portal.style.inset = '0';
+        portal.style.zIndex = '2147483647';
+        portal.style.maxWidth = 'none';
+        portal.style.margin = '0';
+        portal.style.padding = '0';
+        portal.style.pointerEvents = 'none';
+        document.body.appendChild(portal);
+        return portal;
+      }
+
+      function closeModal() {
+        if (portal) portal.innerHTML = '';
+        if (portal) portal.style.display = 'none';
+        document.body.classList.remove('pn-review-modal-lock');
+        if (activeToggle) activeToggle.checked = false;
+        if (activeTrigger && activeTrigger.focus) activeTrigger.focus();
+        activeTrigger = null;
+        activeToggle = null;
+      }
+
+      function openModal(trigger) {
+        var id = trigger.getAttribute('for');
+        var toggle = id ? document.getElementById(id) : null;
+        var source = toggle ? toggle.parentNode.querySelector('.pn-comment-modal') : null;
+        if (!source) return;
+
+        var clone = source.cloneNode(true);
+        clone.classList.add('pn-js-open');
+        clone.setAttribute('aria-hidden', 'false');
+        clone.style.position = 'fixed';
+        clone.style.inset = '0';
+        clone.style.zIndex = '2147483647';
+        clone.style.display = 'flex';
+        clone.style.alignItems = 'center';
+        clone.style.justifyContent = 'center';
+        clone.style.padding = '18px';
+        clone.style.pointerEvents = 'auto';
+        var expanded = clone.querySelector('.pn-comment-expanded');
+        if (expanded) {
+          expanded.style.position = 'relative';
+          expanded.style.zIndex = '1';
+          expanded.style.margin = '0 auto';
+          expanded.style.maxWidth = 'min(640px, calc(100vw - 36px))';
+          expanded.style.maxHeight = 'min(78vh, 720px)';
+          expanded.style.overflow = 'auto';
+          expanded.style.background = '#fff';
+          expanded.style.boxShadow = '0 22px 64px rgba(22, 24, 33, .30)';
+          var expandedBody = expanded.querySelector('.pn-cbody');
+          if (expandedBody) {
+            expandedBody.style.background = '#fff';
+            expandedBody.style.color = '#212431';
+          }
+        }
+        Array.prototype.forEach.call(clone.querySelectorAll('.pn-modal-backdrop, .pn-modal-close'), function (label) {
+          label.removeAttribute('for');
+          label.setAttribute('role', 'button');
+          if (!label.hasAttribute('tabindex')) label.setAttribute('tabindex', '0');
+        });
+
+        activeTrigger = trigger;
+        activeToggle = toggle;
+        if (activeToggle) activeToggle.checked = false;
+
+        ensurePortal().innerHTML = '';
+        portal.style.display = 'block';
+        portal.appendChild(clone);
+        document.body.classList.add('pn-review-modal-lock');
+
+        var close = clone.querySelector('.pn-modal-close');
+        if (close && close.focus) close.focus();
+      }
+
+      document.addEventListener('click', function (event) {
+        var trigger = closest(event.target, '.pn-more[for^="pn-css-comment-"]');
+        if (trigger) {
+          event.preventDefault();
+          openModal(trigger);
+          return;
+        }
+
+        if (portal && portal.contains(event.target) && closest(event.target, '.pn-modal-backdrop, .pn-modal-close')) {
+          event.preventDefault();
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        var trigger = closest(event.target, '.pn-more[for^="pn-css-comment-"]');
+        if (trigger && (event.key === 'Enter' || event.key === ' ')) {
+          event.preventDefault();
+          openModal(trigger);
+          return;
+        }
+
+        if (portal && portal.firstChild && closest(event.target, '.pn-modal-backdrop, .pn-modal-close') && (event.key === 'Enter' || event.key === ' ')) {
+          event.preventDefault();
+          closeModal();
+          return;
+        }
+
+        if (event.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
+
+</div>
+
+  </main>
+</body>
+</html>

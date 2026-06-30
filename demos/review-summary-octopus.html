@@ -1,0 +1,890 @@
+<style>
+  .ppn-octopus-review-brief,
+  .ppn-octopus-review-brief *,
+  .ppn-octopus-review-brief *::before,
+  .ppn-octopus-review-brief *::after {
+    box-sizing: border-box;
+    letter-spacing: 0;
+  }
+
+  .ppn-octopus-review-brief {
+    --ppn-primary: #5a52ff;
+    --ppn-primary-dark: #3e38b2;
+    --ppn-primary-bg: #f6f5ff;
+    --ppn-teal: #02c5ae;
+    --ppn-ink: #212431;
+    --ppn-text: #383c4c;
+    --ppn-muted: #63697f;
+    --ppn-line: #e7e5e4;
+    --ppn-youtube: #ff0033;
+    --ppn-facebook: #1877f2;
+    --ppn-reddit: #ff4500;
+    --ppn-x: #111111;
+    margin: 22px 0;
+    border: 1px solid var(--ppn-line);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
+    color: var(--ppn-text);
+    box-shadow: 0 10px 24px rgba(33, 36, 49, .08);
+  }
+
+  .ppn-octopus-review-brief__top {
+    display: grid;
+    grid-template-columns: 172px minmax(0, 1fr);
+    gap: 18px;
+    align-items: center;
+    padding: 20px 22px;
+    background: var(--ppn-primary-bg);
+    border-bottom: 1px solid var(--ppn-line);
+  }
+
+  .ppn-octopus-review-brief__score-wrap {
+    min-width: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  .ppn-octopus-review-brief__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    color: var(--ppn-muted);
+    font-size: .78rem;
+    line-height: 1.2;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .ppn-octopus-review-brief__meta::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 99px;
+    background: var(--ppn-teal);
+    box-shadow: 0 0 0 6px rgba(2, 197, 174, .16);
+    flex: 0 0 auto;
+  }
+
+  .ppn-octopus-review-brief__score {
+    text-align: center;
+    padding: 4px 0;
+  }
+
+  .ppn-octopus-review-brief__score strong {
+    display: block;
+    color: var(--ppn-primary);
+    font-size: 2.7rem;
+    line-height: 1;
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ppn-octopus-review-brief__score span {
+    display: block;
+    margin-top: 4px;
+    color: var(--ppn-muted);
+    font-weight: 800;
+  }
+
+  .ppn-octopus-review-brief__mobile-rank {
+    display: none;
+  }
+
+  .ppn-octopus-review-brief__rank {
+    min-width: 0;
+    padding: 14px 18px;
+    background: #ffffff;
+    border: 1px solid var(--ppn-line);
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(33, 36, 49, .05);
+  }
+
+  .ppn-octopus-review-brief__rank-head {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-bottom: 8px;
+  }
+
+  .ppn-octopus-review-brief__rank-pos {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 0;
+    color: var(--ppn-primary);
+    font-size: 1.7rem;
+    line-height: 1;
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ppn-octopus-review-brief__rank-pos small {
+    color: var(--ppn-muted);
+    font-size: .78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .ppn-octopus-review-brief__method {
+    color: var(--ppn-muted);
+    font-size: .78rem;
+    line-height: 1.35;
+    font-style: italic;
+  }
+
+  .ppn-octopus-review-brief__method a {
+    color: var(--ppn-primary-dark);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .ppn-octopus-review-brief__method a:hover {
+    text-decoration: underline;
+  }
+
+  .ppn-octopus-review-brief__method.is-mobile {
+    display: none;
+  }
+
+  .ppn-octopus-review-brief .ppn-octopus-review-brief__copy {
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  .ppn-octopus-review-brief__comments {
+    padding: 18px 20px 20px;
+    background: #fafaff;
+  }
+
+  .ppn-octopus-review-brief__comments h3 {
+    margin: 0 0 10px;
+    color: var(--ppn-ink);
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .ppn-octopus-review-brief .pn-comments-wrap {
+    position: relative;
+    border: 1px solid var(--ppn-line);
+    border-radius: 10px;
+    padding: 10px 42px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(33, 36, 49, .05);
+  }
+
+  .ppn-octopus-review-brief .pn-comments {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-right: 0;
+  }
+
+  .ppn-octopus-review-brief .pn-comments::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ppn-octopus-review-brief .pn-comments-nav {
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    width: 30px;
+    height: 42px;
+    transform: translateY(-50%);
+    border: 1px solid var(--ppn-line);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--ppn-primary-dark);
+    font-size: 1.45rem;
+    line-height: 1;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(33, 36, 49, .1);
+  }
+
+  .ppn-octopus-review-brief .pn-comments-nav:hover,
+  .ppn-octopus-review-brief .pn-comments-nav:focus-visible {
+    background: var(--ppn-primary-bg);
+  }
+
+  .ppn-octopus-review-brief .pn-comments-nav.is-prev {
+    left: 8px;
+  }
+
+  .ppn-octopus-review-brief .pn-comments-nav.is-next {
+    right: 8px;
+  }
+
+  .ppn-octopus-review-brief .pn-comment {
+    position: relative;
+    flex: 0 0 calc((100% - 16px) / 3);
+    min-width: 300px;
+    border: 1px solid var(--ppn-line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+    scroll-snap-align: start;
+  }
+
+  .ppn-octopus-review-brief .pn-source {
+    min-height: 28px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: #ffffff;
+    font-size: .64rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .ppn-octopus-review-brief .pn-source span:last-child {
+    max-width: 62%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+  }
+
+  .ppn-octopus-review-brief .pn-source.youtube { background: var(--ppn-youtube); }
+  .ppn-octopus-review-brief .pn-source.facebook { background: var(--ppn-facebook); }
+  .ppn-octopus-review-brief .pn-source.reddit { background: var(--ppn-reddit); }
+  .ppn-octopus-review-brief .pn-source.x { background: var(--ppn-x); }
+
+  .ppn-octopus-review-brief .pn-cbody {
+    padding: 9px;
+  }
+
+  .ppn-octopus-review-brief .pn-cbody p {
+    margin: 0;
+    color: var(--ppn-text);
+    font-size: .79rem;
+    line-height: 1.42;
+  }
+
+  .ppn-octopus-review-brief .pn-cbody b {
+    display: block;
+    margin-top: 7px;
+    color: var(--ppn-primary-dark);
+    font-size: .69rem;
+  }
+
+  .ppn-octopus-review-brief .pn-link {
+    display: inline-block;
+    margin-top: 6px;
+    color: var(--ppn-primary-dark);
+    font-size: .68rem;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .ppn-octopus-review-brief .pn-link:hover {
+    text-decoration: underline;
+  }
+
+  .ppn-octopus-review-brief .pn-more {
+    display: inline;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--ppn-primary-dark);
+    font: inherit;
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .ppn-octopus-review-brief .pn-more:hover,
+  .ppn-octopus-review-brief .pn-more:focus-visible {
+    text-decoration: underline;
+  }
+
+  .ppn-octopus-review-brief .pn-modal-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ppn-octopus-review-brief .pn-comment-modal,
+  .ppn-octopus-review-brief-modal-portal .pn-comment-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    isolation: isolate;
+  }
+
+  .ppn-octopus-review-brief .pn-modal-toggle:checked ~ .pn-comment-modal,
+  .ppn-octopus-review-brief-modal-portal .pn-comment-modal.ppn-js-open {
+    display: flex;
+  }
+
+  .ppn-octopus-review-brief .pn-comments-wrap:has(.pn-modal-toggle:checked),
+  .ppn-octopus-review-brief .pn-comments:has(.pn-modal-toggle:checked),
+  .ppn-octopus-review-brief .pn-comment:has(.pn-modal-toggle:checked) {
+    overflow: visible;
+  }
+
+  .ppn-octopus-review-brief .pn-modal-backdrop,
+  .ppn-octopus-review-brief-modal-portal .pn-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    padding: 0;
+    background: rgba(22, 24, 33, .68);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+  }
+
+  .ppn-octopus-review-brief-modal-portal {
+    --ppn-primary-dark: #3e38b2;
+    --ppn-text: #383c4c;
+    --ppn-line: #e7e5e4;
+    --ppn-youtube: #ff0033;
+    --ppn-facebook: #1877f2;
+    --ppn-reddit: #ff4500;
+    --ppn-x: #111111;
+  }
+
+  .ppn-octopus-review-brief-modal-portal,
+  .ppn-octopus-review-brief-modal-portal * {
+    box-sizing: border-box;
+    letter-spacing: 0;
+  }
+
+  .ppn-octopus-review-brief .pn-comment-expanded,
+  .ppn-octopus-review-brief-modal-portal .pn-comment-expanded {
+    position: relative;
+    z-index: 1;
+    flex: 0 1 min(640px, calc(100vw - 36px));
+    max-width: min(640px, calc(100vw - 36px));
+    max-height: min(78vh, 720px);
+    overflow: auto;
+    border: 1px solid var(--ppn-line);
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 22px 64px rgba(22, 24, 33, .30);
+  }
+
+  .ppn-octopus-review-brief .pn-comment-expanded .pn-source,
+  .ppn-octopus-review-brief-modal-portal .pn-comment-expanded .pn-source {
+    min-height: 42px;
+    padding: 0 58px 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: #ffffff;
+    font-size: .68rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .ppn-octopus-review-brief-modal-portal .pn-source.youtube { background: var(--ppn-youtube); }
+  .ppn-octopus-review-brief-modal-portal .pn-source.facebook { background: var(--ppn-facebook); }
+  .ppn-octopus-review-brief-modal-portal .pn-source.reddit { background: var(--ppn-reddit); }
+  .ppn-octopus-review-brief-modal-portal .pn-source.x { background: var(--ppn-x); }
+
+  .ppn-octopus-review-brief-modal-portal .pn-cbody {
+    padding: 16px;
+  }
+
+  .ppn-octopus-review-brief-modal-portal .pn-cbody b {
+    display: block;
+    margin-top: 7px;
+    color: var(--ppn-primary-dark);
+    font-size: .69rem;
+  }
+
+  .ppn-octopus-review-brief-modal-portal .pn-link {
+    display: inline-block;
+    margin-top: 6px;
+    color: var(--ppn-primary-dark);
+    font-size: .68rem;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .ppn-octopus-review-brief .pn-comment-expanded .pn-quote-full,
+  .ppn-octopus-review-brief-modal-portal .pn-comment-expanded .pn-quote-full {
+    margin: 0;
+    color: var(--ppn-text);
+    font-size: .95rem;
+    line-height: 1.55;
+    white-space: pre-line;
+  }
+
+  .ppn-octopus-review-brief .pn-modal-close,
+  .ppn-octopus-review-brief-modal-portal .pn-modal-close {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, .62);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .18);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  body.ppn-review-modal-lock {
+    overflow: hidden;
+  }
+
+  .ppn-octopus-review-brief .pn-comment.is-more {
+    min-height: 145px;
+  }
+
+  .ppn-octopus-review-brief .pn-comment.is-more .pn-cbody {
+    filter: blur(3px);
+    opacity: .38;
+    user-select: none;
+  }
+
+  .ppn-octopus-review-brief .pn-more-card-link {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .ppn-octopus-review-brief .pn-more-overlay {
+    position: absolute;
+    inset: 28px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .55), rgba(255, 255, 255, .95));
+    text-align: center;
+  }
+
+  .ppn-octopus-review-brief .pn-more-overlay a {
+    display: inline-flex;
+    max-width: 220px;
+    color: var(--ppn-primary-dark);
+    font-size: .84rem;
+    line-height: 1.35;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  @media (max-width: 700px) {
+    .ppn-octopus-review-brief__top {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 16px 18px;
+      text-align: center;
+    }
+
+    .ppn-octopus-review-brief__meta {
+      justify-content: center;
+    }
+
+    .ppn-octopus-review-brief__score {
+      width: 100%;
+      justify-self: center;
+      background: #ffffff;
+      border: 1px solid #ded8ca;
+      border-radius: 8px;
+      padding: 10px 8px;
+    }
+
+    .ppn-octopus-review-brief__score strong {
+      font-size: 2.25rem;
+    }
+
+    .ppn-octopus-review-brief__rank {
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .ppn-octopus-review-brief__rank-pos {
+      display: none;
+    }
+
+    .ppn-octopus-review-brief__rank .ppn-octopus-review-brief__method {
+      display: none;
+    }
+
+    .ppn-octopus-review-brief__mobile-rank {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 5px 8px;
+      margin-top: 7px;
+      color: var(--ppn-primary);
+      font-size: 1.15rem;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .ppn-octopus-review-brief__mobile-rank small {
+      color: var(--ppn-muted);
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .ppn-octopus-review-brief__score .ppn-octopus-review-brief__method.is-mobile {
+      display: block;
+      margin-top: 7px;
+      font-size: .73rem;
+    }
+
+    .ppn-octopus-review-brief__comments h3 {
+      text-align: center;
+    }
+
+    .ppn-octopus-review-brief .pn-comments-wrap {
+      padding: 10px 38px;
+    }
+
+    .ppn-octopus-review-brief .pn-comments {
+      overflow-x: hidden;
+      padding-right: 0;
+    }
+
+    .ppn-octopus-review-brief .pn-comment {
+      flex: 0 0 100%;
+      min-width: 100%;
+    }
+
+    .ppn-octopus-review-brief .pn-comment.is-mobile-hidden {
+      display: none;
+    }
+
+    .ppn-octopus-review-brief .pn-comments-nav {
+      width: 28px;
+      height: 40px;
+    }
+
+    .ppn-octopus-review-brief .pn-comment-modal,
+    .ppn-octopus-review-brief-modal-portal .pn-comment-modal {
+      padding: 14px;
+    }
+
+    .ppn-octopus-review-brief .pn-comment-expanded,
+    .ppn-octopus-review-brief-modal-portal .pn-comment-expanded {
+      flex-basis: min(360px, calc(100vw - 28px));
+      max-width: min(360px, calc(100vw - 28px));
+      max-height: min(82vh, calc(100dvh - 28px));
+    }
+  }
+</style>
+
+<div class="ppn-octopus-review-brief">
+  <div class="ppn-octopus-review-brief__top">
+    <div class="ppn-octopus-review-brief__score-wrap">
+      <div class="ppn-octopus-review-brief__meta">176 commenti analizzati</div>
+      <div class="ppn-octopus-review-brief__score">
+        <strong>8,2</strong>
+        <span>voto medio /10</span>
+        <div class="ppn-octopus-review-brief__mobile-rank">#1<small>di 17 fornitori nel confronto</small></div>
+        <div class="ppn-octopus-review-brief__method is-mobile">In base all'<a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/octopus-energy/recensioni/">analisi dei commenti raccolti sui social</a></div>
+      </div>
+    </div>
+
+    <div class="ppn-octopus-review-brief__rank" aria-label="Posizionamento Octopus Energy">
+      <div class="ppn-octopus-review-brief__rank-head">
+        <div class="ppn-octopus-review-brief__rank-pos">#1<small>di 17 fornitori nel confronto</small></div>
+        <div class="ppn-octopus-review-brief__method">In base all'<a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/octopus-energy/recensioni/">analisi dei commenti raccolti sui social</a></div>
+      </div>
+      <p class="ppn-octopus-review-brief__copy">Le opinioni mettono in evidenza <strong>prezzi competitivi, assistenza rapida e cambio tariffa semplice</strong>, mentre <strong>fatturazione, risposte nei reclami complessi e assenza di app dedicata</strong> sono aspetti da valutare con attenzione.</p>
+    </div>
+  </div>
+
+  <div class="ppn-octopus-review-brief__comments">
+    <h3>Alcuni commenti analizzati</h3>
+
+    <div class="pn-comments-wrap">
+      <button class="pn-comments-nav is-prev" type="button" aria-label="Commento precedente">&#8249;</button>
+      <div class="pn-comments">
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>Durton24</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="ppn-octopus-comment-01" aria-hidden="true">
+            <p class="pn-quote">Ho Octopus da più di un anno e mi trovato benissimo. Il servizio clienti è impeccabile e sono molto &#x27;umani&#x27;. Poi mi sembra che hanno prezzi decisamente... <label class="pn-more" for="ppn-octopus-comment-01" role="button" tabindex="0">Scopri di più</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="ppn-octopus-comment-01" aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="ppn-octopus-comment-01" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>Durton24</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Ho Octopus da più di un anno e mi trovato benissimo. Il servizio clienti è impeccabile e sono molto &#x27;umani&#x27;. Poi mi sembra che hanno prezzi decisamente inferiori rispetto agli altri gestori. Inoltre, ogni volta che mettono una nuova offerta fissa con prezzo inferiore alla mia offerta attuale, mando un messaggino su whatsapp dicendo che voglio cambiare ed attivare la nuova offerta ed in genere in una manciata di minuti mi confermano l&#x27;attivazione.</p>
+                  <b>Durton24</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/opinioni_su_octopus/" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div>
+            <b>Durton24</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/opinioni_su_octopus/" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+        <article class="pn-comment">
+          <div class="pn-source reddit"><span>Reddit</span><span>Lalli928</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="ppn-octopus-comment-02" aria-hidden="true">
+            <p class="pn-quote">Brutta esperienza nella gestione di una fatturazione errata (ovviamente in eccesso) addebitatami all&#x27;inizio del rapporto contrattuale con loro. Ho... <label class="pn-more" for="ppn-octopus-comment-02" role="button" tabindex="0">Scopri di più</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="ppn-octopus-comment-02" aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="ppn-octopus-comment-02" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>Lalli928</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Brutta esperienza nella gestione di una fatturazione errata (ovviamente in eccesso) addebitatami all&#x27;inizio del rapporto contrattuale con loro. Ho dovuto portarli in conciliazione per tutelarmi. Risposte rapide in assistenza clienti, il problema è il contenuto di quelle risposte 😅</p>
+                  <b>Lalli928</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/1swwzne/comment/oijz61c/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div>
+            <b>Lalli928</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/1swwzne/comment/oijz61c/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+        <article class="pn-comment is-mobile-hidden">
+          <div class="pn-source reddit"><span>Reddit</span><span>cicababba</span></div>
+          <div class="pn-cbody">
+            <input class="pn-modal-toggle" type="checkbox" id="ppn-octopus-comment-03" aria-hidden="true">
+            <p class="pn-quote">Ciao, io ho octopus da dicembre 2025, in termini di prezzi, il risparmio non è esagerato rispetto a ciò che avevo prima, ma è comunque ottimo. La loro applicazione... <label class="pn-more" for="ppn-octopus-comment-03" role="button" tabindex="0">Scopri di più</label></p>
+            <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+              <label class="pn-modal-backdrop" for="ppn-octopus-comment-03" aria-label="Chiudi commento completo"></label>
+              <article class="pn-comment pn-comment-expanded" role="document">
+                <label class="pn-modal-close" for="ppn-octopus-comment-03" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+                <div class="pn-source reddit"><span>Reddit</span><span>cicababba</span></div>
+                <div class="pn-cbody">
+                  <p class="pn-quote pn-quote-full">Ciao, io ho octopus da dicembre 2025, in termini di prezzi, il risparmio non è esagerato rispetto a ciò che avevo prima, ma è comunque ottimo. La loro applicazione è ottima e puoi tracciare in maniera chiara il consumo e le fatture. Inoltre il servizio clienti è sempre disponibile e cortese, ma la cosa che più apprezzo è che si può fare tutto online, senza chiamare ed essere chiamati, tutto scritto in maniera chiara e non hai le solite rotture di tizi al telefono che ti dicono cosa firmare, contratti mandati per e-mail dove devi firmare mentre sei ancora al telefono altrimenti l&#x27;offerta non è valida e bla bla bla.</p>
+                  <b>cicababba</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/comment/oiit6et/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" rel="noopener">Apri thread</a>
+                </div>
+              </article>
+            </div>
+            <b>cicababba</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swxeag/comment/oiit6et/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" rel="noopener">Apri thread</a>
+          </div>
+        </article>
+
+        <article class="pn-comment is-more" aria-label="Altri commenti disponibili nella pagina recensioni Octopus Energy">
+          <a class="pn-more-card-link" href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/octopus-energy/recensioni/#cluster-tariffe-risparmio" aria-label="Vai alla sezione recensioni Octopus Energy"></a>
+          <div class="pn-source reddit"><span>Reddit</span><span>PulsarAndBlackMatter</span></div>
+          <div class="pn-cbody" aria-hidden="true">
+            <p class="pn-quote">Ho gas e luce, mi trovo bene, i prezzi sono i più bassi che ho trovato. Gas ci sono appena passato, mi ha richiamato il vecchio gestore...</p>
+            <b>PulsarAndBlackMatter</b><span class="pn-link">Apri thread</span>
+          </div>
+          <div class="pn-more-overlay">
+            <a href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/octopus-energy/recensioni/#cluster-tariffe-risparmio">Per vedere tutti i commenti e la nostra analisi, clicca qui per consultare la pagina recensioni Octopus Energy</a>
+          </div>
+        </article>
+      </div>
+      <button class="pn-comments-nav is-next" type="button" aria-label="Commento successivo">&#8250;</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    if (window.__OctopusReviewModalPortalReady) return;
+    window.__OctopusReviewModalPortalReady = true;
+
+    var activeTrigger = null;
+    var activeToggle = null;
+    var portal = null;
+
+    function closest(el, selector) {
+      while (el && el !== document) {
+        if (el.matches && el.matches(selector)) return el;
+        el = el.parentNode;
+      }
+      return null;
+    }
+
+    function moveRail(rail, direction) {
+      if (!rail) return;
+      if (window.matchMedia('(min-width: 701px)').matches) {
+        rail.scrollTo({
+          left: direction > 0 ? rail.scrollWidth - rail.clientWidth : 0,
+          behavior: 'smooth'
+        });
+        return;
+      }
+
+      var card = rail.querySelector('.pn-comment:not(.is-mobile-hidden)');
+      var step = card ? card.getBoundingClientRect().width + 8 : 308;
+      rail.scrollBy({ left: direction * step, behavior: 'smooth' });
+    }
+
+    function ensurePortal() {
+      if (portal) return portal;
+      portal = document.createElement('div');
+      portal.className = 'ppn-octopus-review-brief-modal-portal';
+      portal.setAttribute('data-octopus-modal-portal', '');
+      document.body.appendChild(portal);
+      return portal;
+    }
+
+    function closeModal() {
+      if (portal) portal.innerHTML = '';
+      document.body.classList.remove('ppn-review-modal-lock');
+      if (activeToggle) activeToggle.checked = false;
+      if (activeTrigger && activeTrigger.focus) activeTrigger.focus();
+      activeTrigger = null;
+      activeToggle = null;
+    }
+
+    function openModal(trigger) {
+      var id = trigger.getAttribute('for');
+      var toggle = id ? document.getElementById(id) : null;
+      var source = toggle ? toggle.parentNode.querySelector('.pn-comment-modal') : null;
+      if (!source) return;
+
+      var clone = source.cloneNode(true);
+      clone.classList.add('ppn-js-open');
+      clone.setAttribute('aria-hidden', 'false');
+      Array.prototype.forEach.call(clone.querySelectorAll('.pn-modal-backdrop, .pn-modal-close'), function (label) {
+        label.removeAttribute('for');
+        label.setAttribute('role', 'button');
+        if (!label.hasAttribute('tabindex')) label.setAttribute('tabindex', '0');
+      });
+
+      activeTrigger = trigger;
+      activeToggle = toggle;
+      if (activeToggle) activeToggle.checked = false;
+
+      ensurePortal().innerHTML = '';
+      portal.appendChild(clone);
+      document.body.classList.add('ppn-review-modal-lock');
+      var close = clone.querySelector('.pn-modal-close');
+      if (close && close.focus) close.focus();
+    }
+
+    document.addEventListener('click', function (event) {
+      var nav = closest(event.target, '.ppn-octopus-review-brief .pn-comments-nav');
+      if (nav) {
+        event.preventDefault();
+        var wrap = closest(nav, '.pn-comments-wrap');
+        var rail = wrap ? wrap.querySelector('.pn-comments') : null;
+        moveRail(rail, nav.classList.contains('is-next') ? 1 : -1);
+        return;
+      }
+
+      var trigger = closest(event.target, '.ppn-octopus-review-brief .pn-more[for^="ppn-octopus-comment-"]');
+      if (trigger) {
+        event.preventDefault();
+        openModal(trigger);
+        return;
+      }
+
+      if (portal && portal.contains(event.target) && closest(event.target, '.pn-modal-backdrop, .pn-modal-close')) {
+        event.preventDefault();
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      var trigger = closest(event.target, '.ppn-octopus-review-brief .pn-more[for^="ppn-octopus-comment-"]');
+      if (trigger && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault();
+        openModal(trigger);
+        return;
+      }
+
+      if (portal && portal.firstChild && closest(event.target, '.pn-modal-backdrop, .pn-modal-close') && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault();
+        closeModal();
+        return;
+      }
+
+      if (event.key === 'Escape') closeModal();
+    });
+  })();
+</script>
+
+<!-- CTA CLASSIFICA FORNITORI -->
+<style>
+  .pn-ranking-jump {
+    margin: 24px auto;
+    padding: 14px 16px;
+    border: 1px solid #dde2f7;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    box-shadow: 0 4px 18px rgba(33, 36, 49, .06);
+  }
+
+  .pn-ranking-jump-copy { min-width: 0; }
+
+  .pn-ranking-jump .pn-ranking-jump-title {
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .pn-ranking-jump .pn-ranking-jump-link {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 16px;
+    border-radius: 999px;
+    background: #5a52ff;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(90, 82, 255, .20);
+  }
+
+  .pn-ranking-jump .pn-ranking-jump-link:hover,
+  .pn-ranking-jump .pn-ranking-jump-link:focus-visible {
+    background: #4841dd;
+    color: #fff;
+    outline: 0;
+  }
+
+  @media (max-width: 640px) {
+    .pn-ranking-jump {
+      justify-content: center;
+      padding: 12px;
+      gap: 0;
+    }
+
+    .pn-ranking-jump-copy { display: none; }
+    .pn-ranking-jump .pn-ranking-jump-link { width: 100%; }
+  }
+</style>
+
+<div class="pn-ranking-jump">
+  <div class="pn-ranking-jump-copy">
+    <p class="pn-ranking-jump-title">Scopri dove si posiziona questo fornitore rispetto agli altri!</p>
+  </div>
+  <a class="pn-ranking-jump-link" href="https://www.papernest.it/luce-gas/compara/classifica-recensioni-fornitori/">
+    Classifica recensioni fornitori completa <span aria-hidden="true">&#8594;</span>
+  </a>
+</div>
+<!-- /CTA CLASSIFICA FORNITORI -->

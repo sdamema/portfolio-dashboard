@@ -1,0 +1,8 @@
+output/
+.DS_Store
+demos/price-history.html
+analytics-data/raw/**
+!analytics-data/raw/
+!analytics-data/raw/**/
+!analytics-data/raw/.gitkeep
+!analytics-data/raw/**/.gitkeep

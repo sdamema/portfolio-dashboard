@@ -1,0 +1,3081 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anteprima Octopus</title>
+<style>body{margin:0;background:#fff;color:#111827;font-family:Arial,sans-serif}main{padding:0 0 40px}</style>
+</head>
+<body>
+  <style>
+    .ppn-octopus-reviews {
+      --por-ink: #161821;
+      --por-ink-2: #262936;
+      --por-muted: #646b7c;
+      --por-soft: #8a90a0;
+      --por-paper: #fbfaf7;
+      --por-paper-2: #f4f1ea;
+      --por-card: #ffffff;
+      --por-line: #ded8ca;
+      --por-line-soft: #e7e5e4;
+      --por-violet: #5a52ff;
+      --por-violet-2: #3e38b2;
+      --por-violet-soft: #efeeff;
+      --por-violet-bg: #f6f5ff;
+      --por-green: #00bc7d;
+      --por-orange: #fd9a00;
+      --por-red: #ff2056;
+      --por-blue: #0c68d3;
+      --por-teal: #02c5ae;
+      --por-teal-dark: #018979;
+      --por-shadow: 0 14px 32px rgba(22, 24, 33, .11);
+      --por-shadow-soft: 0 2px 12px 1px rgba(127, 131, 152, .18);
+      color: var(--por-ink);
+      line-height: 1.45;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .ppn-octopus-reviews *,
+    .ppn-octopus-reviews *::before,
+    .ppn-octopus-reviews *::after {
+      box-sizing: border-box;
+      letter-spacing: 0
+    }
+
+    .ppn-octopus-reviews .por-mobile-only {
+      display: none
+    }
+
+    /* HEADER */
+    .ppn-octopus-reviews .por-header {
+      margin: 0 0 18px;
+      max-width: 880px;
+    }
+
+    .ppn-octopus-reviews .por-mobile-copy {
+      display: none;
+      margin: 14px 0 0;
+    }
+
+    .ppn-octopus-reviews .por-copy {
+      margin: 0;
+      color: var(--por-ink);
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    /* CARD (full-width dashboard) */
+    .ppn-octopus-reviews .por-card {
+      border: 1px solid var(--por-line);
+      border-radius: 8px;
+      background: var(--por-card);
+      box-shadow: var(--por-shadow);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    /* HERO */
+    .ppn-octopus-reviews .por-hero {
+      background: var(--por-violet-bg);
+      padding: 26px 30px;
+    }
+
+    .ppn-octopus-reviews .por-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--por-muted);
+      font-size: .72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .ppn-octopus-reviews .por-brand-head {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ppn-octopus-reviews .por-brand-logo {
+      width: 52px;
+      height: 52px;
+      border: 1px solid var(--por-line);
+      border-radius: 12px;
+      background: #fff;
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    .ppn-octopus-reviews .por-brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      transform: translateY(1px);
+      display: block;
+    }
+
+    .ppn-octopus-reviews .por-brand-name {
+      color: var(--por-ink);
+      font-size: 1.12rem;
+      line-height: 1.1;
+      font-weight: 900;
+      letter-spacing: .01em;
+      white-space: nowrap;
+    }
+
+    .ppn-octopus-reviews .por-kicker::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--por-teal);
+      box-shadow: 0 0 0 6px rgba(2, 197, 174, .18);
+      flex: 0 0 auto;
+    }
+
+    .ppn-octopus-reviews .por-hero-row {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 26px;
+      align-items: end;
+      margin-top: 12px;
+    }
+
+    .ppn-octopus-reviews .por-score {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--por-violet);
+      font-size: 5.4rem;
+      line-height: .92;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -.02em;
+    }
+
+    .ppn-octopus-reviews .por-score small {
+      margin-top: 12px;
+      color: var(--por-muted);
+      font-size: 1.3rem;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .ppn-octopus-reviews .por-score-meta {
+      margin-top: 6px;
+      color: var(--por-muted);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .ppn-octopus-reviews .por-rank {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 14px 18px;
+      background: var(--por-card);
+      border: 1px solid var(--por-line);
+      border-radius: 8px;
+      min-width: 0;
+    }
+
+    .ppn-octopus-reviews .por-rank-pos {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      color: var(--por-violet);
+      font-size: 1.7rem;
+      line-height: 1;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ppn-octopus-reviews .por-rank-pos small {
+      color: var(--por-muted);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .ppn-octopus-reviews .por-rank-meta {
+      color: var(--por-ink-2);
+      font-size: .9rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    /* CLUSTERS list */
+    .ppn-octopus-reviews .por-clusters-wrap {
+      padding: 20px 24px 16px;
+      background: var(--por-paper);
+      border-top: 1px solid var(--por-line-soft);
+    }
+
+    .ppn-octopus-reviews .por-clusters-title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .ppn-octopus-reviews .por-clusters-title strong {
+      color: var(--por-ink);
+      font-size: .86rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .ppn-octopus-reviews .por-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .ppn-octopus-reviews .por-cluster-row {
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) minmax(0, 1.6fr);
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .ppn-octopus-reviews .por-cluster-box {
+      background: var(--por-card);
+      border: 1px solid var(--por-line);
+      border-radius: 8px;
+      padding: 10px 14px;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ppn-octopus-reviews .por-cluster-link {
+      text-decoration: none;
+      color: var(--por-ink-2);
+      font-size: .92rem;
+      font-weight: 900;
+      justify-content: space-between;
+      gap: 10px;
+      cursor: pointer;
+      transition: border-color .15s, background .15s, color .15s;
+    }
+
+    .ppn-octopus-reviews .por-cluster-link:hover,
+    .ppn-octopus-reviews .por-cluster-link:focus-visible {
+      border-color: var(--por-violet);
+      background: var(--por-violet-bg);
+      color: var(--por-violet-2);
+      outline: 0;
+    }
+
+    .ppn-octopus-reviews .por-cluster-link::after {
+      content: "\2192";
+      color: var(--por-violet);
+      font-size: 1.1rem;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .ppn-octopus-reviews .por-cluster-meter {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .ppn-octopus-reviews .por-track {
+      height: 10px;
+      border-radius: 9999px;
+      overflow: hidden;
+      background: #e7e2d8;
+      display: block;
+    }
+
+    .ppn-octopus-reviews .por-track i {
+      display: block;
+      height: 100%;
+      font-style: normal;
+      border-radius: inherit;
+    }
+
+    .ppn-octopus-reviews .por-track .fill-green {
+      background: var(--por-green)
+    }
+
+    .ppn-octopus-reviews .por-track .fill-orange {
+      background: var(--por-orange)
+    }
+
+    .ppn-octopus-reviews .por-track .fill-red {
+      background: var(--por-red)
+    }
+
+    .ppn-octopus-reviews .por-pts {
+      text-align: right;
+      color: var(--por-violet);
+      font-size: 1.15rem;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .ppn-octopus-reviews .por-pts small {
+      margin-left: 2px;
+      color: var(--por-muted);
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .ppn-octopus-reviews .por-final-value {
+      margin-top: 8px;
+      color: var(--por-violet);
+      font-size: 1.7rem;
+      line-height: 1;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+
+    .ppn-octopus-reviews .por-final-value small {
+      margin-left: 2px;
+      color: var(--por-muted);
+      font-size: .9rem;
+      font-weight: 800;
+    }
+
+    .ppn-octopus-reviews .por-d-method {
+      border-top: 1px solid var(--por-line-soft);
+      background: #fff;
+      padding: 0 24px 2px;
+    }
+
+    .ppn-octopus-reviews .por-d-method details {
+      border: 1px solid var(--por-line);
+      border-radius: 10px;
+      background: #fff;
+      overflow: hidden;
+      margin: 14px 0 10px;
+    }
+
+    .ppn-octopus-reviews .por-d-method summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 12px 14px;
+      color: var(--por-ink);
+      font-size: .86rem;
+      font-weight: 900;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ppn-octopus-reviews .por-d-method summary::-webkit-details-marker {
+      display: none
+    }
+
+    .ppn-octopus-reviews .por-d-method summary::after {
+      content: "+";
+      color: var(--por-violet-2);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .ppn-octopus-reviews .por-d-method details[open] summary {
+      border-bottom: 1px solid var(--por-line-soft);
+      background: #f8f7ff;
+    }
+
+    .ppn-octopus-reviews .por-d-method details[open] summary::after {
+      content: "-";
+    }
+
+    .ppn-octopus-reviews .por-d-method-body {
+      padding: 11px 14px 14px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .ppn-octopus-reviews .por-d-method-body p {
+      margin: 0;
+      color: var(--por-ink-2);
+      font-size: .84rem;
+      line-height: 1.48;
+    }
+
+    .ppn-octopus-reviews .por-compare-wrap {
+      padding: 12px 30px 24px;
+      border-top: 1px solid var(--por-line-soft);
+      background: linear-gradient(180deg, #fff 0%, #fcfbf8 100%);
+    }
+
+    /* COMPARE box */
+    .ppn-octopus-reviews .por-compare-box {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .ppn-octopus-reviews .por-compare-title {
+      margin: 0 0 10px;
+      color: var(--por-ink);
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .ppn-octopus-reviews .por-reset {
+      padding: 11px 22px;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: .92rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background .15s, border-color .15s, color .15s;
+      border: 1px solid var(--por-line);
+      background: var(--por-card);
+      color: var(--por-ink);
+    }
+
+    .ppn-octopus-reviews .por-reset:hover {
+      background: var(--por-paper);
+      border-color: var(--por-soft);
+    }
+
+    .ppn-octopus-reviews .por-compare-lead {
+      margin: 0 0 12px;
+      color: var(--por-muted);
+      font-size: .96rem;
+      line-height: 1.55;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* PROVIDER CAROUSEL */
+    .ppn-octopus-reviews .por-track-mask {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    .ppn-octopus-reviews .por-provider-track {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 10px;
+      width: max-content;
+      animation: por-marquee 60s linear infinite;
+      will-change: transform;
+    }
+
+    .ppn-octopus-reviews .por-provider-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes por-marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 5px));
+      }
+    }
+
+    .ppn-octopus-reviews .por-provider {
+      flex: 0 0 136px;
+      min-height: 92px;
+      border: 1px solid var(--por-line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--por-ink-2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 8px 7px;
+      font-family: inherit;
+      font-size: .78rem;
+      line-height: 1.2;
+      font-weight: 900;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color .16s, box-shadow .16s, background .16s;
+    }
+
+    .ppn-octopus-reviews .por-provider-name {
+      display: block;
+      min-width: 0;
+    }
+
+    .ppn-octopus-reviews .por-provider:hover,
+    .ppn-octopus-reviews .por-provider:focus-visible {
+      outline: 0;
+      border-color: var(--por-violet);
+      box-shadow: 0 0 0 2px rgba(90, 82, 255, .14);
+      background: #f8f7ff;
+    }
+
+    .ppn-octopus-reviews .por-provider.is-selected {
+      border-color: var(--por-violet);
+      background: var(--por-violet-bg);
+      box-shadow: inset 0 0 0 1px rgba(90, 82, 255, .25);
+    }
+
+    .ppn-octopus-reviews .por-provider-logo {
+      width: 72px;
+      height: 30px;
+      border-radius: 8px;
+      border: 1px solid var(--por-line-soft);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 7px;
+    }
+
+    .ppn-octopus-reviews .por-provider-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* BADGE fallback */
+    .ppn-octopus-reviews .por-provider-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: .82rem;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 0;
+      letter-spacing: 0;
+      font-family: inherit;
+    }
+
+    .ppn-octopus-reviews .p-octopus {
+      background: linear-gradient(135deg, #ff0080, #ff7eb3)
+    }
+
+    .ppn-octopus-reviews .p-enel {
+      background: linear-gradient(135deg, #1f74ff, #5ea0ff)
+    }
+
+    .ppn-octopus-reviews .p-a2a {
+      background: linear-gradient(135deg, #2d3546, #66778f)
+    }
+
+    .ppn-octopus-reviews .p-edison {
+      background: linear-gradient(135deg, #ff602f, #ff9d6d)
+    }
+
+    .ppn-octopus-reviews .p-plenitude {
+      background: linear-gradient(135deg, #ffbe12, #ffe17b);
+      color: #4a3900
+    }
+
+    .ppn-octopus-reviews .p-sorgenia {
+      background: linear-gradient(135deg, #eb3f52, #ff7d61)
+    }
+
+    .ppn-octopus-reviews .p-iren {
+      background: linear-gradient(135deg, #00a88d, #3ad7be)
+    }
+
+    .ppn-octopus-reviews .p-illumia {
+      background: linear-gradient(135deg, #8b5cf6, #b894ff)
+    }
+
+    .ppn-octopus-reviews .p-estra {
+      background: linear-gradient(135deg, #4056f3, #7f91ff)
+    }
+
+    .ppn-octopus-reviews .p-acea {
+      background: linear-gradient(135deg, #0066a4, #36a7e8)
+    }
+
+    .ppn-octopus-reviews .p-hera {
+      background: linear-gradient(135deg, #f28c28, #ffc15a);
+      color: #3f2500
+    }
+
+    .ppn-octopus-reviews .p-dolomiti {
+      background: linear-gradient(135deg, #00a3e0, #6bd4ff)
+    }
+
+    .ppn-octopus-reviews .por-compare-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .ppn-octopus-reviews .por-empty {
+      display: none;
+      margin: 16px 0 0;
+      color: var(--por-muted);
+      font-size: .86rem;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .ppn-octopus-reviews .por-empty.is-open {
+      display: block
+    }
+
+    /* RESULTS */
+    .ppn-octopus-reviews .por-results {
+      margin-top: 24px;
+      display: none;
+      gap: 14px;
+    }
+
+    .ppn-octopus-reviews .por-results.is-open {
+      display: grid
+    }
+
+    .ppn-octopus-reviews .por-vs-card {
+      border: 1px solid var(--por-line);
+      border-radius: 10px;
+      background: var(--por-violet-bg);
+      padding: 16px;
+    }
+
+    .ppn-octopus-reviews .por-vs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .ppn-octopus-reviews .por-vs-grid[data-layout="three"] {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ppn-octopus-reviews .por-vs-grid[data-layout="three"] .por-side-oct,
+    .ppn-octopus-reviews .por-vs-grid[data-layout="five"] .por-side-oct {
+      grid-column: 1 / -1;
+    }
+
+    .ppn-octopus-reviews .por-vs-grid[data-layout="four"] {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .ppn-octopus-reviews .por-vs-grid[data-layout="five"] {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .ppn-octopus-reviews .por-side {
+      border: 1px solid var(--por-line);
+      border-radius: 10px;
+      background: #fff;
+      padding: 14px 10px;
+      text-align: center;
+      display: grid;
+      gap: 6px;
+      justify-items: center;
+      min-width: 0;
+    }
+
+    .ppn-octopus-reviews .por-side .por-provider-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      font-size: .7rem;
+    }
+
+    .ppn-octopus-reviews .por-side .por-provider-logo {
+      width: 66px;
+      height: 30px;
+      border-radius: 7px;
+      padding: 3px 6px;
+    }
+
+    .ppn-octopus-reviews .por-side b {
+      display: block;
+      color: var(--por-violet);
+      font-size: 2rem;
+      line-height: .9;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ppn-octopus-reviews .por-side b small {
+      color: var(--por-muted);
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .ppn-octopus-reviews .por-side .por-side-label {
+      display: block;
+      color: var(--por-muted);
+      font-size: .72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .ppn-octopus-reviews .por-vs-grid[data-layout="three"] .por-side-oct b,
+    .ppn-octopus-reviews .por-vs-grid[data-layout="five"] .por-side-oct b {
+      font-size: 2.4rem;
+    }
+
+    .ppn-octopus-reviews .por-cat-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ppn-octopus-reviews .por-cat-button {
+      border: 1px solid var(--por-line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--por-ink-2);
+      min-height: 38px;
+      padding: 8px 12px;
+      font-family: inherit;
+      font-size: .78rem;
+      line-height: 1.2;
+      font-weight: 900;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .ppn-octopus-reviews .por-cta {
+      margin-top: 26px;
+    }
+
+    .ppn-octopus-reviews .por-cat-button:hover,
+    .ppn-octopus-reviews .por-cat-button:focus-visible,
+    .ppn-octopus-reviews .por-cat-button.is-active {
+      outline: 0;
+      border-color: var(--por-violet);
+      color: var(--por-violet-2);
+      background: var(--por-violet-bg);
+    }
+
+    .ppn-octopus-reviews .por-bars-card {
+      border: 1px solid var(--por-line);
+      border-radius: 10px;
+      background: var(--por-violet-bg);
+      padding: 18px;
+    }
+
+    .ppn-octopus-reviews .por-bars-title {
+      margin: 0 0 12px;
+      color: var(--por-ink);
+      font-size: .9rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .ppn-octopus-reviews .por-bars {
+      display: grid;
+      gap: 10px;
+    }
+
+    .ppn-octopus-reviews .por-bar-row {
+      display: grid;
+      grid-template-columns: minmax(120px, .7fr) minmax(160px, 1fr) 70px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .ppn-octopus-reviews .por-bar-name {
+      min-width: 0;
+      color: var(--por-ink-2);
+      font-size: .86rem;
+      font-weight: 900;
+    }
+
+    .ppn-octopus-reviews .por-bar-value {
+      color: var(--por-ink);
+      font-size: .92rem;
+      font-weight: 900;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .ppn-octopus-reviews .por-bar-value small {
+      margin-left: 2px;
+      color: var(--por-muted);
+      font-size: .74rem;
+      font-weight: 800;
+    }
+
+    /* MOBILE shell */
+    .ppn-octopus-reviews .por-mobile-shell {
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+      display: grid;
+      gap: 14px;
+      color: var(--por-ink-2);
+    }
+
+    .ppn-octopus-reviews .por-m-card {
+      border: 1px solid var(--por-line-soft);
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(22, 24, 33, .08);
+      overflow: hidden;
+    }
+
+    .ppn-octopus-reviews .por-m-core {
+      background: #f7f7f9;
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .ppn-octopus-reviews .por-m-score {
+      border: 1px solid var(--por-line-soft);
+      border-radius: 10px;
+      background: var(--por-violet-bg);
+      padding: 10px 12px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .ppn-octopus-reviews .por-m-overall-box {
+      border: 1px solid var(--por-line-soft);
+      border-radius: 8px;
+      background: #fff;
+      padding: 8px 9px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .ppn-octopus-reviews .por-m-side-left {
+      display: grid;
+      gap: 6px;
+      align-content: center;
+      justify-items: start;
+    }
+
+    .ppn-octopus-reviews .por-m-brand-head {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 0;
+    }
+
+    .ppn-octopus-reviews .por-m-brand-logo {
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--por-line-soft);
+      border-radius: 10px;
+      background: #fff;
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    .ppn-octopus-reviews .por-m-brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      transform: translateY(1px);
+      display: block;
+    }
+
+    .ppn-octopus-reviews .por-m-brand-name {
+      color: var(--por-ink);
+      font-size: .96rem;
+      line-height: 1.1;
+      font-weight: 900;
+      letter-spacing: .01em;
+      display: block;
+      white-space: normal;
+      max-width: 74px;
+    }
+
+    .ppn-octopus-reviews .por-m-score small {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--por-muted);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .ppn-octopus-reviews .por-m-score small::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--por-green);
+      box-shadow: 0 0 0 5px rgba(0, 188, 125, .16);
+    }
+
+    .ppn-octopus-reviews .por-m-overall-box b {
+      display: block;
+      margin-top: 5px;
+      color: var(--por-violet);
+      font-size: 40px;
+      line-height: .9;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ppn-octopus-reviews .por-m-overall-box b span {
+      color: var(--por-muted);
+      font-size: 17px;
+    }
+
+    .ppn-octopus-reviews .por-m-score-note {
+      margin-top: 5px;
+      color: var(--por-muted);
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .ppn-octopus-reviews .por-m-rank {
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: var(--por-muted);
+      padding: 2px 0;
+      font-size: 11px;
+      line-height: 1.25;
+      font-weight: 800;
+      justify-self: start;
+      align-self: center;
+      max-width: 124px;
+      text-align: left;
+    }
+
+    .ppn-octopus-reviews .por-m-rank strong {
+      display: block;
+      color: var(--por-ink);
+      font-size: 12px;
+    }
+
+    .ppn-octopus-reviews .por-m-rank .por-m-rank-n {
+      color: var(--por-violet);
+      font-size: 24px;
+      line-height: .9;
+      font-weight: 900;
+    }
+
+    .ppn-octopus-reviews .por-m-clusters {
+      display: grid;
+      gap: 8px;
+    }
+
+    .ppn-octopus-reviews .por-m-tab {
+      min-height: 52px;
+      border: 1px solid var(--por-line-soft);
+      border-radius: 8px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      padding: 9px 10px;
+    }
+
+    .ppn-octopus-reviews .por-m-tab-main {
+      width: 100%;
+      display: grid;
+      gap: 7px;
+    }
+
+    .ppn-octopus-reviews .por-m-txt {
+      color: var(--por-ink-2);
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .ppn-octopus-reviews .por-m-impact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ppn-octopus-reviews .por-m-impact {
+      width: 74%;
+      height: 6px;
+      border-radius: 999px;
+      background: #ece9e3;
+      overflow: hidden;
+    }
+
+    .ppn-octopus-reviews .por-m-impact i {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+    }
+
+    .ppn-octopus-reviews .por-m-impact .is-green {
+      background: var(--por-green)
+    }
+
+    .ppn-octopus-reviews .por-m-impact .is-orange {
+      background: var(--por-orange)
+    }
+
+    .ppn-octopus-reviews .por-m-impact .is-red {
+      background: var(--por-red)
+    }
+
+    .ppn-octopus-reviews .por-m-rate {
+      white-space: nowrap;
+      color: var(--por-ink);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .ppn-octopus-reviews .por-m-rate b {
+      color: var(--por-violet);
+      font-size: 18px;
+      line-height: .9;
+    }
+
+    .ppn-octopus-reviews .por-m-rate small {
+      color: var(--por-muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .ppn-octopus-reviews .por-m-method {
+      border: 1px solid var(--por-line-soft);
+      border-radius: 10px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .ppn-octopus-reviews .por-m-method>summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 11px 12px;
+      color: var(--por-ink);
+      font-size: 12px;
+      font-weight: 900;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .ppn-octopus-reviews .por-m-method>summary::-webkit-details-marker {
+      display: none
+    }
+
+    .ppn-octopus-reviews .por-m-method>summary::after {
+      content: "+";
+      color: var(--por-violet-2);
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .ppn-octopus-reviews .por-m-method[open]>summary {
+      border-bottom: 1px solid var(--por-line-soft);
+      background: #f8f7ff;
+    }
+
+    .ppn-octopus-reviews .por-m-method[open]>summary::after {
+      content: "-"
+    }
+
+    .ppn-octopus-reviews .por-m-method-body {
+      padding: 10px 12px 12px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .ppn-octopus-reviews .por-m-method-body p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    /* responsive */
+    @media (max-width:900px) {
+      .ppn-octopus-reviews .por-hero-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .ppn-octopus-reviews .por-vs-grid[data-layout="four"],
+      .ppn-octopus-reviews .por-vs-grid[data-layout="five"] {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .ppn-octopus-reviews .por-vs-grid[data-layout="five"] .por-side-oct {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width:640px) {
+      .ppn-octopus-reviews {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        overflow-x: hidden !important;
+      }
+
+      .ppn-octopus-reviews .por-header {
+        display: none
+      }
+
+      .ppn-octopus-reviews .por-mobile-copy {
+        display: block
+      }
+
+      .ppn-octopus-reviews .por-mobile-only {
+        display: block
+      }
+
+      .ppn-octopus-reviews .por-card {
+        margin-top: 6px;
+        margin-bottom: 0;
+      }
+
+      .ppn-octopus-reviews .por-card>.por-hero,
+      .ppn-octopus-reviews .por-card>.por-clusters-wrap,
+      .ppn-octopus-reviews .por-card>.por-d-method {
+        display: none
+      }
+
+      .ppn-octopus-reviews .por-compare-wrap {
+        border-top: 0;
+        padding: 15px 12px 14px;
+      }
+
+      .ppn-octopus-reviews .por-compare-box {
+        padding: 0;
+      }
+
+      .ppn-octopus-reviews .por-compare-title {
+        font-size: 1.2rem;
+      }
+
+      .ppn-octopus-reviews .por-compare-lead {
+        font-size: .9rem;
+      }
+
+      .ppn-octopus-reviews .por-track-mask {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+      }
+
+      .ppn-octopus-reviews .por-track-mask::-webkit-scrollbar {
+        display: none
+      }
+
+      .ppn-octopus-reviews .por-provider-track {
+        animation: none !important;
+        transform: none !important;
+        width: max-content;
+        gap: 8px;
+      }
+
+      .ppn-octopus-reviews .por-provider[data-duplicate] {
+        display: none
+      }
+
+      .ppn-octopus-reviews .por-provider {
+        flex: 0 0 82px;
+        min-height: 94px;
+        padding: 8px 6px;
+        font-size: 10px;
+        scroll-snap-align: start;
+      }
+
+      .ppn-octopus-reviews .por-provider-logo {
+        width: 58px;
+        height: 30px;
+        border-radius: 7px;
+        padding: 3px 5px;
+      }
+
+      .ppn-octopus-reviews .por-provider-badge {
+        width: 38px;
+        height: 38px;
+        font-size: .72rem;
+      }
+
+      .ppn-octopus-reviews .por-side b {
+        font-size: 1.6rem
+      }
+
+      .ppn-octopus-reviews .por-bar-row {
+        grid-template-columns: minmax(0, 90px) minmax(0, 1fr) auto;
+        gap: 8px;
+      }
+
+      .ppn-octopus-reviews .por-bar-name {
+        font-size: 11px
+      }
+
+      .ppn-octopus-reviews .por-bar-value {
+        font-size: .85rem
+      }
+
+      .ppn-octopus-reviews .por-cat-button {
+        min-height: 34px;
+        font-size: 11px;
+        padding: 6px 10px;
+      }
+
+      .ppn-octopus-reviews .por-cat-tabs {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .ppn-octopus-reviews .por-cat-tabs::-webkit-scrollbar {
+        display: none
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ppn-octopus-reviews .por-provider-track {
+        animation: none;
+      }
+    }
+    .ppn-octopus-reviews {
+      box-sizing: border-box;
+      max-width: 100%;
+      overflow-x: hidden
+    }
+
+    .ppn-octopus-reviews .por-compare-box {
+      max-width: 100%;
+      overflow: hidden
+    }
+
+    .ppn-octopus-reviews .por-track-mask {
+      contain: paint
+    }
+
+  </style>
+
+  
+  <!-- MOBILE HERO + CLUSTERS -->
+  <section class="por-mobile-only" aria-label="Octopus Energy recensioni mobile">
+    <div class="por-mobile-shell">
+      <article class="por-m-card">
+        <div class="por-m-core">
+          <article class="por-m-score">
+            <div class="por-m-side-left">
+              <span class="por-m-brand-head" aria-label="Octopus Energy">
+                <span class="por-m-brand-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/img-src-8-1.png" alt="Logo Octopus Energy" loading="lazy"></span>
+                <span class="por-m-brand-name">Octopus Energy</span>
+              </span>
+              <div class="por-m-rank"><strong><span class="por-m-rank-n">#1</span> di 17 fornitori nel confronto</strong></div>
+            </div>
+            <div class="por-m-overall-box">
+              <small>Voto complessivo</small>
+              <b>8,2<span>/10</span></b>
+              <p class="por-m-score-note">176 commenti analizzati</p>
+            </div>
+          </article>
+
+          <nav class="por-m-clusters">
+            <a class="por-m-tab" href="#cluster-tariffe-risparmio"><span class="por-m-tab-main"><span class="por-m-txt">Tariffe e risparmio</span><span class="por-m-impact-row"><span class="por-m-impact"><i class="is-green" style="width:84%"></i></span><span class="por-m-rate"><b>8,4</b><small>/10</small></span></span></span></a><a class="por-m-tab" href="#cluster-assistenza-cambio-tariffa"><span class="por-m-tab-main"><span class="por-m-txt">Assistenza e cambio tariffa</span><span class="por-m-impact-row"><span class="por-m-impact"><i class="is-green" style="width:85%"></i></span><span class="por-m-rate"><b>8,5</b><small>/10</small></span></span></span></a><a class="por-m-tab" href="#cluster-app-bolletta-digitale"><span class="por-m-tab-main"><span class="por-m-txt">App, bolletta e digitale</span><span class="por-m-impact-row"><span class="por-m-impact"><i class="is-green" style="width:77%"></i></span><span class="por-m-rate"><b>7,7</b><small>/10</small></span></span></span></a><a class="por-m-tab" href="#cluster-attivazione-cambio-fornitore"><span class="por-m-tab-main"><span class="por-m-txt">Attivazione e cambio fornitore</span><span class="por-m-impact-row"><span class="por-m-impact"><i class="is-green" style="width:79%"></i></span><span class="por-m-rate"><b>7,9</b><small>/10</small></span></span></span></a><a class="por-m-tab" href="#cluster-trasparenza-brand-reputazione"><span class="por-m-tab-main"><span class="por-m-txt">Reputazione e trasparenza</span><span class="por-m-impact-row"><span class="por-m-impact"><i class="is-green" style="width:80%"></i></span><span class="por-m-rate"><b>8,0</b><small>/10</small></span></span></span></a>
+          </nav>
+
+          <details class="por-m-method">
+            <summary>Come calcoliamo il punteggio</summary>
+            <div class="por-m-method-body">
+
+              <p><b>Base dell’analisi:</b> prima della pubblicazione definiamo un campione editoriale dichiarato di <b>176 commenti analizzati</b>. Questo numero serve a raccontare la dimensione della lettura in pagina; il calcolo tecnico, invece, usa solo i commenti validi presenti negli export di analisi.</p>
+
+              <p><b>Classificazione:</b> ogni commento viene assegnato a una categoria principale tra tariffe, assistenza, digitale, attivazione e reputazione. Quando utile, può avere anche una categoria secondaria per gestire sezioni con pochi commenti senza duplicare la stessa citazione in più H2.</p>
+
+              <p><b>Tono del commento:</b> a ogni commento valido assegniamo un valore <b>s_i</b> su scala <b>-1 / +1</b>. Valori negativi indicano esperienze critiche, valori vicini allo zero indicano segnali misti o informativi, valori positivi indicano soddisfazione esplicita verso il fornitore.</p>
+
+              <p><b>Qualità del commento:</b> il coefficiente <b>q_i</b> misura quanto il commento è utile per valutare il servizio. È la media di quattro dimensioni: esperienza diretta, specificità, chiarezza del riferimento al fornitore e utilità decisionale.</p>
+
+              <p><b>Peso operativo:</b> qualità e recenza entrano nel peso del commento con la formula <b>w_i = 0,35 + 0,45 × q_i + 0,20 × r_i</b>. In questo modo i commenti più concreti e più recenti incidono di più, senza eliminare del tutto le recensioni meno dettagliate.</p>
+
+              <p><b>Media del tono per categoria:</b> per ogni categoria calcoliamo <b>μ_k = Σ(w_i × s_i) / Σw_i</b>. Questo valore sintetizza il tono medio dei commenti della categoria, pesando di più le recensioni più informative.</p>
+
+              <p><b>Trasformazione in voto:</b> il segnale della categoria viene trasformato in bonus con <b>Bonus_k_grezzo = 2,5 + 2,5 × μ_k</b>. Poi applichiamo una correzione di robustezza <b>λ_k = n_k / (n_k + 10)</b>, così una categoria con pochi commenti non viene sovrastimata o penalizzata in modo eccessivo.</p>
+
+              <p><b>Voto della categoria:</b> il valore corretto è <b>Bonus_k = λ_k × Bonus_k_grezzo + (1 - λ_k) × 2,5</b>. Da qui otteniamo il voto della categoria su 10, indicato nella formula come <b>V_k</b> e usato nelle barre dell’introduzione e del corpo pagina.</p>
+
+              <p><b>Voto complessivo:</b> il voto finale è una media pesata delle cinque categorie: <b>V_finale = Σ α_k × V_k</b>. Tariffe e assistenza pesano ciascuna <b>30%</b>, app e attivazione <b>15%</b> ciascuna, reputazione e trasparenza <b>10%</b>.</p>
+
+              <p><b>Colori delle barre:</b> il <b>verde</b> indica un voto pari o superiore a 7,5, l’<b>arancione</b> un’area intermedia da 6,2 a 7,4 e il <b>rosso</b> un’area sotto 6,2.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- DESKTOP HERO + CLUSTERS + COMPARE -->
+  <section class="por-card" aria-label="Scheda recensioni Octopus Energy">
+    <div class="por-hero">
+      <div class="por-brand-head" aria-label="Octopus Energy">
+        <span class="por-brand-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/img-src-8-1.png" alt="Logo Octopus Energy" loading="lazy"></span>
+        <span class="por-brand-name">Octopus Energy</span>
+      </div>
+      <div class="por-hero-row">
+        <div>
+          <div class="por-score">8,2<small>/10</small></div>
+          <div class="por-score-meta">176 commenti analizzati</div>
+        </div>
+        <div class="por-rank" aria-label="Posizionamento Octopus Energy">
+          <div class="por-rank-pos">#1<small>di 17 fornitori nel confronto</small></div>
+          <div class="por-rank-meta">Octopus Energy guida il confronto grazie ai segnali forti su assistenza, cambio tariffa e convenienza. Il dato resta da leggere insieme ai commenti: digitale e attivazione mostrano segnali positivi, ma meno esperienze operative dettagliate.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="por-clusters-wrap">
+      <div class="por-clusters-title"><strong>Categorie individuate</strong></div>
+      <div class="por-list">
+        <div class="por-cluster-row">
+          <a class="por-cluster-box por-cluster-link" href="#cluster-tariffe-risparmio">Tariffe e risparmio</a>
+          <div class="por-cluster-box por-cluster-meter">
+            <div class="por-track" aria-label="Voto 8,4 su 10"><i class="fill-green" style="width:84%"></i></div>
+            <div class="por-pts">8,4<small>/10</small></div>
+          </div>
+        </div>
+        <div class="por-cluster-row">
+          <a class="por-cluster-box por-cluster-link" href="#cluster-assistenza-cambio-tariffa">Assistenza e cambio tariffa</a>
+          <div class="por-cluster-box por-cluster-meter">
+            <div class="por-track" aria-label="Voto 8,5 su 10"><i class="fill-green" style="width:85%"></i></div>
+            <div class="por-pts">8,5<small>/10</small></div>
+          </div>
+        </div>
+        <div class="por-cluster-row">
+          <a class="por-cluster-box por-cluster-link" href="#cluster-app-bolletta-digitale">App, bolletta e digitale</a>
+          <div class="por-cluster-box por-cluster-meter">
+            <div class="por-track" aria-label="Voto 7,7 su 10"><i class="fill-green" style="width:77%"></i></div>
+            <div class="por-pts">7,7<small>/10</small></div>
+          </div>
+        </div>
+        <div class="por-cluster-row">
+          <a class="por-cluster-box por-cluster-link" href="#cluster-attivazione-cambio-fornitore">Attivazione e cambio fornitore</a>
+          <div class="por-cluster-box por-cluster-meter">
+            <div class="por-track" aria-label="Voto 7,9 su 10"><i class="fill-green" style="width:79%"></i></div>
+            <div class="por-pts">7,9<small>/10</small></div>
+          </div>
+        </div>
+        <div class="por-cluster-row">
+          <a class="por-cluster-box por-cluster-link" href="#cluster-trasparenza-brand-reputazione">Reputazione e trasparenza</a>
+          <div class="por-cluster-box por-cluster-meter">
+            <div class="por-track" aria-label="Voto 8,0 su 10"><i class="fill-green" style="width:80%"></i></div>
+            <div class="por-pts">8,0<small>/10</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="por-final-value" aria-label="Voto finale pesato 8,2 su 10">8,2<small>/10</small></div>
+    </div>
+
+    <div class="por-d-method">
+      <details>
+        <summary>Come calcoliamo il punteggio</summary>
+        <div class="por-m-method-body">
+
+              <p><b>Base dell’analisi:</b> prima della pubblicazione definiamo un campione editoriale dichiarato di <b>176 commenti analizzati</b>. Questo numero serve a raccontare la dimensione della lettura in pagina; il calcolo tecnico, invece, usa solo i commenti validi presenti negli export di analisi.</p>
+
+              <p><b>Classificazione:</b> ogni commento viene assegnato a una categoria principale tra tariffe, assistenza, digitale, attivazione e reputazione. Quando utile, può avere anche una categoria secondaria per gestire sezioni con pochi commenti senza duplicare la stessa citazione in più H2.</p>
+
+              <p><b>Tono del commento:</b> a ogni commento valido assegniamo un valore <b>s_i</b> su scala <b>-1 / +1</b>. Valori negativi indicano esperienze critiche, valori vicini allo zero indicano segnali misti o informativi, valori positivi indicano soddisfazione esplicita verso il fornitore.</p>
+
+              <p><b>Qualità del commento:</b> il coefficiente <b>q_i</b> misura quanto il commento è utile per valutare il servizio. È la media di quattro dimensioni: esperienza diretta, specificità, chiarezza del riferimento al fornitore e utilità decisionale.</p>
+
+              <p><b>Peso operativo:</b> qualità e recenza entrano nel peso del commento con la formula <b>w_i = 0,35 + 0,45 × q_i + 0,20 × r_i</b>. In questo modo i commenti più concreti e più recenti incidono di più, senza eliminare del tutto le recensioni meno dettagliate.</p>
+
+              <p><b>Media del tono per categoria:</b> per ogni categoria calcoliamo <b>μ_k = Σ(w_i × s_i) / Σw_i</b>. Questo valore sintetizza il tono medio dei commenti della categoria, pesando di più le recensioni più informative.</p>
+
+              <p><b>Trasformazione in voto:</b> il segnale della categoria viene trasformato in bonus con <b>Bonus_k_grezzo = 2,5 + 2,5 × μ_k</b>. Poi applichiamo una correzione di robustezza <b>λ_k = n_k / (n_k + 10)</b>, così una categoria con pochi commenti non viene sovrastimata o penalizzata in modo eccessivo.</p>
+
+              <p><b>Voto della categoria:</b> il valore corretto è <b>Bonus_k = λ_k × Bonus_k_grezzo + (1 - λ_k) × 2,5</b>. Da qui otteniamo il voto della categoria su 10, indicato nella formula come <b>V_k</b> e usato nelle barre dell’introduzione e del corpo pagina.</p>
+
+              <p><b>Voto complessivo:</b> il voto finale è una media pesata delle cinque categorie: <b>V_finale = Σ α_k × V_k</b>. Tariffe e assistenza pesano ciascuna <b>30%</b>, app e attivazione <b>15%</b> ciascuna, reputazione e trasparenza <b>10%</b>.</p>
+
+              <p><b>Colori delle barre:</b> il <b>verde</b> indica un voto pari o superiore a 7,5, l’<b>arancione</b> un’area intermedia da 6,2 a 7,4 e il <b>rosso</b> un’area sotto 6,2.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="por-compare-wrap">
+      <p class="por-compare-title">Confronta ora le recensioni di Octopus Energy con quelle degli altri fornitori</p>
+      <div class="por-compare-box" aria-label="Confronto recensioni Octopus Energy vs altri fornitori" data-por-compare>
+        <p class="por-compare-lead">Seleziona fino a 4 fornitori e confronta il voto complessivo e le categorie principali con Octopus Energy.</p>
+        <div class="por-track-mask">
+          <div class="por-provider-track" data-por-track>
+            <button type="button" class="por-provider" data-provider="dolomiti" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/36/2024/12/img-src-4.png" alt="Logo Dolomiti Energia" loading="lazy"></span><span class="por-provider-name">Dolomiti Energia</span></button>
+            <button type="button" class="por-provider" data-provider="engie" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/engie-seeklogo.svg" alt="Logo ENGIE" loading="lazy"></span><span class="por-provider-name">ENGIE</span></button>
+            <button type="button" class="por-provider" data-provider="sorgenia" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/04/sorgenia-imm.png" alt="Logo Sorgenia" loading="lazy"></span><span class="por-provider-name">Sorgenia</span></button>
+            <button type="button" class="por-provider" data-provider="magis" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/04/images.png" alt="Logo MAGIS (ex AGSM)" loading="lazy"></span><span class="por-provider-name">MAGIS (ex AGSM)</span></button>
+            <button type="button" class="por-provider" data-provider="illumia" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/img-src-5.png" alt="Logo Illumia" loading="lazy"></span><span class="por-provider-name">Illumia</span></button>
+            <button type="button" class="por-provider" data-provider="iren" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/08/logo_iren_2020.jpg" alt="Logo Iren" loading="lazy"></span><span class="por-provider-name">Iren</span></button>
+            <button type="button" class="por-provider" data-provider="edison" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/06/logo-edison.jpg" alt="Logo Edison" loading="lazy"></span><span class="por-provider-name">Edison</span></button>
+            <button type="button" class="por-provider" data-provider="estra" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/estra_og_image.png" alt="Logo Estra" loading="lazy"></span><span class="por-provider-name">Estra</span></button>
+            <button type="button" class="por-provider" data-provider="acea" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/05/acea_logo.svg.png" alt="Logo Acea" loading="lazy"></span><span class="por-provider-name">Acea</span></button>
+            <button type="button" class="por-provider" data-provider="a2a" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/01/1280px-a2a_unternehmen.svg_.png" alt="Logo A2A" loading="lazy"></span><span class="por-provider-name">A2A</span></button>
+            <button type="button" class="por-provider" data-provider="hera" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/hera-foto.jpg" alt="Logo Hera" loading="lazy"></span><span class="por-provider-name">Hera</span></button>
+            <button type="button" class="por-provider" data-provider="enel" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/01/enel.svg" alt="Logo Enel" loading="lazy"></span><span class="por-provider-name">Enel</span></button>
+            <button type="button" class="por-provider" data-provider="plenitude" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/eni-plenitude-seeklogo.svg" alt="Logo Eni Plenitude" loading="lazy"></span><span class="por-provider-name">Eni Plenitude</span></button>
+            <button type="button" class="por-provider" data-provider="dolomiti" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/36/2024/12/img-src-4.png" alt="Logo Dolomiti Energia" loading="lazy"></span><span class="por-provider-name">Dolomiti Energia</span></button>
+            <button type="button" class="por-provider" data-provider="engie" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/engie-seeklogo.svg" alt="Logo ENGIE" loading="lazy"></span><span class="por-provider-name">ENGIE</span></button>
+            <button type="button" class="por-provider" data-provider="sorgenia" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/04/sorgenia-imm.png" alt="Logo Sorgenia" loading="lazy"></span><span class="por-provider-name">Sorgenia</span></button>
+            <button type="button" class="por-provider" data-provider="magis" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/04/images.png" alt="Logo MAGIS (ex AGSM)" loading="lazy"></span><span class="por-provider-name">MAGIS (ex AGSM)</span></button>
+            <button type="button" class="por-provider" data-provider="illumia" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/img-src-5.png" alt="Logo Illumia" loading="lazy"></span><span class="por-provider-name">Illumia</span></button>
+            <button type="button" class="por-provider" data-provider="iren" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/08/logo_iren_2020.jpg" alt="Logo Iren" loading="lazy"></span><span class="por-provider-name">Iren</span></button>
+            <button type="button" class="por-provider" data-provider="edison" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/06/logo-edison.jpg" alt="Logo Edison" loading="lazy"></span><span class="por-provider-name">Edison</span></button>
+            <button type="button" class="por-provider" data-provider="estra" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/estra_og_image.png" alt="Logo Estra" loading="lazy"></span><span class="por-provider-name">Estra</span></button>
+            <button type="button" class="por-provider" data-provider="acea" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/05/acea_logo.svg.png" alt="Logo Acea" loading="lazy"></span><span class="por-provider-name">Acea</span></button>
+            <button type="button" class="por-provider" data-provider="a2a" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/01/1280px-a2a_unternehmen.svg_.png" alt="Logo A2A" loading="lazy"></span><span class="por-provider-name">A2A</span></button>
+            <button type="button" class="por-provider" data-provider="hera" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/hera-foto.jpg" alt="Logo Hera" loading="lazy"></span><span class="por-provider-name">Hera</span></button>
+            <button type="button" class="por-provider" data-provider="enel" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/01/enel.svg" alt="Logo Enel" loading="lazy"></span><span class="por-provider-name">Enel</span></button>
+            <button type="button" class="por-provider" data-provider="plenitude" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/eni-plenitude-seeklogo.svg" alt="Logo Eni Plenitude" loading="lazy"></span><span class="por-provider-name">Eni Plenitude</span></button>
+          </div>
+        </div>
+        <div class="por-compare-actions"><button type="button" class="por-reset" data-por-reset>Reset</button></div>
+        <p class="por-empty is-open" data-por-empty>Seleziona almeno un fornitore per vedere il confronto.</p>
+        <section class="por-results" data-por-results aria-live="polite">
+          <div class="por-vs-card"><div class="por-vs-grid" data-por-vs-grid data-layout="two"></div></div>
+          <div class="por-cat-tabs" data-por-cat-tabs></div>
+          <div class="por-bars-card">
+            <h3 class="por-bars-title" data-por-bars-title>Tariffe e risparmio</h3>
+            <div class="por-bars" data-por-bars></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <header class="por-header">
+    <p class="por-copy">Per Octopus Energy abbiamo raccolto <strong>176 commenti di clienti ed ex clienti</strong> da diversi social media e li abbiamo organizzati tra tariffe, assistenza, app, attivazione e reputazione. Ne esce un fornitore apprezzato quando <strong>prezzi competitivi, assistenza via WhatsApp e cambio tariffa</strong> rendono la fornitura facile da seguire; app e attivazione restano positive, ma con racconti meno dettagliati.</p>
+  </header>
+
+  <!-- CTA -->
+  <div class="por-cta">
+    $IT_NRJ_CTA_fullwidth_general_nrj0$
+  </div>
+
+  <header class="por-mobile-copy">
+    <p class="por-copy">Per Octopus Energy abbiamo raccolto <strong>176 commenti di clienti ed ex clienti</strong> da diversi social media e li abbiamo organizzati tra tariffe, assistenza, app, attivazione e reputazione. Ne esce un fornitore apprezzato quando <strong>prezzi competitivi, assistenza via WhatsApp e cambio tariffa</strong> rendono la fornitura facile da seguire; app e attivazione restano positive, ma con racconti meno dettagliati.</p>
+  </header>
+
+  <!-- ================== DATA ================== -->
+  <script type="application/json" id="por-data">
+
+{
+  "mainProvider": "octopus",
+  "categories": [
+    {
+      "id": "tariffe",
+      "name": "Tariffe e risparmio",
+      "short": "Tariffe"
+    },
+    {
+      "id": "assistenza",
+      "name": "Assistenza e cambio tariffa",
+      "short": "Assistenza"
+    },
+    {
+      "id": "app",
+      "name": "App, bolletta e digitale",
+      "short": "App"
+    },
+    {
+      "id": "attivazione",
+      "name": "Attivazione e cambio fornitore",
+      "short": "Attivazione"
+    },
+    {
+      "id": "reputazione",
+      "name": "Reputazione e trasparenza",
+      "short": "Reputazione"
+    }
+  ],
+  "providers": {
+    "octopus": {
+      "id": "octopus",
+      "label": "Octopus Energy",
+      "short": "OC",
+      "badge": "p-octopus",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/img-src-8-1.png",
+      "score": 8.19,
+      "cats": {
+        "tariffe": 8.38,
+        "assistenza": 8.46,
+        "app": 7.69,
+        "attivazione": 7.89,
+        "reputazione": 7.98
+      }
+    },
+    "dolomiti": {
+      "id": "dolomiti",
+      "label": "Dolomiti Energia",
+      "short": "DO",
+      "badge": "p-dolomiti",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/36/2024/12/img-src-4.png",
+      "score": 7.7,
+      "cats": {
+        "tariffe": 8.06,
+        "assistenza": 7.68,
+        "app": 7.68,
+        "attivazione": 7.13,
+        "reputazione": 7.6
+      }
+    },
+    "engie": {
+      "id": "engie",
+      "label": "ENGIE",
+      "short": "EG",
+      "badge": "p-engie",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/engie-seeklogo.svg",
+      "score": 7.61,
+      "cats": {
+        "tariffe": 7.84,
+        "assistenza": 7.31,
+        "app": 7.47,
+        "attivazione": 7.58,
+        "reputazione": 8.07
+      }
+    },
+    "sorgenia": {
+      "id": "sorgenia",
+      "label": "Sorgenia",
+      "short": "SO",
+      "badge": "p-sorgenia",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/04/sorgenia-imm.png",
+      "score": 7.49,
+      "cats": {
+        "tariffe": 7.34,
+        "assistenza": 7.42,
+        "app": 7.73,
+        "attivazione": 7.62,
+        "reputazione": 7.59
+      }
+    },
+    "magis": {
+      "id": "magis",
+      "label": "MAGIS (ex AGSM)",
+      "short": "MG",
+      "badge": "p-magis",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/04/images.png",
+      "score": 7.41,
+      "cats": {
+        "tariffe": 7.3,
+        "assistenza": 7.4,
+        "app": 7.47,
+        "attivazione": 7.31,
+        "reputazione": 7.86
+      }
+    },
+    "illumia": {
+      "id": "illumia",
+      "label": "Illumia",
+      "short": "IL",
+      "badge": "p-illumia",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/img-src-5.png",
+      "score": 7.4,
+      "cats": {
+        "tariffe": 7.65,
+        "assistenza": 7.17,
+        "app": 7.41,
+        "attivazione": 7.35,
+        "reputazione": 7.43
+      }
+    },
+    "iren": {
+      "id": "iren",
+      "label": "Iren",
+      "short": "IR",
+      "badge": "p-iren",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/08/logo_iren_2020.jpg",
+      "score": 7.4,
+      "cats": {
+        "tariffe": 7.76,
+        "assistenza": 7.05,
+        "app": 7.37,
+        "attivazione": 7.25,
+        "reputazione": 7.58
+      }
+    },
+    "edison": {
+      "id": "edison",
+      "label": "Edison",
+      "short": "ED",
+      "badge": "p-edison",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/06/logo-edison.jpg",
+      "score": 7.39,
+      "cats": {
+        "tariffe": 7.61,
+        "assistenza": 7.38,
+        "app": 7.17,
+        "attivazione": 7.19,
+        "reputazione": 7.41
+      }
+    },
+    "estra": {
+      "id": "estra",
+      "label": "Estra",
+      "short": "ES",
+      "badge": "p-estra",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/estra_og_image.png",
+      "score": 7.39,
+      "cats": {
+        "tariffe": 7.59,
+        "assistenza": 7.32,
+        "app": 7.18,
+        "attivazione": 7.31,
+        "reputazione": 7.38
+      }
+    },
+    "acea": {
+      "id": "acea",
+      "label": "Acea",
+      "short": "AC",
+      "badge": "p-acea",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/05/acea_logo.svg.png",
+      "score": 7.35,
+      "cats": {
+        "tariffe": 7.78,
+        "assistenza": 7.17,
+        "app": 7.25,
+        "attivazione": 6.87,
+        "reputazione": 7.44
+      }
+    },
+    "a2a": {
+      "id": "a2a",
+      "label": "A2A",
+      "short": "A2",
+      "badge": "p-a2a",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/01/1280px-a2a_unternehmen.svg_.png",
+      "score": 7.32,
+      "cats": {
+        "tariffe": 6.97,
+        "assistenza": 7.55,
+        "app": 7.31,
+        "attivazione": 7.6,
+        "reputazione": 7.21
+      }
+    },
+    "hera": {
+      "id": "hera",
+      "label": "Hera",
+      "short": "HE",
+      "badge": "p-hera",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/hera-foto.jpg",
+      "score": 7.21,
+      "cats": {
+        "tariffe": 6.8,
+        "assistenza": 7.73,
+        "app": 7.31,
+        "attivazione": 7.18,
+        "reputazione": 6.74
+      }
+    },
+    "enel": {
+      "id": "enel",
+      "label": "Enel",
+      "short": "EN",
+      "badge": "p-enel",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/01/enel.svg",
+      "score": 7.16,
+      "cats": {
+        "tariffe": 7.15,
+        "assistenza": 7.04,
+        "app": 7.62,
+        "attivazione": 7.23,
+        "reputazione": 6.72
+      }
+    },
+    "plenitude": {
+      "id": "plenitude",
+      "label": "Eni Plenitude",
+      "short": "PL",
+      "badge": "p-plenitude",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/eni-plenitude-seeklogo.svg",
+      "score": 6.54,
+      "cats": {
+        "tariffe": 6.82,
+        "assistenza": 6.1,
+        "app": 6.93,
+        "attivazione": 6.31,
+        "reputazione": 6.82
+      }
+    }
+  }
+}
+  </script>
+
+<main>
+<!-- ============================================================
+     OCTOPUS BODY — Cluster sections (5 cluster x { H2 + card })
+     Multi-block: ogni cluster = [wp:heading H2] + [wp:html card body]
+     CSS scoped sotto .pn-body — definito una sola volta nel primo blocco
+     ============================================================ -->
+
+<!-- wp:html -->
+<style>
+  .pn-body,
+  .pn-body *,
+  .pn-body *::before,
+  .pn-body *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+  }
+
+  .pn-body {
+    --pn-pri: #5a52ff;
+    --pn-pri-2: #3e38b2;
+    --pn-teal: #02c5ae;
+    --pn-ink: #212431;
+    --pn-text: #383c4c;
+    --pn-muted: #63697f;
+    --pn-line: #e7e5e4;
+    --pn-pos: #00bc7d;
+    --pn-neu: #fd9a00;
+    --pn-neg: #ff2056;
+    --pn-rd: #ff4500;
+    --pn-yt: #ff0033;
+    --pn-x: #111;
+    --pn-fb: #1877f2;
+    color: var(--pn-text);
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 8px 0 14px;
+  }
+
+  .pn-body.pn-modal-portal {
+    max-width: none;
+    margin: 0;
+    padding: 0
+  }
+
+  .pn-body .pn-cluster {
+    margin-top: 10px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 208px;
+    gap: 10px 24px;
+    align-items: start
+  }
+
+  .pn-body .pn-desc {
+    grid-column: 1;
+    line-height: 1.52
+  }
+
+  .pn-body .pn-desc-mobile {
+    display: none
+  }
+
+  .pn-body .pn-offers-intro {
+    display: block
+  }
+
+  .pn-body .pn-meta {
+    margin-top: 6px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: .04em;
+    color: var(--pn-muted)
+  }
+
+  .pn-body .pn-offers-title {
+    margin-top: 14px;
+    margin-bottom: 10px
+  }
+
+  .pn-body .pn-offers-list {
+    display: block;
+    margin-top: 8px
+  }
+
+  .pn-body .pn-offers-list ppn-deal {
+    display: block;
+    margin-bottom: 8px;
+    min-height: 168px;
+    padding-block: 12px;
+    white-space: pre-line
+  }
+
+  .pn-body .pn-offers-list ppn-deal::part(price),
+  .pn-body .pn-offers-list ppn-deal::part(deal-price),
+  .pn-body .pn-offers-list ppn-deal::part(pricing) {
+    white-space: pre-line;
+    line-height: 1.25
+  }
+
+  .pn-body .pn-offers-list ppn-deal::part(subtitle),
+  .pn-body .pn-offers-list ppn-deal::part(deal-subtitle),
+  .pn-body .pn-offers-list ppn-deal::part(description) {
+    color: var(--pn-ink);
+    line-height: 1.25;
+    font-weight: 900
+  }
+
+  .pn-body .pn-offers-list ppn-deal::part(actions),
+  .pn-body .pn-offers-list ppn-deal::part(cta),
+  .pn-body .pn-offers-list ppn-deal::part(buttons) {
+    margin-top: 14px;
+    padding-bottom: 6px
+  }
+
+  .pn-body .pn-h3 {
+    margin-top: 12px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    color: var(--pn-ink);
+    font-weight: 900
+  }
+
+  .pn-body .pn-h3-out {
+    margin-top: 12px;
+    margin-bottom: 8px;
+    padding-left: 2px
+  }
+
+  .pn-body .pn-analysis {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px
+  }
+
+  .pn-body .pn-analysis-wrap {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none
+  }
+
+  .pn-body .pn-points {
+    grid-column: 1 / -1;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    background: transparent
+  }
+
+  .pn-body .pn-points p {
+    line-height: 1.45;
+    margin-bottom: 10px
+  }
+
+  .pn-body .pn-fd-wrap {
+    grid-column: 1 / -1;
+    margin-top: 0;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    align-self: stretch
+  }
+
+  .pn-body .pn-fd {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed
+  }
+
+  .pn-body .pn-fd th {
+    padding: 12px 10px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    font-weight: 900;
+    text-align: center;
+    color: #fff;
+    background: #6054fc;
+    border-bottom: 1px solid #eee
+  }
+
+  .pn-body .pn-fd th+th {
+    border-left: 1px solid rgba(255, 255, 255, .28)
+  }
+
+  .pn-body .pn-fd td {
+    padding: 11px 10px;
+    line-height: 1.42;
+    text-align: center;
+    vertical-align: top;
+    border-top: 1px solid #eee
+  }
+
+  .pn-body .pn-fd td strong {
+    display: block;
+    text-align: center
+  }
+
+  .pn-body .pn-fd tbody tr:first-child td {
+    border-top: 0
+  }
+
+  .pn-body .pn-fd td+td {
+    border-left: 1px solid #eee
+  }
+
+  .pn-body .pn-fd .is-plus {
+    background: #f2faf2
+  }
+
+  .pn-body .pn-fd .is-minus {
+    background: #fff5f5
+  }
+
+  .pn-body .pn-lists {
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px
+  }
+
+  .pn-body .pn-list {
+    border: 1px solid var(--pn-line);
+    border-radius: 9px;
+    padding: 8px;
+    background: #fafaff
+  }
+
+  .pn-body .pn-list h4 {
+    color: var(--pn-ink);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 5px
+  }
+
+  .pn-body .pn-list ul {
+    display: grid;
+    gap: 4px
+  }
+
+  .pn-body .pn-list li {
+    list-style: none;
+    line-height: 1.35;
+    padding-left: 10px;
+    position: relative
+  }
+
+  .pn-body .pn-list li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 99px;
+    position: absolute;
+    left: 0;
+    top: .42em
+  }
+
+  .pn-body .pn-list.plus li::before {
+    background: var(--pn-pos)
+  }
+
+  .pn-body .pn-list.minus li::before {
+    background: var(--pn-neg)
+  }
+
+  .pn-body .pn-cluster-score {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    width: 192px;
+    margin-right: 16px;
+    height: 150px;
+    border: 1px solid var(--pn-line);
+    border-radius: 8px;
+    padding: 8px 12px 14px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(33, 36, 49, .05);
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transform: translateX(-8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px
+  }
+
+  .pn-body .pn-cluster-score:hover {
+    border-color: #c9c2b3;
+    box-shadow: 0 4px 12px rgba(33, 36, 49, .08)
+  }
+
+  .pn-body .pn-cluster-score:focus-visible {
+    outline: 3px solid rgba(90, 82, 255, .22);
+    outline-offset: 3px
+  }
+
+  .pn-body .pn-score-label {
+    color: var(--pn-muted);
+    font-size: .66rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    text-align: center;
+    white-space: nowrap
+  }
+
+  .pn-body .pn-score-ring {
+    --score: 0;
+    --ring-color: var(--pn-pos);
+    width: 98px;
+    height: 98px;
+    border-radius: 50%;
+    background: conic-gradient(var(--ring-color) calc(var(--score) * 1%), #e8e7e4 0);
+    display: grid;
+    place-items: center;
+    position: relative
+  }
+
+  .pn-body .pn-score-ring::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border-radius: inherit;
+    background: #fff;
+    box-shadow: inset 0 0 0 1px rgba(33, 36, 49, .06)
+  }
+
+  .pn-body .pn-score-ring strong {
+    position: relative;
+    z-index: 1;
+    color: var(--pn-ink);
+    font-size: 1.14rem;
+    line-height: 1;
+    font-weight: 900
+  }
+
+  .pn-body .pn-score-ring small {
+    color: var(--pn-muted);
+    font-size: .68em
+  }
+
+  .pn-body .pn-score-ring.fill-green {
+    --ring-color: var(--pn-pos)
+  }
+
+  .pn-body .pn-score-ring.fill-orange {
+    --ring-color: var(--pn-neu)
+  }
+
+  .pn-body .pn-score-ring.fill-red {
+    --ring-color: var(--pn-neg)
+  }
+
+  .pn-body .pn-comments-wrap {
+    border: 1px solid var(--pn-line);
+    border-radius: 10px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(33, 36, 49, .05)
+  }
+
+  .pn-body .pn-comments {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-right: 6px
+  }
+
+  .pn-body .pn-comments::-webkit-scrollbar {
+    display: none
+  }
+
+  .pn-body .pn-comment {
+    flex: 0 0 300px;
+    min-width: 300px;
+    border: 1px solid var(--pn-line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    scroll-snap-align: start
+  }
+
+  .pn-body .pn-comments-wrap:has(.pn-modal-toggle:checked),
+  .pn-body .pn-comments:has(.pn-modal-toggle:checked),
+  .pn-body .pn-comment:has(.pn-modal-toggle:checked) {
+    overflow: visible
+  }
+
+  .pn-body .pn-source {
+    min-height: 28px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: #fff;
+    font-size: .64rem;
+    font-weight: 900;
+    text-transform: uppercase
+  }
+
+  .pn-body .pn-source span {
+    min-width: 0
+  }
+
+  .pn-body .pn-source span:last-child {
+    max-width: 62%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right
+  }
+
+  .pn-body .pn-source.reddit {
+    background: var(--pn-rd)
+  }
+
+  .pn-body .pn-source.youtube {
+    background: var(--pn-yt)
+  }
+
+  .pn-body .pn-source.x {
+    background: var(--pn-x)
+  }
+
+  .pn-body .pn-source.facebook {
+    background: var(--pn-fb)
+  }
+
+  .pn-body .pn-cbody {
+    padding: 9px
+  }
+
+  .pn-body .pn-cbody p {
+    font-size: .79rem;
+    line-height: 1.42
+  }
+
+  .pn-body .pn-cbody b {
+    display: block;
+    margin-top: 7px;
+    font-size: .69rem;
+    color: var(--pn-pri-2)
+  }
+
+  .pn-body .pn-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: .68rem;
+    font-weight: 900;
+    color: var(--pn-pri-2);
+    text-decoration: none
+  }
+
+  .pn-body .pn-link:hover {
+    text-decoration: underline
+  }
+
+  .pn-body .pn-more {
+    display: inline;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--pn-pri-2);
+    font: inherit;
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer
+  }
+
+  .pn-body .pn-more:hover,
+  .pn-body .pn-more:focus-visible {
+    text-decoration: underline
+  }
+
+  .pn-body .pn-modal-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none
+  }
+
+  .pn-body .pn-comment-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    isolation: isolate
+  }
+
+  .pn-body .pn-modal-toggle:checked ~ .pn-comment-modal,
+  .pn-body .pn-comment-modal.pn-js-open {
+    display: flex
+  }
+
+  .pn-body .pn-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    padding: 0;
+    background: rgba(22, 24, 33, .68);
+    backdrop-filter: blur(2px);
+    cursor: pointer
+  }
+
+  .pn-body .pn-comment-expanded {
+    position: relative;
+    z-index: 1;
+    flex: 0 1 min(640px, calc(100vw - 36px));
+    min-width: 0;
+    max-width: min(640px, calc(100vw - 36px));
+    max-height: min(78vh, 720px);
+    overflow: auto;
+    border-radius: 12px;
+    box-shadow: 0 22px 64px rgba(22, 24, 33, .30)
+  }
+
+  .pn-body .pn-comment-expanded .pn-source {
+    min-height: 42px;
+    padding-right: 58px
+  }
+
+  .pn-body .pn-comment-expanded .pn-cbody {
+    padding: 16px
+  }
+
+  .pn-body .pn-comment-expanded .pn-quote-full {
+    font-size: .95rem;
+    line-height: 1.55;
+    white-space: pre-line
+  }
+
+  .pn-body .pn-modal-close {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, .62);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .18);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer
+  }
+
+  body.pn-review-modal-lock {
+    overflow: hidden
+  }
+
+  @media (max-width:820px) {
+    .pn-body .pn-desc-desktop {
+      display: none
+    }
+
+    .pn-body .pn-cluster {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .pn-body .pn-desc-mobile {
+      display: block
+    }
+
+    .pn-body .pn-cluster-score {
+      order: -1;
+      width: 100%;
+      height: auto;
+      transform: none;
+      aspect-ratio: auto;
+      min-height: 0;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 8px;
+      padding: 12px 14px
+    }
+
+    .pn-body .pn-score-label {
+      text-align: left;
+      padding-right: 82px;
+      line-height: 1.1
+    }
+
+    .pn-body .pn-score-ring {
+      width: 100%;
+      height: 10px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--ring-color) calc(var(--score) * 1%), #e8e7e4 0);
+      display: block;
+      flex: 0 0 auto;
+      margin-top: 4px;
+      overflow: visible
+    }
+
+    .pn-body .pn-score-ring::before {
+      display: none
+    }
+
+    .pn-body .pn-score-ring strong {
+      position: absolute;
+      right: 0;
+      top: -28px;
+      z-index: 1;
+      margin: 0;
+      width: max-content;
+      line-height: 1
+    }
+
+    .pn-body .pn-analysis {
+      grid-template-columns: 1fr
+    }
+
+    .pn-body .pn-lists {
+      grid-template-columns: 1fr
+    }
+
+    .pn-body .pn-fd th,
+    .pn-body .pn-fd td {
+      padding: 6px
+    }
+
+    .pn-body .pn-comments {
+      display: flex;
+      overflow-x: auto
+    }
+
+    .pn-body .pn-comment-modal {
+      align-items: center;
+      justify-content: center;
+      padding: 14px
+    }
+
+    .pn-body .pn-comment {
+      flex: 0 0 66vw;
+      min-width: 66vw;
+      max-width: 66vw
+    }
+
+    .pn-body .pn-comment-expanded {
+      flex-basis: min(360px, calc(100vw - 28px));
+      min-width: 0;
+      max-width: min(360px, calc(100vw - 28px));
+      max-height: min(82vh, calc(100dvh - 28px))
+    }
+
+    .pn-body .pn-comment-expanded .pn-source {
+      min-height: 40px;
+      padding-right: 52px;
+      font-size: .61rem
+    }
+
+    .pn-body .pn-modal-close {
+      top: 4px;
+      right: 8px;
+      width: 32px;
+      height: 32px;
+      font-size: 1rem
+    }
+
+    .pn-body .pn-comment-expanded .pn-cbody {
+      padding: 14px
+    }
+
+    .pn-body .pn-comment-expanded .pn-quote-full {
+      font-size: .92rem;
+      line-height: 1.5
+    }
+
+    .pn-body .pn-source {
+      font-size: .6rem
+    }
+
+    .pn-body .pn-source span:last-child {
+      max-width: 58%
+    }
+  }
+  .pn-body {
+    max-width: min(980px, 100%);
+    overflow-x: hidden
+  }
+
+  .pn-body:has(.pn-modal-toggle:checked) {
+    overflow: visible
+  }
+
+  .pn-body .pn-comments-wrap {
+    overflow: hidden;
+    contain: paint
+  }
+
+  .pn-body .pn-cluster > .pn-points {
+    grid-column: 1
+  }
+
+  .pn-body .pn-cluster > .pn-points p {
+    margin: 0
+  }
+
+  .pn-body .pn-analysis-wrap {
+    margin-top: 10px
+  }
+
+</style>
+<!-- /wp:html -->
+
+
+<!-- ============================================================
+     CLUSTER — Tariffe e risparmio
+     ============================================================ -->
+<!-- wp:heading {"anchor":"cluster-tariffe-risparmio"} -->
+<h2 class="wp-block-heading" id="cluster-tariffe-risparmio">Tariffe e risparmio</h2>
+<!-- /wp:heading -->
+
+<!-- wp:html -->
+<div class="pn-body">
+  <article class="pn-cluster">
+    <a href="#recensioni-intro" class="pn-cluster-score" aria-label="Voto categoria 8,4 su 10">
+      <span class="pn-score-label">Voto della categoria</span>
+      <div class="pn-score-ring fill-green" style="--score:84"><strong>8,4<small>/10</small></strong></div>
+    </a>
+    <p class="pn-desc">Nei <strong>31 commenti</strong> su tariffe e risparmio torna spesso la convenienza, con <strong>prezzi bassi rispetto al vecchio gestore</strong>, risparmio sul gas e offerte competitive. Il vantaggio più citato è poter <strong>aggiornare la tariffa</strong> quando esce un prezzo migliore; resta utile confrontare prezzo energia, quota fissa e durata del blocco.</p>
+    <div class="pn-points"><p>La <strong>convenienza</strong> è uno dei punti più forti del campione. I commenti positivi parlano di prezzi bassi, <strong>risparmio rispetto al fornitore precedente</strong> e offerte aggiornabili; le cautele riguardano il confronto con alternative ancora più aggressive e la verifica del <strong>costo completo</strong>.</p></div>
+  </article>
+  <div class="pn-analysis-wrap">
+    <div class="pn-analysis">
+      <div class="pn-fd-wrap">
+        <table class="pn-fd">
+          <thead><tr><th scope="col">Punti di forza</th><th scope="col">Punti da valutare</th></tr></thead>
+          <tbody>
+            <tr><td class="is-plus"><strong>Prezzi luce e gas percepiti come competitivi</strong></td><td class="is-minus"><strong>Non sempre il prezzo più basso disponibile sul mercato</strong></td></tr>
+            <tr><td class="is-plus"><strong>Risparmio rispetto al precedente fornitore</strong></td><td class="is-minus"><strong>Confronto da fare sul costo completo della fornitura</strong></td></tr>
+            <tr><td class="is-plus"><strong>Offerte fisse e cambio tariffa citati come vantaggio economico</strong></td><td class="is-minus"><strong>Convenienza diversa tra luce, gas e profili di consumo</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <h3 class="pn-h3 pn-h3-out">Commenti</h3>
+  <div class="pn-comments-wrap"><div class="pn-comments">
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>NoNerve7182</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-01" aria-hidden="true">
+          <p class="pn-quote">Io sono passato ad Octopus da circa 2 anni e mi trovo benissimo, sia per i prezzi (luce e gas), sia per il servizio clienti che qui in Italia è semplicemente perfetto... <label class="pn-more" for="pn-css-comment-01" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-01" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-01" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>NoNerve7182</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">Io sono passato ad Octopus da circa 2 anni e mi trovo benissimo, sia per i prezzi (luce e gas), sia per il servizio clienti che qui in Italia è semplicemente perfetto, sia per i tempi di risposta sia per la professionalità degli addetti. Gestore che mi sento di consigliare.</p><b>NoNerve7182</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>NoNerve7182</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>obyboby</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-02" aria-hidden="true">
+          <p class="pn-quote">Ho gas + luce dove abito in affitto e ho gas e luce dai miei genitori, idem per dei parenti che cercavano come risparmiare (avevano tariffe e bollette... <label class="pn-more" for="pn-css-comment-02" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-02" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-02" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>obyboby</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">Ho gas + luce dove abito in affitto e ho gas e luce dai miei genitori, idem per dei parenti che cercavano come risparmiare (avevano tariffe e bollette fuori di testa). Assistenza rapida via whatsapp o email, coi codici amico se diffondi il verbo hai sconti/bonus, se la tariffa cambia anche se hai la fissa puoi chiedere adeguamento, ecc ecc. per ora mi trovo benissimo!</p><b>obyboby</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>obyboby</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>PulsarAndBlackMatter</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-03" aria-hidden="true">
+          <p class="pn-quote">Ho gas e luce, mi trovo bene, i prezzi sono i più bassi che ho trovato. Gas ci sono appena passato, mi ha richiamato il vecchio gestore con una super offerta che... <label class="pn-more" for="pn-css-comment-03" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-03" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-03" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>PulsarAndBlackMatter</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">Ho gas e luce, mi trovo bene, i prezzi sono i più bassi che ho trovato. Gas ci sono appena passato, mi ha richiamato il vecchio gestore con una super offerta che é comunque il 30% più alta di octopus. Non mi pento</p><b>PulsarAndBlackMatter</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>PulsarAndBlackMatter</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>maxblack72</span></div>
+        <div class="pn-cbody">
+          <p class="pn-quote">Mi trovo molto bene, con auto elettrica c&#x27;e&#x27; anche l&#x27;offerta Intelligent Octopus che ti fa risparmiare un po&#x27;. Ottimo servizio clienti.</p><b>maxblack72</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/opinioni-su-octopus" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>Madfred100</span></div>
+        <div class="pn-cbody">
+          <p class="pn-quote">Venerdì ho salutato Sorgenia (dopo 6 anni) e sono passato a Octopus. Risparmio stimato circa 9€ al mese.</p><b>Madfred100</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swx" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+    </div></div>
+</div>
+<!-- /wp:html -->
+
+<!-- ============================================================
+     CLUSTER — Assistenza e cambio tariffa
+     ============================================================ -->
+<!-- wp:heading {"anchor":"cluster-assistenza-cambio-tariffa"} -->
+<h2 class="wp-block-heading" id="cluster-assistenza-cambio-tariffa">Assistenza e cambio tariffa</h2>
+<!-- /wp:heading -->
+
+<!-- wp:html -->
+<div class="pn-body">
+  <article class="pn-cluster">
+    <a href="#recensioni-intro" class="pn-cluster-score" aria-label="Voto categoria 8,5 su 10">
+      <span class="pn-score-label">Voto della categoria</span>
+      <div class="pn-score-ring fill-green" style="--score:85"><strong>8,5<small>/10</small></strong></div>
+    </a>
+    <p class="pn-desc">Quando si parla di assistenza e cambio tariffa, i <strong>39 commenti</strong> premiano soprattutto <strong>risposte rapide</strong>, WhatsApp e passaggi a offerte più convenienti gestiti in pochi minuti. Il quadro resta positivo anche se compaiono un caso di mancata risposta e una <strong>fatturazione errata</strong>, mentre prevale un <strong>supporto umano, chiaro</strong>.</p>
+    <div class="pn-points"><p>La categoria è molto positiva perché unisce <strong>assistenza e risparmio operativo</strong>. Il vantaggio più ricorrente non è solo parlare con un operatore, ma riuscire a farsi applicare <strong>una tariffa migliore</strong> quando disponibile.</p></div>
+  </article>
+  <div class="pn-analysis-wrap">
+    <div class="pn-analysis">
+      <div class="pn-fd-wrap">
+        <table class="pn-fd">
+          <thead><tr><th scope="col">Punti di forza</th><th scope="col">Punti da valutare</th></tr></thead>
+          <tbody>
+            <tr><td class="is-plus"><strong>Cambio tariffa via WhatsApp o assistenza</strong></td><td class="is-minus"><strong>Un caso di fatturazione errata gestita male</strong></td></tr>
+            <tr><td class="is-plus"><strong>Risposte rapide e tono percepito come umano</strong></td><td class="is-minus"><strong>Mancata risposta su WhatsApp in un commento</strong></td></tr>
+            <tr><td class="is-plus"><strong>Clienti soddisfatti anche dopo più anni di fornitura</strong></td><td class="is-minus"><strong>Tempi e qualità da verificare nei reclami complessi</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <h3 class="pn-h3 pn-h3-out">Commenti</h3>
+  <div class="pn-comments-wrap"><div class="pn-comments">
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>Durton24</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-04" aria-hidden="true">
+          <p class="pn-quote">Ho Octopus da più di un anno e mi trovato benissimo. Il servizio clienti è impeccabile e sono molto &#x27;umani&#x27;. Poi mi sembra che hanno prezzi decisamente... <label class="pn-more" for="pn-css-comment-04" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-04" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-04" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>Durton24</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">Ho Octopus da più di un anno e mi trovato benissimo. Il servizio clienti è impeccabile e sono molto &#x27;umani&#x27;. Poi mi sembra che hanno prezzi decisamente inferiori rispetto agli altri gestori. Inoltre, ogni volta che mettono una nuova offerta fissa con prezzo inferiore alla mia offerta attuale, mando un messaggino su whatsapp dicendo che voglio cambiare ed attivare la nuova offerta ed in genere in una manciata di minuti mi confermano l&#x27;attivazione.</p><b>Durton24</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swx" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>Durton24</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swx" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>ElGatoCitrico</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-05" aria-hidden="true">
+          <p class="pn-quote">Sono con loro gas+luce da circa un anno. Mi trovo molto bene: assistenza rapida e chiara, comunicazioni sintetiche ed essenziali, ottima offerta con... <label class="pn-more" for="pn-css-comment-05" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-05" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-05" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>ElGatoCitrico</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">Sono con loro gas+luce da circa un anno. Mi trovo molto bene: assistenza rapida e chiara, comunicazioni sintetiche ed essenziali, ottima offerta con possibilità di aggiornarla alla tariffa del momento. Mai avuto un problema. Personalmente lo consiglio ad amici e conoscenti.</p><b>ElGatoCitrico</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swx" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>ElGatoCitrico</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swx" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>Lalli928</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-06" aria-hidden="true">
+          <p class="pn-quote">Brutta esperienza nella gestione di una fatturazione errata (ovviamente in eccesso) addebitatami all&#x27;inizio del rapporto contrattuale con loro. Ho... <label class="pn-more" for="pn-css-comment-06" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-06" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-06" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>Lalli928</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">Brutta esperienza nella gestione di una fatturazione errata (ovviamente in eccesso) addebitatami all&#x27;inizio del rapporto contrattuale con loro. Ho dovuto portarli in conciliazione per tutelarmi. Risposte rapide in assistenza clienti, il problema è il contenuto di quelle risposte 😅</p><b>Lalli928</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>Lalli928</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>urania1894</span></div>
+        <div class="pn-cbody">
+          <p class="pn-quote">Io mi trovo bene, anche se non mi hanno mai risposto su WhatsApp.</p><b>urania1894</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>beerIsNotAcrime</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-07" aria-hidden="true">
+          <p class="pn-quote">Sono con loro da due anni, mai avuto problemi nemmeno con l&#x27;assistenza clienti. E lo scorso settembre quando ho visto che c&#x27;era un offerta 12 mesi più conveniente... <label class="pn-more" for="pn-css-comment-07" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-07" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-07" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>beerIsNotAcrime</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">Sono con loro da due anni, mai avuto problemi nemmeno con l&#x27;assistenza clienti. E lo scorso settembre quando ho visto che c&#x27;era un offerta 12 mesi più conveniente della mia gli ho scritto chiedendo il passaggio alla nuova tariffa ed è stato attivato dal mese successivo. Per ora mi godo 0,099 €/kWh conscio del fatto che (forse) non tornerà più.</p><b>beerIsNotAcrime</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/opinioni-su-octopus" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>beerIsNotAcrime</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/opinioni-su-octopus" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+    </div></div>
+</div>
+<!-- /wp:html -->
+
+<!-- ============================================================
+     CLUSTER — App, bolletta e digitale
+     ============================================================ -->
+<!-- wp:heading {"anchor":"cluster-app-bolletta-digitale"} -->
+<h2 class="wp-block-heading" id="cluster-app-bolletta-digitale">App, bolletta e digitale</h2>
+<!-- /wp:heading -->
+
+<!-- wp:html -->
+<div class="pn-body">
+  <article class="pn-cluster">
+    <a href="#recensioni-intro" class="pn-cluster-score" aria-label="Voto categoria 7,7 su 10">
+      <span class="pn-score-label">Voto della categoria</span>
+      <div class="pn-score-ring fill-green" style="--score:77"><strong>7,7<small>/10</small></strong></div>
+    </a>
+    <p class="pn-desc">App, bolletta e digitale funzionano soprattutto come supporto alla trasparenza; nei <strong>32 commenti</strong> ricorrono <strong>consumi, fatture e gestione online</strong>. L'app viene descritta come chiara, con dati facili da seguire e documenti consultabili; quando <strong>bollette e cambio tariffa</strong> sono leggibili, l'esperienza risulta più trasparente.</p>
+    <div class="pn-points"><p>Gli utenti che citano app e account parlano di <strong>consumi giorno per giorno</strong>, fatture visibili e comunicazioni essenziali. Il canale digitale non sostituisce sempre l'assistenza, ma aiuta a controllare meglio <strong>costi, documenti e cambi tariffa</strong>.</p></div>
+  </article>
+  <div class="pn-analysis-wrap">
+    <div class="pn-analysis">
+      <div class="pn-fd-wrap">
+        <table class="pn-fd">
+          <thead><tr><th scope="col">Punti di forza</th><th scope="col">Punti da valutare</th></tr></thead>
+          <tbody>
+            <tr><td class="is-plus"><strong>App valutata in modo molto positivo</strong></td><td class="is-minus"><strong>Alcune operazioni passano ancora dall&#x27;assistenza</strong></td></tr>
+            <tr><td class="is-plus"><strong>Consumi e fatture consultabili con chiarezza</strong></td><td class="is-minus"><strong>Controlli digitali da verificare prima dell&#x27;attivazione</strong></td></tr>
+            <tr><td class="is-plus"><strong>Gestione online descritta come semplice</strong></td><td class="is-minus"><strong>Esperienza da verificare per chi vuole tutto da app</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <h3 class="pn-h3 pn-h3-out">Commenti</h3>
+  <div class="pn-comments-wrap"><div class="pn-comments">
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>cicababba</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-08" aria-hidden="true">
+          <p class="pn-quote">Ciao, io ho octopus da dicembre 2025, in termini di prezzi, il risparmio non è esagerato rispetto a ciò che avevo prima, ma è comunque ottimo. La loro applicazione... <label class="pn-more" for="pn-css-comment-08" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-08" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-08" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>cicababba</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">Ciao, io ho octopus da dicembre 2025, in termini di prezzi, il risparmio non è esagerato rispetto a ciò che avevo prima, ma è comunque ottimo. La loro applicazione è ottima e puoi tracciare in maniera chiara il consumo e le fatture. Inoltre il servizio clienti è sempre disponibile e cortese, ma la cosa che più apprezzo è che si può fare tutto online, senza chiamare ed essere chiamati, tutto scritto in maniera chiara e non hai le solite rotture di tizi al telefono che ti dicono cosa firmare, contratti mandati per e-mail dove devi firmare mentre sei ancora al telefono altrimenti l&#x27;offerta non è valida e bla bla bla.</p><b>cicababba</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swx" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>cicababba</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swx" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>AcceptableAd789</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-09" aria-hidden="true">
+          <p class="pn-quote">Io mi trovo molto bene e come in tanti hanno detto puoi cambiare tariffa in un secondo semplicemente mandando loro un messaggio su whatsapp. L&#x27;assistenza... <label class="pn-more" for="pn-css-comment-09" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-09" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-09" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>AcceptableAd789</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">Io mi trovo molto bene e come in tanti hanno detto puoi cambiare tariffa in un secondo semplicemente mandando loro un messaggio su whatsapp. L&#x27;assistenza tecnica e&#x27; ottima, celere e chiara e sono anche molto oneste. A me e&#x27; successo che per un periodo non ho piu&#x27; ricevuto le bollette della luce e avendo l&#x27;accredito diretto sul conto me ne sono accorto solo qualche mese dopo. Li ho contattati subito e si sono resi conto che era un problema loro e mi hanno pure fatto uno sconto sulle bollette arretrate.</p><b>AcceptableAd789</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/opinioni-su-octopus" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>AcceptableAd789</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/opinioni-su-octopus" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>LogicalCricket8730</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-10" aria-hidden="true">
+          <p class="pn-quote">Io mi trovo molto bene, ho solo energia elettrica però. ottimo servizio clienti, rispondono persone vere anche su whatsapp; consumi visibili giorno per giorno... <label class="pn-more" for="pn-css-comment-10" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-10" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-10" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>LogicalCricket8730</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">Io mi trovo molto bene, ho solo energia elettrica però. ottimo servizio clienti, rispondono persone vere anche su whatsapp; consumi visibili giorno per giorno sul tuo account; costi finora bassi rispetto alle altre compagnie, anche se il costo dell&#x27;energia è solo una parte del costo totale. Non hanno un&#x27;app, ma puoi usare il loro sito web da cellulare.</p><b>LogicalCricket8730</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>LogicalCricket8730</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>Last_Dot3125</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-11" aria-hidden="true">
+          <p class="pn-quote">ottimo octopus posso solo che consigliare, poi se escono con una tariffa migliore te le cambiano senza fare storie. Bollette chiare e assistenza veloce. Anche... <label class="pn-more" for="pn-css-comment-11" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-11" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-11" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>Last_Dot3125</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">ottimo octopus posso solo che consigliare, poi se escono con una tariffa migliore te le cambiano senza fare storie. Bollette chiare e assistenza veloce. Anche queste cose hanno un valore.</p><b>Last_Dot3125</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/opinioni-su-octopus" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>Last_Dot3125</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/opinioni-su-octopus" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+    </div></div>
+</div>
+<!-- /wp:html -->
+
+
+$IT_NRJ0_simulatore_bolletta_fullwidth$
+
+
+<!-- ============================================================
+     CLUSTER — Attivazione e cambio fornitore
+     ============================================================ -->
+<!-- wp:heading {"anchor":"cluster-attivazione-cambio-fornitore"} -->
+<h2 class="wp-block-heading" id="cluster-attivazione-cambio-fornitore">Attivazione e cambio fornitore</h2>
+<!-- /wp:heading -->
+
+<!-- wp:html -->
+<div class="pn-body">
+  <article class="pn-cluster">
+    <a href="#recensioni-intro" class="pn-cluster-score" aria-label="Voto categoria 7,9 su 10">
+      <span class="pn-score-label">Voto della categoria</span>
+      <div class="pn-score-ring fill-green" style="--score:79"><strong>7,9<small>/10</small></strong></div>
+    </a>
+    <p class="pn-desc">Abbiamo raccolto <strong>34 commenti</strong> su attivazione e cambio fornitore, con segnali pochi ma favorevoli: <strong>voltura rapida</strong>, rimborso dei costi gas e passaggi con poche frizioni. Per pratiche più delicate restano da verificare <strong>POD, PDR, tempi del distributore</strong> e dati corretti in bolletta.</p>
+    <div class="pn-points"><p>Le esperienze raccontate descrivono <strong>passaggi semplici</strong> e una voltura gestita velocemente. Per pratiche più delicate, come subentro o dati contrattuali da correggere, resta comunque utile verificare <strong>tempi, documenti richiesti e ruolo del distributore</strong>.</p></div>
+  </article>
+  <div class="pn-analysis-wrap">
+    <div class="pn-analysis">
+      <div class="pn-fd-wrap">
+        <table class="pn-fd">
+          <thead><tr><th scope="col">Punti di forza</th><th scope="col">Punti da valutare</th></tr></thead>
+          <tbody>
+            <tr><td class="is-plus"><strong>Voltura descritta come molto rapida</strong></td><td class="is-minus"><strong>Esperienze dettagliate ancora concentrate su pochi passaggi</strong></td></tr>
+            <tr><td class="is-plus"><strong>Attivazione indicata come poco macchinosa</strong></td><td class="is-minus"><strong>Tempi reali da verificare su pratica e distributore</strong></td></tr>
+            <tr><td class="is-plus"><strong>Invito esplicito al cambio in più commenti</strong></td><td class="is-minus"><strong>Commenti brevi meno informativi di esperienze complete</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <h3 class="pn-h3 pn-h3-out">Commenti</h3>
+  <div class="pn-comments-wrap"><div class="pn-comments">
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>CapitalistFemboy</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-12" aria-hidden="true">
+          <p class="pn-quote">L&#x27;ho sempre usato quando vivevo in Italia e mi sono sempre trovata bene. Quando ho cambiato il codice fiscale mi hanno fatto loro la voltura in due minuti e mi... <label class="pn-more" for="pn-css-comment-12" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-12" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-12" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>CapitalistFemboy</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">L&#x27;ho sempre usato quando vivevo in Italia e mi sono sempre trovata bene. Quando ho cambiato il codice fiscale mi hanno fatto loro la voltura in due minuti e mi hanno anche fatto il &quot;favore&quot; di rimborsarmi i costi per il gas. Sono sicura al 99% che un gestore classico me l&#x27;avrebbe addebitato dicendo che non poteva essere rimborsato, o l&#x27;avrebbe tirata per le lunghe.</p><b>CapitalistFemboy</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/opinioni-su-octopus" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>CapitalistFemboy</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/opinioni-su-octopus" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>Historical-Brick-839</span></div>
+        <div class="pn-cbody">
+          <p class="pn-quote">Cambia subito è ottimo!!</p><b>Historical-Brick-839</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>Riccetto86</span></div>
+        <div class="pn-cbody">
+          <p class="pn-quote">Cambia oggi senza pensarci due volte</p><b>Riccetto86</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>BRNRDCVL</span></div>
+        <div class="pn-cbody">
+          <p class="pn-quote">Passato a loro due anni fa e non posso che parlarne bene</p><b>BRNRDCVL</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/opinioni-su-octopus" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+    </div></div>
+</div>
+<!-- /wp:html -->
+
+<!-- ============================================================
+     CLUSTER — Reputazione e trasparenza
+     ============================================================ -->
+<!-- wp:heading {"anchor":"cluster-trasparenza-brand-reputazione"} -->
+<h2 class="wp-block-heading" id="cluster-trasparenza-brand-reputazione">Reputazione e trasparenza</h2>
+<!-- /wp:heading -->
+
+<!-- wp:html -->
+<div class="pn-body">
+  <article class="pn-cluster">
+    <a href="#recensioni-intro" class="pn-cluster-score" aria-label="Voto categoria 8,0 su 10">
+      <span class="pn-score-label">Voto della categoria</span>
+      <div class="pn-score-ring fill-green" style="--score:80"><strong>8,0<small>/10</small></strong></div>
+    </a>
+    <p class="pn-desc">Questo è uno dei temi che sostiene di più la fiducia: tra reputazione e trasparenza, i <strong>40 commenti</strong> descrivono Octopus come <strong>trasparente, onesta</strong>. Restano dubbi sul <strong>claim rinnovabile</strong> e una critica alle tariffe senza IVA, mentre <strong>prezzi chiari</strong> e comunicazioni sintetiche rafforzano il giudizio.</p>
+    <div class="pn-points"><p>La reputazione è positiva perché molti commenti parlano di <strong>fiducia, chiarezza e assenza di sorprese</strong>. Le critiche si concentrano su aspetti circoscritti ma rilevanti: sostenibilità comunicata, tariffe ex IVA e chiamate spam.</p></div>
+  </article>
+  <div class="pn-analysis-wrap">
+    <div class="pn-analysis">
+      <div class="pn-fd-wrap">
+        <table class="pn-fd">
+          <thead><tr><th scope="col">Punti di forza</th><th scope="col">Punti da valutare</th></tr></thead>
+          <tbody>
+            <tr><td class="is-plus"><strong>Fiducia, onestà e trasparenza citate da più utenti</strong></td><td class="is-minus"><strong>Dubbio esplicito sul claim rinnovabile</strong></td></tr>
+            <tr><td class="is-plus"><strong>Comunicazioni percepite come semplici</strong></td><td class="is-minus"><strong>Critica alle tariffe indicate senza IVA</strong></td></tr>
+            <tr><td class="is-plus"><strong>Esperienze lunghe senza problemi rilevanti</strong></td><td class="is-minus"><strong>Segnalazione di chiamate spam dopo il passaggio</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <h3 class="pn-h3 pn-h3-out">Commenti</h3>
+  <div class="pn-comments-wrap"><div class="pn-comments">
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>Tapiocapioca</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-13" aria-hidden="true">
+          <p class="pn-quote">Mi trovo benissimo con Octupus. Sono da diversi anni con loro per luce e gas. Mi ricordano molto ILIAD, forse non sono i migliori come tariffe ma fanno quello... <label class="pn-more" for="pn-css-comment-13" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-13" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-13" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>Tapiocapioca</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">Mi trovo benissimo con Octupus. Sono da diversi anni con loro per luce e gas. Mi ricordano molto ILIAD, forse non sono i migliori come tariffe ma fanno quello che dicono senza sorprese. Non rischi di trovarti bollette milionarie perché qualche pseudo promozione è scaduta o hanno solo deciso di provare a fregarti.</p><b>Tapiocapioca</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>Tapiocapioca</b><a class="pn-link" href="https://www.reddit.com/r/bollette/comments/octopus-thread-2" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>Yuppiduuu</span></div>
+        <div class="pn-cbody">
+          <p class="pn-quote">Io ho cambiato perché ENI mi offriva un prezzo migliore ma ero con Octopus e non posso che parlarne bene. Ottimo e anche in caso di domande estremamente pronti.</p><b>Yuppiduuu</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/opinioni-su-octopus" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>27_Jack_27</span></div>
+        <div class="pn-cbody">
+          <input class="pn-modal-toggle" type="checkbox" id="pn-css-comment-14" aria-hidden="true">
+          <p class="pn-quote">Se ne parlate bene vale la pena indagare su questo operatore. Io sinceramente ne ho sempre dubitato perché il loro claim si basa sul fatto che utilizzano... <label class="pn-more" for="pn-css-comment-14" role="button" tabindex="0">Scopri di pi&ugrave;</label></p>
+          <div class="pn-comment-modal" role="dialog" aria-modal="true" aria-label="Commento completo">
+            <label class="pn-modal-backdrop" for="pn-css-comment-14" aria-label="Chiudi commento completo"></label>
+            <article class="pn-comment pn-comment-expanded" role="document">
+              <label class="pn-modal-close" for="pn-css-comment-14" role="button" tabindex="0" aria-label="Chiudi">&times;</label>
+              <div class="pn-source reddit"><span>Reddit</span><span>27_Jack_27</span></div>
+              <div class="pn-cbody">
+                <p class="pn-quote pn-quote-full">Se ne parlate bene vale la pena indagare su questo operatore. Io sinceramente ne ho sempre dubitato perché il loro claim si basa sul fatto che utilizzano energia rinnovabile. Mi spiegate come cavolo faccia a farlo davvero se è un operatore come gli altri? Mi viene difficile da pensare che una volta attivato il contratto con loro, la corrente che mi arriva a casa venga da un pannello solare piuttosto che dalla centrale elettrica più vicina.</p><b>27_Jack_27</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swx" rel="noopener">Apri thread</a>
+              </div>
+            </article>
+          </div><b>27_Jack_27</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/1swx" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>Bebebebeh</span></div>
+        <div class="pn-cbody">
+          <p class="pn-quote">Io sto pagando meno con Eni, le tariffe indicate su octopus sono esenti Iva. Non il massimo della trasparenza su clienti privati.</p><b>Bebebebeh</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/opinioni-su-octopus" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+      <article class="pn-comment">
+        <div class="pn-source reddit"><span>Reddit</span><span>theitalianpastaboi</span></div>
+        <div class="pn-cbody">
+          <p class="pn-quote">Io mi trovo molto bene, la consiglio</p><b>theitalianpastaboi</b><a class="pn-link" href="https://www.reddit.com/r/ItaliaPersonalFinance/comments/opinioni-su-octopus" rel="noopener">Apri thread</a>
+        </div>
+      </article>
+    </div></div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<script>
+  (function () {
+    if (window.__pnReviewModalPortalReady) return;
+    window.__pnReviewModalPortalReady = true;
+
+    var activeTrigger = null;
+    var activeToggle = null;
+    var portal = null;
+
+    function closest(el, selector) {
+      while (el && el !== document) {
+        if (el.matches && el.matches(selector)) return el;
+        el = el.parentNode;
+      }
+      return null;
+    }
+
+    function ensurePortal() {
+      if (portal) return portal;
+      portal = document.createElement('div');
+      portal.className = 'pn-body pn-modal-portal';
+      portal.setAttribute('data-pn-modal-portal', '');
+      document.body.appendChild(portal);
+      return portal;
+    }
+
+    function closeModal() {
+      if (portal) portal.innerHTML = '';
+      document.body.classList.remove('pn-review-modal-lock');
+      if (activeToggle) activeToggle.checked = false;
+      if (activeTrigger && activeTrigger.focus) activeTrigger.focus();
+      activeTrigger = null;
+      activeToggle = null;
+    }
+
+    function openModal(trigger) {
+      var id = trigger.getAttribute('for');
+      var toggle = id ? document.getElementById(id) : null;
+      var source = toggle ? toggle.parentNode.querySelector('.pn-comment-modal') : null;
+      if (!source) return;
+
+      var clone = source.cloneNode(true);
+      clone.classList.add('pn-js-open');
+      clone.setAttribute('aria-hidden', 'false');
+      Array.prototype.forEach.call(clone.querySelectorAll('.pn-modal-backdrop, .pn-modal-close'), function (label) {
+        label.removeAttribute('for');
+        label.setAttribute('role', 'button');
+        if (!label.hasAttribute('tabindex')) label.setAttribute('tabindex', '0');
+      });
+
+      activeTrigger = trigger;
+      activeToggle = toggle;
+      if (activeToggle) activeToggle.checked = false;
+
+      ensurePortal().innerHTML = '';
+      portal.appendChild(clone);
+      document.body.classList.add('pn-review-modal-lock');
+
+      var close = clone.querySelector('.pn-modal-close');
+      if (close && close.focus) close.focus();
+    }
+
+    document.addEventListener('click', function (event) {
+      var trigger = closest(event.target, '.pn-more[for^="pn-css-comment-"]');
+      if (trigger) {
+        event.preventDefault();
+        openModal(trigger);
+        return;
+      }
+
+      if (portal && portal.contains(event.target) && closest(event.target, '.pn-modal-backdrop, .pn-modal-close')) {
+        event.preventDefault();
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      var trigger = closest(event.target, '.pn-more[for^="pn-css-comment-"]');
+      if (trigger && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault();
+        openModal(trigger);
+        return;
+      }
+
+      if (portal && portal.firstChild && closest(event.target, '.pn-modal-backdrop, .pn-modal-close') && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault();
+        closeModal();
+        return;
+      }
+
+      if (event.key === 'Escape') closeModal();
+    });
+  })();
+</script>
+<!-- /wp:html -->
+
+
+<!-- ============================================================
+     OFFERTE OCTOPUS ENERGY
+     ============================================================ -->
+<!-- wp:heading {"anchor":"offerte-octopus-energy"} -->
+<h2 class="wp-block-heading" id="offerte-octopus-energy">Le offerte disponibili di Octopus Energy</h2>
+<!-- /wp:heading -->
+
+<!-- wp:html -->
+<div class="pn-body">
+  <article class="pn-cluster pn-offers-intro">
+    <p class="pn-desc">Tra le offerte disponibili di Octopus Energy ci sono <strong>una soluzione a prezzo fisso</strong> e una indicizzata. <strong>Octopus Fissa 12M</strong> blocca luce e gas per 12 mesi, mentre <strong>Octopus Flex</strong> segue PUN e PSV con spread dichiarato.</p>
+    <p class="pn-desc">I prezzi sono dati aggiornabili: prima di attivare conviene controllare la scheda offerta e confrontare <strong>costo energia e quota fissa</strong>, deposito cauzionale, metodo di pagamento e durata delle condizioni.</p>
+  </article>
+
+  <h3 class="pn-offers-title">Octopus Fissa 12M e Octopus Flex</h3>
+  <ppn-deals-list class="pn-offers-list" title-component="" as="">
+    <ppn-deal link="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/octopus-energy/fissa-12m/" cta-left-href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/octopus-energy/fissa-12m/" rate="4" price="Luce: 0,1298 €/kWh" subtitle="Gas: 0,5300 €/Smc" img-src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/img-src-8-1.png" title-main="Octopus Fissa 12M" cta-left-text="Scopri l'offerta" cta-left-color="primary" cta-right-color="secondary-reverse" cta-right-text="Pi&ugrave; info"></ppn-deal>
+    <ppn-deal link="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/octopus-energy/octopus-flex/" cta-left-href="https://www.papernest.it/luce-gas/fornitori-energia-elettrica/octopus-energy/octopus-flex/" rate="4" price="Luce: PUN + 0,0088 €/kWh" subtitle="Gas: PSV + 0,060 €/Smc" img-src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/img-src-8-1.png" title-main="Octopus Flex" cta-left-text="Scopri l'offerta" cta-left-color="primary" cta-right-color="secondary-reverse" cta-right-text="Pi&ugrave; info"></ppn-deal>
+  </ppn-deals-list>
+</div>
+<!-- /wp:html -->
+
+<ppn-cta-block-double class="show-call-opened" style="--primary-color: #5A52FF; --cta-txt-color: white; --cta-hover-color: #5A52FF; --cta-bg-color: #00C5AF;" type="default" picture-url="" first-cta-active-mode="call" text-title="Chiama Papernest e attiva la migliore offerta luce e gas per te per risparmiare in bolletta!" compliance-text="$IT_NRJ_BOX_Orari_Apertura$" info-text="$IT_CTA_Stars$" info-hover-text="$IT_CTA_Info_Hover_Text$" first-cta-text="02 94 75 68 03" first-cta-href="tel:0294756803" first-cta-icon="phone" first-cta-color="custom" first-cta-custom-color="#00C5AF" first-cta-custom-color-hover="#5A52FF" second-cta-text="Fatti Richiamare" second-cta-color="primary" second-cta-app-text="Fatti Richiamare" second-cta-icon="wcb" second-cta-app-icon="computer" second-cta-is-wcb="true" second-cta-app-is-wcb="true" info-direction="reverse" active-mode="call">$IT_CTA_Testo$</ppn-cta-block-double>
+
+<ppn-cta-block-double class="show-call-closed" style="--primary-color: #5A52FF; --cta-txt-color: white; --cta-hover-color: #5A52FF; --cta-bg-color: #00C5AF;" type="default" picture-url="" text-title="Chiama Papernest e attiva la migliore offerta luce e gas per te per risparmiare in bolletta!" compliance-text="$IT_NRJ_BOX_Orari_Apertura$" info-text="$IT_CTA_Stars$" info-hover-text="$IT_CTA_Info_Hover_Text$" first-cta-icon="computer" first-cta-color="custom" first-cta-custom-color="#00C5AF" first-cta-custom-color-hover="#5A52FF" second-cta-text="Fatti Richiamare" second-cta-color="primary" second-cta-app-text="Fatti Richiamare" second-cta-icon="wcb" second-cta-app-icon="computer" second-cta-is-wcb="true" second-cta-app-is-wcb="true" info-direction="reverse" active-mode="app">$IT_CTA_Testo$</ppn-cta-block-double>
+
+&nbsp;
+
+$IT_AI_disclaimer$
+
+</main>
+</body>
+</html>

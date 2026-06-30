@@ -1,0 +1,2088 @@
+<!-- ============================================================
+     OCTOPUS ENERGY REVIEWS — Intro Block (dashboard + comparator)
+     Gutenberg Custom HTML block
+     Scoped under .ppn-octopus-reviews
+     Compare UX = mobile-style (VS card layout shift + bars /10 colored)
+     Provider grid = auto-scrolling carousel (desktop), scroll-snap (mobile)
+     ============================================================ -->
+<div class="ppn-octopus-reviews" id="recensioni-intro" data-por-root>
+
+  <style>
+    .ppn-octopus-reviews {
+      --por-ink: #161821;
+      --por-ink-2: #262936;
+      --por-muted: #646b7c;
+      --por-soft: #8a90a0;
+      --por-paper: #fbfaf7;
+      --por-paper-2: #f4f1ea;
+      --por-card: #ffffff;
+      --por-line: #ded8ca;
+      --por-line-soft: #e7e5e4;
+      --por-violet: #5a52ff;
+      --por-violet-2: #3e38b2;
+      --por-violet-soft: #efeeff;
+      --por-violet-bg: #f6f5ff;
+      --por-green: #00bc7d;
+      --por-orange: #fd9a00;
+      --por-red: #ff2056;
+      --por-blue: #0c68d3;
+      --por-teal: #02c5ae;
+      --por-teal-dark: #018979;
+      --por-shadow: 0 14px 32px rgba(22, 24, 33, .11);
+      --por-shadow-soft: 0 2px 12px 1px rgba(127, 131, 152, .18);
+      color: var(--por-ink);
+      line-height: 1.45;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .ppn-octopus-reviews *,
+    .ppn-octopus-reviews *::before,
+    .ppn-octopus-reviews *::after {
+      box-sizing: border-box;
+      letter-spacing: 0
+    }
+
+    .ppn-octopus-reviews .por-mobile-only {
+      display: none
+    }
+
+    /* HEADER */
+    .ppn-octopus-reviews .por-header {
+      margin: 0 0 18px;
+      max-width: 880px;
+    }
+
+    .ppn-octopus-reviews .por-mobile-copy {
+      display: none;
+      margin: 14px 0 0;
+    }
+
+    .ppn-octopus-reviews .por-copy {
+      margin: 0;
+      color: var(--por-ink);
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    /* CARD (full-width dashboard) */
+    .ppn-octopus-reviews .por-card {
+      border: 1px solid var(--por-line);
+      border-radius: 8px;
+      background: var(--por-card);
+      box-shadow: var(--por-shadow);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    /* HERO */
+    .ppn-octopus-reviews .por-hero {
+      background: var(--por-violet-bg);
+      padding: 26px 30px;
+    }
+
+    .ppn-octopus-reviews .por-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--por-muted);
+      font-size: .72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .ppn-octopus-reviews .por-brand-head {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ppn-octopus-reviews .por-brand-logo {
+      width: 52px;
+      height: 52px;
+      border: 1px solid var(--por-line);
+      border-radius: 12px;
+      background: #fff;
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    .ppn-octopus-reviews .por-brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      transform: translateY(1px);
+      display: block;
+    }
+
+    .ppn-octopus-reviews .por-brand-name {
+      color: var(--por-ink);
+      font-size: 1.12rem;
+      line-height: 1.1;
+      font-weight: 900;
+      letter-spacing: .01em;
+      white-space: nowrap;
+    }
+
+    .ppn-octopus-reviews .por-kicker::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--por-teal);
+      box-shadow: 0 0 0 6px rgba(2, 197, 174, .18);
+      flex: 0 0 auto;
+    }
+
+    .ppn-octopus-reviews .por-hero-row {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 26px;
+      align-items: end;
+      margin-top: 12px;
+    }
+
+    .ppn-octopus-reviews .por-score {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--por-violet);
+      font-size: 5.4rem;
+      line-height: .92;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -.02em;
+    }
+
+    .ppn-octopus-reviews .por-score small {
+      margin-top: 12px;
+      color: var(--por-muted);
+      font-size: 1.3rem;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .ppn-octopus-reviews .por-score-meta {
+      margin-top: 6px;
+      color: var(--por-muted);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .ppn-octopus-reviews .por-rank {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 14px 18px;
+      background: var(--por-card);
+      border: 1px solid var(--por-line);
+      border-radius: 8px;
+      min-width: 0;
+    }
+
+    .ppn-octopus-reviews .por-rank-pos {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      color: var(--por-violet);
+      font-size: 1.7rem;
+      line-height: 1;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ppn-octopus-reviews .por-rank-pos small {
+      color: var(--por-muted);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .ppn-octopus-reviews .por-rank-meta {
+      color: var(--por-ink-2);
+      font-size: .9rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    /* CLUSTERS list */
+    .ppn-octopus-reviews .por-clusters-wrap {
+      padding: 20px 24px 16px;
+      background: var(--por-paper);
+      border-top: 1px solid var(--por-line-soft);
+    }
+
+    .ppn-octopus-reviews .por-clusters-title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .ppn-octopus-reviews .por-clusters-title strong {
+      color: var(--por-ink);
+      font-size: .86rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .ppn-octopus-reviews .por-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .ppn-octopus-reviews .por-cluster-row {
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) minmax(0, 1.6fr);
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .ppn-octopus-reviews .por-cluster-box {
+      background: var(--por-card);
+      border: 1px solid var(--por-line);
+      border-radius: 8px;
+      padding: 10px 14px;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ppn-octopus-reviews .por-cluster-link {
+      text-decoration: none;
+      color: var(--por-ink-2);
+      font-size: .92rem;
+      font-weight: 900;
+      justify-content: space-between;
+      gap: 10px;
+      cursor: pointer;
+      transition: border-color .15s, background .15s, color .15s;
+    }
+
+    .ppn-octopus-reviews .por-cluster-link:hover,
+    .ppn-octopus-reviews .por-cluster-link:focus-visible {
+      border-color: var(--por-violet);
+      background: var(--por-violet-bg);
+      color: var(--por-violet-2);
+      outline: 0;
+    }
+
+    .ppn-octopus-reviews .por-cluster-link::after {
+      content: "\2192";
+      color: var(--por-violet);
+      font-size: 1.1rem;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .ppn-octopus-reviews .por-cluster-meter {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .ppn-octopus-reviews .por-track {
+      height: 10px;
+      border-radius: 9999px;
+      overflow: hidden;
+      background: #e7e2d8;
+      display: block;
+    }
+
+    .ppn-octopus-reviews .por-track i {
+      display: block;
+      height: 100%;
+      font-style: normal;
+      border-radius: inherit;
+    }
+
+    .ppn-octopus-reviews .por-track .fill-green {
+      background: var(--por-green)
+    }
+
+    .ppn-octopus-reviews .por-track .fill-orange {
+      background: var(--por-orange)
+    }
+
+    .ppn-octopus-reviews .por-track .fill-red {
+      background: var(--por-red)
+    }
+
+    .ppn-octopus-reviews .por-pts {
+      text-align: right;
+      color: var(--por-violet);
+      font-size: 1.15rem;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .ppn-octopus-reviews .por-pts small {
+      margin-left: 2px;
+      color: var(--por-muted);
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .ppn-octopus-reviews .por-final-value {
+      margin-top: 8px;
+      color: var(--por-violet);
+      font-size: 1.7rem;
+      line-height: 1;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+
+    .ppn-octopus-reviews .por-final-value small {
+      margin-left: 2px;
+      color: var(--por-muted);
+      font-size: .9rem;
+      font-weight: 800;
+    }
+
+    .ppn-octopus-reviews .por-d-method {
+      border-top: 1px solid var(--por-line-soft);
+      background: #fff;
+      padding: 0 24px 2px;
+    }
+
+    .ppn-octopus-reviews .por-d-method details {
+      border: 1px solid var(--por-line);
+      border-radius: 10px;
+      background: #fff;
+      overflow: hidden;
+      margin: 14px 0 10px;
+    }
+
+    .ppn-octopus-reviews .por-d-method summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 12px 14px;
+      color: var(--por-ink);
+      font-size: .86rem;
+      font-weight: 900;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ppn-octopus-reviews .por-d-method summary::-webkit-details-marker {
+      display: none
+    }
+
+    .ppn-octopus-reviews .por-d-method summary::after {
+      content: "+";
+      color: var(--por-violet-2);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .ppn-octopus-reviews .por-d-method details[open] summary {
+      border-bottom: 1px solid var(--por-line-soft);
+      background: #f8f7ff;
+    }
+
+    .ppn-octopus-reviews .por-d-method details[open] summary::after {
+      content: "-";
+    }
+
+    .ppn-octopus-reviews .por-d-method-body {
+      padding: 11px 14px 14px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .ppn-octopus-reviews .por-d-method-body p {
+      margin: 0;
+      color: var(--por-ink-2);
+      font-size: .84rem;
+      line-height: 1.48;
+    }
+
+    .ppn-octopus-reviews .por-compare-wrap {
+      padding: 12px 30px 24px;
+      border-top: 1px solid var(--por-line-soft);
+      background: linear-gradient(180deg, #fff 0%, #fcfbf8 100%);
+    }
+
+    /* COMPARE box */
+    .ppn-octopus-reviews .por-compare-box {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .ppn-octopus-reviews .por-compare-title {
+      margin: 0 0 10px;
+      color: var(--por-ink);
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .ppn-octopus-reviews .por-reset {
+      padding: 11px 22px;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: .92rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background .15s, border-color .15s, color .15s;
+      border: 1px solid var(--por-line);
+      background: var(--por-card);
+      color: var(--por-ink);
+    }
+
+    .ppn-octopus-reviews .por-reset:hover {
+      background: var(--por-paper);
+      border-color: var(--por-soft);
+    }
+
+    .ppn-octopus-reviews .por-compare-lead {
+      margin: 0 0 12px;
+      color: var(--por-muted);
+      font-size: .96rem;
+      line-height: 1.55;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* PROVIDER CAROUSEL */
+    .ppn-octopus-reviews .por-track-mask {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    .ppn-octopus-reviews .por-provider-track {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 10px;
+      width: max-content;
+      animation: por-marquee 60s linear infinite;
+      will-change: transform;
+    }
+
+    .ppn-octopus-reviews .por-provider-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes por-marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 5px));
+      }
+    }
+
+    .ppn-octopus-reviews .por-provider {
+      flex: 0 0 136px;
+      min-height: 92px;
+      border: 1px solid var(--por-line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--por-ink-2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 8px 7px;
+      font-family: inherit;
+      font-size: .78rem;
+      line-height: 1.2;
+      font-weight: 900;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color .16s, box-shadow .16s, background .16s;
+    }
+
+    .ppn-octopus-reviews .por-provider-name {
+      display: block;
+      min-width: 0;
+    }
+
+    .ppn-octopus-reviews .por-provider:hover,
+    .ppn-octopus-reviews .por-provider:focus-visible {
+      outline: 0;
+      border-color: var(--por-violet);
+      box-shadow: 0 0 0 2px rgba(90, 82, 255, .14);
+      background: #f8f7ff;
+    }
+
+    .ppn-octopus-reviews .por-provider.is-selected {
+      border-color: var(--por-violet);
+      background: var(--por-violet-bg);
+      box-shadow: inset 0 0 0 1px rgba(90, 82, 255, .25);
+    }
+
+    .ppn-octopus-reviews .por-provider-logo {
+      width: 72px;
+      height: 30px;
+      border-radius: 8px;
+      border: 1px solid var(--por-line-soft);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 7px;
+    }
+
+    .ppn-octopus-reviews .por-provider-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* BADGE fallback */
+    .ppn-octopus-reviews .por-provider-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: .82rem;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 0;
+      letter-spacing: 0;
+      font-family: inherit;
+    }
+
+    .ppn-octopus-reviews .p-octopus {
+      background: linear-gradient(135deg, #ff0080, #ff7eb3)
+    }
+
+    .ppn-octopus-reviews .p-enel {
+      background: linear-gradient(135deg, #1f74ff, #5ea0ff)
+    }
+
+    .ppn-octopus-reviews .p-a2a {
+      background: linear-gradient(135deg, #2d3546, #66778f)
+    }
+
+    .ppn-octopus-reviews .p-edison {
+      background: linear-gradient(135deg, #ff602f, #ff9d6d)
+    }
+
+    .ppn-octopus-reviews .p-plenitude {
+      background: linear-gradient(135deg, #ffbe12, #ffe17b);
+      color: #4a3900
+    }
+
+    .ppn-octopus-reviews .p-sorgenia {
+      background: linear-gradient(135deg, #eb3f52, #ff7d61)
+    }
+
+    .ppn-octopus-reviews .p-eon {
+      background: linear-gradient(135deg, #1f74ff, #5ea0ff)
+    }
+
+    .ppn-octopus-reviews .p-pulsee {
+      background: linear-gradient(135deg, #2d3546, #66778f)
+    }
+
+    .ppn-octopus-reviews .p-nen {
+      background: linear-gradient(135deg, #00a0df, #55d6ff)
+    }
+
+    .ppn-octopus-reviews .p-iren {
+      background: linear-gradient(135deg, #00a88d, #3ad7be)
+    }
+
+    .ppn-octopus-reviews .p-illumia {
+      background: linear-gradient(135deg, #8b5cf6, #b894ff)
+    }
+
+    .ppn-octopus-reviews .p-estra {
+      background: linear-gradient(135deg, #4056f3, #7f91ff)
+    }
+
+    .ppn-octopus-reviews .p-acea {
+      background: linear-gradient(135deg, #0066a4, #36a7e8)
+    }
+
+    .ppn-octopus-reviews .p-hera {
+      background: linear-gradient(135deg, #f28c28, #ffc15a);
+      color: #3f2500
+    }
+
+    .ppn-octopus-reviews .p-dolomiti {
+      background: linear-gradient(135deg, #00a3e0, #6bd4ff)
+    }
+
+    .ppn-octopus-reviews .por-compare-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .ppn-octopus-reviews .por-empty {
+      display: none;
+      margin: 16px 0 0;
+      color: var(--por-muted);
+      font-size: .86rem;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .ppn-octopus-reviews .por-empty.is-open {
+      display: block
+    }
+
+    /* RESULTS */
+    .ppn-octopus-reviews .por-results {
+      margin-top: 24px;
+      display: none;
+      gap: 14px;
+    }
+
+    .ppn-octopus-reviews .por-results.is-open {
+      display: grid
+    }
+
+    .ppn-octopus-reviews .por-vs-card {
+      border: 1px solid var(--por-line);
+      border-radius: 10px;
+      background: var(--por-violet-bg);
+      padding: 16px;
+    }
+
+    .ppn-octopus-reviews .por-vs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .ppn-octopus-reviews .por-vs-grid[data-layout="three"] {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ppn-octopus-reviews .por-vs-grid[data-layout="three"] .por-side-oct,
+    .ppn-octopus-reviews .por-vs-grid[data-layout="five"] .por-side-oct {
+      grid-column: 1 / -1;
+    }
+
+    .ppn-octopus-reviews .por-vs-grid[data-layout="four"] {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .ppn-octopus-reviews .por-vs-grid[data-layout="five"] {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .ppn-octopus-reviews .por-side {
+      border: 1px solid var(--por-line);
+      border-radius: 10px;
+      background: #fff;
+      padding: 14px 10px;
+      text-align: center;
+      display: grid;
+      gap: 6px;
+      justify-items: center;
+      min-width: 0;
+    }
+
+    .ppn-octopus-reviews .por-side .por-provider-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      font-size: .7rem;
+    }
+
+    .ppn-octopus-reviews .por-side .por-provider-logo {
+      width: 66px;
+      height: 30px;
+      border-radius: 7px;
+      padding: 3px 6px;
+    }
+
+    .ppn-octopus-reviews .por-side b {
+      display: block;
+      color: var(--por-violet);
+      font-size: 2rem;
+      line-height: .9;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ppn-octopus-reviews .por-side b small {
+      color: var(--por-muted);
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .ppn-octopus-reviews .por-side .por-side-label {
+      display: block;
+      color: var(--por-muted);
+      font-size: .72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .ppn-octopus-reviews .por-vs-grid[data-layout="three"] .por-side-oct b,
+    .ppn-octopus-reviews .por-vs-grid[data-layout="five"] .por-side-oct b {
+      font-size: 2.4rem;
+    }
+
+    .ppn-octopus-reviews .por-cat-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ppn-octopus-reviews .por-cat-button {
+      border: 1px solid var(--por-line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--por-ink-2);
+      min-height: 38px;
+      padding: 8px 12px;
+      font-family: inherit;
+      font-size: .78rem;
+      line-height: 1.2;
+      font-weight: 900;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .ppn-octopus-reviews .por-cta {
+      margin-top: 26px;
+    }
+
+    .ppn-octopus-reviews .por-cat-button:hover,
+    .ppn-octopus-reviews .por-cat-button:focus-visible,
+    .ppn-octopus-reviews .por-cat-button.is-active {
+      outline: 0;
+      border-color: var(--por-violet);
+      color: var(--por-violet-2);
+      background: var(--por-violet-bg);
+    }
+
+    .ppn-octopus-reviews .por-bars-card {
+      border: 1px solid var(--por-line);
+      border-radius: 10px;
+      background: var(--por-violet-bg);
+      padding: 18px;
+    }
+
+    .ppn-octopus-reviews .por-bars-title {
+      margin: 0 0 12px;
+      color: var(--por-ink);
+      font-size: .9rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .ppn-octopus-reviews .por-bars {
+      display: grid;
+      gap: 10px;
+    }
+
+    .ppn-octopus-reviews .por-bar-row {
+      display: grid;
+      grid-template-columns: minmax(120px, .7fr) minmax(160px, 1fr) 70px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .ppn-octopus-reviews .por-bar-name {
+      min-width: 0;
+      color: var(--por-ink-2);
+      font-size: .86rem;
+      font-weight: 900;
+    }
+
+    .ppn-octopus-reviews .por-bar-value {
+      color: var(--por-ink);
+      font-size: .92rem;
+      font-weight: 900;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .ppn-octopus-reviews .por-bar-value small {
+      margin-left: 2px;
+      color: var(--por-muted);
+      font-size: .74rem;
+      font-weight: 800;
+    }
+
+    /* MOBILE shell */
+    .ppn-octopus-reviews .por-mobile-shell {
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+      display: grid;
+      gap: 14px;
+      color: var(--por-ink-2);
+    }
+
+    .ppn-octopus-reviews .por-m-card {
+      border: 1px solid var(--por-line-soft);
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(22, 24, 33, .08);
+      overflow: hidden;
+    }
+
+    .ppn-octopus-reviews .por-m-core {
+      background: #f7f7f9;
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .ppn-octopus-reviews .por-m-score {
+      border: 1px solid var(--por-line-soft);
+      border-radius: 10px;
+      background: var(--por-violet-bg);
+      padding: 10px 12px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .ppn-octopus-reviews .por-m-overall-box {
+      border: 1px solid var(--por-line-soft);
+      border-radius: 8px;
+      background: #fff;
+      padding: 8px 9px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .ppn-octopus-reviews .por-m-side-left {
+      display: grid;
+      gap: 6px;
+      align-content: center;
+      justify-items: start;
+    }
+
+    .ppn-octopus-reviews .por-m-brand-head {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 0;
+    }
+
+    .ppn-octopus-reviews .por-m-brand-logo {
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--por-line-soft);
+      border-radius: 10px;
+      background: #fff;
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    .ppn-octopus-reviews .por-m-brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      transform: translateY(1px);
+      display: block;
+    }
+
+    .ppn-octopus-reviews .por-m-brand-name {
+      color: var(--por-ink);
+      font-size: .96rem;
+      line-height: 1.1;
+      font-weight: 900;
+      letter-spacing: .01em;
+      display: block;
+      white-space: normal;
+      max-width: 74px;
+    }
+
+    .ppn-octopus-reviews .por-m-score small {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--por-muted);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .ppn-octopus-reviews .por-m-score small::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--por-green);
+      box-shadow: 0 0 0 5px rgba(0, 188, 125, .16);
+    }
+
+    .ppn-octopus-reviews .por-m-overall-box b {
+      display: block;
+      margin-top: 5px;
+      color: var(--por-violet);
+      font-size: 40px;
+      line-height: .9;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ppn-octopus-reviews .por-m-overall-box b span {
+      color: var(--por-muted);
+      font-size: 17px;
+    }
+
+    .ppn-octopus-reviews .por-m-score-note {
+      margin-top: 5px;
+      color: var(--por-muted);
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .ppn-octopus-reviews .por-m-rank {
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: var(--por-muted);
+      padding: 2px 0;
+      font-size: 11px;
+      line-height: 1.25;
+      font-weight: 800;
+      justify-self: start;
+      align-self: center;
+      max-width: 124px;
+      text-align: left;
+    }
+
+    .ppn-octopus-reviews .por-m-rank strong {
+      display: block;
+      color: var(--por-ink);
+      font-size: 12px;
+    }
+
+    .ppn-octopus-reviews .por-m-rank .por-m-rank-n {
+      color: var(--por-violet);
+      font-size: 24px;
+      line-height: .9;
+      font-weight: 900;
+    }
+
+    .ppn-octopus-reviews .por-m-clusters {
+      display: grid;
+      gap: 8px;
+    }
+
+    .ppn-octopus-reviews .por-m-tab {
+      min-height: 52px;
+      border: 1px solid var(--por-line-soft);
+      border-radius: 8px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      padding: 9px 10px;
+    }
+
+    .ppn-octopus-reviews .por-m-tab-main {
+      width: 100%;
+      display: grid;
+      gap: 7px;
+    }
+
+    .ppn-octopus-reviews .por-m-txt {
+      color: var(--por-ink-2);
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .ppn-octopus-reviews .por-m-impact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ppn-octopus-reviews .por-m-impact {
+      width: 74%;
+      height: 6px;
+      border-radius: 999px;
+      background: #ece9e3;
+      overflow: hidden;
+    }
+
+    .ppn-octopus-reviews .por-m-impact i {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+    }
+
+    .ppn-octopus-reviews .por-m-impact .is-green {
+      background: var(--por-green)
+    }
+
+    .ppn-octopus-reviews .por-m-impact .is-orange {
+      background: var(--por-orange)
+    }
+
+    .ppn-octopus-reviews .por-m-impact .is-red {
+      background: var(--por-red)
+    }
+
+    .ppn-octopus-reviews .por-m-rate {
+      white-space: nowrap;
+      color: var(--por-ink);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .ppn-octopus-reviews .por-m-rate b {
+      color: var(--por-violet);
+      font-size: 18px;
+      line-height: .9;
+    }
+
+    .ppn-octopus-reviews .por-m-rate small {
+      color: var(--por-muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .ppn-octopus-reviews .por-m-method {
+      border: 1px solid var(--por-line-soft);
+      border-radius: 10px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .ppn-octopus-reviews .por-m-method>summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 11px 12px;
+      color: var(--por-ink);
+      font-size: 12px;
+      font-weight: 900;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .ppn-octopus-reviews .por-m-method>summary::-webkit-details-marker {
+      display: none
+    }
+
+    .ppn-octopus-reviews .por-m-method>summary::after {
+      content: "+";
+      color: var(--por-violet-2);
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .ppn-octopus-reviews .por-m-method[open]>summary {
+      border-bottom: 1px solid var(--por-line-soft);
+      background: #f8f7ff;
+    }
+
+    .ppn-octopus-reviews .por-m-method[open]>summary::after {
+      content: "-"
+    }
+
+    .ppn-octopus-reviews .por-m-method-body {
+      padding: 10px 12px 12px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .ppn-octopus-reviews .por-m-method-body p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    /* responsive */
+    @media (max-width:900px) {
+      .ppn-octopus-reviews .por-hero-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .ppn-octopus-reviews .por-vs-grid[data-layout="four"],
+      .ppn-octopus-reviews .por-vs-grid[data-layout="five"] {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .ppn-octopus-reviews .por-vs-grid[data-layout="five"] .por-side-oct {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width:640px) {
+      .ppn-octopus-reviews {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        overflow-x: hidden !important;
+      }
+
+      .ppn-octopus-reviews .por-header {
+        display: none
+      }
+
+      .ppn-octopus-reviews .por-mobile-copy {
+        display: block
+      }
+
+      .ppn-octopus-reviews .por-mobile-only {
+        display: block
+      }
+
+      .ppn-octopus-reviews .por-card {
+        margin-top: 6px;
+        margin-bottom: 0;
+      }
+
+      .ppn-octopus-reviews .por-card>.por-hero,
+      .ppn-octopus-reviews .por-card>.por-clusters-wrap,
+      .ppn-octopus-reviews .por-card>.por-d-method {
+        display: none
+      }
+
+      .ppn-octopus-reviews .por-compare-wrap {
+        border-top: 0;
+        padding: 15px 12px 14px;
+      }
+
+      .ppn-octopus-reviews .por-compare-box {
+        padding: 0;
+      }
+
+      .ppn-octopus-reviews .por-compare-title {
+        font-size: 1.2rem;
+      }
+
+      .ppn-octopus-reviews .por-compare-lead {
+        font-size: .9rem;
+      }
+
+      .ppn-octopus-reviews .por-track-mask {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+      }
+
+      .ppn-octopus-reviews .por-track-mask::-webkit-scrollbar {
+        display: none
+      }
+
+      .ppn-octopus-reviews .por-provider-track {
+        animation: none !important;
+        transform: none !important;
+        width: max-content;
+        gap: 8px;
+      }
+
+      .ppn-octopus-reviews .por-provider[data-duplicate] {
+        display: none
+      }
+
+      .ppn-octopus-reviews .por-provider {
+        flex: 0 0 82px;
+        min-height: 94px;
+        padding: 8px 6px;
+        font-size: 10px;
+        scroll-snap-align: start;
+      }
+
+      .ppn-octopus-reviews .por-provider-logo {
+        width: 58px;
+        height: 30px;
+        border-radius: 7px;
+        padding: 3px 5px;
+      }
+
+      .ppn-octopus-reviews .por-provider-badge {
+        width: 38px;
+        height: 38px;
+        font-size: .72rem;
+      }
+
+      .ppn-octopus-reviews .por-side b {
+        font-size: 1.6rem
+      }
+
+      .ppn-octopus-reviews .por-bar-row {
+        grid-template-columns: minmax(0, 90px) minmax(0, 1fr) auto;
+        gap: 8px;
+      }
+
+      .ppn-octopus-reviews .por-bar-name {
+        font-size: 11px
+      }
+
+      .ppn-octopus-reviews .por-bar-value {
+        font-size: .85rem
+      }
+
+      .ppn-octopus-reviews .por-cat-button {
+        min-height: 34px;
+        font-size: 11px;
+        padding: 6px 10px;
+      }
+
+      .ppn-octopus-reviews .por-cat-tabs {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .ppn-octopus-reviews .por-cat-tabs::-webkit-scrollbar {
+        display: none
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ppn-octopus-reviews .por-provider-track {
+        animation: none;
+      }
+    }
+
+    .ppn-octopus-reviews {
+      box-sizing: border-box;
+      max-width: 100%;
+      overflow-x: hidden
+    }
+
+    .ppn-octopus-reviews .por-compare-box {
+      max-width: 100%;
+      overflow: hidden
+    }
+
+    .ppn-octopus-reviews .por-track-mask {
+      contain: paint
+    }
+  </style>
+
+
+  <!-- MOBILE HERO + CLUSTERS -->
+  <section class="por-mobile-only" aria-label="Octopus Energy recensioni mobile">
+    <div class="por-mobile-shell">
+      <article class="por-m-card">
+        <div class="por-m-core">
+          <article class="por-m-score">
+            <div class="por-m-side-left">
+              <span class="por-m-brand-head" aria-label="Octopus Energy">
+                <span class="por-m-brand-logo"><img
+                    src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/img-src-8-1.png"
+                    alt="Logo Octopus Energy" loading="lazy"></span>
+                <span class="por-m-brand-name">Octopus Energy</span>
+              </span>
+              <div class="por-m-rank"><strong><span class="por-m-rank-n">#1</span> di 17 fornitori nel
+                  confronto</strong></div>
+            </div>
+            <div class="por-m-overall-box">
+              <small>Voto complessivo</small>
+              <b>8,2<span>/10</span></b>
+              <p class="por-m-score-note">176 commenti analizzati</p>
+            </div>
+          </article>
+
+          <nav class="por-m-clusters">
+            <a class="por-m-tab" href="#cluster-tariffe-risparmio"><span class="por-m-tab-main"><span class="por-m-txt">Tariffe e risparmio</span><span class="por-m-impact-row"><span class="por-m-impact"><i class="is-green" style="width:84%"></i></span><span class="por-m-rate"><b>8,4</b><small>/10</small></span></span></span></a><a class="por-m-tab" href="#cluster-assistenza-cambio-tariffa"><span class="por-m-tab-main"><span class="por-m-txt">Assistenza e cambio tariffa</span><span class="por-m-impact-row"><span class="por-m-impact"><i class="is-green" style="width:85%"></i></span><span class="por-m-rate"><b>8,5</b><small>/10</small></span></span></span></a><a class="por-m-tab" href="#cluster-app-bolletta-digitale"><span class="por-m-tab-main"><span class="por-m-txt">App, bolletta e digitale</span><span class="por-m-impact-row"><span class="por-m-impact"><i class="is-green" style="width:77%"></i></span><span class="por-m-rate"><b>7,7</b><small>/10</small></span></span></span></a><a class="por-m-tab" href="#cluster-attivazione-cambio-fornitore"><span class="por-m-tab-main"><span class="por-m-txt">Attivazione e cambio fornitore</span><span class="por-m-impact-row"><span class="por-m-impact"><i class="is-green" style="width:79%"></i></span><span class="por-m-rate"><b>7,9</b><small>/10</small></span></span></span></a><a class="por-m-tab" href="#cluster-trasparenza-brand-reputazione"><span class="por-m-tab-main"><span class="por-m-txt">Reputazione e trasparenza</span><span class="por-m-impact-row"><span class="por-m-impact"><i class="is-green" style="width:80%"></i></span><span class="por-m-rate"><b>8,0</b><small>/10</small></span></span></span></a>
+          </nav>
+
+          <details class="por-m-method">
+            <summary>Come calcoliamo il punteggio</summary>
+            <div class="por-m-method-body">
+
+              <p><b>Base dell’analisi:</b> prima della pubblicazione definiamo un campione editoriale dichiarato di
+                <b>176 commenti analizzati</b>. Questo numero serve a raccontare la dimensione della lettura in pagina;
+                il calcolo tecnico, invece, usa solo i commenti validi presenti negli export di analisi.</p>
+
+              <p><b>Classificazione:</b> ogni commento viene assegnato a una categoria principale tra tariffe,
+                assistenza, digitale, attivazione e reputazione. Quando utile, può avere anche una categoria secondaria
+                per gestire sezioni con pochi commenti senza duplicare la stessa citazione in più H2.</p>
+
+              <p><b>Tono del commento:</b> a ogni commento valido assegniamo un valore <b>s_i</b> su scala <b>-1 /
+                  +1</b>. Valori negativi indicano esperienze critiche, valori vicini allo zero indicano segnali misti o
+                informativi, valori positivi indicano soddisfazione esplicita verso il fornitore.</p>
+
+              <p><b>Qualità del commento:</b> il coefficiente <b>q_i</b> misura quanto il commento è utile per valutare
+                il servizio. È la media di quattro dimensioni: esperienza diretta, specificità, chiarezza del
+                riferimento al fornitore e utilità decisionale.</p>
+
+              <p><b>Peso operativo:</b> qualità e recenza entrano nel peso del commento con la formula <b>w_i = 0,35 +
+                  0,45 × q_i + 0,20 × r_i</b>. In questo modo i commenti più concreti e più recenti incidono di più,
+                senza eliminare del tutto le recensioni meno dettagliate.</p>
+
+              <p><b>Media del tono per categoria:</b> per ogni categoria calcoliamo <b>μ_k = Σ(w_i × s_i) / Σw_i</b>.
+                Questo valore sintetizza il tono medio dei commenti della categoria, pesando di più le recensioni più
+                informative.</p>
+
+              <p><b>Trasformazione in voto:</b> il segnale della categoria viene trasformato in bonus con
+                <b>Bonus_k_grezzo = 2,5 + 2,5 × μ_k</b>. Poi applichiamo una correzione di robustezza <b>λ_k = n_k /
+                  (n_k + 10)</b>, così una categoria con pochi commenti non viene sovrastimata o penalizzata in modo
+                eccessivo.</p>
+
+              <p><b>Voto della categoria:</b> il valore corretto è <b>Bonus_k = λ_k × Bonus_k_grezzo + (1 - λ_k) ×
+                  2,5</b>. Da qui otteniamo il voto della categoria su 10, indicato nella formula come <b>V_k</b> e
+                usato nelle barre dell’introduzione e del corpo pagina.</p>
+
+              <p><b>Voto complessivo:</b> il voto finale è una media pesata delle cinque categorie: <b>V_finale = Σ α_k
+                  × V_k</b>. Tariffe e assistenza pesano ciascuna <b>30%</b>, app e attivazione <b>15%</b> ciascuna,
+                reputazione e trasparenza <b>10%</b>.</p>
+
+              <p><b>Colori delle barre:</b> il <b>verde</b> indica un voto pari o superiore a 7,5, l’<b>arancione</b>
+                un’area intermedia da 6,2 a 7,4 e il <b>rosso</b> un’area sotto 6,2.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- DESKTOP HERO + CLUSTERS + COMPARE -->
+  <section class="por-card" aria-label="Scheda recensioni Octopus Energy">
+    <div class="por-hero">
+      <div class="por-brand-head" aria-label="Octopus Energy">
+        <span class="por-brand-logo"><img
+            src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/img-src-8-1.png"
+            alt="Logo Octopus Energy" loading="lazy"></span>
+        <span class="por-brand-name">Octopus Energy</span>
+      </div>
+      <div class="por-hero-row">
+        <div>
+          <div class="por-score">8,2<small>/10</small></div>
+          <div class="por-score-meta">176 commenti analizzati</div>
+        </div>
+        <div class="por-rank" aria-label="Posizionamento Octopus Energy">
+          <div class="por-rank-pos">#1<small>di 17 fornitori nel confronto</small></div>
+          <div class="por-rank-meta">Octopus Energy guida il confronto grazie ai segnali forti su assistenza, cambio
+            tariffa e convenienza. Il dato resta da leggere insieme ai commenti: digitale e attivazione mostrano segnali
+            positivi, ma meno esperienze operative dettagliate.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="por-clusters-wrap">
+      <div class="por-clusters-title"><strong>Categorie individuate</strong></div>
+      <div class="por-list">
+        <div class="por-cluster-row">
+          <a class="por-cluster-box por-cluster-link" href="#cluster-tariffe-risparmio">Tariffe e risparmio</a>
+          <div class="por-cluster-box por-cluster-meter">
+            <div class="por-track" aria-label="Voto 8,4 su 10"><i class="fill-green" style="width:84%"></i></div>
+            <div class="por-pts">8,4<small>/10</small></div>
+          </div>
+        </div>
+        <div class="por-cluster-row">
+          <a class="por-cluster-box por-cluster-link" href="#cluster-assistenza-cambio-tariffa">Assistenza e cambio tariffa</a>
+          <div class="por-cluster-box por-cluster-meter">
+            <div class="por-track" aria-label="Voto 8,5 su 10"><i class="fill-green" style="width:85%"></i></div>
+            <div class="por-pts">8,5<small>/10</small></div>
+          </div>
+        </div>
+        <div class="por-cluster-row">
+          <a class="por-cluster-box por-cluster-link" href="#cluster-app-bolletta-digitale">App, bolletta e digitale</a>
+          <div class="por-cluster-box por-cluster-meter">
+            <div class="por-track" aria-label="Voto 7,7 su 10"><i class="fill-green" style="width:77%"></i></div>
+            <div class="por-pts">7,7<small>/10</small></div>
+          </div>
+        </div>
+        <div class="por-cluster-row">
+          <a class="por-cluster-box por-cluster-link" href="#cluster-attivazione-cambio-fornitore">Attivazione e cambio fornitore</a>
+          <div class="por-cluster-box por-cluster-meter">
+            <div class="por-track" aria-label="Voto 7,9 su 10"><i class="fill-green" style="width:79%"></i></div>
+            <div class="por-pts">7,9<small>/10</small></div>
+          </div>
+        </div>
+        <div class="por-cluster-row">
+          <a class="por-cluster-box por-cluster-link" href="#cluster-trasparenza-brand-reputazione">Reputazione e trasparenza</a>
+          <div class="por-cluster-box por-cluster-meter">
+            <div class="por-track" aria-label="Voto 8,0 su 10"><i class="fill-green" style="width:80%"></i></div>
+            <div class="por-pts">8,0<small>/10</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="por-final-value" aria-label="Voto finale pesato 8,2 su 10">8,2<small>/10</small></div>
+    </div>
+
+    <div class="por-d-method">
+      <details>
+        <summary>Come calcoliamo il punteggio</summary>
+        <div class="por-m-method-body">
+
+          <p><b>Base dell’analisi:</b> prima della pubblicazione definiamo un campione editoriale dichiarato di <b>176
+              commenti analizzati</b>. Questo numero serve a raccontare la dimensione della lettura in pagina; il
+            calcolo tecnico, invece, usa solo i commenti validi presenti negli export di analisi.</p>
+
+          <p><b>Classificazione:</b> ogni commento viene assegnato a una categoria principale tra tariffe, assistenza,
+            digitale, attivazione e reputazione. Quando utile, può avere anche una categoria secondaria per gestire
+            sezioni con pochi commenti senza duplicare la stessa citazione in più H2.</p>
+
+          <p><b>Tono del commento:</b> a ogni commento valido assegniamo un valore <b>s_i</b> su scala <b>-1 / +1</b>.
+            Valori negativi indicano esperienze critiche, valori vicini allo zero indicano segnali misti o informativi,
+            valori positivi indicano soddisfazione esplicita verso il fornitore.</p>
+
+          <p><b>Qualità del commento:</b> il coefficiente <b>q_i</b> misura quanto il commento è utile per valutare il
+            servizio. È la media di quattro dimensioni: esperienza diretta, specificità, chiarezza del riferimento al
+            fornitore e utilità decisionale.</p>
+
+          <p><b>Peso operativo:</b> qualità e recenza entrano nel peso del commento con la formula <b>w_i = 0,35 + 0,45
+              × q_i + 0,20 × r_i</b>. In questo modo i commenti più concreti e più recenti incidono di più, senza
+            eliminare del tutto le recensioni meno dettagliate.</p>
+
+          <p><b>Media del tono per categoria:</b> per ogni categoria calcoliamo <b>μ_k = Σ(w_i × s_i) / Σw_i</b>. Questo
+            valore sintetizza il tono medio dei commenti della categoria, pesando di più le recensioni più informative.
+          </p>
+
+          <p><b>Trasformazione in voto:</b> il segnale della categoria viene trasformato in bonus con <b>Bonus_k_grezzo
+              = 2,5 + 2,5 × μ_k</b>. Poi applichiamo una correzione di robustezza <b>λ_k = n_k / (n_k + 10)</b>, così
+            una categoria con pochi commenti non viene sovrastimata o penalizzata in modo eccessivo.</p>
+
+          <p><b>Voto della categoria:</b> il valore corretto è <b>Bonus_k = λ_k × Bonus_k_grezzo + (1 - λ_k) × 2,5</b>.
+            Da qui otteniamo il voto della categoria su 10, indicato nella formula come <b>V_k</b> e usato nelle barre
+            dell’introduzione e del corpo pagina.</p>
+
+          <p><b>Voto complessivo:</b> il voto finale è una media pesata delle cinque categorie: <b>V_finale = Σ α_k ×
+              V_k</b>. Tariffe e assistenza pesano ciascuna <b>30%</b>, app e attivazione <b>15%</b> ciascuna,
+            reputazione e trasparenza <b>10%</b>.</p>
+
+          <p><b>Colori delle barre:</b> il <b>verde</b> indica un voto pari o superiore a 7,5, l’<b>arancione</b>
+            un’area intermedia da 6,2 a 7,4 e il <b>rosso</b> un’area sotto 6,2.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="por-compare-wrap">
+      <p class="por-compare-title">Confronta ora le recensioni di Octopus Energy con quelle degli altri fornitori</p>
+      <div class="por-compare-box" aria-label="Confronto recensioni Octopus Energy vs altri fornitori" data-por-compare>
+        <p class="por-compare-lead">Seleziona fino a 4 fornitori e confronta il voto complessivo e le categorie
+          principali con Octopus Energy.</p>
+        <div class="por-track-mask">
+                    <div class="por-provider-track" data-por-track>
+
+<button type="button" class="por-provider" data-provider="dolomiti" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/36/2024/12/img-src-4.png" alt="Logo Dolomiti Energia" loading="lazy"></span><span class="por-provider-name">Dolomiti Energia</span></button>
+            <button type="button" class="por-provider" data-provider="engie" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/engie-seeklogo.svg" alt="Logo ENGIE" loading="lazy"></span><span class="por-provider-name">ENGIE</span></button>
+            <button type="button" class="por-provider" data-provider="sorgenia" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/04/sorgenia-imm.png" alt="Logo Sorgenia" loading="lazy"></span><span class="por-provider-name">Sorgenia</span></button>
+            <button type="button" class="por-provider" data-provider="eon" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/04/eon-immagine.jpg" alt="Logo E.ON" loading="lazy"></span><span class="por-provider-name">E.ON</span></button>
+            <button type="button" class="por-provider" data-provider="pulsee" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/pulsee-luce-e-gas-logo.png" alt="Logo Pulsee" loading="lazy"></span><span class="por-provider-name">Pulsee</span></button>
+            <button type="button" class="por-provider" data-provider="magis" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/04/images.png" alt="Logo MAGIS (ex AGSM)" loading="lazy"></span><span class="por-provider-name">MAGIS (ex AGSM)</span></button>
+            <button type="button" class="por-provider" data-provider="iren" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/08/logo_iren_2020.jpg" alt="Logo Iren" loading="lazy"></span><span class="por-provider-name">Iren</span></button>
+            <button type="button" class="por-provider" data-provider="illumia" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/img-src-5.png" alt="Logo Illumia" loading="lazy"></span><span class="por-provider-name">Illumia</span></button>
+            <button type="button" class="por-provider" data-provider="edison" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/06/logo-edison.jpg" alt="Logo Edison" loading="lazy"></span><span class="por-provider-name">Edison</span></button>
+            <button type="button" class="por-provider" data-provider="estra" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/estra_og_image.png" alt="Logo Estra" loading="lazy"></span><span class="por-provider-name">Estra</span></button>
+            <button type="button" class="por-provider" data-provider="nen" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/05/logo_nen_blu.png" alt="Logo NeN" loading="lazy"></span><span class="por-provider-name">NeN</span></button>
+            <button type="button" class="por-provider" data-provider="acea" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/05/acea_logo.svg.png" alt="Logo Acea" loading="lazy"></span><span class="por-provider-name">Acea</span></button>
+            <button type="button" class="por-provider" data-provider="a2a" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/01/1280px-a2a_unternehmen.svg_.png" alt="Logo A2A" loading="lazy"></span><span class="por-provider-name">A2A</span></button>
+            <button type="button" class="por-provider" data-provider="hera" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/hera-foto.jpg" alt="Logo Hera" loading="lazy"></span><span class="por-provider-name">Hera</span></button>
+            <button type="button" class="por-provider" data-provider="enel" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/01/enel.svg" alt="Logo Enel" loading="lazy"></span><span class="por-provider-name">Enel</span></button>
+            <button type="button" class="por-provider" data-provider="plenitude" aria-pressed="false"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/eni-plenitude-seeklogo.svg" alt="Logo Eni Plenitude" loading="lazy"></span><span class="por-provider-name">Eni Plenitude</span></button>
+            <button type="button" class="por-provider" data-provider="dolomiti" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/36/2024/12/img-src-4.png" alt="Logo Dolomiti Energia" loading="lazy"></span><span class="por-provider-name">Dolomiti Energia</span></button>
+            <button type="button" class="por-provider" data-provider="engie" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/engie-seeklogo.svg" alt="Logo ENGIE" loading="lazy"></span><span class="por-provider-name">ENGIE</span></button>
+            <button type="button" class="por-provider" data-provider="sorgenia" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/04/sorgenia-imm.png" alt="Logo Sorgenia" loading="lazy"></span><span class="por-provider-name">Sorgenia</span></button>
+            <button type="button" class="por-provider" data-provider="eon" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/04/eon-immagine.jpg" alt="Logo E.ON" loading="lazy"></span><span class="por-provider-name">E.ON</span></button>
+            <button type="button" class="por-provider" data-provider="pulsee" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/pulsee-luce-e-gas-logo.png" alt="Logo Pulsee" loading="lazy"></span><span class="por-provider-name">Pulsee</span></button>
+            <button type="button" class="por-provider" data-provider="magis" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/04/images.png" alt="Logo MAGIS (ex AGSM)" loading="lazy"></span><span class="por-provider-name">MAGIS (ex AGSM)</span></button>
+            <button type="button" class="por-provider" data-provider="iren" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/08/logo_iren_2020.jpg" alt="Logo Iren" loading="lazy"></span><span class="por-provider-name">Iren</span></button>
+            <button type="button" class="por-provider" data-provider="illumia" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/img-src-5.png" alt="Logo Illumia" loading="lazy"></span><span class="por-provider-name">Illumia</span></button>
+            <button type="button" class="por-provider" data-provider="edison" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/06/logo-edison.jpg" alt="Logo Edison" loading="lazy"></span><span class="por-provider-name">Edison</span></button>
+            <button type="button" class="por-provider" data-provider="estra" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/estra_og_image.png" alt="Logo Estra" loading="lazy"></span><span class="por-provider-name">Estra</span></button>
+            <button type="button" class="por-provider" data-provider="nen" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/05/logo_nen_blu.png" alt="Logo NeN" loading="lazy"></span><span class="por-provider-name">NeN</span></button>
+            <button type="button" class="por-provider" data-provider="acea" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/05/acea_logo.svg.png" alt="Logo Acea" loading="lazy"></span><span class="por-provider-name">Acea</span></button>
+            <button type="button" class="por-provider" data-provider="a2a" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/01/1280px-a2a_unternehmen.svg_.png" alt="Logo A2A" loading="lazy"></span><span class="por-provider-name">A2A</span></button>
+            <button type="button" class="por-provider" data-provider="hera" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/hera-foto.jpg" alt="Logo Hera" loading="lazy"></span><span class="por-provider-name">Hera</span></button>
+            <button type="button" class="por-provider" data-provider="enel" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/01/enel.svg" alt="Logo Enel" loading="lazy"></span><span class="por-provider-name">Enel</span></button>
+            <button type="button" class="por-provider" data-provider="plenitude" data-duplicate aria-hidden="true" tabindex="-1"><span class="por-provider-logo"><img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/eni-plenitude-seeklogo.svg" alt="Logo Eni Plenitude" loading="lazy"></span><span class="por-provider-name">Eni Plenitude</span></button>
+          </div>
+        </div>
+        <div class="por-compare-actions"><button type="button" class="por-reset" data-por-reset>Reset</button></div>
+        <p class="por-empty is-open" data-por-empty>Seleziona almeno un fornitore per vedere il confronto.</p>
+        <section class="por-results" data-por-results aria-live="polite">
+          <div class="por-vs-card">
+            <div class="por-vs-grid" data-por-vs-grid data-layout="two"></div>
+          </div>
+          <div class="por-cat-tabs" data-por-cat-tabs></div>
+          <div class="por-bars-card">
+            <h3 class="por-bars-title" data-por-bars-title>Tariffe e risparmio</h3>
+            <div class="por-bars" data-por-bars></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+<!-- CTA CLASSIFICA FORNITORI -->
+<style>
+  .pn-ranking-jump {
+    margin: 24px auto;
+    padding: 14px 16px;
+    border: 1px solid #dde2f7;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    box-shadow: 0 4px 18px rgba(33, 36, 49, .06);
+  }
+
+  .pn-ranking-jump-copy {
+    min-width: 0;
+  }
+
+  .pn-ranking-jump-title {
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .pn-ranking-jump-link {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 16px;
+    border-radius: 999px;
+    background: #5a52ff;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(90, 82, 255, .20);
+  }
+
+  .pn-ranking-jump-link:hover,
+  .pn-ranking-jump-link:focus-visible {
+    background: #4841dd;
+    color: #fff;
+    outline: 0;
+  }
+
+  @media (max-width: 640px) {
+    .pn-ranking-jump {
+      justify-content: center;
+      padding: 12px;
+      gap: 0;
+    }
+
+    .pn-ranking-jump-copy {
+      display: none;
+    }
+
+    .pn-ranking-jump-link {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="pn-ranking-jump">
+  <div class="pn-ranking-jump-copy">
+    <p class="pn-ranking-jump-title">Scopri dove si posiziona questo fornitore rispetto agli altri!</p>
+  </div>
+  <a class="pn-ranking-jump-link" href="https://www.papernest.it/luce-gas/compara/classifica-recensioni-fornitori/">
+    Classifica recensioni fornitori completa <span aria-hidden="true">&#8594;</span>
+  </a>
+</div>
+<!-- /CTA CLASSIFICA FORNITORI -->
+
+
+  <header class="por-header">
+    <p class="por-copy">Per capire l'impatto di Octopus Energy abbiamo analizzato <strong>176 commenti pubblicati
+        online</strong>, organizzandoli nei cinque temi chiave del servizio. Emerge il profilo di un operatore che
+      conquista la fiducia degli utenti soprattutto quando mette in campo <strong>tariffe competitive</strong>, un
+      <strong>supporto pratico</strong> via WhatsApp e un sistema di cambio offerta che semplifica la vita. L'app e le
+      fasi di attivazione portano a casa valutazioni positive, sebbene i commenti raccolti offrano meno spunti e
+      approfondimenti a riguardo.</p>
+  </header>
+
+  <!-- CTA -->
+  <div class="por-cta">
+    $IT_NRJ_CTA_fullwidth_general_nrj0$
+  </div>
+
+  <header class="por-mobile-copy">
+    <p class="por-copy">Per capire l'impatto di Octopus Energy abbiamo analizzato <strong>176 commenti pubblicati
+        online</strong>, organizzandoli nei cinque temi chiave del servizio. Emerge il profilo di un operatore che
+      conquista la fiducia degli utenti soprattutto quando mette in campo <strong>tariffe competitive</strong>, un
+      <strong>supporto pratico</strong> via WhatsApp e un sistema di cambio offerta che semplifica la vita. L'app e le
+      fasi di attivazione portano a casa valutazioni positive, sebbene i commenti raccolti offrano meno spunti e
+      approfondimenti a riguardo.</p>
+  </header>
+
+  <!-- ================== DATA ================== -->
+  <script type="application/json" id="por-data">
+
+{
+  "mainProvider": "octopus",
+  "categories": [
+    {
+      "id": "tariffe",
+      "name": "Tariffe e risparmio",
+      "short": "Tariffe"
+    },
+    {
+      "id": "assistenza",
+      "name": "Assistenza e cambio tariffa",
+      "short": "Assistenza"
+    },
+    {
+      "id": "app",
+      "name": "App, bolletta e digitale",
+      "short": "App"
+    },
+    {
+      "id": "attivazione",
+      "name": "Attivazione e cambio fornitore",
+      "short": "Attivazione"
+    },
+    {
+      "id": "reputazione",
+      "name": "Reputazione e trasparenza",
+      "short": "Reputazione"
+    }
+  ],
+  "providers": {
+    "octopus": {
+      "id": "octopus",
+      "label": "Octopus Energy",
+      "short": "OC",
+      "badge": "p-octopus",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/img-src-8-1.png",
+      "score": 8.19,
+      "cats": {
+        "tariffe": 8.38,
+        "assistenza": 8.46,
+        "app": 7.69,
+        "attivazione": 7.89,
+        "reputazione": 7.98
+      }
+    },
+    "dolomiti": {
+      "id": "dolomiti",
+      "label": "Dolomiti Energia",
+      "short": "DO",
+      "badge": "p-dolomiti",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/36/2024/12/img-src-4.png",
+      "score": 7.7,
+      "cats": {
+        "tariffe": 8.06,
+        "assistenza": 7.68,
+        "app": 7.68,
+        "attivazione": 7.13,
+        "reputazione": 7.6
+      }
+    },
+    "engie": {
+      "id": "engie",
+      "label": "ENGIE",
+      "short": "EG",
+      "badge": "p-engie",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/engie-seeklogo.svg",
+      "score": 7.61,
+      "cats": {
+        "tariffe": 7.84,
+        "assistenza": 7.31,
+        "app": 7.47,
+        "attivazione": 7.58,
+        "reputazione": 8.07
+      }
+    },
+    "sorgenia": {
+      "id": "sorgenia",
+      "label": "Sorgenia",
+      "short": "SO",
+      "badge": "p-sorgenia",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/04/sorgenia-imm.png",
+      "score": 7.49,
+      "cats": {
+        "tariffe": 7.34,
+        "assistenza": 7.42,
+        "app": 7.73,
+        "attivazione": 7.62,
+        "reputazione": 7.59
+      }
+    },
+    "eon": {
+      "id": "eon",
+      "label": "E.ON",
+      "short": "EO",
+      "badge": "p-eon",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/04/eon-immagine.jpg",
+      "score": 7.44,
+      "cats": {
+        "tariffe": 7.7,
+        "assistenza": 7.33,
+        "app": 7.33,
+        "attivazione": 7.16,
+        "reputazione": 7.61
+      }
+    },
+    "pulsee": {
+      "id": "pulsee",
+      "label": "Pulsee",
+      "short": "PU",
+      "badge": "p-pulsee",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/pulsee-luce-e-gas-logo.png",
+      "score": 7.44,
+      "cats": {
+        "tariffe": 7.34,
+        "assistenza": 7.63,
+        "app": 7.34,
+        "attivazione": 7.23,
+        "reputazione": 7.67
+      }
+    },
+    "magis": {
+      "id": "magis",
+      "label": "MAGIS (ex AGSM)",
+      "short": "MG",
+      "badge": "p-magis",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/04/images.png",
+      "score": 7.41,
+      "cats": {
+        "tariffe": 7.3,
+        "assistenza": 7.4,
+        "app": 7.47,
+        "attivazione": 7.31,
+        "reputazione": 7.86
+      }
+    },
+    "iren": {
+      "id": "iren",
+      "label": "Iren",
+      "short": "IR",
+      "badge": "p-iren",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/08/logo_iren_2020.jpg",
+      "score": 7.4,
+      "cats": {
+        "tariffe": 7.76,
+        "assistenza": 7.05,
+        "app": 7.37,
+        "attivazione": 7.25,
+        "reputazione": 7.58
+      }
+    },
+    "illumia": {
+      "id": "illumia",
+      "label": "Illumia",
+      "short": "IL",
+      "badge": "p-illumia",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/img-src-5.png",
+      "score": 7.4,
+      "cats": {
+        "tariffe": 7.65,
+        "assistenza": 7.17,
+        "app": 7.41,
+        "attivazione": 7.35,
+        "reputazione": 7.43
+      }
+    },
+    "edison": {
+      "id": "edison",
+      "label": "Edison",
+      "short": "ED",
+      "badge": "p-edison",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/06/logo-edison.jpg",
+      "score": 7.39,
+      "cats": {
+        "tariffe": 7.61,
+        "assistenza": 7.38,
+        "app": 7.17,
+        "attivazione": 7.19,
+        "reputazione": 7.41
+      }
+    },
+    "estra": {
+      "id": "estra",
+      "label": "Estra",
+      "short": "ES",
+      "badge": "p-estra",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/estra_og_image.png",
+      "score": 7.39,
+      "cats": {
+        "tariffe": 7.59,
+        "assistenza": 7.32,
+        "app": 7.18,
+        "attivazione": 7.31,
+        "reputazione": 7.38
+      }
+    },
+    "nen": {
+      "id": "nen",
+      "label": "NeN",
+      "short": "NN",
+      "badge": "p-nen",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/05/logo_nen_blu.png",
+      "score": 7.39,
+      "cats": {
+        "tariffe": 7.72,
+        "assistenza": 7.12,
+        "app": 7.55,
+        "attivazione": 7.23,
+        "reputazione": 7.18
+      }
+    },
+    "acea": {
+      "id": "acea",
+      "label": "Acea",
+      "short": "AC",
+      "badge": "p-acea",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/05/acea_logo.svg.png",
+      "score": 7.35,
+      "cats": {
+        "tariffe": 7.78,
+        "assistenza": 7.17,
+        "app": 7.25,
+        "attivazione": 6.87,
+        "reputazione": 7.44
+      }
+    },
+    "a2a": {
+      "id": "a2a",
+      "label": "A2A",
+      "short": "A2",
+      "badge": "p-a2a",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2026/01/1280px-a2a_unternehmen.svg_.png",
+      "score": 7.32,
+      "cats": {
+        "tariffe": 6.97,
+        "assistenza": 7.55,
+        "app": 7.31,
+        "attivazione": 7.6,
+        "reputazione": 7.21
+      }
+    },
+    "hera": {
+      "id": "hera",
+      "label": "Hera",
+      "short": "HE",
+      "badge": "p-hera",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/hera-foto.jpg",
+      "score": 7.21,
+      "cats": {
+        "tariffe": 6.8,
+        "assistenza": 7.73,
+        "app": 7.31,
+        "attivazione": 7.18,
+        "reputazione": 6.74
+      }
+    },
+    "enel": {
+      "id": "enel",
+      "label": "Enel",
+      "short": "EN",
+      "badge": "p-enel",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/01/enel.svg",
+      "score": 7.16,
+      "cats": {
+        "tariffe": 7.15,
+        "assistenza": 7.04,
+        "app": 7.62,
+        "attivazione": 7.23,
+        "reputazione": 6.72
+      }
+    },
+    "plenitude": {
+      "id": "plenitude",
+      "label": "Eni Plenitude",
+      "short": "PL",
+      "badge": "p-plenitude",
+      "logo": "https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2024/02/eni-plenitude-seeklogo.svg",
+      "score": 6.54,
+      "cats": {
+        "tariffe": 6.82,
+        "assistenza": 6.1,
+        "app": 6.93,
+        "attivazione": 6.31,
+        "reputazione": 6.82
+      }
+    }
+  }
+}
+  </script>
+
+
+  <!-- ================== CONTROLLER ================== -->
+  <script>
+    (function () {
+      var root = document.querySelector('.ppn-octopus-reviews[data-por-root]');
+      if (!root) return;
+      var data = JSON.parse(root.querySelector('#por-data').textContent);
+      var providers = data.providers;
+      var categories = data.categories;
+      var maxSelected = 4;
+      var activeCategory = categories[0].id;
+      var selected = [];
+
+      var box = root.querySelector('[data-por-compare]');
+      var track = root.querySelector('[data-por-track]');
+      var empty = root.querySelector('[data-por-empty]');
+      var results = root.querySelector('[data-por-results]');
+      var vsGrid = root.querySelector('[data-por-vs-grid]');
+      var catTabsEl = root.querySelector('[data-por-cat-tabs]');
+      var barsTitle = root.querySelector('[data-por-bars-title]');
+      var barsEl = root.querySelector('[data-por-bars]');
+
+      function escape(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+
+      function formatScore(value) {
+        return Number(value).toLocaleString('it-IT', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+      }
+
+      function scoreColor(value) {
+        var n = Number(value);
+        if (n >= 7.5) return 'fill-green';
+        if (n >= 6.2) return 'fill-orange';
+        return 'fill-red';
+      }
+
+      function closest(el, selector) {
+        while (el && el !== document) {
+          if (el.matches && el.matches(selector)) return el;
+          el = el.parentNode;
+        }
+        return null;
+      }
+
+      function badgeHtml(p) {
+        return '<span class="por-provider-badge ' + escape(p.badge) + '">' + escape(p.short) + '</span>';
+      }
+
+      function logoHtml(p) {
+        if (p.logo) return '<span class="por-provider-logo"><img src="' + escape(p.logo) + '" alt="Logo ' + escape(p.label) + '" loading="lazy"></span>';
+        return badgeHtml(p);
+      }
+
+      function sideHtml(p, isMain) {
+        return '<div class="por-side ' + (isMain ? 'por-side-oct' : '') + '">' + logoHtml(p) + '<b>' + formatScore(p.score) + '<small>/10</small></b><span class="por-side-label">' + escape(p.label) + '</span></div>';
+      }
+
+      function barRow(p, catId) {
+        var v = p.cats[catId];
+        if (v == null) return '';
+        var width = Math.max(0, Math.min(100, v * 10));
+        return '<div class="por-bar-row"><span class="por-bar-name">' + escape(p.label) + '</span><span class="por-track"><i class="' + scoreColor(v) + '" style="width:' + width + '%"></i></span><span class="por-bar-value">' + formatScore(v) + '<small>/10</small></span></div>';
+      }
+
+      function layoutFor(count) {
+        if (count <= 1) return 'two';
+        if (count === 2) return 'three';
+        if (count === 3) return 'four';
+        return 'five';
+      }
+
+      function render() {
+        var ids = selected.slice(0, maxSelected);
+        var activeCat = categories.filter(function (c) { return c.id === activeCategory; })[0] || categories[0];
+        Array.prototype.slice.call(box.querySelectorAll('[data-provider]')).forEach(function (button) {
+          var isSelected = ids.indexOf(button.getAttribute('data-provider')) !== -1;
+          button.classList.toggle('is-selected', isSelected);
+          if (!button.hasAttribute('data-duplicate')) button.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+        });
+        if (ids.length === 0) {
+          results.classList.remove('is-open');
+          if (empty) empty.classList.add('is-open');
+          return;
+        }
+        if (empty) empty.classList.remove('is-open');
+        results.classList.add('is-open');
+        vsGrid.setAttribute('data-layout', layoutFor(ids.length));
+        vsGrid.innerHTML = sideHtml(providers.octopus, true) + ids.map(function (id) { return sideHtml(providers[id], false); }).join('');
+        catTabsEl.innerHTML = categories.map(function (cat) {
+          return '<button type="button" class="por-cat-button" data-category="' + escape(cat.id) + '">' + escape(cat.short) + '</button>';
+        }).join('');
+        Array.prototype.slice.call(catTabsEl.querySelectorAll('[data-category]')).forEach(function (button) {
+          button.classList.toggle('is-active', button.getAttribute('data-category') === activeCategory);
+        });
+        if (barsTitle) barsTitle.textContent = activeCat.name;
+        barsEl.innerHTML = barRow(providers.octopus, activeCat.id) + ids.map(function (id) { return barRow(providers[id], activeCat.id); }).join('');
+      }
+
+      root.addEventListener('click', function (event) {
+        var providerEl = closest(event.target, '[data-provider]');
+        if (providerEl && root.contains(providerEl)) {
+          var id = providerEl.getAttribute('data-provider');
+          var index = selected.indexOf(id);
+          if (index !== -1) selected.splice(index, 1);
+          else if (selected.length < maxSelected) selected.push(id);
+          render();
+          return;
+        }
+        var catBtn = closest(event.target, '[data-category]');
+        if (catBtn && root.contains(catBtn)) {
+          activeCategory = catBtn.getAttribute('data-category');
+          render();
+          return;
+        }
+        if (closest(event.target, '[data-por-reset]')) {
+          selected = [];
+          activeCategory = categories[0].id;
+          render();
+        }
+      });
+
+      if (track) {
+        var resumeTimer = null;
+        function pauseTrack() {
+          track.style.animationPlayState = 'paused';
+          if (resumeTimer) { clearTimeout(resumeTimer); resumeTimer = null; }
+        }
+        function scheduleResume() {
+          if (resumeTimer) clearTimeout(resumeTimer);
+          resumeTimer = setTimeout(function () { track.style.animationPlayState = 'running'; resumeTimer = null; }, 2500);
+        }
+        track.addEventListener('pointerover', pauseTrack);
+        track.addEventListener('pointerdown', pauseTrack);
+        track.addEventListener('pointerleave', scheduleResume);
+      }
+      render();
+    })();
+  </script>
+
+</div>
+<!-- =================== END ppn-octopus-reviews =================== -->
+
+$IT_NRJ0_no_foto_menu_mobile$

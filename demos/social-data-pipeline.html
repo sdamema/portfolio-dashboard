@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pipeline raccolta commenti social</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #202329;
+      background: #f5f6f8;
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, sans-serif;
+      letter-spacing: 0;
+    }
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+    .hero,
+    .panel {
+      background: #fff;
+      border: 1px solid #d9dee5;
+      border-radius: 8px;
+      box-shadow: 0 12px 32px rgba(20, 24, 32, .08);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 24px;
+      padding: 28px;
+      margin-bottom: 18px;
+    }
+    h1, h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: 0;
+    }
+    h1 {
+      font-size: 2.4rem;
+      line-height: 1.02;
+    }
+    h2 {
+      font-size: 1.45rem;
+    }
+    p {
+      color: #434a54;
+      line-height: 1.58;
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #6a737d;
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .stat {
+      padding: 14px;
+      border: 1px solid #d9dee5;
+      border-radius: 8px;
+      background: #f7f9fb;
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+    }
+    .stat span {
+      display: block;
+      margin-top: 5px;
+      color: #68717d;
+      font-size: .75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .panel {
+      padding: 22px;
+    }
+    ol, ul {
+      margin: 14px 0 0;
+      padding-left: 20px;
+      color: #38404a;
+      line-height: 1.58;
+    }
+    li + li {
+      margin-top: 8px;
+    }
+    code {
+      display: block;
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid #d9dee5;
+      border-radius: 8px;
+      background: #151719;
+      color: #e9eef5;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .flow span {
+      display: block;
+      min-height: 82px;
+      padding: 14px;
+      border: 1px solid #d9dee5;
+      border-radius: 8px;
+      background: #fff7df;
+      font-weight: 800;
+    }
+    @media (max-width: 760px) {
+      main { padding: 14px; }
+      .hero, .grid, .flow { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Workspace scraping commenti social</p>
+        <h1>Da commenti grezzi a input puliti per pagine recensioni.</h1>
+        <p>Questa pagina riassume il flusso operativo usato per raccogliere, normalizzare e validare commenti social prima di passarli alla pipeline di clustering, sentiment e scoring.</p>
+      </div>
+      <div class="stats" aria-label="Riepilogo operativo">
+        <div class="stat"><strong>80</strong><span>CSV locali</span></div>
+        <div class="stat"><strong>5</strong><span>smoke output</span></div>
+        <div class="stat"><strong>11</strong><span>provider raw</span></div>
+        <div class="stat"><strong>1</strong><span>schema canonico</span></div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>Flusso operativo</h2>
+        <div class="flow">
+          <span>1. Target e fonti</span>
+          <span>2. Raccolta raw</span>
+          <span>3. Normalizzazione</span>
+          <span>4. Export reviews-ready</span>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Controlli qualita</h2>
+        <ul>
+          <li>Conservazione degli export grezzi separata dagli output normalizzati.</li>
+          <li>URL, autore, piattaforma e testo commento mantenuti come campi tracciabili.</li>
+          <li>Esclusione di referral, promozioni personali e commenti senza fonte verificabile.</li>
+          <li>Source log per query, limiti di raccolta e note di validazione.</li>
+        </ul>
+      </article>
+
+      <article class="panel">
+        <h2>Schema normalizzato</h2>
+        <p>I file puliti convergono in una struttura unica, pensata per alimentare clustering e sentiment senza riscrivere i commenti originali.</p>
+        <code>local_id, fornitore, commento, autore, platform, source, source_url, data, scraped_at, n, note</code>
+      </article>
+
+      <article class="panel">
+        <h2>Output per la pipeline recensioni</h2>
+        <ol>
+          <li>CSV raw archiviato per audit.</li>
+          <li>CSV normalizzato con schema completo.</li>
+          <li>CSV storico compatibile con reviews/data/raw.</li>
+          <li>Report di validazione prima dell'uso editoriale.</li>
+        </ol>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

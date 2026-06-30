@@ -1,0 +1,524 @@
+<style>
+.pn-offerta *,.pn-offerta *::before,.pn-offerta *::after{box-sizing:border-box}
+.pn-offerta{--pn-purple:#6C75F4;--pn-navy:#2B2B2B;--pn-teal:#00c5af;--pn-lime:#d9f247;--pn-bg:#FAFBFF;--pn-card-bg:#FFFFFF;--pn-lilac:#F8F9FF;--pn-lilac-alt:#F1F3FF;--pn-border:#DDE2F7;--pn-text:#2B2B2B;--pn-text-soft:#444;--pn-info-bg:#EAECF6;--pn-legal-bg:#EDE9FF;font-family:'Plus Jakarta Sans',sans-serif;color:var(--pn-text);line-height:1.5}
+.pn-offerta img,.pn-offerta svg{display:block;max-width:100%}
+.pn-toggle{position:fixed;opacity:0;pointer-events:none;width:0;height:0;top:-1px;left:-1px}
+
+/* Card */
+.pn-offerta .glass-orbit-card{background:var(--pn-card-bg);border:1px solid var(--pn-border);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);padding:32px;margin:20px 0 28px}
+.pn-offerta .card-central{display:flex;flex-wrap:wrap;gap:24px;margin-bottom:24px;align-items:center}
+.pn-offerta .card-central-left{flex:1 1 340px;min-width:0}
+.pn-offerta .card-central-right{flex:1 1 300px;min-width:0}
+
+/* Stima box */
+.pn-offerta .stima-box{display:flex;flex-direction:column;align-items:center;background:var(--pn-lilac);border:1px solid var(--pn-border);border-radius:10px;padding:24px 16px 20px;gap:0}
+.pn-offerta .stima-label{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--pn-text-soft);margin-bottom:16px}
+
+/* Orbital — 29% bigger */
+.pn-offerta .orbital-box{position:relative;width:284px;height:284px;flex-shrink:0}
+.pn-offerta .orbital-rings{position:absolute;inset:0;width:100%;height:100%;animation:pnSpinSlow 40s linear infinite}
+@keyframes pnSpinSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.pn-offerta .orbital-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:178px;height:178px;background:linear-gradient(135deg,#5a51ff 0%,#6C75F4 60%,#00c5af 100%);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 6px 28px rgba(90,81,255,0.35)}
+.pn-offerta .stima-num{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:2px}
+.pn-offerta .stima-num-value{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:34px;color:#fff;line-height:1;letter-spacing:-0.02em}
+.pn-offerta .stima-num-unit{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:rgba(255,255,255,0.85);font-weight:700;margin-top:3px}
+.pn-offerta .stima-desc-wrap{margin-top:16px;min-height:38px;display:flex;align-items:center;justify-content:center}
+.pn-offerta .stima-desc{display:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:var(--pn-text-soft);font-weight:600;line-height:1.45;text-align:center;max-width:200px}
+
+/* Selectors */
+.pn-offerta .selectors-area{display:flex;flex-direction:column;gap:14px;justify-content:center}
+.pn-offerta .selector-box{background:var(--pn-lilac);border:1px solid var(--pn-border);border-radius:8px;padding:14px 16px}
+.pn-offerta .selector-box-label{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--pn-text-soft);margin-bottom:9px;display:block}
+.pn-offerta .selector-pills{display:flex;gap:8px}
+.pn-offerta .selector-pills label{flex:1;display:block;text-align:center;padding:10px 12px;border-radius:5px;border:1px solid var(--pn-purple);background:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:var(--pn-purple);cursor:pointer;transition:background 0.2s,color 0.2s,border-color 0.2s;user-select:none;-webkit-user-select:none}
+.pn-offerta .selector-pills label:hover{background:#DFF7FF}
+.pn-offerta .selector-pills label:focus-within{outline:2px solid var(--pn-purple);outline-offset:2px}
+
+/* Slider consumo (pure CSS dots) */
+.pn-offerta .slider-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.pn-offerta .slider-cur-val{display:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px;color:var(--pn-purple);line-height:1;white-space:nowrap}
+.pn-offerta .slider-dots{display:flex;align-items:center;gap:0;position:relative;padding:10px 0;margin:4px 0 0}
+.pn-offerta .slider-dots-track{position:absolute;top:50%;left:8px;right:8px;height:3px;background:var(--pn-border);border-radius:2px;transform:translateY(-50%);z-index:0}
+.pn-offerta .slider-dot{position:relative;z-index:1;flex:1;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:8px 0;min-height:44px;-webkit-tap-highlight-color:transparent}
+.pn-offerta .slider-dot::after{content:'';display:block;width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid var(--pn-border);transition:background 0.15s,border-color 0.15s,transform 0.15s,box-shadow 0.15s}
+.pn-offerta .slider-dot:hover::after{border-color:var(--pn-purple);transform:scale(1.2)}
+.pn-offerta .slider-dot:focus-visible::after{outline:2px solid var(--pn-purple);outline-offset:2px}
+.pn-offerta .slider-range{display:flex;justify-content:space-between;margin-top:8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:600;color:var(--pn-text-soft)}
+.pn-offerta .slider-range-lbl{display:none}
+
+/* Card final */
+.pn-offerta .card-final{display:flex;flex-wrap:wrap;gap:20px;padding-top:22px;border-top:1px solid var(--pn-border)}
+.pn-offerta .prices-area{flex:1 1 400px;display:flex;flex-direction:column;gap:12px}
+.pn-offerta .prices-area-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--pn-text-soft)}
+.pn-offerta .price-view{display:none;flex-wrap:wrap;gap:8px}
+.pn-offerta .data-item{background:var(--pn-lilac);border:1px solid var(--pn-border);border-radius:8px;padding:12px 14px;transition:border-color 0.15s;flex:1 1 140px;min-width:120px}
+.pn-offerta .data-item:hover{border-color:var(--pn-purple)}
+.pn-offerta .data-item-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:700;color:var(--pn-text-soft);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px;display:block}
+.pn-offerta .data-item-value{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:17px;color:var(--pn-text);line-height:1}
+.pn-offerta .data-item-value.accent{color:var(--pn-purple)}
+.pn-offerta .data-item-value.teal{color:var(--pn-teal)}
+.pn-offerta .data-item-unit{font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:600;color:var(--pn-text-soft);margin-top:3px;display:block}
+.pn-offerta .price-disclaimer{font-size:11px;color:var(--pn-text-soft);font-style:italic;line-height:1.5}
+
+/* PDF box */
+.pn-offerta .pdf-box{flex:0 1 240px;background:var(--pn-lilac);border:1px solid var(--pn-border);border-radius:8px;padding:18px 16px;display:flex;flex-direction:column;gap:10px}
+.pn-offerta .pdf-box-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--pn-text)}
+.pn-offerta .pdf-box-desc{font-size:12px;color:var(--pn-text-soft);line-height:1.55;font-weight:500}
+.pn-offerta .pdf-links{display:flex;flex-direction:column;gap:8px}
+.pn-offerta .pdf-link{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--pn-text);font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;padding:8px 11px;background:#fff;border:1px solid var(--pn-border);border-radius:8px;transition:border-color 0.15s,color 0.15s,background 0.15s}
+.pn-offerta .pdf-link:hover{border-color:var(--pn-purple);color:var(--pn-purple)}
+.pn-offerta .pdf-link-icon{width:26px;height:26px;background:var(--pn-purple);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;line-height:1}
+
+/* STATE SELECTORS */
+
+/* Fuel pills active */
+#fuel-luce:checked ~ .pn-card-wrap .selector-pills label[for="fuel-luce"],
+#fuel-gas:checked ~ .pn-card-wrap .selector-pills label[for="fuel-gas"]{background:#6C75F4;border-color:#6C75F4;color:#fff}
+
+/* Tariff pills active — monoraria only, always active */
+#tariff-mono:checked ~ .pn-card-wrap .selector-pills label[for="tariff-mono"]{background:#00c5af;border-color:#00c5af;color:#fff}
+
+/* Slider range labels (luce vs gas) */
+#fuel-luce:checked ~ .pn-card-wrap .slider-range-lbl.luce{display:inline}
+#fuel-gas:checked ~ .pn-card-wrap .slider-range-lbl.gas{display:inline}
+
+/* Slider dots active state */
+#cons-1:checked ~ .pn-card-wrap .slider-dot.c1::after,
+#cons-2:checked ~ .pn-card-wrap .slider-dot.c2::after,
+#cons-3:checked ~ .pn-card-wrap .slider-dot.c3::after,
+#cons-4:checked ~ .pn-card-wrap .slider-dot.c4::after,
+#cons-5:checked ~ .pn-card-wrap .slider-dot.c5::after,
+#cons-6:checked ~ .pn-card-wrap .slider-dot.c6::after,
+#cons-7:checked ~ .pn-card-wrap .slider-dot.c7::after,
+#cons-8:checked ~ .pn-card-wrap .slider-dot.c8::after,
+#cons-9:checked ~ .pn-card-wrap .slider-dot.c9::after,
+#cons-10:checked ~ .pn-card-wrap .slider-dot.c10::after,
+#cons-11:checked ~ .pn-card-wrap .slider-dot.c11::after,
+#cons-12:checked ~ .pn-card-wrap .slider-dot.c12::after,
+#cons-13:checked ~ .pn-card-wrap .slider-dot.c13::after,
+#cons-14:checked ~ .pn-card-wrap .slider-dot.c14::after,
+#cons-15:checked ~ .pn-card-wrap .slider-dot.c15::after{background:var(--pn-purple);border-color:var(--pn-purple);transform:scale(1.35);box-shadow:0 0 0 3px rgba(108,117,244,0.18)}
+
+/* Current consumption value badge */
+#fuel-luce:checked ~ #cons-1:checked ~ .pn-card-wrap .slider-cur-val.luce.c1,
+#fuel-luce:checked ~ #cons-2:checked ~ .pn-card-wrap .slider-cur-val.luce.c2,
+#fuel-luce:checked ~ #cons-3:checked ~ .pn-card-wrap .slider-cur-val.luce.c3,
+#fuel-luce:checked ~ #cons-4:checked ~ .pn-card-wrap .slider-cur-val.luce.c4,
+#fuel-luce:checked ~ #cons-5:checked ~ .pn-card-wrap .slider-cur-val.luce.c5,
+#fuel-luce:checked ~ #cons-6:checked ~ .pn-card-wrap .slider-cur-val.luce.c6,
+#fuel-luce:checked ~ #cons-7:checked ~ .pn-card-wrap .slider-cur-val.luce.c7,
+#fuel-luce:checked ~ #cons-8:checked ~ .pn-card-wrap .slider-cur-val.luce.c8,
+#fuel-luce:checked ~ #cons-9:checked ~ .pn-card-wrap .slider-cur-val.luce.c9,
+#fuel-luce:checked ~ #cons-10:checked ~ .pn-card-wrap .slider-cur-val.luce.c10,
+#fuel-luce:checked ~ #cons-11:checked ~ .pn-card-wrap .slider-cur-val.luce.c11,
+#fuel-luce:checked ~ #cons-12:checked ~ .pn-card-wrap .slider-cur-val.luce.c12,
+#fuel-luce:checked ~ #cons-13:checked ~ .pn-card-wrap .slider-cur-val.luce.c13,
+#fuel-luce:checked ~ #cons-14:checked ~ .pn-card-wrap .slider-cur-val.luce.c14,
+#fuel-luce:checked ~ #cons-15:checked ~ .pn-card-wrap .slider-cur-val.luce.c15,
+#fuel-gas:checked ~ #cons-1:checked ~ .pn-card-wrap .slider-cur-val.gas.c1,
+#fuel-gas:checked ~ #cons-2:checked ~ .pn-card-wrap .slider-cur-val.gas.c2,
+#fuel-gas:checked ~ #cons-3:checked ~ .pn-card-wrap .slider-cur-val.gas.c3,
+#fuel-gas:checked ~ #cons-4:checked ~ .pn-card-wrap .slider-cur-val.gas.c4,
+#fuel-gas:checked ~ #cons-5:checked ~ .pn-card-wrap .slider-cur-val.gas.c5,
+#fuel-gas:checked ~ #cons-6:checked ~ .pn-card-wrap .slider-cur-val.gas.c6,
+#fuel-gas:checked ~ #cons-7:checked ~ .pn-card-wrap .slider-cur-val.gas.c7,
+#fuel-gas:checked ~ #cons-8:checked ~ .pn-card-wrap .slider-cur-val.gas.c8,
+#fuel-gas:checked ~ #cons-9:checked ~ .pn-card-wrap .slider-cur-val.gas.c9,
+#fuel-gas:checked ~ #cons-10:checked ~ .pn-card-wrap .slider-cur-val.gas.c10,
+#fuel-gas:checked ~ #cons-11:checked ~ .pn-card-wrap .slider-cur-val.gas.c11,
+#fuel-gas:checked ~ #cons-12:checked ~ .pn-card-wrap .slider-cur-val.gas.c12,
+#fuel-gas:checked ~ #cons-13:checked ~ .pn-card-wrap .slider-cur-val.gas.c13,
+#fuel-gas:checked ~ #cons-14:checked ~ .pn-card-wrap .slider-cur-val.gas.c14,
+#fuel-gas:checked ~ #cons-15:checked ~ .pn-card-wrap .slider-cur-val.gas.c15{display:inline}
+
+/* Stima num (orbital core) */
+#fuel-luce:checked ~ #cons-1:checked ~ .pn-card-wrap .stima-num.luce.c1,
+#fuel-luce:checked ~ #cons-2:checked ~ .pn-card-wrap .stima-num.luce.c2,
+#fuel-luce:checked ~ #cons-3:checked ~ .pn-card-wrap .stima-num.luce.c3,
+#fuel-luce:checked ~ #cons-4:checked ~ .pn-card-wrap .stima-num.luce.c4,
+#fuel-luce:checked ~ #cons-5:checked ~ .pn-card-wrap .stima-num.luce.c5,
+#fuel-luce:checked ~ #cons-6:checked ~ .pn-card-wrap .stima-num.luce.c6,
+#fuel-luce:checked ~ #cons-7:checked ~ .pn-card-wrap .stima-num.luce.c7,
+#fuel-luce:checked ~ #cons-8:checked ~ .pn-card-wrap .stima-num.luce.c8,
+#fuel-luce:checked ~ #cons-9:checked ~ .pn-card-wrap .stima-num.luce.c9,
+#fuel-luce:checked ~ #cons-10:checked ~ .pn-card-wrap .stima-num.luce.c10,
+#fuel-luce:checked ~ #cons-11:checked ~ .pn-card-wrap .stima-num.luce.c11,
+#fuel-luce:checked ~ #cons-12:checked ~ .pn-card-wrap .stima-num.luce.c12,
+#fuel-luce:checked ~ #cons-13:checked ~ .pn-card-wrap .stima-num.luce.c13,
+#fuel-luce:checked ~ #cons-14:checked ~ .pn-card-wrap .stima-num.luce.c14,
+#fuel-luce:checked ~ #cons-15:checked ~ .pn-card-wrap .stima-num.luce.c15,
+#fuel-gas:checked ~ #cons-1:checked ~ .pn-card-wrap .stima-num.gas.c1,
+#fuel-gas:checked ~ #cons-2:checked ~ .pn-card-wrap .stima-num.gas.c2,
+#fuel-gas:checked ~ #cons-3:checked ~ .pn-card-wrap .stima-num.gas.c3,
+#fuel-gas:checked ~ #cons-4:checked ~ .pn-card-wrap .stima-num.gas.c4,
+#fuel-gas:checked ~ #cons-5:checked ~ .pn-card-wrap .stima-num.gas.c5,
+#fuel-gas:checked ~ #cons-6:checked ~ .pn-card-wrap .stima-num.gas.c6,
+#fuel-gas:checked ~ #cons-7:checked ~ .pn-card-wrap .stima-num.gas.c7,
+#fuel-gas:checked ~ #cons-8:checked ~ .pn-card-wrap .stima-num.gas.c8,
+#fuel-gas:checked ~ #cons-9:checked ~ .pn-card-wrap .stima-num.gas.c9,
+#fuel-gas:checked ~ #cons-10:checked ~ .pn-card-wrap .stima-num.gas.c10,
+#fuel-gas:checked ~ #cons-11:checked ~ .pn-card-wrap .stima-num.gas.c11,
+#fuel-gas:checked ~ #cons-12:checked ~ .pn-card-wrap .stima-num.gas.c12,
+#fuel-gas:checked ~ #cons-13:checked ~ .pn-card-wrap .stima-num.gas.c13,
+#fuel-gas:checked ~ #cons-14:checked ~ .pn-card-wrap .stima-num.gas.c14,
+#fuel-gas:checked ~ #cons-15:checked ~ .pn-card-wrap .stima-num.gas.c15{display:flex}
+
+/* Stima desc (annual consumption) */
+#fuel-luce:checked ~ #cons-1:checked ~ .pn-card-wrap .stima-desc.luce.c1,
+#fuel-luce:checked ~ #cons-2:checked ~ .pn-card-wrap .stima-desc.luce.c2,
+#fuel-luce:checked ~ #cons-3:checked ~ .pn-card-wrap .stima-desc.luce.c3,
+#fuel-luce:checked ~ #cons-4:checked ~ .pn-card-wrap .stima-desc.luce.c4,
+#fuel-luce:checked ~ #cons-5:checked ~ .pn-card-wrap .stima-desc.luce.c5,
+#fuel-luce:checked ~ #cons-6:checked ~ .pn-card-wrap .stima-desc.luce.c6,
+#fuel-luce:checked ~ #cons-7:checked ~ .pn-card-wrap .stima-desc.luce.c7,
+#fuel-luce:checked ~ #cons-8:checked ~ .pn-card-wrap .stima-desc.luce.c8,
+#fuel-luce:checked ~ #cons-9:checked ~ .pn-card-wrap .stima-desc.luce.c9,
+#fuel-luce:checked ~ #cons-10:checked ~ .pn-card-wrap .stima-desc.luce.c10,
+#fuel-luce:checked ~ #cons-11:checked ~ .pn-card-wrap .stima-desc.luce.c11,
+#fuel-luce:checked ~ #cons-12:checked ~ .pn-card-wrap .stima-desc.luce.c12,
+#fuel-luce:checked ~ #cons-13:checked ~ .pn-card-wrap .stima-desc.luce.c13,
+#fuel-luce:checked ~ #cons-14:checked ~ .pn-card-wrap .stima-desc.luce.c14,
+#fuel-luce:checked ~ #cons-15:checked ~ .pn-card-wrap .stima-desc.luce.c15,
+#fuel-gas:checked ~ #cons-1:checked ~ .pn-card-wrap .stima-desc.gas.c1,
+#fuel-gas:checked ~ #cons-2:checked ~ .pn-card-wrap .stima-desc.gas.c2,
+#fuel-gas:checked ~ #cons-3:checked ~ .pn-card-wrap .stima-desc.gas.c3,
+#fuel-gas:checked ~ #cons-4:checked ~ .pn-card-wrap .stima-desc.gas.c4,
+#fuel-gas:checked ~ #cons-5:checked ~ .pn-card-wrap .stima-desc.gas.c5,
+#fuel-gas:checked ~ #cons-6:checked ~ .pn-card-wrap .stima-desc.gas.c6,
+#fuel-gas:checked ~ #cons-7:checked ~ .pn-card-wrap .stima-desc.gas.c7,
+#fuel-gas:checked ~ #cons-8:checked ~ .pn-card-wrap .stima-desc.gas.c8,
+#fuel-gas:checked ~ #cons-9:checked ~ .pn-card-wrap .stima-desc.gas.c9,
+#fuel-gas:checked ~ #cons-10:checked ~ .pn-card-wrap .stima-desc.gas.c10,
+#fuel-gas:checked ~ #cons-11:checked ~ .pn-card-wrap .stima-desc.gas.c11,
+#fuel-gas:checked ~ #cons-12:checked ~ .pn-card-wrap .stima-desc.gas.c12,
+#fuel-gas:checked ~ #cons-13:checked ~ .pn-card-wrap .stima-desc.gas.c13,
+#fuel-gas:checked ~ #cons-14:checked ~ .pn-card-wrap .stima-desc.gas.c14,
+#fuel-gas:checked ~ #cons-15:checked ~ .pn-card-wrap .stima-desc.gas.c15{display:block}
+
+/* Price views (fuel only — monoraria only, no bioraria) */
+#fuel-luce:checked ~ #tariff-mono:checked ~ .pn-card-wrap .price-view.luce.mono{display:flex}
+#fuel-gas:checked ~ .pn-card-wrap .price-view.gas.mono{display:flex}
+
+/* RESPONSIVE */
+@media (max-width:1023px){
+  .pn-offerta .card-central{flex-direction:column;gap:18px}
+  .pn-offerta .stima-box{flex-direction:row;gap:20px;align-items:center;padding:16px 20px}
+  .pn-offerta .stima-label{margin-bottom:0;writing-mode:vertical-lr;transform:rotate(180deg);font-size:9px}
+  .pn-offerta .stima-desc-wrap{margin-top:0;text-align:left;flex:1;min-width:0}
+  .pn-offerta .card-final{flex-direction:column}
+  .pn-offerta .selectors-area{flex-direction:row;flex-wrap:wrap}
+  .pn-offerta .selector-box{flex:1;min-width:160px}
+}
+@media (max-width:767px){
+  .pn-offerta .stima-box{flex-direction:column;gap:14px;align-items:center}
+  .pn-offerta .stima-label{writing-mode:horizontal-tb;transform:none;margin-bottom:6px}
+  .pn-offerta .stima-desc-wrap{margin-top:0;text-align:center}
+  .pn-offerta .selectors-area{flex-direction:column}
+  .pn-offerta .orbital-box{width:258px;height:258px}
+  .pn-offerta .orbital-core{width:160px;height:160px}
+  .pn-offerta .stima-num-value{font-size:28px}
+  .pn-offerta .price-view{flex-direction:column}
+}
+@media (max-width:640px){
+  .pn-offerta .glass-orbit-card{padding:20px 14px}
+  .pn-offerta .selector-pills label{font-size:13px;padding:9px 10px}
+}
+@media (max-width:420px){
+  .pn-offerta .orbital-box{width:225px;height:225px}
+  .pn-offerta .orbital-core{width:140px;height:140px}
+  .pn-offerta .stima-num-value{font-size:24px}
+  .pn-offerta .selector-pills{gap:6px}
+  .pn-offerta .selector-pills label{font-size:12px;padding:8px 6px}
+  .pn-offerta .data-item-value{font-size:15px}
+  .pn-offerta .slider-cur-val{font-size:13px}
+}
+</style>
+
+<div class="pn-offerta">
+  <!-- Fuel radios -->
+  <input type="radio" id="fuel-luce" name="pn-fuel" checked class="pn-toggle" aria-label="Seleziona Luce">
+  <input type="radio" id="fuel-gas" name="pn-fuel" class="pn-toggle" aria-label="Seleziona Gas">
+  <!-- Tariff radios — monoraria only (no bioraria for this offer) -->
+  <input type="radio" id="tariff-mono" name="pn-tariff" checked class="pn-toggle" aria-label="Tariffa Monoraria">
+  <!-- Consumption radios (15 levels, default = 7 = 225 kWh) -->
+  <input type="radio" id="cons-1" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 1">
+  <input type="radio" id="cons-2" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 2">
+  <input type="radio" id="cons-3" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 3">
+  <input type="radio" id="cons-4" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 4">
+  <input type="radio" id="cons-5" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 5">
+  <input type="radio" id="cons-6" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 6">
+  <input type="radio" id="cons-7" name="pn-cons" checked class="pn-toggle" aria-label="Consumo livello 7">
+  <input type="radio" id="cons-8" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 8">
+  <input type="radio" id="cons-9" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 9">
+  <input type="radio" id="cons-10" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 10">
+  <input type="radio" id="cons-11" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 11">
+  <input type="radio" id="cons-12" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 12">
+  <input type="radio" id="cons-13" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 13">
+  <input type="radio" id="cons-14" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 14">
+  <input type="radio" id="cons-15" name="pn-cons" class="pn-toggle" aria-label="Consumo livello 15">
+
+  <div class="pn-card-wrap">
+    <div class="glass-orbit-card">
+
+      <div class="card-central">
+        <div class="card-central-left">
+          <div class="stima-box">
+            <span class="stima-label">Stima mensile</span>
+            <div class="orbital-box">
+              <svg class="orbital-rings" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="110" cy="110" r="105" fill="none" stroke="#6C75F4" stroke-width="1.2" stroke-dasharray="6 10" opacity="0.2"/>
+                <circle cx="110" cy="110" r="90" fill="none" stroke="#6C75F4" stroke-width="1" stroke-dasharray="5 8" opacity="0.3"/>
+                <circle cx="110" cy="110" r="75" fill="none" stroke="#00c5af" stroke-width="1" stroke-dasharray="4 6" opacity="0.35"/>
+                <circle cx="110" cy="110" r="60" fill="none" stroke="#6C75F4" stroke-width="0.8" stroke-dasharray="3 5" opacity="0.2"/>
+              </svg>
+              <div class="orbital-core">
+                <!-- Luce estimates (15 levels: 75-500 kWh/mese) — PUN+0,006 = 0,1204 EUR/kWh + 6,7 EUR/mese quota -->
+                <div class="stima-num luce c1" aria-live="polite"><span class="stima-num-value">~16&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c2"><span class="stima-num-value">~19&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c3"><span class="stima-num-value">~22&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c4"><span class="stima-num-value">~25&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c5"><span class="stima-num-value">~28&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c6"><span class="stima-num-value">~31&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c7"><span class="stima-num-value">~34&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c8"><span class="stima-num-value">~37&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c9"><span class="stima-num-value">~40&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c10"><span class="stima-num-value">~43&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c11"><span class="stima-num-value">~46&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c12"><span class="stima-num-value">~49&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c13"><span class="stima-num-value">~55&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c14"><span class="stima-num-value">~61&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num luce c15"><span class="stima-num-value">~67&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <!-- Gas estimates (15 levels: 30-300 Smc/mese) — PSV+0,05 = 0,517 EUR/Smc + 6,7 EUR/mese quota -->
+                <div class="stima-num gas c1"><span class="stima-num-value">~22&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c2"><span class="stima-num-value">~33&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c3"><span class="stima-num-value">~43&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c4"><span class="stima-num-value">~53&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c5"><span class="stima-num-value">~61&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c6"><span class="stima-num-value">~67&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c7"><span class="stima-num-value">~74&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c8"><span class="stima-num-value">~79&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c9"><span class="stima-num-value">~87&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c10"><span class="stima-num-value">~95&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c11"><span class="stima-num-value">~105&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c12"><span class="stima-num-value">~115&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c13"><span class="stima-num-value">~131&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c14"><span class="stima-num-value">~146&euro;</span><span class="stima-num-unit">/mese</span></div>
+                <div class="stima-num gas c15"><span class="stima-num-value">~162&euro;</span><span class="stima-num-unit">/mese</span></div>
+              </div>
+            </div>
+            <div class="stima-desc-wrap">
+              <!-- Luce annual consumption (15 levels) -->
+              <span class="stima-desc luce c1">Consumo medio annuo:<br><strong>900 kWh</strong></span>
+              <span class="stima-desc luce c2">Consumo medio annuo:<br><strong>1.200 kWh</strong></span>
+              <span class="stima-desc luce c3">Consumo medio annuo:<br><strong>1.500 kWh</strong></span>
+              <span class="stima-desc luce c4">Consumo medio annuo:<br><strong>1.800 kWh</strong></span>
+              <span class="stima-desc luce c5">Consumo medio annuo:<br><strong>2.100 kWh</strong></span>
+              <span class="stima-desc luce c6">Consumo medio annuo:<br><strong>2.400 kWh</strong></span>
+              <span class="stima-desc luce c7">Consumo medio annuo:<br><strong>2.700 kWh</strong></span>
+              <span class="stima-desc luce c8">Consumo medio annuo:<br><strong>3.000 kWh</strong></span>
+              <span class="stima-desc luce c9">Consumo medio annuo:<br><strong>3.300 kWh</strong></span>
+              <span class="stima-desc luce c10">Consumo medio annuo:<br><strong>3.600 kWh</strong></span>
+              <span class="stima-desc luce c11">Consumo medio annuo:<br><strong>3.900 kWh</strong></span>
+              <span class="stima-desc luce c12">Consumo medio annuo:<br><strong>4.200 kWh</strong></span>
+              <span class="stima-desc luce c13">Consumo medio annuo:<br><strong>4.800 kWh</strong></span>
+              <span class="stima-desc luce c14">Consumo medio annuo:<br><strong>5.400 kWh</strong></span>
+              <span class="stima-desc luce c15">Consumo medio annuo:<br><strong>6.000 kWh</strong></span>
+              <!-- Gas annual consumption (15 levels) -->
+              <span class="stima-desc gas c1">Consumo medio annuo:<br><strong>360 Smc</strong></span>
+              <span class="stima-desc gas c2">Consumo medio annuo:<br><strong>600 Smc</strong></span>
+              <span class="stima-desc gas c3">Consumo medio annuo:<br><strong>840 Smc</strong></span>
+              <span class="stima-desc gas c4">Consumo medio annuo:<br><strong>1.080 Smc</strong></span>
+              <span class="stima-desc gas c5">Consumo medio annuo:<br><strong>1.260 Smc</strong></span>
+              <span class="stima-desc gas c6">Consumo medio annuo:<br><strong>1.400 Smc</strong></span>
+              <span class="stima-desc gas c7">Consumo medio annuo:<br><strong>1.560 Smc</strong></span>
+              <span class="stima-desc gas c8">Consumo medio annuo:<br><strong>1.680 Smc</strong></span>
+              <span class="stima-desc gas c9">Consumo medio annuo:<br><strong>1.860 Smc</strong></span>
+              <span class="stima-desc gas c10">Consumo medio annuo:<br><strong>2.040 Smc</strong></span>
+              <span class="stima-desc gas c11">Consumo medio annuo:<br><strong>2.280 Smc</strong></span>
+              <span class="stima-desc gas c12">Consumo medio annuo:<br><strong>2.520 Smc</strong></span>
+              <span class="stima-desc gas c13">Consumo medio annuo:<br><strong>2.880 Smc</strong></span>
+              <span class="stima-desc gas c14">Consumo medio annuo:<br><strong>3.240 Smc</strong></span>
+              <span class="stima-desc gas c15">Consumo medio annuo:<br><strong>3.600 Smc</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-central-right">
+          <div class="selectors-area" role="group" aria-label="Configurazione offerta">
+            <div class="selector-box">
+              <span class="selector-box-label" id="lbl-commodity">Commodity</span>
+              <div class="selector-pills" role="radiogroup" aria-labelledby="lbl-commodity">
+                <label for="fuel-luce">&#9889; Luce</label>
+                <label for="fuel-gas">&#128293; Gas</label>
+              </div>
+            </div>
+            <div class="selector-box">
+              <span class="selector-box-label" id="lbl-tariff">Struttura tariffaria</span>
+              <div class="selector-pills" role="radiogroup" aria-labelledby="lbl-tariff">
+                <label for="tariff-mono">Monoraria</label>
+              </div>
+            </div>
+            <!-- Slider consumo mensile (pure CSS, 15 step) -->
+            <div class="selector-box">
+              <div class="slider-header">
+                <span class="selector-box-label" id="lbl-consumo" style="margin-bottom:0">Consumo mensile stimato</span>
+                <!-- Current value badges (luce, 15 levels) -->
+                <span class="slider-cur-val luce c1">75 kWh/mese</span>
+                <span class="slider-cur-val luce c2">100 kWh/mese</span>
+                <span class="slider-cur-val luce c3">125 kWh/mese</span>
+                <span class="slider-cur-val luce c4">150 kWh/mese</span>
+                <span class="slider-cur-val luce c5">175 kWh/mese</span>
+                <span class="slider-cur-val luce c6">200 kWh/mese</span>
+                <span class="slider-cur-val luce c7">225 kWh/mese</span>
+                <span class="slider-cur-val luce c8">250 kWh/mese</span>
+                <span class="slider-cur-val luce c9">275 kWh/mese</span>
+                <span class="slider-cur-val luce c10">300 kWh/mese</span>
+                <span class="slider-cur-val luce c11">325 kWh/mese</span>
+                <span class="slider-cur-val luce c12">350 kWh/mese</span>
+                <span class="slider-cur-val luce c13">400 kWh/mese</span>
+                <span class="slider-cur-val luce c14">450 kWh/mese</span>
+                <span class="slider-cur-val luce c15">500 kWh/mese</span>
+                <!-- Current value badges (gas, 15 levels) -->
+                <span class="slider-cur-val gas c1">30 Smc/mese</span>
+                <span class="slider-cur-val gas c2">50 Smc/mese</span>
+                <span class="slider-cur-val gas c3">70 Smc/mese</span>
+                <span class="slider-cur-val gas c4">90 Smc/mese</span>
+                <span class="slider-cur-val gas c5">105 Smc/mese</span>
+                <span class="slider-cur-val gas c6">117 Smc/mese</span>
+                <span class="slider-cur-val gas c7">130 Smc/mese</span>
+                <span class="slider-cur-val gas c8">140 Smc/mese</span>
+                <span class="slider-cur-val gas c9">155 Smc/mese</span>
+                <span class="slider-cur-val gas c10">170 Smc/mese</span>
+                <span class="slider-cur-val gas c11">190 Smc/mese</span>
+                <span class="slider-cur-val gas c12">210 Smc/mese</span>
+                <span class="slider-cur-val gas c13">240 Smc/mese</span>
+                <span class="slider-cur-val gas c14">270 Smc/mese</span>
+                <span class="slider-cur-val gas c15">300 Smc/mese</span>
+              </div>
+              <!-- Pure CSS slider dots (no JS) -->
+              <div class="slider-dots" role="radiogroup" aria-labelledby="lbl-consumo">
+                <div class="slider-dots-track"></div>
+                <label for="cons-1" class="slider-dot c1" title="75 kWh/mese" aria-label="Consumo 75 kWh al mese"></label>
+                <label for="cons-2" class="slider-dot c2" title="100 kWh/mese" aria-label="Consumo 100 kWh al mese"></label>
+                <label for="cons-3" class="slider-dot c3" title="125 kWh/mese" aria-label="Consumo 125 kWh al mese"></label>
+                <label for="cons-4" class="slider-dot c4" title="150 kWh/mese" aria-label="Consumo 150 kWh al mese"></label>
+                <label for="cons-5" class="slider-dot c5" title="175 kWh/mese" aria-label="Consumo 175 kWh al mese"></label>
+                <label for="cons-6" class="slider-dot c6" title="200 kWh/mese" aria-label="Consumo 200 kWh al mese"></label>
+                <label for="cons-7" class="slider-dot c7" title="225 kWh/mese" aria-label="Consumo 225 kWh al mese"></label>
+                <label for="cons-8" class="slider-dot c8" title="250 kWh/mese" aria-label="Consumo 250 kWh al mese"></label>
+                <label for="cons-9" class="slider-dot c9" title="275 kWh/mese" aria-label="Consumo 275 kWh al mese"></label>
+                <label for="cons-10" class="slider-dot c10" title="300 kWh/mese" aria-label="Consumo 300 kWh al mese"></label>
+                <label for="cons-11" class="slider-dot c11" title="325 kWh/mese" aria-label="Consumo 325 kWh al mese"></label>
+                <label for="cons-12" class="slider-dot c12" title="350 kWh/mese" aria-label="Consumo 350 kWh al mese"></label>
+                <label for="cons-13" class="slider-dot c13" title="400 kWh/mese" aria-label="Consumo 400 kWh al mese"></label>
+                <label for="cons-14" class="slider-dot c14" title="450 kWh/mese" aria-label="Consumo 450 kWh al mese"></label>
+                <label for="cons-15" class="slider-dot c15" title="500 kWh/mese" aria-label="Consumo 500 kWh al mese"></label>
+              </div>
+              <div class="slider-range">
+                <span class="slider-range-lbl luce">75 kWh</span>
+                <span class="slider-range-lbl gas">30 Smc</span>
+                <span class="slider-range-lbl luce">500 kWh</span>
+                <span class="slider-range-lbl gas">300 Smc</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-final">
+        <div class="prices-area">
+          <span class="prices-area-title">Dettagli tariffari</span>
+          <div class="price-view luce mono">
+            <div class="data-item">
+              <span class="data-item-label">Stima prezzo luce</span>
+              <div class="data-item-value accent">PUN + 0,006</div>
+              <span class="data-item-unit">&euro;/kWh &mdash; Monoraria h24</span>
+            </div>
+            <div class="data-item">
+              <span class="data-item-label">Stima effettiva (mar 2026)</span>
+              <div class="data-item-value teal">0,1204</div>
+              <span class="data-item-unit">&euro;/kWh &mdash; PUN 0,1144 + spread 0,006</span>
+            </div>
+            <div class="data-item">
+              <span class="data-item-label">Quota fissa annua</span>
+              <div class="data-item-value">80,40</div>
+              <span class="data-item-unit">&euro;/anno (6,70 &euro;/mese)</span>
+            </div>
+            <div class="data-item">
+              <span class="data-item-label">Struttura</span>
+              <div class="data-item-value" style="font-size:13px;">PUN + spread</div>
+              <span class="data-item-unit">Prezzo variabile &mdash; Mercato libero</span>
+            </div>
+            <div class="data-item">
+              <span class="data-item-label">Durata condizioni</span>
+              <div class="data-item-value" style="font-size:13px;">12 mesi</div>
+              <span class="data-item-unit">Spread fisso dalla data attivazione</span>
+            </div>
+            <div class="data-item">
+              <span class="data-item-label">Spread dal 2&deg; anno</span>
+              <div class="data-item-value" style="font-size:13px;">0,03 &euro;/kWh</div>
+              <span class="data-item-unit">PUN + 0,03 dopo i primi 12 mesi</span>
+            </div>
+          </div>
+          <div class="price-view gas mono">
+            <div class="data-item">
+              <span class="data-item-label">Stima prezzo gas</span>
+              <div class="data-item-value accent">PSV + 0,05</div>
+              <span class="data-item-unit">&euro;/Smc &mdash; Monoraria</span>
+            </div>
+            <div class="data-item">
+              <span class="data-item-label">Stima effettiva</span>
+              <div class="data-item-value teal">0,517</div>
+              <span class="data-item-unit">&euro;/Smc &mdash; PSV 0,467 + spread 0,05</span>
+            </div>
+            <div class="data-item">
+              <span class="data-item-label">Quota fissa annua</span>
+              <div class="data-item-value">80,40</div>
+              <span class="data-item-unit">&euro;/anno (6,70 &euro;/mese)</span>
+            </div>
+            <div class="data-item">
+              <span class="data-item-label">Struttura</span>
+              <div class="data-item-value" style="font-size:13px;">PSV + spread</div>
+              <span class="data-item-unit">Prezzo variabile</span>
+            </div>
+            <div class="data-item">
+              <span class="data-item-label">Durata condizioni</span>
+              <div class="data-item-value" style="font-size:13px;">12 mesi</div>
+              <span class="data-item-unit">Spread fisso dalla data attivazione</span>
+            </div>
+            <div class="data-item">
+              <span class="data-item-label">Spread dal 2&deg; anno</span>
+              <div class="data-item-value" style="font-size:13px;">0,20 &euro;/Smc</div>
+              <span class="data-item-unit">PSV + 0,20 dopo i primi 12 mesi</span>
+            </div>
+          </div>
+          <p class="price-disclaimer">&#9888; Stime basate su PUN medio marzo 2026 (0,1144 &euro;/kWh) e PSV medio (0,467 &euro;/Smc). Il costo finale varia con l'andamento del mercato all'ingrosso. Spread luce 1&deg; anno: 0,006 &euro;/kWh, dal 2&deg; anno: 0,03 &euro;/kWh. Spread gas 1&deg; anno: 0,05 &euro;/Smc, dal 2&deg; anno: 0,20 &euro;/Smc. Fonte: sorgenia.it &mdash; aprile 2026.</p>
+        </div>
+        <div class="pdf-box">
+          <div class="pdf-box-title">Documentazione offerta</div>
+          <p class="pdf-box-desc">Consulta le condizioni economiche e la documentazione ARERA dell'offerta Sorgenia Next Energy Sunlight Luce e Gas.</p>
+          <div class="pdf-links">
+            <a href="https://www.ilportaleofferte.it/" target="_blank" rel="noopener" class="pdf-link">
+              <span class="pdf-link-icon">A</span>
+              <span>Opendata ARERA</span>
+            </a>
+            <a href="https://www.sorgenia.it/offerte-luce-e-gas-casa/next-energy-sunlight-luce-e-gas" target="_blank" rel="noopener" class="pdf-link">
+              <span class="pdf-link-icon">&euro;</span>
+              <span>Condizioni economiche</span>
+            </a>
+            <a href="https://www.sorgenia.it/offerte-luce-e-gas-casa/next-energy-sunlight-luce-e-gas" target="_blank" rel="noopener" class="pdf-link">
+              <span class="pdf-link-icon">i</span>
+              <span>Pagina offerta Sorgenia</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<ppn-cta-block-double class="show-call-opened" style="--primary-color: #5A52FF; --cta-txt-color: white; --cta-hover-color: #5A52FF; --cta-bg-color: #00C5AF;" type="default" picture-url="" first-cta-active-mode="call" text-title="Chiama Papernest e attiva la migliore offerta luce e gas del momento per risparmiare in bolletta!" compliance-text="$IT_NRJ_BOX_Orari_Apertura$" info-text="$IT_CTA_Stars$" info-hover-text="$IT_CTA_Info_Hover_Text$" first-cta-text="02 94 75 68 03" first-cta-href="tel:0294756803" first-cta-icon="phone" first-cta-color="custom" first-cta-custom-color="#00C5AF" first-cta-custom-color-hover="#5A52FF" second-cta-text="Fatti Richiamare" second-cta-color="primary" second-cta-app-text="Fatti Richiamare" second-cta-icon="wcb" second-cta-app-icon="computer" second-cta-is-wcb="true" second-cta-app-is-wcb="true" info-direction="reverse" active-mode="call">$IT_CTA_Testo$</ppn-cta-block-double>
+
+<ppn-cta-block-double class="show-call-closed" style="--primary-color: #5A52FF; --cta-txt-color: white; --cta-hover-color: #5A52FF; --cta-bg-color: #00C5AF;" type="default" picture-url="" text-title="Chiama Papernest e attiva la migliore offerta luce e gas del momento per risparmiare in bolletta!" compliance-text="$IT_NRJ_BOX_Orari_Apertura$" info-text="$IT_CTA_Stars$" info-hover-text="$IT_CTA_Info_Hover_Text$" first-cta-icon="computer" first-cta-color="custom" first-cta-custom-color="#00C5AF" first-cta-custom-color-hover="#5A52FF" second-cta-text="Fatti Richiamare" second-cta-color="primary" second-cta-app-text="Fatti Richiamare" second-cta-icon="wcb" second-cta-app-icon="computer" second-cta-is-wcb="true" second-cta-app-is-wcb="true" info-direction="reverse" active-mode="app">$IT_CTA_Testo$</ppn-cta-block-double>

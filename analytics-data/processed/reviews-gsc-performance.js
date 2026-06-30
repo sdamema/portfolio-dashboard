@@ -1,0 +1,548 @@
+window.portfolioPerformanceData = window.portfolioPerformanceData || {};
+window.portfolioPerformanceData.reviews = {
+  "id": "reviews-gsc-2026-06-30-percentage-only",
+  "projectId": "reviews",
+  "mode": "percentage-only",
+  "title": "Review pages relative Search Console trend",
+  "source": {
+    "platform": "Google Search Console",
+    "searchType": "Web",
+    "dateRange": "May 1, 2026-Jun 29, 2026",
+    "pageFilter": "17 supplier review URLs",
+    "note": "Public dataset is sanitized: it contains percentage changes only, not raw clicks, impressions, CTR or average-position values."
+  },
+  "update": {
+    "label": "End-of-May review page refresh",
+    "date": "2026-05-30",
+    "comparisonMethod": "May 2026 vs June 1-29, 2026. Daily averages are used for fair comparison because the June export ends on June 29."
+  },
+  "chartBaseline": {
+    "label": "May daily average = 0% baseline",
+    "method": "Each chart point is shown as percentage variation from the pre-update daily average."
+  },
+  "chart": [
+    {
+      "date": "2026-05-01",
+      "phase": "before",
+      "clickChange": -0.6915,
+      "impressionChange": -0.3041
+    },
+    {
+      "date": "2026-05-02",
+      "phase": "before",
+      "clickChange": -0.6915,
+      "impressionChange": -0.2901
+    },
+    {
+      "date": "2026-05-03",
+      "phase": "before",
+      "clickChange": -0.6144,
+      "impressionChange": -0.2548
+    },
+    {
+      "date": "2026-05-04",
+      "phase": "before",
+      "clickChange": -0.5373,
+      "impressionChange": 0.1639
+    },
+    {
+      "date": "2026-05-05",
+      "phase": "before",
+      "clickChange": 0.3881,
+      "impressionChange": 0.2439
+    },
+    {
+      "date": "2026-05-06",
+      "phase": "before",
+      "clickChange": 0.0025,
+      "impressionChange": 0.2677
+    },
+    {
+      "date": "2026-05-07",
+      "phase": "before",
+      "clickChange": -0.2289,
+      "impressionChange": 0.0238
+    },
+    {
+      "date": "2026-05-08",
+      "phase": "before",
+      "clickChange": -0.1517,
+      "impressionChange": 0.0036
+    },
+    {
+      "date": "2026-05-09",
+      "phase": "before",
+      "clickChange": -0.6915,
+      "impressionChange": -0.3591
+    },
+    {
+      "date": "2026-05-10",
+      "phase": "before",
+      "clickChange": -0.5373,
+      "impressionChange": -0.3041
+    },
+    {
+      "date": "2026-05-11",
+      "phase": "before",
+      "clickChange": -0.0746,
+      "impressionChange": 0.1608
+    },
+    {
+      "date": "2026-05-12",
+      "phase": "before",
+      "clickChange": 0.0796,
+      "impressionChange": 0.2267
+    },
+    {
+      "date": "2026-05-13",
+      "phase": "before",
+      "clickChange": -0.306,
+      "impressionChange": 0.1489
+    },
+    {
+      "date": "2026-05-14",
+      "phase": "before",
+      "clickChange": -0.1517,
+      "impressionChange": 0.1307
+    },
+    {
+      "date": "2026-05-15",
+      "phase": "before",
+      "clickChange": -0.0746,
+      "impressionChange": 0.056
+    },
+    {
+      "date": "2026-05-16",
+      "phase": "before",
+      "clickChange": -0.0746,
+      "impressionChange": -0.1308
+    },
+    {
+      "date": "2026-05-17",
+      "phase": "before",
+      "clickChange": -0.4602,
+      "impressionChange": -0.2642
+    },
+    {
+      "date": "2026-05-18",
+      "phase": "before",
+      "clickChange": 0.8507,
+      "impressionChange": 0.1333
+    },
+    {
+      "date": "2026-05-19",
+      "phase": "before",
+      "clickChange": 0.4652,
+      "impressionChange": 0.1105
+    },
+    {
+      "date": "2026-05-20",
+      "phase": "before",
+      "clickChange": 0.1567,
+      "impressionChange": 0.1198
+    },
+    {
+      "date": "2026-05-21",
+      "phase": "before",
+      "clickChange": -0.306,
+      "impressionChange": 0.0363
+    },
+    {
+      "date": "2026-05-22",
+      "phase": "before",
+      "clickChange": 0.0025,
+      "impressionChange": 0.0176
+    },
+    {
+      "date": "2026-05-23",
+      "phase": "before",
+      "clickChange": 0.0025,
+      "impressionChange": -0.3187
+    },
+    {
+      "date": "2026-05-24",
+      "phase": "before",
+      "clickChange": -0.4602,
+      "impressionChange": -0.341
+    },
+    {
+      "date": "2026-05-25",
+      "phase": "before",
+      "clickChange": 0.1567,
+      "impressionChange": 0.1266
+    },
+    {
+      "date": "2026-05-26",
+      "phase": "before",
+      "clickChange": 0.4652,
+      "impressionChange": 0.1364
+    },
+    {
+      "date": "2026-05-27",
+      "phase": "before",
+      "clickChange": 1.6219,
+      "impressionChange": 0.1499
+    },
+    {
+      "date": "2026-05-28",
+      "phase": "before",
+      "clickChange": 0.7736,
+      "impressionChange": 0.2179
+    },
+    {
+      "date": "2026-05-29",
+      "phase": "before",
+      "clickChange": 0.1567,
+      "impressionChange": 0.2885
+    },
+    {
+      "date": "2026-05-30",
+      "phase": "before",
+      "clickChange": 0.6965,
+      "impressionChange": -0.0784
+    },
+    {
+      "date": "2026-05-31",
+      "phase": "before",
+      "clickChange": 0.2338,
+      "impressionChange": -0.1178
+    },
+    {
+      "date": "2026-06-01",
+      "phase": "after",
+      "clickChange": 0.7736,
+      "impressionChange": 0.1463
+    },
+    {
+      "date": "2026-06-02",
+      "phase": "after",
+      "clickChange": 0.3881,
+      "impressionChange": -0.0223
+    },
+    {
+      "date": "2026-06-03",
+      "phase": "after",
+      "clickChange": 1.005,
+      "impressionChange": 0.4649
+    },
+    {
+      "date": "2026-06-04",
+      "phase": "after",
+      "clickChange": 1.5448,
+      "impressionChange": 0.4431
+    },
+    {
+      "date": "2026-06-05",
+      "phase": "after",
+      "clickChange": 1.6219,
+      "impressionChange": 0.4058
+    },
+    {
+      "date": "2026-06-06",
+      "phase": "after",
+      "clickChange": 0.6965,
+      "impressionChange": -0.0125
+    },
+    {
+      "date": "2026-06-07",
+      "phase": "after",
+      "clickChange": 0.4652,
+      "impressionChange": -0.1209
+    },
+    {
+      "date": "2026-06-08",
+      "phase": "after",
+      "clickChange": 2.0075,
+      "impressionChange": 0.6268
+    },
+    {
+      "date": "2026-06-09",
+      "phase": "after",
+      "clickChange": 1.2363,
+      "impressionChange": 0.6647
+    },
+    {
+      "date": "2026-06-10",
+      "phase": "after",
+      "clickChange": 2.5473,
+      "impressionChange": 0.6663
+    },
+    {
+      "date": "2026-06-11",
+      "phase": "after",
+      "clickChange": 0.9279,
+      "impressionChange": 0.4997
+    },
+    {
+      "date": "2026-06-12",
+      "phase": "after",
+      "clickChange": 1.6219,
+      "impressionChange": 0.4151
+    },
+    {
+      "date": "2026-06-13",
+      "phase": "after",
+      "clickChange": 1.0821,
+      "impressionChange": -0.0447
+    },
+    {
+      "date": "2026-06-14",
+      "phase": "after",
+      "clickChange": 0.3881,
+      "impressionChange": -0.2092
+    },
+    {
+      "date": "2026-06-15",
+      "phase": "after",
+      "clickChange": 2.4701,
+      "impressionChange": 0.6668
+    },
+    {
+      "date": "2026-06-16",
+      "phase": "after",
+      "clickChange": 2.393,
+      "impressionChange": 0.5812
+    },
+    {
+      "date": "2026-06-17",
+      "phase": "after",
+      "clickChange": 1.2363,
+      "impressionChange": 0.5806
+    },
+    {
+      "date": "2026-06-18",
+      "phase": "after",
+      "clickChange": 1.0821,
+      "impressionChange": 0.5583
+    },
+    {
+      "date": "2026-06-19",
+      "phase": "after",
+      "clickChange": 1.5448,
+      "impressionChange": 0.4971
+    },
+    {
+      "date": "2026-06-20",
+      "phase": "after",
+      "clickChange": 0.6194,
+      "impressionChange": 0.0394
+    },
+    {
+      "date": "2026-06-21",
+      "phase": "after",
+      "clickChange": 0.6965,
+      "impressionChange": 0.0586
+    },
+    {
+      "date": "2026-06-22",
+      "phase": "after",
+      "clickChange": 1.9303,
+      "impressionChange": 1.1696
+    },
+    {
+      "date": "2026-06-23",
+      "phase": "after",
+      "clickChange": 2.8557,
+      "impressionChange": 1.0451
+    },
+    {
+      "date": "2026-06-24",
+      "phase": "after",
+      "clickChange": 2.5473,
+      "impressionChange": 0.8661
+    },
+    {
+      "date": "2026-06-25",
+      "phase": "after",
+      "clickChange": 1.7761,
+      "impressionChange": 0.9579
+    },
+    {
+      "date": "2026-06-26",
+      "phase": "after",
+      "clickChange": 2.5473,
+      "impressionChange": 0.9268
+    },
+    {
+      "date": "2026-06-27",
+      "phase": "after",
+      "clickChange": 1.2363,
+      "impressionChange": 0.2724
+    },
+    {
+      "date": "2026-06-28",
+      "phase": "after",
+      "clickChange": 0.6194,
+      "impressionChange": 0.2345
+    },
+    {
+      "date": "2026-06-29",
+      "phase": "after",
+      "clickChange": 2.3159,
+      "impressionChange": 0.5033
+    }
+  ],
+  "periods": {
+    "before": {
+      "label": "Before update",
+      "range": "May 1-31, 2026"
+    },
+    "after": {
+      "label": "After update",
+      "range": "June 1-29, 2026"
+    }
+  },
+  "deltas": {
+    "clickTrend": {
+      "percent": 1.4544,
+      "direction": "improved"
+    },
+    "impressionTrend": {
+      "percent": 0.4442,
+      "direction": "improved"
+    },
+    "ctrTrend": {
+      "percent": 0.6995,
+      "direction": "improved"
+    },
+    "positionTrend": {
+      "percent": 0.0919,
+      "direction": "improved"
+    }
+  },
+  "pageMovements": [
+    {
+      "provider": "Eni Plenitude",
+      "slug": "eni-plenitude",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/eni-plenitude/recensioni/",
+      "clickChange": 0.7984,
+      "impressionChange": 0.9831
+    },
+    {
+      "provider": "Iren",
+      "slug": "iren",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/iren/recensioni/",
+      "clickChange": 1.087,
+      "impressionChange": 0.1784
+    },
+    {
+      "provider": "Octopus Energy",
+      "slug": "octopus-energy",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/octopus-energy/recensioni/",
+      "clickChange": 2.7059,
+      "impressionChange": 0.1639
+    },
+    {
+      "provider": "Engie",
+      "slug": "engie",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/engie/recensioni/",
+      "clickChange": 0.7838,
+      "impressionChange": -0.1078
+    },
+    {
+      "provider": "Edison",
+      "slug": "edison",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/edison/recensioni/",
+      "clickChange": 2.0588,
+      "impressionChange": 0.5379
+    },
+    {
+      "provider": "Acea",
+      "slug": "acea",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/acea/recensioni/",
+      "clickChange": 0.1724,
+      "impressionChange": -0.1055
+    }
+  ],
+  "urlInventory": [
+    {
+      "provider": "Eni Plenitude",
+      "slug": "eni-plenitude",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/eni-plenitude/recensioni/"
+    },
+    {
+      "provider": "Iren",
+      "slug": "iren",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/iren/recensioni/"
+    },
+    {
+      "provider": "Octopus Energy",
+      "slug": "octopus-energy",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/octopus-energy/recensioni/"
+    },
+    {
+      "provider": "Engie",
+      "slug": "engie",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/engie/recensioni/"
+    },
+    {
+      "provider": "Edison",
+      "slug": "edison",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/edison/recensioni/"
+    },
+    {
+      "provider": "Acea",
+      "slug": "acea",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/acea/recensioni/"
+    },
+    {
+      "provider": "Sorgenia",
+      "slug": "sorgenia",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/sorgenia/recensioni/"
+    },
+    {
+      "provider": "NeN",
+      "slug": "nen",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/nen/recensioni/"
+    },
+    {
+      "provider": "Illumia",
+      "slug": "illumia",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/illumia/recensioni/"
+    },
+    {
+      "provider": "Magis Energia",
+      "slug": "magis-energia",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/magis-energia/recensioni/"
+    },
+    {
+      "provider": "A2A",
+      "slug": "a2a",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/a2a/recensioni/"
+    },
+    {
+      "provider": "Hera",
+      "slug": "hera",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/hera/recensioni/"
+    },
+    {
+      "provider": "Enel",
+      "slug": "enel",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/enel/recensioni/"
+    },
+    {
+      "provider": "E.ON",
+      "slug": "eon",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/eon/recensioni/"
+    },
+    {
+      "provider": "Pulsee",
+      "slug": "pulsee",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/recensioni/"
+    },
+    {
+      "provider": "Dolomiti Energia",
+      "slug": "dolomiti-energia",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/dolomiti-energia/recensioni/"
+    },
+    {
+      "provider": "Estra",
+      "slug": "estra",
+      "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/estra/recensioni/"
+    }
+  ],
+  "narrative": {
+    "summary": "The review pages were <strong>updated at the end of May</strong>, and this analysis was run <strong>at the end of June</strong>, so the public view shows only <strong>percentage variations</strong> between the pre-update and post-update periods. Absolute Search Console values are intentionally not exposed.",
+    "insights": []
+  }
+};

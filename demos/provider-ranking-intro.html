@@ -1,0 +1,1383 @@
+<div class="ppn-custom-section-wrapper"
+  style="font-family: 'Inter', sans-serif; width: 100%; margin: 20px 0 40px 0; overflow: visible;">
+  <style>
+    .ppn-disclaimer-wrapper {
+      position: relative;
+      display: block;
+      font-style: italic;
+      color: #666;
+      line-height: 1.4;
+      margin: 10px 0;
+      border-left: 1px solid #e0e0e0;
+      border-right: 1px solid #e0e0e0;
+      padding: 5px 8px;
+    }
+
+    @media (max-width: 768px) {
+      .ppn-disclaimer-wrapper {
+        text-align: left !important;
+        padding-left: 5px !important;
+        font-size: 10px !important;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .ppn-disclaimer-wrapper {
+        text-align: right !important;
+        padding-right: 10px !important;
+        font-size: 11px !important;
+        max-width: 380px !important;
+        margin-left: auto !important;
+      }
+    }
+
+    .ppn-v2-intro-text {
+      color: #4a4a4a;
+      line-height: 1.7;
+      font-size: 16px;
+      margin-bottom: 35px;
+      text-align: left;
+      width: 100%;
+    }
+
+    .ppn-v2-podium-container {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: flex-end !important;
+      justify-content: center !important;
+      gap: 15px !important;
+      width: 100% !important;
+      max-width: 1000px !important;
+      margin: 0 auto !important;
+      padding: 25px 10px 20px !important;
+      box-sizing: border-box !important;
+    }
+
+    .ppn-v2-col {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      flex: 1 !important;
+      max-width: 250px !important;
+      position: relative !important;
+    }
+
+    .ppn-v2-gold {
+      order: 2 !important;
+    }
+
+    .ppn-v2-silver {
+      order: 1 !important;
+    }
+
+    .ppn-v2-bronze {
+      order: 3 !important;
+    }
+
+    .ppn-v2-gold .ppn-v2-card {
+      padding-bottom: 55px;
+    }
+
+    .ppn-v2-silver .ppn-v2-card {
+      padding-bottom: 38px;
+    }
+
+    .ppn-v2-bronze .ppn-v2-card {
+      padding-bottom: 20px;
+    }
+
+    .ppn-sa-score {
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1;
+      margin: 0;
+      color: #1e1e1e;
+    }
+
+    .ppn-sa-unit {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #aaa;
+    }
+
+    .ppn-sa-positive {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin: 1px 0 3px;
+      justify-content: center;
+    }
+
+    .ppn-sa-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .ppn-sa-bar {
+      display: flex;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 0 6px 2px;
+      gap: 1px;
+    }
+
+    .ppn-sa-bar-pos {
+      background: #A8E6CF;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .ppn-sa-bar-neu {
+      background: #FFE0A3;
+    }
+
+    .ppn-sa-bar-neg {
+      background: #F4A6A0;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .ppn-sa-breakdown {
+      font-size: 10px;
+      color: #999;
+      margin: 0;
+    }
+
+    .ppn-sa-meta {
+      font-size: 10px;
+      color: #bbb;
+      margin: 0 0 3px;
+    }
+
+    .ppn-sa-themes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .ppn-sa-pill {
+      background: #f0f3ff;
+      border: 1px solid #e0e7ff;
+      border-radius: 10px;
+      padding: 2px 7px;
+      font-size: 9px;
+      color: #5a52ff;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .ppn-sa-pill b {
+      font-weight: 700;
+    }
+
+    .ppn-v2-medal-wrap {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      margin-bottom: -28px !important;
+    }
+
+    .ppn-v2-hexagon {
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ppn-v2-hex-inner {
+      width: 88%;
+      height: 88%;
+      background: #fff;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ppn-v2-hex-inner img {
+      width: 65%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .ppn-v2-card {
+      width: 100%;
+      background: #fffbf2;
+      border: 1px solid #F2EBDD;
+      border-radius: 12px;
+      padding: 28px 10px 10px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+      z-index: 5;
+    }
+
+    .ppn-v2-offer-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: #666;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      min-height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ppn-v2-score-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #f0f3ff;
+      border: 1px solid #e0e7ff;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #5a52ff;
+      margin-top: auto;
+    }
+
+    .ppn-v2-score-badge .score-val {
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .ppn-v2-podium-container {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        padding: 16px 10px !important;
+      }
+
+      .ppn-v2-gold {
+        flex: 0 0 60% !important;
+        max-width: 220px !important;
+        order: 1 !important;
+      }
+
+      .ppn-v2-silver {
+        flex: 0 0 45% !important;
+        max-width: 170px !important;
+        order: 2 !important;
+      }
+
+      .ppn-v2-bronze {
+        flex: 0 0 45% !important;
+        max-width: 170px !important;
+        order: 3 !important;
+      }
+
+      .ppn-v2-gold .ppn-v2-card,
+      .ppn-v2-silver .ppn-v2-card,
+      .ppn-v2-bronze .ppn-v2-card {
+        min-height: auto;
+      }
+
+      .ppn-v2-gold .ppn-v2-card {
+        padding-bottom: 40px !important;
+      }
+
+      .ppn-v2-silver .ppn-v2-card {
+        padding-bottom: 28px !important;
+      }
+
+      .ppn-v2-bronze .ppn-v2-card {
+        padding-bottom: 12px !important;
+      }
+
+      .ppn-sa-score {
+        font-size: 1.5rem;
+      }
+
+      .ppn-sa-positive {
+        font-size: 10px;
+        margin: 3px 0 5px;
+      }
+
+      .ppn-sa-breakdown {
+        font-size: 9px;
+      }
+
+      .ppn-sa-meta {
+        font-size: 9px;
+        margin-bottom: 5px;
+      }
+
+      .ppn-sa-pill {
+        font-size: 8px;
+        padding: 2px 6px;
+      }
+
+      .ppn-sa-themes {
+        gap: 3px;
+      }
+
+      .ppn-v2-medal-wrap {
+        width: 85px;
+        height: 75px;
+        margin-bottom: -22px !important;
+      }
+
+      .ppn-v2-card {
+        padding: 32px 10px 12px;
+      }
+
+      .ppn-v2-offer-name {
+        font-size: 10px;
+        min-height: 24px;
+        margin-bottom: 2px;
+      }
+
+      .ppn-v2-intro-text {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+
+  <p class="ppn-v2-intro-text">La classifica dei <strong>migliori fornitori luce</strong> nel 2026 nasce dall'analisi di
+    oltre <strong>1.500 commenti social e recensioni reali</strong> sui principali fornitori di energia, raccolti da
+    Reddit, YouTube, Facebook e X. Dall'analisi emergono tre fornitori in cima al ranking:
+    <strong>Octopus Energy</strong>, <strong>Dolomiti Energia</strong> ed <strong>ENGIE</strong>. Il risultato mette a
+    confronto i fornitori del <strong>mercato libero</strong> in base a tono dei commenti, temi ricorrenti e punteggi
+    calcolati su scala 0-10.
+  </p>
+
+  <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:10px 0; width:100%;">
+    <div
+      style="display: inline-flex; align-items: center; padding: 8px 16px; background-color: #f0f3ff; border: 1px solid #e0e7ff; border-radius: 50px;">
+      <span
+        style="height: 8px; width: 8px; background-color: #5a52ff; border-radius: 50%; display: inline-block; margin-right: 8px;"></span>
+      <span style="font-size: 11px; font-weight: 600; color: #5a52ff;">Aggiornato con dati GME e ARERA a:
+        $IT_today_date$</span>
+    </div>
+    <div class="ppn-disclaimer-wrapper" style="margin:0;">Papernest è un intermediario indipendente remunerato dai
+      partner. Il servizio telefonico è riservato alle sole offerte partner.</div>
+  </div>
+
+  <div class="ppn-v2-podium-container">
+
+    <!-- 1&deg; Posto - OCTOPUS ENERGY -->
+    <div class="ppn-v2-col ppn-v2-gold">
+      <div class="ppn-v2-medal-wrap">
+        <div class="ppn-v2-hexagon" style="background: #FFD700;">
+          <div class="ppn-v2-hex-inner">
+            <img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2025/07/img-src-8-1.png"
+              alt="Logo Octopus Energy - miglior fornitore luce mercato libero" />
+          </div>
+        </div>
+      </div>
+      <div class="ppn-v2-card" style="border-top: 6px solid #FFD700;">
+        <div class="ppn-v2-offer-name">Octopus Energy</div>
+        <div class="ppn-sa-score">8.19<span class="ppn-sa-unit">/10</span></div>
+        <div class="ppn-sa-positive"><span class="ppn-sa-dot" style="background:#A8E6CF;"></span><span
+            style="color:#3dab8a;">88.6% positivo</span></div>
+        <div class="ppn-sa-bar">
+          <div class="ppn-sa-bar-pos" style="width:88.6%"></div>
+          <div class="ppn-sa-bar-neu" style="width:2.3%"></div>
+          <div class="ppn-sa-bar-neg" style="width:9.1%"></div>
+        </div>
+        <div class="ppn-sa-themes">
+          <span class="ppn-sa-pill">Trasparenza <b>40</b></span>
+          <span class="ppn-sa-pill">Assistenza <b>39</b></span>
+          <span class="ppn-sa-pill">Attivazione <b>34</b></span>
+        </div>
+      </div>
+    </div>
+    <!-- 2&deg; Posto - DOLOMITI ENERGIA -->
+    <div class="ppn-v2-col ppn-v2-silver">
+      <div class="ppn-v2-medal-wrap">
+        <div class="ppn-v2-hexagon" style="background: #C0C0C0;">
+          <div class="ppn-v2-hex-inner">
+            <img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/36/2024/12/img-src-4.png"
+              alt="Logo Dolomiti Energia - fornitore luce mercato libero" />
+          </div>
+        </div>
+      </div>
+      <div class="ppn-v2-card" style="border-top: 6px solid #C0C0C0;">
+        <div class="ppn-v2-offer-name">Dolomiti Energia</div>
+        <div class="ppn-sa-score">7.70<span class="ppn-sa-unit">/10</span></div>
+        <div class="ppn-sa-positive"><span class="ppn-sa-dot" style="background:#A8E6CF;"></span><span
+            style="color:#3dab8a;">71.7% positivo</span></div>
+        <div class="ppn-sa-bar">
+          <div class="ppn-sa-bar-pos" style="width:71.7%"></div>
+          <div class="ppn-sa-bar-neu" style="width:0.0%"></div>
+          <div class="ppn-sa-bar-neg" style="width:28.3%"></div>
+        </div>
+        <div class="ppn-sa-themes">
+          <span class="ppn-sa-pill">Assistenza <b>30</b></span>
+          <span class="ppn-sa-pill">Tariffe <b>22</b></span>
+          <span class="ppn-sa-pill">Digitale <b>22</b></span>
+        </div>
+      </div>
+    </div>
+    <!-- 3&deg; Posto - ENGIE -->
+    <div class="ppn-v2-col ppn-v2-bronze">
+      <div class="ppn-v2-medal-wrap">
+        <div class="ppn-v2-hexagon" style="background: #CD7F32;">
+          <div class="ppn-v2-hex-inner">
+            <img src="https://d11o8pt3cttu38.cloudfront.net/wp-content/uploads/sites/55/2022/03/engie-200.png"
+              alt="Logo ENGIE Italia - fornitore energia rinnovabile mercato libero" />
+          </div>
+        </div>
+      </div>
+      <div class="ppn-v2-card" style="border-top: 6px solid #CD7F32;">
+        <div class="ppn-v2-offer-name">ENGIE</div>
+        <div class="ppn-sa-score">7.61<span class="ppn-sa-unit">/10</span></div>
+        <div class="ppn-sa-positive"><span class="ppn-sa-dot" style="background:#A8E6CF;"></span><span
+            style="color:#3dab8a;">67.6% positivo</span></div>
+        <div class="ppn-sa-bar">
+          <div class="ppn-sa-bar-pos" style="width:67.6%"></div>
+          <div class="ppn-sa-bar-neu" style="width:10.3%"></div>
+          <div class="ppn-sa-bar-neg" style="width:22.1%"></div>
+        </div>
+        <div class="ppn-sa-themes">
+          <span class="ppn-sa-pill">Tariffe <b>39</b></span>
+          <span class="ppn-sa-pill">Assistenza <b>33</b></span>
+          <span class="ppn-sa-pill">Trasparenza <b>24</b></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ACCORDION SENTIMENT ANALYSIS -->
+  <style>
+    .ppn-sa-accordion {
+      background: #fff;
+      border: 1px solid #E8EAF0;
+      border-radius: 14px;
+      margin: 30px auto 0;
+      max-width: 1000px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .ppn-sa-accordion summary {
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      outline: none;
+      background: linear-gradient(135deg, #FAFBFF 0%, #F5F3FF 100%);
+      border-bottom: 1px solid #E8EAF0;
+    }
+
+    .ppn-sa-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .ppn-sa-accordion summary span.sa-acc-title {
+      font-weight: 700;
+      color: #1e1e1e;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ppn-sa-accordion summary span.sa-acc-icon {
+      background: #f0f3ff;
+      color: #5a52ff;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .ppn-sa-accordion summary span.sa-acc-toggle {
+      color: #5a52ff;
+      font-size: 20px;
+      font-weight: 300;
+      transition: transform 0.3s;
+    }
+
+    .ppn-sa-accordion[open] summary span.sa-acc-toggle {
+      transform: rotate(45deg);
+    }
+
+    .ppn-sa-accordion .sa-acc-body {
+      padding: 24px;
+    }
+
+    .ppn-score-method-accordion {
+      margin: 4px 0 26px;
+      border: 1px solid #E8EAF0;
+      border-radius: 12px;
+      background: #FBFCFF;
+      overflow: hidden;
+    }
+
+    .ppn-sa-accordion .ppn-score-method-accordion summary {
+      padding: 14px 16px;
+      background: #fff;
+      border-bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .ppn-score-method-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #1e1e1e;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .ppn-score-method-icon {
+      width: 26px;
+      height: 26px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: #F0F3FF;
+      color: #5A52FF;
+      font-weight: 900;
+    }
+
+    .ppn-score-method-toggle {
+      color: #5A52FF;
+      font-size: 20px;
+      line-height: 1;
+      transition: transform .25s ease;
+    }
+
+    .ppn-score-method-accordion[open] .ppn-score-method-toggle {
+      transform: rotate(45deg);
+    }
+
+    .ppn-score-method-body {
+      padding: 16px;
+      border-top: 1px solid #E8EAF0;
+      background: #FBFCFF;
+    }
+
+    .ppn-score-method-body p {
+      margin: 0 0 12px;
+      color: #555;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .ppn-score-method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .ppn-score-method-chip {
+      min-width: 0;
+      padding: 10px;
+      border: 1px solid #E8EAF0;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .ppn-score-method-chip b {
+      display: block;
+      margin-bottom: 4px;
+      color: #5A52FF;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .ppn-score-method-chip span {
+      display: block;
+      color: #63697f;
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .ppn-score-method-explain {
+      margin: 12px 0;
+      padding: 12px;
+      border: 1px solid #DDE2F7;
+      border-radius: 8px;
+      background: #fff;
+      color: #555;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .ppn-score-method-explain strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #212431;
+      font-size: 13px;
+    }
+
+    .ppn-score-method-explain span {
+      display: block;
+    }
+
+    .ppn-score-method-formula {
+      box-sizing: border-box;
+      margin: 12px 0;
+      padding: 12px;
+      border: 1px solid #C9D7FF;
+      border-radius: 8px;
+      background: #F4F7FF;
+      color: #24304D;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.65;
+      overflow-x: auto;
+    }
+
+    .ppn-score-method-formula strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #24304D;
+      font-size: 13px;
+    }
+
+    .ppn-score-method-formula div {
+      display: grid;
+      grid-template-columns: 140px minmax(260px, 1fr);
+      gap: 4px 10px;
+      align-items: start;
+      padding: 9px 0;
+      border-top: 1px solid #DDE6FF;
+    }
+
+    .ppn-score-method-formula span {
+      color: #4D61C8;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .ppn-score-method-formula code {
+      box-sizing: border-box;
+      color: #1E2A44;
+      display: inline-block;
+      padding: 4px 7px;
+      border: 1px solid #D8E1FF;
+      border-radius: 6px;
+      background: #ffffff;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .ppn-score-method-formula small {
+      grid-column: 2;
+      color: #5B647A;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .ppn-score-method-formula small b {
+      color: #24304D;
+      font-weight: 800;
+    }
+
+    .ppn-score-method-note {
+      margin-bottom: 0 !important;
+      padding: 10px 12px;
+      border-left: 3px solid #5A52FF;
+      border-radius: 0 8px 8px 0;
+      background: #F5F7FF;
+    }
+
+    .ppn-emotion-note {
+      margin-top: 14px;
+      border: 1px solid #DDE2F7;
+      border-radius: 8px;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .ppn-emotion-note summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #24304D;
+      background: #F8F9FF;
+    }
+
+    .ppn-emotion-note-toggle {
+      flex: 0 0 auto;
+      color: #5A52FF;
+      font-size: 20px;
+      line-height: 1;
+      transition: transform .25s ease;
+    }
+
+    .ppn-emotion-note[open] .ppn-emotion-note-toggle {
+      transform: rotate(45deg);
+    }
+
+    .ppn-emotion-note summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .ppn-emotion-note-body {
+      padding: 12px 14px;
+      color: #555;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .ppn-emotion-note-body p {
+      margin: 0 0 8px;
+    }
+
+    .ppn-emotion-note-body ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .ppn-sa-section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f0f3ff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ppn-sa-section-title:not(:first-child) {
+      margin-top: 32px;
+    }
+
+    /* Distribuzione bars */
+    .sa-dist-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .sa-dist-name {
+      width: 120px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1e1e1e;
+      flex-shrink: 0;
+    }
+
+    .sa-dist-bar-wrap {
+      flex: 1;
+      display: flex;
+      height: 22px;
+      border-radius: 6px;
+      overflow: hidden;
+      gap: 1px;
+    }
+
+    .sa-dist-pos {
+      background: #A8E6CF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #2d7a5a;
+      border-radius: 6px 0 0 6px;
+    }
+
+    .sa-dist-neu {
+      background: #FFE0A3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #8a6d1b;
+    }
+
+    .sa-dist-neg {
+      background: #F4A6A0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #8b3a34;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .sa-dist-total {
+      width: 40px;
+      text-align: right;
+      font-size: 12px;
+      font-weight: 600;
+      color: #999;
+      flex-shrink: 0;
+    }
+
+    /* Emotion cards */
+    .sa-emo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .sa-emo-card {
+      background: #FAFBFF;
+      border: 1px solid #E8EAF0;
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .sa-emo-card .sa-emo-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 12px;
+    }
+
+    .sa-emo-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .sa-emo-emoji {
+      font-size: 14px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .sa-emo-label {
+      font-size: 11px;
+      color: #666;
+      width: 52px;
+    }
+
+    .sa-emo-bar {
+      flex: 1;
+      height: 6px;
+      background: #f0f0f0;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .sa-emo-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+
+    .sa-emo-joy {
+      background: #A8E6CF;
+    }
+
+    .sa-emo-anger {
+      background: #F4A6A0;
+    }
+
+    .sa-emo-sadness {
+      background: #B8C4E8;
+    }
+
+    .sa-emo-fear {
+      background: #D4B8E8;
+    }
+
+    .sa-emo-count {
+      font-size: 10px;
+      color: #999;
+      width: 28px;
+      text-align: right;
+    }
+
+    /* Theme cards */
+    .sa-theme-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .sa-theme-card {
+      background: #FAFBFF;
+      border: 1px solid #E8EAF0;
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .sa-theme-card .sa-theme-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 12px;
+    }
+
+    .sa-theme-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .sa-theme-label {
+      font-size: 11px;
+      color: #555;
+      width: 100px;
+    }
+
+    .sa-theme-bar {
+      flex: 1;
+      height: 6px;
+      background: #f0f0f0;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .sa-theme-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #B8C4F4, #A8E6CF);
+    }
+
+    .sa-theme-count {
+      font-size: 10px;
+      color: #999;
+      width: 28px;
+      text-align: right;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+
+      .sa-emo-grid,
+      .sa-theme-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sa-dist-name {
+        width: 90px;
+        font-size: 11px;
+      }
+
+      .sa-dist-bar-wrap {
+        height: 18px;
+      }
+
+      .ppn-sa-accordion .ppn-score-method-accordion summary {
+        align-items: flex-start;
+      }
+
+      .ppn-score-method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ppn-score-method-formula {
+        font-size: 11px;
+        overflow-x: visible;
+      }
+
+      .ppn-score-method-formula div {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .ppn-score-method-formula code {
+        display: block;
+        width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        font-size: 10.5px;
+        line-height: 1.45;
+      }
+
+      .ppn-score-method-formula small {
+        grid-column: auto;
+        white-space: normal;
+      }
+    }
+  </style>
+
+  <details class="ppn-sa-accordion">
+    <summary>
+      <span class="sa-acc-title"><span class="sa-acc-icon">&#128202;</span> Sentiment Analysis: come abbiamo analizzato
+        le opinioni</span>
+      <span class="sa-acc-toggle">+</span>
+    </summary>
+    <div class="sa-acc-body">
+
+      <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 20px;">La classifica parte da
+        <strong>oltre 1.500 commenti social e recensioni reali</strong> sui principali fornitori di energia. Di questi,
+        <strong>418 commenti</strong> riguardano i tre fornitori oggi sul podio: Octopus Energy (176), Dolomiti Energia
+        (106) ed ENGIE (136). Da questi testi abbiamo ricavato tono, temi ricorrenti ed emozioni prevalenti. Il
+        voto finale è espresso su <strong>scala 0-10</strong> e combina tono del commento, qualità informativa, recenza
+        disponibile e peso dei temi: tariffe, assistenza, digitale, attivazione e trasparenza. Per le emozioni usiamo
+        FEEL-IT, un modello che riconosce nel testo segnali come gioia, rabbia, delusione e preoccupazione.
+      </p>
+      <!-- ACCORDION FORMULA PUNTEGGIO -->
+      <details class="ppn-score-method-accordion">
+        <summary>
+          <span class="ppn-score-method-title"><span class="ppn-score-method-icon">=</span> Come calcoliamo il
+            punteggio</span>
+          <span class="ppn-score-method-toggle">+</span>
+        </summary>
+        <div class="ppn-score-method-body">
+          <p><strong>Il voto non è una media semplice dei commenti.</strong> Leggiamo le opinioni una per una e le
+            trasformiamo in segnali confrontabili: tema, tono, concretezza dell'esperienza e recenza disponibile.</p>
+          <div class="ppn-score-method-grid">
+            <div class="ppn-score-method-chip"><b>1</b><span>Associamo ogni commento a un tema: tariffe, assistenza,
+                digitale, attivazione o trasparenza.</span></div>
+            <div class="ppn-score-method-chip"><b>2</b><span>Valutiamo il tono verso il fornitore: positivo, neutro o
+                negativo, con intensità diversa.</span></div>
+            <div class="ppn-score-method-chip"><b>3</b><span>Diamo più peso ai commenti recenti, dettagliati e utili per
+                scegliere davvero.</span></div>
+            <div class="ppn-score-method-chip"><b>4</b><span>Calcoliamo un voto per ogni tema e lo combiniamo nel
+                punteggio
+                finale su 10.</span></div>
+          </div>
+          <div class="ppn-score-method-explain">
+            <strong>In pratica:</strong>
+            <span>un commento breve conta, ma pesa meno di una recensione recente e concreta su prezzo, bolletta,
+              assistenza ricevuta o cambio fornitore.</span>
+          </div>
+          <div class="ppn-score-method-formula">
+            <strong>Dettaglio formula</strong>
+            <div><span>Peso del commento</span><code>w_i = 0,35 + 0,45 × q_i + 0,20 × r_i</code><small>Ogni commento
+                parte da una base comune; poi pesa di più se è concreto (<b>q_i</b>) e recente (<b>r_i</b>).</small>
+            </div>
+            <div><span>Tono medio del tema</span><code>μ_k = Σ(w_i × s_i) / Σw_i</code><small>Dentro ogni tema facciamo
+                la media del tono del commento (<b>s_i</b>), dando più importanza ai commenti con peso maggiore.</small>
+            </div>
+            <div><span>Correzione prudenziale</span><code>λ_k = n_k / (n_k + 10)</code><small>Se un tema ha pochi
+                commenti (<b>n_k</b>), il voto viene corretto per evitare risultati troppo estremi.</small></div>
+            <div><span>Voto del
+                tema</span><code>Score_k = 5 + [λ_k × (2,5 + 2,5 × μ_k) + (1 - λ_k) × 2,5]</code><small>Il tono medio
+                viene trasformato in un voto su 10, mantenendo una base prudente quando il campione è più
+                piccolo.</small></div>
+            <div><span>Voto finale</span><code>Overall = Σ(α_k × Score_k)</code><small>Il voto complessivo combina i
+                cinque temi con pesi diversi: tariffe 30%, assistenza 30%, digitale 15%, attivazione 15% e trasparenza
+                10%.</small></div>
+          </div>
+        </div>
+      </details>
+      <!-- /ACCORDION FORMULA PUNTEGGIO -->
+
+      <!-- SEZIONE 1: Distribuzione -->
+      <div class="ppn-sa-section-title">&#128202; Distribuzione positivo / neutro / negativo</div>
+      <div class="sa-dist-row">
+        <div class="sa-dist-name">Octopus Energy</div>
+        <div class="sa-dist-bar-wrap">
+          <div class="sa-dist-pos" style="width:88.6%">156</div>
+          <div class="sa-dist-neu" style="width:2.3%">4</div>
+          <div class="sa-dist-neg" style="width:9.1%">16</div>
+        </div>
+        <div class="sa-dist-total">176</div>
+      </div>
+      <div class="sa-dist-row">
+        <div class="sa-dist-name">Dolomiti Energia</div>
+        <div class="sa-dist-bar-wrap">
+          <div class="sa-dist-pos" style="width:71.7%">76</div>
+          <div class="sa-dist-neu" style="width:0.0%"></div>
+          <div class="sa-dist-neg" style="width:28.3%">30</div>
+        </div>
+        <div class="sa-dist-total">106</div>
+      </div>
+      <div class="sa-dist-row">
+        <div class="sa-dist-name">ENGIE</div>
+        <div class="sa-dist-bar-wrap">
+          <div class="sa-dist-pos" style="width:67.6%">92</div>
+          <div class="sa-dist-neu" style="width:10.3%">14</div>
+          <div class="sa-dist-neg" style="width:22.1%">30</div>
+        </div>
+        <div class="sa-dist-total">136</div>
+      </div>
+      <div style="display:flex; gap:16px; margin-top:8px; font-size:10px; color:#aaa;">
+        <span style="display:flex;align-items:center;gap:4px;"><span
+            style="width:10px;height:10px;background:#A8E6CF;border-radius:2px;"></span> Positivo</span>
+        <span style="display:flex;align-items:center;gap:4px;"><span
+            style="width:10px;height:10px;background:#FFE0A3;border-radius:2px;"></span> Neutro</span>
+        <span style="display:flex;align-items:center;gap:4px;"><span
+            style="width:10px;height:10px;background:#F4A6A0;border-radius:2px;"></span> Negativo</span>
+      </div>
+
+      <!-- SEZIONE 2: Emozioni -->
+      <div class="ppn-sa-section-title">&#129504; Emozioni nei commenti</div>
+      <div class="sa-emo-grid">
+        <div class="sa-emo-card">
+          <div class="sa-emo-name">Octopus Energy</div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128522;</div>
+            <div class="sa-emo-label">Gioia</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-joy" style="width:65.9%"></div>
+            </div>
+            <div class="sa-emo-count">116</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128545;</div>
+            <div class="sa-emo-label">Rabbia</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-anger" style="width:15.9%"></div>
+            </div>
+            <div class="sa-emo-count">28</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128546;</div>
+            <div class="sa-emo-label">Delusione</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-sadness" style="width:15.9%"></div>
+            </div>
+            <div class="sa-emo-count">28</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128552;</div>
+            <div class="sa-emo-label">Preoccupazione</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-fear" style="width:2.3%"></div>
+            </div>
+            <div class="sa-emo-count">4</div>
+          </div>
+        </div>
+        <div class="sa-emo-card">
+          <div class="sa-emo-name">Dolomiti Energia</div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128522;</div>
+            <div class="sa-emo-label">Gioia</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-joy" style="width:46.2%"></div>
+            </div>
+            <div class="sa-emo-count">49</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128545;</div>
+            <div class="sa-emo-label">Rabbia</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-anger" style="width:28.3%"></div>
+            </div>
+            <div class="sa-emo-count">30</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128546;</div>
+            <div class="sa-emo-label">Delusione</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-sadness" style="width:17.9%"></div>
+            </div>
+            <div class="sa-emo-count">19</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128552;</div>
+            <div class="sa-emo-label">Preoccupazione</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-fear" style="width:7.5%"></div>
+            </div>
+            <div class="sa-emo-count">8</div>
+          </div>
+        </div>
+        <div class="sa-emo-card">
+          <div class="sa-emo-name">ENGIE</div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128522;</div>
+            <div class="sa-emo-label">Gioia</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-joy" style="width:25.7%"></div>
+            </div>
+            <div class="sa-emo-count">35</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128545;</div>
+            <div class="sa-emo-label">Rabbia</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-anger" style="width:24.3%"></div>
+            </div>
+            <div class="sa-emo-count">33</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128546;</div>
+            <div class="sa-emo-label">Delusione</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-sadness" style="width:32.4%"></div>
+            </div>
+            <div class="sa-emo-count">44</div>
+          </div>
+          <div class="sa-emo-row">
+            <div class="sa-emo-emoji">&#128552;</div>
+            <div class="sa-emo-label">Preoccupazione</div>
+            <div class="sa-emo-bar">
+              <div class="sa-emo-fill sa-emo-fear" style="width:17.6%"></div>
+            </div>
+            <div class="sa-emo-count">24</div>
+          </div>
+        </div>
+      </div>
+
+      <details class="ppn-emotion-note">
+        <summary><span>Come leggere queste emozioni</span><span class="ppn-emotion-note-toggle">+</span></summary>
+        <div class="ppn-emotion-note-body">
+          <p>FEEL-IT è un modello che riconosce le emozioni espresse in un testo. Qui lo usiamo come supporto per
+            capire il tono emotivo dei commenti, senza sostituire la lettura editoriale.</p>
+          <ul>
+            <li><strong>Gioia:</strong> soddisfazione, problema risolto, bolletta chiara o risparmio percepito.</li>
+            <li><strong>Rabbia:</strong> reclami, bollette inattese, assistenza percepita come poco efficace.</li>
+            <li><strong>Delusione:</strong> aspettative non rispettate, pratica lenta o esperienza peggiore del
+              previsto.</li>
+            <li><strong>Preoccupazione:</strong> incertezza su costi, rinnovi, aumenti o passaggi di fornitura.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- SEZIONE 3: Temi -->
+      <div class="ppn-sa-section-title">&#127793; Temi principali (commenti per tema)</div>
+      <div class="sa-theme-grid">
+        <div class="sa-theme-card">
+          <div class="sa-theme-name">Octopus Energy</div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Tariffe</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:77.5%"></div>
+            </div>
+            <div class="sa-theme-count">31</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Assistenza</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:97.5%"></div>
+            </div>
+            <div class="sa-theme-count">39</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Digitale</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:80.0%"></div>
+            </div>
+            <div class="sa-theme-count">32</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Attivazione</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:85.0%"></div>
+            </div>
+            <div class="sa-theme-count">34</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Trasparenza</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:100.0%"></div>
+            </div>
+            <div class="sa-theme-count">40</div>
+          </div>
+        </div>
+        <div class="sa-theme-card">
+          <div class="sa-theme-name">Dolomiti Energia</div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Tariffe</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:73.3%"></div>
+            </div>
+            <div class="sa-theme-count">22</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Assistenza</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:100.0%"></div>
+            </div>
+            <div class="sa-theme-count">30</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Digitale</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:73.3%"></div>
+            </div>
+            <div class="sa-theme-count">22</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Attivazione</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:43.3%"></div>
+            </div>
+            <div class="sa-theme-count">13</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Trasparenza</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:63.3%"></div>
+            </div>
+            <div class="sa-theme-count">19</div>
+          </div>
+        </div>
+        <div class="sa-theme-card">
+          <div class="sa-theme-name">ENGIE</div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Tariffe</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:100.0%"></div>
+            </div>
+            <div class="sa-theme-count">39</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Assistenza</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:84.6%"></div>
+            </div>
+            <div class="sa-theme-count">33</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Digitale</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:48.7%"></div>
+            </div>
+            <div class="sa-theme-count">19</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Attivazione</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:53.8%"></div>
+            </div>
+            <div class="sa-theme-count">21</div>
+          </div>
+          <div class="sa-theme-row">
+            <div class="sa-theme-label">Trasparenza</div>
+            <div class="sa-theme-bar">
+              <div class="sa-theme-fill" style="width:61.5%"></div>
+            </div>
+            <div class="sa-theme-count">24</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+  <!-- /ACCORDION SENTIMENT ANALYSIS -->
+
+</div>
+
+$IT_NRJ0_no_foto_menu_mobile$
