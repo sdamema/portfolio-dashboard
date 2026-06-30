@@ -2,14 +2,14 @@
 
 This folder keeps Search Console or Analytics exports organized before they are turned into public portfolio visuals.
 
-- `raw/`: original exports copied locally for analysis. This folder is ignored by git because raw exports can contain sensitive URLs, queries or account data.
-- `processed/`: sanitized and aggregated datasets that can be used by the static portfolio dashboard.
+- `google-search-console/raw/`: original GSC exports copied locally for analysis. This folder is ignored by git because raw exports can contain sensitive URLs, queries or account data.
+- `google-search-console/processed/`: sanitized and aggregated GSC datasets that can be used by the static portfolio dashboard.
 
 Current dataset:
 
-- `raw/gsc/reviews/full-may-june-2026`: Google Search Console export for 17 supplier review pages, covering May 1, 2026 to June 29, 2026.
-- `raw/gsc/reviews/may-2026`: May-only GSC export used for before-update top pages.
-- `raw/gsc/reviews/june-2026`: June-only GSC export used for after-update top pages.
-- `processed/reviews-gsc-performance.json` and `.js`: public aggregated dataset used by the dashboard.
-- `raw/gsc/offers/full-mar-jun-2026`: Google Search Console export for supplier offer sheets, covering the launch/growth period.
-- `processed/offers-gsc-performance.json` and `.js`: public percentage-only launch trend for new offer pages, using indexed/smoothed movement instead of raw values.
+- `google-search-console/raw/reviews/full-may-june-2026`: Google Search Console export for 17 supplier review pages, covering May 1, 2026 to June 29, 2026.
+- `google-search-console/raw/reviews/may-2026`: May-only GSC export used for before-update top pages.
+- `google-search-console/raw/reviews/june-2026`: June-only GSC export used for after-update top pages.
+- `google-search-console/processed/reviews-gsc-performance.json` and `.js`: public aggregated dataset used by the dashboard.
+- `google-search-console/raw/offers/full-mar-jun-2026`: Google Search Console export for supplier offer sheets, covering the launch/growth period.
+- `google-search-console/processed/offers-gsc-performance.json` and `.js`: public percentage-only trend for new offer pages, comparing May 1-June 28 daily averages with the Apr 22-30 pre-quality baseline and using indexed/smoothed chart movement instead of raw values.

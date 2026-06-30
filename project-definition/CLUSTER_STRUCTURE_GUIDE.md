@@ -47,9 +47,9 @@ Each project detail should follow this order:
 
 ## Performance Data Rules
 
-- Keep raw GSC/GA/analytics exports in `analytics-data/raw/`.
-- `analytics-data/raw/` must stay ignored by git.
-- Publish only sanitized or aggregated datasets from `analytics-data/processed/`.
+- Keep raw GSC exports in `analytics-data/google-search-console/raw/`.
+- `analytics-data/google-search-console/raw/` must stay ignored by git.
+- Publish only sanitized or aggregated GSC datasets from `analytics-data/google-search-console/processed/`.
 - When performance data cannot be public, processed datasets must contain only percentage variations, never raw clicks, impressions, CTR or average-position values.
 - For static GitHub Pages and `file://` preview, prefer a processed `.js` dataset that attaches data to `window.portfolioPerformanceData`.
 - Also keep a `.json` version for auditability.
@@ -95,11 +95,11 @@ For cluster performance charts:
 
 Dataset:
 
-- `analytics-data/raw/gsc/reviews/full-may-june-2026/`
-- `analytics-data/raw/gsc/reviews/may-2026/`
-- `analytics-data/raw/gsc/reviews/june-2026/`
-- `analytics-data/processed/reviews-gsc-performance.json`
-- `analytics-data/processed/reviews-gsc-performance.js`
+- `analytics-data/google-search-console/raw/reviews/full-may-june-2026/`
+- `analytics-data/google-search-console/raw/reviews/may-2026/`
+- `analytics-data/google-search-console/raw/reviews/june-2026/`
+- `analytics-data/google-search-console/processed/reviews-gsc-performance.json`
+- `analytics-data/google-search-console/processed/reviews-gsc-performance.js`
 
 Date range:
 
@@ -121,7 +121,7 @@ Main results:
 Top pages:
 
 - Public top-page panel shows 6 key URLs with percentage-only movements.
-- Total, May-only and June-only raw exports stay local in `analytics-data/raw/`.
+- Total, May-only and June-only raw exports stay local in `analytics-data/google-search-console/raw/`.
 - Do not expose raw page-level clicks, impressions, CTR or average-position values in processed JSON/JS.
 - Key numbers are hidden as a separate block for the review cluster. The important numbers are integrated in the project summary: 17 suppliers and roughly 40-200 comments analyzed per provider.
 - Review URL inventory should show only page links, not performance data, with a note that the pages have not been changed again after the update and should remain unchanged until August 8, 2026.
@@ -138,9 +138,9 @@ Top pages:
 
 Dataset:
 
-- `analytics-data/raw/gsc/offers/full-mar-jun-2026/`
-- `analytics-data/processed/offers-gsc-performance.json`
-- `analytics-data/processed/offers-gsc-performance.js`
+- `analytics-data/google-search-console/raw/offers/full-mar-jun-2026/`
+- `analytics-data/google-search-console/processed/offers-gsc-performance.json`
+- `analytics-data/google-search-console/processed/offers-gsc-performance.js`
 
 Date range:
 
@@ -149,9 +149,13 @@ Date range:
 Comparison:
 
 - These are new pages, so do not describe the chart as a classic before/after update.
-- Use April 15-28, 2026 as the post-March-core / production-ramp optimization baseline.
-- Compare the latest active 14 days with that recovery baseline.
-- The chart uses 7-day smoothed percentage movement against the recovery baseline.
+- Publication started on March 18, 2026. Until mid-April, the offer-page project existed but was still secondary / not fully prioritized.
+- Use April 22-30, 2026 as the final pre-quality baseline: publication had become more regular, but the larger quality/differentiation work had not started yet.
+- From mid-April, the cluster became more structured and prioritized, with weekly goals and a target of roughly two new offer pages per day.
+- From early May, the work shifted toward quality: unique price-trend content, cleaner H2s, fewer spammy heading patterns, AI-assisted duplicate checks and better transactional UX on new pages or already-published URLs.
+- Compare May 1-June 28, 2026 with that pre-quality baseline using daily averages, not totals, so a shorter baseline can be compared with a longer quality period.
+- The chart uses 7-day smoothed percentage movement against the pre-quality baseline.
+- Explain the March core update as context: repeated offer templates may have been perceived as too similar, then the cluster improved after stronger unique content, price-history modules, cleaner H2s and AI-assisted duplicate checks.
 - Show Google core-update windows as context only: March 27-April 8, 2026 and May 21-June 2, 2026.
 
 Public reporting:

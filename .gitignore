@@ -6,3 +6,8 @@ analytics-data/raw/**
 !analytics-data/raw/**/
 !analytics-data/raw/.gitkeep
 !analytics-data/raw/**/.gitkeep
+analytics-data/google-search-console/raw/**
+!analytics-data/google-search-console/raw/
+!analytics-data/google-search-console/raw/**/
+!analytics-data/google-search-console/raw/.gitkeep
+!analytics-data/google-search-console/raw/**/.gitkeep
