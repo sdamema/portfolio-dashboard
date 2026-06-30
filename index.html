@@ -6,7 +6,7 @@
   <title>Digital Marketing & SEO Portfolio | Emanuele Sorgonà</title>
   <meta name="description" content="Interactive portfolio for SEO, digital marketing, data workflows, HTML modules and Italian page demos.">
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="styles.css?v=20260630-11">
+  <link rel="stylesheet" href="styles.css?v=20260630-12">
 </head>
 <body>
   <main class="page-shell">
@@ -231,15 +231,23 @@
         <div class="performance-layout">
           <article class="performance-copy" id="performanceNarrative"></article>
           <div class="performance-card">
+            <div class="performance-card-head">
+              <div>
+                <p class="eyebrow">Indexed chart</p>
+                <strong>May daily average = 0%</strong>
+              </div>
+              <div class="performance-chart-mode" id="performanceChartMode" aria-label="Chart series filter"></div>
+            </div>
             <div class="performance-legend" aria-label="Chart legend">
-              <span><i class="legend-dot legend-clicks"></i>Click variation</span>
-              <span><i class="legend-dot legend-impressions"></i>Impression variation</span>
+              <span><i class="legend-dot legend-clicks"></i>Clicks</span>
+              <span><i class="legend-dot legend-impressions"></i>Impressions</span>
               <span><i class="legend-line"></i>End-of-May update</span>
             </div>
             <div class="chart-shell">
               <svg id="performanceChart" viewBox="0 0 940 360" role="img" aria-label="Google Search Console relative trend"></svg>
               <div class="chart-tooltip" id="chartTooltip" hidden></div>
             </div>
+            <p class="chart-footnote">Hover or tap the chart to inspect each date. The public view uses percentage movement only, not raw Search Console values.</p>
           </div>
         </div>
 
@@ -297,6 +305,6 @@
   </main>
 
   <script src="analytics-data/processed/reviews-gsc-performance.js?v=20260630-7"></script>
-  <script src="app.js?v=20260630-11"></script>
+  <script src="app.js?v=20260630-12"></script>
 </body>
 </html>

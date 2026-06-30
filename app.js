@@ -441,6 +441,7 @@ const performanceSection = document.querySelector("#sectionPerformance");
 const performanceTitle = document.querySelector("#performanceTitle");
 const performancePeriod = document.querySelector("#performancePeriod");
 const performanceNarrative = document.querySelector("#performanceNarrative");
+const performanceChartMode = document.querySelector("#performanceChartMode");
 const performanceChart = document.querySelector("#performanceChart");
 const chartTooltip = document.querySelector("#chartTooltip");
 const performanceComparison = document.querySelector("#performanceComparison");
@@ -458,6 +459,7 @@ const exampleTitle = document.querySelector("#exampleTitle");
 const exampleLink = document.querySelector("#exampleLink");
 const examplePath = document.querySelector("#examplePath");
 const demoFrame = document.querySelector("#demoFrame");
+let activeChartMode = "both";
 
 function getActiveProject() {
   return projects.find((project) => project.id === activeProjectId) || projects[0];
@@ -548,6 +550,10 @@ function formatLongDate(dateValue) {
   return new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(new Date(`${dateValue}T00:00:00`));
 }
 
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
 function createSvgElement(name, attributes = {}) {
   const element = document.createElementNS(svgNamespace, name);
   Object.entries(attributes).forEach(([key, value]) => {
@@ -562,6 +568,32 @@ function pointsToPath(points) {
 
 function getPerformanceDataset(project) {
   return project.performanceKey ? window.portfolioPerformanceData?.[project.performanceKey] : null;
+}
+
+function renderPerformanceChartMode(dataset) {
+  const modes = [
+    ["both", "Both"],
+    ["clicks", "Clicks"],
+    ["impressions", "Impressions"]
+  ];
+
+  performanceChartMode.innerHTML = modes.map(([mode, label]) => `
+    <button
+      class="${activeChartMode === mode ? "is-active" : ""}"
+      type="button"
+      data-chart-mode="${mode}"
+      aria-pressed="${activeChartMode === mode}"
+    >${label}</button>
+  `).join("");
+
+  performanceChartMode.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", () => {
+      activeChartMode = button.dataset.chartMode;
+      hideChartTooltip();
+      renderPerformanceChartMode(dataset);
+      renderPerformanceChart(dataset);
+    });
+  });
 }
 
 function renderProjectJumpNav(project, dataset) {
@@ -642,6 +674,7 @@ function renderPerformance(project, dataset) {
   } else {
     renderTopPages(dataset, "total");
   }
+  renderPerformanceChartMode(dataset);
   renderPerformanceChart(dataset);
 }
 
@@ -764,16 +797,21 @@ function renderPerformanceChart(dataset) {
   const data = dataset.chart;
   const width = 940;
   const height = 360;
-  const margin = { top: 26, right: 76, bottom: 46, left: 56 };
+  const margin = { top: 30, right: 76, bottom: 46, left: 58 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
   const baseline = margin.top + innerHeight;
-  const allValues = data.flatMap((row) => [row.clickChange, row.impressionChange]).filter(Number.isFinite);
+  const showClicks = activeChartMode !== "impressions";
+  const showImpressions = activeChartMode !== "clicks";
+  const allValues = data.flatMap((row) => [
+    showClicks ? row.clickChange : null,
+    showImpressions ? row.impressionChange : null
+  ]).filter(Number.isFinite);
   const minValue = Math.min(0, ...allValues);
   const maxValue = Math.max(...allValues);
   const padding = Math.max((maxValue - minValue) * .14, .2);
   const yMin = Math.max(-1, minValue - padding);
-  const yMax = maxValue + padding;
+  const yMax = Math.max(.5, maxValue + padding);
 
   const xScale = (index) => margin.left + (index / (data.length - 1)) * innerWidth;
   const yScale = (value) => baseline - ((value - yMin) / (yMax - yMin)) * innerHeight;
@@ -795,7 +833,40 @@ function renderPerformanceChart(dataset) {
 
   performanceChart.innerHTML = "";
   performanceChart.append(createSvgElement("title", {}));
-  performanceChart.querySelector("title").textContent = "Google Search Console percentage variation for review pages";
+  performanceChart.querySelector("title").textContent = "Indexed Google Search Console percentage variation for review pages";
+
+  if (splitIndex > 0) {
+    performanceChart.append(createSvgElement("rect", {
+      class: "chart-phase chart-phase--before",
+      x: margin.left,
+      y: margin.top,
+      width: splitX - margin.left,
+      height: innerHeight
+    }));
+    performanceChart.append(createSvgElement("rect", {
+      class: "chart-phase chart-phase--after",
+      x: splitX,
+      y: margin.top,
+      width: width - margin.right - splitX,
+      height: innerHeight
+    }));
+
+    const beforeLabel = createSvgElement("text", {
+      class: "chart-phase-label",
+      x: margin.left + 12,
+      y: margin.top + 18
+    });
+    beforeLabel.textContent = "Before";
+    performanceChart.append(beforeLabel);
+
+    const afterLabel = createSvgElement("text", {
+      class: "chart-phase-label chart-phase-label--after",
+      x: splitX + 12,
+      y: margin.top + 18
+    });
+    afterLabel.textContent = "After";
+    performanceChart.append(afterLabel);
+  }
 
   [0, .25, .5, .75, 1].forEach((ratio) => {
     const y = baseline - ratio * innerHeight;
@@ -839,14 +910,20 @@ function renderPerformanceChart(dataset) {
     performanceChart.append(dateLabel);
   });
 
-  performanceChart.append(createSvgElement("path", {
-    class: "chart-line chart-line--impressions",
-    d: pointsToPath(impressionPoints)
-  }));
-  performanceChart.append(createSvgElement("path", {
-    class: "chart-line chart-line--clicks",
-    d: pointsToPath(clickPoints)
-  }));
+  if (showImpressions) {
+    performanceChart.append(createSvgElement("path", {
+      class: "chart-line chart-line--impressions",
+      d: pointsToPath(impressionPoints)
+    }));
+  }
+
+  if (showClicks) {
+    performanceChart.append(createSvgElement("path", {
+      class: "chart-line chart-line--clicks",
+      d: pointsToPath(clickPoints)
+    }));
+  }
+
   performanceChart.append(createSvgElement("line", {
     class: "chart-update-line",
     x1: splitX,
@@ -862,63 +939,136 @@ function renderPerformanceChart(dataset) {
   updateLabel.textContent = "update";
   performanceChart.append(updateLabel);
 
-  clickPoints.forEach((point) => {
-    performanceChart.append(createSvgElement("circle", {
-      class: "chart-point chart-point--clicks",
-      cx: point.x,
-      cy: point.y,
-      r: 2.4
-    }));
-  });
+  if (showClicks) {
+    clickPoints.forEach((point) => {
+      performanceChart.append(createSvgElement("circle", {
+        class: "chart-point chart-point--clicks",
+        cx: point.x,
+        cy: point.y,
+        r: 2.7
+      }));
+    });
+  }
 
-  impressionPoints.forEach((point) => {
-    performanceChart.append(createSvgElement("circle", {
-      class: "chart-point chart-point--impressions",
-      cx: point.x,
-      cy: point.y,
-      r: 2.1
-    }));
-  });
+  if (showImpressions) {
+    impressionPoints.forEach((point) => {
+      performanceChart.append(createSvgElement("circle", {
+        class: "chart-point chart-point--impressions",
+        cx: point.x,
+        cy: point.y,
+        r: 2.3
+      }));
+    });
+  }
+
+  const focusGroup = createSvgElement("g", { class: "chart-focus is-hidden" });
+  focusGroup.append(createSvgElement("line", {
+    class: "chart-focus-line",
+    x1: margin.left,
+    x2: margin.left,
+    y1: margin.top,
+    y2: baseline
+  }));
+  focusGroup.append(createSvgElement("circle", {
+    class: "chart-focus-dot chart-focus-dot--clicks",
+    cx: margin.left,
+    cy: baseline,
+    r: 6
+  }));
+  focusGroup.append(createSvgElement("circle", {
+    class: "chart-focus-dot chart-focus-dot--impressions",
+    cx: margin.left,
+    cy: baseline,
+    r: 5
+  }));
+  performanceChart.append(focusGroup);
 
   const hitWidth = innerWidth / data.length;
-  clickPoints.forEach((point) => {
+  data.forEach((row, index) => {
+    const clickPoint = clickPoints[index];
+    const impressionPoint = impressionPoints[index];
+    const anchorY = Math.min(
+      showClicks ? clickPoint.y : baseline,
+      showImpressions ? impressionPoint.y : baseline
+    );
+    const point = {
+      x: xScale(index),
+      y: anchorY,
+      clickY: clickPoint.y,
+      impressionY: impressionPoint.y,
+      row,
+      index,
+      showClicks,
+      showImpressions
+    };
     const marker = createSvgElement("rect", {
       class: "chart-hit",
       x: point.x - hitWidth / 2,
       y: margin.top,
       width: hitWidth,
       height: innerHeight,
-      "aria-label": `${formatLongDate(point.row.date)}: ${formatSignedPercent(point.row.clickChange)} click variation and ${formatSignedPercent(point.row.impressionChange)} impression variation`
+      tabindex: "0",
+      "aria-label": `${formatLongDate(row.date)}: ${formatSignedPercent(row.clickChange)} click variation and ${formatSignedPercent(row.impressionChange)} impression variation`
     });
     marker.addEventListener("mouseenter", () => showChartTooltip(point, dataset));
     marker.addEventListener("mousemove", () => showChartTooltip(point, dataset));
     marker.addEventListener("click", () => showChartTooltip(point, dataset));
+    marker.addEventListener("focus", () => showChartTooltip(point, dataset));
+    marker.addEventListener("blur", hideChartTooltip);
     marker.addEventListener("mouseleave", hideChartTooltip);
     performanceChart.append(marker);
   });
 }
 
 function showChartTooltip(point, dataset) {
-  const width = 940;
-  const height = 360;
-  const edgeClass = point.x < 160 ? "is-left" : point.x > width - 160 ? "is-right" : "";
-  const verticalClass = point.y < 120 ? "is-below" : "";
+  const chartShell = performanceChart.closest(".chart-shell");
+  const chartRect = chartShell.getBoundingClientRect();
+  const focusGroup = performanceChart.querySelector(".chart-focus");
+  const focusLine = performanceChart.querySelector(".chart-focus-line");
+  const focusClick = performanceChart.querySelector(".chart-focus-dot--clicks");
+  const focusImpression = performanceChart.querySelector(".chart-focus-dot--impressions");
+
+  focusGroup?.classList.remove("is-hidden");
+  focusLine?.setAttribute("x1", point.x);
+  focusLine?.setAttribute("x2", point.x);
+  focusClick?.setAttribute("cx", point.x);
+  focusClick?.setAttribute("cy", point.clickY);
+  focusClick?.classList.toggle("is-hidden", !point.showClicks);
+  focusImpression?.setAttribute("cx", point.x);
+  focusImpression?.setAttribute("cy", point.impressionY);
+  focusImpression?.classList.toggle("is-hidden", !point.showImpressions);
 
   chartTooltip.hidden = false;
-  chartTooltip.className = ["chart-tooltip", edgeClass, verticalClass].filter(Boolean).join(" ");
-  chartTooltip.style.left = `${(point.x / width) * 100}%`;
-  chartTooltip.style.top = `${(point.y / height) * 100}%`;
+  chartTooltip.className = "chart-tooltip";
   chartTooltip.innerHTML = `
     <strong>${formatLongDate(point.row.date)}</strong>
     <span>${point.row.phase === "before" ? dataset.periods.before.label : dataset.periods.after.label}</span>
-    <p>${formatSignedPercent(point.row.clickChange)} click variation</p>
-    <p>${formatSignedPercent(point.row.impressionChange)} impression variation</p>
-    <p>Compared with the pre-update daily baseline</p>
+    ${point.showClicks ? `<p><b class="tooltip-dot tooltip-dot--clicks"></b>${formatSignedPercent(point.row.clickChange)} click variation</p>` : ""}
+    ${point.showImpressions ? `<p><b class="tooltip-dot tooltip-dot--impressions"></b>${formatSignedPercent(point.row.impressionChange)} impression variation</p>` : ""}
+    <p class="tooltip-note">Compared with the May daily baseline</p>
   `;
+
+  const anchorX = chartRect.left + (point.x / 940) * chartRect.width;
+  const anchorY = chartRect.top + (point.y / 360) * chartRect.height;
+  const tooltipWidth = chartTooltip.offsetWidth || 190;
+  const tooltipHeight = chartTooltip.offsetHeight || 126;
+  const gap = 14;
+  const viewportPadding = 10;
+  const left = clamp(anchorX - tooltipWidth / 2, viewportPadding, window.innerWidth - tooltipWidth - viewportPadding);
+  let top = anchorY - tooltipHeight - gap;
+
+  if (top < viewportPadding) {
+    top = anchorY + gap;
+    chartTooltip.classList.add("is-below");
+  }
+
+  chartTooltip.style.left = `${left}px`;
+  chartTooltip.style.top = `${clamp(top, viewportPadding, window.innerHeight - tooltipHeight - viewportPadding)}px`;
 }
 
 function hideChartTooltip() {
   chartTooltip.hidden = true;
+  performanceChart.querySelector(".chart-focus")?.classList.add("is-hidden");
 }
 
 function renderProjectDetail(project) {
