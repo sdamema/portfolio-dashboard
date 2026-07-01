@@ -4,9 +4,9 @@ const projects = [
     title: "Human-led Review Pages",
     shortTitle: "Review Pages",
     category: "SERP analysis + content SEO",
-    status: "Intro + body HTML",
+    status: "SEO case study",
     summary: "Review pages built from <strong>scraped social comments</strong>, cluster analysis and weighted scoring to make supplier opinions easier to compare.",
-    explanation: `<p>These are Italian <strong>energy supplier review pages</strong> created from public customer comments collected across social and community platforms. The tested cluster includes <strong>17 suppliers</strong>, with roughly <strong>40-200 comments analyzed per provider</strong> depending on source availability and quality.</p><p>The workflow turned messy social feedback into a structured SEO asset:</p><ul class="summary-process-list"><li>comments were scraped, filtered and cleaned;</li><li>opinions were grouped by user concern, such as bills, support, switching supplier or app experience;</li><li>the output became <strong>intro and body HTML demos</strong> ready to be adapted inside WordPress.</li></ul><p>The result is not just a written review. It combines <strong>scraping, sentiment analysis, topic clustering, scoring logic and WordPress-ready HTML</strong> so users can compare quickly, then investigate the area that matters to them.</p>`,
+    explanation: `<p>These are Italian <strong>energy supplier review pages</strong> created from public customer comments collected across social and community platforms. The tested cluster includes <strong>17 suppliers</strong>, with roughly <strong>40-200 comments analyzed per provider</strong> depending on source availability and quality.</p><p>The workflow turned messy social feedback into a structured SEO asset:</p><ul class="summary-process-list"><li>comments were scraped, filtered and cleaned;</li><li>opinions were grouped by user concern, such as bills, support, switching supplier or app experience;</li><li>the output became <strong>WordPress-ready HTML demos</strong> that could be adapted into publishable pages.</li></ul><p>The result is not just a written review. It combines <strong>scraping, sentiment analysis, topic clustering, scoring logic and WordPress-ready HTML</strong> so users can compare quickly, then investigate the area that matters to them.</p>`,
     summaryPoints: [],
     metrics: [
       ["14", "review pages in the CV"],
@@ -16,7 +16,7 @@ const projects = [
     ],
     callouts: [
       ["Dataset", "<strong>Public social comments</strong> were turned into structured review evidence."],
-      ["Output", "<strong>Intro and body HTML</strong> were separated for easier WordPress insertion."],
+      ["Output", "<strong>WordPress-ready HTML</strong> was structured for easier insertion and QA."],
       ["Purpose", "The page serves both <strong>quick comparison</strong> and deeper cluster exploration."]
     ],
     deepDive: [
@@ -43,8 +43,8 @@ const projects = [
     performancePlaceholder: "The first GSC dataset is displayed above. The next step can add <strong>URL-level or query-level before/after splits</strong> when you export more granular data.",
     urlPlaceholder: "The future URL inventory can list every review page created or modified, grouped by provider and date, with a note that the pages may have changed after delivery.",
     demos: [
-      { label: "Intro HTML demo", path: "demos/reviews-octopus-intro.html" },
-      { label: "Body HTML demo", path: "demos/reviews-octopus-body.html" }
+      { label: "Review demo 1", path: "demos/reviews-octopus-intro.html" },
+      { label: "Review demo 2", path: "demos/reviews-octopus-body.html" }
     ]
   },
   {
@@ -92,7 +92,7 @@ const projects = [
     title: "Supplier Offer Sheets",
     shortTitle: "Offer Sheets",
     category: "High-intent SEO pages",
-    status: "Intro + body HTML",
+    status: "SEO case study",
     summary: "SEO landing pages for <strong>specific energy offers</strong>, built around <strong>transactional search intent</strong>, price context, supplier data and reusable HTML modules.",
     explanation: `<p>This project covered <strong>91 supplier offer sheets</strong>. The pages target <strong>commercial searches</strong> where users are close to comparing, switching or subscribing to a specific energy offer, so each page needed to explain <strong>price, conditions, activation details, supplier context and practical pros/cons</strong> in a WordPress-ready structure.</p><p>Publication started on <strong>March 18, 2026</strong>, but the project was initially secondary. From mid-April, it became more constant and prioritized, with a target of roughly <strong>two new pages per day</strong>. From early May, the work shifted toward <strong>quality and differentiation</strong>: price-trend modules, cleaner H2 structures, AI-assisted duplicate checks, reduced spammy headings and richer comparison content on new pages and already-published URLs.</p>`,
     summaryPoints: [],
@@ -113,7 +113,7 @@ const projects = [
       },
       {
         title: "How we worked: structure and data",
-        body: `<p>The workflow combined <strong>keyword pre-analysis</strong>, data collection and a repeatable HTML architecture. Before generating a page, the process checked whether target queries were already covered by another Papernest URL, then produced a <strong>Differentiation Report</strong> to avoid copying the same H2, FAQ, anchors and content angle across the offer cluster.</p><div class="process-flow"><article><span>Intent</span><p>Validate <strong>branded and commercial keywords</strong>, check GSC cannibalization risk and decide how the page should differ from existing supplier or offer URLs.</p></article><article><span>Data</span><p>Collect offer facts from sources such as <strong>ARERA exports</strong>, supplier pages, PUN/PSV context and internal registries, without inventing missing prices or conditions.</p></article><article><span>Build</span><p>Create separate <strong>intro</strong> and <strong>body</strong> HTML with offer tables, practical explanations, FAQs, CTAs, internal links and WordPress-compatible modules.</p></article><article><span>Validate</span><p>Run structural checks, <strong>dedup checks</strong>, link checks and Italian proofreading so the page is specific, readable and safe to publish.</p></article></div><p>The March core update is useful context: repeated offer pages may have been perceived as <strong>too similar</strong> across suppliers and tariffs. From early May, the work became more deliberate: adding <strong>price-history / unique content sections</strong>, using AI-assisted checks to avoid duplicated content, removing weak or spammy H2 patterns and making each page more complete than a standard offer description.</p>`
+        body: `<p>The workflow combined <strong>keyword pre-analysis</strong>, data collection and a repeatable HTML architecture. Before generating a page, the process checked whether target queries were already covered by another Papernest URL, then produced a <strong>Differentiation Report</strong> to avoid copying the same H2, FAQ, anchors and content angle across the offer cluster.</p><div class="process-flow"><article><span>Intent</span><p>Validate <strong>branded and commercial keywords</strong>, check GSC cannibalization risk and decide how the page should differ from existing supplier or offer URLs.</p></article><article><span>Data</span><p>Collect offer facts from sources such as <strong>ARERA exports</strong>, supplier pages, PUN/PSV context and internal registries, without inventing missing prices or conditions.</p></article><article><span>Build</span><p>Create reusable <strong>HTML page modules</strong> with offer tables, practical explanations, FAQs, CTAs, internal links and WordPress-compatible sections.</p></article><article><span>Validate</span><p>Run structural checks, <strong>dedup checks</strong>, link checks and Italian proofreading so the page is specific, readable and safe to publish.</p></article></div><p>The March core update is useful context: repeated offer pages may have been perceived as <strong>too similar</strong> across suppliers and tariffs. From early May, the work became more deliberate: adding <strong>price-history / unique content sections</strong>, using AI-assisted checks to avoid duplicated content, removing weak or spammy H2 patterns and making each page more complete than a standard offer description.</p>`
       },
       {
         title: "How it helps users",
@@ -125,9 +125,8 @@ const projects = [
     performancePlaceholder: "Once you provide the GSC cluster export, this panel can show <strong>percentage-only visibility, click-efficiency and position movements</strong> for all offer pages created or refreshed.",
     urlPlaceholder: "Future URL inventory: offer pages grouped by supplier, offer type and creation/modification date.",
     demos: [
-      { label: "Pulsee Gas Relax intro", path: "demos/offer-pulsee-gas-relax-intro.html" },
-      { label: "Pulsee Gas Relax body", path: "demos/offer-pulsee-gas-relax-body.html" },
-      { label: "Price history summary", path: "demos/price-history-summary.html" }
+      { label: "Intro", title: "Pulsee Gas Relax", path: "demos/offer-pulsee-gas-relax-intro.html" },
+      { label: "Body", title: "Pulsee Gas Relax", path: "demos/offer-pulsee-gas-relax-body.html" }
     ]
   },
   {
@@ -135,12 +134,12 @@ const projects = [
     title: "Supplier Review Ranking",
     shortTitle: "Provider Ranking",
     category: "Sentiment + comparison",
-    status: "Updated intro/body",
+    status: "Ranking case study",
     summary: "A ranking page that compares suppliers using <strong>real review evidence</strong>, review scores and sentiment/emotion analysis.",
     explanation: `<p>This page connects the individual review ecosystem into one comparison asset. It presents a <strong>top three</strong>, explains the ranking logic and then includes the full supplier ranking so users can compare providers based on collected review signals.</p><p>The reasoning is close to the review pages: if users and Google value real opinions, a best-supplier page should be grounded in <strong>actual customer comments</strong>, not invented claims.</p>`,
     summaryPoints: ["Connected all supplier reviews into one comparison page", "Used score and sentiment outputs", "Created top-three and full-ranking sections"],
     metrics: [
-      ["17", "providers in the available body HTML demo"],
+      ["17", "providers in the available ranking demo"],
       ["20", "providers in the later official score report"],
       ["30", "comment cards in the June update"],
       ["1,500+", "social comments referenced in the page intro"]
@@ -255,36 +254,39 @@ const projects = [
     shortTitle: "Branch Map",
     category: "Local SEO module",
     status: "Prototype / not implemented",
-    summary: "A prototype for a <strong>regional branch map</strong> that helps users navigate city/provider pages through local intent.",
-    explanation: `<p>The branch map was not implemented, but it is important as a reasoning project. It transforms a large branch URL inventory into an interactive module where users can search by <strong>region, city, province or provider</strong> and reach the right page.</p><p>The idea came from the broader NRJ2 analysis: some branch hubs may generate activity without strong client outcomes, so the module acts as a <strong>local-intent filter</strong>.</p>`,
-    summaryPoints: ["Mapped branch URLs into a searchable interface", "Filtered local intent before generic conversion actions", "Kept SEO value tied to crawlable links"],
-    metrics: [
-      ["1,788", "branches collected"],
-      ["1,297", "publishable URLs in the widget"],
-      ["20", "Italian regions in the map"],
-      ["7,896", "municipalities indexed in the dataset"]
+    summary: "A <strong>not-implemented prototype</strong> for an Iren branch map, designed after an SEO/business analysis showed that branch hub pages received local-intent traffic but did not always send users toward the city pages that converted better.",
+    explanation: `<p>This project was created after reading the <strong>NRJ2 sportelli analysis workbook</strong>. The issue was not only SEO visibility: several branch hub pages were receiving <strong>organic demand and phone-pickup signals</strong>, but the conversion path was weak because many users were looking for a <strong>specific physical branch</strong>, not a generic commercial action.</p><p>The proposed solution was an <strong>interactive branch map</strong>: a module where users can select a region, search by city and move directly to the relevant local page. The demo shown here is the <strong>Iren-specific prototype</strong>, because that was the provider version prepared as a publishable branch-map block.</p>`,
+    summaryPoints: [
+      `<span>Routing</span><strong>Mapped local URLs into a searchable path</strong><em>Region and city filters replace long hub lists and multi-step accordions.</em>`,
+      `<span>Intent</span><strong>Filtered local intent before generic CTAs</strong><em>Users looking for a branch can reach the city page before being pushed into a broad commercial flow.</em>`,
+      `<span>SEO</span><strong>Kept value tied to crawlable links</strong><em>The prototype preserves real HTML links, so the visual module is not only decorative.</em>`
     ],
-    callouts: [
-      ["Prototype", "The module was designed and reasoned through, but <strong>not implemented</strong>."],
-      ["Inventory", "Only validated URLs were intended for publishable links."],
-      ["Caveat", "SEO value depends on crawlable links and indexable city pages."]
-    ],
+    summaryPointStyle: "rich",
+    metrics: [],
+    callouts: [],
     deepDive: [
       {
         title: "Why the map was designed",
-        body: `<p>The branch inventory was large and difficult to navigate through a flat page. If a user is searching for a local branch, the real task is not reading a generic paragraph: it is finding the closest or most relevant <strong>city/provider page</strong>.</p><p>The business reasoning was also important. If branch hubs generate calls but few clients, the page may be attracting users with <strong>local, navigational or support-like intent</strong>. A map can help filter that intent before pushing a generic conversion path.</p><p>The project was therefore a prototype, not an implemented final feature: the value was in building and testing the logic for a more useful local SEO module.</p>`
+        body: `<p>The Excel analysis showed a clear mismatch between <strong>visibility</strong> and <strong>business value</strong>. Some branch hub pages were visible in search and generated phone-pickup activity, but they did not consistently become clients. That suggested that the page was not necessarily failing at ranking: it was failing at <strong>guiding the user's intent</strong> after the click.</p><p>The underlying query intent was often local. Users were searching for things like a <strong>branch near them</strong>, a specific city, an address, opening hours or a provider office. On the existing hub structure, they could land on a long list of branches or a region accordion and still need to manually find the right city. On mobile, this means <strong>extra scrolling, extra taps and more friction</strong> before the user reaches the page that actually matches the need.</p><p>The branch map was designed to solve that exact pain point. Instead of treating the hub as a generic landing page, it turns it into a <strong>local-intent router</strong>: the user selects a region or searches a city, then reaches the relevant local page with less friction. The project was not published, but the reasoning is useful because it connects <strong>SEO, UX and business conversion quality</strong>.</p>`
       },
       {
-        title: "How we worked: data and module logic",
-        body: `<p>The module combined <strong>sitemap data, crawl status, branch fields and geographic normalization</strong>. The publishable widget was designed to include only URLs that could realistically be used, not every historical URL found in old exports.</p><div class="process-flow"><article><span>Validate</span><p>Keep URLs present in the live sitemap or validated with local crawl status 200, while preserving historical exports only for analysis.</p></article><article><span>Normalize</span><p>Standardize city, province, region and provider fields, using Italian municipality data where geographic matching was needed.</p></article><article><span>Interface</span><p>Build an SVG Italy map by region, mobile fallback buttons, search by city/provider/province and direct links to local pages.</p></article><article><span>Publish</span><p>Package the module as scoped HTML/CSS/JS for Gutenberg, with no external dependencies and real crawlable HTML links.</p></article></div><p>This distinction is important for SEO: a beautiful visual map is not enough. The module needs <strong>real links</strong>, validated destinations and a structure that remains usable on mobile.</p>`
+        title: "How the analysis shaped the solution",
+        body: `<p>The analysis compared <strong>hub pages</strong> with their <strong>local child pages</strong>. The important insight was that several mother hubs were creating activity but weak client outcomes, while related city pages showed stronger conversion signals. In plain terms: the value was not missing from the sportelli area; it was often sitting deeper in the architecture.</p><div class="process-flow process-flow--sportelli"><article><span>Hub signal</span><p>Read hub pages as <strong>entry points</strong>: visibility, phone-pickup activity and weak client output indicated a possible intent mismatch.</p></article><article><span>Child pages</span><p>Compared the hub with city-level pages, where users are closer to the concrete local need and conversion quality was stronger.</p></article><article><span>Intent filter</span><p>Defined the map as a bridge from broad hub traffic to the <strong>more qualified local destination</strong>.</p></article><article><span>Measurement</span><p>Prepared the logic for post-rollout tracking: map clicks, hub PP quality, city-page movement and whether calls became more qualified.</p></article></div><p>This is why the map was not just a design idea. It was a response to a business question: if people arrive on a hub because they want a local branch, can we help them reach the local page before they enter a generic conversion flow?</p>`
       },
       {
-        title: "How it helps users and SEO",
-        body: `<p>For users, the map makes local navigation faster and more intuitive: they can select a region, search a city or provider and move directly to the most relevant page.</p><p>For SEO, the value depends on implementation. If links are <strong>real crawlable HTML links</strong> and the destination pages are indexable, the module can support discovery and internal linking. If implemented only as a visual tool without crawlable links, the strongest value would be <strong>UX and business filtering</strong> rather than direct SEO impact.</p>`
+        title: "How the prototype solves user pain points",
+        body: `<p>The prototype addresses three practical problems in the old branch-hub experience: <strong>too much scanning</strong>, <strong>too much manual filtering</strong> and <strong>unclear intent before the CTA</strong>. A user who already has a city in mind should not need to inspect a long national list or open many regional accordions before finding the right branch page.</p><div class="user-path-grid"><article class="user-path-card"><span>Mobile user</span><p><strong>Select a region</strong> or search a city, then open the relevant Iren branch page with fewer scrolls.</p></article><article class="user-path-card"><span>Local-intent user</span><p>Reach the city page first, where address, local context and page-specific content are more aligned with the query.</p></article></div><p>For SEO, the key rule was crawlability. The map keeps <strong>real HTML links</strong> in the source, so the widget can support internal linking and page discovery instead of becoming a purely visual element hidden behind JavaScript.</p>`
+      },
+      {
+        title: "Implementation notes and limits",
+        body: `<p>The module was prepared as a <strong>scoped HTML/CSS/JS block</strong> for WordPress/Gutenberg, with no external dependency. The data flow used sitemap/crawl validation, normalized city and region fields, and a region-based interface with a mobile fallback.</p><p>It was still a <strong>prototype</strong>, not a published feature. That matters for the portfolio: the value shown here is the <strong>strategic and technical reasoning</strong>, not post-publication performance data. If it were implemented, the next step would be to monitor whether branch-hub calls become more qualified, whether more users click toward city pages and whether local pages capture more of the intent that was already present in search.</p>`
       }
     ],
-    performancePlaceholder: "If this project is revisited, this slot can show percentage-only movement for city-page traffic, map interactions and branch-hub conversion quality.",
-    urlPlaceholder: "Future URL inventory: branch hub pages, city branch pages and the source status for each URL.",
+    hideKeyNumbers: true,
+    hideSnapshot: true,
+    hideFutureData: true,
+    performancePlaceholder: "",
+    urlPlaceholder: "",
     demos: [
       { label: "Branch map", path: "demos/sportelli-map.html" }
     ]
@@ -437,7 +439,7 @@ const projectPortfolioMeta = {
       problem: "The SERP showed that users often trusted forums, Reddit threads or Facebook discussions more than standard review pages, both for us and for competitors.",
       analysis: "I read that as a search-intent signal: users wanted <strong>human proof</strong>. The solution was to scrape, clean and cluster comments, then connect each cluster to scores and WordPress-ready sections.",
       insight: "The page had to serve two paths: quick comparison for horizontal users, and deeper cluster exploration for users focused on one supplier.",
-      output: "Final output: intro/body HTML demos, weighted scoring logic, sentiment clusters and a percentage-only GSC trend view for the 17-page review cluster."
+      output: "Final output: HTML demos, weighted scoring logic, sentiment clusters and a percentage-only GSC trend view for the 17-page review cluster."
     }
   },
   offers: {
@@ -451,7 +453,7 @@ const projectPortfolioMeta = {
       problem: "There was a transactional SEO gap: competitors had dedicated offer pages, while many of our URLs did not yet target users searching specific tariffs before comparing or subscribing.",
       analysis: "The solution was to create offer sheets that were not only present in the SERP, but stronger than standard competitor pages: clearer H2s, richer pricing context, cleaner HTML modules and unique price-trend content.",
       insight: "The strongest offer pages work like decision tools, not simple descriptions: they help users understand the offer, compare it and decide what to check before activation.",
-      output: "Final output: 91 offer sheets, intro/body HTML pages, offer tables, price-history modules and a percentage-only Search Console recovery view."
+      output: "Final output: 91 offer sheets, HTML page modules, offer tables, price-history modules and a percentage-only Search Console recovery view."
     }
   },
   sportelli: {
@@ -493,7 +495,7 @@ const projectPortfolioMeta = {
       problem: "A best-supplier page risks feeling generic if rankings are not supported by visible evidence or a clear scoring method.",
       analysis: "The page needed a podium, a full ranking, score explanation and sentiment signals that made the ranking easier to trust.",
       insight: "The strongest comparison page connects market-level intent with single-provider investigation through internal links and explainable scores.",
-      output: "Final output: updated ranking intro/body HTML with top-three logic, full provider ranking and sentiment/comment evidence."
+      output: "Final output: updated ranking HTML with top-three logic, full provider ranking and sentiment/comment evidence."
     }
   },
   "nrj2-analysis": {
@@ -714,6 +716,8 @@ function setViewFromHash() {
     activeDemoIndex = 0;
     homeView.hidden = true;
     projectView.hidden = false;
+    document.body.classList.add("is-project-view");
+    document.body.classList.remove("is-home-view");
     renderProjectDetail(getActiveProject());
     window.scrollTo({ top: 0, behavior: "auto" });
     requestAnimationFrame(() => {
@@ -725,6 +729,8 @@ function setViewFromHash() {
 
   homeView.hidden = false;
   projectView.hidden = true;
+  document.body.classList.add("is-home-view");
+  document.body.classList.remove("is-project-view");
   demoFrame.src = "about:blank";
   renderProjectGrid();
   requestAnimationFrame(() => {
@@ -783,13 +789,15 @@ function renderProjectGrid() {
 
   projectGrid.innerHTML = visibleProjects.map((project, index) => `
     <a class="project-box ${getProjectThemeClass(project)}" href="#project/${project.id}" aria-label="Open ${project.title}" style="--reveal-index:${index}">
-      <span class="project-box__top">
-        <span class="project-box__index">${String(index + 1).padStart(2, "0")}</span>
-        <span class="project-box__icon" aria-hidden="true">${project.icon || "•"}</span>
+      <span class="project-box__body">
+        <span class="project-box__top">
+          <span class="project-box__index">${String(index + 1).padStart(2, "0")}</span>
+          <span class="project-box__icon" aria-hidden="true">${project.icon || "•"}</span>
+        </span>
+        <span class="project-box__category">${project.category}</span>
+        <strong>${project.shortTitle}</strong>
+        <span class="project-box__summary">${project.cardSummary || project.summary.replace(/<[^>]*>/g, "")}</span>
       </span>
-      <span class="project-box__category">${project.category}</span>
-      <strong>${project.shortTitle}</strong>
-      <span class="project-box__summary">${project.cardSummary || project.summary.replace(/<[^>]*>/g, "")}</span>
       <span class="project-box__footer">
         <span class="project-topic-tags">
           ${(project.topicTags || project.areas || []).slice(0, 3).map((tag) => `<i>${escapeHtml(tag)}</i>`).join("")}
@@ -902,7 +910,7 @@ function renderProjectJumpNav(project, dataset) {
     ...(dataset ? [["GSC trend", "sectionPerformance"]] : []),
     ...(!project.hideSnapshot ? [["Snapshot", "sectionSnapshot"]] : []),
     ...(project.demos.length ? [["HTML demo", "sectionExamples"]] : []),
-    ["URLs", "sectionInventory"]
+    ...(!project.hideFutureData ? [["URLs", "sectionInventory"]] : [])
   ];
 
   projectJumpNav.innerHTML = `
@@ -963,9 +971,14 @@ function renderPerformance(project, dataset) {
     </article>
   `).join("");
 
-  if (dataset.pageMovements?.length) {
+  if (dataset.hideTopPagesPanel || dataset.topPagesPanel?.hidden) {
+    topPagesPanel.hidden = true;
+    topPagesPanel.innerHTML = "";
+  } else if (dataset.pageMovements?.length) {
+    topPagesPanel.hidden = false;
     renderPageMovements(dataset);
   } else {
+    topPagesPanel.hidden = false;
     renderTopPages(dataset, "total");
   }
   renderPerformanceChartMode(dataset);
@@ -1064,6 +1077,11 @@ function getTopPagesNote(dataset, period) {
 }
 
 function renderFutureData(project, dataset) {
+  if (project.hideFutureData) {
+    futureDataSection.hidden = true;
+    return;
+  }
+
   futureDataSection.hidden = false;
 
   if (dataset?.urlInventory?.length) {
@@ -1406,21 +1424,26 @@ function renderProjectStory(project) {
   }
 
   const storyItems = [
-    ["Summary", project.story.main],
     ["Problem", project.story.problem],
-    ["My analysis", project.story.analysis],
-    ["Core insight", project.story.insight],
-    ["Final output", project.story.output]
+    ["Analysis", project.story.analysis],
+    ["Solution", project.story.insight],
+    ["Output", project.story.output]
   ];
 
   return `
     <div class="project-summary-story">
-      ${storyItems.map(([label, body]) => `
-        <article>
-          <span>${label}</span>
-          <p>${body}</p>
-        </article>
-      `).join("")}
+      <article class="project-summary-story__summary">
+        <span>Summary</span>
+        <p>${project.story.main}</p>
+      </article>
+      <div class="project-summary-flow" aria-label="Project story flow">
+        ${storyItems.map(([label, body], index) => `
+          <article data-step="${String(index + 1).padStart(2, "0")}">
+            <span>${label}</span>
+            <p>${body}</p>
+          </article>
+        `).join("")}
+      </div>
     </div>
   `;
 }
@@ -1438,7 +1461,7 @@ function renderProjectDetail(project) {
   detailExplanation.innerHTML = `
     ${renderProjectStory(project)}
     ${project.summaryPoints?.length ? `
-      <ul class="summary-points">
+      <ul class="summary-points ${project.summaryPointStyle === "rich" ? "summary-points--rich" : ""}">
         ${project.summaryPoints.map((point) => `<li>${point}</li>`).join("")}
       </ul>
     ` : ""}
@@ -1497,9 +1520,9 @@ function renderDemos(project) {
   });
 
   const activeDemo = project.demos[activeDemoIndex] || project.demos[0];
-  exampleTitle.textContent = activeDemo.label;
+  exampleTitle.textContent = activeDemo.title || activeDemo.label;
   exampleLink.href = activeDemo.path;
-  examplePath.textContent = activeDemo.path;
+  examplePath.textContent = "Public HTML example loaded in the preview below.";
   demoFrame.src = activeDemo.path;
 }
 

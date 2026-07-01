@@ -545,18 +545,11 @@ window.portfolioPerformanceData.reviews = {
     }
   ],
   "narrative": {
-    "summary": "The review pages were revamped at the end of May, and this analysis was run at the end of June, so the chart compares roughly one month before and one month after the changes. The May core update is shown as context: the cluster kept growing after the revamp, which is consistent with a page format built around useful human evidence rather than thin or spam-like content.",
+    "summary": "The review pages were <strong>revamped at the end of May</strong>, and this analysis was run <strong>at the end of June</strong>, so the chart compares roughly <strong>one month before and one month after</strong> the changes. The cluster kept growing after the revamp, which is consistent with a page format built around <strong>useful human evidence</strong> rather than <strong>thin or spam-like content</strong>.",
     "insights": []
   },
-  "chartFootnote": "Hover or tap the chart to inspect each date. The public view uses percentage movement only, not raw Search Console values. Google core-update windows are shown as context, not as proof of causality.",
+  "chartFootnote": "Hover or tap the chart to inspect each date. The public view uses percentage movement only, not raw Search Console values.",
   "events": [
-    {
-      "type": "range",
-      "kind": "google-core",
-      "label": "May core",
-      "start": "2026-05-21",
-      "end": "2026-06-02"
-    },
     {
       "type": "marker",
       "kind": "revamp",

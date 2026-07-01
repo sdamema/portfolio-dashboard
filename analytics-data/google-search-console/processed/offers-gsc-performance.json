@@ -45,7 +45,7 @@
     },
     {
       "type": "range",
-      "kind": "revamp",
+      "kind": "baseline",
       "label": "Pre-quality baseline",
       "start": "2026-04-22",
       "end": "2026-04-30",
@@ -71,6 +71,7 @@
     "insights": [
       "From <strong>March 18 to mid-April</strong>, the project was active but not yet a priority; the March core update is shown as context because repeated offer templates may have looked too similar at first.",
       "From <strong>mid-April</strong>, publication became more structured and prioritized, with weekly objectives and a target of roughly two new offer pages per day.",
+      "The <strong>Apr 22-30 baseline</strong> was selected because publication was already more regular, but the deeper quality work had not started yet; it is the cleanest pre-quality reference period available in the export.",
       "The public comparison uses <strong>daily averages</strong>, not total counts: this makes the shorter <strong>Apr 22-30 pre-quality baseline</strong> comparable with the longer <strong>May 1-Jun 28 quality period</strong>.",
       "From <strong>early May</strong>, the work shifted toward quality and differentiation: price-trend/unique content modules, cleaner H2s, AI-assisted duplicate checks, fewer spammy heading patterns and richer transactional UX on new pages and already-published URLs."
     ]
@@ -766,7 +767,8 @@
     }
   ],
   "topPagesPanel": {
-    "eyebrow": "Offer URL contribution",
+    "hidden": true,
+    "eyebrow": "Offer URLs",
     "title": "Offer URLs included in this export",
     "totalNote": "This export contains only total-period URL rows, so it is shown as a clean URL list rather than a growth ranking. To order pages by highest percentage click growth, export GSC with both Page and Date dimensions.",
     "unavailableNote": "URL-level click variation needs a Page + Date export. With this file, a before/after URL growth ranking would be invented, so it is intentionally not shown.",
