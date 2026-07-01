@@ -548,7 +548,7 @@ window.portfolioPerformanceData.reviews = {
     "summary": "The review pages were <strong>revamped at the end of May</strong>, and this analysis was run <strong>at the end of June</strong>, so the chart compares roughly <strong>one month before and one month after</strong> the changes. The cluster kept growing after the revamp, which is consistent with a page format built around <strong>useful human evidence</strong> rather than <strong>thin or spam-like content</strong>.",
     "insights": []
   },
-  "chartFootnote": "Hover or tap the chart to inspect each date. The public view uses percentage movement only, not raw Search Console values.",
+  "chartFootnote": "Hover or tap the chart to inspect each date. Metric cards compare May vs June daily averages; the lines show percentage movement against the May pre-revamp baseline. Public values remain percentage-only.",
   "events": [
     {
       "type": "marker",

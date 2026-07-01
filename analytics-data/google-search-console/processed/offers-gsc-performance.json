@@ -34,7 +34,7 @@
     "method": "Each chart point is a 7-day trailing average shown as percentage variation from the final pre-quality baseline.",
     "tooltipNote": "Compared with the Apr 22-30 pre-quality baseline"
   },
-  "chartFootnote": "Hover or tap the chart to inspect each date. The public view uses percentage movement only, not raw Search Console values. Google core-update windows are shown as context, not as proof of causality.",
+  "chartFootnote": "Hover or tap the chart to inspect each date. Metric cards compare full-period daily averages; the lines show 7-day trailing percentage movement against the pre-quality baseline. Google core-update windows are context, not proof of causality.",
   "events": [
     {
       "type": "range",
@@ -780,7 +780,7 @@
     "reason": "Page-by-date export needed for phase-level URL ranking. This public view keeps only total-period URL names."
   },
   "urlInventoryTitle": "Offer URL inventory",
-  "urlInventoryNote": "Public URLs included in the GSC offer-page export. Performance numbers are intentionally excluded; the chart above shows only indexed percentage movement. The full project included 91 offer sheets; this inventory reflects the URLs available in this export.",
+  "urlInventoryNote": "Public URLs included in the GSC offer-page export. Performance numbers are intentionally excluded; the chart above shows only indexed percentage movement. The full project included 91 offer sheets; this inventory reflects the URLs available in this export. The live pages should match the examples shown here until <strong>August 8, 2026</strong>; after that, future edits are possible.",
   "urlInventory": [
     {
       "provider": "Eni Plenitude - Fixa Time Luce Gas",

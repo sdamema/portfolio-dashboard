@@ -43,8 +43,8 @@ const projects = [
     performancePlaceholder: "The first GSC dataset is displayed above. The next step can add <strong>URL-level or query-level before/after splits</strong> when you export more granular data.",
     urlPlaceholder: "The future URL inventory can list every review page created or modified, grouped by provider and date, with a note that the pages may have changed after delivery.",
     demos: [
-      { label: "Review demo 1", path: "demos/reviews-octopus-intro.html" },
-      { label: "Review demo 2", path: "demos/reviews-octopus-body.html" }
+      { label: "Intro", title: "Review demo", path: "demos/reviews-octopus-intro.html" },
+      { label: "Body", title: "Review demo", path: "demos/reviews-octopus-body.html" }
     ]
   },
   {
@@ -53,9 +53,14 @@ const projects = [
     shortTitle: "Scraping",
     category: "Data collection + QA",
     status: "Auditable workflow",
-    summary: "A controlled pipeline for gathering <strong>real supplier comments</strong> from social platforms before turning them into SEO content.",
-    explanation: `<p>This project is the data layer behind the review pages. It collects public comments from sources such as <strong>Reddit, YouTube, Facebook, Instagram and X</strong>, then filters and normalizes them so only useful, traceable and relevant comments move into the review workflow.</p><p>The objective was not to scrape as much as possible. The objective was to create a <strong>clean evidence base</strong> for pages that discuss real customer sentiment.</p>`,
-    summaryPoints: ["Defined what comments to collect and exclude", "Used Codex-assisted rules for pre-cleaning", "Prepared exports for cluster and sentiment analysis"],
+    summary: "An auditable workflow for collecting, cleaning and exporting <strong>public social comments</strong> before they become review-page evidence.",
+    explanation: `<p>This project is the data layer behind the review pages. The workspace does not generate the final HTML page; it prepares <strong>clean, traceable and review-ready inputs</strong> from public sources such as Reddit, YouTube, Facebook, X, forums and other verifiable pages.</p><p>The goal was not to collect as many comments as possible. It was to build a <strong>controlled evidence pipeline</strong>: exact comment text, author/anonymous label, platform, source URL, date/context and QA notes, all normalized before moving into clustering, sentiment analysis and scoring.</p>`,
+    summaryPoints: [
+      `<span>Rules</span><strong>Defined what to collect and exclude</strong><em>Spam, referral codes, vague mentions and off-topic posts were filtered before analysis.</em>`,
+      `<span>QA</span><strong>Used Codex-assisted pre-cleaning logic</strong><em>The workflow preserved source context while removing weak or duplicated comments.</em>`,
+      `<span>Output</span><strong>Prepared exports for scoring and clusters</strong><em>Clean rows moved into sentiment, topic clustering and review-page generation.</em>`
+    ],
+    summaryPointStyle: "rich",
     metrics: [
       ["7,394", "raw comments in an early pipeline summary"],
       ["797", "comments kept after filters"],
@@ -70,22 +75,22 @@ const projects = [
     deepDive: [
       {
         title: "Why the pipeline was needed",
-        body: `<p>The review system depends on the quality of the comments. Raw social data is messy: it can include <strong>duplicates, referral spam, jokes, off-topic mentions, missing dates, low-context complaints</strong> and comments that mention a provider without describing an actual experience.</p><p>If those comments entered the page directly, the final content would be weaker and less trustworthy. The pipeline was created to separate <strong>collection</strong> from <strong>selection</strong>: first preserve raw material, then decide what is editorially useful.</p><p>This also made the SEO work safer: pages based on public comments need a source trail, because the strongest value is not simply "having opinions", but being able to show that the opinions are <strong>traceable, relevant and usable</strong>.</p>`
+        body: `<p>The review system depends on the quality of the comments. Raw social data is messy: it can include <strong>duplicates, referral spam, jokes, off-topic mentions, missing dates, low-context complaints</strong> and comments that mention a provider without describing an actual experience.</p><p>If those comments entered the page directly, the final content would be weaker and less trustworthy. The pipeline was created to separate <strong>collection</strong> from <strong>selection</strong>: first preserve raw exports, then decide what is editorially useful for the review workflow.</p><p>This also made the SEO work safer. A page based on public comments needs a source trail: the value is not simply "having opinions", but being able to show that the opinions are <strong>traceable, relevant, non-promotional and usable</strong>.</p>`
       },
       {
         title: "How we worked: source rules and pre-cleaning",
-        body: `<p>Codex was used to help define operational instructions: which comments to collect, which to ignore, why a comment is useful and how to document the source. The collection logic prioritized comments that described <strong>prices, bills, support, activation, app experience, cancellation, switching supplier and transparency</strong>.</p><div class="process-flow"><article><span>Targets</span><p>Use source lists and query packs by provider/platform, with Reddit, YouTube, public Facebook, Instagram or X considered when useful and accessible.</p></article><article><span>Rules</span><p>Keep comments with direct experience, concrete detail, identifiable topic and usable context; reject referral codes, spam, vague mentions and off-topic threads.</p></article><article><span>Schema</span><p>Normalize fields such as text, author, platform, source URL, date, scraped date and notes, so exports can move into the review pipeline.</p></article><article><span>Audit</span><p>Use source logs and validation notes to preserve where comments came from, what was excluded and which gaps still needed manual review.</p></article></div><p>This pre-cleaning made the downstream analysis more reliable because the dataset was already shaped around <strong>review intent</strong>, not generic brand mentions.</p>`
+        body: `<p>Codex was used to help turn editorial rules into operational instructions: which comments to collect, which to ignore, why a comment is useful and how to document the source. The collection logic prioritized comments about <strong>prices, bills, support, app experience, activation, cancellation, switching supplier and transparency</strong>.</p><div class="process-flow"><article><span>Targets</span><p>Prepare provider/platform targets and query packs, with Reddit communities such as <strong>r/bollette</strong> and <strong>r/ItaliaPersonalFinance</strong> as priority sources when relevant.</p></article><article><span>Rules</span><p>Keep direct experiences with concrete detail; reject spam, referral codes, promotional comments, weak mentions, off-topic threads and comments without a recoverable source.</p></article><article><span>Schema</span><p>Normalize into a canonical dataset: <strong>local_id, supplier, comment, author, platform, source, source URL, date, scraped_at and notes</strong>.</p></article><article><span>QA</span><p>Run validation before export: source URL present, exact text preserved, duplicates checked, platform normalized and author set or anonymized.</p></article></div><p>The workflow also set practical safeguards: keep the full comment text, avoid rewriting or translating it, limit repeated comments from the same author and preserve raw exports before producing the final review-ready file.</p>`
       },
       {
         title: "How it connected to analysis",
-        body: `<p>After collection, comments were exported into a stable schema and then used for <strong>clustering, sentiment analysis and score calculation</strong>. This means scraping was not an isolated technical task. It was the first step of an SEO system where raw user language becomes structured content.</p><p>The pipeline also made the work more auditable: if a claim appeared in the page, it could be traced back to a source and a comment cluster. That matters both for <strong>editorial trust</strong> and for future updates, because new comments can be added without rebuilding the entire method from zero.</p>`
+        body: `<p>After collection and validation, comments were exported into the historical format used by the review project: <strong>TEXT, AUTHOR, PLATFORM, SOURCE_URL, N</strong>. From there they could move into clustering, sentiment analysis, score calculation and finally page generation.</p><p>This means scraping was not an isolated technical task. It was the first step of an SEO system where raw user language becomes <strong>structured review evidence</strong>. If a claim appeared in the page, it could be traced back to a source, a comment row, a cluster and a sentiment/scoring decision.</p><p>The pipeline also made future updates easier: new comments can be collected, normalized and validated with the same schema instead of rebuilding the method from zero each time a supplier page needs a refresh.</p>`
       }
     ],
-    performancePlaceholder: "Future data could show source coverage by platform, valid-comment rate and how many comments were available for each provider cluster.",
-    urlPlaceholder: "This section can later list raw source packs or provider CSV exports, without exposing private or sensitive working files.",
-    demos: [
-      { label: "Pipeline brief", path: "demos/social-data-pipeline.html" }
-    ]
+    hideFutureData: true,
+    hideExamples: true,
+    performancePlaceholder: "",
+    urlPlaceholder: "",
+    demos: []
   },
   {
     id: "offers",
@@ -136,38 +141,41 @@ const projects = [
     category: "Sentiment + comparison",
     status: "Ranking case study",
     summary: "A ranking page that compares suppliers using <strong>real review evidence</strong>, review scores and sentiment/emotion analysis.",
+    performanceKey: "ranking",
     explanation: `<p>This page connects the individual review ecosystem into one comparison asset. It presents a <strong>top three</strong>, explains the ranking logic and then includes the full supplier ranking so users can compare providers based on collected review signals.</p><p>The reasoning is close to the review pages: if users and Google value real opinions, a best-supplier page should be grounded in <strong>actual customer comments</strong>, not invented claims.</p>`,
-    summaryPoints: ["Connected all supplier reviews into one comparison page", "Used score and sentiment outputs", "Created top-three and full-ranking sections"],
-    metrics: [
-      ["17", "providers in the available ranking demo"],
-      ["20", "providers in the later official score report"],
-      ["30", "comment cards in the June update"],
-      ["1,500+", "social comments referenced in the page intro"]
+    summaryPoints: [
+      `<span>Coherence</span><strong>Aligned the ranking with review pages</strong><em>The comparison page uses the same real-comment logic as the supplier reviews.</em>`,
+      `<span>Sentiment</span><strong>Added emotional signals beyond the score</strong><em>Sentiment analysis gives the page unique evidence instead of a simple ordered list.</em>`,
+      `<span>Interlinking</span><strong>Connected generic comparison to provider reviews</strong><em>Users can move from the market-level ranking into single-supplier investigations.</em>`
     ],
-    callouts: [
-      ["Comparison", "The page links review work into a <strong>market-level ranking</strong>."],
-      ["Evidence", "Scores are supported by comment analysis and sentiment outputs."],
-      ["Versioning", "The demo has 17 providers; the later report expands to 20."]
-    ],
+    summaryPointStyle: "rich",
+    metrics: [],
+    callouts: [],
     deepDive: [
       {
         title: "Why the ranking page was created",
-        body: `<p>Individual review pages answer "What do people say about this supplier?". The ranking page answers a broader question: <strong>which suppliers look strongest when the review evidence is compared?</strong></p><p>This makes sense for SEO because best-provider queries are naturally comparative. A user does not only want one provider profile; they want a ranked overview, methodology and a way to go deeper into each supplier.</p><p>The strategic point is the same as the review cluster: if Google and users reward <strong>real customer evidence</strong>, then the ranking should not be a generic editorial list. It should be a comparison built from the same score, sentiment and comment system.</p>`
+        body: `<p>The page already targeted a broad comparison intent: users searching for the <strong>best energy suppliers</strong> need a fast ranking, but also a reason to trust that ranking. After the individual review pages were created, the comparison page had to become more coherent with that new ecosystem.</p><p>The goal was therefore to update a generic "best suppliers" page by including signals from the new review system: <strong>real comments, visible evidence, explainable ranking logic and internal links</strong> toward the individual supplier reviews.</p><p>This made the page useful in two directions. It could still answer the market-level question, "Who looks strongest overall?", while also sending users toward the deeper review page when they wanted to understand <strong>why one supplier ranked better than another</strong>.</p>`
       },
       {
-        title: "How we worked: scores, sentiment and page update",
-        body: `<p>The page combines review scores, provider cards, comment cards and sentiment/emotion sections. The June update refreshed the podium, replaced outdated supplier references, moved scores to a <strong>0-10 review scale</strong> and made the sentiment area clearer.</p><div class="process-flow"><article><span>Podium</span><p>Show the top three providers first, because many users want a quick answer before reviewing the complete table.</p></article><article><span>Method</span><p>Explain that ranking values come from the approved comment scoring pipeline, including overall and cluster scores.</p></article><article><span>Evidence</span><p>Use real comment cards and sentiment outputs so the page feels grounded in customer language, not only in editorial claims.</p></article><article><span>Ranking</span><p>Keep the full provider list available so users can compare beyond the top three and move into each detailed review page.</p></article></div><p>The official score report later expanded the comparison to <strong>20 providers</strong>, with fixed cluster weights and tie-break logic, so the ranking could remain consistent across future updates.</p>`
+        title: "How we worked: ranking logic and sentiment analysis",
+        body: `<p>The score system comes from the review-page workflow, where comments are cleaned, clustered and weighted before becoming supplier scores. I do not repeat the full formula here because it is explained in more detail in the <strong>Human-led Review Pages</strong> section; for this page, the score is the base layer that makes the ranking comparable.</p><p>The extra layer is the <strong>sentiment and emotion analysis</strong>. It was not a generic manual label or a vague AI summary: the workflow used <strong>FEEL-IT</strong>, an Italian BERT-based sentiment/emotion approach available through HuggingFace models, specifically <strong>MilaNLProc/feel-it-italian-sentiment</strong> and <strong>MilaNLProc/feel-it-italian-emotion</strong>.</p><div class="process-flow"><article><span>Model</span><p>Run Italian comments through FEEL-IT to classify <strong>positive/negative sentiment</strong>, confidence, a score from negative to positive and emotions such as joy, anger, sadness and fear.</p></article><article><span>Normalize</span><p>Split longer texts when needed, preserve source context and connect each output back to the original supplier comment instead of losing the evidence trail.</p></article><article><span>Aggregate</span><p>Summarize sentiment and emotion signals by provider, then use them as an explanatory layer next to the ranking and review-score system.</p></article><article><span>QA</span><p>Keep score logic and sentiment logic separate: the ranking comes from the approved review scoring method, while FEEL-IT adds a readable emotional signal.</p></article></div><p>This prevents the page from becoming a simple leaderboard. The final output combines a <strong>top-three podium</strong>, the full ranking, score explanation, selected comment evidence and sentiment signals that make the comparison easier to understand.</p>`
       },
       {
         title: "How it helps users",
-        body: `<p>The page gives users a faster way to compare suppliers without opening every review page first. The <strong>top-three area</strong> supports quick orientation, while the full ranking and provider links allow deeper exploration.</p><p>It also helps internal linking: the ranking page can point naturally to each review page, and each review page can point back to the market-level comparison. This creates a circular path between <strong>comparison intent</strong> and <strong>single-provider investigation</strong>.</p>`
+        body: `<p>The page is built for users who want a comparison first and a detailed explanation second. The <strong>podium</strong> gives quick orientation, the <strong>full ranking</strong> lets users compare beyond the top providers, and the links toward individual reviews support deeper checks.</p><p>The sentiment layer helps users understand the <strong>tone behind the ranking</strong>. Two suppliers can have close scores, but very different emotional patterns: one may generate more joy and reassurance, while another may concentrate anger or sadness around billing, support or activation. That makes the ranking easier to interpret as <strong>real customer perception</strong>, not just a number.</p><p>From a content architecture point of view, this also improves coherence: the generic ranking page no longer lives alone. It becomes the hub that connects the new review pages, while the review pages can point back to a broader comparison. That creates a cleaner path between <strong>market-level intent</strong> and <strong>single-provider investigation</strong>.</p>`
       }
     ],
-    performancePlaceholder: "Future data can compare search performance for the ranking page before and after the update, including queries around best suppliers and reviews.",
-    urlPlaceholder: "This can later link the ranking page to all individual provider review URLs and show which ones were created or refreshed.",
+    hideKeyNumbers: true,
+    hideSnapshot: true,
+    livePageTitle: "Live page",
+    livePageUrl: "https://www.papernest.it/luce-gas/compara/classifica-recensioni-fornitori/",
+    livePageLabel: "Supplier review ranking page",
+    livePageNote: "This live page should match the example shown here until <strong>August 8, 2026</strong>; after that, future edits are possible.",
+    performancePlaceholder: "",
+    urlPlaceholder: "",
     demos: [
-      { label: "Ranking intro", path: "demos/provider-ranking-intro.html" },
-      { label: "Ranking body", path: "demos/provider-ranking-body.html" }
+      { label: "Intro", title: "User-based Supplier Ranking", path: "demos/provider-ranking-intro.html" },
+      { label: "Body", title: "User-based Supplier Ranking", path: "demos/provider-ranking-body.html" }
     ]
   },
   {
@@ -176,36 +184,39 @@ const projects = [
     shortTitle: "Review Summary",
     category: "Internal linking + revamp",
     status: "Standalone box",
-    summary: "Compact review components for supplier mother pages, designed as <strong>soft revamp</strong>, trust layer and internal-linking entry point.",
-    explanation: `<p>This is not the full review page. It is a compact block inserted into existing provider pages to show <strong>score, ranking, selected real comments</strong> and a CTA toward the full review or ranking page.</p><p>The goal is to refresh the mother page without rebuilding it completely, while giving users a visible reason to continue into the deeper review ecosystem.</p>`,
-    summaryPoints: ["Added review evidence to mother pages", "Created a soft revamp without full rewrites", "Improved internal linking toward full reviews"],
-    metrics: [
-      ["17", "validated summary blocks"],
-      ["3+1", "desktop comment-card pattern"],
-      ["100%", "QA pass set in the workspace"],
-      ["1", "CTA to the full ranking page"]
+    summary: "Compact review components for supplier mother pages, designed as a <strong>soft revamp</strong>, visual/content alignment layer and internal-linking bridge toward the full review ecosystem.",
+    explanation: `<p>After the full review pages were created, the supplier mother pages needed a more coherent way to connect with them. A review section already existed, but it showed different information and felt visually weaker than the new review components.</p><p>This module works like a <strong>compact overview of the review page</strong> inside the mother page: <strong>score, short strengths/weaknesses summary, selected real comments</strong>, a method note and links toward the full review or the supplier ranking.</p>`,
+    summaryPoints: [
+      `<span>Coherence</span><strong>Aligned mother pages with new reviews</strong><em>The block brings score, copy and comments closer to the new review-page experience.</em>`,
+      `<span>Revamp</span><strong>Created a soft refresh without full rewrites</strong><em>The mother page becomes fresher and more useful while keeping its original structure.</em>`,
+      `<span>Links</span><strong>Made review links more inviting</strong><em>Users see a preview first, then have a stronger reason to open the full review page.</em>`
     ],
-    callouts: [
-      ["Soft revamp", "Improves existing provider pages without a full rewrite."],
-      ["Internal link", "Creates a natural path toward the <strong>full review page</strong>."],
-      ["Trust", "Uses score, rank and real comments from validated sources."]
-    ],
+    summaryPointStyle: "rich",
+    metrics: [],
+    callouts: [],
     deepDive: [
       {
         title: "Why the block was created",
-        body: `<p>Provider mother pages can be important SEO assets, but they do not always expose the strongest review evidence. The summary block adds a visible trust layer by showing <strong>review score, position in the ranking and real social comments</strong>.</p><p>This creates a small but meaningful revamp: the page feels more current, more evidence-based and more connected to the review work.</p><p>The block also solves an internal-linking problem. Instead of adding a generic link to the review page, it gives users a concrete reason to continue: they can see a score, a rank and a preview of the actual comments.</p>`
+        body: `<p>After building the full review pages, the next step was to make the supplier mother pages feel connected to them. The mother pages already had a review area, but it was not fully aligned with the new system: <strong>different information, older visual style and weaker connection</strong> with the new review components.</p><p>The review-summary block was designed as a <strong>soft revamp</strong>. Instead of rewriting each mother page from zero, it adds a modern review overview with <strong>average score, ranking position, strengths/weaknesses copy, selected social comments</strong> and clear links toward the full review or ranking page.</p><p>The point was not only to add a link. The point was to make the page itself better: more coherent with the new review pages, visually fresher and more useful for users who want a quick opinion before deciding whether to open the full analysis.</p>`
       },
       {
         title: "How we worked: component logic and QA",
-        body: `<p>The component follows strict rules. Scores, rankings, authors, platforms, comments and URLs must come from validated review sources. The block also has a controlled layout: comment cards, CTA behavior, source labels and mobile/desktop states.</p><div class="process-flow"><article><span>Extract</span><p>Read score, rank, comment count and cluster anchors from the provider review outputs and official review facts.</p></article><article><span>Select</span><p>Choose real comments from the body files, preserving author, platform, URL and source label without inventing quotes.</p></article><article><span>Link</span><p>Use a clean review URL in the method note, a cluster anchor for the blurred teaser and the ranking URL for the final CTA.</p></article><article><span>Check</span><p>Validate desktop/mobile behavior, popup states, source consistency and HTML output for each generated provider block.</p></article></div><p>The workspace includes validated summary outputs for many providers, with a standard pattern: <strong>three real comments plus one blurred teaser on desktop</strong>, and a compact two-comment version on mobile.</p>`
+        body: `<p>The workspace used a repeatable system rather than one-off manual blocks. Each provider block was generated from a <strong>shared HTML/CSS/JS template</strong>, provider facts, source review pages and a QA script.</p><div class="process-flow process-flow--summary"><article><span>Facts</span><p>Use the local provider table for <strong>score, ranking, total providers and analyzed-comment count</strong>, avoiding legacy values from older intro files.</p></article><article><span>Comments</span><p>Select <strong>real social comments</strong> from the review body file, preserving author, platform, source URL and original wording.</p></article><article><span>Layout</span><p>Use a controlled pattern: <strong>3 visible comments + 1 blurred teaser on desktop</strong>, and a compact mobile version with 2 visible comments that can be understood in about <strong>one or two scrolls</strong>.</p></article><article><span>QA</span><p>Validate links, source consistency, popup IDs, mobile states, CTA behavior and HTML output for each provider.</p></article></div><p>This matters because the block contains many details that are easy to break: method notes, source labels, modals, anchor links, ranking CTA and responsive behavior. The workflow made the module <strong>scalable across providers</strong> without losing accuracy.</p>`
       },
       {
-        title: "How it helps users",
-        body: `<p>The block gives users a quick preview of what people say about a supplier without forcing them to leave the page immediately. If the user wants more detail, the CTA and links continue the journey toward the full review.</p><p>For SEO, this creates a more natural internal link: the link is not just placed for crawlability, it is connected to the user's curiosity about <strong>score, ranking and real opinions</strong>. It is a soft revamp because it improves the page's usefulness without requiring a full page rewrite.</p>`
+        title: "How linking and intent were handled",
+        body: `<p>The block uses three different link types with different purposes. The <strong>method note</strong> links to the clean provider review URL, so users can understand where the analysis comes from. The <strong>blurred teaser card</strong> links directly to a real review cluster anchor, usually the first useful H2 section in the review body. The <strong>bottom CTA</strong> points to the complete supplier ranking page.</p><p>The blurred last comment is especially important for the user journey. The user scrolls through real visible comments, then finds a final card that is intentionally obscured: this creates curiosity and invites them to continue on the full review page to read more comments and analysis.</p><p>This makes the internal link feel natural rather than forced. A user can first understand the supplier's score and comments inside the mother page, usually within a <strong>short mobile scroll</strong>, then choose the depth they want: provider review, specific comment cluster or market-level ranking.</p>`
+      },
+      {
+        title: "What the finished module includes",
+        body: `<p>The final output is a reusable <strong>WordPress-ready HTML component</strong> for supplier pages. It includes a score area, ranking card, selected social comments, source links, popup handling for longer comments, a blurred teaser card and a ranking CTA.</p><p>The content rules were strict: no invented scores, no invented authors, no invented platforms, no rewritten quotes and no vague marketing language. The copy stays <strong>neutral, compact and practical</strong>, because the purpose is to help users evaluate the supplier before moving into the full review ecosystem.</p><p>The result is a small but strategic page upgrade: it adds trust, makes the page feel fresher and turns internal linking into a visible user journey instead of a hidden SEO-only action.</p>`
       }
     ],
-    performancePlaceholder: "Future data could compare mother-page engagement or internal-click movement before and after adding the block, using percentage-only reporting.",
-    urlPlaceholder: "Future URL inventory: mother pages where the summary block was inserted, plus the review URL each block points to.",
+    hideKeyNumbers: true,
+    hideSnapshot: true,
+    hideFutureData: true,
+    performancePlaceholder: "",
+    urlPlaceholder: "",
     demos: [
       { label: "Octopus summary", path: "demos/review-summary-octopus.html" }
     ]
@@ -216,9 +227,16 @@ const projects = [
     shortTitle: "NRJ2 Analysis",
     category: "SEO + business diagnosis",
     status: "Analysis case",
-    summary: "A diagnostic analysis connecting <strong>SEO data, URL families, phone pickups and business signals</strong> for energia-luce.it.",
-    explanation: `<p>This is an analysis project rather than an implemented page. The objective was to understand which page families were working, which ones were inefficient and how organic visibility connected to <strong>business outcomes</strong>.</p><p>The analysis helped separate pages that generate traffic from pages that generate useful commercial value.</p>`,
-    summaryPoints: ["Grouped URLs by page family and intent", "Connected SEO signals with business outcomes", "Identified pages with traffic but weaker conversion value"],
+    summary: "A weekly SEO/business monitoring project that turned <strong>Search Console, crawl data, page families and business KPIs</strong> into recommendations for future actions on energia-luce.it.",
+    explanation: `<p>I was responsible for the weekly monitoring of energia-luce.it data, so I was asked to build a deeper analysis to identify possible future SEO and UX actions. The goal was to connect <strong>visibility, crawl/indexability and business outcomes</strong>, not only to report whether traffic was going up or down.</p><p>The analysis covered <strong>PP, clients, TR, CM3, CM3/PP, page families, noindex pages and crawl status</strong>. The final outcome was a clearer prioritization logic: a branch-map proposal for local-intent friction and a review of noindex pages that could be brought back into the indexation flow.</p>`,
+    summaryPoints: [
+      `<span>Monitoring role</span><strong>Started from weekly site reporting</strong><em>I was following SEO and business movement every week, then turned that monitoring into a deeper action-oriented diagnosis.</em>`,
+      `<span>Business KPIs</span><strong>Connected PP, clients, TR and CM3</strong><em>The analysis checked whether page families were creating valuable outcomes, not just traffic or phone-pickup activity.</em>`,
+      `<span>Technical SEO</span><strong>Reviewed crawl and noindex signals</strong><em>Indexability, crawl status and URL families were used to separate pages to protect, fix, re-index or redesign.</em>`,
+      `<span>Outcome</span><strong>Produced future-action recommendations</strong><em>The work led to the branch-map proposal and to noindex pages being reviewed and re-indexed where useful.</em>`
+    ],
+    summaryPointStyle: "rich",
+    summaryPointLayout: "analysis",
     metrics: [
       ["2,954", "URLs in the broader analysis window"],
       ["992", "URLs covered by the GSC export"],
@@ -232,20 +250,26 @@ const projects = [
     ],
     deepDive: [
       {
-        title: "Why the analysis was created",
-        body: `<p>The site needed a diagnosis that went beyond traffic. A page can bring visits and still be weak from a business point of view if the user's intent is <strong>post-sale, support-oriented, local-only or not aligned with acquisition</strong>.</p><p>The question was therefore: <strong>which SEO areas are actually useful for the business</strong>, and which ones mostly create visibility without enough client value?</p><p>This mattered for the branch pages because local-intent pages can produce activity, calls or navigation signals, but they may not always turn into valuable clients. The analysis was designed to separate <strong>SEO visibility</strong> from <strong>commercial usefulness</strong>.</p>`
+        title: "Why the analysis was requested",
+        body: `<p>I was already responsible for <strong>weekly monitoring</strong> of the site's SEO and business data. That meant looking at movement regularly and understanding whether changes in visibility were also reflected in business outcomes.</p><p>From that monitoring, the next request was to prepare an analysis for <strong>possible future actions</strong>: where to intervene, which page families deserved attention and which pages should not be touched because they were already working.</p><p>The important point was that this was not a simple SEO traffic report. The analysis had to connect <strong>Search Console visibility</strong> with business metrics such as <strong>PP, clients, TR, CM3 and CM3/PP</strong>, plus technical signals like <strong>crawl status, indexability and noindex pages</strong>. The question became: which URLs are visible, which URLs create value, and where is the gap between the two?</p>`
       },
       {
-        title: "How we worked: SEO and business signals",
-        body: `<p>The analysis combined <strong>SEO exports, crawl information and business KPI files</strong>. URLs were grouped into page families and then compared through traffic, phone pickups, expected clients and intent. The final workbook was organized around global trend, pre/post comparison, SEO winners, business winners, pages with pickup but no clients, next steps and URL families.</p><div class="process-flow"><article><span>Group</span><p>Classify URLs by family and intent, including city branch pages, branch hubs and other SEO page types.</p></article><article><span>Join</span><p>Connect GSC coverage, crawl status and business files so the analysis is not limited to ranking or clicks.</p></article><article><span>Compare</span><p>Read SEO winners against business winners, then isolate pages with visibility or phone pickup but weak client outcomes.</p></article><article><span>Decide</span><p>Use the findings to define next steps: refresh, redesign, consolidate, reframe intent or avoid overinvesting in low-value traffic.</p></article></div><p>The core insight is that <strong>not all organic traffic has the same value</strong>. A page can be strong in Search Console and still require a different UX or business expectation if the intent is local information rather than acquisition.</p>`
+        title: "How I analysed SEO, business and indexability",
+        body: `<p>The work started by bringing different sources into the same reading frame: <strong>Google Search Console exports</strong>, crawl/indexability checks, URL lists and business KPI files. Each URL was then interpreted as part of a page family instead of being read as an isolated row.</p><div class="process-flow"><article><span>Classify</span><p>Group URLs by intent and family: <strong>sportelli hubs</strong>, city/local sportelli pages, contact pages, number-verde pages, supplier areas and other SEO clusters.</p></article><article><span>Join</span><p>Connect SEO data with business signals: clicks/impressions on one side, then <strong>PP, clients, TR, CM3 and CM3/PP</strong> on the other.</p></article><article><span>Indexability</span><p>Check crawl status and <strong>noindex</strong> signals to find pages that were potentially useful but not available to search in the right way.</p></article><article><span>Compare</span><p>Separate <strong>SEO winners</strong>, <strong>business winners</strong>, pages with PP but no clients, pages with weak CM3 and pages that needed technical/indexation action.</p></article></div><p>This method made the analysis more operational. Instead of saying "this area has traffic", it could say: this family has traffic but weak clients, this page gets PP but poor CM3, this local page is closer to qualified intent, and this noindex group should be reviewed because it may be blocking useful organic visibility.</p>`
       },
       {
-        title: "How it helps decision-making",
-        body: `<p>The analysis helps avoid treating all organic traffic as equal. For example, support or branch-intent pages can be useful, but they need different expectations from commercial comparison pages.</p><p>This kind of work supports better prioritization: <strong>refresh pages with opportunity</strong>, redesign pages with intent friction, create modules that filter local intent more clearly and avoid investing too much in traffic that cannot reasonably convert.</p>`
+        title: "What I understood from the data",
+        body: `<p>The main insight was that <strong>not all organic activity had the same value</strong>. Some pages were visible and could generate PP, but did not necessarily produce clients or healthy CM3. That suggested an intent mismatch: the page was capturing a search need, but the conversion path was not always aligned with what the user wanted.</p><p>This was especially relevant for the <strong>sportelli</strong> area. Hub pages could receive local-intent users, but those users were often looking for a physical branch, a city page, an address or local support information. If the page pushed them immediately into a generic commercial action, the result could be <strong>low-quality PP</strong> rather than qualified clients.</p><p>The second insight was technical: some useful pages needed an <strong>indexability review</strong>. A noindex page is not only a technical status; it is a business decision. If a page family has potential search demand and can support the user journey, leaving it out of the index may mean losing qualified visibility.</p>`
+      },
+      {
+        title: "What happened after the analysis",
+        body: `<p>The analysis produced two concrete directions. The first was the <strong>branch-map proposal</strong>: a way to make sportelli hub pages work less like static lists and more like local-intent routers. A user could search or select a region/city, then move faster toward the relevant local page instead of getting stuck in a generic hub experience.</p><p>The second direction was the <strong>noindex review</strong>. Pages that looked useful from an SEO/business perspective were checked and, where appropriate, brought back into the indexation flow. This turned the analysis into action: not only identifying a technical issue, but deciding which pages deserved to be re-indexed because they could support organic acquisition.</p><p>The final value of the project was prioritization. It helped define where to redesign, where to re-index, where to monitor and where to avoid unnecessary changes. In other words: the output was not a single page, but a clearer decision system for future SEO and business work on the site.</p>`
       }
     ],
-    performancePlaceholder: "This project already has analysis workbooks. If needed, this panel can later show sanitized charts from GSC and business KPIs without exposing sensitive raw values.",
-    urlPlaceholder: "Future URL inventory can list page families and representative URLs, not necessarily every raw business URL.",
+    hideFutureData: true,
+    hideExamples: true,
+    performancePlaceholder: "",
+    urlPlaceholder: "",
     demos: []
   },
   {
@@ -255,7 +279,7 @@ const projects = [
     category: "Local SEO module",
     status: "Prototype / not implemented",
     summary: "A <strong>not-implemented prototype</strong> for an Iren branch map, designed after an SEO/business analysis showed that branch hub pages received local-intent traffic but did not always send users toward the city pages that converted better.",
-    explanation: `<p>This project was created after reading the <strong>NRJ2 sportelli analysis workbook</strong>. The issue was not only SEO visibility: several branch hub pages were receiving <strong>organic demand and phone-pickup signals</strong>, but the conversion path was weak because many users were looking for a <strong>specific physical branch</strong>, not a generic commercial action.</p><p>The proposed solution was an <strong>interactive branch map</strong>: a module where users can select a region, search by city and move directly to the relevant local page. The demo shown here is the <strong>Iren-specific prototype</strong>, because that was the provider version prepared as a publishable branch-map block.</p>`,
+    explanation: `<p>This project was created after my <strong>NRJ2 sportelli analysis</strong>. The issue was not only SEO visibility: several branch hub pages were receiving <strong>organic demand and phone-pickup signals</strong>, but the conversion path was weak because many users were looking for a <strong>specific physical branch</strong>, not a generic commercial action.</p><p>The proposed solution was an <strong>interactive branch map</strong>: a cleaner visual module where users can select a region, search by city and move directly to the relevant local page. The demo shown here is the <strong>Iren-specific prototype</strong>, because that was the provider version prepared as a publishable branch-map block.</p>`,
     summaryPoints: [
       `<span>Routing</span><strong>Mapped local URLs into a searchable path</strong><em>Region and city filters replace long hub lists and multi-step accordions.</em>`,
       `<span>Intent</span><strong>Filtered local intent before generic CTAs</strong><em>Users looking for a branch can reach the city page before being pushed into a broad commercial flow.</em>`,
@@ -267,7 +291,7 @@ const projects = [
     deepDive: [
       {
         title: "Why the map was designed",
-        body: `<p>The Excel analysis showed a clear mismatch between <strong>visibility</strong> and <strong>business value</strong>. Some branch hub pages were visible in search and generated phone-pickup activity, but they did not consistently become clients. That suggested that the page was not necessarily failing at ranking: it was failing at <strong>guiding the user's intent</strong> after the click.</p><p>The underlying query intent was often local. Users were searching for things like a <strong>branch near them</strong>, a specific city, an address, opening hours or a provider office. On the existing hub structure, they could land on a long list of branches or a region accordion and still need to manually find the right city. On mobile, this means <strong>extra scrolling, extra taps and more friction</strong> before the user reaches the page that actually matches the need.</p><p>The branch map was designed to solve that exact pain point. Instead of treating the hub as a generic landing page, it turns it into a <strong>local-intent router</strong>: the user selects a region or searches a city, then reaches the relevant local page with less friction. The project was not published, but the reasoning is useful because it connects <strong>SEO, UX and business conversion quality</strong>.</p>`
+        body: `<p>My analysis showed a clear mismatch between <strong>visibility</strong> and <strong>business value</strong>. Some branch hub pages were visible in search and generated phone-pickup activity, but they did not consistently become clients. That suggested that the page was not necessarily failing at ranking: it was failing at <strong>guiding the user's intent</strong> after the click.</p><p>The underlying query intent was often local. Users were searching for things like a <strong>branch near them</strong>, a specific city, an address, opening hours or a provider office. On the existing hub structure, they could land on a long list of branches or a region accordion and still need to manually find the right city. On mobile, this means <strong>extra scrolling, extra taps and more friction</strong> before the user reaches the page that actually matches the need.</p><p>The branch map was designed to solve that exact pain point. Instead of treating the hub as a generic landing page, it turns it into a <strong>local-intent router</strong>: the user selects a region or searches a city, then reaches the relevant local page with less friction. The project was not published, but the reasoning is useful because it connects <strong>SEO, UX and business conversion quality</strong>.</p>`
       },
       {
         title: "How the analysis shaped the solution",
@@ -299,7 +323,12 @@ const projects = [
     status: "Secondary portfolio area",
     summary: "Social media and digital documentation work for <strong>Beach Golf Sport Association</strong> and the Ladywoods Golf EU Project.",
     explanation: `<p>This section covers the social media manager and content creator side of the Ladywoods Golf / BGSA experience. It includes <strong>posts, reels, videos, photos, vertical formats, promotional material and post-event documentation</strong>.</p><p>For now it stays as a lighter portfolio box, because the detailed content examples will be added later.</p>`,
-    summaryPoints: ["Produced event and social content", "Supported communication in an international project", "Ready for future channel and content examples"],
+    summaryPoints: [
+      `<span>Content</span><strong>Produced event and social material</strong><em>Photos, videos, reels and live documentation supported event communication.</em>`,
+      `<span>Context</span><strong>Worked in an international project</strong><em>The role connected content creation with coordination and participant support.</em>`,
+      `<span>Next</span><strong>Ready for future channel examples</strong><em>This area can later include public posts, screenshots and selected metrics.</em>`
+    ],
+    summaryPointStyle: "rich",
     metrics: [
       ["225", "women trained across the EU project"],
       ["2", "Ladywoods/BGSA work phases in CV materials"],
@@ -337,12 +366,17 @@ const projects = [
     status: "Secondary SEO work",
     summary: "News-based articles written for <strong>online newspaper outreach</strong>, with internal links designed to support backlink acquisition.",
     explanation: `<p>This project covers the off-page side of the SEO work: finding relevant news sources, extracting reliable facts and writing short journalistic-style articles that could be sent to online newspapers or external publishers.</p><p>The goal was to support <strong>backlink acquisition for priority pages</strong>, while keeping the article useful, factual and natural rather than promotional.</p>`,
-    summaryPoints: ["Found relevant news sources", "Wrote outreach-ready articles", "Integrated strategic internal links"],
+    summaryPoints: [
+      `<span>Research</span><strong>Found relevant news sources</strong><em>Articles started from real facts, numbers and current news context.</em>`,
+      `<span>Draft</span><strong>Wrote outreach-ready articles</strong><em>The format was short, factual and suitable for external publishers.</em>`,
+      `<span>Links</span><strong>Integrated strategic internal links</strong><em>Anchors and target URLs were selected to support priority SEO pages.</em>`
+    ],
+    summaryPointStyle: "rich",
     metrics: [
-      ["500", "max body words in the off-page article workflow"],
-      ["7", "internal links selected from a whitelist"],
-      ["3", "H2 sections per article"],
-      ["29", "authorized Papernest URLs in the whitelist"]
+      ["16", "off-page articles prepared and tracked"],
+      ["575", "total backlinks recorded for the article set"],
+      ["78", "total referring pages recorded for the article set"],
+      ["6", "published example links currently available"]
     ],
     callouts: [
       ["Research", "Articles started from <strong>real news sources</strong>, not generic rewritten content."],
@@ -351,20 +385,42 @@ const projects = [
     ],
     deepDive: [
       {
-        title: "Why off-page articles were useful",
-        body: `<p>Some SEO goals cannot be supported only by on-page work. Priority pages also need authority signals, and off-page content can help when it is used for outreach and backlink acquisition.</p><p>The idea was to create short articles that online newspapers or partner sites could publish: useful enough for readers, connected to current news and structured so that links toward Papernest pages felt natural.</p>`
+        title: "How we worked: news research and topic selection",
+        body: `<p>The first step was choosing news that could work for outreach. The article had to start from a <strong>real, recent and verifiable source</strong>, not from a generic SEO idea. Priority went to topics that had public interest, clear numbers or concrete consequences: energy bills, government bonuses, renewables, fuel prices, climate, technology, regulation or consumer spending.</p><p>A topic was useful only if it could support both sides of the work: it had to be <strong>publishable for an online newspaper</strong> and still close enough to Papernest's SEO universe to justify a natural link. If the source was too thin, too promotional or did not provide enough facts, the article should not be produced.</p><div class="process-flow"><article><span>Source</span><p>Start from news with dates, numbers, institutional context, market impact or public relevance.</p></article><article><span>Angle</span><p>Turn the source into a clear article angle that a local or digital newspaper could publish without sounding like advertising.</p></article><article><span>Fit</span><p>Check whether the topic can naturally connect to energy, savings, bills, home efficiency, consumers or sustainability.</p></article><article><span>Risk</span><p>Avoid weak sources, invented data, over-optimized titles or stories where the link would feel forced.</p></article></div>`
       },
       {
-        title: "How we worked: news research and article structure",
-        body: `<p>The workflow started by finding a relevant source article or news item, then extracting the facts that could be used safely: dates, numbers, amounts, percentages and the main topic. If the source was too thin or inaccessible, the article should not be produced.</p><ul><li><strong>Source check:</strong> avoid inventing data when the source does not provide enough information.</li><li><strong>Article shape:</strong> maximum 500 words, one strong H1 with a real number, and exactly three H2 sections.</li><li><strong>Link selection:</strong> choose seven different internal URLs from an approved whitelist.</li><li><strong>Anchor text:</strong> use descriptive anchors connected to the topic, avoiding generic text such as "click here".</li></ul>`
+        title: "How we wrote the article",
+        body: `<p>The writing had to feel like a short editorial article, not like a brand page. The structure was controlled: a strong title, a compact introduction, clear sections and a factual tone. The text needed to explain <strong>what happened, why it matters and what changes for people</strong>.</p><p>The article could include numbers from the source, but the rule was simple: <strong>do not invent missing data</strong>. If a detail was not in the source or could not be checked, it stayed out. This kept the article usable for outreach and reduced the risk of sending weak or inaccurate content to publishers.</p><ul><li><strong>Readable structure:</strong> short paragraphs, clear H2s and no unnecessary technical density.</li><li><strong>Factual writing:</strong> dates, amounts, percentages and policy details only when supported by the source.</li><li><strong>Neutral tone:</strong> useful for an external publisher, not promotional copy for Papernest.</li><li><strong>SEO fit:</strong> the article still needed a topic bridge toward the priority page being supported.</li></ul>`
       },
       {
-        title: "How it helps SEO",
-        body: `<p>The value is not only the article itself, but the combination of <strong>topical relevance, factual writing and backlink opportunity</strong>. A well-built off-page article can support target pages while keeping the external publication readable and non-spammy.</p><p>This also shows a different SEO skill: connecting news research, editorial judgment, link strategy and outreach-ready formatting.</p>`
+        title: "How links were inserted",
+        body: `<p>The link was not treated as an afterthought. It had to fit inside the article's logic, with an anchor that made sense for the reader and for the target page. The goal was to support priority URLs while keeping the article <strong>natural, readable and acceptable for publication</strong>.</p><p>When a link points to an external newspaper page in the inventory, it means the article was published by one of the contacted online newspapers. If a future link points to Papernest, it should be read as a publication on the <strong>Papernest blog</strong>.</p><ul><li><strong>Anchor choice:</strong> descriptive anchors connected to the sentence, avoiding generic labels like "click here".</li><li><strong>Target selection:</strong> links chosen around the topic and the SEO priority of the destination page.</li><li><strong>Editorial fit:</strong> the link should add context, not interrupt the article.</li><li><strong>Tracking:</strong> the inventory keeps article date, backlinks, referring pages, Domain Rating and example publication links when available.</li></ul>`
       }
     ],
-    performancePlaceholder: "Future data could show which priority URLs were supported by off-page articles, backlink status and any ranking or visibility movement after publication.",
-    urlPlaceholder: "Future URL inventory: source news URLs, outreach article files and target Papernest URLs used as backlink destinations.",
+    articleInventory: [
+      { title: "Piante bio-ibride", rawTitle: "Piante Bio-Ibride", date: "26/02", backlinks: "24", referringPages: "4", domainRating: "29", url: "" },
+      { title: "Addio smart working", rawTitle: "AddioSmartWorking", date: "06/03", backlinks: "36", referringPages: "6", domainRating: "29", url: "" },
+      { title: "Big Tech e energia pulita", rawTitle: "BigTechEnergiaPulita", date: "12/03/2026", backlinks: "15", referringPages: "3", domainRating: "16", url: "" },
+      { title: "Rincari bollette e guerra", rawTitle: "RincariBolletteGuerra", date: "19/3/2026", backlinks: "41", referringPages: "6", domainRating: "18", url: "" },
+      { title: "Reattori nucleari UE", rawTitle: "ReattoriNucleariUE", date: "26/03/2026", backlinks: "35", referringPages: "5", domainRating: "19", url: "" },
+      { title: "Bonus fotovoltaico 2026", rawTitle: "BonusFotovoltaico2026", date: "09/04/2026", backlinks: "24", referringPages: "3", domainRating: "31", url: "" },
+      { title: "Bonus domotica 2026", rawTitle: "Bonus Domotica 2026", date: "16/04/2026", backlinks: "40", referringPages: "5", domainRating: "26", url: "" },
+      { title: "Decreto Bollette e sostegni da 5 miliardi", rawTitle: "DecretoBolletteApprovato", date: "23/04/2026", backlinks: "69", referringPages: "8", domainRating: "22", url: "https://arenadigitale.it/2026/04/13/via-libera-del-senato-il-decreto-bollette-diventa-legge-e-introduce-sostegni-da-5-miliardi/" },
+      { title: "Conto Termico 3.0", rawTitle: "ContoTermico3.0", date: "30/04/2026", backlinks: "54", referringPages: "6", domainRating: "16", url: "" },
+      { title: "Clima e rinnovabili", rawTitle: "ClimaERinnovabili", date: "08/05", backlinks: "17", referringPages: "3", domainRating: "12", url: "" },
+      { title: "Taglio accise carburanti", rawTitle: "ProrogaTaglioAccise", date: "14/05", backlinks: "35", referringPages: "5", domainRating: "24", url: "https://www.alessandria24.com/2026/05/05/proroga-al-taglio-delle-accise-sui-carburanti-per-21-giorni-20-centesimi-sul-diesel-e-5-sulla-benzina/" },
+      { title: "Hantavirus e lockdown", rawTitle: "Hantavirus", date: "21/05", backlinks: "72", referringPages: "8", domainRating: "22", url: "https://www.ecodisavona.it/hantavirus-che-cosa-e-otto-casi-e-una-domanda-cruciale-sul-lockdown/" },
+      { title: "Geotermia e piano europeo", rawTitle: "GeotermicaRitorno", date: "29/05", backlinks: "40", referringPages: "5", domainRating: "19", url: "https://vocedelnordest.it/geotermia-il-ritorno-34-centrali-italiane-e-un-piano-europeo-piu-concreto/" },
+      { title: "Gas USA-Iran", rawTitle: "GasUSAIran", date: "04/06", backlinks: "21", referringPages: "3", domainRating: "20", url: "" },
+      { title: "Caldo record in Italia", rawTitle: "OndataCaloreItalia", date: "12/06", backlinks: "24", referringPages: "4", domainRating: "26", url: "https://www.corrierenazionale.it/2026/06/01/caldo-record-in-italia-fino-a-36-gradi-a-maggio-cosa-cambia-dal-1o-giugno/" },
+      { title: "Caro spiagge 2026", rawTitle: "CaroSpiagge2026", date: "19/06", backlinks: "28", referringPages: "4", domainRating: "30", url: "https://www.corrierenazionale.it/2026/06/09/caro-spiagge-2026-il-mare-costa-il-24-in-piu-e-il-lido-pesa-sul-budget-delle-famiglie/" }
+    ],
+    hideKeyNumbers: true,
+    hideSnapshot: true,
+    hideFutureData: true,
+    hideExamples: true,
+    performancePlaceholder: "",
+    urlPlaceholder: "",
     demos: []
   },
   {
@@ -375,7 +431,12 @@ const projects = [
     status: "Secondary portfolio area",
     summary: "Independent creator work across <strong>gaming and football communities</strong>, useful to show audience thinking and content analytics.",
     explanation: `<p>This is not the main SEO experience, but it gives useful context. Independent creator work means working with <strong>audiences, formats, retention, tutorials, recurring questions, community feedback and platform metrics</strong>.</p><p>It supports the broader profile because SEO is also about understanding intent, packaging information and improving content based on user response.</p>`,
-    summaryPoints: ["Managed gaming and football communities", "Worked across long-form and short-form formats", "Used feedback and metrics to iterate content"],
+    summaryPoints: [
+      `<span>Audience</span><strong>Managed gaming and football communities</strong><em>The work required reading recurring questions, feedback and platform behavior.</em>`,
+      `<span>Formats</span><strong>Worked across long and short formats</strong><em>Tutorials, analysis, news and short-form content followed different content logic.</em>`,
+      `<span>Iteration</span><strong>Used feedback to improve content</strong><em>Comments, retention and metrics informed what to publish next.</em>`
+    ],
+    summaryPointStyle: "rich",
     metrics: [
       ["70k+", "gaming YouTube subscribers reported in old CV"],
       ["35k+", "gaming TikTok followers reported in old CV"],
@@ -463,11 +524,11 @@ const projectPortfolioMeta = {
     topicTags: ["Local SEO", "Map UX", "Crawl"],
     cardSummary: "Local map prototype from branch URL data.",
     story: {
-      main: "I designed an interactive branch-map prototype to make a large local-SEO URL inventory easier to navigate.",
-      problem: "Flat branch lists are hard to use, and branch-intent traffic can be local, navigational or support-oriented rather than immediately commercial.",
-      analysis: "I connected sitemap/crawl status, branch data and geographic normalization to decide which URLs could become useful, crawlable destinations.",
-      insight: "The map only has SEO value if the interface exposes real links and helps users filter local intent before pushing a generic conversion path.",
-      output: "Final output: a non-implemented but fully reasoned map prototype with region/city/provider logic and a publishable HTML/CSS/JS direction."
+      main: "I designed an <strong>interactive branch-map prototype</strong> to make a large local-SEO URL inventory easier to navigate and more useful from a UX perspective.",
+      problem: "Flat branch lists are <strong>hard to use</strong>, especially on mobile, and branch-intent traffic can be local, navigational or support-oriented rather than immediately commercial. The existing UX was not ideal, so I wanted to propose a <strong>cleaner, more useful design</strong>.",
+      analysis: "Before proposing the design, I analysed how the branch hubs and child pages performed. The key signal was that some hubs generated <strong>PP</strong> but not enough <strong>clients</strong>, while local child pages were closer to qualified intent.",
+      insight: "The solution was an <strong>interactive map</strong> that is visually stronger but also practical: it helps users select a region or city and reach the page they were actually looking for faster.",
+      output: "Final output: a <strong>not-implemented but fully reasoned prototype</strong> with region/city logic, crawlable destination links and a publishable HTML/CSS/JS direction."
     }
   },
   summary: {
@@ -477,11 +538,11 @@ const projectPortfolioMeta = {
     topicTags: ["Interlinking", "UX block", "HTML"],
     cardSummary: "Review blocks for mother pages and internal links.",
     story: {
-      main: "I created compact review-summary blocks for supplier mother pages, connecting existing pages to the new review ecosystem.",
-      problem: "Mother pages could be important SEO assets but lacked visible review proof, making internal links toward review pages less compelling.",
-      analysis: "The block needed to act as a soft revamp: add score, rank, selected real comments and a CTA without rewriting the whole page.",
-      insight: "Internal linking works better when the link is attached to a user reason, not just inserted for crawlability.",
-      output: "Final output: reusable review-summary HTML blocks with comment cards, score/rank signals and links toward full reviews or rankings."
+      main: "After building the full review pages, I created <strong>review-summary blocks</strong> to connect those pages back to the supplier mother pages in a more coherent way.",
+      problem: "The mother pages already linked to reviews, but the review area showed <strong>different information</strong> and felt less aligned with the new page design. It needed a soft refresh that improved the page itself and made the new reviews more inviting.",
+      analysis: "The component had to work as a <strong>compact overview</strong> of the full review page: score, short strengths/weaknesses copy, selected comments and clear links, without rewriting the mother page.",
+      insight: "The strongest interlinking path is not just a link. It is a <strong>preview</strong>: users see useful review signals first, then have a reason to open the full review page. On mobile, the component was also designed to be understood in roughly <strong>one or two scrolls</strong>, so the preview stays compact instead of becoming another long section.",
+      output: "Final output: reusable <strong>review-summary HTML blocks</strong> with comment cards, method links, blurred teaser cards and ranking CTAs."
     }
   },
   ranking: {
@@ -491,11 +552,11 @@ const projectPortfolioMeta = {
     topicTags: ["Comparison", "Sentiment", "UX"],
     cardSummary: "Supplier ranking built from scores and sentiment.",
     story: {
-      main: "I updated a provider-ranking page so the comparison was grounded in the same real-comment system used by individual reviews.",
-      problem: "A best-supplier page risks feeling generic if rankings are not supported by visible evidence or a clear scoring method.",
-      analysis: "The page needed a podium, a full ranking, score explanation and sentiment signals that made the ranking easier to trust.",
-      insight: "The strongest comparison page connects market-level intent with single-provider investigation through internal links and explainable scores.",
-      output: "Final output: updated ranking HTML with top-three logic, full provider ranking and sentiment/comment evidence."
+      main: "I updated a <strong>supplier-ranking page</strong> so a generic best-provider comparison became consistent with the new review ecosystem.",
+      problem: "A best-supplier page can feel <strong>generic</strong> if the ranking is not connected to visible evidence, real comments and a clear path toward individual reviews.",
+      analysis: "The page had to be <strong>aligned with the new review pages</strong>: same evidence logic, stronger content coherence and more useful internal linking between the ranking and each supplier review.",
+      insight: "The strongest version was not a simple ordered list. It included <strong>review comments</strong>, added <strong>sentiment analysis</strong> as extra unique content and helped users understand why each provider was positioned that way.",
+      output: "Final output: updated <strong>ranking HTML</strong> with podium logic, full supplier ranking, sentiment/comment evidence and links toward the review pages."
     }
   },
   "nrj2-analysis": {
@@ -504,13 +565,7 @@ const projectPortfolioMeta = {
     areas: ["technical"],
     topicTags: ["Data analysis", "Crawl", "Business"],
     cardSummary: "SEO diagnosis across URL families and intent.",
-    story: {
-      main: "I worked on an SEO and business diagnosis for energia-luce.it, connecting organic visibility with URL families and business signals.",
-      problem: "Some pages can generate traffic or calls without producing useful commercial outcomes, especially when intent is local or support-oriented.",
-      analysis: "The work grouped URLs by family, joined SEO exports with crawl and KPI files, and compared SEO winners with business winners.",
-      insight: "Not all organic traffic has the same value. A page can look strong in Search Console while still needing a different UX or business expectation.",
-      output: "Final output: analysis logic for page-family prioritization, branch-map reasoning and future percentage-only reporting."
-    }
+    story: null
   },
   scraping: {
     visualTheme: "technical-ai",
@@ -519,11 +574,11 @@ const projectPortfolioMeta = {
     topicTags: ["Scraping", "AI rules", "QA"],
     cardSummary: "Clean comment pipeline for review evidence.",
     story: {
-      main: "I built the data-collection layer behind the review system, focused on gathering usable public customer comments.",
-      problem: "Raw social data is noisy: spam, duplicates, vague mentions, off-topic posts and comments without decision value can weaken the final page.",
-      analysis: "The workflow used Codex, Claude Code and Apify-style instructions to define what to collect, exclude and preserve before analysis.",
-      insight: "Scraping was not the goal by itself. The real value was creating a clean, auditable evidence base for content, clustering and scoring.",
-      output: "Final output: source rules, normalized exports, pre-cleaning logic and a pipeline that feeds sentiment/cluster analysis."
+      main: "I built the <strong>data-collection layer</strong> behind the review system, focused on turning public social comments into review-ready evidence.",
+      problem: "Raw social data is noisy: <strong>spam, duplicates, referral codes, vague mentions, off-topic posts</strong> and comments without source value can weaken the final page.",
+      analysis: "The workflow used <strong>Codex, Claude Code and Apify-style instructions</strong> to define source priorities, exclusion rules, canonical fields and validation checks.",
+      insight: "Scraping was not the goal by itself. The real value was a <strong>clean, auditable evidence base</strong> that could feed clustering, sentiment and scoring without losing traceability.",
+      output: "Final output: <strong>source rules, normalized CSV exports, validation checks</strong> and a reusable path from raw comments to review-page inputs."
     }
   },
   offpage: {
@@ -532,12 +587,13 @@ const projectPortfolioMeta = {
     areas: ["seo"],
     topicTags: ["Off-page", "Backlinks", "AI draft"],
     cardSummary: "News-based articles for outreach and backlinks.",
+    hideProjectStory: true,
     story: {
-      main: "I wrote news-based off-page articles designed for outreach and backlink acquisition toward priority pages.",
-      problem: "Backlink content can become weak or promotional if it is not connected to real news, reliable facts and natural anchors.",
-      analysis: "The workflow started from news research, extracted usable facts, then shaped short articles with controlled links from an approved whitelist.",
-      insight: "Good off-page work sits between editorial judgment and link strategy: the article has to be useful before it can support SEO.",
-      output: "Final output: outreach-ready article structures, source checks, anchor logic and internal-link selection rules."
+      main: "I wrote and tracked <strong>news-based off-page articles</strong> designed for outreach and backlink acquisition toward priority pages. The work combined <strong>news research, factual editorial writing, natural anchor selection and publication tracking</strong>: each article started from a real source, was shaped so it could be sent to online newspapers, and included links only where they made sense for the reader and the target page.",
+      problem: "Backlink content can become weak or promotional if it is not connected to <strong>real news, reliable facts and natural anchors</strong>.",
+      analysis: "The workflow started from news research, extracted usable facts, then shaped short articles that could be sent to <strong>online newspapers or published on Papernest</strong> when appropriate.",
+      insight: "Good off-page work sits between editorial judgment and link strategy: the article has to be useful before it can support SEO through links.",
+      output: "Final output: a tracked inventory of <strong>16 off-page articles</strong> with dates, BL, RP, DR and available publication links."
     }
   },
   "social-media": {
@@ -648,7 +704,8 @@ const revealSelectors = [
   ".top-pages-list article",
   ".process-flow article",
   ".formula-grid article",
-  ".user-path-card"
+  ".user-path-card",
+  ".offpage-article-card"
 ];
 
 function updateScrollProgress() {
@@ -909,7 +966,8 @@ function renderProjectJumpNav(project, dataset) {
     ...(!project.hideKeyNumbers ? [["Key numbers", "sectionEvidence"]] : []),
     ...(dataset ? [["GSC trend", "sectionPerformance"]] : []),
     ...(!project.hideSnapshot ? [["Snapshot", "sectionSnapshot"]] : []),
-    ...(project.demos.length ? [["HTML demo", "sectionExamples"]] : []),
+    ...(project.demos.length && !project.hideExamples ? [["HTML demo", "sectionExamples"]] : []),
+    ...(project.articleInventory?.length ? [["Article inventory", "sectionArticleInventory"]] : []),
     ...(!project.hideFutureData ? [["URLs", "sectionInventory"]] : [])
   ];
 
@@ -1083,6 +1141,20 @@ function renderFutureData(project, dataset) {
   }
 
   futureDataSection.hidden = false;
+
+  if (project.livePageUrl) {
+    performanceSlotCard.hidden = true;
+    urlInventoryCard.classList.add("is-wide");
+    urlInventoryTitle.textContent = project.livePageTitle || "Live page";
+    urlPlaceholder.innerHTML = `
+      <span class="url-inventory-note">
+        Live page:
+        <a href="${escapeHtml(project.livePageUrl)}" target="_blank" rel="noreferrer">${escapeHtml(project.livePageLabel || project.livePageUrl)}</a>.
+        ${project.livePageNote || `This live page should match the example shown here until <strong>August 8, 2026</strong>; after that, future edits are possible.`}
+      </span>
+    `;
+    return;
+  }
 
   if (dataset?.urlInventory?.length) {
     performanceSlotCard.hidden = true;
@@ -1419,8 +1491,23 @@ function hideChartTooltip() {
 }
 
 function renderProjectStory(project) {
+  if (project.hideProjectStory) {
+    return "";
+  }
+
   if (!project.story) {
     return project.explanation;
+  }
+
+  if (project.summaryOnly) {
+    return `
+      <div class="project-summary-story project-summary-story--single">
+        <article class="project-summary-story__summary">
+          <span>Summary</span>
+          <p>${project.story.main}</p>
+        </article>
+      </div>
+    `;
   }
 
   const storyItems = [
@@ -1448,6 +1535,87 @@ function renderProjectStory(project) {
   `;
 }
 
+function getArticleLinkMeta(url) {
+  if (!url) {
+    return {
+      label: "Publication link pending",
+      note: "A public example link will be added when available.",
+      host: ""
+    };
+  }
+
+  let host = "";
+  try {
+    host = new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    host = "";
+  }
+
+  const isPapernest = host.includes("papernest.");
+
+  return {
+    label: isPapernest ? "Open Papernest blog article" : "Open published article",
+    note: isPapernest
+      ? "This link points to an article published on the Papernest blog."
+      : "This link points to an article published by one of the contacted online newspapers.",
+    host
+  };
+}
+
+function renderArticleInventory(project) {
+  if (!project.articleInventory?.length) {
+    return "";
+  }
+
+  return `
+    <section class="offpage-article-section" id="sectionArticleInventory" aria-label="Off-page article inventory">
+      <div class="offpage-article-head">
+        <span>Article inventory</span>
+        <p>These are the off-page articles prepared for outreach and backlink acquisition. <strong>BL</strong> indicates backlinks, <strong>RP</strong> indicates referring pages and <strong>DR</strong> indicates Domain Rating, a domain-strength metric. When available, the link opens the published article.</p>
+      </div>
+      <div class="offpage-article-grid">
+        ${project.articleInventory.map((article) => {
+          const linkMeta = getArticleLinkMeta(article.url);
+
+          return `
+            <article class="offpage-article-card">
+              <div class="offpage-article-card__top">
+                <span>${escapeHtml(article.date)}</span>
+                <strong>${escapeHtml(article.title)}</strong>
+              </div>
+              <dl class="offpage-article-stats">
+                <div>
+                  <dt>BL</dt>
+                  <dd>${escapeHtml(article.backlinks)}</dd>
+                </div>
+                <div>
+                  <dt>RP</dt>
+                  <dd>${escapeHtml(article.referringPages)}</dd>
+                </div>
+                <div>
+                  <dt>DR</dt>
+                  <dd>${escapeHtml(article.domainRating)}</dd>
+                </div>
+              </dl>
+              <div class="offpage-article-link">
+                <p>${linkMeta.note}</p>
+                ${article.url ? `
+                  <a href="${escapeHtml(article.url)}" target="_blank" rel="noreferrer">
+                    ${escapeHtml(linkMeta.label)}
+                    ${linkMeta.host ? `<span>${escapeHtml(linkMeta.host)}</span>` : ""}
+                  </a>
+                ` : `
+                  <span class="offpage-link-pending">Link not available yet</span>
+                `}
+              </div>
+            </article>
+          `;
+        }).join("")}
+      </div>
+    </section>
+  `;
+}
+
 function renderProjectDetail(project) {
   const performanceDataset = getPerformanceDataset(project);
 
@@ -1461,7 +1629,10 @@ function renderProjectDetail(project) {
   detailExplanation.innerHTML = `
     ${renderProjectStory(project)}
     ${project.summaryPoints?.length ? `
-      <ul class="summary-points ${project.summaryPointStyle === "rich" ? "summary-points--rich" : ""}">
+      <ul class="summary-points ${[
+        project.summaryPointStyle === "rich" ? "summary-points--rich" : "",
+        project.summaryPointLayout ? `summary-points--${project.summaryPointLayout}` : ""
+      ].filter(Boolean).join(" ")}">
         ${project.summaryPoints.map((point) => `<li>${point}</li>`).join("")}
       </ul>
     ` : ""}
@@ -1486,7 +1657,7 @@ function renderProjectDetail(project) {
       <summary>${item.title}</summary>
       <div>${item.body}</div>
     </details>
-  `).join("");
+  `).join("") + renderArticleInventory(project);
 
   renderPerformance(project, performanceDataset);
   renderFutureData(project, performanceDataset);
@@ -1495,6 +1666,14 @@ function renderProjectDetail(project) {
 }
 
 function renderDemos(project) {
+  if (project.hideExamples) {
+    exampleArea.hidden = true;
+    demoFrame.src = "about:blank";
+    return;
+  }
+
+  exampleArea.hidden = false;
+
   if (!project.demos.length) {
     exampleArea.classList.add("is-empty");
     demoTabs.innerHTML = `<span class="demo-empty">No HTML demo for this secondary portfolio area yet</span>`;
