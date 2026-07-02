@@ -13,3 +13,5 @@ Current dataset:
 - `google-search-console/processed/reviews-gsc-performance.json` and `.js`: public aggregated dataset used by the dashboard.
 - `google-search-console/raw/offers/full-mar-jun-2026`: Google Search Console export for supplier offer sheets, covering the launch/growth period.
 - `google-search-console/processed/offers-gsc-performance.json` and `.js`: public percentage-only trend for new offer pages, comparing May 1-June 28 daily averages with the Apr 22-30 pre-quality baseline and using indexed/smoothed chart movement instead of raw values.
+- `google-search-console/raw/change-residence/full-mar-jun-2026`: Google Search Console export for 9 new change-of-residence city pages, covering March 31, 2026 to June 30, 2026.
+- `google-search-console/processed/change-residence-gsc-performance.json` and `.js`: public indexed trend for new change-of-residence pages, using Apr 22-30 as a reference point only so the chart can show percentage movement without raw Search Console values.

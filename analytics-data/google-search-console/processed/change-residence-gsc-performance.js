@@ -1,0 +1,718 @@
+window.portfolioPerformanceData = window.portfolioPerformanceData || {};
+window.portfolioPerformanceData.changeResidence = {
+  "id": "change-residence-gsc-2026-06-30-percentage-only",
+  "projectId": "change-residence",
+  "mode": "percentage-only-new-page-growth",
+  "title": "Change-of-residence pages indexed Search Console trend",
+  "source": {
+    "platform": "Google Search Console",
+    "searchType": "Web",
+    "dateRange": "Mar 31, 2026-Jun 30, 2026",
+    "pageFilter": "9 change-of-residence city URLs",
+    "note": "Public dataset is sanitized: it contains percentage changes and public URLs only, not raw clicks, impressions, CTR or average-position values."
+  },
+  "update": {
+    "label": "June trend read",
+    "chartLabel": "June trend",
+    "legendLabel": "Indexed trend read",
+    "date": "2026-06-01",
+    "comparisonMethod": "June 1-30, 2026 daily averages are shown against Apr 22-30, 2026 as an indexed reference period. This reference is used only to draw percentage movement without exposing raw Search Console values; it is not a before/after impact baseline."
+  },
+  "periods": {
+    "before": {
+      "label": "Initial indexing and first traction",
+      "shortLabel": "Early traction",
+      "range": "Mar 31, 2026-May 31, 2026"
+    },
+    "after": {
+      "label": "June growth period",
+      "shortLabel": "June growth",
+      "range": "Jun 1-30, 2026"
+    }
+  },
+  "chartBaseline": {
+    "label": "Apr 22-30 reference = 0%",
+    "method": "Each chart point is a 7-day trailing average shown as percentage movement from the Apr 22-30 reference period.",
+    "tooltipNote": "Indexed against the Apr 22-30 reference period"
+  },
+  "chartFootnote": "Hover or tap the chart to inspect each date. These were new pages, so the chart shows an indexed trend from early indexing toward June growth. Without a reference period, the public view could show direction only, not percentage variation, unless raw values were exposed.",
+  "events": [
+    {
+      "type": "range",
+      "kind": "baseline",
+      "label": "Reference period",
+      "start": "2026-04-22",
+      "end": "2026-04-30",
+      "lane": 1
+    },
+    {
+      "type": "marker",
+      "kind": "revamp",
+      "label": "June trend read",
+      "date": "2026-06-01",
+      "lane": 2
+    }
+  ],
+  "narrative": {
+    "summary": "Search Console data for <strong>9 new Italian change-of-residence city pages</strong>. Because this was a new informational cluster, the chart should be read as <strong>indexed new-page growth</strong>: early indexing first, then a steady positive trend into June.",
+    "insights": [
+      "This was an <strong>intermediate/early SEO project</strong>: focused on content execution, keyword coverage and accurate local information more than on complex automation or advanced page systems.",
+      "The <strong>Apr 22-30 reference period</strong> is not a strategic baseline or proof of impact. It is only the first more stable point used to draw a percentage line without exposing raw Search Console data.",
+      "Without that reference, the public view could still describe the cluster as a <strong>positive uptrend</strong>, but it could not show percentage movement in a clean privacy-safe way.",
+      "The query set is mostly informational and local, such as <strong>city + cambio residenza</strong>, online procedure and form-related searches. The goal was organic coverage and helpful content, not a strongly transactional page flow."
+    ]
+  },
+  "deltas": {
+    "clickTrend": {
+      "direction": "improved",
+      "percent": 0.4674
+    },
+    "impressionTrend": {
+      "direction": "improved",
+      "percent": 0.7868
+    },
+    "ctrTrend": {
+      "direction": "declined",
+      "percent": -0.1256
+    },
+    "positionTrend": {
+      "direction": "improved",
+      "percent": 0.1686
+    }
+  },
+  "metricCards": [],
+  "chart": [
+    {
+      "date": "2026-03-31",
+      "phase": "before",
+      "clickChange": -1,
+      "impressionChange": -0.9897
+    },
+    {
+      "date": "2026-04-01",
+      "phase": "before",
+      "clickChange": -1,
+      "impressionChange": -0.9817
+    },
+    {
+      "date": "2026-04-02",
+      "phase": "before",
+      "clickChange": -1,
+      "impressionChange": -0.9768
+    },
+    {
+      "date": "2026-04-03",
+      "phase": "before",
+      "clickChange": -1,
+      "impressionChange": -0.9774
+    },
+    {
+      "date": "2026-04-04",
+      "phase": "before",
+      "clickChange": -1,
+      "impressionChange": -0.9808
+    },
+    {
+      "date": "2026-04-05",
+      "phase": "before",
+      "clickChange": -1,
+      "impressionChange": -0.9821
+    },
+    {
+      "date": "2026-04-06",
+      "phase": "before",
+      "clickChange": -1,
+      "impressionChange": -0.9829
+    },
+    {
+      "date": "2026-04-07",
+      "phase": "before",
+      "clickChange": -1,
+      "impressionChange": -0.9785
+    },
+    {
+      "date": "2026-04-08",
+      "phase": "before",
+      "clickChange": -1,
+      "impressionChange": -0.9776
+    },
+    {
+      "date": "2026-04-09",
+      "phase": "before",
+      "clickChange": -1,
+      "impressionChange": -0.978
+    },
+    {
+      "date": "2026-04-10",
+      "phase": "before",
+      "clickChange": -0.972,
+      "impressionChange": -0.9744
+    },
+    {
+      "date": "2026-04-11",
+      "phase": "before",
+      "clickChange": -0.972,
+      "impressionChange": -0.9706
+    },
+    {
+      "date": "2026-04-12",
+      "phase": "before",
+      "clickChange": -0.972,
+      "impressionChange": -0.9616
+    },
+    {
+      "date": "2026-04-13",
+      "phase": "before",
+      "clickChange": -0.9161,
+      "impressionChange": -0.9262
+    },
+    {
+      "date": "2026-04-14",
+      "phase": "before",
+      "clickChange": -0.9161,
+      "impressionChange": -0.8938
+    },
+    {
+      "date": "2026-04-15",
+      "phase": "before",
+      "clickChange": -0.9161,
+      "impressionChange": -0.8564
+    },
+    {
+      "date": "2026-04-16",
+      "phase": "before",
+      "clickChange": -0.8882,
+      "impressionChange": -0.8192
+    },
+    {
+      "date": "2026-04-17",
+      "phase": "before",
+      "clickChange": -0.8602,
+      "impressionChange": -0.7836
+    },
+    {
+      "date": "2026-04-18",
+      "phase": "before",
+      "clickChange": -0.8602,
+      "impressionChange": -0.7635
+    },
+    {
+      "date": "2026-04-19",
+      "phase": "before",
+      "clickChange": -0.8043,
+      "impressionChange": -0.7446
+    },
+    {
+      "date": "2026-04-20",
+      "phase": "before",
+      "clickChange": -0.8323,
+      "impressionChange": -0.7093
+    },
+    {
+      "date": "2026-04-21",
+      "phase": "before",
+      "clickChange": -0.7764,
+      "impressionChange": -0.6064
+    },
+    {
+      "date": "2026-04-22",
+      "phase": "before",
+      "clickChange": -0.6925,
+      "impressionChange": -0.5256
+    },
+    {
+      "date": "2026-04-23",
+      "phase": "before",
+      "clickChange": -0.5807,
+      "impressionChange": -0.4213
+    },
+    {
+      "date": "2026-04-24",
+      "phase": "before",
+      "clickChange": -0.5528,
+      "impressionChange": -0.3583
+    },
+    {
+      "date": "2026-04-25",
+      "phase": "before",
+      "clickChange": -0.5248,
+      "impressionChange": -0.3297
+    },
+    {
+      "date": "2026-04-26",
+      "phase": "before",
+      "clickChange": -0.4969,
+      "impressionChange": -0.2744
+    },
+    {
+      "date": "2026-04-27",
+      "phase": "before",
+      "clickChange": -0.2733,
+      "impressionChange": -0.1776
+    },
+    {
+      "date": "2026-04-28",
+      "phase": "before",
+      "clickChange": 0.0062,
+      "impressionChange": -0.1198
+    },
+    {
+      "date": "2026-04-29",
+      "phase": "before",
+      "clickChange": 0.146,
+      "impressionChange": -0.0151
+    },
+    {
+      "date": "2026-04-30",
+      "phase": "before",
+      "clickChange": 0.0621,
+      "impressionChange": 0.0171
+    },
+    {
+      "date": "2026-05-01",
+      "phase": "before",
+      "clickChange": 0.0621,
+      "impressionChange": 0.0132
+    },
+    {
+      "date": "2026-05-02",
+      "phase": "before",
+      "clickChange": 0.0621,
+      "impressionChange": 0.043
+    },
+    {
+      "date": "2026-05-03",
+      "phase": "before",
+      "clickChange": 0.0062,
+      "impressionChange": 0.101
+    },
+    {
+      "date": "2026-05-04",
+      "phase": "before",
+      "clickChange": 0.0621,
+      "impressionChange": 0.2426
+    },
+    {
+      "date": "2026-05-05",
+      "phase": "before",
+      "clickChange": -0.0497,
+      "impressionChange": 0.31
+    },
+    {
+      "date": "2026-05-06",
+      "phase": "before",
+      "clickChange": -0.0497,
+      "impressionChange": 0.3288
+    },
+    {
+      "date": "2026-05-07",
+      "phase": "before",
+      "clickChange": 0.0621,
+      "impressionChange": 0.3867
+    },
+    {
+      "date": "2026-05-08",
+      "phase": "before",
+      "clickChange": 0.146,
+      "impressionChange": 0.4843
+    },
+    {
+      "date": "2026-05-09",
+      "phase": "before",
+      "clickChange": 0.3137,
+      "impressionChange": 0.502
+    },
+    {
+      "date": "2026-05-10",
+      "phase": "before",
+      "clickChange": 0.3975,
+      "impressionChange": 0.4837
+    },
+    {
+      "date": "2026-05-11",
+      "phase": "before",
+      "clickChange": 0.3975,
+      "impressionChange": 0.4062
+    },
+    {
+      "date": "2026-05-12",
+      "phase": "before",
+      "clickChange": 0.4814,
+      "impressionChange": 0.3947
+    },
+    {
+      "date": "2026-05-13",
+      "phase": "before",
+      "clickChange": 0.4534,
+      "impressionChange": 0.3928
+    },
+    {
+      "date": "2026-05-14",
+      "phase": "before",
+      "clickChange": 0.6211,
+      "impressionChange": 0.3854
+    },
+    {
+      "date": "2026-05-15",
+      "phase": "before",
+      "clickChange": 0.5652,
+      "impressionChange": 0.3866
+    },
+    {
+      "date": "2026-05-16",
+      "phase": "before",
+      "clickChange": 0.3975,
+      "impressionChange": 0.3969
+    },
+    {
+      "date": "2026-05-17",
+      "phase": "before",
+      "clickChange": 0.3696,
+      "impressionChange": 0.3967
+    },
+    {
+      "date": "2026-05-18",
+      "phase": "before",
+      "clickChange": 0.2298,
+      "impressionChange": 0.4226
+    },
+    {
+      "date": "2026-05-19",
+      "phase": "before",
+      "clickChange": 0.146,
+      "impressionChange": 0.4195
+    },
+    {
+      "date": "2026-05-20",
+      "phase": "before",
+      "clickChange": 0.1739,
+      "impressionChange": 0.4145
+    },
+    {
+      "date": "2026-05-21",
+      "phase": "before",
+      "clickChange": 0.0062,
+      "impressionChange": 0.4251
+    },
+    {
+      "date": "2026-05-22",
+      "phase": "before",
+      "clickChange": -0.0776,
+      "impressionChange": 0.4215
+    },
+    {
+      "date": "2026-05-23",
+      "phase": "before",
+      "clickChange": -0.0497,
+      "impressionChange": 0.4186
+    },
+    {
+      "date": "2026-05-24",
+      "phase": "before",
+      "clickChange": 0.0342,
+      "impressionChange": 0.4238
+    },
+    {
+      "date": "2026-05-25",
+      "phase": "before",
+      "clickChange": 0.146,
+      "impressionChange": 0.4514
+    },
+    {
+      "date": "2026-05-26",
+      "phase": "before",
+      "clickChange": 0.1739,
+      "impressionChange": 0.4732
+    },
+    {
+      "date": "2026-05-27",
+      "phase": "before",
+      "clickChange": 0.3416,
+      "impressionChange": 0.5085
+    },
+    {
+      "date": "2026-05-28",
+      "phase": "before",
+      "clickChange": 0.4255,
+      "impressionChange": 0.5304
+    },
+    {
+      "date": "2026-05-29",
+      "phase": "before",
+      "clickChange": 0.5932,
+      "impressionChange": 0.5612
+    },
+    {
+      "date": "2026-05-30",
+      "phase": "before",
+      "clickChange": 0.6491,
+      "impressionChange": 0.5694
+    },
+    {
+      "date": "2026-05-31",
+      "phase": "before",
+      "clickChange": 0.5932,
+      "impressionChange": 0.5992
+    },
+    {
+      "date": "2026-06-01",
+      "phase": "after",
+      "clickChange": 0.4255,
+      "impressionChange": 0.5452
+    },
+    {
+      "date": "2026-06-02",
+      "phase": "after",
+      "clickChange": 0.3416,
+      "impressionChange": 0.462
+    },
+    {
+      "date": "2026-06-03",
+      "phase": "after",
+      "clickChange": 0.1739,
+      "impressionChange": 0.5384
+    },
+    {
+      "date": "2026-06-04",
+      "phase": "after",
+      "clickChange": 0.0901,
+      "impressionChange": 0.6338
+    },
+    {
+      "date": "2026-06-05",
+      "phase": "after",
+      "clickChange": 0.0062,
+      "impressionChange": 0.6537
+    },
+    {
+      "date": "2026-06-06",
+      "phase": "after",
+      "clickChange": -0.1056,
+      "impressionChange": 0.667
+    },
+    {
+      "date": "2026-06-07",
+      "phase": "after",
+      "clickChange": -0.0776,
+      "impressionChange": 0.6728
+    },
+    {
+      "date": "2026-06-08",
+      "phase": "after",
+      "clickChange": 0.2298,
+      "impressionChange": 0.7915
+    },
+    {
+      "date": "2026-06-09",
+      "phase": "after",
+      "clickChange": 0.2857,
+      "impressionChange": 0.9341
+    },
+    {
+      "date": "2026-06-10",
+      "phase": "after",
+      "clickChange": 0.4255,
+      "impressionChange": 0.9132
+    },
+    {
+      "date": "2026-06-11",
+      "phase": "after",
+      "clickChange": 0.677,
+      "impressionChange": 0.8486
+    },
+    {
+      "date": "2026-06-12",
+      "phase": "after",
+      "clickChange": 0.6491,
+      "impressionChange": 0.8445
+    },
+    {
+      "date": "2026-06-13",
+      "phase": "after",
+      "clickChange": 0.9006,
+      "impressionChange": 0.8584
+    },
+    {
+      "date": "2026-06-14",
+      "phase": "after",
+      "clickChange": 1.0124,
+      "impressionChange": 0.8618
+    },
+    {
+      "date": "2026-06-15",
+      "phase": "after",
+      "clickChange": 1.0404,
+      "impressionChange": 0.9204
+    },
+    {
+      "date": "2026-06-16",
+      "phase": "after",
+      "clickChange": 1.0683,
+      "impressionChange": 0.9198
+    },
+    {
+      "date": "2026-06-17",
+      "phase": "after",
+      "clickChange": 1.1242,
+      "impressionChange": 0.9101
+    },
+    {
+      "date": "2026-06-18",
+      "phase": "after",
+      "clickChange": 0.9845,
+      "impressionChange": 0.9057
+    },
+    {
+      "date": "2026-06-19",
+      "phase": "after",
+      "clickChange": 1.0124,
+      "impressionChange": 0.8977
+    },
+    {
+      "date": "2026-06-20",
+      "phase": "after",
+      "clickChange": 0.8168,
+      "impressionChange": 0.8721
+    },
+    {
+      "date": "2026-06-21",
+      "phase": "after",
+      "clickChange": 0.705,
+      "impressionChange": 0.8435
+    },
+    {
+      "date": "2026-06-22",
+      "phase": "after",
+      "clickChange": 0.5373,
+      "impressionChange": 0.7332
+    },
+    {
+      "date": "2026-06-23",
+      "phase": "after",
+      "clickChange": 0.5652,
+      "impressionChange": 0.6908
+    },
+    {
+      "date": "2026-06-24",
+      "phase": "after",
+      "clickChange": 0.2578,
+      "impressionChange": 0.573
+    },
+    {
+      "date": "2026-06-25",
+      "phase": "after",
+      "clickChange": 0.146,
+      "impressionChange": 0.5571
+    },
+    {
+      "date": "2026-06-26",
+      "phase": "after",
+      "clickChange": 0.2298,
+      "impressionChange": 0.5463
+    },
+    {
+      "date": "2026-06-27",
+      "phase": "after",
+      "clickChange": 0.2298,
+      "impressionChange": 0.5511
+    },
+    {
+      "date": "2026-06-28",
+      "phase": "after",
+      "clickChange": 0.3137,
+      "impressionChange": 0.569
+    },
+    {
+      "date": "2026-06-29",
+      "phase": "after",
+      "clickChange": 0.2019,
+      "impressionChange": 0.6169
+    },
+    {
+      "date": "2026-06-30",
+      "phase": "after",
+      "clickChange": 0.0901,
+      "impressionChange": 0.6895
+    }
+  ],
+  "topPages": [
+    {
+      "provider": "Torino",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/torino/"
+    },
+    {
+      "provider": "Palermo",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/palermo/"
+    },
+    {
+      "provider": "Genova",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/genova/"
+    },
+    {
+      "provider": "Brescia",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/brescia/"
+    },
+    {
+      "provider": "Messina",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/messina/"
+    },
+    {
+      "provider": "Modena",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/modena/"
+    },
+    {
+      "provider": "Firenze",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/firenze/"
+    },
+    {
+      "provider": "Venezia",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/venezia/"
+    },
+    {
+      "provider": "Trieste",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/trieste/"
+    }
+  ],
+  "urlInventoryTitle": "Change-of-residence URL inventory",
+  "urlInventoryNote": "These are the 9 new city pages included in the cluster export. They are shown as public examples of the page family; future edits on the live site are possible after August 8, 2026.",
+  "urlInventory": [
+    {
+      "provider": "Torino",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/torino/"
+    },
+    {
+      "provider": "Palermo",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/palermo/"
+    },
+    {
+      "provider": "Genova",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/genova/"
+    },
+    {
+      "provider": "Brescia",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/brescia/"
+    },
+    {
+      "provider": "Messina",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/messina/"
+    },
+    {
+      "provider": "Modena",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/modena/"
+    },
+    {
+      "provider": "Firenze",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/firenze/"
+    },
+    {
+      "provider": "Venezia",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/venezia/"
+    },
+    {
+      "provider": "Trieste",
+      "url": "https://www.papernest.it/luce-gas/trasloco/cambio-residenza/trieste/"
+    }
+  ],
+  "hideMetricCards": true,
+  "hideTopPagesPanel": true
+}

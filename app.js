@@ -138,6 +138,44 @@ const projects = [
     ]
   },
   {
+    id: "change-residence",
+    title: "Change-of-Residence City Pages",
+    shortTitle: "Change Residence",
+    category: "Informational SEO cluster",
+    status: "Secondary SEO case",
+    summary: "A cluster of <strong>9 new informational SEO pages</strong> around Italian change-of-residence searches, built with local research, Gemini-assisted drafting and WordPress-ready content production.",
+    performanceKey: "changeResidence",
+    explanation: `<p>This was a <strong>secondary SEO content cluster</strong>: 9 new city pages around Italian change-of-residence searches. The work sits in an intermediate/early phase of my SEO experience, before the more advanced Codex/Claude Code systems, and focused on <strong>local research, clear informational content, Gemini-assisted drafting</strong> and WordPress-ready production.</p><p>The intent was mostly informational: users wanted city-specific instructions, online procedure details, forms, timing and where to submit the request. The performance view therefore reads the pages as <strong>new-page growth</strong>, not as a before/after optimization test.</p>`,
+    summaryPoints: [
+      `<span>Intent</span><strong>Informational and local</strong><em>The pages answer city-specific change-of-residence searches, not a strongly transactional energy flow.</em>`,
+      `<span>Workflow</span><strong>Simple AI-supported content production</strong><em>Gemini helped with drafting support, while research and QA focused on local procedure accuracy.</em>`,
+      `<span>Data</span><strong>Indexed GSC trend</strong><em>The chart uses a reference period to show movement; it is not a before/after revamp.</em>`
+    ],
+    summaryPointStyle: "rich",
+    metrics: [],
+    callouts: [],
+    deepDive: [
+      {
+        title: "Why the pages were created",
+        body: `<p>The cluster targeted a clear informational pattern: users search for <strong>how to change residence in a specific city</strong>, often with practical follow-up needs such as online forms, required documents, timing, municipal portals or appointment logic.</p><p>These searches are not highly transactional. The objective was to build <strong>organic coverage</strong> around a useful moving-related topic, while keeping each city page specific enough to avoid feeling like a generic template with only the location changed.</p>`
+      },
+      {
+        title: "Workflow and content QA",
+        body: `<p>The workflow was intentionally lighter than the later Codex/Claude projects. It used <strong>Gemini as a basic support tool</strong> for drafting and organization, then focused on human checks: city-specific procedure, page structure, keyword intent and clarity for users.</p><div class="process-flow"><article><span>Research</span><p>Find the practical information users expect: <strong>online procedure</strong>, forms, documents, timing, portals and city-specific terminology.</p></article><article><span>Structure</span><p>Build a repeatable SEO layout around the main query, related questions and useful H2s without overcomplicating the page.</p></article><article><span>Draft</span><p>Use Gemini for first-pass drafting support, then adapt the copy so it stays readable, local and consistent with the site style.</p></article><article><span>QA</span><p>Check that the page answers the real search need and does not become a generic duplicate of another city page.</p></article></div>`
+      },
+      {
+        title: "How to read the GSC trend",
+        body: `<p>All URLs in this cluster were <strong>new pages</strong>, so the performance view should not be read as a classic before/after optimization test. Without a reference period, the public portfolio could still say the cluster showed a <strong>positive uptrend</strong>, but it could not show percentage variation lines without exposing raw Search Console values.</p><p>The chart therefore uses <strong>Apr 22-30</strong> as a mathematical reference point: it is the first more stable period after initial indexing, not a claim that a specific optimization started there. The graph should be read as <strong>indexed new-page growth</strong>: first visibility signals, then a clearer June trend across city, online-procedure and form-related searches.</p>`
+      }
+    ],
+    hideKeyNumbers: true,
+    hideSnapshot: true,
+    hideExamples: true,
+    performancePlaceholder: "",
+    urlPlaceholder: "",
+    demos: []
+  },
+  {
     id: "ranking",
     title: "Supplier Review Ranking",
     shortTitle: "Provider Ranking",
@@ -320,45 +358,82 @@ const projects = [
   },
   {
     id: "social-media",
-    title: "Social Media & Event Content",
+    title: "Ladywoods / BGSA Social & Event Content",
     shortTitle: "Ladywoods / BGSA",
     category: "Social media + event communication",
-    status: "Secondary portfolio area",
-    summary: "Social media and digital documentation work for <strong>Beach Golf Sport Association</strong> and the Ladywoods Golf EU Project.",
-    explanation: `<p>This section covers the social media manager and content creator side of the Ladywoods Golf / BGSA experience. It includes <strong>posts, reels, videos, photos, vertical formats, promotional material and post-event documentation</strong>.</p><p>For now it stays as a lighter portfolio box, because the detailed content examples will be added later.</p>`,
+    status: "Internship + event staff",
+    summary: "Internship experience in <strong>social content management, event preparation and live-event support</strong> for a non-profit European-funded sport project.",
+    explanation: `<p>I worked on <strong>Ladywoods Golf</strong>, a European-funded non-profit project created by <strong>Beach Golf Sport Association</strong>. My internship sat between two areas: <strong>social media content planning</strong> before the event and <strong>live staff/content support</strong> during the event itself.</p><p>The role was practical and hybrid: preparing communication, adapting content for different social channels, supporting logistics and capturing usable photo/video material while helping the activities run smoothly.</p>`,
     summaryPoints: [
-      `<span>Content</span><strong>Produced event and social material</strong><em>Photos, videos, reels and live documentation supported event communication.</em>`,
-      `<span>Context</span><strong>Worked in an international project</strong><em>The role connected content creation with coordination and participant support.</em>`,
-      `<span>Next</span><strong>Ready for future channel examples</strong><em>This area can later include public posts, screenshots and selected metrics.</em>`
+      `<span>Planning</span><strong>Editorial calendar across social channels</strong><em>Content and tone of voice were adapted for Facebook, Instagram, TikTok and X.</em>`,
+      `<span>Event</span><strong>Preparation and on-site support</strong><em>The role mixed content creation with logistics, staff work and participant support.</em>`,
+      `<span>Production</span><strong>Photo, video and live documentation</strong><em>Content was captured and edited while supporting the event operations.</em>`
     ],
     summaryPointStyle: "rich",
-    metrics: [
-      ["225", "women trained across the EU project"],
-      ["2", "Ladywoods/BGSA work phases in CV materials"],
-      ["EN", "international participant support in English"],
-      ["Future", "content examples to be added later"]
+    metrics: [],
+    callouts: [],
+    eventShowcase: [
+      {
+        label: "Project context",
+        title: "European-funded non-profit sport project",
+        body: "Beach Golf Sport Association created Ladywoods Golf as a European project using beach golf and sports management training to involve girls from different countries, then bring the learning back into local communities.",
+        points: [
+          "International training phase with groups of five girls from 15 European countries.",
+          "Lessons on sports management, beach golf and project activities.",
+          "Final September challenge with one representative girl from each country."
+        ]
+      },
+      {
+        label: "Social content",
+        title: "Editorial planning for multiple platforms",
+        body: "The social work was not only posting during the event. It started before: weekly content ideas, channel-specific tone of voice and posts designed to prepare the audience for the project and final event.",
+        points: [
+          "Planned content for Facebook, Instagram, TikTok and X.",
+          "Mixed informative content with lighter, more entertaining posts.",
+          "Adapted copy, rhythm and format depending on the platform."
+        ]
+      },
+      {
+        label: "Event staff",
+        title: "Live operations, logistics and content capture",
+        body: "During the event, the role mixed staff support and content production: helping the activities run smoothly while documenting useful moments for social and post-event communication.",
+        points: [
+          "Prepared materials for beach golf lessons, hotel welcome and participant support.",
+          "Supported movements, schedules and practical needs during the event.",
+          "Captured photos, videos, posts and short-form material while working with the staff."
+        ]
+      }
     ],
-    callouts: [
-      ["Role", "Social content, event communication and live documentation."],
-      ["Context", "EU-funded sport project with international participants."],
-      ["Next step", "Future upload can include channels, formats and sample posts."]
+    socialChannels: [
+      {
+        label: "Ladywoods Golf",
+        url: "https://www.instagram.com/ladywoodsgolf?igsh=NHd0cXdzbGs4cXJr"
+      },
+      {
+        label: "Beach Golf Sport Association",
+        url: "https://www.instagram.com/beach_golf?igsh=MXQ3bjF6c3J1dTk4Mw=="
+      }
     ],
     deepDive: [
       {
-        title: "Why it matters in the portfolio",
-        body: `<p>This experience broadens the portfolio beyond SEO. It shows work with <strong>event communication, visual documentation, social formats and international coordination</strong>.</p><p>It is useful because SEO and content marketing both require audience understanding, clear messaging and the ability to package information for different channels.</p>`
+        title: "Editorial planning and channel adaptation",
+        body: `<p>The content work started before the final event. The goal was to create a <strong>weekly editorial plan</strong> that could prepare the audience, explain the project and keep the channels active with a mix of useful and lighter content.</p><p>The same message could not be copied everywhere. Facebook, Instagram, TikTok and X needed different logic: <strong>tone of voice, caption length, visual rhythm, format and timing</strong> had to change depending on the channel. The work therefore included both planning and adapting content so the project did not feel like a static institutional update.</p>`
       },
       {
-        title: "How the work was done",
-        body: `<p>The work included creating and supporting social content for the Ladywoods Golf EU Project: photos, videos, reels, vertical formats, promotional material and post-event archives. It also involved event logistics, participant support and coordination with partners or suppliers.</p><p>Because the content happened around live events, the workflow required speed, adaptability and the ability to document useful moments while also supporting operations on site.</p>`
+        title: "Event preparation and on-site staff work",
+        body: `<p>The internship was also operational. Before and during the event, the work included preparing practical materials for <strong>beach golf lessons</strong>, welcome moments at the hotel, participant activities and staff needs.</p><p>During the event, content creation happened while working as part of the staff. That meant supporting movements, helping participants, organizing materials, facilitating activities and capturing content at the same time. The useful part of this experience is precisely that mix: <strong>communication, logistics, speed and responsibility in a live context</strong>.</p>`
       },
       {
-        title: "What will be added later",
-        body: `<p>When you provide more details, this section can include specific channels, screenshots, content types, goals and performance indicators. For now, it is intentionally presented as a <strong>secondary but relevant digital experience</strong>.</p>`
+        title: "Tools and production workflow",
+        body: `<p>The production workflow used a mix of design, editing and capture tools: <strong>Canva, Photoshop, Premiere Pro, CapCut, camera, gimbal/stabilizer and microphone</strong>.</p><p>The goal was not only to create polished content after the event, but also to produce usable material while activities were happening. That required fast decisions: what to film, when to take photos, how to capture interviews or group moments and how to turn raw material into posts, reels or videos that could explain the project clearly.</p>`
       }
     ],
-    performancePlaceholder: "Future data could show selected social statistics, content examples or event communication outputs once you decide what can be shown publicly.",
-    urlPlaceholder: "Future URL inventory: public posts, channels, event pages or selected media assets if available.",
+    hideKeyNumbers: true,
+    hideSnapshot: true,
+    hideFutureData: true,
+    hideExamples: true,
+    performancePlaceholder: "",
+    urlPlaceholder: "",
     demos: []
   },
   {
@@ -432,41 +507,83 @@ const projects = [
     shortTitle: "Creator Work",
     category: "Broader digital experience",
     status: "Secondary portfolio area",
-    summary: "Independent creator work across <strong>gaming and football communities</strong>, useful to show audience thinking and content analytics.",
-    explanation: `<p>This is not the main SEO experience, but it gives useful context. Independent creator work means working with <strong>audiences, formats, retention, tutorials, recurring questions, community feedback and platform metrics</strong>.</p><p>It supports the broader profile because SEO is also about understanding intent, packaging information and improving content based on user response.</p>`,
+    summary: "Independent creator work across <strong>gaming tutorials and football content</strong>, useful to show audience building, community management, editing and content iteration.",
+    explanation: `<p>Creator work means working directly with <strong>audiences, platform formats, retention, comments, community feedback and repeatable content systems</strong>.</p><p>The value for a digital marketing portfolio is practical: you need to understand what people are looking for, package the answer well, help users after publishing and improve formats based on real reactions.</p>`,
     summaryPoints: [
-      `<span>Audience</span><strong>Managed gaming and football communities</strong><em>The work required reading recurring questions, feedback and platform behavior.</em>`,
-      `<span>Formats</span><strong>Worked across long and short formats</strong><em>Tutorials, analysis, news and short-form content followed different content logic.</em>`,
-      `<span>Iteration</span><strong>Used feedback to improve content</strong><em>Comments, retention and metrics informed what to publish next.</em>`
+      `<span>Gaming</span><strong>Tutorials, community and support</strong><em>Created gaming tutorials, answered recurring questions and managed a large Telegram community.</em>`,
+      `<span>Football</span><strong>Viral research and interviews</strong><em>Produced football content from 2021, including short-form formats, interviews and topic research.</em>`,
+      `<span>Tools</span><strong>Editing and visual production</strong><em>Used Premiere Pro, Photoshop and CapCut depending on platform and format.</em>`
     ],
     summaryPointStyle: "rich",
     metrics: [
-      ["70k+", "gaming YouTube subscribers reported in old CV"],
-      ["35k+", "gaming TikTok followers reported in old CV"],
-      ["30k", "football Instagram followers reported in old CV"],
-      ["28k", "football YouTube subscribers reported in old CV"]
+      ["78k / 40k", "gaming YouTube and TikTok audience peaks"],
+      ["5k+", "Telegram gaming community members"],
+      ["30k / 28k", "football Instagram and YouTube audiences"],
+      ["2020-24", "digital-product sales and customer-support period"]
     ],
     callouts: [
-      ["Audience", "Work across communities with recurring questions and feedback."],
-      ["Formats", "Short-form, long-form, tutorials, analysis, news and interviews."],
-      ["Value", "Useful background for SEO, content and social distribution."]
+      ["Audience", "Built content for communities with recurring questions, feedback loops and platform-specific behavior."],
+      ["Formats", "Worked across YouTube tutorials, TikTok/Instagram short-form, football interviews, news and analysis."],
+      ["Value", "Shows practical experience with publishing, customer support, editing tools and content distribution."]
+    ],
+    creatorShowcase: [
+      {
+        label: "Gaming channel ecosystem",
+        title: "Tutorials, comments and community support",
+        accent: "gaming",
+        description: "Gaming content focused mainly on tutorials and practical help: users watched the video, asked follow-up questions in the comments and often needed extra support through the community.",
+        stats: [
+          ["78k", "YouTube audience peak"],
+          ["40k", "TikTok followers"],
+          ["5k+", "Telegram community"]
+        ],
+        items: [
+          "Created tutorials and gameplay/help content for recurring user needs.",
+          "Managed comments and community questions, turning feedback into new content ideas.",
+          "Sold digital products for a period, with customer assistance and post-purchase support."
+        ],
+        tools: ["Premiere Pro", "Photoshop", "YouTube", "TikTok", "Telegram"],
+        period: "Digital-product sales: 2020-2024"
+      },
+      {
+        label: "Football content project",
+        title: "Viral topic research and short-form production",
+        accent: "football",
+        description: "Football content focused on finding topics with viral potential and adapting them into short-form or interview formats across Instagram, TikTok and YouTube.",
+        stats: [
+          ["30k", "Instagram audience"],
+          ["20k", "TikTok audience"],
+          ["28k", "YouTube audience"]
+        ],
+        items: [
+          "Researched football topics, personalities and moments with strong platform potential.",
+          "Produced short-form content, interviews, news-style clips and analysis formats.",
+          "Used fast editing workflows to package content for discovery and repeat viewing."
+        ],
+        tools: ["CapCut", "Instagram", "TikTok", "YouTube"],
+        period: "Since 2021"
+      }
     ],
     deepDive: [
       {
-        title: "Why it matters for the portfolio",
-        body: `<p>Creator experience adds a practical audience layer. It shows that content is not only written for algorithms: it has to answer real questions, keep attention and adapt to platform behavior.</p><p>This connects well with SEO because search intent and community intent often overlap. The same ability to read user doubts can support better pages, better headings and better explanations.</p>`
+        title: "Gaming creator work: tutorials, support and digital products",
+        body: `<p>The gaming project was based on <strong>practical tutorial content</strong>: users arrived because they needed help with a specific action, watched the video and often continued the interaction through comments or community channels.</p><p>This created a direct feedback loop. Comments were not just engagement: they showed what was unclear, which questions came back often and what needed a new tutorial, update or explanation. Managing that loop helped build experience with <strong>audience support, content iteration and community trust</strong>.</p><div class="process-flow process-flow--summary"><article><span>Tutorials</span><p>Structure videos around a clear user problem, with steps, visual explanation and practical outcome.</p></article><article><span>Comments</span><p>Answer recurring doubts and use them to understand where the content needed more clarity.</p></article><article><span>Community</span><p>Manage a Telegram community of <strong>5,000+ people</strong>, keeping support and discussion organized.</p></article><article><span>Products</span><p>Sell digital products for a period, handling basic customer support and post-purchase assistance.</p></article></div><p>The production side used <strong>Premiere Pro</strong> for editing and <strong>Photoshop</strong> for visual assets, thumbnails or supporting graphics.</p>`
       },
       {
-        title: "How the work was done",
-        body: `<p>The experience includes gaming tutorials and gameplay videos, plus football content such as analysis, news and interviews. The work required choosing topics, structuring explanations, reading comments and adapting formats to platform expectations.</p><p>Different channels required different logic: a tutorial needs clarity and searchability, short-form needs a fast hook, and community content needs consistency and recognizable positioning.</p>`
+        title: "Football creator work: viral research and short-form formats",
+        body: `<p>The football project started in <strong>2021</strong> and followed a different logic from gaming. Instead of tutorial intent, the work was based on <strong>topic selection, timing and format adaptation</strong>: choosing football stories, moments or personalities that could perform well on social platforms.</p><p>The content included <strong>interviews, news-style clips, analysis and short-form videos</strong>. The challenge was to turn a football idea into something that could be understood quickly, hold attention and feel native to the platform.</p><div class="process-flow"><article><span>Research</span><p>Look for topics with viral potential: players, interviews, news, debates, moments and story angles.</p></article><article><span>Format</span><p>Adapt the same idea differently for Instagram, TikTok or YouTube depending on pace and audience expectation.</p></article><article><span>Edit</span><p>Use <strong>CapCut</strong> for faster short-form production and platform-native packaging.</p></article><article><span>Iterate</span><p>Read engagement signals and comments to understand which formats deserved to be repeated.</p></article></div>`
       },
       {
         title: "How it supports a digital marketing profile",
-        body: `<p>This background is useful for roles where SEO, content and social distribution overlap. It shows comfort with publishing, feedback loops, audience analytics and content iteration.</p>`
+        body: `<p>This background is useful for roles where <strong>content, social distribution and digital marketing</strong> overlap. It shows comfort with publishing, feedback loops, audience analytics, editing tools and community management.</p><p>Most importantly, it shows a practical habit: identifying what people need, making the answer easy to consume, watching how they react and improving the next piece of content based on real behavior.</p>`
       }
     ],
-    performancePlaceholder: "Future data could show selected channel screenshots or public-facing performance highlights if you want to include them.",
-    urlPlaceholder: "Future URL inventory: public channels or representative content examples, if you decide they are useful for applications.",
+    performancePlaceholder: "Future data could show selected screenshots or public-facing performance highlights if you decide to include them.",
+    urlPlaceholder: "Selected channel links can be added later if you want this secondary section to become more public-facing.",
+    hideKeyNumbers: true,
+    hideSnapshot: true,
+    hideFutureData: true,
+    hideExamples: true,
     demos: []
   }
 ];
@@ -480,6 +597,7 @@ const projectOrder = [
   "nrj2-analysis",
   "scraping",
   "offpage",
+  "change-residence",
   "social-media",
   "creator"
 ];
@@ -519,6 +637,14 @@ const projectPortfolioMeta = {
       insight: "The strongest offer pages work like decision tools, not simple descriptions: they help users understand the offer, compare it and decide what to check before activation.",
       output: "Final output: 91 offer sheets, HTML page modules, offer tables, price-history modules and a percentage-only Search Console recovery view."
     }
+  },
+  "change-residence": {
+    visualTheme: "content-seo",
+    icon: "↘",
+    areas: ["seo"],
+    topicTags: ["Informational SEO", "Gemini", "GSC"],
+    cardSummary: "New city pages for change-of-residence queries.",
+    story: null
   },
   sportelli: {
     visualTheme: "technical-ai",
@@ -608,15 +734,9 @@ const projectPortfolioMeta = {
     visualTheme: "social-content",
     icon: "●",
     areas: ["social"],
-    topicTags: ["Social", "Events", "Video"],
-    cardSummary: "Event and social content for Ladywoods / BGSA.",
-    story: {
-      main: "I supported social media and event communication for Ladywoods / BGSA, mainly through live content and documentation.",
-      problem: "Event content has to be produced quickly while still being useful for promotion, archive and partner communication.",
-      analysis: "The work required adapting formats across photos, videos, reels and post-event material while also supporting event logistics.",
-      insight: "This experience adds a practical content-distribution layer to the SEO profile: audience, format and context matter.",
-      output: "Final output: a secondary portfolio area ready for future channel screenshots, content examples and performance indicators."
-    }
+    topicTags: ["Social", "Events", "EU project"],
+    cardSummary: "Social planning and live-event content for Ladywoods / BGSA.",
+    story: null
   },
   creator: {
     visualTheme: "social-content",
@@ -624,13 +744,7 @@ const projectPortfolioMeta = {
     areas: ["social"],
     topicTags: ["Content", "Community", "Analytics"],
     cardSummary: "Creator work across communities and formats.",
-    story: {
-      main: "I include independent creator work because it shows long-term audience thinking across gaming and football communities.",
-      problem: "Content has to answer recurring questions, hold attention and adapt to platform behavior, not only exist as a finished post.",
-      analysis: "The work involved tutorials, analysis, news and interviews, with feedback loops from comments, retention and platform metrics.",
-      insight: "Community intent and search intent often overlap: both require understanding what people are really trying to solve.",
-      output: "Final output: a broader digital profile showing publishing consistency, audience analytics and content iteration."
-    }
+    story: null
   }
 };
 
@@ -1051,13 +1165,19 @@ function renderPerformance(project, dataset) {
     { label: "Position trend", value: deltas.positionTrend.percent, direction: deltas.positionTrend.direction, description: "relative improvement, lower position is better" }
   ];
 
-  performanceComparison.innerHTML = metricCards.map((card) => `
-    <article class="${card.direction === "improved" ? "is-improved" : "is-declined"}">
-      <span>${escapeHtml(card.label)}</span>
-      <strong>${formatSignedPercent(card.value)}</strong>
-      <p>${escapeHtml(card.description)}</p>
-    </article>
-  `).join("");
+  if (dataset.hideMetricCards || !metricCards.length) {
+    performanceComparison.hidden = true;
+    performanceComparison.innerHTML = "";
+  } else {
+    performanceComparison.hidden = false;
+    performanceComparison.innerHTML = metricCards.map((card) => `
+      <article class="${card.direction === "improved" ? "is-improved" : "is-declined"}">
+        <span>${escapeHtml(card.label)}</span>
+        <strong>${formatSignedPercent(card.value)}</strong>
+        <p>${escapeHtml(card.description)}</p>
+      </article>
+    `).join("");
+  }
 
   if (dataset.hideTopPagesPanel || dataset.topPagesPanel?.hidden) {
     topPagesPanel.hidden = true;
@@ -1666,6 +1786,8 @@ function renderProjectDetail(project) {
         ${project.summaryPoints.map((point) => `<li>${point}</li>`).join("")}
       </ul>
     ` : ""}
+    ${renderEventShowcase(project)}
+    ${renderCreatorShowcase(project)}
   `;
 
   seoMetrics.innerHTML = project.metrics.map(([value, label]) => `
@@ -1693,6 +1815,74 @@ function renderProjectDetail(project) {
   renderFutureData(project, performanceDataset);
   renderDemos(project);
   requestAnimationFrame(() => refreshScrollReveal(projectView));
+}
+
+function renderEventShowcase(project) {
+  if (!project.eventShowcase?.length) {
+    return "";
+  }
+
+  return `
+    <section class="event-showcase" aria-label="Event and social media work highlights">
+      <div class="event-showcase__grid">
+        ${project.eventShowcase.map((item, index) => `
+          <article class="event-card event-card--${index + 1}">
+            <span>${escapeHtml(item.label)}</span>
+            <strong>${escapeHtml(item.title)}</strong>
+            <p>${escapeHtml(item.body)}</p>
+            <ul>
+              ${item.points.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}
+            </ul>
+          </article>
+        `).join("")}
+      </div>
+      ${project.socialChannels?.length ? `
+        <div class="event-channel-strip">
+          <span>Public channels</span>
+          <div>
+            ${project.socialChannels.map((channel) => `
+              <a href="${escapeHtml(channel.url)}" target="_blank" rel="noreferrer">${escapeHtml(channel.label)}</a>
+            `).join("")}
+          </div>
+        </div>
+      ` : ""}
+    </section>
+  `;
+}
+
+function renderCreatorShowcase(project) {
+  if (!project.creatorShowcase?.length) {
+    return "";
+  }
+
+  return `
+    <section class="creator-showcase" aria-label="Creator work highlights">
+      ${project.creatorShowcase.map((channel) => `
+        <article class="creator-card creator-card--${escapeHtml(channel.accent || "default")}">
+          <div class="creator-card__header">
+            <span>${escapeHtml(channel.label)}</span>
+            <strong>${escapeHtml(channel.title)}</strong>
+            <em>${escapeHtml(channel.period)}</em>
+          </div>
+          <p>${escapeHtml(channel.description)}</p>
+          <div class="creator-stat-strip">
+            ${channel.stats.map(([value, label]) => `
+              <div>
+                <strong>${escapeHtml(value)}</strong>
+                <span>${escapeHtml(label)}</span>
+              </div>
+            `).join("")}
+          </div>
+          <ul>
+            ${channel.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+          </ul>
+          <div class="creator-tool-row">
+            ${channel.tools.map((tool) => `<span>${escapeHtml(tool)}</span>`).join("")}
+          </div>
+        </article>
+      `).join("")}
+    </section>
+  `;
 }
 
 function renderDemos(project) {

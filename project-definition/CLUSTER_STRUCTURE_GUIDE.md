@@ -159,10 +159,89 @@ Comparison:
 - Explain the March core update as context: repeated offer templates may have been perceived as too similar, then the cluster improved after stronger unique content, price-history modules, cleaner H2s and AI-assisted duplicate checks.
 - Show Google core-update windows as context only: March 27-April 8, 2026 and May 21-June 2, 2026.
 
+## Current Change-Of-Residence Cluster Decisions
+
+Dataset:
+
+- `analytics-data/google-search-console/raw/change-residence/full-mar-jun-2026/`
+- `analytics-data/google-search-console/processed/change-residence-gsc-performance.json`
+- `analytics-data/google-search-console/processed/change-residence-gsc-performance.js`
+
+Date range:
+
+- March 31, 2026 to June 30, 2026.
+
+Comparison:
+
+- These are new city pages, so do not describe the chart as a before/after optimization or revamp test.
+- Use April 22-30, 2026 as an indexed reference period because the first days were too small and would overstate growth.
+- Treat that period as a mathematical reference only, not as a strategic before/after baseline or proof of impact.
+- Without a reference period, the public view can still say the cluster shows a positive uptrend, but it cannot show percentage variation lines without exposing raw values.
+- Keep raw clicks, impressions, CTR and position out of the public dataset; use percentage changes and public URLs only.
+- Explain the project as a secondary SEO case: intermediate/early work, focused on informational content, local research, Gemini-assisted drafting and Search Console monitoring.
+
 Public reporting:
 
 - Show only percentage/relative movements, never raw clicks, impressions, CTR or average-position values.
 - It is acceptable to show public URLs from `Pages.csv`, but do not attach performance values to them.
-- Explain the chart as a recovery/optimization trend after early algorithm context, not as proof that a Google update caused the movement.
-- The full project includes 91 offer sheets; the URL inventory reflects URLs available in the GSC export.
-- If URL-level phase comparison is needed later, request a page-by-date export; total-period `Pages.csv` is not enough for before/after or launch/latest URL movement.
+- Explain the chart as indexed new-page growth, not as a recovery/optimization trend or proof that a Google update caused the movement.
+- The cluster includes 9 city pages in the current export; the URL inventory can list those pages without adding performance values.
+- If URL-level phase comparison is needed later, request a page-by-date export; total-period `Pages.csv` is not enough for launch/latest URL movement.
+
+## Current Creator Work Decisions
+
+Position:
+
+- Keep this as a secondary portfolio project after the main SEO/data work.
+- Do not use the problem/solution/deep-data structure used by SEO projects.
+- Present it as audience-building, community management, publishing, editing and content iteration experience.
+
+Gaming:
+
+- Mention gaming tutorial content, user support in comments, Telegram community management and digital-product/customer-support experience.
+- Use the user's updated figures: 78k YouTube audience peak, 40k TikTok followers and 5k+ Telegram community.
+- Treat 2020-2024 as the period for digital-product sales and customer support, not as the overall channel period.
+- Tools: Premiere Pro and Photoshop.
+
+Football:
+
+- Mention football content from 2021, including interviews, news/analysis formats, viral-topic research and short-form packaging.
+- Use the user's portfolio figures for the channels, not live/public counts unless screenshots or exports are provided.
+- Tools: CapCut plus Instagram, TikTok and YouTube publishing logic.
+
+Public reporting:
+
+- Treat creator numbers as audience peak/portfolio figures because public channel counts can differ from peak, archived or CV figures.
+- Keep links optional and secondary. Add them only if the final public numbers and channel presentation are aligned with the portfolio.
+- Hide separate Key numbers and What the work included blocks for creator work.
+
+## Current Ladywoods / BGSA Social Project Decisions
+
+Position:
+
+- Keep this as a secondary social/event portfolio area, not a SEO case study.
+- Do not use a problem/analysis/solution structure.
+- Do not focus on numbers; focus on the internship responsibilities, planning work, event preparation and live staff/content work.
+- Hide separate What the work included and Key numbers blocks.
+
+Project context:
+
+- Describe BGSA as the association and Ladywoods Golf as the European-funded non-profit project created by the association.
+- Explain briefly that the project included girls from 15 European countries, sports-management and beach-golf lessons, local teaching after the first phase, and a final September beach-golf challenge with 15 girls from 15 different European countries.
+
+Internship work:
+
+- Mention editorial planning for Facebook, Instagram, TikTok and X.
+- Mention adapting content and tone of voice per platform.
+- Mention weekly content ideation before the event, mixing informative and lighter/fun content.
+- Mention event logistics: beach-golf lesson materials, hotel welcome, practical items, participant movements and on-site activity support.
+- Mention live content capture while working as staff: photos, videos, posts and short-form material.
+
+Tools:
+
+- Canva, Photoshop, Premiere Pro, CapCut, camera, gimbal/stabilizer and microphone.
+
+Public links:
+
+- Ladywoods Golf Instagram: `https://www.instagram.com/ladywoodsgolf?igsh=NHd0cXdzbGs4cXJr`
+- Beach Golf Sport Association Instagram: `https://www.instagram.com/beach_golf?igsh=MXQ3bjF6c3J1dTk4Mw==`
