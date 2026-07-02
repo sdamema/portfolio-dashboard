@@ -801,6 +801,12 @@ const exampleArea = document.querySelector(".example-area");
 const exampleTitle = document.querySelector("#exampleTitle");
 const exampleLink = document.querySelector("#exampleLink");
 const examplePath = document.querySelector("#examplePath");
+
+document.addEventListener("pointerdown", (event) => {
+  if (!chartTooltip.hidden && !event.target.closest(".chart-shell")) {
+    hideChartTooltip();
+  }
+});
 const demoFrame = document.querySelector("#demoFrame");
 let activeChartMode = "both";
 let revealObserver;
@@ -1499,6 +1505,14 @@ function renderPerformanceChart(dataset) {
   performanceChart.append(focusGroup);
 
   const hitWidth = innerWidth / data.length;
+  let lastTouchTooltipAt = 0;
+  const isRecentTouchTooltip = () => Date.now() - lastTouchTooltipAt < 1200;
+  const hideChartTooltipAfterMouse = () => {
+    if (!isRecentTouchTooltip()) {
+      hideChartTooltip();
+    }
+  };
+
   data.forEach((row, index) => {
     const clickPoint = clickPoints[index];
     const impressionPoint = impressionPoints[index];
@@ -1525,12 +1539,29 @@ function renderPerformanceChart(dataset) {
       tabindex: "0",
       "aria-label": `${formatLongDate(row.date)}: ${formatSignedPercent(row.clickChange)} click variation and ${formatSignedPercent(row.impressionChange)} impression variation`
     });
-    marker.addEventListener("mouseenter", () => showChartTooltip(point, dataset));
-    marker.addEventListener("mousemove", () => showChartTooltip(point, dataset));
-    marker.addEventListener("click", () => showChartTooltip(point, dataset));
-    marker.addEventListener("focus", () => showChartTooltip(point, dataset));
-    marker.addEventListener("blur", hideChartTooltip);
-    marker.addEventListener("mouseleave", hideChartTooltip);
+    marker.addEventListener("mouseenter", () => {
+      if (!isRecentTouchTooltip()) {
+        showChartTooltip(point, dataset);
+      }
+    });
+    marker.addEventListener("mousemove", () => {
+      if (!isRecentTouchTooltip()) {
+        showChartTooltip(point, dataset);
+      }
+    });
+    marker.addEventListener("click", () => {
+      if (isRecentTouchTooltip()) {
+        return;
+      }
+      showChartTooltip(point, dataset);
+    });
+    marker.addEventListener("focus", () => {
+      if (!isRecentTouchTooltip()) {
+        showChartTooltip(point, dataset);
+      }
+    });
+    marker.addEventListener("blur", hideChartTooltipAfterMouse);
+    marker.addEventListener("mouseleave", hideChartTooltipAfterMouse);
     performanceChart.append(marker);
   });
 
@@ -1563,29 +1594,32 @@ function renderPerformanceChart(dataset) {
     };
   };
 
-  const showPointFromClientX = (clientX) => {
+  const showPointFromClientX = (clientX, clientY = null) => {
     const point = pointAtClientX(clientX);
     if (point) {
-      showChartTooltip(point, dataset);
+      if (Number.isFinite(clientY)) {
+        lastTouchTooltipAt = Date.now();
+      }
+      showChartTooltip(point, dataset, Number.isFinite(clientY) ? { clientX, clientY } : null);
     }
   };
 
   performanceChart.onpointerdown = (event) => {
     if (event.pointerType === "touch" || event.pointerType === "pen") {
-      showPointFromClientX(event.clientX);
+      showPointFromClientX(event.clientX, event.clientY);
     }
   };
 
   performanceChart.onpointermove = (event) => {
     if (event.pointerType === "touch" || event.pointerType === "pen") {
-      showPointFromClientX(event.clientX);
+      showPointFromClientX(event.clientX, event.clientY);
     }
   };
 
   performanceChart.ontouchstart = (event) => {
     const touch = event.touches?.[0] || event.changedTouches?.[0];
     if (touch) {
-      showPointFromClientX(touch.clientX);
+      showPointFromClientX(touch.clientX, touch.clientY);
     }
   };
 }
@@ -1644,7 +1678,7 @@ function renderChartEvents(dataset, dateToX, margin, baseline, innerHeight, widt
   });
 }
 
-function showChartTooltip(point, dataset) {
+function showChartTooltip(point, dataset, touchAnchor = null) {
   const chartShell = performanceChart.closest(".chart-shell");
   const chartRect = chartShell.getBoundingClientRect();
   const focusGroup = performanceChart.querySelector(".chart-focus");
@@ -1664,6 +1698,7 @@ function showChartTooltip(point, dataset) {
 
   chartTooltip.hidden = false;
   chartTooltip.className = "chart-tooltip";
+  chartTooltip.classList.toggle("is-touch", Boolean(touchAnchor));
   chartTooltip.innerHTML = `
     <strong>${formatLongDate(point.row.date)}</strong>
     <span>${point.row.phase === "before" ? dataset.periods?.before?.label || "Before" : dataset.periods?.after?.label || "After"}</span>
@@ -1672,11 +1707,11 @@ function showChartTooltip(point, dataset) {
     <p class="tooltip-note">${escapeHtml(dataset.chartBaseline?.tooltipNote || "Compared with the chart baseline")}</p>
   `;
 
-  const anchorX = chartRect.left + (point.x / 940) * chartRect.width;
-  const anchorY = chartRect.top + (point.y / 390) * chartRect.height;
+  const anchorX = touchAnchor?.clientX ?? chartRect.left + (point.x / 940) * chartRect.width;
+  const anchorY = touchAnchor?.clientY ?? chartRect.top + (point.y / 390) * chartRect.height;
   const tooltipWidth = chartTooltip.offsetWidth || 190;
   const tooltipHeight = chartTooltip.offsetHeight || 126;
-  const gap = 14;
+  const gap = touchAnchor ? 18 : 14;
   const viewportPadding = 10;
   const left = clamp(anchorX - tooltipWidth / 2, viewportPadding, window.innerWidth - tooltipWidth - viewportPadding);
   let top = anchorY - tooltipHeight - gap;
@@ -1684,6 +1719,10 @@ function showChartTooltip(point, dataset) {
   if (top < viewportPadding) {
     top = anchorY + gap;
     chartTooltip.classList.add("is-below");
+  }
+
+  if (touchAnchor && top + tooltipHeight > window.innerHeight - viewportPadding) {
+    top = window.innerHeight - tooltipHeight - viewportPadding;
   }
 
   chartTooltip.style.left = `${left}px`;
