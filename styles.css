@@ -1778,6 +1778,10 @@ h3 {
   outline: none;
 }
 
+#performanceChart {
+  touch-action: pan-y;
+}
+
 .chart-hit:focus-visible {
   fill: rgba(23, 23, 23, .04);
 }

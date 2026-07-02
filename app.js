@@ -1533,6 +1533,61 @@ function renderPerformanceChart(dataset) {
     marker.addEventListener("mouseleave", hideChartTooltip);
     performanceChart.append(marker);
   });
+
+  const pointAtClientX = (clientX) => {
+    const rect = performanceChart.getBoundingClientRect();
+    const svgX = ((clientX - rect.left) / rect.width) * width;
+    const index = Math.round(((clamp(svgX, margin.left, width - margin.right) - margin.left) / innerWidth) * (data.length - 1));
+    const row = data[index];
+
+    if (!row) {
+      return null;
+    }
+
+    const clickPoint = clickPoints[index];
+    const impressionPoint = impressionPoints[index];
+    const anchorY = Math.min(
+      showClicks ? clickPoint.y : baseline,
+      showImpressions ? impressionPoint.y : baseline
+    );
+
+    return {
+      x: xScale(index),
+      y: anchorY,
+      clickY: clickPoint.y,
+      impressionY: impressionPoint.y,
+      row,
+      index,
+      showClicks,
+      showImpressions
+    };
+  };
+
+  const showPointFromClientX = (clientX) => {
+    const point = pointAtClientX(clientX);
+    if (point) {
+      showChartTooltip(point, dataset);
+    }
+  };
+
+  performanceChart.onpointerdown = (event) => {
+    if (event.pointerType === "touch" || event.pointerType === "pen") {
+      showPointFromClientX(event.clientX);
+    }
+  };
+
+  performanceChart.onpointermove = (event) => {
+    if (event.pointerType === "touch" || event.pointerType === "pen") {
+      showPointFromClientX(event.clientX);
+    }
+  };
+
+  performanceChart.ontouchstart = (event) => {
+    const touch = event.touches?.[0] || event.changedTouches?.[0];
+    if (touch) {
+      showPointFromClientX(touch.clientX);
+    }
+  };
 }
 
 function renderChartEvents(dataset, dateToX, margin, baseline, innerHeight, width) {
