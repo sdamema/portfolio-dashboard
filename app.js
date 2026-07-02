@@ -451,10 +451,10 @@ const projects = [
     ],
     summaryPointStyle: "rich",
     metrics: [
-      ["16", "off-page articles prepared and tracked"],
-      ["575", "total backlinks recorded for the article set"],
-      ["78", "total referring pages recorded for the article set"],
-      ["6", "published example links currently available"]
+      ["17", "off-page articles written for outreach"],
+      ["81", "republications across online newspapers"],
+      ["559", "backlinks acquired to priority pages"],
+      ["22.2", "average Domain Rating (DR) of the sources"]
     ],
     callouts: [
       ["Research", "Articles started from <strong>real news sources</strong>, not generic rewritten content."],
@@ -473,26 +473,33 @@ const projects = [
       {
         title: "How links were inserted",
         body: `<p>The link was not treated as an afterthought. It had to fit inside the article's logic, with an anchor that made sense for the reader and for the target page. The goal was to support priority URLs while keeping the article <strong>natural, readable and acceptable for publication</strong>.</p><p>When a link points to an external newspaper page in the inventory, it means the article was published by one of the contacted online newspapers. If a future link points to Papernest, it should be read as a publication on the <strong>Papernest blog</strong>.</p><ul><li><strong>Anchor choice:</strong> descriptive anchors connected to the sentence, avoiding generic labels like "click here".</li><li><strong>Target selection:</strong> links chosen around the topic and the SEO priority of the destination page.</li><li><strong>Editorial fit:</strong> the link should add context, not interrupt the article.</li><li><strong>Tracking:</strong> the inventory keeps article date, backlinks, referring pages, Domain Rating and example publication links when available.</li></ul>`
+      },
+      {
+        title: "How the value was estimated: Earned Media Value, benchmarks & method",
+        body: `<p>To translate the off-page work into a business figure, I estimated its <strong>Earned Media Value (EMV)</strong>: how much it would have cost to obtain the same publications through a paid link-building marketplace. It is a <strong>cost-based, verifiable metric</strong> — a replacement cost, not a hypothetical revenue claim.</p><p>The unit of value is the <strong>placement</strong> (one published article on a news outlet), not the single backlink: on a marketplace you pay for the publication, which then carries one or more links. Each of the <strong>81 placements</strong> carried about <strong>seven links on average</strong> (<strong>559 backlinks</strong> in total), but every placement is counted <strong>once</strong> — not per link — so the multiple links are never double-counted. Each placement is priced by the <strong>Domain Rating (DR)</strong> of the hosting outlet — the same authority signal marketplaces price on. These are honestly <strong>low-authority, syndicated pickups</strong> on small Italian outlets, so every band is valued at the <strong>lowest</strong> published market price.</p><div class="formula-accordion formula-single"><details><summary><span>The benchmarks and the full calculation</span></summary><div class="formula-grid"><article><span>Where the prices come from</span><p>Not from a single vendor. The per-DR rates come from <strong>public 2026 marketplace pricing studies</strong>: Serpzilla reports <strong>DR 0–20 ≈ $80–130</strong>, <strong>DR 20–40 ≈ $130–220</strong>, <strong>DR 40–60 ≈ $220–400</strong> per placement, and Adsy's analysis of <strong>37,542 sites</strong> finds an average of <strong>~$280 per link</strong> (median $216).</p></article><article><span>How the estimate stays conservative</span><p>I used the <strong>floor</strong> of each band (never the average), converted to euro <strong>rounding down</strong>, and priced DR&lt;10 sites at €50 — below the marketplace entry point. For reference, the market <em>average</em> for a DR 11–40 guest post is $351–390, so this sits well under list price.</p></article><article><span>DR &lt; 20 · 32 placements</span><p>Small local/niche outlets at <strong>€50–75</strong> each → about <strong>€2,200</strong>.</p></article><article><span>DR 20–40 · 41 placements</span><p>The core of the set, at the DR 20–40 floor of <strong>€120–140</strong> → about <strong>€5,000</strong>.</p></article><article><span>DR 40+ · 8 placements</span><p>Stronger domains at <strong>€200</strong> each → about <strong>€1,600</strong>.</p></article><article><span>Total EMV</span><p>Roughly <strong>€9,000</strong> (an approximate figure, not a precise total), i.e. about <strong>€16 per backlink</strong> — below the cheapest paid "link insertion" (~€50), so it reads as a floor.</p></article><article><span>What it does not claim</span><p>It is a replacement cost, not SEO equity or revenue. The links sit on <strong>19 unique domains</strong> with heavy syndication, so their ranking value is lower than the raw count suggests, and no traffic or conversion is attributed.</p></article></div></details></div><p><strong>How the paid alternative works.</strong> Marketplaces such as <strong>Growwer</strong> are the paid version of this earned work: they connect brands with a network of publishers (Growwer lists ~<strong>42,900 outlets across 141 countries</strong>), catalogued by DR, traffic and niche. You filter media by affinity and authority, order a <strong>guest post, press release or link insertion</strong>, and the platform handles outreach, validation and publishing — you pay <strong>per placement</strong> at negotiated rates. Growwer itself does not publish a public price list, which is exactly why the figures above are benchmarked against the marketplaces that do.</p>`
       }
     ],
-    articleInventory: [
-      { title: "Piante bio-ibride", rawTitle: "Piante Bio-Ibride", date: "26/02", backlinks: "24", referringPages: "4", domainRating: "29", url: "" },
-      { title: "Addio smart working", rawTitle: "AddioSmartWorking", date: "06/03", backlinks: "36", referringPages: "6", domainRating: "29", url: "" },
-      { title: "Big Tech e energia pulita", rawTitle: "BigTechEnergiaPulita", date: "12/03/2026", backlinks: "15", referringPages: "3", domainRating: "16", url: "" },
-      { title: "Rincari bollette e guerra", rawTitle: "RincariBolletteGuerra", date: "19/3/2026", backlinks: "41", referringPages: "6", domainRating: "18", url: "" },
-      { title: "Reattori nucleari UE", rawTitle: "ReattoriNucleariUE", date: "26/03/2026", backlinks: "35", referringPages: "5", domainRating: "19", url: "" },
-      { title: "Bonus fotovoltaico 2026", rawTitle: "BonusFotovoltaico2026", date: "09/04/2026", backlinks: "24", referringPages: "3", domainRating: "31", url: "" },
-      { title: "Bonus domotica 2026", rawTitle: "Bonus Domotica 2026", date: "16/04/2026", backlinks: "40", referringPages: "5", domainRating: "26", url: "" },
-      { title: "Decreto Bollette e sostegni da 5 miliardi", rawTitle: "DecretoBolletteApprovato", date: "23/04/2026", backlinks: "69", referringPages: "8", domainRating: "22", url: "https://arenadigitale.it/2026/04/13/via-libera-del-senato-il-decreto-bollette-diventa-legge-e-introduce-sostegni-da-5-miliardi/" },
-      { title: "Conto Termico 3.0", rawTitle: "ContoTermico3.0", date: "30/04/2026", backlinks: "54", referringPages: "6", domainRating: "16", url: "" },
-      { title: "Clima e rinnovabili", rawTitle: "ClimaERinnovabili", date: "08/05", backlinks: "17", referringPages: "3", domainRating: "12", url: "" },
-      { title: "Taglio accise carburanti", rawTitle: "ProrogaTaglioAccise", date: "14/05", backlinks: "35", referringPages: "5", domainRating: "24", url: "https://www.alessandria24.com/2026/05/05/proroga-al-taglio-delle-accise-sui-carburanti-per-21-giorni-20-centesimi-sul-diesel-e-5-sulla-benzina/" },
-      { title: "Hantavirus e lockdown", rawTitle: "Hantavirus", date: "21/05", backlinks: "72", referringPages: "8", domainRating: "22", url: "https://www.ecodisavona.it/hantavirus-che-cosa-e-otto-casi-e-una-domanda-cruciale-sul-lockdown/" },
-      { title: "Geotermia e piano europeo", rawTitle: "GeotermicaRitorno", date: "29/05", backlinks: "40", referringPages: "5", domainRating: "19", url: "https://vocedelnordest.it/geotermia-il-ritorno-34-centrali-italiane-e-un-piano-europeo-piu-concreto/" },
-      { title: "Gas USA-Iran", rawTitle: "GasUSAIran", date: "04/06", backlinks: "21", referringPages: "3", domainRating: "20", url: "" },
-      { title: "Caldo record in Italia", rawTitle: "OndataCaloreItalia", date: "12/06", backlinks: "24", referringPages: "4", domainRating: "26", url: "https://www.corrierenazionale.it/2026/06/01/caldo-record-in-italia-fino-a-36-gradi-a-maggio-cosa-cambia-dal-1o-giugno/" },
-      { title: "Caro spiagge 2026", rawTitle: "CaroSpiagge2026", date: "19/06", backlinks: "28", referringPages: "4", domainRating: "30", url: "https://www.corrierenazionale.it/2026/06/09/caro-spiagge-2026-il-mare-costa-il-24-in-piu-e-il-lido-pesa-sul-budget-delle-famiglie/" }
-    ],
+    articleSummary: {
+      scope: "Italian market · weekly news-based articles (Feb–Jun 2026)",
+      written: "17",
+      republished: "81",
+      backlinks: "559",
+      avgDr: "22.2",
+      outlets: "19",
+      emv: {
+        value: "≈ €9K",
+        perBacklink: "≈ €16 / backlink",
+        note: "Estimated Earned Media Value: the conservative cost of acquiring the same 81 placements through a paid link-building marketplace, priced at the low end of each DR band."
+      },
+      examples: [
+        { title: "Decreto Bollette e sostegni da 5 miliardi", outlet: "arenadigitale.it", date: "Apr 2026", url: "https://arenadigitale.it/2026/04/13/via-libera-del-senato-il-decreto-bollette-diventa-legge-e-introduce-sostegni-da-5-miliardi/" },
+        { title: "Proroga al taglio delle accise sui carburanti", outlet: "alessandria24.com", date: "May 2026", url: "https://www.alessandria24.com/2026/05/05/proroga-al-taglio-delle-accise-sui-carburanti-per-21-giorni-20-centesimi-sul-diesel-e-5-sulla-benzina/" },
+        { title: "Hantavirus, casi e lockdown", outlet: "ecodisavona.it", date: "May 2026", url: "https://www.ecodisavona.it/hantavirus-che-cosa-e-otto-casi-e-una-domanda-cruciale-sul-lockdown/" },
+        { title: "Geotermia, il ritorno e il piano europeo", outlet: "vocedelnordest.it", date: "May 2026", url: "https://vocedelnordest.it/geotermia-il-ritorno-34-centrali-italiane-e-un-piano-europeo-piu-concreto/" },
+        { title: "Caldo record in Italia fino a 36 gradi", outlet: "corrierenazionale.it", date: "Jun 2026", url: "https://www.corrierenazionale.it/2026/06/01/caldo-record-in-italia-fino-a-36-gradi-a-maggio-cosa-cambia-dal-1o-giugno/" },
+        { title: "Caro spiagge 2026, il mare costa il 24% in più", outlet: "corrierenazionale.it", date: "Jun 2026", url: "https://www.corrierenazionale.it/2026/06/09/caro-spiagge-2026-il-mare-costa-il-24-in-piu-e-il-lido-pesa-sul-budget-delle-famiglie/" }
+      ]
+    },
     hideKeyNumbers: true,
     hideSnapshot: true,
     hideFutureData: true,
@@ -727,7 +734,7 @@ const projectPortfolioMeta = {
       problem: "Backlink content can become weak or promotional if it is not connected to <strong>real news, reliable facts and natural anchors</strong>.",
       analysis: "The workflow started from news research, extracted usable facts, then shaped short articles that could be sent to <strong>online newspapers or published on Papernest</strong> when appropriate.",
       insight: "Good off-page work sits between editorial judgment and link strategy: the article has to be useful before it can support SEO through links.",
-      output: "Final output: a tracked inventory of <strong>16 off-page articles</strong> with dates, BL, RP, DR and available publication links."
+      output: "Final output: an aggregated inventory of <strong>17 off-page articles</strong> (about one per week), republished <strong>81 times</strong> across online newspapers and generating <strong>559 backlinks</strong> to priority pages, with an average source <strong>Domain Rating of 22.2</strong>."
     }
   },
   "social-media": {
@@ -1117,7 +1124,7 @@ function renderProjectJumpNav(project, dataset) {
     ...(dataset ? [["GSC trend", "sectionPerformance"]] : []),
     ...(!project.hideSnapshot ? [["Snapshot", "sectionSnapshot"]] : []),
     ...(project.demos.length && !project.hideExamples ? [["HTML demo", "sectionExamples"]] : []),
-    ...(project.articleInventory?.length ? [["Article inventory", "sectionArticleInventory"]] : []),
+    ...(project.articleSummary ? [["Article inventory", "sectionArticleInventory"]] : []),
     ...(!project.hideFutureData ? [["URLs", "sectionInventory"]] : [])
   ];
 
@@ -1807,55 +1814,57 @@ function getArticleLinkMeta(url) {
 }
 
 function renderArticleInventory(project) {
-  if (!project.articleInventory?.length) {
+  const summary = project.articleSummary;
+  if (!summary) {
     return "";
   }
 
-  return `
-    <section class="offpage-article-section" id="sectionArticleInventory" aria-label="Off-page article inventory">
-      <div class="offpage-article-head">
-        <span>Article inventory</span>
-        <p>These are the off-page articles prepared for outreach and backlink acquisition. <strong>BL</strong> indicates backlinks, <strong>RP</strong> indicates referring pages and <strong>DR</strong> indicates Domain Rating, a domain-strength metric. When available, the link opens the published article.</p>
-      </div>
-      <div class="offpage-article-grid">
-        ${project.articleInventory.map((article) => {
-          const linkMeta = getArticleLinkMeta(article.url);
+  const kpis = [
+    [summary.written, "off-page articles written"],
+    [summary.republished, "republications across news outlets"],
+    [summary.backlinks, "backlinks acquired to priority pages"],
+    [summary.avgDr, "average source Domain Rating (DR)"]
+  ];
 
-          return `
-            <article class="offpage-article-card">
-              <div class="offpage-article-card__top">
-                <span>${escapeHtml(article.date)}</span>
-                <strong>${escapeHtml(article.title)}</strong>
-              </div>
-              <dl class="offpage-article-stats">
-                <div>
-                  <dt>BL</dt>
-                  <dd>${escapeHtml(article.backlinks)}</dd>
-                </div>
-                <div>
-                  <dt>RP</dt>
-                  <dd>${escapeHtml(article.referringPages)}</dd>
-                </div>
-                <div>
-                  <dt>DR</dt>
-                  <dd>${escapeHtml(article.domainRating)}</dd>
-                </div>
-              </dl>
-              <div class="offpage-article-link">
-                <p>${linkMeta.note}</p>
-                ${article.url ? `
-                  <a href="${escapeHtml(article.url)}" target="_blank" rel="noreferrer">
-                    ${escapeHtml(linkMeta.label)}
-                    ${linkMeta.host ? `<span>${escapeHtml(linkMeta.host)}</span>` : ""}
-                  </a>
-                ` : `
-                  <span class="offpage-link-pending">Link not available yet</span>
-                `}
-              </div>
-            </article>
-          `;
-        }).join("")}
+  return `
+    <section class="offpage-article-section" id="sectionArticleInventory" aria-label="Off-page article inventory summary">
+      <div class="offpage-article-head">
+        <span>Article inventory — aggregated</span>
+        <p>Aggregated view of the off-page work${summary.scope ? ` (${escapeHtml(summary.scope)})` : ""}. Each article started from a real news source and was syndicated to online newspapers; every republication carried one or more <strong>backlinks</strong> toward priority Papernest pages${summary.outlets ? `, across <strong>${escapeHtml(summary.outlets)} distinct outlets</strong>` : ""}. <strong>DR</strong> is the average Domain Rating of the linking sources.</p>
       </div>
+      <dl class="offpage-summary-grid">
+        ${kpis.map(([value, label]) => `
+          <div class="offpage-summary-kpi">
+            <dt>${escapeHtml(value)}</dt>
+            <dd>${escapeHtml(label)}</dd>
+          </div>
+        `).join("")}
+      </dl>
+      ${summary.emv ? `
+        <div class="offpage-emv">
+          <div class="offpage-emv__figure">
+            <span>Earned Media Value</span>
+            <strong>${escapeHtml(summary.emv.value)}</strong>
+            <em>${escapeHtml(summary.emv.perBacklink)}</em>
+          </div>
+          <p>${escapeHtml(summary.emv.note)}</p>
+        </div>
+      ` : ""}
+      ${summary.examples?.length ? `
+        <div class="offpage-summary-examples">
+          <h4>Selected published examples</h4>
+          <ul>
+            ${summary.examples.map((example) => `
+              <li>
+                <a href="${escapeHtml(example.url)}" target="_blank" rel="noreferrer">
+                  <strong>${escapeHtml(example.title)}</strong>
+                  <span>${escapeHtml(example.outlet)}${example.date ? ` · ${escapeHtml(example.date)}` : ""}</span>
+                </a>
+              </li>
+            `).join("")}
+          </ul>
+        </div>
+      ` : ""}
     </section>
   `;
 }
