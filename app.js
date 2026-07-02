@@ -476,7 +476,7 @@ const projects = [
       },
       {
         title: "How the value was estimated: Earned Media Value, benchmarks & method",
-        body: `<p>To translate the off-page work into a business figure, I estimated its <strong>Earned Media Value (EMV)</strong>: how much it would have cost to obtain the same publications through a paid link-building marketplace. It is a <strong>cost-based, verifiable metric</strong> — a replacement cost, not a hypothetical revenue claim.</p><p>The unit of value is the <strong>placement</strong> (one published article on a news outlet), not the single backlink: on a marketplace you pay for the publication, which then carries one or more links. Each of the <strong>81 placements</strong> carried about <strong>seven links on average</strong> (<strong>559 backlinks</strong> in total), but every placement is counted <strong>once</strong> — not per link — so the multiple links are never double-counted. Each placement is priced by the <strong>Domain Rating (DR)</strong> of the hosting outlet — the same authority signal marketplaces price on. These are honestly <strong>low-authority, syndicated pickups</strong> on small Italian outlets, so every band is valued at the <strong>lowest</strong> published market price.</p><div class="formula-accordion formula-single"><details><summary><span>The benchmarks and the full calculation</span></summary><div class="formula-grid"><article><span>Where the prices come from</span><p>Not from a single vendor. The per-DR rates come from <strong>public 2026 marketplace pricing studies</strong>: Serpzilla reports <strong>DR 0–20 ≈ $80–130</strong>, <strong>DR 20–40 ≈ $130–220</strong>, <strong>DR 40–60 ≈ $220–400</strong> per placement, and Adsy's analysis of <strong>37,542 sites</strong> finds an average of <strong>~$280 per link</strong> (median $216).</p></article><article><span>How the estimate stays conservative</span><p>I used the <strong>floor</strong> of each band (never the average), converted to euro <strong>rounding down</strong>, and priced DR&lt;10 sites at €50 — below the marketplace entry point. For reference, the market <em>average</em> for a DR 11–40 guest post is $351–390, so this sits well under list price.</p></article><article><span>DR &lt; 20 · 32 placements</span><p>Small local/niche outlets at <strong>€50–75</strong> each → about <strong>€2,200</strong>.</p></article><article><span>DR 20–40 · 41 placements</span><p>The core of the set, at the DR 20–40 floor of <strong>€120–140</strong> → about <strong>€5,000</strong>.</p></article><article><span>DR 40+ · 8 placements</span><p>Stronger domains at <strong>€200</strong> each → about <strong>€1,600</strong>.</p></article><article><span>Total EMV</span><p>Roughly <strong>€9,000</strong> (an approximate figure, not a precise total), i.e. about <strong>€16 per backlink</strong> — below the cheapest paid "link insertion" (~€50), so it reads as a floor.</p></article><article><span>What it does not claim</span><p>It is a replacement cost, not SEO equity or revenue. The links sit on <strong>19 unique domains</strong> with heavy syndication, so their ranking value is lower than the raw count suggests, and no traffic or conversion is attributed.</p></article></div></details></div><p><strong>How the paid alternative works.</strong> Marketplaces such as <strong>Growwer</strong> are the paid version of this earned work: they connect brands with a network of publishers (Growwer lists ~<strong>42,900 outlets across 141 countries</strong>), catalogued by DR, traffic and niche. You filter media by affinity and authority, order a <strong>guest post, press release or link insertion</strong>, and the platform handles outreach, validation and publishing — you pay <strong>per placement</strong> at negotiated rates. Growwer itself does not publish a public price list, which is exactly why the figures above are benchmarked against the marketplaces that do.</p>`
+        body: `<p>To translate the off-page work into a business figure, I estimated its <strong>Earned Media Value (EMV)</strong>: how much it would have cost to obtain the same publications through a paid link-building marketplace. It is a <strong>cost-based, verifiable metric</strong> — a replacement cost, not a hypothetical revenue claim.</p><p>The unit of value is the <strong>placement</strong> (one published article on a news outlet), not the single backlink: on a marketplace you pay for the publication, which then carries several links. Most republications carried about <strong>4 to 6 backlinks</strong> toward priority pages, around <strong>5 on average</strong>, but every placement is counted <strong>once</strong> — not per link — so the multiple links are never double-counted. Each placement is priced by the <strong>Domain Rating (DR)</strong> of the hosting outlet — the same authority signal marketplaces price on. These are honestly <strong>low-authority, syndicated pickups</strong> on small Italian outlets, so every band is valued at the <strong>lowest</strong> published market price.</p><div class="formula-accordion formula-single"><details><summary><span>The benchmarks and the full calculation</span></summary><div class="formula-grid"><article><span>Where the prices come from</span><p>Not from a single vendor. The per-DR rates come from <strong>public 2026 marketplace pricing studies</strong>: Serpzilla reports <strong>DR 0–20 ≈ $80–130</strong>, <strong>DR 20–40 ≈ $130–220</strong>, <strong>DR 40–60 ≈ $220–400</strong> per placement, and Adsy's analysis of <strong>37,542 sites</strong> finds an average of <strong>~$280 per link</strong> (median $216).</p></article><article><span>How the estimate stays conservative</span><p>I used the <strong>floor</strong> of each band (never the average), converted to euro <strong>rounding down</strong>, and priced DR&lt;10 sites at €50 — below the marketplace entry point. For reference, the market <em>average</em> for a DR 11–40 guest post is $351–390, so this sits well under list price.</p></article><article><span>DR &lt; 20 · 32 placements</span><p>Small local/niche outlets at <strong>€50–75</strong> each → about <strong>€2,200</strong>.</p></article><article><span>DR 20–40 · 41 placements</span><p>The core of the set, at the DR 20–40 floor of <strong>€120–140</strong> → about <strong>€5,000</strong>.</p></article><article><span>DR 40+ · 8 placements</span><p>Stronger domains at <strong>€200</strong> each → about <strong>€1,600</strong>.</p></article><article><span>Total EMV</span><p>Roughly <strong>€9,000</strong> (an approximate figure, not a precise total), i.e. about <strong>€16 per backlink</strong> — below the cheapest paid "link insertion" (~€50), so it reads as a floor.</p></article><article><span>What it does not claim</span><p>It is a replacement cost, not SEO equity or revenue. The links sit on <strong>19 unique domains</strong> with heavy syndication, so their ranking value is lower than the raw count suggests, and no traffic or conversion is attributed.</p></article></div></details></div><p><strong>Earned, not bought.</strong> These 81 placements were obtained through <strong>manual outreach</strong> to online newspapers, with <strong>no paid budget</strong> — the euro figure is only a benchmark for what the same coverage would have cost on a paid link-building marketplace. The reference rates come from two public 2026 sources: <strong>Serpzilla</strong> (<a href="https://serpzilla.com/blog/how-much-should-you-pay-for-a-guest-post/" target="_blank" rel="noreferrer">guest-post pricing by DR</a> — $80–130 for DR 0–20, $130–220 for DR 20–40, $220–400 for DR 40–60) and <strong>Adsy</strong> (<a href="https://adsy.com/blog/how-much-should-you-pay-for-guest-post" target="_blank" rel="noreferrer">analysis of 37,542 websites</a> — about $280 average per link, $216 median). I applied the <strong>lowest</strong> value in each band, so the estimate stays below real marketplace list prices.</p>`
       }
     ],
     articleSummary: {
@@ -492,12 +492,9 @@ const projects = [
         note: "Estimated Earned Media Value: the conservative cost of acquiring the same 81 placements through a paid link-building marketplace, priced at the low end of each DR band."
       },
       examples: [
-        { title: "Decreto Bollette e sostegni da 5 miliardi", outlet: "arenadigitale.it", date: "Apr 2026", url: "https://arenadigitale.it/2026/04/13/via-libera-del-senato-il-decreto-bollette-diventa-legge-e-introduce-sostegni-da-5-miliardi/" },
-        { title: "Proroga al taglio delle accise sui carburanti", outlet: "alessandria24.com", date: "May 2026", url: "https://www.alessandria24.com/2026/05/05/proroga-al-taglio-delle-accise-sui-carburanti-per-21-giorni-20-centesimi-sul-diesel-e-5-sulla-benzina/" },
-        { title: "Hantavirus, casi e lockdown", outlet: "ecodisavona.it", date: "May 2026", url: "https://www.ecodisavona.it/hantavirus-che-cosa-e-otto-casi-e-una-domanda-cruciale-sul-lockdown/" },
-        { title: "Geotermia, il ritorno e il piano europeo", outlet: "vocedelnordest.it", date: "May 2026", url: "https://vocedelnordest.it/geotermia-il-ritorno-34-centrali-italiane-e-un-piano-europeo-piu-concreto/" },
-        { title: "Caldo record in Italia fino a 36 gradi", outlet: "corrierenazionale.it", date: "Jun 2026", url: "https://www.corrierenazionale.it/2026/06/01/caldo-record-in-italia-fino-a-36-gradi-a-maggio-cosa-cambia-dal-1o-giugno/" },
-        { title: "Caro spiagge 2026, il mare costa il 24% in più", outlet: "corrierenazionale.it", date: "Jun 2026", url: "https://www.corrierenazionale.it/2026/06/09/caro-spiagge-2026-il-mare-costa-il-24-in-piu-e-il-lido-pesa-sul-budget-delle-famiglie/" }
+        { title: "Bonus fotovoltaico 2026: cambiano le regole", outlet: "corrierenazionale.it", dr: "57", url: "https://www.corrierenazionale.it/2026/03/30/bonus-fotovoltaico-2026-cambiano-le-regole-cosa-fare-per-non-perdere-lincentivo-in-arrivo/" },
+        { title: "Decreto Bollette: sostegni da 5 miliardi diventa legge", outlet: "arenadigitale.it", dr: "50", url: "https://arenadigitale.it/2026/04/13/via-libera-del-senato-il-decreto-bollette-diventa-legge-e-introduce-sostegni-da-5-miliardi/" },
+        { title: "L'addio allo smart working nelle grandi aziende", outlet: "corrierepl.it", dr: "47", url: "https://www.corrierepl.it/2026/03/01/laddio-allo-smart-working-rivoluziona-la-gestione-delle-grandi-aziende-italiane/" }
       ]
     },
     hideKeyNumbers: true,
@@ -779,6 +776,7 @@ const detailSummary = document.querySelector("#detailSummary");
 const detailStatus = document.querySelector("#detailStatus");
 const projectJumpNav = document.querySelector("#projectJumpNav");
 const detailExplanation = document.querySelector("#detailExplanation");
+const articleInventoryLead = document.querySelector("#articleInventoryLead");
 const dataEvidenceSection = document.querySelector("#sectionEvidence");
 const seoMetrics = document.querySelector("#seoMetrics");
 const calloutGrid = document.querySelector("#calloutGrid");
@@ -1095,6 +1093,13 @@ function renderPerformanceChartMode(dataset) {
 }
 
 function renderProjectJumpNav(project, dataset) {
+  if (project.id === "offpage") {
+    projectJumpNav.hidden = true;
+    projectJumpNav.innerHTML = "";
+    return;
+  }
+
+  projectJumpNav.hidden = false;
   projectJumpNav.classList.toggle("project-jump-nav--summary", Boolean(project.jumpSummaryCard));
   projectJumpNav.setAttribute("aria-label", project.jumpSummaryCard ? "Project time-saving summary" : "Project sections");
 
@@ -1118,18 +1123,17 @@ function renderProjectJumpNav(project, dataset) {
   }
 
   const links = [
+    ...(project.articleSummary ? [["Article inventory", "sectionArticleInventory"]] : []),
     ["Summary", "sectionSummary"],
     ["Deep dive", "sectionDeepDive"],
     ...(!project.hideKeyNumbers ? [["Key numbers", "sectionEvidence"]] : []),
     ...(dataset ? [["GSC trend", "sectionPerformance"]] : []),
     ...(!project.hideSnapshot ? [["Snapshot", "sectionSnapshot"]] : []),
     ...(project.demos.length && !project.hideExamples ? [["HTML demo", "sectionExamples"]] : []),
-    ...(project.articleSummary ? [["Article inventory", "sectionArticleInventory"]] : []),
     ...(!project.hideFutureData ? [["URLs", "sectionInventory"]] : [])
   ];
 
   projectJumpNav.innerHTML = `
-    <p>Click to jump to the section you want to review.</p>
     <div class="project-jump-list">
       ${links.map(([label, target]) => `
         <button type="button" data-section-target="${target}">${label}</button>
@@ -1813,6 +1817,30 @@ function getArticleLinkMeta(url) {
   };
 }
 
+function getArticleEmvMethod(project) {
+  if (project.id !== "offpage") {
+    return null;
+  }
+
+  return project.deepDive.find((item) => item.title.startsWith("How the value was estimated")) || null;
+}
+
+function renderArticleEmvMethod(project) {
+  const method = getArticleEmvMethod(project);
+  if (!method) {
+    return "";
+  }
+
+  return `
+    <div class="offpage-emv-method">
+      <details open>
+        <summary><span>${escapeHtml(method.title)}</span></summary>
+        <div>${method.body}</div>
+      </details>
+    </div>
+  `;
+}
+
 function renderArticleInventory(project) {
   const summary = project.articleSummary;
   if (!summary) {
@@ -1830,7 +1858,7 @@ function renderArticleInventory(project) {
     <section class="offpage-article-section" id="sectionArticleInventory" aria-label="Off-page article inventory summary">
       <div class="offpage-article-head">
         <span>Article inventory — aggregated</span>
-        <p>Aggregated view of the off-page work${summary.scope ? ` (${escapeHtml(summary.scope)})` : ""}. Each article started from a real news source and was syndicated to online newspapers; every republication carried one or more <strong>backlinks</strong> toward priority Papernest pages${summary.outlets ? `, across <strong>${escapeHtml(summary.outlets)} distinct outlets</strong>` : ""}. <strong>DR</strong> is the average Domain Rating of the linking sources.</p>
+        <p>Aggregated view of the off-page work${summary.scope ? ` (${escapeHtml(summary.scope)})` : ""}. Each article started from a real news source and was syndicated to online newspapers; most republications carried about <strong>4 to 6 backlinks</strong> toward priority Papernest pages, around <strong>5 on average</strong>${summary.outlets ? `, across <strong>${escapeHtml(summary.outlets)} distinct outlets</strong>` : ""}. <strong>DR</strong> is the average Domain Rating of the linking sources.</p>
       </div>
       <dl class="offpage-summary-grid">
         ${kpis.map(([value, label]) => `
@@ -1849,16 +1877,21 @@ function renderArticleInventory(project) {
           </div>
           <p>${escapeHtml(summary.emv.note)}</p>
         </div>
+        ${renderArticleEmvMethod(project)}
       ` : ""}
       ${summary.examples?.length ? `
         <div class="offpage-summary-examples">
-          <h4>Selected published examples</h4>
+          <h4>Selected published examples (best DR)</h4>
           <ul>
             ${summary.examples.map((example) => `
               <li>
                 <a href="${escapeHtml(example.url)}" target="_blank" rel="noreferrer">
                   <strong>${escapeHtml(example.title)}</strong>
-                  <span>${escapeHtml(example.outlet)}${example.date ? ` · ${escapeHtml(example.date)}` : ""}</span>
+                  <span class="offpage-example-meta">
+                    <b>${escapeHtml(example.outlet)}</b>
+                    ${example.dr ? `<i>DR ${escapeHtml(example.dr)}</i>` : ""}
+                    ${example.date ? `<small>${escapeHtml(example.date)}</small>` : ""}
+                  </span>
                 </a>
               </li>
             `).join("")}
@@ -1871,12 +1904,18 @@ function renderArticleInventory(project) {
 
 function renderProjectDetail(project) {
   const performanceDataset = getPerformanceDataset(project);
+  const articleEmvMethod = getArticleEmvMethod(project);
+  const deepDiveItems = project.deepDive.filter((item) => item !== articleEmvMethod);
 
   detailCategory.textContent = project.category;
   detailTitle.textContent = project.title;
   detailSummary.innerHTML = project.summary;
   detailStatus.textContent = project.status;
   renderProjectJumpNav(project, performanceDataset);
+  if (articleInventoryLead) {
+    articleInventoryLead.hidden = !project.articleSummary;
+    articleInventoryLead.innerHTML = project.articleSummary ? renderArticleInventory(project) : "";
+  }
   dataEvidenceSection.hidden = Boolean(project.hideKeyNumbers);
   snapshotSection.hidden = Boolean(project.hideSnapshot);
   detailExplanation.innerHTML = `
@@ -1907,12 +1946,12 @@ function renderProjectDetail(project) {
     </article>
   `).join("");
 
-  deepAccordion.innerHTML = project.deepDive.map((item, index) => `
+  deepAccordion.innerHTML = deepDiveItems.map((item, index) => `
     <details class="deep-dive" ${index === 0 ? "open" : ""}>
       <summary>${item.title}</summary>
       <div>${item.body}</div>
     </details>
-  `).join("") + renderArticleInventory(project);
+  `).join("");
 
   renderPerformance(project, performanceDataset);
   renderFutureData(project, performanceDataset);
