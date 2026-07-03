@@ -269,15 +269,27 @@ const projects = [
     category: "SEO + business diagnosis",
     status: "Analysis case",
     summary: "A weekly SEO/business monitoring project that turned <strong>Search Console, crawl data, page families and business KPIs</strong> into recommendations for future actions on energia-luce.it.",
-    explanation: `<p>I was responsible for the weekly monitoring of energia-luce.it data, so I was asked to build a deeper analysis to identify possible future SEO and UX actions. The goal was to connect <strong>visibility, crawl/indexability and business outcomes</strong>, not only to report whether traffic was going up or down.</p><p>The analysis covered <strong>PP, clients, TR, CM3, CM3/PP, page families, noindex pages and crawl status</strong>. The final outcome was a clearer prioritization logic: a branch-map proposal for local-intent friction and a review of noindex pages that could be brought back into the indexation flow.</p>`,
+    explanation: "",
     summaryPoints: [
       `<span>Monitoring role</span><strong>Started from weekly site reporting</strong><em>I was following SEO and business movement every week, then turned that monitoring into a deeper action-oriented diagnosis.</em>`,
       `<span>Business KPIs</span><strong>Connected PP, clients, TR and CM3</strong><em>The analysis checked whether page families were creating valuable outcomes, not just traffic or phone-pickup activity.</em>`,
       `<span>Technical SEO</span><strong>Reviewed crawl and noindex signals</strong><em>Indexability, crawl status and URL families were used to separate pages to protect, fix, re-index or redesign.</em>`,
       `<span>Outcome</span><strong>Produced future-action recommendations</strong><em>The work led to the branch-map proposal and to noindex pages being reviewed and re-indexed where useful.</em>`
     ],
+    resultSummary: {
+      kicker: "Indexation outcome",
+      title: "Noindex review turned into a concrete re-indexation list",
+      text: "The analysis started from <strong>732 noindex URLs</strong>. I matched those URLs with older business signals such as <strong>PP, clients and CM3</strong>, then selected <strong>51 pages</strong> with enough SEO/business rationale to be brought back into the indexation flow.",
+      stats: [
+        ["732", "noindex URLs reviewed"],
+        ["51", "pages selected for re-indexation"],
+        ["PP · Clients · CM3", "pre-indexation business signals checked"]
+      ]
+    },
     summaryPointStyle: "rich",
     summaryPointLayout: "analysis",
+    hideProjectStory: true,
+    hideJumpNav: true,
     metrics: [
       ["2,954", "URLs in the broader analysis window"],
       ["992", "URLs covered by the GSC export"],
@@ -726,6 +738,7 @@ const projectPortfolioMeta = {
     topicTags: ["Off-page", "Backlinks", "AI draft"],
     cardSummary: "News-based articles for outreach and backlinks.",
     hideProjectStory: true,
+    hideSummaryPanel: true,
     story: {
       main: "I wrote and tracked <strong>news-based off-page articles</strong> designed for outreach and backlink acquisition toward priority pages. The work combined <strong>news research, factual editorial writing, natural anchor selection and publication tracking</strong>: each article started from a real source, was shaped so it could be sent to online newspapers, and included links only where they made sense for the reader and the target page.",
       problem: "Backlink content can become weak or promotional if it is not connected to <strong>real news, reliable facts and natural anchors</strong>.",
@@ -775,6 +788,7 @@ const detailTitle = document.querySelector("#detailTitle");
 const detailSummary = document.querySelector("#detailSummary");
 const detailStatus = document.querySelector("#detailStatus");
 const projectJumpNav = document.querySelector("#projectJumpNav");
+const storyPanel = document.querySelector("#sectionSummary .story-panel");
 const detailExplanation = document.querySelector("#detailExplanation");
 const articleInventoryLead = document.querySelector("#articleInventoryLead");
 const dataEvidenceSection = document.querySelector("#sectionEvidence");
@@ -1093,7 +1107,7 @@ function renderPerformanceChartMode(dataset) {
 }
 
 function renderProjectJumpNav(project, dataset) {
-  if (project.id === "offpage") {
+  if (project.id === "offpage" || project.hideJumpNav) {
     projectJumpNav.hidden = true;
     projectJumpNav.innerHTML = "";
     return;
@@ -1902,23 +1916,56 @@ function renderArticleInventory(project) {
   `;
 }
 
+function renderResultSummary(summary) {
+  if (!summary) {
+    return "";
+  }
+
+  return `
+    <section class="result-summary-card" aria-label="${escapeHtml(summary.kicker)}">
+      <div class="result-summary-card__head">
+        <span>${escapeHtml(summary.kicker)}</span>
+        <h3>${summary.title}</h3>
+        <p>${summary.text}</p>
+      </div>
+      ${summary.stats?.length ? `
+        <dl class="result-summary-card__stats">
+          ${summary.stats.map(([value, label]) => `
+            <div>
+              <dt>${escapeHtml(value)}</dt>
+              <dd>${escapeHtml(label)}</dd>
+            </div>
+          `).join("")}
+        </dl>
+      ` : ""}
+    </section>
+  `;
+}
+
 function renderProjectDetail(project) {
   const performanceDataset = getPerformanceDataset(project);
   const articleEmvMethod = getArticleEmvMethod(project);
   const deepDiveItems = project.deepDive.filter((item) => item !== articleEmvMethod);
+  const leadHtml = project.articleSummary
+    ? renderArticleInventory(project)
+    : renderResultSummary(project.resultSummary);
+  const storyPanelHidden = Boolean(project.hideSummaryPanel);
 
   detailCategory.textContent = project.category;
   detailTitle.textContent = project.title;
   detailSummary.innerHTML = project.summary;
   detailStatus.textContent = project.status;
   renderProjectJumpNav(project, performanceDataset);
+  if (storyPanel) {
+    storyPanel.hidden = storyPanelHidden;
+  }
   if (articleInventoryLead) {
-    articleInventoryLead.hidden = !project.articleSummary;
-    articleInventoryLead.innerHTML = project.articleSummary ? renderArticleInventory(project) : "";
+    articleInventoryLead.hidden = !leadHtml;
+    articleInventoryLead.innerHTML = leadHtml;
   }
   dataEvidenceSection.hidden = Boolean(project.hideKeyNumbers);
   snapshotSection.hidden = Boolean(project.hideSnapshot);
-  detailExplanation.innerHTML = `
+  detailExplanation.innerHTML = storyPanelHidden ? "" : `
     ${renderProjectStory(project)}
     ${project.summaryPoints?.length ? `
       <ul class="summary-points ${[

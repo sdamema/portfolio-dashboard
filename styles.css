@@ -507,6 +507,12 @@ h3 {
   text-align: center;
 }
 
+.skill-tags > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, calc(50% - 4px));
+}
+
 .projects-section {
   margin-top: 18px;
   padding: 24px;
@@ -887,6 +893,73 @@ h3 {
 
 .article-inventory-lead .offpage-article-section {
   margin-top: 0;
+}
+
+.result-summary-card {
+  overflow: hidden;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, .22);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(38, 121, 183, .24), transparent 34%),
+    linear-gradient(135deg, rgba(15, 23, 42, .96), rgba(8, 13, 26, .92));
+  box-shadow: 0 20px 54px rgba(8, 13, 26, .20);
+  color: #f8fafc;
+}
+
+.result-summary-card__head span {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: rgba(226, 232, 240, .70);
+  font-size: .72rem;
+  font-weight: 780;
+  text-transform: uppercase;
+}
+
+.result-summary-card__head h3 {
+  color: #f8fafc;
+  font-size: 1.24rem;
+  line-height: 1.18;
+}
+
+.result-summary-card__head p {
+  margin: 12px 0 0;
+  color: rgba(226, 232, 240, .82);
+  font-size: .94rem;
+  line-height: 1.58;
+}
+
+.result-summary-card__head strong {
+  color: #90e6dc;
+}
+
+.result-summary-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 16px 0 0;
+}
+
+.result-summary-card__stats div {
+  padding: 12px;
+  border: 1px solid rgba(148, 163, 184, .20);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .06);
+}
+
+.result-summary-card__stats dt {
+  color: #fff;
+  font-size: 1.14rem;
+  font-weight: 820;
+}
+
+.result-summary-card__stats dd {
+  margin: 5px 0 0;
+  color: rgba(226, 232, 240, .70);
+  font-size: .76rem;
+  font-weight: 680;
+  line-height: 1.28;
 }
 
 .story-panel,
@@ -3626,6 +3699,10 @@ body {
   .time-saved-card ul {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .result-summary-card__stats {
+    grid-template-columns: 1fr;
   }
 
   .time-saved-card li:last-child:nth-child(odd) {
