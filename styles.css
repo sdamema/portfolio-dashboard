@@ -1907,6 +1907,7 @@ h3 {
   fill: transparent;
   cursor: pointer;
   outline: none;
+  pointer-events: all;
 }
 
 #performanceChart {

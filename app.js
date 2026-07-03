@@ -753,6 +753,7 @@ const projectPortfolioMeta = {
     areas: ["social"],
     topicTags: ["Social", "Events", "EU project"],
     cardSummary: "Social planning and live-event content for Ladywoods / BGSA.",
+    hideJumpNav: true,
     story: null
   },
   creator: {
@@ -761,6 +762,7 @@ const projectPortfolioMeta = {
     areas: ["social"],
     topicTags: ["Content", "Community", "Analytics"],
     cardSummary: "Creator work across communities and formats.",
+    hideJumpNav: true,
     story: null
   }
 };
@@ -1577,7 +1579,7 @@ function renderPerformanceChart(dataset) {
   }));
   performanceChart.append(focusGroup);
 
-  const hitWidth = innerWidth / data.length;
+  const hitWidth = Math.max(innerWidth / data.length, 12);
   let lastTouchTooltipAt = 0;
   const isRecentTouchTooltip = () => Date.now() - lastTouchTooltipAt < 1200;
   const hideChartTooltipAfterMouse = () => {
@@ -1667,32 +1669,37 @@ function renderPerformanceChart(dataset) {
     };
   };
 
-  const showPointFromClientX = (clientX, clientY = null) => {
+  const showPointFromClientX = (clientX, clientY = null, isTouchInput = false) => {
     const point = pointAtClientX(clientX);
     if (point) {
-      if (Number.isFinite(clientY)) {
+      if (isTouchInput) {
         lastTouchTooltipAt = Date.now();
       }
-      showChartTooltip(point, dataset, Number.isFinite(clientY) ? { clientX, clientY } : null);
+      showChartTooltip(point, dataset, isTouchInput && Number.isFinite(clientY) ? { clientX, clientY } : null);
     }
   };
 
   performanceChart.onpointerdown = (event) => {
-    if (event.pointerType === "touch" || event.pointerType === "pen") {
-      showPointFromClientX(event.clientX, event.clientY);
-    }
+    const isTouchInput = event.pointerType === "touch" || event.pointerType === "pen";
+    showPointFromClientX(event.clientX, event.clientY, isTouchInput);
   };
 
   performanceChart.onpointermove = (event) => {
     if (event.pointerType === "touch" || event.pointerType === "pen") {
-      showPointFromClientX(event.clientX, event.clientY);
+      showPointFromClientX(event.clientX, event.clientY, true);
+    }
+  };
+
+  performanceChart.onclick = (event) => {
+    if (!isRecentTouchTooltip()) {
+      showPointFromClientX(event.clientX);
     }
   };
 
   performanceChart.ontouchstart = (event) => {
     const touch = event.touches?.[0] || event.changedTouches?.[0];
     if (touch) {
-      showPointFromClientX(touch.clientX, touch.clientY);
+      showPointFromClientX(touch.clientX, touch.clientY, true);
     }
   };
 }
