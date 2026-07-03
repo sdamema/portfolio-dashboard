@@ -1784,17 +1784,23 @@ function showChartTooltip(point, dataset, touchAnchor = null) {
   const anchorY = touchAnchor?.clientY ?? chartRect.top + (point.y / 390) * chartRect.height;
   const tooltipWidth = chartTooltip.offsetWidth || 190;
   const tooltipHeight = chartTooltip.offsetHeight || 126;
-  const gap = touchAnchor ? 18 : 14;
+  const isTouchTooltip = Boolean(touchAnchor);
+  const gap = isTouchTooltip ? 12 : 14;
   const viewportPadding = 10;
   const left = clamp(anchorX - tooltipWidth / 2, viewportPadding, window.innerWidth - tooltipWidth - viewportPadding);
   let top = anchorY - tooltipHeight - gap;
 
-  if (top < viewportPadding) {
+  if (isTouchTooltip) {
+    const topBelow = anchorY + gap;
+    const hasRoomBelow = topBelow + tooltipHeight <= window.innerHeight - viewportPadding;
+    top = hasRoomBelow ? topBelow : anchorY - tooltipHeight - gap;
+    chartTooltip.classList.toggle("is-below", hasRoomBelow);
+  } else if (top < viewportPadding) {
     top = anchorY + gap;
     chartTooltip.classList.add("is-below");
   }
 
-  if (touchAnchor && top + tooltipHeight > window.innerHeight - viewportPadding) {
+  if (isTouchTooltip && top + tooltipHeight > window.innerHeight - viewportPadding) {
     top = window.innerHeight - tooltipHeight - viewportPadding;
   }
 
