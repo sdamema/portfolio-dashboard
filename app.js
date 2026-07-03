@@ -279,7 +279,7 @@ const projects = [
     resultSummary: {
       kicker: "Indexation outcome",
       title: "Noindex review turned into a concrete re-indexation list",
-      text: "The analysis started from <strong>732 noindex URLs</strong>. I matched those URLs with older business signals such as <strong>PP, clients and CM3</strong>, then selected <strong>51 pages</strong> with enough SEO/business rationale to be brought back into the indexation flow.",
+      text: "The analysis started from <strong>732 noindex URLs</strong>. I matched them with older business signals such as <strong>PP, clients and CM3</strong>, then prioritized pages that had already shown value: positive CM3, previous client signals, useful PP activity or a clear SEO/local-intent role. The result was a filtered list of <strong>51 pages</strong> to bring back into the indexation flow, instead of re-indexing everything blindly.",
       stats: [
         ["732", "noindex URLs reviewed"],
         ["51", "pages selected for re-indexation"],
@@ -344,11 +344,11 @@ const projects = [
     deepDive: [
       {
         title: "Why the map was designed",
-        body: `<p>My analysis showed a clear mismatch between <strong>visibility</strong> and <strong>business value</strong>. Some branch hub pages were visible in search and generated phone-pickup activity, but they did not consistently become clients. That suggested that the page was not necessarily failing at ranking: it was failing at <strong>guiding the user's intent</strong> after the click.</p><p>The underlying query intent was often local. Users were searching for things like a <strong>branch near them</strong>, a specific city, an address, opening hours or a provider office. On the existing hub structure, they could land on a long list of branches or a region accordion and still need to manually find the right city. On mobile, this means <strong>extra scrolling, extra taps and more friction</strong> before the user reaches the page that actually matches the need.</p><p>The branch map was designed to solve that exact pain point. Instead of treating the hub as a generic landing page, it turns it into a <strong>local-intent router</strong>: the user selects a region or searches a city, then reaches the relevant local page with less friction. The project was not published, but the reasoning is useful because it connects <strong>SEO, UX and business conversion quality</strong>.</p>`
+        body: `<p>The idea came from the broader <strong>energia-luce.it SEO/business analysis</strong>. I had already compared Search Console visibility, crawl/indexability data and business KPIs such as <strong>PP, clients, TR and CM3</strong>, and the sportelli area showed a clear pattern: some branch hub pages could create activity, but not always qualified outcomes.</p><p>In practical terms, some hubs generated <strong>PP or phone-pickup signals</strong> while clients and CM3 stayed weak, null or negative. At the same time, local child pages were often closer to the user's real need: a branch in a specific city, an address, opening hours or local support information. That suggested that the page was not necessarily failing at ranking; it was failing at <strong>guiding the user's intent</strong> after the click.</p><p>The branch map was designed to solve that pain point. Instead of treating the hub as a generic landing page, it turns it into a <strong>local-intent router</strong>: the user selects a region or searches a city, then reaches the relevant local page with less friction. The project was not published, but the reasoning is useful because it connects <strong>SEO, UX and business conversion quality</strong>.</p>`
       },
       {
         title: "How the analysis shaped the solution",
-        body: `<p>The analysis compared <strong>hub pages</strong> with their <strong>local child pages</strong>. The important insight was that several mother hubs were creating activity but weak client outcomes, while related city pages showed stronger conversion signals. In plain terms: the value was not missing from the sportelli area; it was often sitting deeper in the architecture.</p><div class="process-flow process-flow--sportelli"><article><span>Hub signal</span><p>Read hub pages as <strong>entry points</strong>: visibility, phone-pickup activity and weak client output indicated a possible intent mismatch.</p></article><article><span>Child pages</span><p>Compared the hub with city-level pages, where users are closer to the concrete local need and conversion quality was stronger.</p></article><article><span>Intent filter</span><p>Defined the map as a bridge from broad hub traffic to the <strong>more qualified local destination</strong>.</p></article><article><span>Measurement</span><p>Prepared the logic for post-rollout tracking: map clicks, hub PP quality, city-page movement and whether calls became more qualified.</p></article></div><p>This is why the map was not just a design idea. It was a response to a business question: if people arrive on a hub because they want a local branch, can we help them reach the local page before they enter a generic conversion flow?</p>`
+        body: `<p>The analysis compared <strong>37 branch hub pages</strong> with <strong>659 city/local branch pages</strong>. The important insight was that several mother hubs were creating activity but weak client outcomes, while related city pages showed stronger conversion signals. In plain terms: the value was not missing from the sportelli area; it was often sitting deeper in the architecture.</p><div class="process-flow process-flow--sportelli"><article><span>Hub signal</span><p>Read hub pages as <strong>entry points</strong>: GSC visibility, PP, phone-pickup activity, clients and CM3 helped identify possible intent mismatch.</p></article><article><span>Child pages</span><p>Compared the hub with city-level pages, where users are closer to the concrete local need and where conversion/CM3 signals could be stronger.</p></article><article><span>Intent filter</span><p>Defined the map as a bridge from broad hub traffic to the <strong>more qualified local destination</strong>, before a generic commercial CTA.</p></article><article><span>Measurement</span><p>Prepared the logic for post-rollout tracking: map clicks, hub PP quality, city-page movement, client quality and CM3 movement.</p></article></div><p>This is why the map was not just a design idea. It was a response to a business question: if people arrive on a hub because they want a local branch, can we help them reach the local page before they enter a generic conversion flow?</p>`
       },
       {
         title: "How the prototype solves user pain points",
@@ -356,7 +356,7 @@ const projects = [
       },
       {
         title: "Implementation notes and limits",
-        body: `<p>The module was prepared as a <strong>scoped HTML/CSS/JS block</strong> for WordPress/Gutenberg, with no external dependency. The data flow used sitemap/crawl validation, normalized city and region fields, and a region-based interface with a mobile fallback.</p><p>It was still a <strong>prototype</strong>, not a published feature. That matters for the portfolio: the value shown here is the <strong>strategic and technical reasoning</strong>, not post-publication performance data. If it were implemented, the next step would be to monitor whether branch-hub calls become more qualified, whether more users click toward city pages and whether local pages capture more of the intent that was already present in search.</p>`
+        body: `<p>This was a <strong>personal extra initiative</strong>. After completing the wider analysis of the secondary site <strong>energia-luce.it</strong>, I decided to prototype the map outside normal working hours because the data suggested a practical opportunity: hub pages were receiving local-intent activity, but the user journey could be clearer and more qualified.</p><p>The module was prepared as a <strong>scoped HTML/CSS/JS block</strong> for WordPress/Gutenberg, with no external dependency. The data flow used sitemap/crawl validation, normalized city and region fields, URL checks and a region-based interface with a mobile fallback.</p><p>It was still a <strong>prototype</strong>, not a published feature. That matters for the portfolio: the value shown here is the <strong>strategic and technical reasoning</strong>, not post-publication performance data. If it were implemented, the next step would be to monitor whether branch-hub calls become more qualified, whether more users click toward city pages and whether local pages capture more of the intent that was already present in search.</p>`
       }
     ],
     hideKeyNumbers: true,
@@ -609,9 +609,9 @@ const projectOrder = [
   "offers",
   "sportelli",
   "offpage",
+  "nrj2-analysis",
   "summary",
   "ranking",
-  "nrj2-analysis",
   "scraping",
   "change-residence",
   "social-media",
@@ -671,7 +671,7 @@ const projectPortfolioMeta = {
     story: {
       main: "I designed an <strong>interactive branch-map prototype</strong> to make a large local-SEO URL inventory easier to navigate and more useful from a UX perspective.",
       problem: "Flat branch lists are <strong>hard to use</strong>, especially on mobile, and branch-intent traffic can be local, navigational or support-oriented rather than immediately commercial. The existing UX was not ideal, so I wanted to propose a <strong>cleaner, more useful design</strong>.",
-      analysis: "Before proposing the design, I analysed how the branch hubs and child pages performed. The key signal was that some hubs generated <strong>PP</strong> but not enough <strong>clients</strong>, while local child pages were closer to qualified intent.",
+      analysis: "Before proposing the design, I analysed <strong>37 hub pages</strong> and <strong>659 local child pages</strong>, connecting GSC, PP, clients, TR and CM3. The key signal was that some hubs generated <strong>PP</strong> but not enough clients or CM3, while local child pages were closer to qualified intent.",
       insight: "The solution was an <strong>interactive map</strong> that is visually stronger but also practical: it helps users select a region or city and reach the page they were actually looking for faster.",
       output: "Final output: a <strong>not-implemented but fully reasoned prototype</strong> with region/city logic, crawlable destination links and a publishable HTML/CSS/JS direction."
     }
@@ -780,6 +780,7 @@ const cvPanel = document.querySelector("#cvPanel");
 const homeView = document.querySelector("#homeView");
 const projectView = document.querySelector("#projectView");
 const backButton = document.querySelector("#backButton");
+const floatingBackButton = document.querySelector("#floatingBackButton");
 const projectGrid = document.querySelector("#projectGrid");
 const projectFilters = document.querySelector("#projectFilters");
 const scrollProgress = document.querySelector("#scrollProgress");
@@ -788,6 +789,7 @@ const detailTitle = document.querySelector("#detailTitle");
 const detailSummary = document.querySelector("#detailSummary");
 const detailStatus = document.querySelector("#detailStatus");
 const projectJumpNav = document.querySelector("#projectJumpNav");
+const sectionSummary = document.querySelector("#sectionSummary");
 const storyPanel = document.querySelector("#sectionSummary .story-panel");
 const detailExplanation = document.querySelector("#detailExplanation");
 const articleInventoryLead = document.querySelector("#articleInventoryLead");
@@ -861,6 +863,50 @@ function updateScrollProgress() {
   scrollProgress?.style.setProperty("--progress", `${clamp(progress, 0, 1) * 100}%`);
 }
 
+let lastScrollY = window.scrollY;
+let upwardScrollDistance = 0;
+
+function resetFloatingBackButton() {
+  if (!floatingBackButton) {
+    return;
+  }
+
+  upwardScrollDistance = 0;
+  lastScrollY = window.scrollY;
+  floatingBackButton.hidden = true;
+}
+
+function updateFloatingBackButton() {
+  if (!floatingBackButton || !projectView || projectView.hidden) {
+    upwardScrollDistance = 0;
+    lastScrollY = window.scrollY;
+    if (floatingBackButton) {
+      floatingBackButton.hidden = true;
+    }
+    return;
+  }
+
+  const currentY = window.scrollY;
+  const delta = currentY - lastScrollY;
+
+  if (currentY < 360) {
+    upwardScrollDistance = 0;
+    lastScrollY = currentY;
+    floatingBackButton.hidden = true;
+    return;
+  }
+
+  if (delta < 0) {
+    upwardScrollDistance += Math.abs(delta);
+  } else if (delta > 0) {
+    upwardScrollDistance = 0;
+    floatingBackButton.hidden = true;
+  }
+
+  floatingBackButton.hidden = upwardScrollDistance < 70;
+  lastScrollY = currentY;
+}
+
 function ensureRevealObserver() {
   if (revealObserver || !("IntersectionObserver" in window)) {
     return;
@@ -927,6 +973,7 @@ function setViewFromHash() {
     requestAnimationFrame(() => {
       refreshScrollReveal(projectView);
       updateScrollProgress();
+      resetFloatingBackButton();
     });
     return;
   }
@@ -936,6 +983,7 @@ function setViewFromHash() {
   document.body.classList.add("is-home-view");
   document.body.classList.remove("is-project-view");
   demoFrame.src = "about:blank";
+  resetFloatingBackButton();
   renderProjectGrid();
   requestAnimationFrame(() => {
     refreshScrollReveal(homeView);
@@ -1950,22 +1998,7 @@ function renderProjectDetail(project) {
     ? renderArticleInventory(project)
     : renderResultSummary(project.resultSummary);
   const storyPanelHidden = Boolean(project.hideSummaryPanel);
-
-  detailCategory.textContent = project.category;
-  detailTitle.textContent = project.title;
-  detailSummary.innerHTML = project.summary;
-  detailStatus.textContent = project.status;
-  renderProjectJumpNav(project, performanceDataset);
-  if (storyPanel) {
-    storyPanel.hidden = storyPanelHidden;
-  }
-  if (articleInventoryLead) {
-    articleInventoryLead.hidden = !leadHtml;
-    articleInventoryLead.innerHTML = leadHtml;
-  }
-  dataEvidenceSection.hidden = Boolean(project.hideKeyNumbers);
-  snapshotSection.hidden = Boolean(project.hideSnapshot);
-  detailExplanation.innerHTML = storyPanelHidden ? "" : `
+  const summaryPanelHtml = storyPanelHidden ? "" : `
     ${renderProjectStory(project)}
     ${project.summaryPoints?.length ? `
       <ul class="summary-points ${[
@@ -1978,6 +2011,27 @@ function renderProjectDetail(project) {
     ${renderEventShowcase(project)}
     ${renderCreatorShowcase(project)}
   `;
+  const hasSummaryPanel = Boolean(summaryPanelHtml.trim());
+  const hasLead = Boolean(leadHtml.trim());
+
+  detailCategory.textContent = project.category;
+  detailTitle.textContent = project.title;
+  detailSummary.innerHTML = project.summary;
+  detailStatus.textContent = project.status;
+  renderProjectJumpNav(project, performanceDataset);
+  if (sectionSummary) {
+    sectionSummary.hidden = !hasSummaryPanel && !hasLead;
+  }
+  if (storyPanel) {
+    storyPanel.hidden = !hasSummaryPanel;
+  }
+  if (articleInventoryLead) {
+    articleInventoryLead.hidden = !hasLead;
+    articleInventoryLead.innerHTML = leadHtml;
+  }
+  dataEvidenceSection.hidden = Boolean(project.hideKeyNumbers);
+  snapshotSection.hidden = Boolean(project.hideSnapshot);
+  detailExplanation.innerHTML = summaryPanelHtml;
 
   seoMetrics.innerHTML = project.metrics.map(([value, label]) => `
     <div class="seo-metric">
@@ -2124,18 +2178,28 @@ cvToggle.addEventListener("click", () => {
   }
 });
 
-backButton.addEventListener("click", () => {
+function returnToPortfolio() {
   history.pushState("", document.title, window.location.pathname);
   setViewFromHash();
   window.scrollTo({ top: 0, behavior: "smooth" });
-});
+}
+
+backButton.addEventListener("click", returnToPortfolio);
+floatingBackButton?.addEventListener("click", returnToPortfolio);
 
 window.addEventListener("hashchange", setViewFromHash);
-window.addEventListener("scroll", updateScrollProgress, { passive: true });
-window.addEventListener("resize", updateScrollProgress);
+window.addEventListener("scroll", () => {
+  updateScrollProgress();
+  updateFloatingBackButton();
+}, { passive: true });
+window.addEventListener("resize", () => {
+  updateScrollProgress();
+  updateFloatingBackButton();
+});
 
 renderProjectFilters();
 renderProjectGrid();
 setViewFromHash();
 refreshScrollReveal();
 updateScrollProgress();
+updateFloatingBackButton();
