@@ -596,11 +596,11 @@ const projectOrder = [
   "reviews",
   "offers",
   "sportelli",
+  "offpage",
   "summary",
   "ranking",
   "nrj2-analysis",
   "scraping",
-  "offpage",
   "change-residence",
   "social-media",
   "creator"
@@ -651,7 +651,7 @@ const projectPortfolioMeta = {
     story: null
   },
   sportelli: {
-    visualTheme: "technical-ai",
+    visualTheme: "content-seo",
     icon: "⌖",
     areas: ["seo"],
     topicTags: ["Local SEO", "Map UX", "Crawl"],
