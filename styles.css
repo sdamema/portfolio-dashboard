@@ -2699,6 +2699,11 @@ iframe {
   box-shadow: var(--shadow-soft);
 }
 
+.project-jump-nav.project-jump-nav--summary {
+  position: static;
+  top: auto;
+}
+
 .story-panel,
 .seo-data-card,
 .support-card,
@@ -5017,7 +5022,8 @@ body.is-project-view {
   text-transform: uppercase;
 }
 
-.event-card strong {
+.event-card__title {
+  display: block;
   color: #fff;
   font-family: var(--font-display);
   font-size: clamp(1.05rem, 1.25vw, 1.26rem);
@@ -5029,6 +5035,12 @@ body.is-project-view {
   color: #cbd5e1;
   font-size: .9rem;
   line-height: 1.52;
+}
+
+.event-card p strong,
+.event-card li strong {
+  color: #fff;
+  font-weight: 820;
 }
 
 .event-card ul {

@@ -3,9 +3,9 @@ window.portfolioPerformanceData.offers = {
   "id": "offers-gsc-2026-06-30-percentage-only",
   "projectId": "offers",
   "mode": "percentage-only-quality-index",
-  "title": "Offer pages relative Search Console quality trend",
+  "title": "Offer pages relative quality trend",
   "source": {
-    "platform": "Google Search Console",
+    "platform": "Performance data export",
     "searchType": "Web",
     "dateRange": "Mar 18, 2026-Jun 28, 2026",
     "pageFilter": "New and revamped supplier offer-page URLs",
@@ -35,7 +35,7 @@ window.portfolioPerformanceData.offers = {
     "method": "Each chart point is a 7-day trailing average shown as percentage variation from the final pre-quality baseline.",
     "tooltipNote": "Compared with the Apr 22-30 pre-quality baseline"
   },
-  "chartFootnote": "Hover or tap the chart to inspect each date. Metric cards compare full-period daily averages; the lines show 7-day trailing percentage movement against the pre-quality baseline. Google core-update windows are context, not proof of causality.",
+  "chartFootnote": "Hover or tap the chart to inspect each date. Absolute numerical values cannot be shown publicly, so the lines show 7-day trailing percentage variations against the pre-quality baseline. Google core-update windows are context, not proof of causality.",
   "events": [
     {
       "type": "range",
@@ -771,7 +771,7 @@ window.portfolioPerformanceData.offers = {
     "hidden": true,
     "eyebrow": "Offer URLs",
     "title": "Offer URLs included in this export",
-    "totalNote": "This export contains only total-period URL rows, so it is shown as a clean URL list rather than a growth ranking. To order pages by highest percentage click growth, export GSC with both Page and Date dimensions.",
+    "totalNote": "This export contains only total-period URL rows, so it is shown as a clean URL list rather than a growth ranking. To order pages by highest percentage click growth, export the data with both Page and Date dimensions.",
     "unavailableNote": "URL-level click variation needs a Page + Date export. With this file, a before/after URL growth ranking would be invented, so it is intentionally not shown.",
     "itemNote": "Total-period URL only; values hidden.",
     "showBars": false
@@ -781,7 +781,7 @@ window.portfolioPerformanceData.offers = {
     "reason": "Page-by-date export needed for phase-level URL ranking. This public view keeps only total-period URL names."
   },
   "urlInventoryTitle": "Offer URL inventory",
-  "urlInventoryNote": "Public URLs included in the GSC offer-page export. Performance numbers are intentionally excluded; the chart above shows only indexed percentage movement. The full project included 91 offer sheets; this inventory reflects the URLs available in this export. The live pages should match the examples shown here until <strong>August 8, 2026</strong>; after that, future edits are possible.",
+  "urlInventoryNote": "Public URLs included in the offer-page export. Absolute performance numbers are intentionally excluded; the chart above shows only indexed percentage movement. The full project included 91 offer sheets; this inventory reflects the URLs available in this export. The live pages should match the examples shown here until <strong>August 8, 2026</strong>; after that, future edits are possible.",
   "urlInventory": [
     {
       "provider": "Eni Plenitude - Fixa Time Luce Gas",
@@ -1136,5 +1136,5 @@ window.portfolioPerformanceData.offers = {
       "url": "https://www.papernest.it/luce-gas/fornitori-energia-elettrica/pulsee/luce-gas-per-te/"
     }
   ],
-  "privacyNote": "Generated from local raw GSC export; public file contains only percentages and URLs."
+  "privacyNote": "Generated from a local raw performance export; public file contains only percentages and URLs."
 };

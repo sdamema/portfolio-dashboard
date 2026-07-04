@@ -40,7 +40,7 @@ const projects = [
     hideSnapshot: true,
     hideKeyNumbers: true,
     performanceKey: "reviews",
-    performancePlaceholder: "The first GSC dataset is displayed above. The next step can add <strong>URL-level or query-level before/after splits</strong> when you export more granular data.",
+    performancePlaceholder: "The first performance dataset is displayed above. The next step can add <strong>URL-level or query-level before/after splits</strong> when you export more granular data.",
     urlPlaceholder: "The future URL inventory can list every review page created or modified, grouped by provider and date, with a note that the pages may have changed after delivery.",
     demos: [
       { label: "Intro", title: "Review demo", path: "demos/reviews-octopus-intro.html" },
@@ -55,11 +55,7 @@ const projects = [
     status: "Auditable workflow",
     summary: "A time-saving scraping workflow for collecting <strong>higher-quality public social comments</strong>. Manual collection would have required too much reading and source checking, so <strong>Apify handled the scraping</strong> from <strong>Claude Code through the Apify integration</strong>, while Codex helped structure instructions that reduced comments less useful for the review-page pipeline.",
     explanation: `<p>This project is the data layer behind the review pages. It prepares <strong>clean, traceable and review-ready inputs</strong> from public sources such as Reddit, YouTube, Facebook, X, forums and other verifiable pages.</p><p>The first time gain came from scraping itself: Apify collected comments that would have been unrealistic to gather manually at scale. The second gain came from <strong>better instructions</strong>. Without clear rules, scraping can still return many comments that are too generic or less aligned with the target themes, so the workflow used <strong>Claude Code as the operating environment</strong>, <strong>Apify as the scraping tool</strong> and <strong>Codex for collection rules</strong> to prioritize useful evidence: tariffs, assistance, bills, app experience, activation, switching supplier and transparency.</p>`,
-    summaryPoints: [
-      `<span>Collection</span><strong>Automated the slowest part</strong><em>Apify collected public comments that would have taken too long to gather manually source by source.</em>`,
-      `<span>Filtering</span><strong>Reduced unnecessary reading</strong><em>Instructions helped avoid spam, referral codes, vague mentions, brand replies and comments without useful context.</em>`,
-      `<span>Output</span><strong>Saved review time after scraping</strong><em>Central estimate: about 815 generic comments avoided, equal to roughly 4.5 hours of manual reading and evaluation saved.</em>`
-    ],
+    summaryPoints: [],
     jumpSummaryCard: {
       kicker: "Estimated time saved",
       value: "4.5 hours",
@@ -130,7 +126,7 @@ const projects = [
     ],
     hideKeyNumbers: true,
     performanceKey: "offers",
-    performancePlaceholder: "Once you provide the GSC cluster export, this panel can show <strong>percentage-only visibility, click-efficiency and position movements</strong> for all offer pages created or refreshed.",
+    performancePlaceholder: "Once you provide the cluster export, this panel can show <strong>percentage-only visibility, click-efficiency and position movements</strong> for all offer pages created or refreshed.",
     urlPlaceholder: "Future URL inventory: offer pages grouped by supplier, offer type and creation/modification date.",
     demos: [
       { label: "Intro", title: "Pulsee Gas Relax", path: "demos/offer-pulsee-gas-relax-intro.html" },
@@ -149,7 +145,7 @@ const projects = [
     summaryPoints: [
       `<span>Intent</span><strong>Informational and local</strong><em>The pages answer city-specific change-of-residence searches, not a strongly transactional energy flow.</em>`,
       `<span>Workflow</span><strong>Simple AI-supported content production</strong><em>Gemini helped with drafting support, while research and QA focused on local procedure accuracy.</em>`,
-      `<span>Data</span><strong>Indexed GSC trend</strong><em>The chart uses a reference period to show movement; it is not a before/after revamp.</em>`
+      `<span>Data</span><strong>Indexed data trend</strong><em>The chart is shown as a simplified trend because absolute numerical values are not public.</em>`
     ],
     summaryPointStyle: "rich",
     metrics: [],
@@ -164,8 +160,8 @@ const projects = [
         body: `<p>The workflow was intentionally lighter than the later Codex/Claude projects. It used <strong>Gemini as a basic support tool</strong> for drafting and organization, then focused on human checks: city-specific procedure, page structure, keyword intent and clarity for users.</p><div class="process-flow"><article><span>Research</span><p>Find the practical information users expect: <strong>online procedure</strong>, forms, documents, timing, portals and city-specific terminology.</p></article><article><span>Structure</span><p>Build a repeatable SEO layout around the main query, related questions and useful H2s without overcomplicating the page.</p></article><article><span>Draft</span><p>Use Gemini for first-pass drafting support, then adapt the copy so it stays readable, local and consistent with the site style.</p></article><article><span>QA</span><p>Check that the page answers the real search need and does not become a generic duplicate of another city page.</p></article></div>`
       },
       {
-        title: "How to read the GSC trend",
-        body: `<p>All URLs in this cluster were <strong>new pages</strong>, so the performance view should not be read as a classic before/after optimization test. Without a reference period, the public portfolio could still say the cluster showed a <strong>positive uptrend</strong>, but it could not show percentage variation lines without exposing raw Search Console values.</p><p>The chart therefore uses <strong>Apr 22-30</strong> as a mathematical reference point: it is the first more stable period after initial indexing, not a claim that a specific optimization started there. The graph should be read as <strong>indexed new-page growth</strong>: first visibility signals, then a clearer June trend across city, online-procedure and form-related searches.</p>`
+        title: "How to read the data trend",
+        body: `<p>All URLs in this cluster were <strong>new pages</strong>, so the performance view should not be read as a classic before/after optimization test. The chart is kept intentionally simple: it shows a <strong>sanitized indexed trend</strong> while absolute numerical values remain hidden.</p><p>The graph should be read as <strong>indexed new-page growth</strong>: first visibility signals, then a clearer upward trend across city, online-procedure and form-related searches.</p>`
       }
     ],
     hideKeyNumbers: true,
@@ -274,7 +270,7 @@ const projects = [
       `<span>Monitoring role</span><strong>Started from weekly site reporting</strong><em>I was following SEO and business movement every week, then turned that monitoring into a deeper action-oriented diagnosis.</em>`,
       `<span>Business KPIs</span><strong>Connected PP, clients, TR and CM3</strong><em>The analysis checked whether page families were creating valuable outcomes, not just traffic or phone-pickup activity.</em>`,
       `<span>Technical SEO</span><strong>Reviewed crawl and noindex signals</strong><em>Indexability, crawl status and URL families were used to separate pages to protect, fix, re-index or redesign.</em>`,
-      `<span>Outcome</span><strong>Produced future-action recommendations</strong><em>The work led to the branch-map proposal and to noindex pages being reviewed and re-indexed where useful.</em>`
+      `<span>Outcome</span><strong>Produced future-action recommendations</strong><em>The work led to a <strong>personal branch-map proposal</strong> (<a href="#project/sportelli">Interactive Branch Map</a>) and to noindex pages being reviewed and re-indexed where useful.</em>`
     ],
     resultSummary: {
       kicker: "Indexation outcome",
@@ -290,9 +286,11 @@ const projects = [
     summaryPointLayout: "analysis",
     hideProjectStory: true,
     hideJumpNav: true,
+    hideKeyNumbers: true,
+    hideSnapshot: true,
     metrics: [
       ["2,954", "URLs in the broader analysis window"],
-      ["992", "URLs covered by the GSC export"],
+      ["992", "URLs covered by the export"],
       ["659", "city branch pages in one key segment"],
       ["37", "branch hub pages matched in the map analysis"]
     ],
@@ -316,7 +314,7 @@ const projects = [
       },
       {
         title: "What happened after the analysis",
-        body: `<p>The analysis produced two concrete directions. The first was the <strong>branch-map proposal</strong>: a way to make sportelli hub pages work less like static lists and more like local-intent routers. A user could search or select a region/city, then move faster toward the relevant local page instead of getting stuck in a generic hub experience.</p><p>The second direction was the <strong>noindex review</strong>. Pages that looked useful from an SEO/business perspective were checked and, where appropriate, brought back into the indexation flow. This turned the analysis into action: not only identifying a technical issue, but deciding which pages deserved to be re-indexed because they could support organic acquisition.</p><p>The final value of the project was prioritization. It helped define where to redesign, where to re-index, where to monitor and where to avoid unnecessary changes. In other words: the output was not a single page, but a clearer decision system for future SEO and business work on the site.</p>`
+        body: `<p>The analysis produced two concrete directions. The first was a <strong>personal branch-map proposal</strong>, developed as an extra initiative and shown separately in this portfolio as the <a href="#project/sportelli"><strong>Interactive Branch Map</strong></a> project: a way to make sportelli hub pages work less like static lists and more like local-intent routers. A user could search or select a region/city, then move faster toward the relevant local page instead of getting stuck in a generic hub experience.</p><p>The second direction was the <strong>noindex review</strong>. Pages that looked useful from an SEO/business perspective were checked and, where appropriate, brought back into the indexation flow. This turned the analysis into action: not only identifying a technical issue, but deciding which pages deserved to be re-indexed because they could support organic acquisition.</p><p>The final value of the project was prioritization. It helped define where to redesign, where to re-index, where to monitor and where to avoid unnecessary changes. In other words: the output was not a single page, but a clearer decision system for future SEO and business work on the site.</p>`
       }
     ],
     hideFutureData: true,
@@ -376,11 +374,7 @@ const projects = [
     status: "Internship + event staff",
     summary: "Internship experience in <strong>social content management, event preparation and live-event support</strong> for a non-profit European-funded sport project.",
     explanation: `<p>I worked on <strong>Ladywoods Golf</strong>, a European-funded non-profit project created by <strong>Beach Golf Sport Association</strong>. My internship sat between two areas: <strong>social media content planning</strong> before the event and <strong>live staff/content support</strong> during the event itself.</p><p>The role was practical and hybrid: preparing communication, adapting content for different social channels, supporting logistics and capturing usable photo/video material while helping the activities run smoothly.</p>`,
-    summaryPoints: [
-      `<span>Planning</span><strong>Editorial calendar across social channels</strong><em>Content and tone of voice were adapted for Facebook, Instagram, TikTok and X.</em>`,
-      `<span>Event</span><strong>Preparation and on-site support</strong><em>The role mixed content creation with logistics, staff work and participant support.</em>`,
-      `<span>Production</span><strong>Photo, video and live documentation</strong><em>Content was captured and edited while supporting the event operations.</em>`
-    ],
+    summaryPoints: [],
     summaryPointStyle: "rich",
     metrics: [],
     callouts: [],
@@ -388,31 +382,31 @@ const projects = [
       {
         label: "Project context",
         title: "European-funded non-profit sport project",
-        body: "Beach Golf Sport Association created Ladywoods Golf as a European project using beach golf and sports management training to involve girls from different countries, then bring the learning back into local communities.",
+        body: "<strong>Beach Golf Sport Association</strong> created Ladywoods Golf as a European project using <strong>beach golf</strong> and sports management training to involve girls from different countries, then bring the learning back into local communities.",
         points: [
-          "International training phase with groups of five girls from 15 European countries.",
-          "Lessons on sports management, beach golf and project activities.",
-          "Final September challenge with one representative girl from each country."
+          "International training phase with groups of <strong>five girls from 15 European countries</strong>.",
+          "Lessons on <strong>sports management, beach golf rules</strong> and project activities.",
+          "Final September challenge with <strong>one representative girl from each country</strong>."
         ]
       },
       {
         label: "Social content",
         title: "Editorial planning for multiple platforms",
-        body: "The social work was not only posting during the event. It started before: weekly content ideas, channel-specific tone of voice and posts designed to prepare the audience for the project and final event.",
+        body: "The social work started before the event with a <strong>weekly editorial plan</strong>: educational posts to explain beach golf, lighter videos with viral potential and content designed to prepare the audience for the final event.",
         points: [
-          "Planned content for Facebook, Instagram, TikTok and X.",
-          "Mixed informative content with lighter, more entertaining posts.",
-          "Adapted copy, rhythm and format depending on the platform."
+          "Created <strong>informational posts</strong> about beach golf rules, format and project goals.",
+          "Planned <strong>funny or viral-style short videos</strong> to make the project feel less institutional.",
+          "Prepared <strong>event-build-up posts</strong> for Facebook, Instagram, TikTok and X, adapting copy and tone by platform."
         ]
       },
       {
         label: "Event staff",
         title: "Live operations, logistics and content capture",
-        body: "During the event, the role mixed staff support and content production: helping the activities run smoothly while documenting useful moments for social and post-event communication.",
+        body: "During the event, the role mixed <strong>staff support</strong> and <strong>content production</strong>: helping the activities run smoothly while documenting useful moments for social and post-event communication.",
         points: [
-          "Prepared materials for beach golf lessons, hotel welcome and participant support.",
-          "Supported movements, schedules and practical needs during the event.",
-          "Captured photos, videos, posts and short-form material while working with the staff."
+          "Prepared materials for <strong>beach golf lessons</strong>, hotel welcome and participant support.",
+          "Supported <strong>movements, schedules and practical needs</strong> during the event.",
+          "Captured <strong>photos, videos, posts and short-form material</strong> while working with the staff."
         ]
       }
     ],
@@ -519,11 +513,11 @@ const projects = [
   },
   {
     id: "creator",
-    title: "Content Creator & Community",
+    title: "Content Creator & Community Management",
     shortTitle: "Creator Work",
     category: "Broader digital experience",
-    status: "Secondary portfolio area",
-    summary: "Independent creator work across <strong>gaming tutorials and football content</strong>, useful to show audience building, community management, editing and content iteration.",
+    status: "Creator + community management",
+    summary: "Independent creator work across <strong>gaming tutorials and football content</strong>, useful to show audience building, <strong>community management</strong>, editing and content iteration.",
     explanation: `<p>Creator work means working directly with <strong>audiences, platform formats, retention, comments, community feedback and repeatable content systems</strong>.</p><p>The value for a digital marketing portfolio is practical: you need to understand what people are looking for, package the answer well, help users after publishing and improve formats based on real reactions.</p>`,
     summaryPoints: [
       `<span>Gaming</span><strong>Tutorials, community and support</strong><em>Created gaming tutorials, answered recurring questions and managed a large Telegram community.</em>`,
@@ -545,9 +539,9 @@ const projects = [
     creatorShowcase: [
       {
         label: "Gaming channel ecosystem",
-        title: "Tutorials, comments and community support",
+        title: "Tutorials, comments and community support since 2014",
         accent: "gaming",
-        description: "Gaming content focused mainly on tutorials and practical help: users watched the video, asked follow-up questions in the comments and often needed extra support through the community.",
+        description: "Gaming content started in 2014 and focused mainly on tutorials and practical help: users watched the video, asked follow-up questions in the comments and often needed extra support through the community.",
         stats: [
           ["78k", "YouTube audience peak"],
           ["40k", "TikTok followers"],
@@ -556,10 +550,10 @@ const projects = [
         items: [
           "Created tutorials and gameplay/help content for recurring user needs.",
           "Managed comments and community questions, turning feedback into new content ideas.",
-          "Sold digital products for a period, with customer assistance and post-purchase support."
+          "Sold digital products during 2020-2024, with customer assistance and post-purchase support."
         ],
         tools: ["Premiere Pro", "Photoshop", "YouTube", "TikTok", "Telegram"],
-        period: "Digital-product sales: 2020-2024"
+        period: "Channel since 2014 · Digital-product sales: 2020-2024"
       },
       {
         label: "Football content project",
@@ -583,7 +577,7 @@ const projects = [
     deepDive: [
       {
         title: "Gaming creator work: tutorials, support and digital products",
-        body: `<p>The gaming project was based on <strong>practical tutorial content</strong>: users arrived because they needed help with a specific action, watched the video and often continued the interaction through comments or community channels.</p><p>This created a direct feedback loop. Comments were not just engagement: they showed what was unclear, which questions came back often and what needed a new tutorial, update or explanation. Managing that loop helped build experience with <strong>audience support, content iteration and community trust</strong>.</p><div class="process-flow process-flow--summary"><article><span>Tutorials</span><p>Structure videos around a clear user problem, with steps, visual explanation and practical outcome.</p></article><article><span>Comments</span><p>Answer recurring doubts and use them to understand where the content needed more clarity.</p></article><article><span>Community</span><p>Manage a Telegram community of <strong>5,000+ people</strong>, keeping support and discussion organized.</p></article><article><span>Products</span><p>Sell digital products for a period, handling basic customer support and post-purchase assistance.</p></article></div><p>The production side used <strong>Premiere Pro</strong> for editing and <strong>Photoshop</strong> for visual assets, thumbnails or supporting graphics.</p>`
+        body: `<p>The gaming project started in <strong>2014</strong> and was based on <strong>practical tutorial content</strong>: users arrived because they needed help with a specific action, watched the video and often continued the interaction through comments or community channels.</p><p>From <strong>2019</strong>, the project entered a stronger <strong>growth phase</strong>: content became more consistent, the audience expanded and the community side became more important. Comments were not just engagement: they showed what was unclear, which questions came back often and what needed a new tutorial, update or explanation. Managing that loop helped build experience with <strong>audience support, content iteration and community trust</strong>.</p><div class="process-flow process-flow--summary"><article><span>Tutorials</span><p>Structure videos around a clear user problem, with steps, visual explanation and practical outcome.</p></article><article><span>Comments</span><p>Answer recurring doubts and use them to understand where the content needed more clarity.</p></article><article><span>Community</span><p>Manage a Telegram community of <strong>5,000+ people</strong>, keeping support and discussion organized.</p></article><article><span>Products</span><p>Sell digital products during <strong>2020-2024</strong>, handling basic customer support and post-purchase assistance.</p></article></div><p>The production side used <strong>Premiere Pro</strong> for editing and <strong>Photoshop</strong> for visual assets, thumbnails or supporting graphics.</p>`
       },
       {
         title: "Football creator work: viral research and short-form formats",
@@ -609,13 +603,13 @@ const projectOrder = [
   "offers",
   "sportelli",
   "offpage",
+  "scraping",
   "nrj2-analysis",
   "summary",
   "ranking",
-  "scraping",
-  "change-residence",
   "social-media",
-  "creator"
+  "creator",
+  "change-residence"
 ];
 
 const projectFilterOptions = [
@@ -630,14 +624,14 @@ const projectPortfolioMeta = {
     visualTheme: "content-seo",
     icon: "★",
     areas: ["seo"],
-    topicTags: ["Sentiment", "AI workflow", "GSC"],
+    topicTags: ["Sentiment", "AI workflow", "Data"],
     cardSummary: "Review pages powered by real comments and scoring.",
     story: {
-      main: "I redesigned supplier review pages as <strong>evidence-led SEO assets</strong>, using public customer comments instead of a generic editorial opinion format.",
-      problem: "The SERP showed that users often trusted forums, Reddit threads or Facebook discussions more than standard review pages, both for us and for competitors.",
-      analysis: "I read that as a search-intent signal: users wanted <strong>human proof</strong>. The solution was to scrape, clean and cluster comments, then connect each cluster to scores and WordPress-ready sections.",
-      insight: "The page had to serve two paths: quick comparison for horizontal users, and deeper cluster exploration for users focused on one supplier.",
-      output: "Final output: HTML demos, weighted scoring logic, sentiment clusters and a percentage-only GSC trend view for the 17-page review cluster."
+      main: "I redesigned supplier review pages as <strong>evidence-led SEO assets</strong>, using <strong>public customer comments</strong> instead of a generic editorial opinion format.",
+      problem: "The SERP showed that users often trusted <strong>forums, Reddit threads or Facebook discussions</strong> more than standard review pages, both for us and for competitors.",
+      analysis: "I read that as a <strong>search-intent signal</strong>: users wanted <strong>human proof</strong>. The solution was to <strong>scrape, clean and cluster comments</strong>, then connect each cluster to scores and WordPress-ready sections.",
+      insight: "The page had to serve <strong>two user paths</strong>: quick comparison for horizontal users, and <strong>deeper cluster exploration</strong> for users focused on one supplier.",
+      output: "Final output: <strong>HTML demos</strong>, weighted scoring logic, sentiment clusters and a <strong>percentage-only data trend view</strong> for the 17-page review cluster."
     }
   },
   offers: {
@@ -647,18 +641,18 @@ const projectPortfolioMeta = {
     topicTags: ["UX", "AI workflow", "Price data"],
     cardSummary: "Offer pages with prices, context and HTML modules.",
     story: {
-      main: "I built and revamped supplier offer pages for high-intent energy searches where users need prices, conditions and activation context quickly.",
-      problem: "There was a transactional SEO gap: competitors had dedicated offer pages, while many of our URLs did not yet target users searching specific tariffs before comparing or subscribing.",
-      analysis: "The solution was to create offer sheets that were not only present in the SERP, but stronger than standard competitor pages: clearer H2s, richer pricing context, cleaner HTML modules and unique price-trend content.",
-      insight: "The strongest offer pages work like decision tools, not simple descriptions: they help users understand the offer, compare it and decide what to check before activation.",
-      output: "Final output: 91 offer sheets, HTML page modules, offer tables, price-history modules and a percentage-only Search Console recovery view."
+      main: "I built and revamped supplier offer pages for <strong>high-intent energy searches</strong> where users need <strong>prices, conditions and activation context</strong> quickly.",
+      problem: "There was a <strong>transactional SEO gap</strong>: competitors had dedicated offer pages, while many of our URLs did not yet target users searching specific tariffs before comparing or subscribing.",
+      analysis: "The solution was to create offer sheets that were not only present in the SERP, but stronger than standard competitor pages: <strong>clearer H2s</strong>, richer pricing context, cleaner HTML modules and <strong>unique price-trend content</strong>.",
+      insight: "The strongest offer pages work like <strong>decision tools</strong>, not simple descriptions: they help users understand the offer, compare it and decide what to check before activation.",
+      output: "Final output: <strong>91 offer sheets</strong>, HTML page modules, offer tables, <strong>price-history modules</strong> and a percentage-only performance recovery view."
     }
   },
   "change-residence": {
     visualTheme: "content-seo",
     icon: "↘",
     areas: ["seo"],
-    topicTags: ["Informational SEO", "Gemini", "GSC"],
+    topicTags: ["Informational SEO", "Gemini", "Data"],
     cardSummary: "New city pages for change-of-residence queries.",
     story: null
   },
@@ -805,6 +799,7 @@ const performancePeriod = document.querySelector("#performancePeriod");
 const performanceNarrative = document.querySelector("#performanceNarrative");
 const performanceBaselineLabel = document.querySelector("#performanceBaselineLabel");
 const performanceLegendSplit = document.querySelector("#performanceLegendSplit");
+const performanceLegendSplitItem = performanceLegendSplit?.parentElement;
 const performanceLegendCoreItem = document.querySelector("#performanceLegendCoreItem");
 const performanceChartMode = document.querySelector("#performanceChartMode");
 const performanceChart = document.querySelector("#performanceChart");
@@ -1191,7 +1186,7 @@ function renderProjectJumpNav(project, dataset) {
     ["Summary", "sectionSummary"],
     ["Deep dive", "sectionDeepDive"],
     ...(!project.hideKeyNumbers ? [["Key numbers", "sectionEvidence"]] : []),
-    ...(dataset ? [["GSC trend", "sectionPerformance"]] : []),
+    ...(dataset ? [["Data trend", "sectionPerformance"]] : []),
     ...(!project.hideSnapshot ? [["Snapshot", "sectionSnapshot"]] : []),
     ...(project.demos.length && !project.hideExamples ? [["HTML demo", "sectionExamples"]] : []),
     ...(!project.hideFutureData ? [["URLs", "sectionInventory"]] : [])
@@ -1230,8 +1225,11 @@ function renderPerformance(project, dataset) {
   performancePeriod.textContent = dataset.source.dateRange;
   performanceBaselineLabel.textContent = dataset.chartBaseline?.label || "Percentage baseline";
   performanceLegendSplit.textContent = dataset.update?.legendLabel || dataset.update?.chartLabel || dataset.update?.label || "Performance split";
+  if (performanceLegendSplitItem) {
+    performanceLegendSplitItem.hidden = Boolean(dataset.hideSplitLegend);
+  }
   performanceLegendCoreItem.hidden = !dataset.events?.some((event) => event.kind === "google-core");
-  chartFootnote.textContent = dataset.chartFootnote || "Hover or tap the chart to inspect each date. The public view uses percentage movement only, not raw Search Console values.";
+  chartFootnote.textContent = dataset.chartFootnote || "Hover or tap the chart to inspect each date. Absolute numerical values cannot be shown publicly, so this view uses percentage variations only.";
   performanceNarrative.innerHTML = `
     <p>${dataset.narrative.summary}</p>
     ${dataset.narrative.insights?.length ? `<ul>
@@ -1284,7 +1282,7 @@ function renderPageMovements(dataset) {
         <h3>How key review pages moved</h3>
       </div>
     </div>
-    <p class="top-pages-note">Only percentage variations are shown. Absolute Search Console values are not included in the public dataset.</p>
+    <p class="top-pages-note">Only percentage variations are shown. Absolute numerical values are not included in the public dataset.</p>
     <div class="top-pages-list" aria-label="Percentage-only page movements">
       ${dataset.pageMovements.map((page) => `
         <article>
@@ -1338,7 +1336,7 @@ function renderTopPages(dataset, period) {
     </div>` : `
       <div class="top-pages-empty">
         <strong>${activeLabel} URL ranking needs another export</strong>
-        <p>Send a GSC export with both <strong>Page</strong> and <strong>Date</strong> dimensions to calculate a real before/after ranking for each URL.</p>
+        <p>Send an export with both <strong>Page</strong> and <strong>Date</strong> dimensions to calculate a real before/after ranking for each URL.</p>
       </div>
     `}
   `;
@@ -1458,9 +1456,9 @@ function renderPerformanceChart(dataset) {
 
   performanceChart.innerHTML = "";
   performanceChart.append(createSvgElement("title", {}));
-  performanceChart.querySelector("title").textContent = dataset.title || "Indexed Google Search Console percentage variation";
+  performanceChart.querySelector("title").textContent = dataset.title || "Indexed percentage variation";
 
-  if (splitIndex > 0) {
+  if (!dataset.hidePhaseBackground && splitIndex > 0) {
     performanceChart.append(createSvgElement("rect", {
       class: "chart-phase chart-phase--before",
       x: margin.left,
@@ -2084,10 +2082,10 @@ function renderEventShowcase(project) {
         ${project.eventShowcase.map((item, index) => `
           <article class="event-card event-card--${index + 1}">
             <span>${escapeHtml(item.label)}</span>
-            <strong>${escapeHtml(item.title)}</strong>
-            <p>${escapeHtml(item.body)}</p>
+            <strong class="event-card__title">${escapeHtml(item.title)}</strong>
+            <p>${item.body}</p>
             <ul>
-              ${item.points.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}
+              ${item.points.map((point) => `<li>${point}</li>`).join("")}
             </ul>
           </article>
         `).join("")}

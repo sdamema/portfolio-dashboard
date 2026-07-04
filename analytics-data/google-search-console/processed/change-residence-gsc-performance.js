@@ -3,20 +3,20 @@ window.portfolioPerformanceData.changeResidence = {
   "id": "change-residence-gsc-2026-06-30-percentage-only",
   "projectId": "change-residence",
   "mode": "percentage-only-new-page-growth",
-  "title": "Change-of-residence pages indexed Search Console trend",
+  "title": "Change-of-residence pages indexed data trend",
   "source": {
-    "platform": "Google Search Console",
+    "platform": "Performance data export",
     "searchType": "Web",
     "dateRange": "Mar 31, 2026-Jun 30, 2026",
     "pageFilter": "9 change-of-residence city URLs",
     "note": "Public dataset is sanitized: it contains percentage changes and public URLs only, not raw clicks, impressions, CTR or average-position values."
   },
   "update": {
-    "label": "June trend read",
-    "chartLabel": "June trend",
-    "legendLabel": "Indexed trend read",
+    "label": "Indexed trend",
+    "chartLabel": "Indexed trend",
+    "legendLabel": "Indexed trend",
     "date": "2026-06-01",
-    "comparisonMethod": "June 1-30, 2026 daily averages are shown against Apr 22-30, 2026 as an indexed reference period. This reference is used only to draw percentage movement without exposing raw Search Console values; it is not a before/after impact baseline."
+    "comparisonMethod": "The chart is shown as a sanitized indexed trend because absolute numerical values cannot be exposed publicly."
   },
   "periods": {
     "before": {
@@ -31,34 +31,20 @@ window.portfolioPerformanceData.changeResidence = {
     }
   },
   "chartBaseline": {
-    "label": "Apr 22-30 reference = 0%",
-    "method": "Each chart point is a 7-day trailing average shown as percentage movement from the Apr 22-30 reference period.",
-    "tooltipNote": "Indexed against the Apr 22-30 reference period"
+    "label": "Indexed trend view",
+    "method": "Each chart point is shown as an indexed percentage movement because absolute numerical values are not public.",
+    "tooltipNote": "Indexed trend; absolute values hidden"
   },
-  "chartFootnote": "Hover or tap the chart to inspect each date. These were new pages, so the chart shows an indexed trend from early indexing toward June growth. Without a reference period, the public view could show direction only, not percentage variation, unless raw values were exposed.",
-  "events": [
-    {
-      "type": "range",
-      "kind": "baseline",
-      "label": "Reference period",
-      "start": "2026-04-22",
-      "end": "2026-04-30",
-      "lane": 1
-    },
-    {
-      "type": "marker",
-      "kind": "revamp",
-      "label": "June trend read",
-      "date": "2026-06-01",
-      "lane": 2
-    }
-  ],
+  "chartFootnote": "Hover or tap the chart to inspect each date. These were new pages, so the chart is shown as a simple indexed trend. Absolute numerical values cannot be shown publicly.",
+  "hideSplitLegend": true,
+  "hidePhaseBackground": true,
+  "events": [],
   "narrative": {
-    "summary": "Search Console data for <strong>9 new Italian change-of-residence city pages</strong>. Because this was a new informational cluster, the chart should be read as <strong>indexed new-page growth</strong>: early indexing first, then a steady positive trend into June.",
+    "summary": "Performance data for <strong>9 new Italian change-of-residence city pages</strong>. Because this was a new informational cluster, the chart should be read as <strong>indexed new-page growth</strong>: early indexing first, then a steady positive trend into June.",
     "insights": [
       "This was an <strong>intermediate/early SEO project</strong>: focused on content execution, keyword coverage and accurate local information more than on complex automation or advanced page systems.",
-      "The <strong>Apr 22-30 reference period</strong> is not a strategic baseline or proof of impact. It is only the first more stable point used to draw a percentage line without exposing raw Search Console data.",
-      "Without that reference, the public view could still describe the cluster as a <strong>positive uptrend</strong>, but it could not show percentage movement in a clean privacy-safe way.",
+      "The public chart is intentionally simplified: it shows the <strong>direction of the indexed trend</strong> without exposing absolute numerical data.",
+      "Because this was a new-page cluster, the view should be read as <strong>progressive traction</strong>, not as a before/after impact test.",
       "The query set is mostly informational and local, such as <strong>city + cambio residenza</strong>, online procedure and form-related searches. The goal was organic coverage and helpful content, not a strongly transactional page flow."
     ]
   },

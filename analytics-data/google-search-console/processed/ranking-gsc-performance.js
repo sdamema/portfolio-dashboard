@@ -3,9 +3,9 @@ window.portfolioPerformanceData.ranking = {
   "id": "ranking-gsc-2026-06-30-percentage-only",
   "projectId": "ranking",
   "mode": "percentage-only-ranking-revamp",
-  "title": "Supplier ranking relative Search Console trend",
+  "title": "Supplier ranking relative data trend",
   "source": {
-    "platform": "Google Search Console",
+    "platform": "Performance data export",
     "searchType": "Web",
     "dateRange": "Feb 5, 2026-Jun 30, 2026",
     "pageFilter": "Supplier review ranking URL",
@@ -35,7 +35,7 @@ window.portfolioPerformanceData.ranking = {
     "method": "Each chart point is a 7-day trailing average shown as percentage variation from the same-length pre-update baseline.",
     "tooltipNote": "Compared with the May 8-Jun 3 pre-update baseline"
   },
-  "chartFootnote": "Hover or tap the chart to inspect each date. The lines show 7-day trailing percentage movement against the baseline. The daily-click-record card is a separate single-day comparison, not a line-height value.",
+  "chartFootnote": "Hover or tap the chart to inspect each date. Absolute numerical values cannot be shown publicly, so the lines show 7-day trailing percentage variations against the baseline. The daily-click-record card is a separate single-day comparison, not a line-height value.",
   "events": [
     {
       "type": "range",
@@ -68,7 +68,7 @@ window.portfolioPerformanceData.ranking = {
     }
   ],
   "narrative": {
-    "summary": "Search Console data for the <strong>supplier review ranking page</strong>, from the first available February data through the end of June. The page was modified on <strong>June 4, 2026</strong>, so this public view compares the post-update period with the <strong>same-length pre-update baseline</strong> immediately before it.",
+    "summary": "Performance data for the <strong>supplier review ranking page</strong>, from the first available February data through the end of June. The page was modified on <strong>June 4, 2026</strong>, so this public view compares the post-update period with the <strong>same-length pre-update baseline</strong> immediately before it.",
     "insights": [
       "The comparison uses <strong>daily averages</strong>, not total counts: <strong>Jun 4-30</strong> is compared with <strong>May 8-Jun 3</strong>, so both windows contain the same number of days.",
       "After the update, the <strong>click trend increased by 90%</strong>, while <strong>CTR more than doubled</strong>. This suggests the refreshed ranking page became more effective at turning existing visibility into visits.",
@@ -1007,7 +1007,7 @@ window.portfolioPerformanceData.ranking = {
   ],
   "hideTopPagesPanel": true,
   "urlInventoryTitle": "Ranking URL",
-  "urlInventoryNote": "Public URL included in the GSC ranking-page export. Performance numbers are intentionally excluded; the chart above shows only percentage movement. The live page should match the example shown here until <strong>August 8, 2026</strong>; after that, future edits are possible.",
+  "urlInventoryNote": "Public URL included in the ranking-page export. Absolute performance numbers are intentionally excluded; the chart above shows only percentage movement. The live page should match the example shown here until <strong>August 8, 2026</strong>; after that, future edits are possible.",
   "urlInventory": [
     {
       "provider": "Supplier review ranking page",
