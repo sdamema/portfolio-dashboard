@@ -3016,6 +3016,27 @@ strong {
   color: #f8fafc;
 }
 
+.profile-proof-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.profile-proof-strip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 7px 10px;
+  border: 1px solid rgba(148, 163, 184, .30);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .07);
+  color: #dbe5f4;
+  font-size: .76rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
 .profile-hero .eyebrow {
   color: #6f6dff;
   font-size: .82rem;
@@ -3063,6 +3084,18 @@ strong {
 .demo-tab {
   border-color: var(--line);
   background: #fff;
+}
+
+.profile-hero .secondary-link {
+  border-color: rgba(148, 163, 184, .34);
+  background: rgba(255, 255, 255, .08);
+  color: #f8fafc;
+}
+
+.profile-hero .secondary-link:hover,
+.profile-hero .secondary-link:focus-visible {
+  border-color: rgba(255, 255, 255, .48);
+  background: rgba(255, 255, 255, .14);
 }
 
 .cv-panel,
@@ -5319,13 +5352,23 @@ body.is-project-view {
   margin: 0;
 }
 
+@media (min-width: 701px) {
+  .profile-main h1 {
+    font-size: clamp(2.75rem, 5.25vw, 4.95rem);
+  }
+}
+
 .profile-hero .mini-cv--primary {
   grid-column: 1 / -1;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 2px;
 }
 
 .profile-hero .mini-cv--primary div:nth-child(2) {
+  --mini-accent: var(--sky);
+}
+
+.profile-hero .mini-cv--primary div:nth-child(3) {
   --mini-accent: var(--red);
 }
 
@@ -5376,8 +5419,67 @@ body.is-project-view {
   }
 }
 
+@media (max-width: 700px) {
+  .profile-proof-strip {
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .profile-proof-strip span {
+    flex: 1 1 104px;
+    min-width: 0;
+    min-height: 30px;
+    justify-content: center;
+    padding: 6px 7px;
+    text-align: center;
+    font-size: .66rem;
+  }
+
+  .profile-proof-strip span:first-child {
+    flex-basis: 104px;
+  }
+
+  .profile-summary {
+    padding: 12px;
+    font-size: .9rem;
+    line-height: 1.43;
+  }
+
+  .profile-hero .mini-cv--primary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-hero .mini-cv--primary div:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  .profile-hero .profile-actions {
+    justify-content: stretch;
+  }
+
+  .profile-hero .profile-actions .secondary-link {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 0;
+  }
+}
+
 @media (max-width: 760px) {
   .mini-cv--secondary {
     display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .profile-proof-strip span,
+  .profile-hero .profile-actions .secondary-link {
+    flex-basis: 100%;
+  }
+
+  .profile-hero .mini-cv--primary {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-hero .mini-cv--primary div:nth-child(3) {
+    grid-column: auto;
   }
 }
