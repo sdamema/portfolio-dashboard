@@ -627,7 +627,7 @@ const projectFilterOptions = [
 const projectPortfolioMeta = {
   reviews: {
     visualTheme: "content-seo",
-    icon: "★",
+    icon: "star",
     areas: ["seo"],
     topicTags: ["Sentiment", "AI workflow", "Data"],
     cardSummary: "Review pages powered by real comments and scoring.",
@@ -641,7 +641,7 @@ const projectPortfolioMeta = {
   },
   offers: {
     visualTheme: "content-seo",
-    icon: "€",
+    icon: "euro",
     areas: ["seo"],
     topicTags: ["UX", "AI workflow", "Price data"],
     cardSummary: "Offer pages with prices, context and HTML modules.",
@@ -655,7 +655,7 @@ const projectPortfolioMeta = {
   },
   "change-residence": {
     visualTheme: "content-seo",
-    icon: "⌂",
+    icon: "home",
     areas: ["seo"],
     topicTags: ["Informational SEO", "Gemini", "Data"],
     cardSummary: "New city pages for change-of-residence queries.",
@@ -663,7 +663,7 @@ const projectPortfolioMeta = {
   },
   sportelli: {
     visualTheme: "content-seo",
-    icon: "🗺",
+    icon: "map",
     areas: ["seo"],
     topicTags: ["Local SEO", "Map UX", "Crawl"],
     cardSummary: "Local map prototype from branch URL data.",
@@ -677,7 +677,7 @@ const projectPortfolioMeta = {
   },
   summary: {
     visualTheme: "content-seo",
-    icon: "↗",
+    icon: "arrow-up",
     areas: ["seo"],
     topicTags: ["Interlinking", "UX block", "HTML"],
     cardSummary: "Review blocks for mother pages and internal links.",
@@ -691,7 +691,7 @@ const projectPortfolioMeta = {
   },
   ranking: {
     visualTheme: "content-seo",
-    icon: "№",
+    icon: "hash",
     areas: ["seo"],
     topicTags: ["Comparison", "Sentiment", "UX"],
     cardSummary: "Supplier ranking built from scores and sentiment.",
@@ -705,7 +705,7 @@ const projectPortfolioMeta = {
   },
   "nrj2-analysis": {
     visualTheme: "technical-ai",
-    icon: "🧮",
+    icon: "calculator",
     areas: ["technical"],
     topicTags: ["Data analysis", "Crawl", "Business"],
     cardSummary: "SEO diagnosis across URL families and intent.",
@@ -713,7 +713,7 @@ const projectPortfolioMeta = {
   },
   scraping: {
     visualTheme: "technical-ai",
-    icon: "🏗",
+    icon: "crane",
     areas: ["technical"],
     topicTags: ["Scraping", "AI rules", "QA"],
     cardSummary: "Scraping rules for cleaner review evidence.",
@@ -732,7 +732,7 @@ const projectPortfolioMeta = {
   },
   offpage: {
     visualTheme: "content-seo",
-    icon: "📰",
+    icon: "newspaper",
     areas: ["seo"],
     topicTags: ["Off-page", "Backlinks", "AI draft"],
     cardSummary: "News-based articles for outreach and backlinks.",
@@ -748,7 +748,7 @@ const projectPortfolioMeta = {
   },
   "social-media": {
     visualTheme: "social-content",
-    icon: "●",
+    icon: "dot",
     areas: ["social"],
     topicTags: ["Social", "Events", "EU project"],
     cardSummary: "Social planning and live-event content for Ladywoods / BGSA.",
@@ -757,7 +757,7 @@ const projectPortfolioMeta = {
   },
   creator: {
     visualTheme: "social-content",
-    icon: "▶",
+    icon: "play",
     areas: ["social"],
     topicTags: ["Content", "Community", "Analytics"],
     cardSummary: "Creator work across communities and formats.",
@@ -1041,22 +1041,26 @@ function renderProjectFilters() {
 function renderProjectGrid() {
   const visibleProjects = getFilteredProjects();
 
-  projectGrid.innerHTML = visibleProjects.map((project, index) => `
-    <a class="project-box ${getProjectThemeClass(project)}" href="#project/${project.id}" aria-label="Open ${project.title}" style="--reveal-index:${index}">
-      <span class="project-box__body">
-        <span class="project-box__top">
-          <span class="project-box__index">${String(index + 1).padStart(2, "0")}</span>
-          <span class="project-box__icon" aria-hidden="true">${project.icon || "•"}</span>
+  projectGrid.innerHTML = visibleProjects.map((project, index) => {
+    const projectIcon = project.icon || "dot";
+
+    return `
+      <a class="project-box ${getProjectThemeClass(project)}" href="#project/${project.id}" aria-label="Open ${project.title}" style="--reveal-index:${index}">
+        <span class="project-box__body">
+          <span class="project-box__top">
+            <span class="project-box__index">${String(index + 1).padStart(2, "0")}</span>
+            <span class="project-box__icon" data-project-icon="${projectIcon}" aria-hidden="true"></span>
+          </span>
+          <strong>${project.shortTitle}</strong>
+          <span class="project-box__summary">${project.cardSummary || project.summary.replace(/<[^>]*>/g, "")}</span>
+          <span class="project-box__category">${project.category}</span>
         </span>
-        <strong>${project.shortTitle}</strong>
-        <span class="project-box__summary">${project.cardSummary || project.summary.replace(/<[^>]*>/g, "")}</span>
-        <span class="project-box__category">${project.category}</span>
-      </span>
-      <span class="project-box__footer">
-        <span>Open</span>
-      </span>
-    </a>
-  `).join("");
+        <span class="project-box__footer">
+          <span>Open</span>
+        </span>
+      </a>
+    `;
+  }).join("");
 }
 
 const svgNamespace = "http://www.w3.org/2000/svg";
