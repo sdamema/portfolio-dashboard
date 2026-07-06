@@ -1048,9 +1048,9 @@ function renderProjectGrid() {
           <span class="project-box__index">${String(index + 1).padStart(2, "0")}</span>
           <span class="project-box__icon" aria-hidden="true">${project.icon || "•"}</span>
         </span>
-        <span class="project-box__category">${project.category}</span>
         <strong>${project.shortTitle}</strong>
         <span class="project-box__summary">${project.cardSummary || project.summary.replace(/<[^>]*>/g, "")}</span>
+        <span class="project-box__category">${project.category}</span>
       </span>
       <span class="project-box__footer">
         <span>Open</span>
