@@ -6578,3 +6578,90 @@ body.is-project-view {
     line-height: 1.2;
   }
 }
+
+/* Corrected assignment: neutral hero highlights, light project cards with family-colored text. */
+.profile-hero .mini-cv--primary div {
+  min-height: 96px;
+  border-color: color-mix(in srgb, var(--hero-card-accent) 24%, rgba(148, 163, 184, .24));
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--hero-card-soft) 76%, #fff) 0%, rgba(255, 255, 255, .96) 72%),
+    #fff;
+}
+
+.profile-hero .mini-cv--primary strong {
+  color: #0f172a;
+}
+
+.project-box,
+.project-box--technical-ai {
+  border-color: rgba(var(--project-neon-rgb), .34);
+  background:
+    radial-gradient(circle at 88% 0%, rgba(var(--project-neon-rgb), .12), transparent 17rem),
+    linear-gradient(145deg, rgba(255, 255, 255, .98), rgba(248, 251, 255, .94)),
+    #fff;
+  color: var(--ink);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .92),
+    0 18px 42px rgba(15, 23, 42, .08),
+    0 0 0 1px rgba(var(--project-neon-rgb), .07);
+}
+
+.project-box::before,
+.project-box--technical-ai::before {
+  background: var(--project-neon);
+  box-shadow: 0 0 22px rgba(var(--project-neon-rgb), .22);
+}
+
+.project-box:hover,
+.project-box:focus-visible,
+.project-box--technical-ai:hover,
+.project-box--technical-ai:focus-visible {
+  border-color: rgba(var(--project-neon-rgb), .58);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .94),
+    0 22px 48px rgba(15, 23, 42, .10),
+    0 0 0 1px rgba(var(--project-neon-rgb), .16),
+    0 0 28px rgba(var(--project-neon-rgb), .12);
+}
+
+.project-box strong,
+.project-box--technical-ai strong {
+  color: color-mix(in srgb, var(--project-neon) 76%, #0f172a);
+}
+
+.project-box__summary,
+.project-box--technical-ai .project-box__summary {
+  color: #334155;
+}
+
+.project-box__category,
+.project-box--technical-ai .project-box__category {
+  border-color: rgba(var(--project-neon-rgb), .30);
+  background: rgba(var(--project-neon-rgb), .10);
+  color: color-mix(in srgb, var(--project-neon) 78%, #0f172a);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .86);
+}
+
+.project-box__footer,
+.project-box--technical-ai .project-box__footer {
+  border-top-color: rgba(148, 163, 184, .18);
+  color: #64748b;
+}
+
+.project-box__footer > span:last-child,
+.project-box--technical-ai .project-box__footer > span:last-child {
+  color: color-mix(in srgb, var(--project-neon) 76%, #0f172a);
+  text-shadow: none;
+}
+
+.project-box__index,
+.project-box__icon,
+.project-box--technical-ai .project-box__index,
+.project-box--technical-ai .project-box__icon {
+  border-color: rgba(var(--project-neon-rgb), .36);
+  background: rgba(var(--project-neon-rgb), .10);
+  color: color-mix(in srgb, var(--project-neon) 78%, #0f172a);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .88),
+    0 0 18px rgba(var(--project-neon-rgb), .12);
+}
