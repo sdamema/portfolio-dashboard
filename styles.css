@@ -6581,7 +6581,8 @@ body.is-project-view {
 
 /* Corrected assignment: neutral hero highlights, light project cards with family-colored text. */
 .profile-hero .mini-cv--primary div {
-  min-height: 96px;
+  min-height: 86px;
+  padding: 12px 14px;
   border-color: color-mix(in srgb, var(--hero-card-accent) 24%, rgba(148, 163, 184, .24));
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--hero-card-soft) 76%, #fff) 0%, rgba(255, 255, 255, .96) 72%),
@@ -6636,10 +6637,12 @@ body.is-project-view {
 
 .project-box__category,
 .project-box--technical-ai .project-box__category {
-  border-color: rgba(var(--project-neon-rgb), .30);
-  background: rgba(var(--project-neon-rgb), .10);
-  color: color-mix(in srgb, var(--project-neon) 78%, #0f172a);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .86);
+  border-color: rgba(var(--project-neon-rgb), .78);
+  background: var(--project-neon);
+  color: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .18),
+    0 0 18px rgba(var(--project-neon-rgb), .20);
 }
 
 .project-box__footer,
@@ -6655,8 +6658,16 @@ body.is-project-view {
 }
 
 .project-box__index,
+.project-box--technical-ai .project-box__index {
+  border-color: rgba(var(--project-neon-rgb), .78);
+  background: var(--project-neon);
+  color: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .18),
+    0 0 18px rgba(var(--project-neon-rgb), .20);
+}
+
 .project-box__icon,
-.project-box--technical-ai .project-box__index,
 .project-box--technical-ai .project-box__icon {
   border-color: rgba(var(--project-neon-rgb), .36);
   background: rgba(var(--project-neon-rgb), .10);
@@ -6664,4 +6675,28 @@ body.is-project-view {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, .88),
     0 0 18px rgba(var(--project-neon-rgb), .12);
+}
+
+@media (max-width: 700px) {
+  .profile-hero .mini-cv--primary {
+    gap: 6px;
+  }
+
+  .profile-hero .mini-cv--primary div,
+  .profile-hero .mini-cv--primary div:nth-child(3) {
+    grid-template-columns: 72px minmax(0, 1fr);
+    min-height: 48px;
+    gap: 8px;
+    padding: 7px 10px;
+  }
+
+  .profile-hero .mini-cv--primary span {
+    min-height: 20px;
+    padding: 2px 6px;
+  }
+
+  .profile-hero .mini-cv--primary strong {
+    font-size: .78rem;
+    line-height: 1.18;
+  }
 }
