@@ -6125,3 +6125,76 @@ body.is-project-view {
     inset 0 1px 0 rgba(255, 255, 255, .08),
     0 0 18px rgba(var(--profile-neon-rgb), .18);
 }
+
+/* Category-colored neon cards: solid accent by project family. */
+.project-box--content-seo {
+  --project-neon: #0d8178;
+  --project-neon-rgb: 13, 129, 120;
+}
+
+.project-box--technical-ai {
+  --project-neon: #2679b7;
+  --project-neon-rgb: 38, 121, 183;
+}
+
+.project-box--social-content {
+  --project-neon: #c96f43;
+  --project-neon-rgb: 201, 111, 67;
+}
+
+.project-box {
+  border-color: rgba(var(--project-neon-rgb), .58);
+  background:
+    radial-gradient(circle at 88% 0%, rgba(var(--project-neon-rgb), .24), transparent 18rem),
+    linear-gradient(145deg, #111827, #0c1220 72%, #070b14);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .07),
+    0 18px 44px rgba(15, 23, 42, .18),
+    0 0 0 1px rgba(var(--project-neon-rgb), .15),
+    0 0 30px rgba(var(--project-neon-rgb), .14);
+}
+
+.project-box::before {
+  background: var(--project-neon);
+  box-shadow:
+    0 0 16px rgba(var(--project-neon-rgb), .72),
+    0 0 34px rgba(var(--project-neon-rgb), .34);
+}
+
+.project-box:hover,
+.project-box:focus-visible {
+  border-color: rgba(var(--project-neon-rgb), .82);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .09),
+    0 24px 56px rgba(15, 23, 42, .24),
+    0 0 0 1px rgba(var(--project-neon-rgb), .25),
+    0 0 42px rgba(var(--project-neon-rgb), .23);
+}
+
+.project-box__category,
+.project-box--technical-ai .project-box__category {
+  border-color: rgba(var(--project-neon-rgb), .88);
+  background: var(--project-neon);
+  color: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .18),
+    0 0 18px rgba(var(--project-neon-rgb), .34);
+}
+
+.project-box__footer > span:last-child,
+.project-box--technical-ai .project-box__footer > span:last-child {
+  color: color-mix(in srgb, var(--project-neon) 72%, #fff);
+  text-shadow: 0 0 14px rgba(var(--project-neon-rgb), .44);
+}
+
+.project-box__index,
+.project-box__icon,
+.project-box--technical-ai .project-box__index,
+.project-box--technical-ai .project-box__icon {
+  border-color: rgba(var(--project-neon-rgb), .70);
+  background: rgba(var(--project-neon-rgb), .18);
+  color: color-mix(in srgb, var(--project-neon) 66%, #fff);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .10),
+    0 0 18px rgba(var(--project-neon-rgb), .26);
+}
