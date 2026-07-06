@@ -6,6 +6,7 @@ const projects = [
     category: "SERP analysis + content SEO",
     status: "SEO case study",
     summary: "I built an <strong>evidence-led review-page system</strong> from public customer comments: scraping, cleaning, cluster analysis and weighted scores across a <strong>17-provider test</strong>, then WordPress-ready HTML demos so users could compare real opinions instead of generic editorial claims.",
+    contribution: "The brief was to build supplier review pages using social comments. I owned the practical workflow: collecting and structuring comments, turning them into clusters and scoring logic, preparing WordPress-ready HTML demos and iterating the format after team feedback.",
     explanation: `<p>These are Italian <strong>energy supplier review pages</strong> created from public customer comments collected across social and community platforms. The tested cluster includes <strong>17 suppliers</strong>, with roughly <strong>40-200 comments analyzed per provider</strong> depending on source availability and quality.</p><p>The workflow turned messy social feedback into a structured SEO asset:</p><ul class="summary-process-list"><li>comments were scraped, filtered and cleaned;</li><li>opinions were grouped by user concern, such as bills, support, switching supplier or app experience;</li><li>the output became <strong>WordPress-ready HTML demos</strong> that could be adapted into publishable pages.</li></ul><p>The result is not just a written review. It combines <strong>scraping, sentiment analysis, topic clustering, scoring logic and WordPress-ready HTML</strong> so users can compare quickly, then investigate the area that matters to them.</p>`,
     summaryPoints: [],
     metrics: [
@@ -38,7 +39,6 @@ const projects = [
       }
     ],
     hideSnapshot: true,
-    hideKeyNumbers: true,
     performanceKey: "reviews",
     performancePlaceholder: "The first performance dataset is displayed above. The next step can add <strong>URL-level or query-level before/after splits</strong> when you export more granular data.",
     urlPlaceholder: "The future URL inventory can list every review page created or modified, grouped by provider and date, with a note that the pages may have changed after delivery.",
@@ -53,14 +53,16 @@ const projects = [
     shortTitle: "Social Scraping",
     category: "Social scraping + QA",
     status: "Auditable workflow",
-    summary: "I built the <strong>data-collection layer</strong> behind the review pages: Apify runs from Claude Code plus Codex rules delivered <strong>543 usable public comments</strong> across <strong>12 suppliers</strong>, reducing generic rows and saving an estimated <strong>4.5 hours</strong> of manual review.",
+    summary: "I used <strong>Apify from Claude Code</strong> to scrape public social comments, then built a <strong>Codex-assisted instruction and QA layer</strong> to make collection more selective: <strong>543 usable comments</strong> across <strong>12 suppliers</strong> and an estimated <strong>4.5 hours</strong> saved in the review workflow.",
     explanation: `<p>This project is the data layer behind the review pages. It prepares <strong>clean, traceable and review-ready inputs</strong> from public sources such as Reddit, YouTube, Facebook, X, forums and other verifiable pages.</p><p>The first time gain came from scraping itself: Apify collected comments that would have been unrealistic to gather manually at scale. The second gain came from <strong>better instructions</strong>. Without clear rules, scraping can still return many comments that are too generic or less aligned with the target themes, so the workflow used <strong>Claude Code as the operating environment</strong>, <strong>Apify as the scraping tool</strong> and <strong>Codex for collection rules</strong> to prioritize useful evidence: tariffs, assistance, bills, app experience, activation, switching supplier and transparency.</p>`,
     summaryPoints: [],
     jumpSummaryCard: {
       kicker: "Estimated time saved",
       value: "4.5 hours",
       text: "The scraping workflow already saved the manual collection work. The instruction layer added another gain by avoiding roughly <strong>815 generic comments</strong>, estimated from the 543 useful comments delivered and a central 1.5x generic-comment scenario.",
-      chips: ["543 usable comments", "12 suppliers", "23 min saved per supplier"]
+      chips: ["543 usable comments", "12 suppliers", "23 min saved per supplier"],
+      cta: "See calculation",
+      targetTitle: "Time saved calculation"
     },
     summaryPointStyle: "rich",
     metrics: [],
@@ -98,12 +100,14 @@ const projects = [
     category: "High-intent SEO pages",
     status: "SEO case study",
     summary: "I created and improved <strong>91 high-intent supplier offer sheets</strong>, turning tariff data, price context and intent checks into reusable WordPress HTML modules for users comparing specific energy offers before subscribing.",
+    contribution: "I created and refined offer-sheet pages from keyword intent, offer data and reusable HTML modules, then improved structure, differentiation and QA as the project became more constant.",
     explanation: `<p>This project covered <strong>91 supplier offer sheets</strong>. The pages target <strong>commercial searches</strong> where users are close to comparing, switching or subscribing to a specific energy offer, so each page needed to explain <strong>price, conditions, activation details, supplier context and practical pros/cons</strong> in a WordPress-ready structure.</p><p>Publication started on <strong>March 18, 2026</strong>, but the project was initially secondary. From mid-April, it became more constant and prioritized, with a target of roughly <strong>two new pages per day</strong>. From early May, the work shifted toward <strong>quality and differentiation</strong>: price-trend modules, cleaner H2 structures, AI-assisted duplicate checks, reduced spammy headings and richer comparison content on new pages and already-published URLs.</p>`,
     summaryPoints: [],
     metrics: [
       ["91", "supplier offer sheets in the project"],
-      ["% only", "public performance shown as relative trends"],
-      ["3,515", "changed offers tracked"]
+      ["3,515", "changed offers tracked"],
+      ["~2/day", "target production rhythm from mid-April"],
+      ["% trend", "public performance shown as relative trends"]
     ],
     callouts: [
       ["Pages", "<strong>91 offer pages</strong> created around supplier and tariff intent, then refined where needed."],
@@ -124,7 +128,6 @@ const projects = [
         body: `<p>The page helps users compare an offer without jumping between supplier websites, generic articles and price tables. It centralizes the main decision points: <strong>how much it costs, what conditions apply, who it fits, what changed over time and what to check before activating</strong>.</p><p>The price-history module is especially useful because it gives context: for fixed offers, it explains that the public offer version can change for new activations without changing already signed contracts; for indexed offers, it can separate the index movement from the all-in monthly estimate.</p><p>From an SEO perspective, these sheets become a structured layer of a wider supplier database: <strong>offer pages, review pages, mother pages and comparison pages</strong> can all connect around the same provider and intent.</p>`
       }
     ],
-    hideKeyNumbers: true,
     performanceKey: "offers",
     performancePlaceholder: "Once you provide the cluster export, this panel can show <strong>percentage-only visibility, click-efficiency and position movements</strong> for all offer pages created or refreshed.",
     urlPlaceholder: "Future URL inventory: offer pages grouped by supplier, offer type and creation/modification date.",
@@ -141,7 +144,7 @@ const projects = [
     status: "Secondary SEO case",
     summary: "I created <strong>9 local informational pages</strong> for Italian change-of-residence searches, using city-specific research and Gemini-supported drafting to cover forms, online procedures and timing while tracking new-page organic growth.",
     performanceKey: "changeResidence",
-    explanation: `<p>This was a <strong>secondary SEO content cluster</strong>: 9 new city pages around Italian change-of-residence searches. The work sits in an intermediate/early phase of my SEO experience, before the more advanced Codex/Claude Code systems, and focused on <strong>local research, clear informational content, Gemini-assisted drafting</strong> and WordPress-ready production.</p><p>The intent was mostly informational: users wanted city-specific instructions, online procedure details, forms, timing and where to submit the request. The performance view therefore reads the pages as <strong>new-page growth</strong>, not as a before/after optimization test.</p>`,
+    explanation: `<p>This was a <strong>secondary SEO content cluster</strong>: 9 new city pages around Italian change-of-residence searches. It was not the only SEO work from that early/intermediate phase, but it is the clearest cluster to present here because it was <strong>new, bounded and easier to analyze publicly</strong>: defined scope, defined URLs and a readable performance trend.</p><p>The work sits before the more advanced Codex/Claude Code systems and focused on <strong>local research, clear informational content, Gemini-assisted drafting</strong> and WordPress-ready production.</p><p>The intent was mostly informational: users wanted city-specific instructions, online procedure details, forms, timing and where to submit the request. The performance view therefore reads the pages as <strong>new-page growth</strong>, not as a before/after optimization test.</p>`,
     summaryPoints: [
       `<span>Intent</span><strong>Informational and local</strong><em>The pages answer city-specific change-of-residence searches, not a strongly transactional energy flow.</em>`,
       `<span>Workflow</span><strong>Simple AI-supported content production</strong><em>Gemini helped with drafting support, while research and QA focused on local procedure accuracy.</em>`,
@@ -221,7 +224,7 @@ const projects = [
     shortTitle: "Review Summary",
     category: "Internal linking + revamp",
     status: "Standalone box",
-    summary: "I built reusable <strong>review-summary blocks</strong> for supplier mother pages: score, ranking position, real comment cards, method links and CTAs previewed the full review ecosystem without rewriting each page.",
+    summary: "I built reusable <strong>review-summary blocks</strong> for supplier mother pages, previewing the full review pages and improving internal linking with score, ranking position, real comment cards, method links and CTAs.",
     explanation: `<p>After the full review pages were created, the supplier mother pages needed a more coherent way to connect with them. A review section already existed, but it showed different information and felt visually weaker than the new review components.</p><p>This module works like a <strong>compact overview of the review page</strong> inside the mother page: <strong>score, short strengths/weaknesses summary, selected real comments</strong>, a method note and links toward the full review or the supplier ranking.</p>`,
     summaryPoints: [
       `<span>Coherence</span><strong>Aligned mother pages with new reviews</strong><em>The block brings score, copy and comments closer to the new review-page experience.</em>`,
@@ -272,6 +275,7 @@ const projects = [
       `<span>Technical SEO</span><strong>Reviewed crawl and noindex signals</strong><em>Indexability, crawl status and URL families were used to separate pages to protect, fix, re-index or redesign.</em>`,
       `<span>Outcome</span><strong>Produced future-action recommendations</strong><em>The work led to a <strong>personal branch-map proposal</strong> (<a href="#project/sportelli">Interactive Branch Map</a>) and to noindex pages being reviewed and re-indexed where useful.</em>`
     ],
+    kpiNote: "PP means potential prospects: users who call, select the right line and speak with an expert. TR is the transformation rate from PP to clients. CM3 is contribution margin after operational costs, used here as a business-quality signal.",
     resultSummary: {
       kicker: "Indexation outcome",
       title: "Noindex review turned into a concrete re-indexation list",
@@ -372,7 +376,7 @@ const projects = [
     shortTitle: "Ladywoods / BGSA",
     category: "Social media + event communication",
     status: "Internship + event staff",
-    summary: "I supported Ladywoods/BGSA across <strong>social planning, event communication and live operations</strong>, turning a European-funded sport project into platform-ready content, photo/video documentation and on-site coordination support.",
+    summary: "I supported Ladywoods/BGSA across <strong>social planning, event communication and event-staff work</strong>, combining platform-ready content, photo/video documentation, logistics support and live on-site coordination for a European-funded sport project.",
     explanation: `<p>I worked on <strong>Ladywoods Golf</strong>, a European-funded non-profit project created by <strong>Beach Golf Sport Association</strong>. My internship sat between two areas: <strong>social media content planning</strong> before the event and <strong>live staff/content support</strong> during the event itself.</p><p>The role was practical and hybrid: preparing communication, adapting content for different social channels, supporting logistics and capturing usable photo/video material while helping the activities run smoothly.</p>`,
     summaryPoints: [],
     summaryPointStyle: "rich",
@@ -517,7 +521,7 @@ const projects = [
     shortTitle: "Creator Work",
     category: "Broader digital experience",
     status: "Creator + community management",
-    summary: "I built independent <strong>gaming and football content projects</strong>, including tutorials, short-form research and editing and a <strong>5,000+ Telegram community</strong>, showing audience support and content iteration beyond SEO work.",
+    summary: "I built independent creator projects across <strong>gaming</strong> (<strong>78k YouTube</strong>, <strong>40k TikTok</strong>, <strong>5k+ Telegram</strong>) and <strong>football</strong> (<strong>30k Instagram</strong>, <strong>20k TikTok</strong>, <strong>28k YouTube</strong>), covering tutorials, short-form research, editing, audience support and content iteration.",
     explanation: `<p>Creator work means working directly with <strong>audiences, platform formats, retention, comments, community feedback and repeatable content systems</strong>.</p><p>The value for a digital marketing portfolio is practical: you need to understand what people are looking for, package the answer well, help users after publishing and improve formats based on real reactions.</p>`,
     summaryPoints: [
       `<span>Gaming</span><strong>Tutorials, community and support</strong><em>Created gaming tutorials, answered recurring questions and managed a large Telegram community.</em>`,
@@ -1176,8 +1180,30 @@ function renderProjectJumpNav(project, dataset) {
             ${card.chips.map((chip) => `<li>${chip}</li>`).join("")}
           </ul>
         ` : ""}
+        ${card.targetTitle ? `
+          <div class="time-saved-card__actions">
+            <button type="button" data-deep-target="${escapeHtml(card.targetTitle)}">${escapeHtml(card.cta || "Open calculation")}</button>
+          </div>
+        ` : ""}
       </div>
     `;
+    projectJumpNav.querySelector("[data-deep-target]")?.addEventListener("click", (event) => {
+      const targetTitle = event.currentTarget.dataset.deepTarget;
+      const targetPanel = Array.from(deepAccordion.querySelectorAll(".deep-dive"))
+        .find((panel) => panel.dataset.deepTitle === targetTitle);
+
+      if (targetPanel) {
+        targetPanel.open = true;
+        targetPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+        targetPanel.querySelector("summary")?.focus({ preventScroll: true });
+        return;
+      }
+
+      document.querySelector("#sectionDeepDive")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
     return;
   }
 
@@ -2001,6 +2027,60 @@ function renderResultSummary(summary) {
   `;
 }
 
+function renderReviewEcosystem(project) {
+  const ecosystem = [
+    ["scraping", "Social Scraping"],
+    ["reviews", "Review Pages"],
+    ["ranking", "Provider Ranking"],
+    ["summary", "Review Summary"]
+  ];
+
+  if (!ecosystem.some(([id]) => id === project.id)) {
+    return "";
+  }
+
+  return `
+    <section class="review-ecosystem-strip" aria-label="Review ecosystem">
+      <span>Review ecosystem</span>
+      <div>
+        ${ecosystem.map(([id, label], index) => {
+          const item = id === project.id
+            ? `<strong aria-current="page">${escapeHtml(label)}</strong>`
+            : `<a href="#project/${escapeHtml(id)}">${escapeHtml(label)}</a>`;
+          return `${index ? "<i>→</i>" : ""}${item}`;
+        }).join("")}
+      </div>
+      <p>One workflow connects comment collection, review-page production, ranking logic and supplier-page previews.</p>
+    </section>
+  `;
+}
+
+function renderContribution(project) {
+  if (!project.contribution) {
+    return "";
+  }
+
+  return `
+    <aside class="project-contribution-card">
+      <span>My contribution</span>
+      <p>${project.contribution}</p>
+    </aside>
+  `;
+}
+
+function renderKpiNote(project) {
+  if (!project.kpiNote) {
+    return "";
+  }
+
+  return `
+    <aside class="project-kpi-note">
+      <span>KPI note</span>
+      <p>${project.kpiNote}</p>
+    </aside>
+  `;
+}
+
 function renderProjectDetail(project) {
   const performanceDataset = getPerformanceDataset(project);
   const articleEmvMethod = getArticleEmvMethod(project);
@@ -2010,6 +2090,8 @@ function renderProjectDetail(project) {
     : renderResultSummary(project.resultSummary);
   const storyPanelHidden = Boolean(project.hideSummaryPanel);
   const summaryPanelHtml = storyPanelHidden ? "" : `
+    ${renderReviewEcosystem(project)}
+    ${renderContribution(project)}
     ${renderProjectStory(project)}
     ${project.summaryPoints?.length ? `
       <ul class="summary-points ${[
@@ -2019,6 +2101,7 @@ function renderProjectDetail(project) {
         ${project.summaryPoints.map((point) => `<li>${point}</li>`).join("")}
       </ul>
     ` : ""}
+    ${renderKpiNote(project)}
     ${renderEventShowcase(project)}
     ${renderCreatorShowcase(project)}
   `;
@@ -2059,7 +2142,7 @@ function renderProjectDetail(project) {
   `).join("");
 
   deepAccordion.innerHTML = deepDiveItems.map((item, index) => `
-    <details class="deep-dive" ${index === 0 ? "open" : ""}>
+    <details class="deep-dive" data-deep-title="${escapeHtml(item.title)}" ${index === 0 ? "open" : ""}>
       <summary>${item.title}</summary>
       <div>${item.body}</div>
     </details>
