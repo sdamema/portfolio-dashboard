@@ -655,7 +655,7 @@ const projectPortfolioMeta = {
   },
   "change-residence": {
     visualTheme: "content-seo",
-    icon: "↘",
+    icon: "⌂",
     areas: ["seo"],
     topicTags: ["Informational SEO", "Gemini", "Data"],
     cardSummary: "New city pages for change-of-residence queries.",
@@ -663,7 +663,7 @@ const projectPortfolioMeta = {
   },
   sportelli: {
     visualTheme: "content-seo",
-    icon: "⌖",
+    icon: "🗺",
     areas: ["seo"],
     topicTags: ["Local SEO", "Map UX", "Crawl"],
     cardSummary: "Local map prototype from branch URL data.",
@@ -705,7 +705,7 @@ const projectPortfolioMeta = {
   },
   "nrj2-analysis": {
     visualTheme: "technical-ai",
-    icon: "◈",
+    icon: "🧮",
     areas: ["technical"],
     topicTags: ["Data analysis", "Crawl", "Business"],
     cardSummary: "SEO diagnosis across URL families and intent.",
@@ -713,7 +713,7 @@ const projectPortfolioMeta = {
   },
   scraping: {
     visualTheme: "technical-ai",
-    icon: "⌁",
+    icon: "🏗",
     areas: ["technical"],
     topicTags: ["Scraping", "AI rules", "QA"],
     cardSummary: "Scraping rules for cleaner review evidence.",
@@ -732,7 +732,7 @@ const projectPortfolioMeta = {
   },
   offpage: {
     visualTheme: "content-seo",
-    icon: "⇄",
+    icon: "📰",
     areas: ["seo"],
     topicTags: ["Off-page", "Backlinks", "AI draft"],
     cardSummary: "News-based articles for outreach and backlinks.",
