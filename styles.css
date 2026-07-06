@@ -5663,3 +5663,29 @@ body.is-project-view {
     grid-column: auto;
   }
 }
+
+/* Final project-card metadata cleanup. */
+.project-box__category {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  padding: 6px 9px;
+  border: 1px solid color-mix(in srgb, var(--project-accent) 42%, rgba(255, 255, 255, .16));
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--project-accent) 32%, rgba(255, 255, 255, .08)), rgba(255, 255, 255, .045));
+  color: color-mix(in srgb, var(--project-accent) 76%, #fff);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .08),
+    0 8px 20px color-mix(in srgb, var(--project-accent) 12%, transparent);
+}
+
+.project-box__footer {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.project-topic-tags {
+  display: none;
+}

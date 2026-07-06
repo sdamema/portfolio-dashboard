@@ -634,7 +634,7 @@ const projectPortfolioMeta = {
     story: {
       main: "I redesigned supplier review pages as <strong>evidence-led SEO assets</strong>, using <strong>public customer comments</strong> instead of a generic editorial opinion format.",
       problem: "The SERP showed that users often trusted <strong>forums, Reddit threads or Facebook discussions</strong> more than standard review pages, both for us and for competitors.",
-      analysis: "I read that as a <strong>search-intent signal</strong>: users wanted <strong>human proof</strong>. The solution was to <strong>scrape, clean and cluster comments</strong>, then connect each cluster to scores and WordPress-ready sections.",
+      analysis: "We read that as a <strong>search-intent signal</strong>: users wanted <strong>human proof</strong>. The solution was to <strong>scrape, clean and cluster comments</strong>, then connect each cluster to scores and WordPress-ready sections.",
       insight: "The page had to serve <strong>two user paths</strong>: quick comparison for horizontal users, and <strong>deeper cluster exploration</strong> for users focused on one supplier.",
       output: "Final output: <strong>HTML demos</strong>, weighted scoring logic, sentiment clusters and a <strong>percentage-only data trend view</strong> for the 17-page review cluster."
     }
@@ -1053,9 +1053,6 @@ function renderProjectGrid() {
         <span class="project-box__summary">${project.cardSummary || project.summary.replace(/<[^>]*>/g, "")}</span>
       </span>
       <span class="project-box__footer">
-        <span class="project-topic-tags">
-          ${(project.topicTags || project.areas || []).slice(0, 3).map((tag) => `<i>${escapeHtml(tag)}</i>`).join("")}
-        </span>
         <span>Open</span>
       </span>
     </a>
