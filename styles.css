@@ -4313,7 +4313,7 @@ body.is-project-view {
   }
 }
 
-/* Project summary: standalone summary card plus connected story flow. */
+/* Project story: standalone core idea card plus connected story flow. */
 .project-summary-story {
   display: grid;
   grid-template-columns: minmax(250px, .75fr) minmax(0, 1.7fr);

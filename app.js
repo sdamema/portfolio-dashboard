@@ -5,7 +5,7 @@ const projects = [
     shortTitle: "Review Pages",
     category: "SERP analysis + content SEO",
     status: "SEO case study",
-    summary: "Review pages built from <strong>scraped social comments</strong>, cluster analysis and weighted scoring to make supplier opinions easier to compare.",
+    summary: "I built an <strong>evidence-led review-page system</strong> from public customer comments: scraping, cleaning, cluster analysis and weighted scores across a <strong>17-provider test</strong>, then WordPress-ready HTML demos so users could compare real opinions instead of generic editorial claims.",
     explanation: `<p>These are Italian <strong>energy supplier review pages</strong> created from public customer comments collected across social and community platforms. The tested cluster includes <strong>17 suppliers</strong>, with roughly <strong>40-200 comments analyzed per provider</strong> depending on source availability and quality.</p><p>The workflow turned messy social feedback into a structured SEO asset:</p><ul class="summary-process-list"><li>comments were scraped, filtered and cleaned;</li><li>opinions were grouped by user concern, such as bills, support, switching supplier or app experience;</li><li>the output became <strong>WordPress-ready HTML demos</strong> that could be adapted into publishable pages.</li></ul><p>The result is not just a written review. It combines <strong>scraping, sentiment analysis, topic clustering, scoring logic and WordPress-ready HTML</strong> so users can compare quickly, then investigate the area that matters to them.</p>`,
     summaryPoints: [],
     metrics: [
@@ -53,7 +53,7 @@ const projects = [
     shortTitle: "Social Scraping",
     category: "Social scraping + QA",
     status: "Auditable workflow",
-    summary: "A time-saving scraping workflow for collecting <strong>higher-quality public social comments</strong>. Manual collection would have required too much reading and source checking, so <strong>Apify handled the scraping</strong> from <strong>Claude Code through the Apify integration</strong>, while Codex helped structure instructions that reduced comments less useful for the review-page pipeline.",
+    summary: "I built the <strong>data-collection layer</strong> behind the review pages: Apify runs from Claude Code plus Codex rules delivered <strong>543 usable public comments</strong> across <strong>12 suppliers</strong>, reducing generic rows and saving an estimated <strong>4.5 hours</strong> of manual review.",
     explanation: `<p>This project is the data layer behind the review pages. It prepares <strong>clean, traceable and review-ready inputs</strong> from public sources such as Reddit, YouTube, Facebook, X, forums and other verifiable pages.</p><p>The first time gain came from scraping itself: Apify collected comments that would have been unrealistic to gather manually at scale. The second gain came from <strong>better instructions</strong>. Without clear rules, scraping can still return many comments that are too generic or less aligned with the target themes, so the workflow used <strong>Claude Code as the operating environment</strong>, <strong>Apify as the scraping tool</strong> and <strong>Codex for collection rules</strong> to prioritize useful evidence: tariffs, assistance, bills, app experience, activation, switching supplier and transparency.</p>`,
     summaryPoints: [],
     jumpSummaryCard: {
@@ -97,7 +97,7 @@ const projects = [
     shortTitle: "Offer Sheets",
     category: "High-intent SEO pages",
     status: "SEO case study",
-    summary: "SEO landing pages for <strong>specific energy offers</strong>, built around <strong>transactional search intent</strong>, price context, supplier data and reusable HTML modules.",
+    summary: "I created and improved <strong>91 high-intent supplier offer sheets</strong>, turning tariff data, price context and intent checks into reusable WordPress HTML modules for users comparing specific energy offers before subscribing.",
     explanation: `<p>This project covered <strong>91 supplier offer sheets</strong>. The pages target <strong>commercial searches</strong> where users are close to comparing, switching or subscribing to a specific energy offer, so each page needed to explain <strong>price, conditions, activation details, supplier context and practical pros/cons</strong> in a WordPress-ready structure.</p><p>Publication started on <strong>March 18, 2026</strong>, but the project was initially secondary. From mid-April, it became more constant and prioritized, with a target of roughly <strong>two new pages per day</strong>. From early May, the work shifted toward <strong>quality and differentiation</strong>: price-trend modules, cleaner H2 structures, AI-assisted duplicate checks, reduced spammy headings and richer comparison content on new pages and already-published URLs.</p>`,
     summaryPoints: [],
     metrics: [
@@ -139,7 +139,7 @@ const projects = [
     shortTitle: "Change Residence",
     category: "Informational SEO cluster",
     status: "Secondary SEO case",
-    summary: "A cluster of <strong>9 new informational SEO pages</strong> around Italian change-of-residence searches, built with local research, Gemini-assisted drafting and WordPress-ready content production.",
+    summary: "I created <strong>9 local informational pages</strong> for Italian change-of-residence searches, using city-specific research and Gemini-supported drafting to cover forms, online procedures and timing while tracking new-page organic growth.",
     performanceKey: "changeResidence",
     explanation: `<p>This was a <strong>secondary SEO content cluster</strong>: 9 new city pages around Italian change-of-residence searches. The work sits in an intermediate/early phase of my SEO experience, before the more advanced Codex/Claude Code systems, and focused on <strong>local research, clear informational content, Gemini-assisted drafting</strong> and WordPress-ready production.</p><p>The intent was mostly informational: users wanted city-specific instructions, online procedure details, forms, timing and where to submit the request. The performance view therefore reads the pages as <strong>new-page growth</strong>, not as a before/after optimization test.</p>`,
     summaryPoints: [
@@ -177,7 +177,7 @@ const projects = [
     shortTitle: "Provider Ranking",
     category: "Sentiment + comparison",
     status: "Ranking case study",
-    summary: "A ranking page that compares suppliers using <strong>real review evidence</strong>, review scores and sentiment/emotion analysis.",
+    summary: "I turned a generic best-supplier comparison into a <strong>review-ecosystem hub</strong>: provider scores, FEEL-IT sentiment signals, real comment evidence and internal links helped users move from market-level ranking to individual supplier reviews.",
     performanceKey: "ranking",
     explanation: `<p>This page connects the individual review ecosystem into one comparison asset. It presents a <strong>top three</strong>, explains the ranking logic and then includes the full supplier ranking so users can compare providers based on collected review signals.</p><p>The reasoning is close to the review pages: if users and Google value real opinions, a best-supplier page should be grounded in <strong>actual customer comments</strong>, not invented claims.</p>`,
     summaryPoints: [
@@ -221,7 +221,7 @@ const projects = [
     shortTitle: "Review Summary",
     category: "Internal linking + revamp",
     status: "Standalone box",
-    summary: "Compact review components for supplier mother pages, designed as a <strong>soft revamp</strong>, visual/content alignment layer and internal-linking bridge toward the full review ecosystem.",
+    summary: "I built reusable <strong>review-summary blocks</strong> for supplier mother pages: score, ranking position, real comment cards, method links and CTAs previewed the full review ecosystem without rewriting each page.",
     explanation: `<p>After the full review pages were created, the supplier mother pages needed a more coherent way to connect with them. A review section already existed, but it showed different information and felt visually weaker than the new review components.</p><p>This module works like a <strong>compact overview of the review page</strong> inside the mother page: <strong>score, short strengths/weaknesses summary, selected real comments</strong>, a method note and links toward the full review or the supplier ranking.</p>`,
     summaryPoints: [
       `<span>Coherence</span><strong>Aligned mother pages with new reviews</strong><em>The block brings score, copy and comments closer to the new review-page experience.</em>`,
@@ -264,7 +264,7 @@ const projects = [
     shortTitle: "NRJ2 Analysis",
     category: "SEO + business diagnosis",
     status: "Analysis case",
-    summary: "A weekly SEO/business monitoring project that turned <strong>Search Console, crawl data, page families and business KPIs</strong> into recommendations for future actions on energia-luce.it.",
+    summary: "I connected <strong>Search Console, crawl and indexability data with business KPIs</strong> across energia-luce.it URL families, turning weekly monitoring into action recommendations, including a <strong>51-page re-indexation shortlist</strong> from <strong>732 noindex URLs</strong>.",
     explanation: "",
     summaryPoints: [
       `<span>Monitoring role</span><strong>Started from weekly site reporting</strong><em>I was following SEO and business movement every week, then turned that monitoring into a deeper action-oriented diagnosis.</em>`,
@@ -329,7 +329,7 @@ const projects = [
     shortTitle: "Branch Map",
     category: "Local SEO module",
     status: "Prototype / not implemented",
-    summary: "A <strong>not-implemented prototype</strong> for an Iren branch map, designed after an SEO/business analysis showed that branch hub pages received local-intent traffic but did not always send users toward the city pages that converted better.",
+    summary: "I designed a <strong>not-implemented branch-map prototype</strong> from the NRJ2 sportelli analysis: <strong>37 hub pages</strong> and <strong>659 local pages</strong> informed a crawlable region/city router for users searching physical branches.",
     explanation: `<p>This project was created after my <strong>NRJ2 sportelli analysis</strong>. The issue was not only SEO visibility: several branch hub pages were receiving <strong>organic demand and phone-pickup signals</strong>, but the conversion path was weak because many users were looking for a <strong>specific physical branch</strong>, not a generic commercial action.</p><p>The proposed solution was an <strong>interactive branch map</strong>: a cleaner visual module where users can select a region, search by city and move directly to the relevant local page. The demo shown here is the <strong>Iren-specific prototype</strong>, because that was the provider version prepared as a publishable branch-map block.</p>`,
     summaryPoints: [
       `<span>Routing</span><strong>Mapped local URLs into a searchable path</strong><em>Region and city filters replace long hub lists and multi-step accordions.</em>`,
@@ -372,7 +372,7 @@ const projects = [
     shortTitle: "Ladywoods / BGSA",
     category: "Social media + event communication",
     status: "Internship + event staff",
-    summary: "Internship experience in <strong>social content management, event preparation and live-event support</strong> for a non-profit European-funded sport project.",
+    summary: "I supported Ladywoods/BGSA across <strong>social planning, event communication and live operations</strong>, turning a European-funded sport project into platform-ready content, photo/video documentation and on-site coordination support.",
     explanation: `<p>I worked on <strong>Ladywoods Golf</strong>, a European-funded non-profit project created by <strong>Beach Golf Sport Association</strong>. My internship sat between two areas: <strong>social media content planning</strong> before the event and <strong>live staff/content support</strong> during the event itself.</p><p>The role was practical and hybrid: preparing communication, adapting content for different social channels, supporting logistics and capturing usable photo/video material while helping the activities run smoothly.</p>`,
     summaryPoints: [],
     summaryPointStyle: "rich",
@@ -448,7 +448,7 @@ const projects = [
     shortTitle: "Off-page Articles",
     category: "Off-page SEO + outreach",
     status: "Secondary SEO work",
-    summary: "News-based articles written for <strong>online newspaper outreach</strong>, with internal links designed to support backlink acquisition.",
+    summary: "I wrote and tracked <strong>17 news-based off-page articles</strong> for outreach, generating <strong>81 republications</strong> and <strong>559 backlinks</strong> to priority pages through factual news angles and natural anchor placement.",
     explanation: `<p>This project covers the off-page side of the SEO work: finding relevant news sources, extracting reliable facts and writing short journalistic-style articles that could be sent to online newspapers or external publishers.</p><p>The goal was to support <strong>backlink acquisition for priority pages</strong>, while keeping the article useful, factual and natural rather than promotional.</p>`,
     summaryPoints: [
       `<span>Research</span><strong>Found relevant news sources</strong><em>Articles started from real facts, numbers and current news context.</em>`,
@@ -517,7 +517,7 @@ const projects = [
     shortTitle: "Creator Work",
     category: "Broader digital experience",
     status: "Creator + community management",
-    summary: "Independent creator work across <strong>gaming tutorials and football content</strong>, useful to show audience building, <strong>community management</strong>, editing and content iteration.",
+    summary: "I built independent <strong>gaming and football content projects</strong>, including tutorials, short-form research and editing and a <strong>5,000+ Telegram community</strong>, showing audience support and content iteration beyond SEO work.",
     explanation: `<p>Creator work means working directly with <strong>audiences, platform formats, retention, comments, community feedback and repeatable content systems</strong>.</p><p>The value for a digital marketing portfolio is practical: you need to understand what people are looking for, package the answer well, help users after publishing and improve formats based on real reactions.</p>`,
     summaryPoints: [
       `<span>Gaming</span><strong>Tutorials, community and support</strong><em>Created gaming tutorials, answered recurring questions and managed a large Telegram community.</em>`,
@@ -601,10 +601,10 @@ const projects = [
 const projectOrder = [
   "reviews",
   "offers",
-  "sportelli",
   "offpage",
   "scraping",
   "nrj2-analysis",
+  "sportelli",
   "summary",
   "ranking",
   "social-media",
@@ -1183,7 +1183,7 @@ function renderProjectJumpNav(project, dataset) {
 
   const links = [
     ...(project.articleSummary ? [["Article inventory", "sectionArticleInventory"]] : []),
-    ["Summary", "sectionSummary"],
+    ["Story", "sectionSummary"],
     ["Deep dive", "sectionDeepDive"],
     ...(!project.hideKeyNumbers ? [["Key numbers", "sectionEvidence"]] : []),
     ...(dataset ? [["Data trend", "sectionPerformance"]] : []),
@@ -1831,7 +1831,7 @@ function renderProjectStory(project) {
     return `
       <div class="project-summary-story project-summary-story--single">
         <article class="project-summary-story__summary">
-          <span>Summary</span>
+          <span>Core idea</span>
           <p>${project.story.main}</p>
         </article>
       </div>
@@ -1848,7 +1848,7 @@ function renderProjectStory(project) {
   return `
     <div class="project-summary-story">
       <article class="project-summary-story__summary">
-        <span>Summary</span>
+        <span>Core idea</span>
         <p>${project.story.main}</p>
       </article>
       <div class="project-summary-flow project-summary-flow--${storyItems.length}" aria-label="Project story flow">
