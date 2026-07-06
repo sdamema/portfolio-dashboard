@@ -2553,11 +2553,29 @@ iframe {
   content: "↩";
 }
 
+#cvToggle::after {
+  content: "↓";
+}
+
+#cvToggle[aria-expanded="true"]::after {
+  content: "↑";
+}
+
 .primary-button:hover::after,
 .primary-button:focus-visible::after,
 .back-button:hover::after,
 .back-button:focus-visible::after {
   transform: translateX(3px);
+}
+
+#cvToggle:hover::after,
+#cvToggle:focus-visible::after {
+  transform: translateY(2px);
+}
+
+#cvToggle[aria-expanded="true"]:hover::after,
+#cvToggle[aria-expanded="true"]:focus-visible::after {
+  transform: translateY(-2px);
 }
 
 .mini-cv {
@@ -3225,6 +3243,35 @@ strong {
 .profile-hero .secondary-link:focus-visible {
   border-color: rgba(255, 255, 255, .48);
   background: rgba(255, 255, 255, .14);
+}
+
+.profile-action--mail,
+.profile-action--linkedin {
+  gap: 8px;
+}
+
+.profile-action--mail::before,
+.profile-action--linkedin::before {
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 19px;
+  height: 19px;
+  place-items: center;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.profile-action--mail::before {
+  content: "✉";
+}
+
+.profile-action--linkedin::before {
+  content: "in";
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .cv-panel,

@@ -6,7 +6,7 @@ const projects = [
     category: "SERP analysis + content SEO",
     status: "SEO case study",
     summary: "I built an <strong>evidence-led review-page system</strong> from public customer comments: scraping, cleaning, cluster analysis and weighted scores across a <strong>17-provider test</strong>, then WordPress-ready HTML demos so users could compare real opinions instead of generic editorial claims.",
-    contribution: "The brief was to build supplier review pages using social comments. I owned the practical workflow: collecting and structuring comments, turning them into clusters and scoring logic, preparing WordPress-ready HTML demos and iterating the format after team feedback.",
+    contribution: "The brief was to build supplier review pages using social comments. I owned the practical workflow: collecting and structuring comments, turning them into clusters and scoring logic, preparing WordPress-ready HTML demos and iterating the format through team review and brainstorming sessions.",
     explanation: `<p>These are Italian <strong>energy supplier review pages</strong> created from public customer comments collected across social and community platforms. The tested cluster includes <strong>17 suppliers</strong>, with roughly <strong>40-200 comments analyzed per provider</strong> depending on source availability and quality.</p><p>The workflow turned messy social feedback into a structured SEO asset:</p><ul class="summary-process-list"><li>comments were scraped, filtered and cleaned;</li><li>opinions were grouped by user concern, such as bills, support, switching supplier or app experience;</li><li>the output became <strong>WordPress-ready HTML demos</strong> that could be adapted into publishable pages.</li></ul><p>The result is not just a written review. It combines <strong>scraping, sentiment analysis, topic clustering, scoring logic and WordPress-ready HTML</strong> so users can compare quickly, then investigate the area that matters to them.</p>`,
     summaryPoints: [],
     metrics: [
@@ -38,6 +38,7 @@ const projects = [
         body: `<p>The page is built for <strong>two user paths</strong>, because not every visitor arrives with the same decision process.</p><div class="user-path-grid"><article class="user-path-card"><span class="path-symbol">↕️</span><div><strong>Vertical user: one supplier, deeper check</strong><p>Someone already interested in one supplier can click the <strong>overall score</strong> or a <strong>cluster score</strong> in the intro and jump directly to the matching H2 section. This makes it easy to understand the provider in depth, especially for doubts about bills, support, activation or app experience.</p></div></article><article class="user-path-card"><span class="path-symbol">↔️</span><div><strong>Horizontal user: compare before choosing</strong><p>Someone comparing multiple suppliers can use the intro as a decision table: <strong>overall score, cluster scores and short evidence blocks</strong> show which provider is strongest for the area that matters most to them.</p></div></article></div><p>This helps avoid the typical weakness of review pages: either they are too vague, or they are too long. Here the intro gives a <strong>quick decision layer</strong>, while the body gives <strong>evidence-based depth</strong> for people who want to investigate.</p>`
       }
     ],
+    hideKeyNumbers: true,
     hideSnapshot: true,
     performanceKey: "reviews",
     performancePlaceholder: "The first performance dataset is displayed above. The next step can add <strong>URL-level or query-level before/after splits</strong> when you export more granular data.",
@@ -100,14 +101,14 @@ const projects = [
     category: "High-intent SEO pages",
     status: "SEO case study",
     summary: "I created and improved <strong>91 high-intent supplier offer sheets</strong>, turning tariff data, price context and intent checks into reusable WordPress HTML modules for users comparing specific energy offers before subscribing.",
-    contribution: "I created and refined offer-sheet pages from keyword intent, offer data and reusable HTML modules, then improved structure, differentiation and QA as the project became more constant.",
+    contribution: "After the team identified a competitor gap around dedicated offer pages, I handled the execution workflow: selecting which offers to publish, researching tariffs and conditions, building reusable templates and HTML modules, creating and refining pages and monitoring offer changes for future updates.",
     explanation: `<p>This project covered <strong>91 supplier offer sheets</strong>. The pages target <strong>commercial searches</strong> where users are close to comparing, switching or subscribing to a specific energy offer, so each page needed to explain <strong>price, conditions, activation details, supplier context and practical pros/cons</strong> in a WordPress-ready structure.</p><p>Publication started on <strong>March 18, 2026</strong>, but the project was initially secondary. From mid-April, it became more constant and prioritized, with a target of roughly <strong>two new pages per day</strong>. From early May, the work shifted toward <strong>quality and differentiation</strong>: price-trend modules, cleaner H2 structures, AI-assisted duplicate checks, reduced spammy headings and richer comparison content on new pages and already-published URLs.</p>`,
     summaryPoints: [],
     metrics: [
       ["91", "supplier offer sheets in the project"],
       ["3,515", "changed offers tracked"],
       ["~2/day", "target production rhythm from mid-April"],
-      ["% trend", "public performance shown as relative trends"]
+      ["+106%", "quality-period daily clicks vs Apr 22-30 baseline"]
     ],
     callouts: [
       ["Pages", "<strong>91 offer pages</strong> created around supplier and tariff intent, then refined where needed."],
