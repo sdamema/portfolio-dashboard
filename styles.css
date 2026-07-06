@@ -6198,3 +6198,81 @@ body.is-project-view {
     inset 0 1px 0 rgba(255, 255, 255, .10),
     0 0 18px rgba(var(--project-neon-rgb), .26);
 }
+
+/* Hero summary cards: colored mini-panels with a lighter main summary. */
+.profile-copy .profile-summary {
+  border-color: rgba(var(--profile-neon-rgb), .30);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(var(--profile-neon-rgb), .10), transparent 18rem),
+    linear-gradient(135deg, rgba(255, 255, 255, .92), rgba(248, 251, 255, .70)),
+    #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .92),
+    0 18px 42px rgba(15, 23, 42, .07),
+    0 0 26px rgba(var(--profile-neon-rgb), .10);
+}
+
+.profile-hero .mini-cv--primary div {
+  position: relative;
+  overflow: hidden;
+  min-height: 106px;
+  padding: 17px 17px 18px;
+  border-color: rgba(var(--mini-rgb, 13, 129, 120), .46);
+  background:
+    radial-gradient(circle at 92% 0%, rgba(var(--mini-rgb, 13, 129, 120), .18), transparent 10rem),
+    linear-gradient(145deg, #111827, #0c1220 72%, #070b14);
+  color: #f8fafc;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .08),
+    0 16px 34px rgba(15, 23, 42, .12),
+    0 0 26px rgba(var(--mini-rgb, 13, 129, 120), .13);
+}
+
+.profile-hero .mini-cv--primary div::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--mini-solid, #0d8178);
+  box-shadow: 0 0 18px rgba(var(--mini-rgb, 13, 129, 120), .70);
+}
+
+.profile-hero .mini-cv--primary div:nth-child(1) {
+  --mini-solid: #0d8178;
+  --mini-rgb: 13, 129, 120;
+}
+
+.profile-hero .mini-cv--primary div:nth-child(2) {
+  --mini-solid: #2679b7;
+  --mini-rgb: 38, 121, 183;
+}
+
+.profile-hero .mini-cv--primary div:nth-child(3) {
+  --mini-solid: #c96f43;
+  --mini-rgb: 201, 111, 67;
+}
+
+.profile-hero .mini-cv--primary span {
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 8px;
+  padding: 5px 8px;
+  border: 1px solid rgba(var(--mini-rgb, 13, 129, 120), .78);
+  border-radius: 999px;
+  background: var(--mini-solid, #0d8178);
+  color: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .16),
+    0 0 16px rgba(var(--mini-rgb, 13, 129, 120), .30);
+  font-size: .64rem;
+  line-height: 1.1;
+}
+
+.profile-hero .mini-cv--primary strong {
+  position: relative;
+  color: #f8fafc;
+  font-size: .98rem;
+  line-height: 1.34;
+}
