@@ -6726,6 +6726,13 @@ body.is-project-view {
   font-weight: 850;
 }
 
+@media (min-width: 701px) {
+  .profile-hero .mini-cv--primary div:nth-child(3) span,
+  .profile-hero .mini-cv--primary div:nth-child(3) strong {
+    transform: translateY(-5px);
+  }
+}
+
 @media (max-width: 700px) {
   .profile-hero .mini-cv--primary div,
   .profile-hero .mini-cv--primary div:nth-child(3) {
