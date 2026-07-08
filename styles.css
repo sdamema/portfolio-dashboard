@@ -6720,34 +6720,6 @@ body.is-project-view {
   padding: 7px 10px;
 }
 
-.profile-hero .mini-cv--primary {
-  gap: 8px;
-}
-
-.profile-hero .mini-cv--primary div {
-  min-height: 68px;
-  padding: 10px 13px 11px;
-}
-
-.profile-hero .mini-cv--primary div::before {
-  top: 13px;
-  right: 13px;
-  width: 24px;
-}
-
-.profile-hero .mini-cv--primary span {
-  min-height: 19px;
-  margin-bottom: 5px;
-  padding: 2px 7px;
-  font-size: .61rem;
-}
-
-.profile-hero .mini-cv--primary strong {
-  max-width: calc(100% - 36px);
-  font-size: .86rem;
-  line-height: 1.18;
-}
-
 .profile-summary strong,
 .section-head p strong,
 .resume-timeline li strong {
