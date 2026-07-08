@@ -6700,3 +6700,87 @@ body.is-project-view {
     line-height: 1.18;
   }
 }
+
+/* Requested polish: solid metadata badges, compact hero facts and stronger readable emphasis. */
+.project-box__category,
+.project-box--technical-ai .project-box__category,
+.project-box__index,
+.project-box--technical-ai .project-box__index {
+  border-color: color-mix(in srgb, var(--project-neon) 82%, #fff);
+  background: var(--project-neon);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(15, 23, 42, .18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .20),
+    0 8px 18px rgba(var(--project-neon-rgb), .20);
+}
+
+.project-box__category,
+.project-box--technical-ai .project-box__category {
+  padding: 7px 10px;
+}
+
+.profile-hero .mini-cv--primary {
+  gap: 8px;
+}
+
+.profile-hero .mini-cv--primary div {
+  min-height: 68px;
+  padding: 10px 13px 11px;
+}
+
+.profile-hero .mini-cv--primary div::before {
+  top: 13px;
+  right: 13px;
+  width: 24px;
+}
+
+.profile-hero .mini-cv--primary span {
+  min-height: 19px;
+  margin-bottom: 5px;
+  padding: 2px 7px;
+  font-size: .61rem;
+}
+
+.profile-hero .mini-cv--primary strong {
+  max-width: calc(100% - 36px);
+  font-size: .86rem;
+  line-height: 1.18;
+}
+
+.profile-summary strong,
+.section-head p strong,
+.resume-timeline li strong {
+  font-weight: 850;
+}
+
+@media (max-width: 700px) {
+  .profile-hero .mini-cv--primary div,
+  .profile-hero .mini-cv--primary div:nth-child(3) {
+    min-height: 44px;
+    padding: 6px 9px;
+    align-items: center;
+  }
+
+  .profile-hero .mini-cv--primary span {
+    align-self: center;
+    margin: 0;
+  }
+
+  .profile-hero .mini-cv--primary strong {
+    align-self: center;
+    font-size: .76rem;
+    line-height: 1.16;
+  }
+}
+
+/* Align compact hero labels with their text rows. */
+.profile-hero .mini-cv--primary span {
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.profile-hero .mini-cv--primary strong {
+  display: block;
+}
