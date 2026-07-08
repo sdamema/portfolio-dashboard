@@ -6763,24 +6763,17 @@ body.is-project-view {
   }
 
   .profile-hero .mini-cv--primary span {
+    align-items: center;
     align-self: center;
+    justify-content: center;
     margin: 0;
+    line-height: 1;
   }
 
   .profile-hero .mini-cv--primary strong {
     align-self: center;
+    display: block;
     font-size: .76rem;
     line-height: 1.16;
   }
-}
-
-/* Align compact hero labels with their text rows. */
-.profile-hero .mini-cv--primary span {
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-}
-
-.profile-hero .mini-cv--primary strong {
-  display: block;
 }
