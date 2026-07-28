@@ -138,6 +138,80 @@ const projects = [
     ]
   },
   {
+    id: "solar-cluster",
+    title: "Building a Solar SEO Cluster from Scratch",
+    shortTitle: "Solar SEO Cluster",
+    category: "SEO cluster strategy + production",
+    status: "Independent strategy-to-production case study",
+    summary: "I independently led the creation of a new Italian <strong>solar SEO cluster</strong>, from initial opportunity research and page selection to intent mapping, internal-link architecture and production of the first five pages.",
+    contribution: "I independently built the <strong>strategy and production foundation</strong> for a new Italian solar SEO cluster, starting from an open topic rather than a pre-defined page list. I owned the work end to end as the SEO Specialist, from research and roadmap justification to stakeholder presentation, internal-link architecture and production of the first five pages.",
+    explanation: "",
+    hideJumpNav: true,
+    hideStoryMain: true,
+    storyLabels: ["Problem", "Analysis", "Presentation", "Output"],
+    resultSummary: {
+      theme: "solar",
+      kicker: "Project scale and output",
+      title: "Most mapped searches were about <strong>choosing a solar solution</strong>",
+      text: "I combined and deduplicated 20 thematic keyword exports into <strong>1,580 unique queries</strong>, representing roughly 45K monthly searches across the mapped topics—not a traffic forecast. Most demand concerned costs, expected production, providers, reviews and system choices, so the analysis became a <strong>32-page opportunity roadmap</strong> rather than a single commercial landing page. After presenting and justifying the plan, I moved the first five connected pages into production.",
+      stats: [
+        ["1,580", "unique solar queries analyzed"],
+        ["~45K/mo", "mapped keyword demand · not forecast traffic"],
+        ["32", "potential pages identified across the funnel"],
+        ["5", "priority pages moved into production"]
+      ]
+    },
+    summaryPoints: [],
+    summaryPointStyle: "rich",
+    summaryPointLayout: "analysis",
+    metrics: [
+      ["1,580", "unique solar-related queries analyzed after combining and deduplicating 20 thematic exports"],
+      ["~45K/mo", "combined monthly search volume represented by the mapped keywords; this is not a traffic forecast"],
+      ["32", "potential pages identified: 8 educational, 21 evaluation/comparison and 3 high-intent opportunities"],
+      ["5", "priority pages taken into production: pillar, partner company, offers, reviews and financing"]
+    ],
+    snapshotEyebrow: "Delivery model",
+    snapshotTitle: "From research to production",
+    darkSnapshot: true,
+    callouts: [
+      ["Discover and structure", "Combined 20 broad and topic-specific keyword exports around <strong>cost, production, reviews, permits, installers, quotations and provider intent</strong>, then cleaned them into 1,580 unique queries."],
+      ["Map, justify and present", "Converted the query set into a <strong>32-page roadmap</strong> and presented the manager with the product context, search opportunity, architecture and rationale behind each priority."],
+      ["Build and validate", "Moved the first connected set into production: the <strong>solar pillar, Enpal company, Enpal offers, Enpal financing and Enpal reviews</strong>, each supported by research, source tracking and QA."]
+    ],
+    deepDive: [
+      {
+        title: "From an open topic to a clean keyword universe",
+        body: `<p>The project began with a broad question: <strong>could Papernest build a useful and commercially coherent solar cluster in Italy?</strong> I first studied photovoltaic systems as a product: how they work, what determines cost and production, and how users evaluate savings, batteries, incentives, installation and provider trust.</p><p>The “20 sources” are not 20 websites. They are <strong>20 broad and theme-specific keyword exports</strong> collected around different parts of the market, including condominium systems, ground-mounted solar, authorizations, reviews, installers, quotations and Enpal. Together they contained <strong>1,812 rows</strong>, reduced to <strong>1,580 unique queries</strong> after normalization and deduplication.</p><div class="process-flow"><article><span>Collect</span><p>Combine broad and topic-specific keyword exports into one auditable dataset.</p></article><article><span>Clean</span><p>Normalize and deduplicate queries while retaining volume, difficulty, CPC and source context.</p></article><article><span>Interpret</span><p>Identify the need behind each query rather than treating every keyword as an isolated target.</p></article><article><span>Convert</span><p>Transform useful query groups into TOFU, MOFU and BOFU page opportunities.</p></article></div><p>The approximately <strong>45K monthly searches</strong> shown in the case study are the sum of mapped keyword volumes. They are <strong>not a traffic estimate or a performance result</strong>.</p>`
+      },
+      {
+        title: "Turning demand into a 32-page cluster roadmap",
+        body: `<p>The keyword analysis produced <strong>32 candidate pages</strong>: 3 BOFU, 21 MOFU and 8 TOFU. Each opportunity came from a real group of related queries and was evaluated against three practical goals: <strong>informational usefulness, realistic SERP opportunity and support for the partner offer</strong>.</p><p>The strongest insight was the weight of MOFU demand. Users were mostly trying to quantify or de-risk a decision through costs, production, reviews, system types and provider comparisons. This meant the cluster needed more than a partner landing page: it required an educational pillar and decision-stage pages that could build visibility and guide qualified users toward the commercial offer.</p><p>I presented the proposal to the manager as a complete roadmap: <strong>how photovoltaic systems work as a product, what people search, how the cluster should be structured, which pages should be created and why</strong>. Priorities combined demand, business fit, lower-competition SERP openings, cannibalization risk, source requirements and CTA readiness rather than search volume alone.</p>`
+      },
+      {
+        title: "Moving the strategy into page production",
+        body: `<p>After presenting the roadmap, I moved directly into the <strong>effective creation of the cluster</strong>. The first production set included the main <strong>Fotovoltaico pillar</strong> and four connected partner pages: <strong>Enpal company, Enpal offers, Enpal financing and Enpal reviews</strong>.</p><p>The selection balanced different roles. The pillar created the informational and internal-linking foundation; the company and offer pages made the partner proposition explainable and promotable; reviews and financing covered important decision questions and more specific SERP opportunities.</p><p>Each page followed the same controlled path: intent and keyword set, source research, fact-check requirements, H1/H2 architecture, component planning, WordPress-ready HTML and QA. Source logs, volatile-claim checks, scoped CSS, structural validation and real desktop/mobile browser checks kept the first page set consistent and ready for editorial decisions.</p>`
+      },
+      {
+        title: "Independent ownership, with explicit safeguards",
+        body: `<p>I worked on this project independently as the SEO Specialist, making the practical decisions from research through page selection and production. That ownership included deciding <strong>what not to claim or publish yet</strong>.</p><ul><li><strong>Official-source priority:</strong> GSE, ARERA, Agenzia delle Entrate, ENEA and PVGIS were preferred for technical, fiscal and regulatory claims.</li><li><strong>Volatile-data control:</strong> costs, incentives, financing conditions and provider claims were logged for re-checking.</li><li><strong>No roadmap inflation:</strong> 32 pages are mapped opportunities, not 32 published pages.</li><li><strong>No invented funnel:</strong> BOFU ideas remain conditional when partner, CTA or service coverage is not confirmed.</li><li><strong>No performance overclaim:</strong> the current case study presents strategy and production scope because a complete cluster-level GSC result is not yet available.</li></ul><p>The result is an end-to-end SEO project that shows autonomy while keeping the evidence, limitations and publication gates visible.</p>`
+      }
+    ],
+    hideDeepDive: true,
+    hideKeyNumbers: true,
+    hideSnapshot: true,
+    hideExamples: false,
+    hideFutureData: true,
+    performancePlaceholder: "",
+    urlPlaceholder: "",
+    demos: [
+      { label: "Pillar", title: "Fotovoltaico pillar page", path: "https://www.papernest.it/luce-gas/fotovoltaico/" },
+      { label: "Enpal", title: "Enpal partner page", path: "https://www.papernest.it/luce-gas/fotovoltaico/enpal/" },
+      { label: "Reviews", title: "Enpal reviews page", path: "https://www.papernest.it/luce-gas/fotovoltaico/enpal/recensioni/" },
+      { label: "Offers", title: "Enpal offers page", path: "https://www.papernest.it/luce-gas/fotovoltaico/enpal/offerte/" },
+      { label: "Financing", title: "Enpal financing page", path: "https://www.papernest.it/luce-gas/fotovoltaico/enpal/finanziamento/" }
+    ]
+  },
+  {
     id: "change-residence",
     title: "Change-of-Residence City Pages",
     shortTitle: "Change Residence",
@@ -642,6 +716,7 @@ const projectOrder = [
   "reviews",
   "offers",
   "offpage",
+  "solar-cluster",
   "scraping",
   "nrj2-analysis",
   "bounce-interlinking",
@@ -687,6 +762,20 @@ const projectPortfolioMeta = {
       analysis: "The solution was to create offer sheets that were not only present in the SERP, but stronger than standard competitor pages: <strong>clearer H2s</strong>, richer pricing context, cleaner HTML modules and <strong>unique price-trend content</strong>.",
       insight: "The strongest offer pages work like <strong>decision tools</strong>, not simple descriptions: they help users understand the offer, compare it and decide what to check before activation.",
       output: "Final output: <strong>91 offer sheets</strong>, HTML page modules, offer tables, <strong>price-history modules</strong> and a percentage-only performance recovery view."
+    }
+  },
+  "solar-cluster": {
+    visualTheme: "content-seo",
+    icon: "sun",
+    areas: ["seo"],
+    topicTags: ["SEO strategy", "Keyword mapping", "Content architecture"],
+    cardSummary: "A solar SEO cluster built independently from research to page production.",
+    story: {
+      main: "",
+      problem: "Papernest lacked a structured <strong>photovoltaic SEO cluster</strong>. This limited informational visibility and also made the partner offer difficult to promote: without dedicated pages, there was no strong organic path for explaining the product, building trust or presenting the commercial proposition.",
+      analysis: "I analyzed <strong>1,580 unique queries</strong> gathered through 20 thematic keyword exports, grouped them by user need and converted them into <strong>32 TOFU, MOFU and BOFU page opportunities</strong>. Selection considered informational value, realistic SERP openings and usefulness for the partner funnel.",
+      insight: "I presented the manager with a complete proposal: how photovoltaic systems work as a product, the search opportunity, the cluster architecture and a <strong>justified publishing roadmap</strong> based on demand, competition, business relevance and internal-linking role.",
+      output: "I then moved into actual production: the <strong>Fotovoltaico pillar</strong> plus Enpal company, offers, financing and reviews pages, all supported by research, WordPress-ready HTML, source tracking and desktop/mobile QA."
     }
   },
   "change-residence": {
@@ -1913,12 +2002,28 @@ function renderProjectStory(project) {
     `;
   }
 
+  const storyLabels = project.storyLabels || ["Problem", "Analysis", "Solution", "Output"];
   const storyItems = project.storySteps || [
-    ["Problem", project.story.problem],
-    ["Analysis", project.story.analysis],
-    ["Solution", project.story.insight],
-    ["Output", project.story.output]
+    [storyLabels[0], project.story.problem],
+    [storyLabels[1], project.story.analysis],
+    [storyLabels[2], project.story.insight],
+    [storyLabels[3], project.story.output]
   ];
+
+  if (project.hideStoryMain) {
+    return `
+      <div class="project-summary-story project-summary-story--flow-only">
+        <div class="project-summary-flow project-summary-flow--${storyItems.length}" aria-label="Project story flow">
+          ${storyItems.map(([label, body], index) => `
+            <article data-step="${String(index + 1).padStart(2, "0")}">
+              <span>${label}</span>
+              <p>${body}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  }
 
   return `
     <div class="project-summary-story">
@@ -2056,14 +2161,14 @@ function renderResultSummary(summary) {
   }
 
   return `
-    <section class="result-summary-card" aria-label="${escapeHtml(summary.kicker)}">
+    <section class="result-summary-card${summary.theme ? ` result-summary-card--${escapeHtml(summary.theme)}` : ""}" aria-label="${escapeHtml(summary.kicker)}">
       <div class="result-summary-card__head">
         <span>${escapeHtml(summary.kicker)}</span>
         <h3>${summary.title}</h3>
         <p>${summary.text}</p>
       </div>
       ${summary.stats?.length ? `
-        <dl class="result-summary-card__stats">
+        <dl class="result-summary-card__stats result-summary-card__stats--${summary.stats.length}">
           ${summary.stats.map(([value, label]) => `
             <div>
               <dt>${escapeHtml(value)}</dt>
