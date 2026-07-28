@@ -329,6 +329,40 @@ const projects = [
     demos: []
   },
   {
+    id: "bounce-interlinking",
+    title: "Bounce Barcelona Interlinking Map",
+    shortTitle: "Internal Linking Map",
+    category: "Bounce Barcelona case study",
+    status: "Interview case study",
+    summary: "I built this <strong>external internal-linking audit in approximately 1.5 hours</strong> for a Bounce interview. The interactive map turns a crawl sample into a simple visual journey: <strong>Barcelona hub → local destination → bookable store</strong>. It uses only links verified in public HTML and represents website architecture, not geographic distance.",
+    explanation: "",
+    summaryPoints: [],
+    metrics: [],
+    callouts: [
+      ["Purpose and scalable audit method", "I created the map to understand the <strong>internal-linking structure</strong>, identify pages or journeys with missing connections and highlight possible gaps in store coverage. With a full Screaming Frog crawl combined with XML sitemaps, Search Console or another complete URL source, the same method could also identify pages that are <strong>orphaned or excluded from the main navigation</strong>."],
+      ["The Airport hand-off", "The Airport example is especially useful. The page currently exposes <strong>no direct store-page links</strong>. This does not automatically mean that Bounce has no stores nearby—it means that users are not being shown a clear route from airport intent to an individual bookable location."],
+      ["Validate coverage, then improve the journey", "The next step would be to check <strong>verified store coordinates and availability</strong>. If there are no stores inside the airport, Bounce could present the nearest relevant alternatives with real distance or travel-time information, instead of linking users only to generic Barcelona pages."]
+    ],
+    deepDive: [],
+    hideJumpNav: true,
+    hideSummaryPanel: true,
+    hideDeepDive: true,
+    hideKeyNumbers: true,
+    hideFutureData: true,
+    snapshotEyebrow: "Project breakdown",
+    snapshotTitle: "Map explanation",
+    darkSnapshot: true,
+    performancePlaceholder: "",
+    urlPlaceholder: "",
+    demos: [
+      {
+        label: "Interactive map",
+        title: "Bounce Barcelona journey architecture map",
+        path: "demos/bounce-barcelona-interlinking-map.html"
+      }
+    ]
+  },
+  {
     id: "sportelli",
     title: "Interactive Branch Map",
     shortTitle: "Branch Map",
@@ -609,6 +643,7 @@ const projectOrder = [
   "offpage",
   "scraping",
   "nrj2-analysis",
+  "bounce-interlinking",
   "sportelli",
   "summary",
   "ranking",
@@ -711,6 +746,14 @@ const projectPortfolioMeta = {
     cardSummary: "SEO diagnosis across URL families and intent.",
     story: null
   },
+  "bounce-interlinking": {
+    visualTheme: "technical-ai",
+    icon: "network",
+    areas: ["technical"],
+    topicTags: ["Interlinking", "Crawl", "Data visualisation"],
+    cardSummary: "A public-data map from city discovery to a bookable store.",
+    story: null
+  },
   scraping: {
     visualTheme: "technical-ai",
     icon: "crane",
@@ -798,6 +841,7 @@ const dataEvidenceSection = document.querySelector("#sectionEvidence");
 const seoMetrics = document.querySelector("#seoMetrics");
 const calloutGrid = document.querySelector("#calloutGrid");
 const deepAccordion = document.querySelector("#deepAccordion");
+const deepDiveSection = document.querySelector("#sectionDeepDive");
 const performanceSection = document.querySelector("#sectionPerformance");
 const performanceTitle = document.querySelector("#performanceTitle");
 const performancePeriod = document.querySelector("#performancePeriod");
@@ -819,6 +863,8 @@ const urlInventoryTitle = document.querySelector("#urlInventoryTitle");
 const performancePlaceholder = document.querySelector("#performancePlaceholder");
 const urlPlaceholder = document.querySelector("#urlPlaceholder");
 const snapshotSection = document.querySelector("#sectionSnapshot");
+const snapshotEyebrow = document.querySelector("#snapshotEyebrow");
+const snapshotTitle = document.querySelector("#snapshotTitle");
 const demoTabs = document.querySelector("#demoTabs");
 const exampleArea = document.querySelector(".example-area");
 const exampleTitle = document.querySelector("#exampleTitle");
@@ -1212,7 +1258,7 @@ function renderProjectJumpNav(project, dataset) {
   const links = [
     ...(project.articleSummary ? [["Article inventory", "sectionArticleInventory"]] : []),
     ["Story", "sectionSummary"],
-    ["Deep dive", "sectionDeepDive"],
+    ...(!project.hideDeepDive ? [["Deep dive", "sectionDeepDive"]] : []),
     ...(!project.hideKeyNumbers ? [["Key numbers", "sectionEvidence"]] : []),
     ...(dataset ? [["Data trend", "sectionPerformance"]] : []),
     ...(!project.hideSnapshot ? [["Snapshot", "sectionSnapshot"]] : []),
@@ -2127,6 +2173,16 @@ function renderProjectDetail(project) {
   }
   dataEvidenceSection.hidden = Boolean(project.hideKeyNumbers);
   snapshotSection.hidden = Boolean(project.hideSnapshot);
+  snapshotSection.classList.toggle("snapshot-section--dark", Boolean(project.darkSnapshot));
+  if (snapshotEyebrow) {
+    snapshotEyebrow.textContent = project.snapshotEyebrow || "Project snapshot";
+  }
+  if (snapshotTitle) {
+    snapshotTitle.textContent = project.snapshotTitle || "What the work included";
+  }
+  if (deepDiveSection) {
+    deepDiveSection.hidden = Boolean(project.hideDeepDive);
+  }
   detailExplanation.innerHTML = summaryPanelHtml;
 
   seoMetrics.innerHTML = project.metrics.map(([value, label]) => `

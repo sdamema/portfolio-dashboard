@@ -1,6 +1,13 @@
-# SEO Portfolio Dashboard
+# Portfolio Dashboard
 
-Static portfolio-dashboard for SEO case studies, built from selected local workspaces.
+Static portfolio dashboard for SEO and digital marketing case studies, built
+from selected local workspaces.
+
+Public site:
+
+```text
+https://sdamema.github.io/portfolio-dashboard/
+```
 
 ## What It Shows
 
@@ -10,6 +17,7 @@ Static portfolio-dashboard for SEO case studies, built from selected local works
 - Review summary component library.
 - Social scraping and normalization workflow.
 - NRJ2 sportelli interactive map and local SEO analysis.
+- Bounce Barcelona internal-linking journey map.
 
 ## Run Locally
 
@@ -25,12 +33,29 @@ Then visit:
 http://localhost:5173/
 ```
 
-## Publish On GitHub Pages
+## Repository And Publishing
 
-Upload this folder to `sdamema/seo-portfolio-dashboard` and enable Pages from the `main` branch root.
+Primary repository:
 
-The project has no build step and no external dependency.
+```text
+https://github.com/sdamema/portfolio-dashboard
+```
+
+GitHub Pages is served from the repository. The project has no build step and
+no JavaScript package dependency.
+
+Before publishing an update:
+
+1. Run the site locally.
+2. Check the home view and every edited project on desktop and mobile.
+3. Confirm that every demo and processed analytics file is public-safe.
+4. Push the reviewed changes to the primary repository.
 
 ## Privacy Note
 
 Before publishing, review every file in `demos/`. Keep only sanitized HTML and anonymized data that can safely be public.
+
+## Update Workspace
+
+For the current source map, baseline and update priorities, see
+`project-definition/PORTFOLIO_UPDATE_WORKSPACE.md`.
