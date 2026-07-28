@@ -534,10 +534,11 @@ const projects = [
       emv: {
         value: "≈ €9K",
         perBacklink: "≈ €16 / backlink",
-        note: "Estimated Earned Media Value: the conservative cost of acquiring the same 81 placements through a paid link-building marketplace, priced at the low end of each DR band."
+        note: "Conservative replacement cost of acquiring the same 81 placements through a paid link-building marketplace, using the lowest price in each DR band."
       },
       examples: [
         { title: "Bonus fotovoltaico 2026: cambiano le regole", outlet: "corrierenazionale.it", dr: "57", url: "https://www.corrierenazionale.it/2026/03/30/bonus-fotovoltaico-2026-cambiano-le-regole-cosa-fare-per-non-perdere-lincentivo-in-arrivo/" },
+        { title: "Caro spiagge 2026: il mare costa il 24% in più", outlet: "corrierenazionale.it", dr: "57", url: "https://www.corrierenazionale.it/2026/06/09/caro-spiagge-2026-il-mare-costa-il-24-in-piu-e-il-lido-pesa-sul-budget-delle-famiglie/" },
         { title: "Decreto Bollette: sostegni da 5 miliardi diventa legge", outlet: "arenadigitale.it", dr: "50", url: "https://arenadigitale.it/2026/04/13/via-libera-del-senato-il-decreto-bollette-diventa-legge-e-introduce-sostegni-da-5-miliardi/" },
         { title: "L'addio allo smart working nelle grandi aziende", outlet: "corrierepl.it", dr: "47", url: "https://www.corrierepl.it/2026/03/01/laddio-allo-smart-working-rivoluziona-la-gestione-delle-grandi-aziende-italiane/" }
       ]

@@ -4729,7 +4729,8 @@ body.is-project-view {
 }
 
 .offpage-article-head p {
-  max-width: 760px;
+  width: 100%;
+  max-width: none;
   margin: 0;
   color: rgba(226, 232, 240, .74);
   font-size: .9rem;
@@ -4978,6 +4979,40 @@ body.is-project-view {
   line-height: 1.5;
 }
 
+@media (min-width: 761px) {
+  .offpage-emv {
+    grid-template-columns: minmax(350px, .8fr) minmax(0, 1.7fr);
+    gap: 24px;
+  }
+
+  .offpage-emv__figure {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "label label"
+      "value unit";
+    column-gap: 18px;
+    align-items: center;
+  }
+
+  .offpage-emv__figure span {
+    grid-area: label;
+  }
+
+  .offpage-emv__figure strong {
+    grid-area: value;
+  }
+
+  .offpage-emv__figure em {
+    grid-area: unit;
+    justify-self: start;
+    padding: 7px 10px;
+    border: 1px solid rgba(110, 231, 183, .24);
+    border-radius: 999px;
+    background: rgba(6, 78, 59, .28);
+    white-space: nowrap;
+  }
+}
+
 .offpage-emv-method {
   margin-top: 12px;
   border: 1px solid rgba(15, 23, 42, .12);
@@ -5054,6 +5089,10 @@ body.is-project-view {
 
 .offpage-emv-method .formula-accordion {
   margin: 14px 0;
+}
+
+.offpage-emv-method .formula-grid article:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }
 
 .offpage-summary-examples {
