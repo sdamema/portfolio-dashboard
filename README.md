@@ -18,6 +18,7 @@ https://sdamema.github.io/portfolio-dashboard/
 - Social scraping and normalization workflow.
 - NRJ2 sportelli interactive map and local SEO analysis.
 - Bounce Barcelona internal-linking journey map.
+- AI-assisted job-search system from source discovery to Gmail-verified applications.
 
 ## Run Locally
 
