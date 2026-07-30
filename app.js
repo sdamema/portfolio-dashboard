@@ -138,6 +138,64 @@ const projects = [
     ]
   },
   {
+    id: "offpage-dashboard",
+    title: "Off-page SEO Performance Dashboard",
+    shortTitle: "Off-page Dashboard",
+    category: "SEO analytics + front-end prototype",
+    status: "Self-initiated interview prototype",
+    summary: "I designed and built an interactive <strong>off-page SEO reporting dashboard</strong> for <strong>backlink activity, publisher quality, campaigns and data completeness</strong>. I created it <strong>on my own initiative</strong> during the Bounce interview process, then adapted it into a reusable white-label version.",
+    contributionLabel: "My role",
+    contribution: "I independently took the project from <strong>initial concept to working prototype</strong>, owning the product decisions, interface design, front-end development and testing. It was not assigned by Bounce: I chose to create it as <strong>practical proof of how I would approach an off-page reporting challenge</strong> during the interview process.",
+    explanation: "",
+    hideJumpNav: true,
+    hideProjectStory: true,
+    resultSummary: null,
+    examplesAfterStory: true,
+    summaryPoints: [
+      `<span>Data input</span><strong>Three ways to load the source</strong><em>Connect a <strong>public Google Sheet</strong>, upload a <strong>local CSV</strong> or open the simulated dataset.</em>`,
+      `<span>Analysis depth</span><strong>Read output and publisher quality together</strong><em>Compare <strong>backlinks and articles</strong> with new domains, median DR, DR 50+ share and publisher concentration.</em>`,
+      `<span>Decision support</span><strong>Transparent actions, not a hidden score</strong><em>Recommendations use <strong>fixed and inspectable rules</strong> for publisher concentration, DR mix and campaign balance.</em>`,
+      `<span>Data reliability</span><strong>Check the source before reporting</strong><em>Surface <strong>missing fields, invalid URLs, possible duplicates and unmatched columns</strong> before they distort the analysis.</em>`
+    ],
+    summaryPointStyle: "rich",
+    summaryPointLayout: "analysis",
+    metrics: [],
+    callouts: [],
+    deepDive: [
+      {
+        title: "Loading and preparing the data",
+        body: `<p>The opening screen offers <strong>three routes into the dashboard</strong>:</p><div class="report-input-grid"><article><span>Google Sheets</span><p>Paste a spreadsheet link and sheet-tab name. The source must be shared as <strong>“Anyone with the link → Viewer”</strong> and can be refreshed when the original sheet changes.</p></article><article><span>CSV file</span><p>Upload a file that is processed <strong>locally in the browser</strong>, or download the supplied template to start with the expected structure.</p></article><article><span>Demo data</span><p>Open a simulated dataset covering <strong>six markets, two years and multiple campaigns</strong>, publishers and topics to test every report immediately.</p></article></div><p><strong>Column matching is flexible</strong>: capitalization, spaces, underscores and dashes do not have to be identical. The file needs a header row, at least one data row and a recognized <strong>Campaign, Article URL or Publisher Domain</strong> column. After loading, global filters for <strong>market, year, week and outreach type</strong> update all calculations and show exactly how many source rows remain in the selection.</p>`
+      },
+      {
+        title: "What each report section explains",
+        body: `<p>The reporting path moves from the overall result into the exact operational layer behind it:</p><div class="report-view-grid"><article><span>01</span><strong>Overview</strong><p>Summarizes backlinks, new domains, median DR, DR 50+ share, recent change, topic mix and publisher concentration.</p></article><article><span>02</span><strong>Outreach Types</strong><p>Compares Editorial Outreach, Digital PR and Volume Outreach without collapsing quantity and quality into one score.</p></article><article><span>03</span><strong>Campaigns</strong><p>Ranks campaigns by links, articles, publisher variety and DR; selecting one opens its individual placements.</p></article><article><span>04</span><strong>Publishers</strong><p>Shows which domains are used most, their DR, active weeks and how many campaigns they support.</p></article><article><span>05</span><strong>Topics</strong><p>Explains how backlink activity and average publisher strength are distributed across campaign themes.</p></article><article><span>06</span><strong>Weekly Trend</strong><p>Tracks links, articles, unique domains, new domains and average DR to reveal peaks or slowdowns over time.</p></article><article><span>07</span><strong>Data Checks</strong><p>Reviews completeness, invalid URLs, possible duplicates, matched headers and optional columns that were not found.</p></article></div>`
+      },
+      {
+        title: "From report to action",
+        body: `<p>The dashboard is designed for exploration rather than passive viewing. Tables can be sorted, campaigns open into placement-level detail, report rows can be exported and contextual guides explain how to read each view. Users can move directly from an unusual peak, weak DR mix or concentrated publisher set to the relevant campaign or domain.</p><p>Recommended Actions applies <strong>fixed and inspectable rules</strong> to three signals: reliance on the five most-used publishers, the share of backlinks coming from DR 50+ domains and whether one campaign dominates the selected data. No AI model or hidden quality score is used.</p><p>The prototype is a static front-end built with semantic HTML, responsive CSS, vanilla JavaScript and Chart.js. Domain Rating is imported rather than calculated, and Data Checks validates structure—not the factual accuracy of every value. It remains an <strong>independent interview concept</strong>, not an official Bounce production dashboard.</p>`
+      }
+    ],
+    hideKeyNumbers: true,
+    hideSnapshot: true,
+    hideFutureData: true,
+    performancePlaceholder: "",
+    urlPlaceholder: "",
+    demos: [
+      {
+        label: "Bounce version",
+        title: "Bounce interview version",
+        path: "demos/off-page-performance-dashboard/index.html?theme=bounce",
+        note: "Original Bounce-inspired interface created for the interview context."
+      },
+      {
+        label: "White-label",
+        title: "Reusable white-label version",
+        path: "demos/off-page-performance-dashboard/index.html",
+        note: "Brand-neutral adaptation of the same reporting workflow."
+      }
+    ]
+  },
+  {
     id: "solar-cluster",
     title: "Building a Solar SEO Cluster from Scratch",
     shortTitle: "Solar SEO Cluster",
@@ -716,6 +774,7 @@ const projectOrder = [
   "reviews",
   "offers",
   "offpage",
+  "offpage-dashboard",
   "solar-cluster",
   "scraping",
   "nrj2-analysis",
@@ -877,6 +936,20 @@ const projectPortfolioMeta = {
       analysis: "The workflow started from news research, extracted usable facts, then shaped short articles that could be sent to <strong>online newspapers or published on Papernest</strong> when appropriate.",
       insight: "Good off-page work sits between editorial judgment and link strategy: the article has to be useful before it can support SEO through links.",
       output: "Final output: an aggregated inventory of <strong>17 off-page articles</strong> (about one per week), republished <strong>81 times</strong> across online newspapers and generating <strong>559 backlinks</strong> to priority pages, with an average source <strong>Domain Rating of 22.2</strong>."
+    }
+  },
+  "offpage-dashboard": {
+    visualTheme: "technical-ai",
+    icon: "chart",
+    areas: ["seo", "technical"],
+    topicTags: ["SEO analytics", "Data visualisation", "JavaScript"],
+    cardSummary: "Interactive reporting for backlink activity, publisher quality and data checks.",
+    story: {
+      main: "",
+      problem: "During the Bounce interview process, I chose on my own initiative to build a <strong>functional off-page dashboard</strong> as practical proof of how I would approach reporting.",
+      analysis: "Raw outreach spreadsheets make it difficult to move from total backlinks to the <strong>campaign, publisher, topic, week or data issue</strong> behind the result.",
+      insight: "I structured a progressive reporting model that keeps link volume and publisher quality separate, then connects unusual signals to drill-downs and <strong>transparent, fixed-rule actions</strong>.",
+      output: "The result is a responsive interactive dashboard with Google Sheets, CSV and demo inputs: first built in a <strong>Bounce-inspired version</strong>, then adapted into a generic white-label interface."
     }
   },
   "social-media": {
@@ -2216,7 +2289,7 @@ function renderContribution(project) {
 
   return `
     <aside class="project-contribution-card">
-      <span>My contribution</span>
+      <span>${escapeHtml(project.contributionLabel || "My contribution")}</span>
       <p>${project.contribution}</p>
     </aside>
   `;
@@ -2266,6 +2339,7 @@ function renderProjectDetail(project) {
   detailTitle.textContent = project.title;
   detailSummary.innerHTML = project.summary;
   detailStatus.textContent = project.status;
+  projectView.classList.toggle("project-view--examples-after-story", Boolean(project.examplesAfterStory));
   renderProjectJumpNav(project, performanceDataset);
   if (sectionSummary) {
     sectionSummary.hidden = !hasSummaryPanel && !hasLead;
@@ -2422,7 +2496,7 @@ function renderDemos(project) {
   const activeDemo = project.demos[activeDemoIndex] || project.demos[0];
   exampleTitle.textContent = activeDemo.title || activeDemo.label;
   exampleLink.href = activeDemo.path;
-  examplePath.textContent = "Public HTML example loaded in the preview below.";
+  examplePath.textContent = activeDemo.note || "Public HTML example loaded in the preview below.";
   demoFrame.src = activeDemo.path;
 }
 

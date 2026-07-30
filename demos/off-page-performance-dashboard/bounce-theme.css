@@ -1,0 +1,1108 @@
+/*
+ * Bounce-inspired interview concept.
+ * Uses the shared dashboard markup and logic; no Bounce logo or copied brand assets.
+ * BounceSans is loaded at runtime from Bounce's public CDN.
+ */
+
+@font-face {
+  font-family: "BounceSans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://assets.cdn.bounc3.com/fonts/BounceSans.woff2") format("woff2");
+}
+
+:root {
+  --ink: #0a0a1e;
+  --ink-2: #202473;
+  --paper: #f7f7fc;
+  --surface: #ffffff;
+  --surface-2: #f0f0f5;
+  --line: #dfdfe5;
+  --muted: #6c6c85;
+  --blue: #454ced;
+  --blue-soft: #dde9ff;
+  --signal: #def201;
+  --orange: #ff7448;
+  --teal: #454ced;
+  --red: #f75826;
+  --shadow: 0 14px 40px rgb(32 36 115 / 8%);
+  --radius: 18px;
+  --sidebar: 252px;
+}
+
+html[data-theme="bounce"] body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 15px;
+}
+
+html[data-theme="bounce"] body::before {
+  display: none;
+}
+
+html[data-theme="bounce"] button,
+html[data-theme="bounce"] input,
+html[data-theme="bounce"] select {
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] button:focus-visible,
+html[data-theme="bounce"] a:focus-visible,
+html[data-theme="bounce"] input:focus-visible,
+html[data-theme="bounce"] select:focus-visible {
+  outline-color: var(--signal);
+}
+
+html[data-theme="bounce"] .micro-label,
+html[data-theme="bounce"] .eyebrow {
+  color: var(--muted);
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+html[data-theme="bounce"] .eyebrow {
+  color: var(--blue);
+}
+
+html[data-theme="bounce"] .status-dot {
+  background: var(--signal);
+  box-shadow: 0 0 0 4px rgb(222 242 1 / 18%);
+}
+
+html[data-theme="bounce"] .button {
+  min-height: 46px;
+  padding-inline: 20px;
+  border-color: transparent;
+  border-radius: 999px;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+html[data-theme="bounce"] .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgb(69 76 237 / 20%);
+}
+
+html[data-theme="bounce"] .button--primary {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+html[data-theme="bounce"] .button--primary:hover {
+  box-shadow: 0 8px 22px rgb(69 76 237 / 28%);
+}
+
+html[data-theme="bounce"] .button--signal {
+  background: var(--signal);
+  color: var(--ink);
+}
+
+html[data-theme="bounce"] .button--compact {
+  min-height: 38px;
+  border-color: var(--line);
+  background: white;
+}
+
+html[data-theme="bounce"] .text-button,
+html[data-theme="bounce"] .clear-filters {
+  color: var(--blue);
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+}
+
+/* Welcome */
+
+html[data-theme="bounce"] .welcome {
+  grid-template-columns: 1fr;
+  background:
+    radial-gradient(circle at 9% 20%, rgb(222 242 1 / 88%) 0 5%, transparent 5.2%),
+    radial-gradient(circle at 86% 78%, rgb(255 116 72 / 82%) 0 10%, transparent 10.2%),
+    linear-gradient(145deg, #454ced 0%, #5362f1 44%, #708dff 100%);
+}
+
+html[data-theme="bounce"] .welcome__rail {
+  display: none;
+}
+
+html[data-theme="bounce"] .welcome__content {
+  width: min(1180px, calc(100% - 64px));
+  grid-template-columns: minmax(0, 1fr) minmax(390px, 0.78fr);
+  gap: clamp(48px, 7vw, 100px);
+}
+
+html[data-theme="bounce"] .welcome__intro .eyebrow {
+  color: white;
+}
+
+html[data-theme="bounce"] .welcome__intro h1 {
+  color: white;
+  font-family: "BounceSans", "Instrument Sans", sans-serif;
+  font-size: clamp(54px, 7vw, 100px);
+  font-stretch: normal;
+  font-weight: 550;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+}
+
+html[data-theme="bounce"] .welcome__intro h1 em {
+  color: var(--signal);
+}
+
+html[data-theme="bounce"] .welcome__lede {
+  color: white;
+}
+
+html[data-theme="bounce"] .source-card {
+  border: 0;
+  border-radius: 28px;
+  box-shadow: 0 28px 70px rgb(32 36 115 / 22%);
+}
+
+html[data-theme="bounce"] .source-card::after {
+  display: none;
+}
+
+html[data-theme="bounce"] .source-card__header h2 {
+  font-family: "BounceSans", "Instrument Sans", sans-serif;
+  font-weight: 600;
+}
+
+html[data-theme="bounce"] .source-card__index {
+  color: var(--blue);
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+}
+
+html[data-theme="bounce"] .requirements-trigger {
+  border: 0;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: #353550;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+}
+
+html[data-theme="bounce"] .requirements-trigger:hover {
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+
+html[data-theme="bounce"] .requirements-trigger > span {
+  color: var(--blue);
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .source-tabs {
+  padding: 4px;
+  gap: 3px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--surface-2);
+}
+
+html[data-theme="bounce"] .source-tab {
+  display: flex;
+  min-height: 38px;
+  padding: 0 10px;
+  gap: 7px;
+  align-items: center;
+  justify-content: flex-start;
+  border: 0;
+  border-radius: 12px;
+  color: #50506b;
+  font-weight: 700;
+  text-align: left;
+}
+
+html[data-theme="bounce"] .source-tab::before {
+  color: #9090a4;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+html[data-theme="bounce"] .source-tab:nth-child(1)::before {
+  content: "01";
+}
+
+html[data-theme="bounce"] .source-tab:nth-child(2)::before {
+  content: "02";
+}
+
+html[data-theme="bounce"] .source-tab:nth-child(3)::before {
+  content: "03";
+}
+
+html[data-theme="bounce"] .source-tab.is-active {
+  background: white;
+  color: var(--blue);
+  box-shadow: 0 3px 10px rgb(32 36 115 / 8%);
+}
+
+html[data-theme="bounce"] .source-tab.is-active::before {
+  color: var(--blue);
+}
+
+html[data-theme="bounce"] .source-tab.is-active::after {
+  display: none;
+}
+
+html[data-theme="bounce"] .source-panel label:not(.drop-zone) {
+  color: #55556f;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+}
+
+html[data-theme="bounce"] .source-panel input {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: white;
+}
+
+html[data-theme="bounce"] .source-panel input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgb(69 76 237 / 12%);
+}
+
+html[data-theme="bounce"] .drop-zone {
+  border-color: var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+}
+
+html[data-theme="bounce"] .drop-zone:hover {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+}
+
+html[data-theme="bounce"] .privacy-note {
+  border-radius: 12px;
+  color: #5e5e78;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+html[data-theme="bounce"] .field-note,
+html[data-theme="bounce"] .drop-zone small,
+html[data-theme="bounce"] .demo-preview__copy p {
+  color: #5e5e78;
+}
+
+html[data-theme="bounce"] .text-link {
+  color: var(--primary);
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+}
+
+html[data-theme="bounce"] .drop-zone strong {
+  font-weight: 700;
+}
+
+html[data-theme="bounce"] .drop-zone__icon {
+  border-color: rgba(62, 73, 238, 0.22);
+  background: #ffffff;
+  color: var(--primary);
+}
+
+html[data-theme="bounce"] .demo-preview {
+  grid-template-columns: minmax(0, 1.05fr) minmax(130px, 0.8fr);
+}
+
+html[data-theme="bounce"] .demo-preview__copy {
+  order: 1;
+}
+
+html[data-theme="bounce"] .demo-preview__copy strong {
+  color: var(--ink);
+  font-family: "BounceSans", "Instrument Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+html[data-theme="bounce"] .demo-preview__copy p {
+  font-size: 12px;
+}
+
+html[data-theme="bounce"] .demo-preview__chart {
+  order: 2;
+  height: 130px;
+  padding: 16px;
+  border: 0;
+  border-radius: 16px;
+  background: #f2f7ff;
+}
+
+html[data-theme="bounce"] .demo-preview__chart i {
+  border-radius: 6px 6px 2px 2px;
+}
+
+html[data-theme="bounce"] .demo-preview__chart i:nth-child(3),
+html[data-theme="bounce"] .demo-preview__chart i:nth-child(6) {
+  background: var(--orange);
+}
+
+html[data-theme="bounce"] #load-demo span:first-child,
+html[data-theme="bounce"] .button--primary span:first-child {
+  font-weight: 700;
+}
+
+/* Application shell */
+
+html[data-theme="bounce"] .sidebar {
+  padding: 26px 16px 22px;
+  background: var(--blue);
+  color: white;
+}
+
+html[data-theme="bounce"] .mark {
+  border-radius: 50%;
+  background: var(--signal);
+}
+
+html[data-theme="bounce"] .identity strong {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 11px;
+}
+
+html[data-theme="bounce"] .identity span,
+html[data-theme="bounce"] .data-stamp small {
+  color: rgb(255 255 255 / 64%);
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .main-nav {
+  gap: 6px;
+}
+
+html[data-theme="bounce"] .nav-item {
+  min-height: 46px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  color: rgb(255 255 255 / 72%);
+}
+
+html[data-theme="bounce"] .nav-item span {
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .nav-item:hover {
+  transform: none;
+  background: rgb(255 255 255 / 10%);
+  color: white;
+}
+
+html[data-theme="bounce"] .nav-item.is-active {
+  background: white;
+  color: var(--ink);
+}
+
+html[data-theme="bounce"] .nav-item.is-active::after {
+  display: none;
+}
+
+html[data-theme="bounce"] .nav-item--utility {
+  border-color: rgb(255 255 255 / 18%);
+}
+
+html[data-theme="bounce"] .sidebar__footer {
+  border-color: rgb(255 255 255 / 18%);
+}
+
+html[data-theme="bounce"] .sidebar-action {
+  color: var(--signal);
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+}
+
+html[data-theme="bounce"] .topbar {
+  background: rgb(255 255 255 / 92%);
+}
+
+html[data-theme="bounce"] .topbar__title h1,
+html[data-theme="bounce"] .view-heading h2,
+html[data-theme="bounce"] .overview-block__header h3,
+html[data-theme="bounce"] .panel__header h3,
+html[data-theme="bounce"] .placement-domain,
+html[data-theme="bounce"] .quality-copy h3,
+html[data-theme="bounce"] .topic-card h3,
+html[data-theme="bounce"] .workstream-model h3,
+html[data-theme="bounce"] .table-panel__heading h3 {
+  font-family: "BounceSans", "Instrument Sans", sans-serif;
+  font-stretch: normal;
+}
+
+html[data-theme="bounce"] .guide-trigger,
+html[data-theme="bounce"] .icon-button {
+  border-color: var(--line);
+  border-radius: 999px;
+}
+
+html[data-theme="bounce"] .guide-trigger span {
+  background: var(--blue);
+}
+
+html[data-theme="bounce"] .filter-bar {
+  min-height: 76px;
+  gap: 10px;
+  background: white;
+}
+
+html[data-theme="bounce"] .filter-bar label,
+html[data-theme="bounce"] .search-field {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 8px;
+}
+
+html[data-theme="bounce"] .filter-bar select {
+  min-width: 126px;
+  height: 36px;
+  padding: 0 30px 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background-color: var(--paper);
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .filter-bar select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgb(69 76 237 / 10%);
+}
+
+html[data-theme="bounce"] .row-count {
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .dashboard-main {
+  width: min(1460px, 100%);
+}
+
+html[data-theme="bounce"] .view-heading h2 {
+  font-weight: 580;
+  letter-spacing: -0.055em;
+}
+
+html[data-theme="bounce"] .search-field input {
+  border-radius: 999px;
+}
+
+html[data-theme="bounce"] .search-field input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgb(69 76 237 / 10%);
+}
+
+/* Overview */
+
+html[data-theme="bounce"] .reading-path {
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 18px;
+  background: #f2f7ff;
+}
+
+html[data-theme="bounce"] .reading-path > p span {
+  color: var(--blue);
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .executive-brief {
+  overflow: hidden;
+  border: 0;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+html[data-theme="bounce"] .executive-brief__number {
+  background: #708dff;
+  color: white;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .executive-brief__copy h3 {
+  font-family: "BounceSans", "Instrument Sans", sans-serif;
+  font-stretch: normal;
+  font-weight: 580;
+}
+
+html[data-theme="bounce"] .executive-brief__comparison {
+  border-color: var(--line);
+  background: #f2f7ff;
+}
+
+html[data-theme="bounce"] .executive-brief__comparison strong {
+  font-family: "BounceSans", "Instrument Sans", sans-serif;
+  font-stretch: normal;
+}
+
+html[data-theme="bounce"] .executive-brief__comparison strong.is-positive {
+  color: var(--blue);
+}
+
+html[data-theme="bounce"] .executive-brief__comparison strong.is-negative {
+  color: var(--red);
+}
+
+html[data-theme="bounce"] .executive-brief__comparison span {
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .kpi-grid {
+  gap: 12px;
+  border: 0;
+  background: transparent;
+}
+
+html[data-theme="bounce"] .kpi-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 24px rgb(32 36 115 / 5%);
+}
+
+html[data-theme="bounce"] .kpi-card:first-child {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: white;
+}
+
+html[data-theme="bounce"] .kpi-card:first-child .micro-label,
+html[data-theme="bounce"] .kpi-card:first-child .kpi-card__delta {
+  color: rgb(255 255 255 / 70%);
+}
+
+html[data-theme="bounce"] .kpi-card:first-child .kpi-card__value {
+  color: var(--signal);
+}
+
+html[data-theme="bounce"] .kpi-card__index,
+html[data-theme="bounce"] .kpi-card__delta,
+html[data-theme="bounce"] .secondary-metrics strong {
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .kpi-card__value {
+  font-family: "BounceSans", "Instrument Sans", sans-serif;
+  font-stretch: normal;
+  font-weight: 600;
+}
+
+html[data-theme="bounce"] .kpi-card__delta.is-up {
+  color: var(--blue);
+}
+
+html[data-theme="bounce"] .secondary-metrics {
+  gap: 1px;
+  overflow: hidden;
+  border-color: var(--line);
+  border-radius: 16px;
+}
+
+html[data-theme="bounce"] .overview-block {
+  margin-top: 56px;
+}
+
+html[data-theme="bounce"] .overview-block__header > span {
+  border: 0;
+  border-radius: 50%;
+  background: var(--blue);
+  color: white;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .overview-block + .overview-block .overview-block__header > span {
+  background: var(--orange);
+}
+
+html[data-theme="bounce"] .overview-block + .overview-block + .overview-block .overview-block__header > span {
+  background: var(--ink-2);
+}
+
+html[data-theme="bounce"] .overview-grid {
+  gap: 20px;
+}
+
+html[data-theme="bounce"] .panel,
+html[data-theme="bounce"] .table-panel,
+html[data-theme="bounce"] .topic-card,
+html[data-theme="bounce"] .workstream-model,
+html[data-theme="bounce"] .issue-card {
+  border-color: var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+html[data-theme="bounce"] .workstream-model,
+html[data-theme="bounce"] .workstream-profile {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+html[data-theme="bounce"] .workstream-profile {
+  background: #f7f7fc;
+}
+
+html[data-theme="bounce"] .workstream-model--volume {
+  background: #fbfddd;
+}
+
+html[data-theme="bounce"] .panel--velocity {
+  border-top: 0;
+}
+
+html[data-theme="bounce"] .panel--placement {
+  border-top: 0;
+  background: #f4f7cd;
+}
+
+html[data-theme="bounce"] .panel--actions {
+  border-top: 0;
+  box-shadow: var(--shadow);
+}
+
+html[data-theme="bounce"] .panel-description {
+  font-size: 11px;
+}
+
+html[data-theme="bounce"] .legend-note {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .authority-row span,
+html[data-theme="bounce"] .authority-row strong,
+html[data-theme="bounce"] .signal-row strong,
+html[data-theme="bounce"] .topic-share-row strong,
+html[data-theme="bounce"] .publisher-mix-row > span,
+html[data-theme="bounce"] .publisher-mix-row > em,
+html[data-theme="bounce"] .leader-row__rank,
+html[data-theme="bounce"] .action-card > span,
+html[data-theme="bounce"] .placement-link {
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .authority-track,
+html[data-theme="bounce"] .topic-share-track,
+html[data-theme="bounce"] .publisher-mix-row i {
+  border-radius: 999px;
+}
+
+html[data-theme="bounce"] .authority-fill,
+html[data-theme="bounce"] .topic-share-track i {
+  border-radius: inherit;
+  background: var(--blue);
+}
+
+html[data-theme="bounce"] .publisher-mix-row b {
+  border-radius: inherit;
+  background: var(--orange);
+}
+
+html[data-theme="bounce"] .signal-row:first-child,
+html[data-theme="bounce"] .publisher-mix-row:first-child,
+html[data-theme="bounce"] .leader-row:first-child {
+  border-top-color: var(--line);
+}
+
+html[data-theme="bounce"] .action-grid {
+  border-top-color: var(--line);
+}
+
+html[data-theme="bounce"] .action-card {
+  padding: 18px;
+  border-radius: 16px;
+}
+
+html[data-theme="bounce"] .action-card + .action-card {
+  margin-left: 0;
+  padding-left: 18px;
+  border-left: 0;
+}
+
+html[data-theme="bounce"] .action-card--positive {
+  background: #edf7df;
+}
+
+html[data-theme="bounce"] .action-card--warning {
+  background: #fff0eb;
+}
+
+html[data-theme="bounce"] .action-card--neutral {
+  background: #f0f2ff;
+}
+
+html[data-theme="bounce"] .placement-meta {
+  border-top-color: rgb(10 10 30 / 22%);
+}
+
+/* Detail views */
+
+html[data-theme="bounce"] thead {
+  background: var(--ink-2);
+}
+
+html[data-theme="bounce"] th {
+  color: rgb(255 255 255 / 68%);
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] th[data-sort]:hover,
+html[data-theme="bounce"] th.is-sorted {
+  color: var(--signal);
+}
+
+html[data-theme="bounce"] tbody tr:hover {
+  background: #f2f7ff;
+}
+
+html[data-theme="bounce"] .table-link,
+html[data-theme="bounce"] .campaign-open {
+  color: var(--blue);
+}
+
+html[data-theme="bounce"] .topic-card {
+  overflow: hidden;
+}
+
+html[data-theme="bounce"] .topic-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgb(69 76 237 / 14%);
+}
+
+html[data-theme="bounce"] .topic-card__number {
+  color: #edf0ff;
+  font-family: "BounceSans", "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .quality-hero {
+  overflow: hidden;
+  border: 0;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+html[data-theme="bounce"] .quality-score {
+  background: var(--signal);
+}
+
+html[data-theme="bounce"] .quality-score > span {
+  font-family: "BounceSans", "Instrument Sans", sans-serif;
+  font-stretch: normal;
+}
+
+html[data-theme="bounce"] .quality-score small,
+html[data-theme="bounce"] .quality-score p,
+html[data-theme="bounce"] .schema-pill {
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .issue-card {
+  border: 0;
+}
+
+html[data-theme="bounce"] .schema-pill {
+  border-radius: 999px;
+  background: white;
+}
+
+/* Dialogs */
+
+html[data-theme="bounce"] .detail-dialog,
+html[data-theme="bounce"] .requirements-dialog,
+html[data-theme="bounce"] .guide-dialog {
+  overflow: auto;
+  border: 0;
+  border-radius: 28px;
+  box-shadow: 0 30px 80px rgb(10 10 30 / 30%);
+}
+
+html[data-theme="bounce"] .detail-dialog::backdrop,
+html[data-theme="bounce"] .requirements-dialog::backdrop,
+html[data-theme="bounce"] .guide-dialog::backdrop {
+  background: rgb(32 36 115 / 66%);
+}
+
+html[data-theme="bounce"] .detail-dialog header,
+html[data-theme="bounce"] .requirements-dialog > header,
+html[data-theme="bounce"] .guide-dialog > header {
+  background: white;
+}
+
+html[data-theme="bounce"] .detail-dialog h2,
+html[data-theme="bounce"] .requirements-dialog h2,
+html[data-theme="bounce"] .requirements-dialog h3,
+html[data-theme="bounce"] .guide-dialog > header h2,
+html[data-theme="bounce"] .guide-dialog section > h3 {
+  font-family: "BounceSans", "Instrument Sans", sans-serif;
+  font-stretch: normal;
+  font-weight: 600;
+}
+
+html[data-theme="bounce"] .detail-dialog header button,
+html[data-theme="bounce"] .requirements-dialog > header button,
+html[data-theme="bounce"] .guide-dialog > header button {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface-2);
+}
+
+html[data-theme="bounce"] .requirements-dialog__body > section {
+  background: white;
+}
+
+html[data-theme="bounce"] .requirements-dialog__body > section:nth-child(even) {
+  background: #f7f7fc;
+}
+
+html[data-theme="bounce"] .requirement-level,
+html[data-theme="bounce"] .requirements-table-wrap,
+html[data-theme="bounce"] .missing-field-list,
+html[data-theme="bounce"] .requirements-note,
+html[data-theme="bounce"] .requirements-alert {
+  overflow: hidden;
+  border: 0;
+  border-radius: 18px;
+}
+
+html[data-theme="bounce"] .requirement-level {
+  background: #f3f3f8;
+}
+
+html[data-theme="bounce"] .requirement-level--recommended {
+  background: var(--blue-soft);
+  box-shadow: inset 0 0 0 2px var(--blue);
+}
+
+html[data-theme="bounce"] .requirement-chips span {
+  border: 0;
+  border-radius: 999px;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+html[data-theme="bounce"] .requirements-table thead th {
+  background: var(--blue);
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .requirements-table tbody th {
+  color: var(--blue);
+}
+
+html[data-theme="bounce"] .requirements-note {
+  background: var(--blue-soft);
+}
+
+html[data-theme="bounce"] .missing-field-list {
+  gap: 2px;
+  background: #ededf3;
+}
+
+html[data-theme="bounce"] .requirements-alert {
+  background: var(--signal);
+}
+
+html[data-theme="bounce"] .requirements-dialog__body > section.requirements-actions {
+  background: var(--blue);
+}
+
+html[data-theme="bounce"] .requirements-actions p {
+  color: #e4e6ff;
+}
+
+html[data-theme="bounce"] .requirements-actions .button--primary {
+  background: var(--signal);
+  color: var(--ink);
+}
+
+html[data-theme="bounce"] .requirements-actions .button:not(.button--primary) {
+  border-color: rgb(255 255 255 / 42%);
+}
+
+html[data-theme="bounce"] .guide-tabs {
+  border-color: var(--line);
+  background: #f7f7fc;
+}
+
+html[data-theme="bounce"] .guide-tab {
+  border-radius: 12px;
+  background: white;
+  color: #5e5e78;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+html[data-theme="bounce"] .guide-tab:hover {
+  border-color: var(--blue);
+  color: var(--ink);
+}
+
+html[data-theme="bounce"] .guide-tab.is-active {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: white;
+  box-shadow: inset 0 -4px 0 var(--signal);
+}
+
+html[data-theme="bounce"] .guide-context__intro h3 {
+  font-family: "BounceSans", "Instrument Sans", sans-serif;
+  font-stretch: normal;
+}
+
+html[data-theme="bounce"] .guide-context__intro > p:last-child,
+html[data-theme="bounce"] .guide-context__steps p {
+  color: #5e5e78;
+}
+
+html[data-theme="bounce"] .guide-context__steps li,
+html[data-theme="bounce"] .guide-context__metrics,
+html[data-theme="bounce"] .guide-context__watch {
+  border-radius: 14px;
+}
+
+html[data-theme="bounce"] .guide-context__steps li {
+  background: #f7f7fc;
+}
+
+html[data-theme="bounce"] .guide-context__steps li > span {
+  color: var(--blue);
+}
+
+html[data-theme="bounce"] .guide-context__metrics > div span {
+  border-radius: 8px;
+  background: #f7f7fc;
+}
+
+html[data-theme="bounce"] .guide-context__watch {
+  border-color: #d8e900;
+  background: #f4f7cd;
+}
+
+html[data-theme="bounce"] .guide-context__next .button {
+  background: var(--blue);
+  color: white;
+}
+
+html[data-theme="bounce"] .dialog-stats {
+  background: var(--line);
+}
+
+html[data-theme="bounce"] .dialog-stat {
+  background: #f4f7cd;
+}
+
+html[data-theme="bounce"] .guide-route {
+  background: var(--blue);
+}
+
+html[data-theme="bounce"] .guide-route > h3,
+html[data-theme="bounce"] .guide-route li > span {
+  color: var(--signal);
+}
+
+html[data-theme="bounce"] .guide-route ol {
+  background: rgb(255 255 255 / 22%);
+}
+
+html[data-theme="bounce"] .guide-route li {
+  background: var(--blue);
+}
+
+html[data-theme="bounce"] .guide-route p {
+  color: rgb(255 255 255 / 72%);
+}
+
+html[data-theme="bounce"] .guide-views > div {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+html[data-theme="bounce"] .guide-views article span {
+  color: var(--blue);
+}
+
+@media (max-width: 860px) {
+  html[data-theme="bounce"] .welcome__content {
+    width: min(620px, calc(100% - 40px));
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  html[data-theme="bounce"] .sidebar {
+    background: var(--blue);
+  }
+
+  html[data-theme="bounce"] .filter-bar {
+    background: white;
+  }
+}
+
+@media (max-width: 620px) {
+  html[data-theme="bounce"] .demo-preview {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    min-height: 0;
+    padding: 18px 0;
+  }
+
+  html[data-theme="bounce"] .welcome {
+    background:
+      radial-gradient(circle at 94% 10%, rgb(222 242 1 / 88%) 0 7%, transparent 7.2%),
+      linear-gradient(170deg, #454ced 0%, #5667f4 48%, #708dff 100%);
+  }
+
+  html[data-theme="bounce"] .welcome__intro h1 {
+    font-size: clamp(48px, 15vw, 68px);
+  }
+
+  html[data-theme="bounce"] .source-card {
+    border-radius: 22px;
+    box-shadow: 0 20px 50px rgb(32 36 115 / 18%);
+  }
+
+  html[data-theme="bounce"] .filter-bar select {
+    width: 100%;
+  }
+
+  html[data-theme="bounce"] .reading-path {
+    border-radius: 16px;
+  }
+
+  html[data-theme="bounce"] .executive-brief {
+    border-radius: 22px;
+  }
+
+  html[data-theme="bounce"] .kpi-grid {
+    gap: 8px;
+  }
+
+  html[data-theme="bounce"] .kpi-card {
+    border-radius: 16px;
+  }
+
+  html[data-theme="bounce"] .panel,
+  html[data-theme="bounce"] .table-panel,
+  html[data-theme="bounce"] .topic-card,
+  html[data-theme="bounce"] .workstream-model {
+    border-radius: 18px;
+  }
+
+  html[data-theme="bounce"] .action-card + .action-card {
+    margin-left: 0;
+    border-top: 0;
+  }
+
+  html[data-theme="bounce"] .detail-dialog,
+  html[data-theme="bounce"] .requirements-dialog,
+  html[data-theme="bounce"] .guide-dialog {
+    border-radius: 22px;
+    box-shadow: 0 22px 60px rgb(10 10 30 / 28%);
+  }
+}
