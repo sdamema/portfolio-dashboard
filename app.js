@@ -399,7 +399,7 @@ const projects = [
     title: "NRJ2 SEO & Business Analysis",
     shortTitle: "NRJ2 Analysis",
     category: "SEO + business diagnosis",
-    status: "Analysis case",
+    status: "Technical SEO + business analysis",
     summary: "I connected <strong>Search Console, crawl and indexability data with business KPIs</strong> across energia-luce.it URL families, turning weekly monitoring into action recommendations, including a <strong>51-page re-indexation shortlist</strong> from <strong>732 noindex URLs</strong>.",
     explanation: "",
     summaryPoints: [
@@ -816,8 +816,8 @@ const projectOrder = [
   "job-search-system",
   "solar-cluster",
   "offers",
-  "bounce-interlinking",
   "nrj2-analysis",
+  "bounce-interlinking",
   "scraping",
   "sportelli",
   "summary",
