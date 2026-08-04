@@ -811,14 +811,14 @@ const projects = [
 
 const projectOrder = [
   "reviews",
-  "offers",
   "offpage",
   "offpage-dashboard",
   "job-search-system",
   "solar-cluster",
-  "scraping",
-  "nrj2-analysis",
+  "offers",
   "bounce-interlinking",
+  "nrj2-analysis",
+  "scraping",
   "sportelli",
   "summary",
   "ranking",
