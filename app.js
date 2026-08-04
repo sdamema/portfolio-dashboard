@@ -774,7 +774,7 @@ const projects = [
     shortTitle: "Job Search System",
     category: "AI workflow + data operations",
     status: "Independent operating system",
-    summary: "I built a repeatable system for <strong>discovering, deduplicating, evaluating and prioritizing job opportunities</strong>. In my own verified snapshot, the workflow supported <strong>1,326 unique offers analyzed</strong>, <strong>401 tracker opportunities</strong> and <strong>205 applications confirmed through Gmail</strong>.",
+    summary: "I built a repeatable system for <strong>discovering, deduplicating, evaluating and prioritizing job opportunities</strong>. In one verified period, it supported <strong>1,326 unique jobs reviewed</strong>, <strong>401 tracker opportunities</strong> and <strong>161 applications confirmed through Gmail</strong>.",
     explanation: "",
     customCaseStudy: "job-search-system",
     storyTitle: "How the system works — and what it produced",
@@ -789,17 +789,10 @@ const projects = [
       analyzed: "1,326",
       structured: "1,239",
       tracker: "401",
-      applications: "205",
-      productiveSessions: "108",
+      applications: "161",
       trackerVerify: "187",
       trackerPrepare: "156",
-      trackerEvaluate: "24",
-      linkedin: "105",
-      ats: "108",
-      directEmail: "4",
-      crossSourceDuplicates: "12",
-      juneApplications: "50",
-      julyApplications: "155"
+      trackerEvaluate: "24"
     },
     hideJumpNav: true,
     hideDeepDive: true,
@@ -2171,13 +2164,13 @@ function renderProjectStory(project) {
 function renderJobSearchSystem(project) {
   const metrics = project.jobSearchMetrics;
   const decisions = [
-    ["Discard", "760", "61.3%", "Fit, scope or constraints did not justify action.", "discard"],
-    ["Verify", "207", "16.7%", "Promising, but a material detail still needed checking.", "verify"],
-    ["Candidate", "141", "11.4%", "Recent, actionable opportunity recommended for the next step.", "candidate"],
-    ["Duplicate", "59", "4.8%", "The same requisition had already entered the system.", "duplicate"],
-    ["Closed / skip", "39", "3.1%", "Removed, inaccessible or no longer actionable.", "closed"],
-    ["Radar", "31", "2.5%", "Useful to retain, but not for immediate action.", "radar"],
-    ["Tracker update", "2", "0.2%", "Existing tracker records that needed a status update.", "update"]
+    ["Discard", "760", "61.3%", "Fully reviewed and rejected because fit, location, seniority, language, contract or another hard constraint failed.", "discard"],
+    ["Verify", "207", "16.7%", "Potentially relevant, but recency, salary, language, contract, work mode or another material fact was still missing.", "verify"],
+    ["Candidate", "141", "11.4%", "A research recommendation to consider applying. It does not mean that a submission was sent.", "candidate"],
+    ["Duplicate", "59", "4.8%", "The same requisition was already recorded, so it was not counted as a new opportunity.", "duplicate"],
+    ["Closed / skip", "39", "3.1%", "Not rejected for fit: the listing was closed, removed, inaccessible, stale or otherwise no longer actionable.", "closed"],
+    ["Radar", "31", "2.5%", "Worth retaining for monitoring, but outside the immediate application priorities.", "radar"],
+    ["Tracker update", "2", "0.2%", "Not a new offer: new evidence or a new status was added to a job already present in the tracker.", "update"]
   ];
 
   return `
@@ -2186,15 +2179,17 @@ function renderJobSearchSystem(project) {
         <div>
           <span>Independent system design</span>
           <h4>From scattered job hunting to a <strong>traceable operating workflow</strong></h4>
-          <p>I created the reusable <strong>AI-assisted instructions</strong>, research rules, decision language, tracker structure and audit method myself. The mechanism turns multiple job sources into a controlled action queue; the figures below show what happened when I used it for my own search.</p>
+          <p>I independently created the <strong>AI-assisted instructions</strong>, <strong>research rules</strong>, decision language, tracker structure and audit method. The system turns multiple job sources into a <strong>controlled action queue</strong>; these figures show what happened when I used it for my own search.</p>
         </div>
         <aside>
-          <span>Verified periods</span>
-          <dl class="job-snapshot-periods">
-            <div><dt>Research + tracker</dt><dd>29 Jun — 30 Jul 2026</dd></div>
-            <div><dt>Application audit</dt><dd>1 Jun — 30 Jul 2026</dd></div>
+          <span>Verified snapshot</span>
+          <strong>29 Jun — 30 Jul 2026</strong>
+          <dl class="job-snapshot-summary">
+            <div><dt>${metrics.analyzed}</dt><dd>jobs reviewed</dd></div>
+            <div><dt>${metrics.tracker}</dt><dd>in tracker</dd></div>
+            <div><dt>${metrics.applications}</dt><dd>applications</dd></div>
           </dl>
-          <small>The first tracker search is dated 29 June; Gmail evidence was audited from 1 June.</small>
+          <small><strong>${metrics.analyzed} reviewed jobs</strong> combines ${metrics.structured} classified research records with 87 historical tracker-only records from the same operating period.</small>
         </aside>
       </section>
 
@@ -2202,33 +2197,33 @@ function renderJobSearchSystem(project) {
         <div class="job-case-heading">
           <span>The mechanism</span>
           <h4 id="jobMechanismTitle">One workflow, five controlled stages</h4>
-          <p>Automation accelerates collection and comparison, while explicit rules preserve the decisions that still require judgment.</p>
+          <p><strong>AI automation accelerates collection and comparison</strong>, while explicit rules preserve the decisions that still require judgment.</p>
         </div>
         <ol class="job-mechanism__flow">
           <li>
             <i>01</i>
             <strong>Discover</strong>
-            <p>A reusable AI search workflow coordinates company career pages, official ATS platforms, LinkedIn, Indeed and browser or structured extraction runs.</p>
+            <p>A reusable AI workflow coordinates <strong>company career pages, official ATS platforms, LinkedIn and Indeed</strong>, plus browser or structured extraction runs.</p>
           </li>
           <li>
             <i>02</i>
             <strong>Normalize</strong>
-            <p>Keep direct URLs, job IDs, company, title, location, recency and source in a comparable schema.</p>
+            <p>Keep <strong>direct URLs, job IDs, company, title, location, recency and source</strong> in one comparable schema.</p>
           </li>
           <li>
             <i>03</i>
             <strong>Deduplicate</strong>
-            <p>Check current and historical results before treating a listing as a new opportunity.</p>
+            <p>Check <strong>current and historical results</strong> before treating a listing as a new opportunity.</p>
           </li>
           <li>
             <i>04</i>
             <strong>Evaluate</strong>
-            <p>Record fit, language, seniority, contract and working-model evidence as candidate, verify, discard or skip.</p>
+            <p>Record <strong>fit, language, seniority, contract and work-mode evidence</strong> before assigning a research decision.</p>
           </li>
           <li>
             <i>05</i>
             <strong>Action & audit</strong>
-            <p>Move selected jobs into the tracker, prepare applications and use Gmail confirmations to verify actual submissions.</p>
+            <p>Move selected jobs into the <strong>tracker</strong>, prepare the application, retain a <strong>manual approval before sending</strong> and verify submissions through Gmail.</p>
           </li>
         </ol>
       </section>
@@ -2237,14 +2232,14 @@ function renderJobSearchSystem(project) {
         <div class="job-case-heading">
           <span>Public version</span>
           <h4 id="jobPublicKitTitle">Configure the profile once, then scope each search</h4>
-          <p>The downloadable workspace is intentionally blank: its rules are rebuilt around the person using it rather than copied from my profile.</p>
+          <p>The public workspace starts blank, so its rules are <strong>rebuilt around the person using it</strong> instead of copied from my profile. To use it, <strong>download the folder from the public GitHub repository</strong>, open it with an AI coding environment or coding agent such as <strong>Codex, Claude Code or Google Antigravity</strong>, and follow the two setup steps below.</p>
         </div>
         <div class="job-public-kit__steps">
           <article>
             <i>01</i>
             <div>
               <strong>Personalize it with evidence and priorities</strong>
-              <p>Add a CV and relevant experience, then define priority roles, backup lanes, exclusions, languages, seniority, accepted contracts, salary limits and availability. AI automation converts those inputs into an evidence bank, target-role hierarchy, queries and hard filters.</p>
+              <p>Add a <strong>CV and relevant experience</strong>, then define priority roles, backup lanes, exclusions, languages, seniority, accepted contracts, salary limits and availability. AI automation converts those inputs into an <strong>evidence bank, target-role hierarchy, queries and hard filters</strong>.</p>
               <ul>
                 <li>CV + experience</li>
                 <li>Role priorities</li>
@@ -2256,7 +2251,7 @@ function renderJobSearchSystem(project) {
             <i>02</i>
             <div>
               <strong>Launch a search with a live scope</strong>
-              <p>For every run, state the city or geography, work mode—remote, hybrid or onsite—and a freshness window or minimum date. The workflow verifies sources, checks previous results, classifies each offer and saves a session report before selected jobs enter the tracker.</p>
+              <p>For every run, state the <strong>city or geography</strong>, work mode—remote, hybrid or onsite—and a <strong>freshness window or minimum date</strong>. The workflow verifies sources, checks previous results, classifies each offer and saves a session report before selected jobs enter the tracker.</p>
               <ul>
                 <li>City / geography</li>
                 <li>Remote / hybrid / onsite</li>
@@ -2266,46 +2261,16 @@ function renderJobSearchSystem(project) {
           </article>
         </div>
         <div class="job-public-kit__actions">
-          <a href="${escapeHtml(project.githubUrl)}" target="_blank" rel="noreferrer">View setup and usage on GitHub <span>↗</span></a>
-          <a class="is-download" href="${escapeHtml(project.downloadUrl)}" target="_blank" rel="noreferrer">Download the public kit <span>↓ ZIP</span></a>
+          <a href="${escapeHtml(project.githubUrl)}" target="_blank" rel="noreferrer">Open the public GitHub repository <span>↗</span></a>
+          <a class="is-download" href="${escapeHtml(project.downloadUrl)}" target="_blank" rel="noreferrer">Download the workspace <span>↓ ZIP</span></a>
         </div>
-      </section>
-
-      <section class="job-scale" aria-labelledby="jobScaleTitle">
-        <div class="job-case-heading job-case-heading--light">
-          <span>My case</span>
-          <h4 id="jobScaleTitle">The operating scale behind the search</h4>
-        </div>
-        <div class="job-scale__grid">
-          <article>
-            <span>Research universe</span>
-            <strong>${metrics.analyzed}</strong>
-            <p>unique offers analyzed across structured searches and tracker history</p>
-          </article>
-          <article>
-            <span>Structured decisions</span>
-            <strong>${metrics.structured}</strong>
-            <p>offers with a recorded research classification</p>
-          </article>
-          <article>
-            <span>Action queue</span>
-            <strong>${metrics.tracker}</strong>
-            <p>unique opportunities selected into the tracker</p>
-          </article>
-          <article class="job-scale__result">
-            <span>Verified outcome</span>
-            <strong>${metrics.applications}</strong>
-            <p>applications documented through Gmail evidence</p>
-          </article>
-        </div>
-        <p class="job-scale__note"><strong>These are connected operating layers, not a strict conversion funnel.</strong> The research universe combines ${metrics.structured} classified offers with 87 tracker-only historical records. The tracker was not updated after every submission, so Gmail—not a tracker status—is the source of truth for applications sent.</p>
       </section>
 
       <section class="job-decisions" aria-labelledby="jobDecisionsTitle">
         <div class="job-case-heading">
-          <span>Research decisions</span>
-          <h4 id="jobDecisionsTitle">What happened to ${metrics.structured} classified offers</h4>
-          <p>The latest recorded decision was kept for every unique URL or job ID.</p>
+          <span>Research classification</span>
+          <h4 id="jobDecisionsTitle">${metrics.structured} offers, each with a recorded decision</h4>
+          <p>This is the <strong>classified part of the ${metrics.analyzed} reviewed jobs</strong>. The remaining 87 were historical tracker-only records, so they were not forced into a later research label. The latest decision was retained for every <strong>unique URL or job ID</strong>.</p>
         </div>
         <div class="job-decisions__bar" role="img" aria-label="760 discarded, 207 to verify, 141 candidates, 59 duplicates, 39 closed or skipped, 31 radar and 2 tracker updates">
           ${decisions.map(([, , share, , className]) => `<i class="job-decision-segment job-decision-segment--${className}" style="--decision-share:${share}"></i>`).join("")}
@@ -2321,91 +2286,37 @@ function renderJobSearchSystem(project) {
         </div>
       </section>
 
-      <div class="job-operating-grid">
-        <section class="job-tracker-panel" aria-labelledby="jobTrackerTitle">
-          <div class="job-case-heading job-case-heading--light">
-            <span>Tracker snapshot</span>
-            <h4 id="jobTrackerTitle">The three main live queues</h4>
-            <p>The tracker is a selected action queue, not the full research archive and not an application counter.</p>
-          </div>
-          <dl>
+      <section class="job-action-panel" aria-labelledby="jobActionTitle">
+        <div class="job-case-heading job-case-heading--light">
+          <span>Selected action layer</span>
+          <h4 id="jobActionTitle">${metrics.tracker} tracker records: what needed to happen next</h4>
+          <p><strong>Research labels describe what a search concluded.</strong> The tracker contains selected opportunities and records the <strong>next practical action</strong>; it is not the research archive and it is not the application total.</p>
+        </div>
+        <div class="job-action-panel__grid">
+          <dl class="job-action-queues">
             <div>
               <dt>${metrics.trackerVerify}</dt>
-              <dd><strong>To verify</strong><span>A specific detail must be confirmed before deciding.</span></dd>
+              <dd><strong>To verify</strong><span>Confirm a specific detail before choosing whether to pursue the job.</span></dd>
             </div>
             <div>
               <dt>${metrics.trackerPrepare}</dt>
-              <dd><strong>To prepare</strong><span>Ready for CV choice, tailoring and possible cover letter.</span></dd>
+              <dd><strong>To prepare</strong><span>Select and tailor the CV, then decide whether a cover letter is useful.</span></dd>
             </div>
             <div>
               <dt>${metrics.trackerEvaluate}</dt>
-              <dd><strong>To evaluate</strong><span>A strategic choice on fit, seniority, relocation or role value remains.</span></dd>
+              <dd><strong>To evaluate</strong><span>Make a strategic choice on fit, seniority, relocation or role value.</span></dd>
             </div>
           </dl>
-          <small>These are the principal active states shown as KPIs, not an exhaustive breakdown. Deduplication reduced 404 physical rows to ${metrics.tracker} unique tracker records by resolving three duplicate pairs.</small>
-        </section>
-
-        <section class="job-language-panel" aria-labelledby="jobLanguageTitle">
-          <div class="job-case-heading">
-            <span>Reading the data correctly</span>
-            <h4 id="jobLanguageTitle">A recommendation is not a submission</h4>
-          </div>
-          <dl>
+          <aside class="job-action-outcome">
+            <span>Manual outcome · Gmail verified</span>
             <div>
-              <dt>Candidate</dt>
-              <dd><strong>${decisions[2][1]} recommended opportunities</strong><span>Good fit, recent and actionable. It means “worth pursuing”, not “already applied”.</span></dd>
+              <strong>${metrics.applications}</strong>
+              <h5>applications submitted</h5>
             </div>
-            <div>
-              <dt>Verify</dt>
-              <dd><strong>${decisions[1][1]} potentially valid offers</strong><span>Salary, recency, language, contract, work mode or another material detail was still missing.</span></dd>
-            </div>
-            <div>
-              <dt>Applied</dt>
-              <dd><strong>${metrics.applications} confirmed submissions</strong><span>Counted only from LinkedIn, ATS/company or direct-email evidence found in Gmail.</span></dd>
-            </div>
-          </dl>
-        </section>
-      </div>
-
-      <section class="job-gmail-audit" aria-labelledby="jobGmailTitle">
-        <div class="job-gmail-audit__result">
-          <span>Verified application evidence</span>
-          <strong>${metrics.applications}</strong>
-          <h4 id="jobGmailTitle">applications sent</h4>
-          <p>A minimum verified total for the snapshot period.</p>
-          <dl class="job-application-months">
-            <div><dt>${metrics.juneApplications}</dt><dd>June</dd></div>
-            <div><dt>${metrics.julyApplications}</dt><dd>July · through 30th</dd></div>
-          </dl>
+            <p>I preferred to <strong>review each opportunity and approve the final submission manually</strong>. The workflow could potentially be extended to automate some eligible applications, but in this case automation intentionally stopped before sending. Gmail was therefore used to verify what had actually been submitted.</p>
+          </aside>
         </div>
-        <div class="job-gmail-audit__method">
-          <div class="job-application-equation" aria-label="105 LinkedIn confirmations plus 108 ATS or company confirmations plus 4 direct email applications minus 12 cross-source duplicates equals 205 applications">
-            <article><strong>${metrics.linkedin}</strong><span>LinkedIn confirmations</span></article>
-            <i>+</i>
-            <article><strong>${metrics.ats}</strong><span>ATS / company evidence</span></article>
-            <i>+</i>
-            <article><strong>${metrics.directEmail}</strong><span>direct email</span></article>
-            <i>−</i>
-            <article><strong>${metrics.crossSourceDuplicates}</strong><span>cross-source duplicates</span></article>
-            <i>=</i>
-            <article class="is-total"><strong>${metrics.applications}</strong><span>unique submissions</span></article>
-          </div>
-          <p>LinkedIn and company emails can confirm the same application, so I compared <strong>company, role and date</strong> and removed 12 overlaps. Applications completed on portals that sent no email are not visible, which makes ${metrics.applications} a <strong>verified lower bound</strong>.</p>
-        </div>
-      </section>
-
-      <section class="job-ownership" aria-labelledby="jobOwnershipTitle">
-        <div class="job-case-heading job-case-heading--light">
-          <span>What I built</span>
-          <h4 id="jobOwnershipTitle">The reusable part is the decision system</h4>
-        </div>
-        <div>
-          <article><strong>Research operations</strong><p>Reusable AI automation, source strategy, company-first searches and repeatable multi-platform sessions.</p></article>
-          <article><strong>Decision rules</strong><p>Consistent definitions for candidate, verify, discard, skip and tracker movement.</p></article>
-          <article><strong>Data quality</strong><p>Canonical URLs, job IDs, historical deduplication and tracker cleanup.</p></article>
-          <article><strong>Outcome audit</strong><p>Gmail evidence used to separate opportunities considered from applications actually sent.</p></article>
-        </div>
-        <p class="job-ownership__footnote">${metrics.productiveSessions} research sessions produced at least one structured result. The system is designed to retain the reasoning, not only the final shortlist.</p>
+        <p class="job-action-panel__footnote"><strong>The three queues are the principal live tracker states, not an exhaustive breakdown.</strong> Deduplication reduced 404 physical rows to ${metrics.tracker} unique records by resolving three duplicate pairs. The ${metrics.applications} Gmail-confirmed applications are a <strong>verified lower bound</strong>, because a portal submission without an email cannot appear in the audit.</p>
       </section>
     </div>
   `;
