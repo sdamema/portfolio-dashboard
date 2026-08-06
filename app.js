@@ -201,8 +201,8 @@ const projects = [
     shortTitle: "Solar SEO Cluster",
     category: "SEO cluster strategy + production",
     status: "Independent strategy-to-production case study",
-    summary: "I independently led the creation of a new Italian <strong>solar SEO cluster</strong>, from initial opportunity research and page selection to intent mapping, internal-link architecture and production of the first five pages.",
-    contribution: "I independently built the <strong>strategy and production foundation</strong> for a new Italian solar SEO cluster, starting from an open topic rather than a pre-defined page list. I owned the work end to end as the SEO Specialist, from research and roadmap justification to stakeholder presentation, internal-link architecture and production of the first five pages.",
+    summary: "I independently led the creation of a new Italian <strong>solar SEO cluster</strong>, from initial opportunity research and page selection to intent mapping, internal-link architecture and production of six connected pages.",
+    contribution: "I independently built the <strong>strategy and production foundation</strong> for a new Italian solar SEO cluster, starting from an open topic rather than a pre-defined page list. I owned the work end to end as the SEO Specialist, from research and roadmap justification to stakeholder presentation, internal-link architecture and production of six pages.",
     explanation: "",
     hideJumpNav: true,
     hideStoryMain: true,
@@ -211,12 +211,12 @@ const projects = [
       theme: "solar",
       kicker: "Project scale and output",
       title: "Most mapped searches were about <strong>choosing a solar solution</strong>",
-      text: "I combined and deduplicated 20 thematic keyword exports into <strong>1,580 unique queries</strong>, representing roughly 45K monthly searches across the mapped topics—not a traffic forecast. Most demand concerned costs, expected production, providers, reviews and system choices, so the analysis became a <strong>32-page opportunity roadmap</strong> rather than a single commercial landing page. After presenting and justifying the plan, I moved the first five connected pages into production.",
+      text: "I combined and deduplicated 20 thematic keyword exports into <strong>1,580 unique queries</strong>, representing roughly 45K monthly searches across the mapped topics—not a traffic forecast. Most demand concerned costs, expected production, providers, reviews and system choices, so the analysis became a <strong>32-page opportunity roadmap</strong> rather than a single commercial landing page. After presenting and justifying the plan, I moved six connected pages into production.",
       stats: [
         ["1,580", "unique solar queries analyzed"],
         ["~45K/mo", "mapped keyword demand · not forecast traffic"],
         ["32", "potential pages identified across the funnel"],
-        ["5", "priority pages moved into production"]
+        ["6", "priority pages moved into production"]
       ]
     },
     summaryPoints: [],
@@ -226,7 +226,7 @@ const projects = [
       ["1,580", "unique solar-related queries analyzed after combining and deduplicating 20 thematic exports"],
       ["~45K/mo", "combined monthly search volume represented by the mapped keywords; this is not a traffic forecast"],
       ["32", "potential pages identified: 8 educational, 21 evaluation/comparison and 3 high-intent opportunities"],
-      ["5", "priority pages taken into production: pillar, partner company, offers, reviews and financing"]
+      ["6", "priority pages taken into production: pillar, partner company, offers, reviews, financing and a 100 m² sizing guide"]
     ],
     snapshotEyebrow: "Delivery model",
     snapshotTitle: "From research to production",
@@ -234,7 +234,7 @@ const projects = [
     callouts: [
       ["Discover and structure", "Combined 20 broad and topic-specific keyword exports around <strong>cost, production, reviews, permits, installers, quotations and provider intent</strong>, then cleaned them into 1,580 unique queries."],
       ["Map, justify and present", "Converted the query set into a <strong>32-page roadmap</strong> and presented the manager with the product context, search opportunity, architecture and rationale behind each priority."],
-      ["Build and validate", "Moved the first connected set into production: the <strong>solar pillar, Enpal company, Enpal offers, Enpal financing and Enpal reviews</strong>, each supported by research, source tracking and QA."]
+      ["Build and validate", "Moved six connected pages into production: the <strong>solar pillar, Enpal company, Enpal offers, Enpal financing, Enpal reviews and a 100 m² sizing guide</strong>, each supported by research, source tracking and QA."]
     ],
     deepDive: [
       {
@@ -247,7 +247,7 @@ const projects = [
       },
       {
         title: "Moving the strategy into page production",
-        body: `<p>After presenting the roadmap, I moved directly into the <strong>effective creation of the cluster</strong>. The first production set included the main <strong>Fotovoltaico pillar</strong> and four connected partner pages: <strong>Enpal company, Enpal offers, Enpal financing and Enpal reviews</strong>.</p><p>The selection balanced different roles. The pillar created the informational and internal-linking foundation; the company and offer pages made the partner proposition explainable and promotable; reviews and financing covered important decision questions and more specific SERP opportunities.</p><p>Each page followed the same controlled path: intent and keyword set, source research, fact-check requirements, H1/H2 architecture, component planning, WordPress-ready HTML and QA. Source logs, volatile-claim checks, scoped CSS, structural validation and real desktop/mobile browser checks kept the first page set consistent and ready for editorial decisions.</p>`
+        body: `<p>After presenting the roadmap, I moved directly into the <strong>effective creation of the cluster</strong>. The production scope now includes six pages: the main <strong>Fotovoltaico pillar</strong>, four connected partner pages—<strong>Enpal company, Enpal offers, Enpal financing and Enpal reviews</strong>—and an evergreen guide about <strong>how many kWp a 100 m² home may need</strong>.</p><p>The selection balanced different roles. The pillar created the informational and internal-linking foundation; the company and offer pages made the partner proposition explainable and promotable; reviews and financing covered important decision questions; the sizing guide added a useful informational entry point based on <strong>annual electricity consumption rather than floor area alone</strong>.</p><p>Each page followed the same controlled path: intent and keyword set, source research, fact-check requirements, H1/H2 architecture, component planning, WordPress-ready HTML and QA. Source logs, volatile-claim checks, scoped CSS, structural validation and real desktop/mobile browser checks kept the page set consistent and ready for editorial decisions.</p>`
       },
       {
         title: "Independent ownership, with explicit safeguards",
@@ -263,6 +263,7 @@ const projects = [
     urlPlaceholder: "",
     demos: [
       { label: "Pillar", title: "Fotovoltaico pillar page", path: "https://www.papernest.it/luce-gas/fotovoltaico/" },
+      { label: "100 m² guide", title: "Solar sizing guide for a 100 m² home", path: "demos/solar-quanti-kw-100mq.html", note: "WordPress-ready HTML demo with source-backed scenarios, two interactive sizing tools and final QA." },
       { label: "Enpal", title: "Enpal partner page", path: "https://www.papernest.it/luce-gas/fotovoltaico/enpal/" },
       { label: "Reviews", title: "Enpal reviews page", path: "https://www.papernest.it/luce-gas/fotovoltaico/enpal/recensioni/" },
       { label: "Offers", title: "Enpal offers page", path: "https://www.papernest.it/luce-gas/fotovoltaico/enpal/offerte/" },
@@ -874,7 +875,7 @@ const projectPortfolioMeta = {
       problem: "Papernest lacked a structured <strong>photovoltaic SEO cluster</strong>. This limited informational visibility and also made the partner offer difficult to promote: without dedicated pages, there was no strong organic path for explaining the product, building trust or presenting the commercial proposition.",
       analysis: "I analyzed <strong>1,580 unique queries</strong> gathered through 20 thematic keyword exports, grouped them by user need and converted them into <strong>32 TOFU, MOFU and BOFU page opportunities</strong>. Selection considered informational value, realistic SERP openings and usefulness for the partner funnel.",
       insight: "I presented the manager with a complete proposal: how photovoltaic systems work as a product, the search opportunity, the cluster architecture and a <strong>justified publishing roadmap</strong> based on demand, competition, business relevance and internal-linking role.",
-      output: "I then moved into actual production: the <strong>Fotovoltaico pillar</strong> plus Enpal company, offers, financing and reviews pages, all supported by research, WordPress-ready HTML, source tracking and desktop/mobile QA."
+      output: "I then moved into actual production: the <strong>Fotovoltaico pillar</strong>, four Enpal partner pages and a new <strong>100 m² solar-sizing guide</strong>, all supported by research, WordPress-ready HTML, source tracking and desktop/mobile QA."
     }
   },
   "change-residence": {
