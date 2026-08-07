@@ -263,7 +263,7 @@ const projects = [
     urlPlaceholder: "",
     demos: [
       { label: "Pillar", title: "Fotovoltaico pillar page", path: "https://www.papernest.it/luce-gas/fotovoltaico/" },
-      { label: "100 m² guide", title: "Solar sizing guide for a 100 m² home", path: "demos/solar-quanti-kw-100mq.html", note: "WordPress-ready HTML demo with source-backed scenarios, two interactive sizing tools and final QA." },
+      { label: "100 m² guide", title: "Solar sizing guide for a 100 m² home", path: "https://www.papernest.it/luce-gas/fotovoltaico/dimensionamento-impianto-fotovoltaico/" },
       { label: "Enpal", title: "Enpal partner page", path: "https://www.papernest.it/luce-gas/fotovoltaico/enpal/" },
       { label: "Reviews", title: "Enpal reviews page", path: "https://www.papernest.it/luce-gas/fotovoltaico/enpal/recensioni/" },
       { label: "Offers", title: "Enpal offers page", path: "https://www.papernest.it/luce-gas/fotovoltaico/enpal/offerte/" },
