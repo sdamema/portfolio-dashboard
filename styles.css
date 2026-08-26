@@ -2852,6 +2852,13 @@ iframe {
   --project-glass: rgba(252, 232, 216, .42);
 }
 
+.project-box--editorial-orange {
+  --project-accent: #f97316;
+  --project-accent-2: #ea580c;
+  --project-accent-soft: rgba(255, 237, 213, .78);
+  --project-glass: rgba(255, 237, 213, .46);
+}
+
 .project-box::before {
   content: "";
   position: absolute;
@@ -6315,6 +6322,11 @@ body.is-project-view {
   --project-neon-rgb: 201, 111, 67;
 }
 
+.project-box--editorial-orange {
+  --project-neon: #f97316;
+  --project-neon-rgb: 249, 115, 22;
+}
+
 .project-box {
   border-color: rgba(var(--project-neon-rgb), .58);
   background:
@@ -6623,6 +6635,10 @@ body.is-project-view {
 
 .project-box__icon[data-project-icon="play"] {
   --project-icon: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M8%205.5v13l10-6.5-10-6.5z'%20fill='black'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.project-box__icon[data-project-icon="pen"] {
+  --project-icon: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2.05'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='m4%2020%204.2-1%2010.7-10.7a2.3%202.3%200%200%200-3.2l-.1-.1a2.3%202.3%200%200%200-3.2L5.7%2015%204%2020z'/%3E%3Cpath%20d='m13.3%206.7%204%204'/%3E%3Cpath%20d='M8.2%2019%205%2015.8'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 @media (max-width: 700px) {
@@ -8182,11 +8198,66 @@ body.is-project-view {
     width: 100%;
   }
 
-  .project-box[data-project-id="job-search-system"] .project-box__summary,
-  .project-box[data-project-id="offpage-dashboard"] .project-box__summary {
+.project-box[data-project-id="job-search-system"] .project-box__summary,
+.project-box[data-project-id="offpage-dashboard"] .project-box__summary {
     display: block;
     overflow: visible;
     -webkit-box-orient: initial;
     -webkit-line-clamp: unset;
   }
+}
+
+.project-view[data-project-theme="editorial-orange"] {
+  --skill-accent: #f97316;
+}
+
+.project-view[data-project-theme="editorial-orange"] .project-page-head::before,
+.project-view[data-project-theme="editorial-orange"] .performance-section::before {
+  background: #f97316;
+}
+
+.project-view[data-project-theme="editorial-orange"] .project-page-head {
+  border-color: rgba(249, 115, 22, .24);
+  background:
+    radial-gradient(circle at 96% 4%, rgba(249, 115, 22, .13), transparent 24rem),
+    linear-gradient(135deg, rgba(255, 247, 237, .92), rgba(255, 255, 255, .98));
+}
+
+.project-view[data-project-theme="editorial-orange"] .story-panel strong,
+.project-view[data-project-theme="editorial-orange"] .deep-dive strong {
+  color: #c2410c;
+}
+
+.project-view[data-project-theme="editorial-orange"] .project-contribution-card {
+  border-color: rgba(249, 115, 22, .28);
+  background: linear-gradient(135deg, rgba(255, 237, 213, .82), rgba(255, 255, 255, .96));
+}
+
+.project-view[data-project-theme="editorial-orange"] .project-contribution-card > span {
+  color: #c2410c;
+}
+
+.project-view[data-project-theme="editorial-orange"] .project-summary-story article:first-child {
+  --story-line: rgba(249, 115, 22, .34);
+  --story-bg-a: rgba(255, 237, 213, .86);
+}
+
+.project-view[data-project-theme="editorial-orange"] .project-summary-flow article:nth-child(1) {
+  --story-line: rgba(234, 88, 12, .28);
+  --story-bg-a: rgba(255, 237, 213, .72);
+}
+
+.project-view[data-project-theme="editorial-orange"] .project-summary-flow article:nth-child(2) {
+  --story-line: rgba(245, 158, 11, .28);
+  --story-bg-a: rgba(254, 243, 199, .70);
+}
+
+.project-view[data-project-theme="editorial-orange"] .project-summary-flow article:nth-child(3) {
+  --story-line: rgba(194, 65, 12, .26);
+  --story-bg-a: rgba(255, 228, 230, .58);
+}
+
+.project-view[data-project-theme="editorial-orange"] .example-area {
+  border-color: rgba(249, 115, 22, .24);
+  box-shadow: 0 22px 54px rgba(154, 52, 18, .10);
 }

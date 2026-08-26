@@ -539,6 +539,49 @@ const projects = [
     ]
   },
   {
+    id: "fever",
+    title: "Fever / Secret Media Network Editorial Test",
+    shortTitle: "Fever Editorial Test",
+    category: "Editorial systems + social copy",
+    status: "Interview project",
+    summary: "For a <strong>Fever / Secret Media Network Staff Writer interview</strong>, I completed three Italian editorial tests: <strong>Instagram captions and Stories</strong>, the rewrite of an <strong>AI-generated Jazz Room text</strong>, and a short <strong>Candlelight article</strong> built around a source-checked cultural angle.",
+    contribution: "I translated the brief into editorial and factual guardrails, researched the relevant brand voice, developed the three deliverables and documented every important edit. I used Claude Code and Codex for research, comparison and repeatable QA, while keeping angle selection, factual decisions and final editorial approval human-led.",
+    explanation: "",
+    summaryPoints: [],
+    metrics: [
+      ["3", "different editorial tests in the interview brief"],
+      ["8", "Instagram captions and Story texts delivered"],
+      ["17", "public pages in the tone-of-voice corpus"],
+      ["46", "automated workflow tests passing"]
+    ],
+    callouts: [],
+    deepDive: [
+      {
+        title: "How I researched the voice without copying it",
+        body: `<p>I treated the reference sites as a <strong>targeted editorial corpus</strong>, not as templates to imitate. Product pages were used for facts; Secret Media Network articles for rhythm and structure; public social posts for hooks, microcopy and CTA patterns; local and artist sources for cultural context.</p><p>The working corpus covered <strong>17 public pages</strong> and a direct sample of <strong>40 Jury Experience captions</strong>. The aim was to identify reusable principles—short hooks, second-person language, one dominant idea per caption and concrete local context—while keeping every submitted sentence original.</p>`
+      },
+      {
+        title: "How facts and creative choices stayed separate",
+        body: `<p>A <strong>fact ledger</strong> recorded which claims were verified, volatile, conditional or excluded. A separate <strong>angle matrix</strong> controlled creative choices such as the promise, detail, emotion and CTA of each social concept.</p><p>This separation mattered most for the Atrani article. The brief did not provide a venue, date, programme, ensemble or price, so none of those details were invented. Pino Daniele was chosen because the connection between Campania, Neapolitan melody, blues, rock and jazz created a source-backed reason for the tribute.</p>`
+      },
+      {
+        title: "What the automated checks did—and did not do",
+        body: `<p>Python checks validated word and character limits, missing sections, duplicate or overly similar concepts, unsupported factual signals, source-note completeness and clean export. The workflow also kept the working draft separate from the candidate and linked human approval to the exact candidate hash.</p><p>The scripts did <strong>not</strong> score creativity or claim that a text was “human.” Naturalness, rhythm, cultural judgment and final voice still required reading, comparison and human approval. The full demo below shows the actual work and the reasoning behind the edits.</p>`
+      }
+    ],
+    hideSnapshot: true,
+    hideFutureData: true,
+    performancePlaceholder: "",
+    urlPlaceholder: "",
+    demos: [
+      {
+        label: "Complete test",
+        title: "The three-part editorial test",
+        path: "demos/fever/index.html"
+      }
+    ]
+  },
+  {
     id: "social-media",
     title: "Ladywoods / BGSA Social & Event Content",
     shortTitle: "Ladywoods / BGSA",
@@ -823,6 +866,7 @@ const projectOrder = [
   "sportelli",
   "summary",
   "ranking",
+  "fever",
   "social-media",
   "creator",
   "change-residence"
@@ -927,6 +971,21 @@ const projectPortfolioMeta = {
       insight: "The strongest version was not a simple ordered list. It included <strong>review comments</strong>, added <strong>sentiment analysis</strong> as extra unique content and helped users understand why each provider was positioned that way.",
       output: "Final output: updated <strong>ranking HTML</strong> with podium logic, full supplier ranking, sentiment/comment evidence and links toward the review pages."
     }
+  },
+  fever: {
+    visualTheme: "editorial-orange",
+    icon: "pen",
+    areas: ["seo", "social"],
+    topicTags: ["Editorial QA", "Social copy", "Fact-checking"],
+    cardSummary: "Three interview tests: social copy, AI-text editing and a fact-checked article.",
+    story: {
+      main: "For a <strong>Fever / Secret Media Network Staff Writer interview</strong>, I completed three distinct Italian writing tasks and built a source-backed workflow to keep voice, facts, constraints and final approval under control."
+    },
+    storySteps: [
+      ["01 · Social copy", "Write <strong>4 Instagram captions and 4 Story texts</strong> for The Jury Experience, each with its own hook, angle and CTA while respecting strict length limits."],
+      ["02 · AI editing", "Rewrite an <strong>AI-generated Jazz Room description</strong>, then explain precisely what was removed, corrected or made more concrete—and why."],
+      ["03 · Short article", "Write a <strong>maximum-300-word Candlelight article</strong> announcing a first one-night event in Atrani and justify a source-backed artist choice without inventing missing event details."]
+    ]
   },
   "nrj2-analysis": {
     visualTheme: "technical-ai",
@@ -2546,6 +2605,7 @@ function renderProjectDetail(project) {
   detailTitle.textContent = project.title;
   detailSummary.innerHTML = project.summary;
   detailStatus.textContent = project.status;
+  projectView.dataset.projectTheme = project.visualTheme || "content-seo";
   projectView.classList.toggle("project-view--examples-after-story", Boolean(project.examplesAfterStory));
   projectView.classList.toggle("project-view--job-search", project.customCaseStudy === "job-search-system");
   storyPanel?.classList.toggle("story-panel--job-search", project.customCaseStudy === "job-search-system");
