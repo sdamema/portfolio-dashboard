@@ -96,11 +96,11 @@ const projects = [
   },
   {
     id: "blu-selection",
-    title: "Blu Selection / European Growth Intelligence",
-    shortTitle: "Blu Growth Intelligence",
-    category: "Growth research + content strategy",
-    status: "Independent interview project",
-    summary: "For a final interview for Blu Selection's <strong>Marketing Intern — Growth & GTM Playbook</strong> role, I independently built two connected prototypes. The first analyses how Blu's country-specific content guides candidates and employers across Europe. The second turns public company-expansion news into a transparent research queue for manual GTM qualification. Both projects use public sources only and were not commissioned or implemented by Blu.",
+    title: "Blu Selection / Content & CTA Analysis",
+    shortTitle: "Blu Content & CTA Analysis",
+    category: "Content & CTA Analysis",
+    status: "Self-initiated project",
+    summary: "I created this independent project to understand how <strong>Blu Selection's website supports candidates and employers across Europe</strong>. I mapped the site by country, topic and publication date, compared the volume and freshness of each market's content, and audited article CTAs and contextual links to see where every journey leads. I then turned the findings into an interactive map and a set of practical content and conversion priorities.",
     contribution: "",
     explanation: "",
     summaryPoints: [],
@@ -1180,14 +1180,14 @@ const projectPortfolioMeta = {
     visualTheme: "technical-ai",
     icon: "map",
     areas: ["seo", "technical"],
-    topicTags: ["Growth research", "Content journeys", "GTM"],
-    cardSummary: "Two interview prototypes connecting European content journeys and public expansion signals.",
+    topicTags: ["Content audit", "CTA journeys", "International SEO"],
+    cardSummary: "A site-wide audit of content coverage, freshness and candidate/employer CTA journeys.",
     story: {
-      main: "I independently built <strong>two connected interview prototypes</strong> to show how public research, content analysis, structured data and lightweight automation could support Blu's European growth work.",
-      problem: "Blu serves both <strong>candidate acquisition and employer lead generation</strong> across several markets. Public content can reveal useful opportunities and journey issues, but the evidence is distributed across country pages, articles, guides and external expansion announcements.",
-      analysis: "I separated the work into two layers: a <strong>content and conversion audit</strong> covering Blu's country-specific pages and their next-step links, and a <strong>Growth/GTM prototype</strong> that structures public company-expansion signals before manual qualification.",
-      insight: "The common value is a clearer <strong>human review queue</strong>. Content teams can focus on broken or misaligned journeys, while Growth teams can focus on the small number of fresh expansion signals that deserve deeper research.",
-      output: "The final work includes an interactive map of <strong>74 assets across 10 markets</strong>, an audit of <strong>190 placements across 71 articles</strong>, and a separate radar with <strong>four illustrative expansion signals</strong>, transparent scoring, account briefs and content/AEO angles."
+      main: "I created this project on my own initiative to understand <strong>how Blu Selection's content works across Europe</strong> and whether its CTAs guide candidates and employers towards the right next step.",
+      problem: "The website serves several countries and two different audiences, but its content is distributed across country pages, articles and guides. Without a single view, it is difficult to compare <strong>which topics each market covers, how active and recent that content is, and where article CTAs send readers</strong>.",
+      analysis: "I mapped <strong>74 country-specific assets across 10 markets</strong>, tagging each item by country, topic, audience and publication date. I then audited <strong>71 articles and 190 CTA or contextual-link placements</strong>, checking destinations, audience fit, broken links and the consistency of each journey.",
+      insight: "The analysis revealed an uneven content footprint: <strong>Spain had the broadest coverage</strong>, while several markets had clear topic or freshness gaps. The CTA audit also identified <strong>four broken placements</strong> and <strong>one audience-to-destination journey requiring review</strong>.",
+      output: "I turned the findings into an <strong>interactive content and CTA map</strong> that compares markets, filters assets by topic, audience and recency, and surfaces the journeys that need attention. A separate signal-radar demo extends the same public-data approach into growth research."
     }
   },
   offpage: {
