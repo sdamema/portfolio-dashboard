@@ -95,6 +95,41 @@ const projects = [
     demos: []
   },
   {
+    id: "blu-selection",
+    title: "Blu Selection / European Growth Intelligence",
+    shortTitle: "Blu Growth Intelligence",
+    category: "Growth research + content strategy",
+    status: "Independent interview project",
+    summary: "For a final interview for Blu Selection's <strong>Marketing Intern — Growth & GTM Playbook</strong> role, I independently built two connected prototypes. The first analyses how Blu's country-specific content guides candidates and employers across Europe. The second turns public company-expansion news into a transparent research queue for manual GTM qualification. Both projects use public sources only and were not commissioned or implemented by Blu.",
+    contribution: "",
+    explanation: "",
+    summaryPoints: [],
+    metrics: [],
+    callouts: [],
+    deepDive: [],
+    hideJumpNav: true,
+    hideDeepDive: true,
+    hideKeyNumbers: true,
+    hideSnapshot: true,
+    hideFutureData: true,
+    performancePlaceholder: "",
+    urlPlaceholder: "",
+    demos: [
+      {
+        label: "Content map",
+        title: "European Content & Conversion Map",
+        note: "Interactive audit of country content and candidate/employer journeys.",
+        path: "demos/blu-selection/content-map.html"
+      },
+      {
+        label: "Signal radar",
+        title: "European Expansion Signal Radar",
+        note: "Source-backed GTM research prototype with transparent scoring and human review.",
+        path: "demos/blu-selection/growth-signal-radar/index.html"
+      }
+    ]
+  },
+  {
     id: "offers",
     title: "Supplier Offer Sheets",
     shortTitle: "Offer Sheets",
@@ -988,6 +1023,7 @@ const projectOrder = [
   "nrj2-analysis",
   "bounce-interlinking",
   "scraping",
+  "blu-selection",
   "sportelli",
   "summary",
   "ranking",
@@ -1139,6 +1175,20 @@ const projectPortfolioMeta = {
       ["Difficulty", "Scraping already saved a lot of collection time, but without precise rules part of that gain could be reduced by reviewing <strong>less relevant or too generic comments</strong>."],
       ["Improvement", "I used <strong>Codex-built instructions</strong> to define themes, exclusion rules and quality criteria before collection, reducing unnecessary review work and saving an estimated <strong>4.5 hours</strong> of reading/evaluation."]
     ]
+  },
+  "blu-selection": {
+    visualTheme: "technical-ai",
+    icon: "map",
+    areas: ["seo", "technical"],
+    topicTags: ["Growth research", "Content journeys", "GTM"],
+    cardSummary: "Two interview prototypes connecting European content journeys and public expansion signals.",
+    story: {
+      main: "I independently built <strong>two connected interview prototypes</strong> to show how public research, content analysis, structured data and lightweight automation could support Blu's European growth work.",
+      problem: "Blu serves both <strong>candidate acquisition and employer lead generation</strong> across several markets. Public content can reveal useful opportunities and journey issues, but the evidence is distributed across country pages, articles, guides and external expansion announcements.",
+      analysis: "I separated the work into two layers: a <strong>content and conversion audit</strong> covering Blu's country-specific pages and their next-step links, and a <strong>Growth/GTM prototype</strong> that structures public company-expansion signals before manual qualification.",
+      insight: "The common value is a clearer <strong>human review queue</strong>. Content teams can focus on broken or misaligned journeys, while Growth teams can focus on the small number of fresh expansion signals that deserve deeper research.",
+      output: "The final work includes an interactive map of <strong>74 assets across 10 markets</strong>, an audit of <strong>190 placements across 71 articles</strong>, and a separate radar with <strong>four illustrative expansion signals</strong>, transparent scoring, account briefs and content/AEO angles."
+    }
   },
   offpage: {
     visualTheme: "content-seo",
