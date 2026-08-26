@@ -120,12 +120,6 @@ const projects = [
         title: "European Content & Conversion Map",
         note: "Interactive audit of country content and candidate/employer journeys.",
         path: "demos/blu-selection/content-map.html"
-      },
-      {
-        label: "Signal radar",
-        title: "European Expansion Signal Radar",
-        note: "Source-backed GTM research prototype with transparent scoring and human review.",
-        path: "demos/blu-selection/growth-signal-radar/index.html"
       }
     ]
   },
