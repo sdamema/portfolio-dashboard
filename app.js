@@ -1178,16 +1178,17 @@ const projectPortfolioMeta = {
   },
   "blu-selection": {
     visualTheme: "technical-ai",
-    icon: "map",
+    icon: "search",
     areas: ["seo", "technical"],
     topicTags: ["Content audit", "CTA journeys", "International SEO"],
     cardSummary: "A site-wide audit of content coverage, freshness and candidate/employer CTA journeys.",
+    storyLabels: ["Why I built it", "What I compared", "Scale of the audit", "Gaps & CTA checks"],
     story: {
-      main: "I created this project on my own initiative to understand <strong>how Blu Selection's content works across Europe</strong> and whether its CTAs guide candidates and employers towards the right next step.",
-      problem: "The website serves several countries and two different audiences, but its content is distributed across country pages, articles and guides. Without a single view, it is difficult to compare <strong>which topics each market covers, how active and recent that content is, and where article CTAs send readers</strong>.",
-      analysis: "I mapped <strong>74 country-specific assets across 10 markets</strong>, tagging each item by country, topic, audience and publication date. I then audited <strong>71 articles and 190 CTA or contextual-link placements</strong>, checking destinations, audience fit, broken links and the consistency of each journey.",
-      insight: "The analysis revealed an uneven content footprint: <strong>Spain had the broadest coverage</strong>, while several markets had clear topic or freshness gaps. The CTA audit also identified <strong>four broken placements</strong> and <strong>one audience-to-destination journey requiring review</strong>.",
-      output: "I turned the findings into an <strong>interactive content and CTA map</strong> that compares markets, filters assets by topic, audience and recency, and surfaces the journeys that need attention. A separate signal-radar demo extends the same public-data approach into growth research."
+      main: "I built an <strong>interactive country-by-country view of Blu Selection's European content and CTA journeys</strong>, so the whole website can be understood from one place instead of checking pages individually.",
+      problem: "I wanted to understand <strong>how consistently the website supports each market</strong>: which countries receive more editorial attention, which topics are covered and how recently each section has been updated.",
+      analysis: "For every country, I compared <strong>article volume, topics, audience and publication date</strong>. The overview makes it easy to see when a market has fewer articles, misses an important theme or covers a broader range than the others, helping guide content expansion and refresh priorities.",
+      insight: "The analysis maps <strong>74 country-specific assets across 10 markets</strong>. I also reviewed <strong>71 articles and 190 CTA or contextual-link placements</strong> to understand the next step offered to candidates and employers.",
+      output: "The map shows that <strong>Spain has the broadest coverage</strong> and highlights topic or freshness gaps in other markets. The CTA audit also flags <strong>four broken placements</strong> and <strong>one working link whose destination may not match the source audience</strong>."
     }
   },
   offpage: {
@@ -2778,6 +2779,7 @@ function renderProjectDetail(project) {
   projectView.classList.toggle("project-view--job-search", project.customCaseStudy === "job-search-system");
   storyPanel?.classList.toggle("story-panel--job-search", project.customCaseStudy === "job-search-system");
   storyPanel?.classList.toggle("story-panel--fever", project.customCaseStudy === "fever-editorial");
+  storyPanel?.classList.toggle("story-panel--blu", project.id === "blu-selection");
   if (storyPanelTitle) {
     storyPanelTitle.hidden = Boolean(project.hideStoryPanelTitle);
     storyPanelTitle.textContent = project.storyTitle || "Project story";
