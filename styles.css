@@ -8261,3 +8261,395 @@ body.is-project-view {
   border-color: rgba(249, 115, 22, .24);
   box-shadow: 0 22px 54px rgba(154, 52, 18, .10);
 }
+
+/* Fever case study: one summary followed by exactly three assignment sections. */
+.story-panel--fever {
+  overflow: visible;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.story-panel--fever::before {
+  content: none;
+}
+
+.fever-case {
+  --fever-orange: #f97316;
+  --fever-orange-dark: #c2410c;
+  --fever-orange-soft: #ffedd5;
+  --fever-ink: #23150e;
+  --fever-muted: #6f625b;
+  --fever-line: rgba(124, 63, 24, .16);
+  display: grid;
+  gap: 18px;
+}
+
+.fever-test {
+  overflow: hidden;
+  padding: clamp(20px, 3.4vw, 36px);
+  border: 1px solid var(--fever-line);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(249, 115, 22, .09), transparent 22rem),
+    linear-gradient(145deg, rgba(255, 255, 255, .98), rgba(255, 250, 245, .94));
+  box-shadow: 0 18px 44px rgba(124, 45, 18, .07);
+}
+
+.fever-test__head {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+
+.fever-test__number {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--fever-orange), #ea580c);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 900;
+  box-shadow: 0 12px 26px rgba(234, 88, 12, .22);
+}
+
+.fever-test__head p,
+.fever-assignment > span,
+.fever-section-intro > span,
+.fever-caption header span,
+.fever-text-panel header span,
+.fever-corrections > header span,
+.fever-article > div span,
+.fever-article-notes span {
+  color: var(--fever-orange-dark);
+  font-size: .68rem;
+  font-weight: 850;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+}
+
+.fever-test__head h4 {
+  margin: 4px 0 0;
+  color: var(--fever-ink);
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  line-height: 1.08;
+}
+
+.fever-assignment,
+.fever-section-intro {
+  margin-top: 16px;
+  padding: 15px 16px;
+  border-radius: 9px;
+}
+
+.fever-assignment {
+  border: 1px solid rgba(249, 115, 22, .22);
+  background: linear-gradient(135deg, rgba(255, 237, 213, .72), rgba(255, 255, 255, .9));
+}
+
+.fever-section-intro {
+  border: 1px solid rgba(124, 63, 24, .13);
+  background: rgba(255, 255, 255, .78);
+}
+
+.story-panel--fever .fever-assignment p,
+.story-panel--fever .fever-section-intro p {
+  margin: 7px 0 0;
+  color: #4a3a31;
+  font-size: .91rem;
+  line-height: 1.58;
+}
+
+.fever-caption-grid,
+.fever-rewrite-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.fever-caption,
+.fever-text-panel {
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid var(--fever-line);
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(124, 45, 18, .055);
+}
+
+.fever-caption {
+  display: flex;
+  flex-direction: column;
+}
+
+.fever-caption > header,
+.fever-text-panel > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px;
+  border-bottom: 1px solid var(--fever-line);
+  background: linear-gradient(135deg, var(--fever-orange-soft), rgba(255, 255, 255, .82));
+}
+
+.fever-caption > header div,
+.fever-text-panel > header {
+  display: grid;
+}
+
+.fever-caption > header div {
+  gap: 4px;
+}
+
+.project-view[data-project-theme="editorial-orange"] .fever-caption header strong,
+.project-view[data-project-theme="editorial-orange"] .fever-text-panel header strong {
+  color: var(--fever-ink);
+}
+
+.fever-caption header small {
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .8);
+  color: var(--fever-muted);
+  font-size: .66rem;
+  font-weight: 800;
+}
+
+.fever-copy {
+  flex: 1;
+  padding: 18px;
+}
+
+.story-panel--fever .fever-copy p,
+.story-panel--fever .fever-article p {
+  margin: 0;
+  color: #34241b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .96rem;
+  line-height: 1.68;
+}
+
+.story-panel--fever .fever-copy p + p,
+.story-panel--fever .fever-article p + p {
+  margin-top: 13px;
+}
+
+.fever-story {
+  display: grid;
+  gap: 5px;
+  margin: 0 10px 10px;
+  padding: 13px;
+  border-radius: 9px;
+  background: #23150e;
+  color: #fff7ed;
+}
+
+.fever-story span {
+  color: #fdba74;
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.project-view[data-project-theme="editorial-orange"] .fever-story strong {
+  color: #fff7ed;
+  font-size: .86rem;
+}
+
+.fever-text-panel--before {
+  border-color: rgba(183, 75, 59, .20);
+}
+
+.fever-text-panel--before > header {
+  background: rgba(254, 226, 226, .68);
+}
+
+.fever-text-panel--before > header span {
+  color: #b42318;
+}
+
+.fever-text-panel--after {
+  border-color: rgba(19, 121, 91, .22);
+}
+
+.fever-text-panel--after > header {
+  background: rgba(209, 250, 229, .66);
+}
+
+.fever-text-panel--after > header span {
+  color: #13795b;
+}
+
+.fever-corrections {
+  margin-top: 14px;
+  padding: 20px;
+  border-radius: 11px;
+  background: linear-gradient(145deg, #25170f, #160e09);
+  color: #fff7ed;
+}
+
+.fever-corrections > header h5 {
+  margin: 4px 0 15px;
+  color: #fff7ed;
+  font-size: 1.35rem;
+}
+
+.fever-corrections > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.fever-corrections article {
+  position: relative;
+  padding: 14px 14px 14px 50px;
+  border: 1px solid rgba(255, 237, 213, .12);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, .055);
+}
+
+.fever-corrections article > b {
+  position: absolute;
+  top: 13px;
+  left: 12px;
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--fever-orange);
+  color: #fff;
+  font-size: .66rem;
+}
+
+.project-view[data-project-theme="editorial-orange"] .fever-corrections strong {
+  color: #ffedd5;
+  font-size: .88rem;
+}
+
+.story-panel--fever .fever-corrections p {
+  margin: 6px 0 0;
+  color: rgba(255, 247, 237, .7);
+  font-size: .8rem;
+  line-height: 1.5;
+}
+
+.fever-article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(230px, .55fr);
+  gap: 12px;
+  align-items: start;
+  margin-top: 16px;
+}
+
+.fever-article {
+  padding: clamp(22px, 4vw, 42px);
+  border: 1px solid rgba(124, 63, 24, .18);
+  border-radius: 11px;
+  background:
+    linear-gradient(90deg, transparent 27px, rgba(249, 115, 22, .1) 28px, transparent 29px),
+    repeating-linear-gradient(180deg, transparent 0, transparent 30px, rgba(124, 63, 24, .05) 31px),
+    #fffefb;
+  box-shadow: 0 16px 38px rgba(124, 45, 18, .09);
+}
+
+.fever-article > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.fever-article > div strong {
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--fever-orange-soft);
+  color: var(--fever-orange-dark);
+  font-size: .7rem;
+}
+
+.fever-article h5 {
+  margin: 0 0 20px;
+  color: var(--fever-ink);
+  font-size: clamp(1.4rem, 2.7vw, 2.15rem);
+  line-height: 1.08;
+  letter-spacing: -.025em;
+}
+
+.fever-article h6 {
+  margin: 24px 0 10px;
+  color: var(--fever-orange-dark);
+  font-size: 1.05rem;
+}
+
+.fever-article-notes {
+  display: grid;
+  gap: 9px;
+}
+
+.fever-article-notes article {
+  padding: 16px;
+  border: 1px solid var(--fever-line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .82);
+}
+
+.story-panel--fever .fever-article-notes p {
+  margin: 7px 0 0;
+  color: var(--fever-muted);
+  font-size: .83rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 820px) {
+  .fever-caption-grid,
+  .fever-rewrite-grid,
+  .fever-corrections > div,
+  .fever-article-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .fever-test {
+    padding: 16px 13px;
+  }
+
+  .fever-test__head {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .fever-test__number {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    font-size: .82rem;
+  }
+
+  .fever-caption > header {
+    display: grid;
+  }
+
+  .fever-corrections {
+    padding: 14px;
+  }
+
+  .fever-article {
+    padding: 22px 17px;
+  }
+
+  .fever-article > div {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

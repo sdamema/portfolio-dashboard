@@ -542,44 +542,185 @@ const projects = [
     id: "fever",
     title: "Fever / Secret Media Network Editorial Test",
     shortTitle: "Fever Editorial Test",
-    category: "Editorial systems + social copy",
-    status: "Interview project",
-    summary: "For a <strong>Fever / Secret Media Network Staff Writer interview</strong>, I completed three Italian editorial tests: <strong>Instagram captions and Stories</strong>, the rewrite of an <strong>AI-generated Jazz Room text</strong>, and a short <strong>Candlelight article</strong> built around a source-checked cultural angle.",
-    contribution: "I translated the brief into editorial and factual guardrails, researched the relevant brand voice, developed the three deliverables and documented every important edit. I used Claude Code and Codex for research, comparison and repeatable QA, while keeping angle selection, factual decisions and final editorial approval human-led.",
-    explanation: "",
+    category: "Copywriting + editorial QA",
+    status: "Interview test",
+    summary: "For a <strong>Fever / Secret Media Network Staff Writer interview</strong>, I completed three Italian writing tests: <strong>four Instagram captions with Stories</strong> for The Jury Experience, the <strong>editing of an AI-generated Jazz Room text</strong>, and a <strong>short Candlelight article</strong> for a first one-night event in Atrani. Below, each section shows the assignment, the work I delivered and the editorial reasoning behind it.",
+    contribution: "",
+    explanation: `
+      <div class="fever-case">
+        <section class="fever-test fever-test--social" aria-labelledby="fever-test-social">
+          <header class="fever-test__head">
+            <span class="fever-test__number">01</span>
+            <div>
+              <p>The Jury Experience</p>
+              <h4 id="fever-test-social">Instagram captions and Stories</h4>
+            </div>
+          </header>
+
+          <div class="fever-assignment">
+            <span>Assignment</span>
+            <p>Write <strong>four Instagram feed captions</strong> and <strong>four Story texts</strong> in Italian. Each caption had a maximum length of 130 words; each Story had an 80-character ceiling.</p>
+          </div>
+
+          <div class="fever-section-intro">
+            <span>Work delivered</span>
+            <p>I gave each concept a different editorial purpose: inviting a friend who disagrees with you, deciding despite uncertainty, paying attention before voting, and moving from spectator to juror. The Story copy isolates the strongest hook instead of mechanically shortening the caption.</p>
+          </div>
+
+          <div class="fever-caption-grid">
+            <article class="fever-caption">
+              <header><div><span>Concept 1</span><strong>Disagreement as the invitation</strong></div><small>72 words</small></header>
+              <div class="fever-copy" lang="it">
+                <p>Hai presente quell'amico che ha sempre un'obiezione pronta? Portalo con te. 👀</p>
+                <p>Per una volta, non essere d'accordo potrebbe essere la parte migliore della serata.</p>
+                <p>Entrerete nella stessa aula, ascolterete lo stesso caso e avrete entrambi un voto. Prima di scegliere potrete confrontarvi. Dopo, se le conclusioni non coincidono, provate a capire quando avete cominciato a pensarla diversamente. Almeno saprete già di cosa discutere sulla strada di casa.</p>
+                <p>Chi vuoi accanto in giuria?</p>
+              </div>
+              <div class="fever-story" lang="it"><span>Story · 51 characters</span><strong>Stessa aula. Due opinioni. Chi porteresti con te? 👀</strong></div>
+            </article>
+
+            <article class="fever-caption">
+              <header><div><span>Concept 2</span><strong>Decision under uncertainty</strong></div><small>41 words</small></header>
+              <div class="fever-copy" lang="it">
+                <p>Il dubbio non è sparito. Il momento di votare, però, è arrivato.</p>
+                <p>In The Jury Experience ascolti il caso, ne discuti con gli altri e fai parte della giuria. Anche senza una certezza assoluta, devi prendere posizione.</p>
+                <p>Da che parte stai? ⚖️</p>
+              </div>
+              <div class="fever-story" lang="it"><span>Story · 41 characters</span><strong>Il dubbio resta. Tu da che parte stai? ⚖️</strong></div>
+            </article>
+
+            <article class="fever-caption">
+              <header><div><span>Concept 3</span><strong>Attention before the vote</strong></div><small>55 words</small></header>
+              <div class="fever-copy" lang="it">
+                <p>Qui conviene ascoltare fino in fondo.</p>
+                <p>Segui il caso, confronta le posizioni e decidi che peso dare a quello che hai sentito. Non basta ricordare, devi anche capire cosa ti convince davvero. Quando arriva il momento di votare, nessuno può scegliere al posto tuo.</p>
+                <p>Metti alla prova la tua attenzione. Biglietti nel link in bio.</p>
+              </div>
+              <div class="fever-story" lang="it"><span>Story · 44 characters</span><strong>Ascolta. Valuta. Vota. Ogni passaggio conta.</strong></div>
+            </article>
+
+            <article class="fever-caption">
+              <header><div><span>Concept 4</span><strong>From audience to jury</strong></div><small>57 words</small></header>
+              <div class="fever-copy" lang="it">
+                <p>Pensavi di avere soltanto un posto tra il pubblico.</p>
+                <p>In The Jury Experience, invece, il pubblico diventa giuria: valuti il caso, ti confronti con gli altri partecipanti e voti.</p>
+                <p>Il tuo voto si aggiunge a quello degli altri, ed è da lì che nasce il verdetto.</p>
+                <p>Entra in aula: quando arriva il voto, ci sei anche tu. ⚖️</p>
+              </div>
+              <div class="fever-story" lang="it"><span>Story · 53 characters</span><strong>Il pubblico prende posto. La giuria prende posizione.</strong></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="fever-test fever-test--rewrite" aria-labelledby="fever-test-rewrite">
+          <header class="fever-test__head">
+            <span class="fever-test__number">02</span>
+            <div>
+              <p>The Jazz Room</p>
+              <h4 id="fever-test-rewrite">Editing an AI-generated text</h4>
+            </div>
+          </header>
+
+          <div class="fever-assignment">
+            <span>Assignment</span>
+            <p>Edit an <strong>AI-generated Italian description</strong> so it could be published, then explain clearly what was changed and why.</p>
+          </div>
+
+          <div class="fever-section-intro">
+            <span>Work delivered</span>
+            <p>I kept the useful informational sequence of the original, but removed unsupported details, translation artefacts and abstract promotional language. The comparison below shows the original draft and my edited version in full.</p>
+          </div>
+
+          <div class="fever-rewrite-grid">
+            <article class="fever-text-panel fever-text-panel--before">
+              <header><span>Original</span><strong>AI-generated source text</strong></header>
+              <div class="fever-copy" lang="it">
+                <p>The Jazz Room porta la magia della prima scena jazz direttamente nella vostra città. Ispirata ai vivaci bar della New Orleans degli anni '20, questa esperienza live immersiva unisce musica coinvolgente e un'atmosfera piena di nostalgia e ritmo.</p>
+                <p>The Jazz Room è un formato intimo di concerti dal vivo dedicato al jazz e alle tradizioni musicali più vicine a questo genere. Al centro ci sono piccoli ensemble, improvvisazione, musicalità espressiva e una connessione ravvicinata tra artisti e pubblico. A completare l'esperienza, programmi a rotazione — dal jazz al blues, dal soul alle serate tributo — con una durata di circa 60 minuti. I programmi sono interpretativi e ogni concerto è un'esperienza a sé. Il limite di età varia a seconda della sede.</p>
+                <p>Aspettatevi energici suoni di ottoni, morbide melodie al pianoforte e improvvisazioni spontanee capaci di far rivivere lo spirito del jazz. Luci soffuse e vibrazioni vintage creano la sensazione di trovarsi in un piccolo jazz club nel French Quarter.</p>
+                <p>Che siate appassionati di jazz o semplicemente alla ricerca di una serata speciale, The Jazz Room è un viaggio musicale pieno di anima e intramontabile magia neworleansese.</p>
+              </div>
+            </article>
+
+            <article class="fever-text-panel fever-text-panel--after">
+              <header><span>Edited version</span><strong>My publication-ready rewrite</strong></header>
+              <div class="fever-copy" lang="it">
+                <p>New Orleans è il riferimento di The Jazz Room, che porta dal vivo sonorità dagli anni Venti a oggi. A seconda della serata, il repertorio passa dal jazz al blues e al soul, con appuntamenti dedicati anche ai tributi.</p>
+                <p>Musicisti e voci sono al centro di un concerto raccolto, dove l'improvvisazione accorcia la distanza con il pubblico. La durata indicativa è di circa 60 minuti; per il limite di età, controlla la pagina della tua città.</p>
+                <p>Fra gli elementi possibili ci sono sassofoni, trombe e voci. Le luci soffuse accompagnano l'ascolto, in un ambiente che mantiene vicini musicisti e pubblico.</p>
+                <p>Che tu conosca già il jazz o voglia scoprirlo, qui il punto è seguire la musica mentre viene suonata e improvvisata.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="fever-corrections">
+            <header><span>Why I changed it</span><h5>Editorial corrections</h5></header>
+            <div>
+              <article><b>01</b><strong>Fixed the opening calque</strong><p><em>“Prima scena jazz”</em> reads as “the first jazz scene” in Italian. I replaced it with a clear timeframe and used New Orleans as a cultural reference.</p></article>
+              <article><b>02</b><strong>Removed unsupported scenery</strong><p>The official Italian page did not support the French Quarter, 1920s bars or a guaranteed piano. Vivid details are not useful if they cannot be verified.</p></article>
+              <article><b>03</b><strong>Made conditional facts conditional</strong><p>Saxophones, trumpets and voices became possible elements. Duration is indicative and age rules are delegated to the city page.</p></article>
+              <article><b>04</b><strong>Changed “voi” to “tu”</strong><p>The singular second person creates a more direct and consistent Italian register.</p></article>
+              <article><b>05</b><strong>Cut promotional filler</strong><p>“Magia,” nostalgia, “vibrazioni vintage” and “viaggio musicale” were replaced by concrete information about what the audience hears and experiences.</p></article>
+              <article><b>06</b><strong>Clarified genres and tributes</strong><p>The rewrite no longer suggests that jazz, blues, soul and tribute programmes appear together in every concert.</p></article>
+              <article><b>07</b><strong>Replaced empty formulations</strong><p>Generic lines about every concert being unique became a concrete explanation of how live improvisation changes the experience.</p></article>
+              <article><b>08</b><strong>Improved the hierarchy</strong><p>The new sequence is: reference and repertoire, musicians and improvisation, practical information, atmosphere and inclusive close.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="fever-test fever-test--article" aria-labelledby="fever-test-article">
+          <header class="fever-test__head">
+            <span class="fever-test__number">03</span>
+            <div>
+              <p>Candlelight in Atrani</p>
+              <h4 id="fever-test-article">Short culture article</h4>
+            </div>
+          </header>
+
+          <div class="fever-assignment">
+            <span>Assignment</span>
+            <p>Write an Italian article of no more than <strong>300 words</strong> announcing the first one-night Candlelight event in Atrani, choose the featured artist and explain the choice.</p>
+          </div>
+
+          <div class="fever-section-intro">
+            <span>Work delivered</span>
+            <p>I chose Pino Daniele because the link is musical as well as geographic: Campania, Neapolitan melody, blues, rock and jazz create a verifiable reason for the tribute. The brief did not provide a date, venue, programme, ensemble or price, so I deliberately left those details out.</p>
+          </div>
+
+          <div class="fever-article-layout">
+            <article class="fever-article" lang="it">
+              <div><span>Selected portfolio version</span><strong>169 words</strong></div>
+              <h5>Candlelight debutta ad Atrani per una notte, sulle note di Pino Daniele</h5>
+              <p>Per la prima volta, Atrani entra nel calendario di Candlelight. Il debutto durerà una sera soltanto e porterà in paese un omaggio a Pino Daniele. Per chi non lo conosce, Candlelight propone concerti dal vivo che rileggono repertori classici e contemporanei in ambienti illuminati da candele LED.</p>
+              <h6>Da Napoli al blues: perché funziona</h6>
+              <p>Il legame parte da Napoli, ma non si esaurisce nella geografia. Pino Daniele ha unito la melodia napoletana a blues, rock e jazz, ha cantato in dialetto e in altre lingue e ha aperto la sua musica a collaborazioni internazionali. Il suo repertorio nasce già dall'incontro tra radici e suoni diversi: per Candlelight significa avere più di una strada da seguire senza perdere il legame con Napoli. Ad Atrani, l'omaggio resta in Campania, la regione in cui quella lingua musicale ha preso forma.</p>
+              <p>Una sola serata per ascoltare il repertorio di Pino Daniele da un'altra prospettiva e segnare il debutto di Candlelight ad Atrani.</p>
+            </article>
+
+            <aside class="fever-article-notes">
+              <article><span>Why Pino Daniele</span><p>The tribute connects Campania with a repertoire already shaped by Neapolitan melody, blues, rock and jazz.</p></article>
+              <article><span>What I omitted</span><p>No invented date, venue, setlist, ensemble, price or ticket urgency: none of these details appeared in the brief.</p></article>
+              <article><span>Why 169 words</span><p>The 300-word limit was a ceiling, not a target. The shorter version keeps the announcement, context and artist rationale visible without padding.</p></article>
+            </aside>
+          </div>
+        </section>
+      </div>
+    `,
     summaryPoints: [],
-    metrics: [
-      ["3", "different editorial tests in the interview brief"],
-      ["8", "Instagram captions and Story texts delivered"],
-      ["17", "public pages in the tone-of-voice corpus"],
-      ["46", "automated workflow tests passing"]
-    ],
+    metrics: [],
     callouts: [],
-    deepDive: [
-      {
-        title: "How I researched the voice without copying it",
-        body: `<p>I treated the reference sites as a <strong>targeted editorial corpus</strong>, not as templates to imitate. Product pages were used for facts; Secret Media Network articles for rhythm and structure; public social posts for hooks, microcopy and CTA patterns; local and artist sources for cultural context.</p><p>The working corpus covered <strong>17 public pages</strong> and a direct sample of <strong>40 Jury Experience captions</strong>. The aim was to identify reusable principles—short hooks, second-person language, one dominant idea per caption and concrete local context—while keeping every submitted sentence original.</p>`
-      },
-      {
-        title: "How facts and creative choices stayed separate",
-        body: `<p>A <strong>fact ledger</strong> recorded which claims were verified, volatile, conditional or excluded. A separate <strong>angle matrix</strong> controlled creative choices such as the promise, detail, emotion and CTA of each social concept.</p><p>This separation mattered most for the Atrani article. The brief did not provide a venue, date, programme, ensemble or price, so none of those details were invented. Pino Daniele was chosen because the connection between Campania, Neapolitan melody, blues, rock and jazz created a source-backed reason for the tribute.</p>`
-      },
-      {
-        title: "What the automated checks did—and did not do",
-        body: `<p>Python checks validated word and character limits, missing sections, duplicate or overly similar concepts, unsupported factual signals, source-note completeness and clean export. The workflow also kept the working draft separate from the candidate and linked human approval to the exact candidate hash.</p><p>The scripts did <strong>not</strong> score creativity or claim that a text was “human.” Naturalness, rhythm, cultural judgment and final voice still required reading, comparison and human approval. The full demo below shows the actual work and the reasoning behind the edits.</p>`
-      }
-    ],
+    deepDive: [],
+    customCaseStudy: "fever-editorial",
+    hideStoryPanelTitle: true,
+    hideJumpNav: true,
+    hideDeepDive: true,
+    hideKeyNumbers: true,
     hideSnapshot: true,
     hideFutureData: true,
+    hideExamples: true,
     performancePlaceholder: "",
     urlPlaceholder: "",
-    demos: [
-      {
-        label: "Complete test",
-        title: "The three-part editorial test",
-        path: "demos/fever/index.html"
-      }
-    ]
+    demos: []
   },
   {
     id: "social-media",
@@ -978,14 +1119,7 @@ const projectPortfolioMeta = {
     areas: ["seo", "social"],
     topicTags: ["Editorial QA", "Social copy", "Fact-checking"],
     cardSummary: "Three interview tests: social copy, AI-text editing and a fact-checked article.",
-    story: {
-      main: "For a <strong>Fever / Secret Media Network Staff Writer interview</strong>, I completed three distinct Italian writing tasks and built a source-backed workflow to keep voice, facts, constraints and final approval under control."
-    },
-    storySteps: [
-      ["01 · Social copy", "Write <strong>4 Instagram captions and 4 Story texts</strong> for The Jury Experience, each with its own hook, angle and CTA while respecting strict length limits."],
-      ["02 · AI editing", "Rewrite an <strong>AI-generated Jazz Room description</strong>, then explain precisely what was removed, corrected or made more concrete—and why."],
-      ["03 · Short article", "Write a <strong>maximum-300-word Candlelight article</strong> announcing a first one-night event in Atrani and justify a source-backed artist choice without inventing missing event details."]
-    ]
+    story: null
   },
   "nrj2-analysis": {
     visualTheme: "technical-ai",
@@ -2609,7 +2743,9 @@ function renderProjectDetail(project) {
   projectView.classList.toggle("project-view--examples-after-story", Boolean(project.examplesAfterStory));
   projectView.classList.toggle("project-view--job-search", project.customCaseStudy === "job-search-system");
   storyPanel?.classList.toggle("story-panel--job-search", project.customCaseStudy === "job-search-system");
+  storyPanel?.classList.toggle("story-panel--fever", project.customCaseStudy === "fever-editorial");
   if (storyPanelTitle) {
+    storyPanelTitle.hidden = Boolean(project.hideStoryPanelTitle);
     storyPanelTitle.textContent = project.storyTitle || "Project story";
   }
   renderProjectJumpNav(project, performanceDataset);
