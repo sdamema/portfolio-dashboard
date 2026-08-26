@@ -542,7 +542,7 @@ const projects = [
     id: "fever",
     title: "Fever / Secret Media Network Editorial Test",
     shortTitle: "Fever Editorial Test",
-    category: "Copywriting + editorial QA",
+    category: "Copywriting + Social Media",
     status: "Interview test",
     summary: "For a <strong>Fever / Secret Media Network Staff Writer interview</strong>, I completed three Italian writing tests: <strong>four Instagram captions with Stories</strong> for The Jury Experience, the <strong>editing of an AI-generated Jazz Room text</strong>, and a <strong>short Candlelight article</strong> for a first one-night event in Atrani. Below, each section shows the assignment, the work I delivered and the editorial reasoning behind it.",
     contribution: "",
@@ -675,7 +675,6 @@ const projects = [
 
           <div class="fever-article-layout">
             <article class="fever-article" lang="it">
-              <div><span>Selected portfolio version</span><strong>169 words</strong></div>
               <h5>Candlelight debutta ad Atrani per una notte, sulle note di Pino Daniele</h5>
               <p>Per la prima volta, Atrani entra nel calendario di Candlelight. Il debutto durerà una sera soltanto e porterà in paese un omaggio a Pino Daniele. Per chi non lo conosce, Candlelight propone concerti dal vivo che rileggono repertori classici e contemporanei in ambienti illuminati da candele LED.</p>
               <h6>Da Napoli al blues: perché funziona</h6>

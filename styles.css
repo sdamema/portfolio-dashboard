@@ -8326,7 +8326,6 @@ body.is-project-view {
 .fever-caption header span,
 .fever-text-panel header span,
 .fever-corrections > header span,
-.fever-article > div span,
 .fever-article-notes span {
   color: var(--fever-orange-dark);
   font-size: .68rem;
@@ -8557,22 +8556,6 @@ body.is-project-view {
   box-shadow: 0 16px 38px rgba(124, 45, 18, .09);
 }
 
-.fever-article > div {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: center;
-  margin-bottom: 24px;
-}
-
-.fever-article > div strong {
-  padding: 5px 8px;
-  border-radius: 999px;
-  background: var(--fever-orange-soft);
-  color: var(--fever-orange-dark);
-  font-size: .7rem;
-}
-
 .fever-article h5 {
   margin: 0 0 20px;
   color: var(--fever-ink);
@@ -8644,8 +8627,4 @@ body.is-project-view {
     padding: 22px 17px;
   }
 
-  .fever-article > div {
-    align-items: flex-start;
-    flex-direction: column;
-  }
 }
