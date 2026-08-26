@@ -2853,10 +2853,10 @@ iframe {
 }
 
 .project-box--editorial-orange {
-  --project-accent: #f97316;
-  --project-accent-2: #ea580c;
-  --project-accent-soft: rgba(255, 237, 213, .78);
-  --project-glass: rgba(255, 237, 213, .46);
+  --project-accent: #c96f43;
+  --project-accent-2: #b95750;
+  --project-accent-soft: rgba(252, 232, 216, .72);
+  --project-glass: rgba(252, 232, 216, .42);
 }
 
 .project-box::before {
@@ -6323,8 +6323,8 @@ body.is-project-view {
 }
 
 .project-box--editorial-orange {
-  --project-neon: #f97316;
-  --project-neon-rgb: 249, 115, 22;
+  --project-neon: #c96f43;
+  --project-neon-rgb: 201, 111, 67;
 }
 
 .project-box {
@@ -6639,6 +6639,10 @@ body.is-project-view {
 
 .project-box__icon[data-project-icon="pen"] {
   --project-icon: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2.05'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='m4%2020%204.2-1%2010.7-10.7a2.3%202.3%200%200%200-3.2l-.1-.1a2.3%202.3%200%200%200-3.2L5.7%2015%204%2020z'/%3E%3Cpath%20d='m13.3%206.7%204%204'/%3E%3Cpath%20d='M8.2%2019%205%2015.8'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.project-box__icon[data-project-icon="phone"] {
+  --project-icon: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2.05'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Crect%20x='7'%20y='2.8'%20width='10'%20height='18.4'%20rx='2.1'/%3E%3Cpath%20d='M10%206h4'/%3E%3Cpath%20d='M11%2018h2'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 @media (max-width: 700px) {
@@ -8319,7 +8323,6 @@ body.is-project-view {
 
 .fever-test__head p,
 .fever-assignment > span,
-.fever-section-intro > span,
 .fever-caption header span,
 .fever-text-panel header span,
 .fever-corrections > header span,
@@ -8339,8 +8342,7 @@ body.is-project-view {
   line-height: 1.08;
 }
 
-.fever-assignment,
-.fever-section-intro {
+.fever-assignment {
   margin-top: 16px;
   padding: 15px 16px;
   border-radius: 9px;
@@ -8351,13 +8353,7 @@ body.is-project-view {
   background: linear-gradient(135deg, rgba(255, 237, 213, .72), rgba(255, 255, 255, .9));
 }
 
-.fever-section-intro {
-  border: 1px solid rgba(124, 63, 24, .13);
-  background: rgba(255, 255, 255, .78);
-}
-
-.story-panel--fever .fever-assignment p,
-.story-panel--fever .fever-section-intro p {
+.story-panel--fever .fever-assignment p {
   margin: 7px 0 0;
   color: #4a3a31;
   font-size: .91rem;

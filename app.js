@@ -562,11 +562,6 @@ const projects = [
             <p>Write <strong>four Instagram feed captions</strong> and <strong>four Story texts</strong> in Italian. Each caption had a maximum length of 130 words; each Story had an 80-character ceiling.</p>
           </div>
 
-          <div class="fever-section-intro">
-            <span>Work delivered</span>
-            <p>I gave each concept a different editorial purpose: inviting a friend who disagrees with you, deciding despite uncertainty, paying attention before voting, and moving from spectator to juror. The Story copy isolates the strongest hook instead of mechanically shortening the caption.</p>
-          </div>
-
           <div class="fever-caption-grid">
             <article class="fever-caption">
               <header><div><span>Concept 1</span><strong>Disagreement as the invitation</strong></div><small>72 words</small></header>
@@ -626,11 +621,6 @@ const projects = [
             <p>Edit an <strong>AI-generated Italian description</strong> so it could be published, then explain clearly what was changed and why.</p>
           </div>
 
-          <div class="fever-section-intro">
-            <span>Work delivered</span>
-            <p>I kept the useful informational sequence of the original, but removed unsupported details, translation artefacts and abstract promotional language. The comparison below shows the original draft and my edited version in full.</p>
-          </div>
-
           <div class="fever-rewrite-grid">
             <article class="fever-text-panel fever-text-panel--before">
               <header><span>Original</span><strong>AI-generated source text</strong></header>
@@ -664,6 +654,7 @@ const projects = [
               <article><b>06</b><strong>Clarified genres and tributes</strong><p>The rewrite no longer suggests that jazz, blues, soul and tribute programmes appear together in every concert.</p></article>
               <article><b>07</b><strong>Replaced empty formulations</strong><p>Generic lines about every concert being unique became a concrete explanation of how live improvisation changes the experience.</p></article>
               <article><b>08</b><strong>Improved the hierarchy</strong><p>The new sequence is: reference and repertoire, musicians and improvisation, practical information, atmosphere and inclusive close.</p></article>
+              <article><b>09</b><strong>Removed formulaic em dashes</strong><p>The paired “—” construction felt like a recognisable AI-writing habit in this context and interrupted the sentence. I removed it and rebuilt the information with a more natural Italian syntax.</p></article>
             </div>
           </div>
         </section>
@@ -682,11 +673,6 @@ const projects = [
             <p>Write an Italian article of no more than <strong>300 words</strong> announcing the first one-night Candlelight event in Atrani, choose the featured artist and explain the choice.</p>
           </div>
 
-          <div class="fever-section-intro">
-            <span>Work delivered</span>
-            <p>I chose Pino Daniele because the link is musical as well as geographic: Campania, Neapolitan melody, blues, rock and jazz create a verifiable reason for the tribute. The brief did not provide a date, venue, programme, ensemble or price, so I deliberately left those details out.</p>
-          </div>
-
           <div class="fever-article-layout">
             <article class="fever-article" lang="it">
               <div><span>Selected portfolio version</span><strong>169 words</strong></div>
@@ -700,7 +686,6 @@ const projects = [
             <aside class="fever-article-notes">
               <article><span>Why Pino Daniele</span><p>The tribute connects Campania with a repertoire already shaped by Neapolitan melody, blues, rock and jazz.</p></article>
               <article><span>What I omitted</span><p>No invented date, venue, setlist, ensemble, price or ticket urgency: none of these details appeared in the brief.</p></article>
-              <article><span>Why 169 words</span><p>The 300-word limit was a ceiling, not a target. The shorter version keeps the announcement, context and artist rationale visible without padding.</p></article>
             </aside>
           </div>
         </section>
@@ -1115,7 +1100,7 @@ const projectPortfolioMeta = {
   },
   fever: {
     visualTheme: "editorial-orange",
-    icon: "pen",
+    icon: "phone",
     areas: ["seo", "social"],
     topicTags: ["Editorial QA", "Social copy", "Fact-checking"],
     cardSummary: "Three interview tests: social copy, AI-text editing and a fact-checked article.",
