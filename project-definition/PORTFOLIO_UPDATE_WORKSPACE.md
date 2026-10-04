@@ -23,7 +23,7 @@ Use the following local sources before changing claims or project copy:
 | Positioning and current headline | `../01_Profilo/profilo_candidato.md` | Profile, target roles and strongest evidence |
 | Structured profile data | `../01_Profilo/profile_data.json` | Tools, languages and logistics; cross-check dates and metrics |
 | Portfolio evidence map | `../09_CV_Portfolio_Update/02_portfolio_to_cv_evidence_map.md` | Prioritized case-study facts and public-safe metrics |
-| Open decisions | `../09_CV_Portfolio_Update/05_questions_to_confirm.md` | Availability, naming, URL and metric consistency |
+| Open decisions | `../09_CV_Portfolio_Update/05_questions_to_confirm.md` | Languages, documents, naming, URL and metric consistency |
 | Current CV draft | `../00_CV/Emanuele_Sorgona_CV_2026_portfolio_update_v2.md` | Latest CV-facing wording |
 | Bounce Barcelona case study | `../13_Bounce_Barcelona_Project/` | New external audit, datasets, map, presentation and pitch |
 | Existing portfolio rules | `project-definition/CLUSTER_STRUCTURE_GUIDE.md` | Case structure, reporting and mobile conventions |
@@ -36,7 +36,7 @@ as links on the public site.
 
 1. Resolve global identity and logistics:
    - choose `Sorgona` or `Sorgonà` consistently;
-   - use one availability date;
+   - omit a start-date statement and use Spanish B2, Spanish NIE/NUSS and Portuguese NIF/NISS;
    - confirm the final CV and portfolio links.
 2. Refresh the first screen:
    - sharpen the SEO and digital marketing positioning;
