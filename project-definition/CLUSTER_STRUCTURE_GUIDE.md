@@ -251,6 +251,6 @@ Public links:
 
 - Use one case for six research workflows: two Ahrefs connector paths, two Ahrefs computer-use paths, editorial search and official venue research.
 - Keep the campaign story general and employer-neutral. The original dashboard UI uses generic fictional data and no company logo or proprietary company font.
-- The historical volume card reports 82 distinct saved article URLs and 10 completed research runs, with recorded research dates 9–14 September 2026. It includes archived article records and excludes four verification-only refreshes from the run count. These are saved-output counts, not acquired backlinks or measured hours.
-- The embedded demo remains entirely fictional and is separate from the historical volume card. No raw research, contacts or database exports belong in the public repository.
+- The results card reports around 800 potential outreach websites analysed and collected in two weeks, approximately 4x an estimated manual benchmark of 200 websites over the same period. These aggregate figures were reported by the project owner on 24 October 2026. The comparison describes research output and does not establish an active-hours rate, contacted-site count or acquired backlinks.
+- The embedded demo remains entirely fictional and is separate from the reported research results. No raw research, contacts or database exports belong in the public repository.
 - Keep the saved-fields explanation and preserve mobile table scrolling.
