@@ -245,3 +245,12 @@ Public links:
 
 - Ladywoods Golf Instagram: `https://www.instagram.com/ladywoodsgolf?igsh=NHd0cXdzbGs4cXJr`
 - Beach Golf Sport Association Instagram: `https://www.instagram.com/beach_golf?igsh=MXQ3bjF6c3J1dTk4Mw==`
+
+
+## AI Automated Off-page Research — 24 October 2026
+
+- Use one case for six research workflows: two Ahrefs connector paths, two Ahrefs computer-use paths, editorial search and official venue research.
+- Keep the campaign story general and employer-neutral. The original dashboard UI uses generic fictional data and no company logo or proprietary company font.
+- The historical volume card reports 82 distinct saved article URLs and 10 completed research runs, with recorded research dates 9–14 September 2026. It includes archived article records and excludes four verification-only refreshes from the run count. These are saved-output counts, not acquired backlinks or measured hours.
+- The embedded demo remains entirely fictional and is separate from the historical volume card. No raw research, contacts or database exports belong in the public repository.
+- Keep the saved-fields explanation and preserve mobile table scrolling.

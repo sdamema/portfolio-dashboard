@@ -1,5 +1,54 @@
 const projects = [
   {
+    "id": "offpage-research",
+    "title": "AI Automated Off-page Research with Ahrefs",
+    "shortTitle": "AI Automated Off-page Research",
+    "category": "AI automation + Ahrefs integration",
+    "status": "Organic growth workflow",
+    "summary": "An <strong>AI automated research system</strong> that finds websites and venues to contact through <strong>six workflows</strong>, using the Ahrefs connector, computer use and web research.",
+    "contributionLabel": "My role",
+    "contribution": "I created and refined the automation in Claude Code, with Codex supporting the workflow structure, validation and dashboard.",
+    "explanation": "<p>To prepare the campaign, we needed a list of <strong>websites and venues to contact</strong>. I created an automation that brings the research into one dashboard through <strong>six different workflows</strong>.</p><p class=\"offpage-section-intro\">Each workflow finds opportunities in a different way, then keeps the source checks and collected data together.</p><section class=\"offpage-volume\" aria-label=\"Historical research snapshot\"><div class=\"offpage-volume__head\"><span>Historical research snapshot</span><h4>Recorded output from the research workflow</h4></div><dl><div><dt>82</dt><dd>Distinct article URLs recorded</dd></div><div><dt>10</dt><dd>Completed research runs</dd></div><div><dt>9–14 Sep 2026</dt><dd>Recorded research dates</dd></div></dl><p>Counts come from a saved research snapshot dated 14 September 2026. Article URLs include archived records; verification-only refreshes are excluded from the run count.</p></section><div class=\"offpage-workflows\" aria-label=\"Six automated research workflows\"><article class=\"offpage-workflow\"><div class=\"offpage-workflow__top\"><span class=\"offpage-workflow__number\">01</span><span>Ahrefs connector</span></div><h4>Backlinks</h4><ol><li>Start from a competitor page and retrieve the pages linking to it.</li><li>Compare traffic and First seen views to surface useful articles.</li><li>Read the original pages and check existing brand coverage.</li><li>Save the relevant URLs, link evidence and Ahrefs metrics.</li></ol></article><article class=\"offpage-workflow\"><div class=\"offpage-workflow__top\"><span class=\"offpage-workflow__number\">02</span><span>Ahrefs connector</span></div><h4>Referring Domains</h4><ol><li>Retrieve the websites linking to a competitor.</li><li>Compare domain traffic and First seen views.</li><li>Drill into each selected website to find the exact linking article.</li><li>Read the article, check existing coverage and save the opportunity.</li></ol></article><article class=\"offpage-workflow\"><div class=\"offpage-workflow__top\"><span class=\"offpage-workflow__number\">03</span><span>Computer use · Ahrefs UI</span></div><h4>Link Intersect</h4><ol><li>Open Link Intersect and compare competitors with the brand.</li><li>Find pages or domains linking to competitors but not to the brand.</li><li>Open the individual articles and verify the current links.</li><li>Save the confirmed gaps with their source and metrics.</li></ol></article><article class=\"offpage-workflow\"><div class=\"offpage-workflow__top\"><span class=\"offpage-workflow__number\">04</span><span>Computer use · Ahrefs UI</span></div><h4>Content Explorer</h4><ol><li>Search Ahrefs Content Explorer for relevant topics and keywords.</li><li>Use unlinked-domain highlighting to surface potential gaps.</li><li>Read the original articles and check their content and existing links.</li><li>Save useful pages with page traffic, publisher metrics and evidence.</li></ol></article><article class=\"offpage-workflow\"><div class=\"offpage-workflow__top\"><span class=\"offpage-workflow__number\">05</span><span>Editorial search</span></div><h4>Search-led article research</h4><ol><li>Search the web for guides, articles and useful editorial topics.</li><li>Open and read the original pages.</li><li>Check where a practical addition could help readers and review existing coverage.</li><li>Retrieve Ahrefs metrics and save the article with its research notes.</li></ol></article><article class=\"offpage-workflow\"><div class=\"offpage-workflow__top\"><span class=\"offpage-workflow__number\">06</span><span>Venue discovery</span></div><h4>Official venue research</h4><ol><li>Find venues through specialist directories, local guides and web searches.</li><li>Read their official visitor pages, FAQs and visitor policies.</li><li>Save the policy wording and a published email or contact form.</li><li>Add Ahrefs DR and site traffic, check existing coverage and save the venue.</li></ol></article></div>",
+    "summaryPoints": [],
+    "summaryPointStyle": "rich",
+    "metrics": [],
+    "callouts": [],
+    "deepDive": [
+      {
+        "title": "What is saved — and why",
+        "body": "<p>The dashboard keeps the opportunity and the reason behind it together.</p><div class=\"offpage-field-scroll\"><table class=\"offpage-field-table\"><caption>Information saved by the research workflow</caption><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">What is saved</th><th scope=\"col\">Why</th></tr></thead><tbody><tr><th scope=\"row\">Discovery method & source URL</th><td>The workflow, original article or official website, and the date checked.</td><td>Trace how the opportunity was found and reopen the evidence.</td></tr><tr><th scope=\"row\">Domain Rating (DR)</th><td>The publisher or venue domain’s Ahrefs DR.</td><td>Understand its backlink-profile strength alongside the other information.</td></tr><tr><th scope=\"row\">Estimated organic traffic</th><td>Monthly traffic to the exact article, plus a separate whole-site estimate; venues use site traffic.</td><td>Distinguish an article’s search visibility from the reach of its website.</td></tr><tr><th scope=\"row\">Links & existing brand coverage</th><td>Observed competitor links, brand mentions and current or legacy brand links.</td><td>Separate new opportunities from existing coverage or links to update.</td></tr><tr><th scope=\"row\">Article context or venue policy</th><td>A research note for an article; the official policy wording and source page for a venue.</td><td>Explain the relevance and keep the reason for contacting the site verifiable.</td></tr><tr><th scope=\"row\">Contact route</th><td>A published professional email or contact form, its source and any unresolved checks.</td><td>Give the campaign a usable next step without guessing contact details.</td></tr><tr><th scope=\"row\">Suggested destination</th><td>The relevant existing brand page for the opportunity.</td><td>Connect a possible addition to a useful page for readers or visitors.</td></tr><tr><th scope=\"row\">Status, checks & notes</th><td>Review status, missing information and records already researched.</td><td>Keep incomplete work visible and avoid repeating the same research.</td></tr></tbody></table></div><p class=\"offpage-data-note\">Ahrefs traffic is an estimate. The workflow keeps the metric scope and observation date, and distinguishes a measured zero from an unavailable value. Venue metrics support sorting and filtering; the official policy provides the visitor evidence.</p>"
+      }
+    ],
+    "visualTheme": "technical-ai",
+    "icon": "search",
+    "areas": [
+      "seo",
+      "technical"
+    ],
+    "topicTags": [
+      "AI automation",
+      "Ahrefs",
+      "6 workflows"
+    ],
+    "cardSummary": "Six AI automated workflows to find articles and venues for outreach.",
+    "hideJumpNav": true,
+    "hideKeyNumbers": true,
+    "hideSnapshot": true,
+    "hideFutureData": true,
+    "examplesAfterStory": true,
+    "performancePlaceholder": "",
+    "urlPlaceholder": "",
+    "demos": [
+      {
+        "label": "Example dashboard",
+        "title": "Original research dashboard — fictional data",
+        "path": "demos/offpage-research/index.html"
+      }
+    ],
+    "summaryPointLayout": "analysis",
+    "storyTitle": "From campaign brief to research dashboard"
+  },
+  {
     id: "reviews",
     title: "Human-led Review Pages",
     shortTitle: "Review Pages",
@@ -1010,6 +1059,7 @@ const projects = [
 const projectOrder = [
   "reviews",
   "offpage",
+  "offpage-research",
   "offpage-dashboard",
   "job-search-system",
   "solar-cluster",
